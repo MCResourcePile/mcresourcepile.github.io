@@ -1,0 +1,347 @@
+@font-face {
+  font-family: 'resourcepile';
+  src: url('../fonts/resourcepile.ttf?21u3po') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  font-family: 'resourcepile' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.stat-bow-icon:before {
+  content: "\e900";
+}
+
+.stat-time-icon:before {
+  content: "\e901";
+}
+
+.resourcepile-copyright-year:before {
+    content: "© 2016 ResourcePile"
+}
+
+.distance-record {
+    color: #343434;
+}
+
+.record-first {
+    font-size: 18px !important;
+    padding-top: 6px;
+}
+
+.record-trophy {
+    font-size: 20px !important;
+    vertical-align: -0.1em;
+    color: #343434;
+    padding-right: 0.3em;
+}
+
+.record-player {
+    text-decoration: none !important;
+}
+
+.record-unverified,
+.record-unverified:hover,
+.record-unverified:focus {
+    color: #ff0000;
+}
+
+.record-player-avatar {
+    border-radius: 3px;
+}
+
+.record-description {
+    padding-left: 3px;
+}
+
+.record-evidence {
+    padding-left: 0.4em;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+thead {
+    background-color: #f0f0f0;
+}
+
+.record-table:hover,
+.record-table:focus {
+    background-color: #f4f4f4;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.map-game-mode {
+    font-size: 12px;
+    color: #898989;
+}
+
+.record-map {
+    text-decoration: none !important;\
+}
+
+.record-search-box {
+    font-size: 11px;
+    max-height: 28px;
+}
+
+tbody.counted-rows {
+    counter-reset: rowNumber;
+}
+
+tbody.counted-rows tr {
+    counter-increment: rowNumber;
+}
+
+tbody.counted-rows tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+
+@media screen and (max-width: 768px) {
+    .record-description-div::before {
+        content: "-"
+    }
+
+    .record-description-long {
+        font-size: 0px;
+    }
+
+    .tablesorter{
+        font-size: 14px;
+    }
+
+    .record-first {
+        font-size: 14px !important;
+        font-weight: 600;
+        padding-top: 0px;
+    }
+
+    .record-player-avatar{
+        height: 16px;
+        width: 16px;
+    }
+
+    .record-trophy {
+        font-size: 15px !important;
+        margin-left: -22px;
+    }
+
+    .about-user-info {
+        border-left: 0px !important;
+        padding-left: 12px !important;
+    }
+}
+
+.jumbotron-header {
+    padding-bottom: 16px;
+}
+
+.game-mode-navigation {
+    border-top: 1px solid #e7e7e7;
+    padding-top: 12px;
+}
+
+.game-mode-button {
+    display: block;
+    margin-bottom: 3px;
+    margin-left: 8px;
+}
+
+span.game-mode-button {
+    color: #868686;
+}
+
+.game-mode-section-header {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.record-search-container {
+    margin-bottom: 12px;
+    margin-left: 24em;
+    margin-right: 24em;
+}
+
+@media screen and (max-width: 1200px) {
+    .record-search-container {
+        margin-bottom: 12px;
+        margin-left: 4em;
+        margin-right: 4em;
+    }
+
+    .game-mode-section-header {
+        font-size: 14px;
+    }
+
+    .game-mode-button {
+        font-size: 12px;
+    }
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.icon-dropdown {
+    font-size: 11.4px !important;
+    padding-right: 2px;
+}
+
+.about-user {
+    margin-top: 32px;
+}
+
+.about-user-name {
+    margin-top: 18px;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.about-user-nickname {
+    font-size: 16px;
+    color: #919191;
+}
+
+.about-user-positions {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.about-section-header {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.about-info {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.about-user-info {
+    border-left: 3px solid #eee;
+    margin-top: 24px;
+    padding-left: 60px;
+}
+
+.about-info-icon {
+    margin-right: 4px;
+}
+
+.about-user-avatar {
+    height: 160px;
+    width: 160px;
+}
+
+.contact-user-name {
+    display: inline-block;
+    font-size: 18px;
+    margin-top: -14px;
+    margin-bottom: 4px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid;
+    text-align: center;
+}
+
+.contact-user-avatar {
+    height: 130px;
+    width: 130px;
+    border-radius: 8px;
+}
+
+.position-designer {
+    color: #8E44AD;
+}
+
+.position-helper {
+    color: #17BBB0;
+}
+
+.position-developer {
+    color: #008C31;
+}
+
+.position-manager {
+    color: #F39C12;
+}
+
+.position-count {
+    margin-left: 8px;
+    color: #868686;
+    font-size: 18px;
+}
+
+.contact-position-title {
+    margin-bottom: 16px;
+    padding-bottom: 2px;
+    font-size: 28px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.contact-user-description {
+    font-weight: 100;
+    margin-bottom: 6px;
+    color: #919191;
+    min-height: 20px;
+}
+
+.contact-position-section {
+    margin-bottom: 18px;
+}
+
+.contact-user-thumbnail {
+    height: 130px;
+    width: 130px;
+    display: inline-block;
+}
+
+.content-title {
+    font-size: 46px;
+    font-weight: 600;
+}
+
+.content-subtitle {
+    font-size: 20px;
+    font-weight: 300
+}
+
+.content-list {
+    font-size: 16px;
+    font-weight: 300
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.content-header {
+    margin-top: 4.7em;
+    margin-bottom: 24px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.content-body {
+    font-size: 18px;
+    padding-top: 26px;
+}
