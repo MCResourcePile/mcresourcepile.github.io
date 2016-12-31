@@ -233,7 +233,7 @@ window.onload = function() {
 	    map: "Assault",
             slug: "assault",
             game_mode: "CTF",
-            record_first: [ { player_name: "", player_uuid: "", distance: "", evidence: ""} ],
+            record_first: [ { player_name: "SailorMojo", player_uuid: "a53ab2da-36ed-4886-ac2a-49696de4622f", distance: "35", evidence: ""} ],
             record_second: [ { player_name: "", player_uuid: "", distance: "", evidence: ""} ],
             record_third: [ { player_name: "", player_uuid: "", distance: "", evidence: ""} ],	
         }, {
