@@ -30,12 +30,21 @@
                         <td class="table-counted"></td>
                         <td>
                             <div class="col-md-2 col-xs-3" style="margin-left:-12px;">
-                                <a class="record-map" href="https://avicus.net/maps/map/{{slug}}" target="_blank">
-                                    {{#if map}}
-                                        {{map}}{{else}}
-                                        Unknown Map
-                                    {{/if}}
-                                </a>
+                                {{#if slug}}
+                                    <a class="record-map" href="https://oc.tc/maps/{{slug}}" target="_blank">
+                                        {{#if map}}
+                                            {{map}}{{else}}
+                                            Unknown Map
+                                        {{/if}}
+                                    </a>
+                                    {{else}}
+                                    <span class="record-map">
+                                        {{#if map}}
+                                            {{map}}{{else}}
+                                            Unknown Map
+                                        {{/if}}
+                                    </span>
+                                {{/if}}
                                 <br>
                                 <span class="map-game-mode">
                                     {{#if game_mode}}{{game_mode}}{{else}}Unknown game type{{/if}}{{#if seasonal_event}}, {{seasonal_event}}{{/if}}
@@ -150,26 +159,26 @@
             <div class="game-mode-navigation row">
                 <div class="col-xs-3">
                     <div class="game-mode-section-header">Objectives</div>
-                    <a class="game-mode-button game_koth" href="?s=koth" style="font-weight: bold"></a>
-                    <a class="game-mode-button game_ctf" href="?s=ctf" style="font-weight: bold"></a>
-                    <a class="game-mode-button game_ctw" href="?s=ctw" style="font-weight: bold"></a>
-                    <a class="game-mode-button game_dtm" href="?s=dtm" style="font-weight: bold"></a>
-                    <a class="game-mode-button game_dtc" href="?s=dtc" style="font-weight: bold"></a>
+                    <a class="game-mode-button game_koth" href="?s=koth"></a>
+                    <a class="game-mode-button game_ctf" href="?s=ctf"></a>
+                    <a class="game-mode-button game_ctw" href="?s=ctw"></a>
+                    <a class="game-mode-button game_dtm" href="?s=dtm"></a>
+                    <a class="game-mode-button game_dtc" href="?s=dtc"></a>
                 </div>
                 <div class="col-xs-3">
                     <div class="game-mode-section-header">Deathmatch</div>
-                    <a class="game-mode-button game_frenzy" href="?s=frenzy" style="font-weight: bold"></a>
-                    <a class="game-mode-button game_skywars" href="?s=skywars" style="font-weight: bold"></a>
-                    <a class="game-mode-button game_tdm" href="?s=tdm" style="font-weight: bold"></a>
+                    <a class="game-mode-button game_frenzy" href="?s=frenzy"></a>
+                    <a class="game-mode-button game_skywars" href="?s=skywars"></a>
+                    <a class="game-mode-button game_tdm" href="?s=tdm"></a>
                 </div>
                 <div class="col-xs-3">
                     <div class="game-mode-section-header">Competitive</div>
-                    <a class="game-mode-button game_tournament" href="?s=tournament" style="font-weight: bold"></a>
+                    <a class="game-mode-button game_tournament" href="?s=tournament"></a>
                 </div>
                 <div class="col-xs-3">
                     <div class="game-mode-section-header">Other</div>
-                    <a class="game-mode-button game_all" href="?s=" style="font-weight: bold"></a>
-                    <a class="game-mode-button game_arcade" href="?s=arcade" style="font-weight: bold"></a>
+                    <a class="game-mode-button game_all" href="?s=" ></a>
+                    <a class="game-mode-button game_arcade" href="?s=arcade"></a>
                 </div>
             </div>
             <br>
