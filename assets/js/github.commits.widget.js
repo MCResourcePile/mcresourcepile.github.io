@@ -62,7 +62,7 @@ THE SOFTWARE.
 
                 element.empty();
 
-                var list = $('<table class="table table condensed" style="color: white;font-size: 13px;"><tr class="active" style="color:#202020"><th width="6%">SHA</th><th width="10%">Author</th><th width="70%">Description</th><th width="14%">When</th></tr><tbody>').appendTo(element);
+                var list = $('<table class="table table condensed" style="color: #2f2f2f;font-size: 13px;"><tr class="active" style="color:#202020"><th width="6%">SHA</th><th width="10%">Author</th><th width="70%">Description</th><th width="14%">When</th></tr><tbody>').appendTo(element);
                 for (var c = 0; c < totalCommits; c++) {
                     var cur = commits[c];
                     var li = $("<tr>");
@@ -111,10 +111,10 @@ THE SOFTWARE.
 
                 function message_sha(sha) {
                     var originalShaMessage = sha;
-                    sha = sha.substring(0, 7);
-
+                    sha_short = sha.substring(0, 7);
+                    
                     var link_sha = $('<td>')
-                        .text(sha);
+                        .text(sha_short);
 
                     return link_sha;
                 }
