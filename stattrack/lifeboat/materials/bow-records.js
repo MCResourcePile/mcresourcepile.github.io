@@ -3671,7 +3671,7 @@ window.onload = function() {
             record_second: [ { player_name: "", player_uuid: "", distance: "", evidence: ""} ],
             record_third: [ { player_name: "", player_uuid: "", distance: "", evidence: ""} ],
         }, {
-	        map: "The Complex CTF",
+	    map: "The Complex CTF",
             slug: "the_complex_ctf",
             tags: [ {ctf: true} ],
             record_first: [ { player_name: "", player_uuid: "", distance: "", evidence: ""} ],
