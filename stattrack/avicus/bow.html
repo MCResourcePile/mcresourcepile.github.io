@@ -31,7 +31,7 @@
                         <td>
                             <div class="col-md-2 col-xs-3" style="margin-left:-12px;">
                                 {{#if slug}}
-                                    <a class="record-map" href="https://oc.tc/maps/{{slug}}" target="_blank">
+                                    <a class="record-map" href="https://avicus.net/maps/map/{{slug}}" target="_blank">
                                         {{#if map}}
                                             {{map}}{{else}}
                                             Unknown Map
@@ -46,9 +46,27 @@
                                     </span>
                                 {{/if}}
                                 <br>
-                                <span class="map-game-mode">
-                                    {{#if game_mode}}{{game_mode}}{{else}}Unknown game type{{/if}}{{#if seasonal_event}}, {{seasonal_event}}{{/if}}
-                                </span>
+                                <ul class="map-game-mode">
+                                    {{#if tags}}
+                                        {{#tags}}
+                                            {{#if arcade}}<li class="game_tag">Arcade</li>{{/if}}
+                                            {{#if cp}}<li class="game_tag">CP<span class="tag_hidden">Capture Points</span></li>{{/if}}
+                                            {{#if ctf}}<li class="game_tag">CTF<span class="tag_hidden">Capture the Flags</span></li>{{/if}}
+                                            {{#if ctw}}<li class="game_tag">CTW<span class="tag_hidden">Capture the Wools</span></li>{{/if}}
+                                            {{#if dtc}}<li class="game_tag">DTC<span class="tag_hidden">Destroy the Cores</span></li>{{/if}}
+                                            {{#if dtm}}<li class="game_tag">DTM<span class="tag_hidden">Destroy the Monuments</span></li>{{/if}}
+                                            {{#if frenzy}}<li class="game_tag">Frenzy</li>{{/if}}
+                                            {{#if gs}}<li class="game_tag">GS<span class="tag_hidden">Ghost Squadron</span></li>{{/if}}
+                                            {{#if koth}}<li class="game_tag">KOTH<span class="tag_hidden">King of the Hills</span></li>{{/if}}
+                                            {{#if skywars}}<li class="game_tag">Skywars<span class="tag_hidden">SW</span></li>{{/if}}
+                                            {{#if tdm}}<li class="game_tag">TDM<span class="tag_hidden">Team Death Match</span></li>{{/if}}
+                                            {{#if te}}<li class="game_tag">Tournament<span class="tag_hidden">Tournament Edition TE</span></li>{{/if}}
+                                            {{#if season}}<li class="game_tag">{{season}}</li>{{/if}}
+                                            {{#if other}}<li class="game_tag">{{other}}</li>{{/if}}
+                                        {{/tags}}
+                                        {{else}}Unknown game type
+                                    {{/if}}
+                                </ul>
                             </div>
                             <div class="col-xs-9">
                                 <div class="col-md-6 record-first">
@@ -159,11 +177,11 @@
             <div class="game-mode-navigation row">
                 <div class="col-xs-3">
                     <div class="game-mode-section-header">Objectives</div>
-                    <a class="game-mode-button game_koth" href="?s=koth"></a>
                     <a class="game-mode-button game_ctf" href="?s=ctf"></a>
                     <a class="game-mode-button game_ctw" href="?s=ctw"></a>
                     <a class="game-mode-button game_dtm" href="?s=dtm"></a>
                     <a class="game-mode-button game_dtc" href="?s=dtc"></a>
+                    <a class="game-mode-button game_koth" href="?s=koth"></a>
                 </div>
                 <div class="col-xs-3">
                     <div class="game-mode-section-header">Deathmatch</div>
