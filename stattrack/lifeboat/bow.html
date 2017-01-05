@@ -49,27 +49,27 @@
                                 <ul class="map-game-mode">
                                     {{#if tags}}
                                         {{#tags}}
-                                            {{#if arcade}}<li class="game_tag">Arcade</li>{{/if}}
-                                            {{#if blitz}}<li class="game_tag">Blitz</li>{{/if}}
-                                            {{#if cp}}<li class="game_tag">CP<span class="tag_hidden">Capture Points</span></li>{{/if}}
-                                            {{#if ctf}}<li class="game_tag">CTF<span class="tag_hidden">Capture the Flags</span></li>{{/if}}
-                                            {{#if ctw}}<li class="game_tag">CTW<span class="tag_hidden">Capture the Wools</span></li>{{/if}}
-                                            {{#if dtc}}<li class="game_tag">DTC<span class="tag_hidden">Destroy the Cores</span></li>{{/if}}
-                                            {{#if dtm}}<li class="game_tag">DTM<span class="tag_hidden">Destroy the Monuments</span></li>{{/if}}
-                                            {{#if ffa}}<li class="game_tag">FFA<span class="tag_hidden">Free for all Free-for-all</span></li>{{/if}}
-                                            {{#if gs}}<li class="game_tag">GS<span class="tag_hidden">Ghost Squadron</span></li>{{/if}}
-                                            {{#if koth}}<li class="game_tag">KOTH<span class="tag_hidden">King of the Hills</span></li>{{/if}}
-                                            {{#if micro}}<li class="game_tag">Mirco<span class="tag_hidden">5x5</span></li>{{/if}}
-                                            {{#if mixed}}<li class="game_tag">Mixed</li>{{/if}}
-                                            {{#if rage}}<li class="game_tag">Rage</li>{{/if}}
-                                            {{#if ranked}}<li class="game_tag">Ranked</li>{{/if}}
-                                            {{#if rfw}}<li class="game_tag">RFW<span class="tag_hidden">Race for Wool</span></li>{{/if}}
-                                            {{#if skywars}}<li class="game_tag">Skywars<span class="tag_hidden">SW</span></li>{{/if}}
-                                            {{#if sg}}<li class="game_tag">SG<span class="tag_hidden">Survival Games</span></li>{{/if}}
-                                            {{#if tdm}}<li class="game_tag">TDM<span class="tag_hidden">Team Death Match</span></li>{{/if}}
-                                            {{#if te}}<li class="game_tag">Tournament<span class="tag_hidden">Tournament Edition TE</span></li>{{/if}}
-                                            {{#if season}}<li class="game_tag">{{season}}</li>{{/if}}
-                                            {{#if other}}<li class="game_tag">{{other}}</li>{{/if}}
+                                            {{#if arcade}}<li class="game_tag"><a class="game_link" href="?s=arcade">Arcade</a></li>{{/if}}
+                                            {{#if blitz}}<li class="game_tag"><a class="game_link" href="?s=blitz">Blitz</a></li>{{/if}}
+                                            {{#if cp}}<li class="game_tag"><a class="game_link" href="?s=cp">CP</a><span class="tag_hidden">Capture Points</span></li>{{/if}}
+                                            {{#if ctf}}<li class="game_tag"><a class="game_link" href="?s=ctf">CTF</a><span class="tag_hidden">Capture the Flags</span></li>{{/if}}
+                                            {{#if ctw}}<li class="game_tag"><a class="game_link" href="?s=ctw">CTW</a><span class="tag_hidden">Capture the Wools</span></li>{{/if}}
+                                            {{#if dtc}}<li class="game_tag"><a class="game_link" href="?s=dtc">DTC</a><span class="tag_hidden">Destroy the Cores</span></li>{{/if}}
+                                            {{#if dtm}}<li class="game_tag"><a class="game_link" href="?s=dtm">DTM</a><span class="tag_hidden">Destroy the Monuments</span></li>{{/if}}
+                                            {{#if ffa}}<li class="game_tag"><a class="game_link" href="?s=ffa">FFA</a><span class="tag_hidden">Free for all Free-for-all</span></li>{{/if}}
+                                            {{#if gs}}<li class="game_tag"><a class="game_link" href="?s=gs">GS</a><span class="tag_hidden">Ghost Squadron</span></li>{{/if}}
+                                            {{#if koth}}<li class="game_tag"><a class="game_link" href="?s=koth">KOTH</a><span class="tag_hidden">King of the Hills</span></li>{{/if}}
+                                            {{#if micro}}<li class="game_tag"><a class="game_link" href="?s=micro">Mirco</a><span class="tag_hidden">5x5</span></li>{{/if}}
+                                            {{#if mixed}}<li class="game_tag"><a class="game_link" href="?s=mixed">Mixed</a></li>{{/if}}
+                                            {{#if rage}}<li class="game_tag"><a class="game_link" href="?s=rage">Rage</a></li>{{/if}}
+                                            {{#if ranked}}<li class="game_tag"><a class="game_link" href="?s=ranked">Ranked</a></li>{{/if}}
+                                            {{#if rfw}}<li class="game_tag"><a class="game_link" href="?s=rfw">RFW</a><span class="tag_hidden">Race for Wool</span></li>{{/if}}
+                                            {{#if skywars}}<li class="game_tag"><a class="game_link" href="?s=skywars">Skywars</a><span class="tag_hidden">SW</span></li>{{/if}}
+                                            {{#if sg}}<li class="game_tag"><a class="game_link" href="?s=sg">SG</a><span class="tag_hidden">Survival Games</span></li>{{/if}}
+                                            {{#if tdm}}<li class="game_tag"><a class="game_link" href="?s=tdm">TDM</a><span class="tag_hidden">Team Death Match Deathmatch</span></li>{{/if}}
+                                            {{#if te}}<li class="game_tag"><a class="game_link" href="?s=tournament">Tournament</a><span class="tag_hidden">Tournament Edition TE</span></li>{{/if}}
+                                            {{#if season}}<li class="game_tag"><a class="game_link" href="?s={{season}}">{{season}}</a></li>{{/if}}
+                                            {{#if other}}<li class="game_tag"><a class="game_link" href="?s={{other}}">{{other}}</a></li>{{/if}}
                                         {{/tags}}
                                         {{else}}Unknown game type
                                     {{/if}}
