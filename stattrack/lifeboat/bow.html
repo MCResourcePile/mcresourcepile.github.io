@@ -249,18 +249,6 @@
                         evenRow: { 'background-color': '#f0f0f0' },
                         searchType: 'default'
                     });
-
-                    $( '#searchable-container' ).searchable({
-                        searchField: '#container-search',
-                        selector: '.row',
-                        childSelector: '.col-xs-3',
-                        show: function( elem ) {
-                            elem.slideDown(100);
-                        },
-                        hide: function( elem ) {
-                            elem.slideUp( 100 );
-                        }
-                    })
                 });
             }, 1000);
         </script>
