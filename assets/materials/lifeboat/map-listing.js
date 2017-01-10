@@ -7,7 +7,7 @@ window.onload = function() {
             slug: "",
             path: "",
             authors: [{}],
-            tags: [{}],
+            tags: [{default: true}],
             locked: "",
             discussion: "",
             download: true,
