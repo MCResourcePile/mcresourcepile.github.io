@@ -25,10 +25,10 @@
                                 <a class="map-header map-searchable" href="https://mcresourcepile.github.io/stattrack/lifeboat/bow?s={{slug}}"><strong>{{#if map}}<span class="map-featured">{{map}}</span>{{else}}<span class="map-featured">Untitled Map</span>{{/if}}</strong></a>
                                 {{#unless locked}}
                                     {{#if slug}}
-                                    <a href="https://oc.tc/maps/{{slug}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Lifeboat&nbsp;PC"><i class="external-thread fa fa-folder-open-o"></i></a>
+                                    <a href="https://avicus.net/maps/map/{{slug}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Lifeboat&nbsp;PC"><i class="external-thread fa fa-folder-open-o"></i></a>
                                     {{/if}}
-                                    {{#if topic}}
-                                    <a href="{{topic}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
+                                    {{#if discussion}}
+                                    <a href="{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
                                     {{/if}}
                                     {{#if cardinal}}
                                     <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested with Cardinal"><i class="external-thread fa fa-certificate"></i></a>
@@ -90,12 +90,12 @@
                                 {{#if download}}
                                     <a href="#" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-download"></i></a>
                                     {{else}}
-                                    <span class="btn map-link-disabled map-button" role="button"><i class="fa fa-download btn-info-disabled"></i></span>
+                                    <span class="btn map-link-disabled map-button"><i class="fa fa-download"></i></span>
                                 {{/if}}
                                 {{#if xml}}
                                     <a href="#" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
                                     {{else}}
-                                    <span class="btn map-link-disabled map-button" role="button"><i class="fa fa-code btn-info-disabled"></i></span>
+                                    <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
                                 {{/if}}
                             {{/if}}
                         </div>

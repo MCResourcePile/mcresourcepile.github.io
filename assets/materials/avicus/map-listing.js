@@ -6,8 +6,10 @@ window.onload = function() {
             map: "",
             slug: "",
             path: "",
-            authors: [{}],
-            tags: [{default: true}],
+            authors: [
+                {player_name: "", player_uuid: ""}
+            ],
+            tags: [ {default: true} ],
             locked: "",
             discussion: "",
             download: false,
