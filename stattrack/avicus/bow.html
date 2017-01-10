@@ -65,7 +65,7 @@
                                             {{#if season}}<li class="game_tag"><a class="game_link" href="?s={{season}}">{{season}}</a></li>{{/if}}
                                             {{#if other}}<li class="game_tag"><a class="game_link" href="?s={{other}}">{{other}}</a></li>{{/if}}
                                         {{/tags}}
-                                        {{else}}Unknown game type
+                                        {{else}}Unknown game tags
                                     {{/if}}
                                 </ul>
                             </div>
@@ -223,15 +223,26 @@
         </script>
         <script>
             setTimeout(function () {
-                $(function () {
-                    $( '#table' ).searchable({
-                        striped: true,
-                        oddRow: { 'background-color': '#fff' },
-                        evenRow: { 'background-color': '#f0f0f0' },
-                        searchType: 'default'
-                    });
-                });
+                makeSearchable()
             }, 1000);
+            
+            $(document).on('ready', function(){
+                makeSearchable()
+            })
+
+            $('.record-search-container').on('click', function(){
+                makeSearchable()
+            })
+
+            function makeSearchable(){
+                $('#records-output .table').searchable({
+                    striped: true,
+                    oddRow: { 'background-color': '#fff' },
+                    evenRow: { 'background-color': '#f0f0f0' },
+                    searchType: 'default',
+                    searchField: '#search'
+                })
+            }
         </script>
         <script type="text/javascript">
             var data=location.search;
