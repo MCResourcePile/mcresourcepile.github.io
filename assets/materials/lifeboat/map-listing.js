@@ -12,7 +12,7 @@ window.onload = function() {
             discussion: "",
             download: true,
             xml: true,
-            album: "",
+            cardinal: false,
         }, ],
     };
     var output = template(data);
