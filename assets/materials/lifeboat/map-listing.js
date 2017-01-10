@@ -10,8 +10,8 @@ window.onload = function() {
             tags: [{default: true}],
             locked: "",
             discussion: "",
-            download: true,
-            xml: true,
+            download: false,
+            xml: false,
             cardinal: false,
         }, ],
     };
