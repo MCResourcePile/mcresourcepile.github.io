@@ -62,7 +62,8 @@
     border-top-style: solid;
 }
 
-.object-card {
+.object-card,
+.object-card-disabled {
     width: 200px;
     height: 200px;
     margin-bottom: 8px;
@@ -71,19 +72,11 @@
     border-radius: 180px;
 }
 
-.card-background-red {
-    background-color: #d85050;
-}
-
-.card-background-blue {
-    background-color: #516cc4;
-}
-
 .object-card-display {
     width: 120px;
     height: 120px;
     margin-top: 40px;
-    font-size: 120px;
+    font-size: 120px !important;
 }
 
 .object-card-title {
@@ -115,10 +108,23 @@ a.record-card-link:hover {
     box-shadow:         inset 0 0 10px rgba(0, 0, 0, 0.69);
 }
 
+.card-background-red {
+    background-color: #d85050;
+}
+
 .card-background-red:hover {
     background-color: #d64141;
 }
 
+.card-background-blue {
+    background-color: #516cc4;
+}
+
 .card-background-blue:hover {
     background-color: #4462c6;
+}
+
+.card-background-disabled,
+.card-background-disabled:hover {
+    background-color: #646567;
 }

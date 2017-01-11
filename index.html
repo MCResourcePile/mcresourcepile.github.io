@@ -39,8 +39,8 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> MapStack <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="mapstack/lifeboat"><i class="fa fa-cube"></i> Lifeboat PC Map Collection</a></li>
-                                <li><a href="mapstack/avicus"><i class="fa fa-cube"></i> Avicus Map Collection</a></li>
+                                <li><a href="mapstack/lifeboat"><i class="icon stat-map-icon"></i> Lifeboat PC Map Collection</a></li>
+                                <li><a href="mapstack/avicus"><i class="icon stat-map-icon"></i> Avicus Map Collection</a></li>
                             </ul>
                         </li>
                         <li><a href="info"><i class="fa fa-exclamation"></i> Info</a></li>
@@ -55,13 +55,27 @@
                 <div class="splash-subheader">Best collection of resources for the Lifeboat PC and Avicus networks.</div>
             </div>
             <!-- Main page content -->
-            <div class="alert alert-danger" role="alert">
-                <h4><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> &nbsp;Attention</h4>
-                <p><b>MapStack</b> is currently not available. We are working on getting it available as soon as we can.</p>
-            </div>
             <div class="page-content" id="wrapper-content">
                 <div class="container">
                     <div class="row" style="margin-top:18px;">
+                        <div class="col-md-3">
+                            <span href="stattrack/lifeboat/bow" class="object-card-link" data-toggle="tooltip" data-placement="top" title="Coming Soon">
+                                <div class="object-card-disabled card-background-disabled center">
+                                    <span class="object-card-display icon stat-bow-icon">
+                                </div>
+                                <span class="object-card-title"><strong>Lifeboat Bow Records</strong></span>
+                                <div class="object-card-discription">Longest bow kill distances on Lifeboat PC</div>
+                            </span>
+                        </div>
+                        <div class="col-md-3">
+                            <span href="mapstack/lifeboat" class="object-card-link" data-toggle="tooltip" data-placement="top" title="Coming Soon">
+                                <div class="object-card-disabled card-background-disabled center">
+                                    <span class="object-card-display icon stat-compass-icon">
+                                </div>
+                                <span class="object-card-title"><strong>Lifeboat Public Maps</strong></span>
+                                <div class="object-card-discription">A collection of publicly downloadable maps from Lifeboat PC</div>
+                            </span>
+                        </div>
                         <div class="col-md-3">
                             <a href="stattrack/avicus/bow" class="object-card-link">
                                 <div class="object-card card-background-blue center">
@@ -70,6 +84,15 @@
                                 <span class="object-card-title"><strong>Avicus Bow Records</strong></span>
                                 <div class="object-card-discription">Longest bow kill distances on the Avicus Network</div>
                             </a>
+                        </div>
+                        <div class="col-md-3">
+                            <span href="mapstack/avicus" class="object-card-link" data-toggle="tooltip" data-placement="top" title="Coming Soon">
+                                <div class="object-card-disabled card-background-disabled center">
+                                    <span class="object-card-display icon stat-compass-icon">
+                                </div>
+                                <span class="object-card-title"><strong>Avicus Public Maps</strong></span>
+                                <div class="object-card-discription">A collection of publicly downloadable maps from the Avicus Network</div>
+                            </span>
                         </div>
                     </div>
                     <!-- Page footer -->
@@ -87,5 +110,12 @@
                 </div>
             </div>
         </div>
+        <script>
+            setTimeout(function () {
+                $(function () {
+                    $('[data-toggle="tooltip"]').tooltip()
+                })
+            }, 1000);
+        </script>
     </body>
 </html>
