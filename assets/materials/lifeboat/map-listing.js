@@ -2,6 +2,7 @@ window.onload = function() {
     var source = document.getElementById("maps-template").innerHTML;
     var template = Handlebars.compile(source);
     var data = {
+        // CC licenses that are currently accepted: BY_SA: true, BY_NC_SA: true
         maps: [ {
             map: "Brisked",
             slug: "brisked",
@@ -11,8 +12,9 @@ window.onload = function() {
             ],
             tags: [ {koth: true} ],
             discussion: "https://oc.tc/forums/topics/54dc84b25f35b92ecc0005c1",
-            download: false,
-            xml: false,
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
             cardinal: false,
         }, {
             map: "Fracture",
@@ -23,8 +25,9 @@ window.onload = function() {
             ],
             tags: [ {koth: true} ],
             discussion: "https://oc.tc/forums/topics/58296360c296351f4f00001d",
-            download: false,
-            xml: false,
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
             cardinal: false,
         }, {
             map: "Rooted Frontier",
@@ -35,8 +38,9 @@ window.onload = function() {
             ],
             tags: [ {blitz: true} ],
             discussion: "https://oc.tc/forums/topics/58296360c296351f4f00001d",
-            download: false,
-            xml: false,
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
             cardinal: false,
         }, ],
     };

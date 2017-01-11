@@ -13,12 +13,18 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="../assets/js/bootstrap.min.js"></script>
         <script src="../assets/js/handlebars.js"></script>
+        <script>
+            Handlebars.registerHelper( "checkLicense", function(license){                      
+                if (license == '1'){return 'CC BY-SA';}                      
+                if (license == '2'){return 'CC BY-NC-SA';}                       
+            });
+        </script>
         <script src="../assets/js/jquery.searchable-1.1.0.min.js"></script>
         <script src="../assets/materials/lifeboat/map-listing.js"></script>
         <script id="maps-template" type="text/x-handlebars-template">
             <div class="dynamic">
             {{#maps}}
-                <div class="col-md-3 map-thumbnail">
+                <div class="col-lg-3 map-thumbnail">
                     <div id="{{id}}" class="thumbnail map-float">
                         <div class="map-image" style="background-image: url(&quot;https://maps.oc.tc/{{#if path}}{{path}}/map.png{{else}}404.png{{/if}}&quot;);">
                             <div class="map-banner">
@@ -65,7 +71,7 @@
                                 </span>
                             </div>
                             <div class="map-labels">
-                                {{#if locked}}<span class="label map-label map-label-locked">Locked</span>{{/if}}
+                                <span class="label label-default map-label">Slug ID: {{slug}}</span>
                             </div>
                         </div>
                         <div class="map-authors">
@@ -85,10 +91,62 @@
                         </div>
                         <div style="padding-top:2%;" class="center">
                             {{#if locked}}
-                                <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="Links have been locked"><i class="fa fa-lock"></i></span>
+                                <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="This map has been locked"><i class="fa fa-lock"></i></span>
                                 {{else}}
                                 {{#if download}}
-                                    <a href="https://github.com/MCResourcePile/MapStack-LifeboatPC/raw/master/{{slug}}/map.zip" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-download"></i></a>
+                                    <a href="#" class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}"><i class="fa fa-download"></i></a>
+                                    <div class="modal fade" id="download-{{slug}}" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Downloading map files for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}}</h4>
+                                                    <div class="map-authors">
+                                                        <span class="map-author-name">created by</span>
+                                                        {{#if authors}}
+                                                            {{#authors}}
+                                                                <li class="game_tag">
+                                                                    {{#if player_name}}
+                                                                        <img src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16"> <a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>
+                                                                        {{else}}
+                                                                        <img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>
+                                                                    {{/if}}
+                                                                </li>
+                                                            {{/authors}}
+                                                            {{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>
+                                                        {{/if}}
+                                                    </div>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {{#if BY_SA}}
+                                                        This download for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons Attribution-ShareAlike 3.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                                        <br><br>
+                                                        <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" target="_blank">
+                                                            <img src="http://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                                        </a>
+                                                        <br>
+                                                        You will be downloading the version of {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
+                                                        <br><br>
+                                                        <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                                    {{/if}}
+                                                    {{#if BY_NC_SA}}
+                                                        This download for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                                        <br><br>
+                                                        <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode" target="_blank">
+                                                            <img src="http://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                                        </a>
+                                                        <br>
+                                                        You will be downloading the version of {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
+                                                        <br><br>
+                                                        <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                                    {{/if}}
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="https://github.com/MCResourcePile/MapStack-LifeboatPC/raw/master/{{slug}}/map.zip" target="_blank" type="button" class="btn map-link">Download</a>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     {{else}}
                                     <span class="btn map-link-disabled map-button"><i class="fa fa-download"></i></span>
                                 {{/if}}
@@ -181,22 +239,22 @@
                     <a class="game-mode-button game_all" href="?s="></a>
                     <a class="game-mode-button game_arcade" href="?s=arcade"></a>
                     <a class="game-mode-button game_gs" href="?s=gs"></a>
-                    <a class="game-mode-button game_rfw" href="?s=rfw"></a>
+                    <span class="game-mode-button">CC Licenses:</span>
+                    <a class="game-mode-button license_by_nc_sa" href="?s=by-nc-sa"></a>
+                    <a class="game-mode-button license_by_sa" href="?s=by-sa"></a>
                 </div>
             </div>
             <br>
             <div id="maps-output" class="maps-output"></div>
             <div class="row">
                 <div class="col-md-12">
-                    <hr>
-                    <footer>
-                        <ul class="nav nav-pills">
-                            <li class="pull-left stattrack-copyright-year"></li>
-                            <li class="pull-right"><a href="/contact">Contact</a></li>
-                            <li class="pull-right"><a href="/ban">Ban List</a></li>
-                            <li class="pull-right"><a href="https://github.com/StatTrack/StatTrack.github.io/issues" target="_blank">Report an Issue</a></li>
-                        </ul>
-                    </footer>
+                  <hr>
+                  <footer>
+                      <ul class="nav nav-pills">
+                          <li class="resourcepile-copyright-year"></li>
+                      </ul>
+                  </footer>
+                  <br>
                 </div>
             </div>
         </div>
