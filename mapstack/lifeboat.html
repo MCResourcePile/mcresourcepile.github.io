@@ -14,9 +14,9 @@
         <script src="../assets/js/bootstrap.min.js"></script>
         <script src="../assets/js/handlebars.js"></script>
         <script>
-            Handlebars.registerHelper( "checkLicense", function(license){                      
-                if (license == '1'){return 'CC BY-SA';}                      
-                if (license == '2'){return 'CC BY-NC-SA';}                       
+            Handlebars.registerHelper( "checkLicense", function(license){
+                if (license == '1'){return 'CC BY-SA';}
+                if (license == '2'){return 'CC BY-NC-SA';}
             });
         </script>
         <script src="../assets/js/jquery.searchable-1.1.0.min.js"></script>
@@ -252,6 +252,7 @@
                   <footer>
                       <ul class="nav nav-pills">
                           <li class="resourcepile-copyright-year"></li>
+                          <li class="pull-right"><a href="../revisions/website">Revisions</a></li>
                       </ul>
                   </footer>
                   <br>
@@ -269,7 +270,7 @@
             setTimeout(function () {
                 makeSearchable()
             }, 1000);
-            
+
             $(document).on('ready', function(){
                 makeSearchable()
             })

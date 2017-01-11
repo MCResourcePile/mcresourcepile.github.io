@@ -83,7 +83,7 @@
                                     {{#record_first}}
                                         {{#if player_name}}<a href="?s={{player_name}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=24"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=24">{{/if}}
                                         <span class="record-description {{#unless distance}}record-unverified{{/unless}}">
-                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}">{{player_name}}</a>{{else}}Ghost{{/if}} 
+                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}">{{player_name}}</a>{{else}}Ghost{{/if}}
                                             <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
                                             {{#if distance}}{{distance}} blocks{{else}}0 blocks{{/if}}
                                             {{#if evidence}}
@@ -100,7 +100,7 @@
                                     {{#record_second}}
                                         {{#if player_name}}<a href="?s={{player_name}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16">{{/if}}
                                         <span class="record-description {{#unless distance}}record-unverified{{/unless}}">
-                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}">{{player_name}}</a>{{else}}Ghost{{/if}} 
+                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}">{{player_name}}</a>{{else}}Ghost{{/if}}
                                             <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
                                             {{#if distance}}{{distance}} blocks{{else}}0 blocks{{/if}}
                                             {{#if evidence}}
@@ -115,9 +115,9 @@
                                     {{#record_third}}
                                         {{#if player_name}}<a href="?s={{player_name}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16">{{/if}}
                                         <span class="record-description {{#unless distance}}record-unverified{{/unless}}">
-                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}">{{player_name}}</a>{{else}}Ghost{{/if}} 
+                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}">{{player_name}}</a>{{else}}Ghost{{/if}}
                                             <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
-                                            {{#if distance}}{{distance}} blocks{{else}}0 blocks{{/if}} 
+                                            {{#if distance}}{{distance}} blocks{{else}}0 blocks{{/if}}
                                             {{#if evidence}}
                                             <span class="record-evidence" data-toggle="tooltip" data-placement="top" title="Record Evidence">
                                                 <a href="{{evidence}}" target="_blank"><i class="fa fa-tag" aria-hidden="true"></i></a>
@@ -132,7 +132,7 @@
                     </tr>
                     {{/records}}
                 </tbody>
-            </table> 
+            </table>
         </script>
     </head>
     <body>
@@ -223,14 +223,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <hr>
-                    <footer>
-                        <ul class="nav nav-pills">
-                            <li class="pull-left stattrack-copyright-year"></li>
-                            <li class="pull-right"><a href="/contact">Contact</a></li>
-                            <li class="pull-right"><a href="/ban">Ban List</a></li>
-                            <li class="pull-right"><a href="https://github.com/StatTrack/StatTrack.github.io/issues" target="_blank">Report an Issue</a></li>
-                        </ul>
-                    </footer>
+                        <footer>
+                            <ul class="nav nav-pills">
+                                <li class="resourcepile-copyright-year"></li>
+                                <li class="pull-right"><a href="../../revisions/website">Revisions</a></li>
+                            </ul>
+                        </footer>
+                    <br>
                 </div>
             </div>
         </div>
@@ -245,7 +244,7 @@
             setTimeout(function () {
                 makeSearchable()
             }, 1000);
-            
+
             $(document).on('ready', function(){
                 makeSearchable()
             })
