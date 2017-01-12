@@ -53,7 +53,7 @@ window.onload = function() {
             tags: [ {skywars: true} ],
             discussion: "#",
             BY_NC_SA: true,
-            download: true,
+            download: false,
             xml: true,
             cardinal: false,
         }, {
