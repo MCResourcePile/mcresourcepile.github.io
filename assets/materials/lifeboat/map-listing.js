@@ -14,7 +14,7 @@ window.onload = function() {
             tags: [ {ctw: true} ],
             discussion: "#",
             BY_NC_SA: true,
-            download: true,
+            download: false,
             xml: true,
             cardinal: false,
         }, {
