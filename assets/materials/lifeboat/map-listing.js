@@ -17,6 +17,19 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Ces",
+            slug: "ces",
+            path: "DTM/Standard/Ces/",
+            authors: [
+                {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
+            ],
+            tags: [ {dtm: true} ],
+            discussion: "#",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Fracture",
             slug: "fracture",
             path: "KOTH/Standard/Fracture/",
