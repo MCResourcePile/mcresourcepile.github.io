@@ -3,386 +3,541 @@ window.onload = function() {
     var template = Handlebars.compile(source);
     var data = {
         records: [
-			{
-				"map": "4K",
-				"slug": "4k",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "46", "evidence": ""}],
-				"record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "45", "evidence": ""}]
-			},
-			{
-				"map": "Abysm: Blitz",
-				"slug": "abysm__blitz",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "47", "evidence": ""}]
-			},
-			{
-				"map": "Aerugo",
-				"slug": "aerugo",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Aqua Zero",
-				"slug": "aqua_zero",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Arbaro Blitz",
-				"slug": "arbaro_blitz",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Battle Ecliptica II TE : Blitz",
-				"slug": "battle_ecliptica_ii_te___blitz",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "105", "evidence": ""}],
-				"record_second": [{"player_name": "vandal", "player_uuid": "b91f17e5-afc3-4482-9bbd-141b26e0f630", "distance": "94", "evidence": ""}],
-				"record_third": [{"player_name": "NerdifiedGames", "player_uuid": "5f267306-27e4-4e95-9ddb-e717687685e9", "distance": "78", "evidence": ""}]
-			},
-			{
-				"map": "Battle of Lyndanisse Blitz",
-				"slug": "battle_of_lyndanisse_blitz",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Bliss",
-				"slug": "bliss",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "ApplePies", "player_uuid": "4faf501d-f965-4f07-887e-24cd66a4f7b0", "distance": "72", "evidence": ""}],
-				"record_second": [{"player_name": "SailorMojo", "player_uuid": "a53ab2da-36ed-4886-ac2a-49696de4622f", "distance": "69", "evidence": ""}],
-				"record_third": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "66", "evidence": ""}]
-			},
-			{
-				"map": "BlitzMiners",
-				"slug": "blitzminers",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Blitzkrieg",
-				"slug": "blitzkrieg",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "llwydz", "player_uuid": "76aaae9b-8566-4624-9fcf-199172e5285a", "distance": "99", "evidence": ""}],
-				"record_second": [{"player_name": "Hoodovah", "player_uuid": "bd029cbe-ec66-48cb-8760-6509c1607328", "distance": "74", "evidence": ""}],
-				"record_third": [{"player_name": "Ny_", "player_uuid": "a43135a4-d7b9-49ab-ac8d-a16bb2513c8d", "distance": "65", "evidence": ""}]
-			},
-			{
-				"map": "Cacti Panic",
-				"slug": "cacti_panic",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Cairo Blitz",
-				"slug": "cairo_blitz",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Cake Wars 3",
-				"slug": "cake_wars_3",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "CannonQuad",
-				"slug": "cannonquad",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "CatalystMC Blitz",
-				"slug": "catalystmc_blitz",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Chicken Run!",
-				"slug": "chicken_run_",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "CotBot",
-				"slug": "cotbot",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "51", "evidence": ""}],
-				"record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "37", "evidence": ""}]
-			},
-			{
-				"map": "Crossfire",
-				"slug": "crossfire",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "specialness", "player_uuid": "7d79c7cd-ca47-484a-86ad-ad93fe71b13f", "distance": "159", "evidence": ""}],
-				"record_second": [{"player_name": "iPho_", "player_uuid": "4bda0bb3-83ce-4ff8-9cce-0e9a2f71e698", "distance": "188", "evidence": ""}],
-				"record_third": [{"player_name": "pulbos2", "player_uuid": "ab8a0c0e-f609-417c-9b07-ceacf2320cbe", "distance": "188", "evidence": ""}]
-			},
-			{
-				"map": "Cruor Castle Blitz",
-				"slug": "cruor_castle_blitz",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Dead Heat",
-				"slug": "dead_heat",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "DeadWater Pirate's Grotto",
-				"slug": "deadwater_pirate_s_grotto",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "DeadWater Docks",
-				"slug": "deadwater_docks",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Drow's Crevice Blitz",
-				"slug": "drow_s_crevice_blitz",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Drow's Crevice UHC",
-				"slug": "drow_s_crevice_uhc",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Dry Gulch",
-				"slug": "dry_gulch",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "30", "evidence": ""}]
-			},
-			{
-				"map": "Dust Blitz",
-				"slug": "dust_blitz",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Flexure",
-				"slug": "flexure",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Forbidden Paradise",
-				"slug": "forbidden_paradise",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "46", "evidence": ""}]
-			},
-			{
-				"map": "Harb Blitz",
-				"slug": "harb_blitz",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "Brownbadger", "player_uuid": "046e572b-5e0c-44e5-951c-69b041ac31b1", "distance": "37", "evidence": ""}],
-				"record_second": [{"player_name": "U_I", "player_uuid": "6b369f74-f865-435d-812c-81f167373c3b", "distance": "25", "evidence": ""}]
-			},
-			{
-				"map": "Horizon",
-				"slug": "horizon",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Icy Peaks Blitz",
-				"slug": "icy_peaks_blitz",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "45", "evidence": ""}],
-				"record_second": [{"player_name": "GhostKiller612", "player_uuid": "b26dd03a-dc9a-4dae-ba57-9cefe8ae878e", "distance": "45", "evidence": ""}]
-			},
-			{
-				"map": "Industrial Citadel",
-				"slug": "industrial_citadel",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Industry",
-				"slug": "industry",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Lost Woods",
-				"slug": "lost_woods",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Lunar Coliseum Blitz",
-				"slug": "lunar_coliseum_blitz",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "34", "evidence": ""}]
-			},
-			{
-				"map": "Melody",
-				"slug": "melody",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Metallicus",
-				"slug": "metallicus",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "4KNerd", "player_uuid": "fd49fdb8-1552-46aa-a413-3945d3b5f8bc", "distance": "46", "evidence": ""}],
-				"__record_second__": [{"player_name": "EndangeredKoala", "player_uuid": "ebcb9401-ea2d-4f81-b393-a44a232c14dc", "distance": "32", "evidence": ""}]
-			},
-			{
-				"map": "Nightlife",
-				"slug": "nightlife",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "Ny_", "player_uuid": "a43135a4-d7b9-49ab-ac8d-a16bb2513c8d", "distance": "75", "evidence": ""}],
-				"record_second": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "61", "evidence": ""}],
-				"record_third": [{"player_name": "Syvoxo", "player_uuid": "1c2664be01ce4be4ac1ca4dcc64b80c7", "distance": "61", "evidence": ""}]
-			},
-			{
-				"map": "No Return",
-				"slug": "no_return",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "latiku", "player_uuid": "60177c3c-8c10-41c1-959c-1c0744d299e3", "distance": "100", "evidence": ""}],
-				"record_second": [{"player_name": "Ny_", "player_uuid": "a43135a4-d7b9-49ab-ac8d-a16bb2513c8d", "distance": "81", "evidence": ""}],
-				"record_third": [{"player_name": "Joshua", "player_uuid": "d51c89fd-d043-4a2c-8548-7393389d9595", "distance": "74", "evidence": ""}]
-			},
-			{
-				"map": "Osage",
-				"slug": "osage",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Overgrown Blitz",
-				"slug": "overgrown_blitz",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Osage",
-				"slug": "osage",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "56", "evidence": ""}]
-			},
-			{
-				"map": "Ozone Blitz",
-				"slug": "ozone_blitz",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Quatuor",
-				"slug": "quatuor",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Pebble Beach",
-				"slug": "pebble_beach",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "57", "evidence": ""}],
-				"record_second": [{"player_name": "SailorMojo", "player_uuid": "a53ab2da-36ed-4886-ac2a-49696de4622f", "distance": "56", "evidence": ""}]
-			},
-			{
-				"map": "Relapse : UHC",
-				"slug": "relapse___uhc",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "27", "evidence": ""}]
-			},
-			{
-				"map": "Seckuded Islands",
-				"slug": "seckuded_islands",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Secluded Lakes",
-				"slug": "secluded_lakes",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "54", "evidence": ""}]
-			},
-			{
-				"map": "Skyfall",
-				"slug": "skyfall",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "TNT Spleef",
-				"slug": "tnt_spleef",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "The Arena Blitz",
-				"slug": "the_arena_blitz",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "41", "evidence": ""}]
-			},
-			{
-				"map": "The Complex",
-				"slug": "the_complex",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Treeline",
-				"slug": "treeline",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Twilight Zone",
-				"slug": "twilight_zone",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Venice Blitz",
-				"slug": "venice_blitz",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "49", "evidence": ""}]
-			},
-			{
-				"map": "Vertical Shift",
-				"slug": "vertical_shift",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Viridun Blitz",
-				"slug": "viridun_blitz",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "Babalooba", "player_uuid": "304484f5-c690-4b11-b6d6-3354381425b0", "distance": "71", "evidence": ""}],
-				"record_second": [{"player_name": "zofran4", "player_uuid": "3c74f92c-8e6a-4517-a546-1f06fc076424", "distance": "53", "evidence": ""}]
-			},
-			{
-				"map": "Wind Waker",
-				"slug": "wind_waker",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "45", "evidence": ""}],
-				"record_second": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "32", "evidence": ""}]
-			},
-			{
-				"map": "ArBOOro Blitz",
-				"slug": "arbooro_blitz",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Deadwater Spooks",
-				"slug": "deadwater_spooks",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Hallowed Relapse - UHSpooky",
-				"slug": "hallowed_relapse___uhspooky",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Scareliegra",
-				"slug": "scareliegra",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Undead Heat",
-				"slug": "undead_heat",
-				"tags": [{"blitz": true}]
-			},
-			{
-				"map": "Aeruhohoho",
-				"slug": "aeruhohoho",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "21", "evidence": ""}]
-			},
-			{
-				"map": "Arbaro Blitzmas",
-				"slug": "arbaro_blitzmas",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "37", "evidence": ""}]
-			},
-			{
-				"map": "Yule Blitz",
-				"slug": "yule_blitz",
-				"tags": [{"blitz": true}],
-				"record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "14", "evidence": ""}]
-			},
-			{
+	        {
+                "map": "4K",
+                "slug": "4k",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "46", "evidence": ""}],
+                "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "45", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Abysm: Blitz",
+                "slug": "abysm__blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "47", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Aerugo",
+                "slug": "aerugo",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Aqua Zero",
+                "slug": "aqua_zero",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Arbaro Blitz",
+                "slug": "arbaro_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Battle Ecliptica II TE : Blitz",
+                "slug": "battle_ecliptica_ii_te___blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "105", "evidence": ""}],
+                "record_second": [{"player_name": "vandal", "player_uuid": "b91f17e5-afc3-4482-9bbd-141b26e0f630", "distance": "94", "evidence": ""}],
+                "record_third": [{"player_name": "NerdifiedGames", "player_uuid": "5f267306-27e4-4e95-9ddb-e717687685e9", "distance": "78", "evidence": ""}]
+            },
+            {
+                "map": "Battle of Lyndanisse Blitz",
+                "slug": "battle_of_lyndanisse_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Bliss",
+                "slug": "bliss",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "ApplePies", "player_uuid": "4faf501d-f965-4f07-887e-24cd66a4f7b0", "distance": "72", "evidence": ""}],
+                "record_second": [{"player_name": "SailorMojo", "player_uuid": "a53ab2da-36ed-4886-ac2a-49696de4622f", "distance": "69", "evidence": ""}],
+                "record_third": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "66", "evidence": ""}]
+            },
+            {
+                "map": "BlitzMiners",
+                "slug": "blitzminers",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Blitzkrieg",
+                "slug": "blitzkrieg",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "llwydz", "player_uuid": "76aaae9b-8566-4624-9fcf-199172e5285a", "distance": "99", "evidence": ""}],
+                "record_second": [{"player_name": "Hoodovah", "player_uuid": "bd029cbe-ec66-48cb-8760-6509c1607328", "distance": "74", "evidence": ""}],
+                "record_third": [{"player_name": "Ny_", "player_uuid": "a43135a4-d7b9-49ab-ac8d-a16bb2513c8d", "distance": "65", "evidence": ""}]
+            },
+            {
+                "map": "Cacti Panic",
+                "slug": "cacti_panic",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Cairo Blitz",
+                "slug": "cairo_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Cake Wars 3",
+                "slug": "cake_wars_3",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "CannonQuad",
+                "slug": "cannonquad",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "CatalystMC Blitz",
+                "slug": "catalystmc_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Chicken Run!",
+                "slug": "chicken_run_",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "CotBot",
+                "slug": "cotbot",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "51", "evidence": ""}],
+                "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "37", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Crossfire",
+                "slug": "crossfire",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "specialness", "player_uuid": "7d79c7cd-ca47-484a-86ad-ad93fe71b13f", "distance": "159", "evidence": ""}],
+                "record_second": [{"player_name": "iPho_", "player_uuid": "4bda0bb3-83ce-4ff8-9cce-0e9a2f71e698", "distance": "188", "evidence": ""}],
+                "record_third": [{"player_name": "pulbos2", "player_uuid": "ab8a0c0e-f609-417c-9b07-ceacf2320cbe", "distance": "188", "evidence": ""}]
+            },
+            {
+                "map": "Cruor Castle Blitz",
+                "slug": "cruor_castle_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Dead Heat",
+                "slug": "dead_heat",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "DeadWater Pirate's Grotto",
+                "slug": "deadwater_pirate_s_grotto",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "DeadWater Docks",
+                "slug": "deadwater_docks",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Drow's Crevice Blitz",
+                "slug": "drow_s_crevice_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Drow's Crevice UHC",
+                "slug": "drow_s_crevice_uhc",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Dry Gulch",
+                "slug": "dry_gulch",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "30", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Dust Blitz",
+                "slug": "dust_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Flexure",
+                "slug": "flexure",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Forbidden Paradise",
+                "slug": "forbidden_paradise",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "46", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Harb Blitz",
+                "slug": "harb_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "Brownbadger", "player_uuid": "046e572b-5e0c-44e5-951c-69b041ac31b1", "distance": "37", "evidence": ""}],
+                "record_second": [{"player_name": "U_I", "player_uuid": "6b369f74-f865-435d-812c-81f167373c3b", "distance": "25", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Horizon",
+                "slug": "horizon",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Icy Peaks Blitz",
+                "slug": "icy_peaks_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "45", "evidence": ""}],
+                "record_second": [{"player_name": "GhostKiller612", "player_uuid": "b26dd03a-dc9a-4dae-ba57-9cefe8ae878e", "distance": "45", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Industrial Citadel",
+                "slug": "industrial_citadel",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Industry",
+                "slug": "industry",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Lost Woods",
+                "slug": "lost_woods",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Lunar Coliseum Blitz",
+                "slug": "lunar_coliseum_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "34", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Melody",
+                "slug": "melody",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Metallicus",
+                "slug": "metallicus",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "4KNerd", "player_uuid": "fd49fdb8-1552-46aa-a413-3945d3b5f8bc", "distance": "46", "evidence": ""}],
+                "record_second": [{"player_name": "EndangeredKoala", "player_uuid": "ebcb9401-ea2d-4f81-b393-a44a232c14dc", "distance": "32", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Nightlife",
+                "slug": "nightlife",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "Ny_", "player_uuid": "a43135a4-d7b9-49ab-ac8d-a16bb2513c8d", "distance": "75", "evidence": ""}],
+                "record_second": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "61", "evidence": ""}],
+                "record_third": [{"player_name": "Syvoxo", "player_uuid": "1c2664be01ce4be4ac1ca4dcc64b80c7", "distance": "61", "evidence": ""}]
+            },
+            {
+                "map": "No Return",
+                "slug": "no_return",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "latiku", "player_uuid": "60177c3c-8c10-41c1-959c-1c0744d299e3", "distance": "100", "evidence": ""}],
+                "record_second": [{"player_name": "Ny_", "player_uuid": "a43135a4-d7b9-49ab-ac8d-a16bb2513c8d", "distance": "81", "evidence": ""}],
+                "record_third": [{"player_name": "Joshua", "player_uuid": "d51c89fd-d043-4a2c-8548-7393389d9595", "distance": "74", "evidence": ""}]
+            },
+            {
+                "map": "Osage",
+                "slug": "osage",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Overgrown Blitz",
+                "slug": "overgrown_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Osage",
+                "slug": "osage",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "56", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Ozone Blitz",
+                "slug": "ozone_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Quatuor",
+                "slug": "quatuor",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Pebble Beach",
+                "slug": "pebble_beach",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "57", "evidence": ""}],
+                "record_second": [{"player_name": "SailorMojo", "player_uuid": "a53ab2da-36ed-4886-ac2a-49696de4622f", "distance": "56", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Relapse : UHC",
+                "slug": "relapse___uhc",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "27", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Seckuded Islands",
+                "slug": "seckuded_islands",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Secluded Lakes",
+                "slug": "secluded_lakes",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "54", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Skyfall",
+                "slug": "skyfall",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "TNT Spleef",
+                "slug": "tnt_spleef",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "The Arena Blitz",
+                "slug": "the_arena_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "41", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "The Complex",
+                "slug": "the_complex",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Treeline",
+                "slug": "treeline",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Twilight Zone",
+                "slug": "twilight_zone",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Venice Blitz",
+                "slug": "venice_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "49", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Vertical Shift",
+                "slug": "vertical_shift",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Viridun Blitz",
+                "slug": "viridun_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "Babalooba", "player_uuid": "304484f5-c690-4b11-b6d6-3354381425b0", "distance": "71", "evidence": ""}],
+                "record_second": [{"player_name": "zofran4", "player_uuid": "3c74f92c-8e6a-4517-a546-1f06fc076424", "distance": "53", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Wind Waker",
+                "slug": "wind_waker",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "45", "evidence": ""}],
+                "record_second": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "32", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "ArBOOro Blitz",
+                "slug": "arbooro_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Deadwater Spooks",
+                "slug": "deadwater_spooks",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Hallowed Relapse - UHSpooky",
+                "slug": "hallowed_relapse___uhspooky",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Scareliegra",
+                "slug": "scareliegra",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Undead Heat",
+                "slug": "undead_heat",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Aeruhohoho",
+                "slug": "aeruhohoho",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "21", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Arbaro Blitzmas",
+                "slug": "arbaro_blitzmas",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "37", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Yule Blitz",
+                "slug": "yule_blitz",
+                "tags": [{"blitz": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "14", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+			    {
                 "map": "100 Rooms",
                 "slug": "100_rooms",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "101 Rooms",
@@ -404,7 +559,9 @@ window.onload = function() {
                 "map": "Arx Rage",
                 "slug": "arx_rage",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "Simonaro", "player_uuid": "bbd68526-bb64-4de6-a725-9a4b917fb905", "distance": "52", "evidence": ""}]
+                "record_first": [{"player_name": "Simonaro", "player_uuid": "bbd68526-bb64-4de6-a725-9a4b917fb905", "distance": "52", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Atlantis",
@@ -419,7 +576,8 @@ window.onload = function() {
                 "slug": "aureola_rage",
                 "tags": [{"rage": true}],
                 "record_first": [{"player_name": "MeMyselfAndGhost", "player_uuid": "745bd516-ca42-4cad-a5d0-6da5b62af900", "distance": "26", "evidence": ""}],
-                "record_second": [{"player_name": "chapszz", "player_uuid": "9c670caa-bc00-4920-b3e2-d24ad8a8c9c5", "distance": "11", "evidence": ""}]
+                "record_second": [{"player_name": "chapszz", "player_uuid": "9c670caa-bc00-4920-b3e2-d24ad8a8c9c5", "distance": "11", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "BipBetaMC",
@@ -440,14 +598,18 @@ window.onload = function() {
             {
                 "map": "Blossom",
                 "slug": "blossom",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Bouncy Stadium",
                 "slug": "bouncy_stadium",
                 "tags": [{"rage": true}],
                 "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "130", "evidence": ""}],
-                "record_second": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "30", "evidence": ""}]
+                "record_second": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "30", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "BVC",
@@ -460,7 +622,10 @@ window.onload = function() {
             {
                 "map": "Cubed",
                 "slug": "cubed",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Dead Town",
@@ -483,7 +648,8 @@ window.onload = function() {
                 "slug": "drandlion",
                 "tags": [{"rage": true}],
                 "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "73", "evidence": ""}],
-                "record_second": [{"player_name": "Creephunter", "player_uuid": "95763a18-eb88-44e7-8a10-780acffceae8", "distance": "42", "evidence": ""}]
+                "record_second": [{"player_name": "Creephunter", "player_uuid": "95763a18-eb88-44e7-8a10-780acffceae8", "distance": "42", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Dry Wound",
@@ -506,7 +672,8 @@ window.onload = function() {
                 "slug": "fallen_empire",
                 "tags": [{"rage": true}],
                 "record_first": [{"player_name": "Eggyyyy", "player_uuid": "e4b99cb2-9d7a-49a5-9743-f5b107d21053", "distance": "105", "evidence": ""}],
-                "record_second": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "96", "evidence": ""}]
+                "record_second": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "96", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Foxtrot",
@@ -520,7 +687,9 @@ window.onload = function() {
                 "map": "Gone Camping",
                 "slug": "gone_camping",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "27", "evidence": ""}]
+                "record_first": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "27", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Gooseberry",
@@ -550,24 +719,33 @@ window.onload = function() {
                 "map": "Hanging Garden",
                 "slug": "hanging_garden",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "51", "evidence": ""}]
+                "record_first": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "51", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Hand of God",
                 "slug": "hand_of_god",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "52", "evidence": ""}]
+                "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "52", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Ieats Hall",
                 "slug": "ieats_hall",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "Administrators", "player_uuid": "ae9d6074-bb27-4bbe-97ce-2d446f307a24", "distance": "62", "evidence": ""}]
+                "record_first": [{"player_name": "Administrators", "player_uuid": "ae9d6074-bb27-4bbe-97ce-2d446f307a24", "distance": "62", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Immortal",
                 "slug": "immortal",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Infinite",
@@ -589,13 +767,17 @@ window.onload = function() {
                 "map": "Java",
                 "slug": "java",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "45", "evidence": ""}]
+                "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "45", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Kozicu",
                 "slug": "kozicu",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "SheriffSoco", "player_uuid": "6e347123-c684-4d7e-996c-44d4924ff172", "distance": "28", "evidence": ""}]
+                "record_first": [{"player_name": "SheriffSoco", "player_uuid": "6e347123-c684-4d7e-996c-44d4924ff172", "distance": "28", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Lush",
@@ -624,29 +806,42 @@ window.onload = function() {
             {
                 "map": "Network",
                 "slug": "network",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Oculo",
                 "slug": "oculo",
                 "tags": [{"rage": true}],
                 "record_first": [{"player_name": "vandal", "player_uuid": "b91f17e5-afc3-4482-9bbd-141b26e0f630", "distance": "37", "evidence": ""}],
-                "record_second": [{"player_name": "Glalie", "player_uuid": "c64ff44d-0bc3-44c9-a611-e872903c6152", "distance": "0", "evidence": ""}]
+                "record_second": [{"player_name": "Glalie", "player_uuid": "c64ff44d-0bc3-44c9-a611-e872903c6152", "distance": "0", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Overgrown Rage",
                 "slug": "overgrown_rage",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Palude",
                 "slug": "palude",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Permeac",
                 "slug": "permeac",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Plus Side",
@@ -661,7 +856,8 @@ window.onload = function() {
                 "slug": "pride",
                 "tags": [{"rage": true}],
                 "record_first": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "75", "evidence": ""}],
-                "record_second": [{"player_name": "NerdifiedGames", "player_uuid": "5f267306-27e4-4e95-9ddb-e717687685e9", "distance": "61", "evidence": ""}]
+                "record_second": [{"player_name": "NerdifiedGames", "player_uuid": "5f267306-27e4-4e95-9ddb-e717687685e9", "distance": "61", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Proelium",
@@ -690,7 +886,10 @@ window.onload = function() {
             {
                 "map": "Rage Maze",
                 "slug": "rage_maze",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Rage Quit",
@@ -712,7 +911,9 @@ window.onload = function() {
                 "map": "Sand Wall",
                 "slug": "sand_wall",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "43", "evidence": ""}]
+                "record_first": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "43", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Secluded Oasis",
@@ -734,7 +935,9 @@ window.onload = function() {
                 "map": "Snow Globe",
                 "slug": "snow_globe",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "Dumpling", "player_uuid": "2719fe11-9a96-4c86-a4b8-6c69c26c8294", "distance": "4", "evidence": ""}]
+                "record_first": [{"player_name": "Dumpling", "player_uuid": "2719fe11-9a96-4c86-a4b8-6c69c26c8294", "distance": "4", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Swarthmoor",
@@ -780,7 +983,9 @@ window.onload = function() {
                 "map": "Trinity",
                 "slug": "trinity",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "92", "evidence": ""}]
+                "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "92", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Vinebay",
@@ -793,7 +998,10 @@ window.onload = function() {
             {
                 "map": "Yukon",
                 "slug": "yukon",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Zen",
@@ -806,60 +1014,82 @@ window.onload = function() {
             {
                 "map": "101 Pumpkins",
                 "slug": "101_pumpkins",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "BipBeta Halloween",
                 "slug": "bipbeta_halloween",
                 "tags": [{"rage": true}],
                 "record_first": [{"player_name": "MeMyselfAndGhost", "player_uuid": "745bd516-ca42-4cad-a5d0-6da5b62af900", "distance": "18", "evidence": ""}],
-                "record_second": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "9", "evidence": ""}]
+                "record_second": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "9", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Hallow Side",
                 "slug": "hallow_side",
                 "tags": [{"rage": true}],
                 "record_first": [{"player_name": "pulbos2", "player_uuid": "ab8a0c0e-f609-417c-9b07-ceacf2320cbe", "distance": "114", "evidence": ""}],
-                "record_second": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "91", "evidence": ""}]
+                "record_second": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "91", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Infinite Horror",
                 "slug": "infinite_horror",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "101", "evidence": ""}]
+                "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "101", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Into the Jack o' Lantern",
                 "slug": "into_the_jack_o__lantern",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "MeMyselfAndGhost", "player_uuid": "745bd516-ca42-4cad-a5d0-6da5b62af900", "distance": "25", "evidence": ""}]
+                "record_first": [{"player_name": "MeMyselfAndGhost", "player_uuid": "745bd516-ca42-4cad-a5d0-6da5b62af900", "distance": "25", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Sore Teeth",
                 "slug": "sore_teeth",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "55", "evidence": ""}]
+                "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "55", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Christmas Eve",
                 "slug": "christmas_eve",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "Administrators", "player_uuid": "ae9d6074-bb27-4bbe-97ce-2d446f307a24", "distance": "70", "evidence": ""}]
+                "record_first": [{"player_name": "Administrators", "player_uuid": "ae9d6074-bb27-4bbe-97ce-2d446f307a24", "distance": "70", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Deadwater Chills",
                 "slug": "deadwater_chills",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Feative Relapse",
                 "slug": "feative_relapse",
-                "tags": [{"rage": true}]
+                "tags": [{"rage": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Anathema",
                 "slug": "anathema",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Assault",
@@ -872,35 +1102,50 @@ window.onload = function() {
             {
                 "map": "Aureola CTF",
                 "slug": "aureola_ctf",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Battle Ecliptica CTF",
                 "slug": "battle_ecliptica_ctf",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "38", "evidence": ""}]
+                "record_first": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "38", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Battle Ecliptica CTF - Experiment 1",
                 "slug": "battle_ecliptica_ctf___experiment_1",
                 "tags": [{"ctf": true}],
                 "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "82", "evidence": ""}],
-                "record_second": [{"player_name": "Itz_micyFire_PvP", "player_uuid": "4ee7a4e8-38e6-4583-967d-99f909f04161", "distance": "29", "evidence": ""}]
+                "record_second": [{"player_name": "Itz_micyFire_PvP", "player_uuid": "4ee7a4e8-38e6-4583-967d-99f909f04161", "distance": "29", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Bill's Town",
                 "slug": "bill_s_town",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Blitzkrieg: CTF",
                 "slug": "blitzkrieg__ctf",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Cabin Fever II",
                 "slug": "cabin_fever_ii",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Canopy",
@@ -913,25 +1158,34 @@ window.onload = function() {
             {
                 "map": "Chocolate Diamonds CTF",
                 "slug": "chocolate_diamonds_ctf",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Concourse",
                 "slug": "concourse",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "55", "evidence": ""}]
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "55", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Coniferous Forest",
                 "slug": "coniferous_forest",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Desert Sanctuary",
                 "slug": "desert_sanctuary",
                 "tags": [{"ctf": true}],
                 "record_first": [{"player_name": "petranhoses", "player_uuid": "0ba4c67b-9945-4c4f-9eef-8b5b4cd6ca69", "distance": "115", "evidence": ""}],
-                "record_second": [{"player_name": "Tulaaa", "player_uuid": "50c309d3-ef28-47a2-af9a-0279c36a83a1", "distance": "72", "evidence": ""}]
+                "record_second": [{"player_name": "Tulaaa", "player_uuid": "50c309d3-ef28-47a2-af9a-0279c36a83a1", "distance": "72", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Directrix",
@@ -945,35 +1199,49 @@ window.onload = function() {
                 "map": "Directrix with Gunz",
                 "slug": "directrix_with_gunz",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "Strangey", "player_uuid": "621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06", "distance": "164", "evidence": ""}]
+                "record_first": [{"player_name": "Strangey", "player_uuid": "621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06", "distance": "164", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Divided",
                 "slug": "divided",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "59", "evidence": ""}]
+                "record_first": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "59", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Dust CTF",
                 "slug": "dust_ctf",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "36", "evidence": ""}]
+                "record_first": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "36", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Flag Run",
                 "slug": "flag_run",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "76", "evidence": ""}]
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "76", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Harb CTF",
                 "slug": "harb_ctf",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Grub",
                 "slug": "grub",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Justice",
@@ -994,7 +1262,10 @@ window.onload = function() {
             {
                 "map": "Les",
                 "slug": "les",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Lost World: CTF",
@@ -1008,28 +1279,41 @@ window.onload = function() {
                 "map": "Palace CTF",
                 "slug": "palace_ctf",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "64", "evidence": ""}]
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "64", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "QuakeCTF",
                 "slug": "quakectf",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Safehouse",
                 "slug": "safehouse",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Shrine",
                 "slug": "shrine",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Snowy Wars CTF",
                 "slug": "snowy_wars_ctf",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "85", "evidence": ""}]
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "85", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "SuperCUBE",
@@ -1043,18 +1327,25 @@ window.onload = function() {
                 "map": "TF2: Badlands CTF",
                 "slug": "tf2__badlands_ctf",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "4", "evidence": ""}]
+                "record_first": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "4", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "The Complex CTF",
                 "slug": "the_complex_ctf",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "97", "evidence": ""}]
+                "record_first": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "97", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "The Fenland CTF",
                 "slug": "the_fenland_ctf",
-                "tags": [{"ctf": true}]
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "The Grove",
@@ -1077,19 +1368,24 @@ window.onload = function() {
                 "slug": "ubos_ctf",
                 "tags": [{"ctf": true}],
                 "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "65", "evidence": ""}],
-                "record_second": [{"player_name": "Yoyo_", "player_uuid": "07fa10c6-f564-4630-861e-fe134ae27527", "distance": "10", "evidence": ""}]
+                "record_second": [{"player_name": "Yoyo_", "player_uuid": "07fa10c6-f564-4630-861e-fe134ae27527", "distance": "10", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Viridun CTF",
                 "slug": "viridun_ctf",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "99", "evidence": ""}]
+                "record_first": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "99", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Warlock CTF",
                 "slug": "warlock_ctf",
                 "tags": [{"ctf": true}],
-                "record_first": [{"player_name": "NerdifiedGames", "player_uuid": "5f267306-27e4-4e95-9ddb-e717687685e9", "distance": "41", "evidence": ""}]
+                "record_first": [{"player_name": "NerdifiedGames", "player_uuid": "5f267306-27e4-4e95-9ddb-e717687685e9", "distance": "41", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Xyth CTF",
