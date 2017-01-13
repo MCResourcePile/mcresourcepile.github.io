@@ -39,11 +39,13 @@
     .game_tdm:before {content: "TDM"}
     .game_tournament:before {content: "Tournament"}
     
-    .license_by_nc_sa:before {content: "BY NC SA"}
-    .license_by_sa:before {content: "BY SA"}
+    .license_by_nc_sa:before {content: "BYNCSA"}
+    .license_by_sa:before {content: "BYSA"}
 }
 
 .tag_hidden {display: none}
-li.game_tag { display: inline; list-style-type: none; }
-li.game_tag:after { content: ", "; }
-li.game_tag:last-child:after { content: ""; }
+li.game-tag {display: inline; list-style-type: none;}
+li.game-tag:after {content: ", ";}
+li.game-tag:last-child:after {content: "";}
+li.author-tag:nth-child(n+4) {font-size: 0px;}
+li.author-tag:nth-child(4):before {font-size: 13px; content: " and more";}
