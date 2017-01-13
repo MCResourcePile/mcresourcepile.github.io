@@ -12,7 +12,7 @@ window.onload = function() {
                 {player_name: "rockymine", player_uuid: "fe3608b7-d105-4029-8800-34b3147065b6"}
             ],
             tags: [ {ctw: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -38,7 +38,7 @@ window.onload = function() {
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {dtm: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: true,
             xml: true,
@@ -51,7 +51,7 @@ window.onload = function() {
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {skywars: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -59,13 +59,13 @@ window.onload = function() {
         }, {
             map: "Creep Slap: Christmas",
             slug: "creep_slap_christmas",
-            path: "Arcade/Creep%20Slap-Christmas",
+            path: "Arcade/Creep%20Slap-Christmas/",
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"},
                 {player_name: "AtlasGames", player_uuid: "e79fbdc9-627e-4dac-97a6-81a3046220d7"}
             ],
-            tags: [ {arcade: true} ],
-            discussion: "#",
+            tags: [ {arcade: true, season: "Christmas"} ],
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -78,7 +78,7 @@ window.onload = function() {
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {tdm: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -90,8 +90,8 @@ window.onload = function() {
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
-            tags: [ {tdm: true} ],
-            discussion: "#",
+            tags: [ {tdm: true, season: "Halloween"} ],
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -112,12 +112,12 @@ window.onload = function() {
         }, {
             map: "Gift",
             slug: "gift",
-            path: "Skywars/Gift",
+            path: "Skywars/Gift/",
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {skywars: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -125,12 +125,12 @@ window.onload = function() {
         }, {
             map: "Grad",
             slug: "grad",
-            path: "TDM/Standard/Grad",
+            path: "TDM/Standard/Grad/",
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {tdm: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -145,7 +145,7 @@ window.onload = function() {
                 {player_name: "Arzanex", player_uuid: "62b6d081-8df8-4c09-aa15-71141ca7df76"}
             ],
             tags: [ {ctw: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -153,13 +153,13 @@ window.onload = function() {
         }, {
             map: "Ice Pond",
             slug: "icey",
-            path: "Blitz/Rage/Christmas/Icey",
+            path: "Blitz/Rage/Christmas/Icey/",
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"},
                 {player_name: "eza1", player_uuid: "b492b6da-65a6-4eda-92d4-1f010af3c265"}
             ],
-            tags: [ {rage: true} ],
-            discussion: "#",
+            tags: [ {blitz: true, rage: true} ],
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -167,12 +167,12 @@ window.onload = function() {
         }, {
             map: "Infection: Grad",
             slug: "infection_grad",
-            path: "Arcade/Infection/Grad%20Infection",
+            path: "Arcade/Infection/Grad%20Infection/",
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
-            tags: [ {tdm: true} ],
-            discussion: "#",
+            tags: [ {tdm: true, other: "Infection"} ],
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -180,12 +180,12 @@ window.onload = function() {
         }, {
             map: "Les",
             slug: "les",
-            path: "CTF/Standard/Les",
+            path: "CTF/Standard/Les/",
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {ctf: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -193,12 +193,12 @@ window.onload = function() {
         }, {
             map: "Leyst",
             slug: "leyst",
-            path: "Skywars/Leyst",
+            path: "Skywars/Leyst/",
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {skywars: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -211,7 +211,7 @@ window.onload = function() {
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {skywars: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -219,7 +219,7 @@ window.onload = function() {
         }, {
             map: "Pavage",
             slug: "pavage",
-            path: "DTM/Standard/Pavage",
+            path: "DTM/Standard/Pavage/",
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"},
                 {player_name: "Bamby_", player_uuid: "ec80a24a-4e83-4049-8e1d-77abad67e8f3"},
@@ -227,7 +227,7 @@ window.onload = function() {
                 {player_name: "Arzanex", player_uuid: "62b6d081-8df8-4c09-aa15-71141ca7df76"}
             ],
             tags: [ {dtm: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -240,7 +240,7 @@ window.onload = function() {
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {gs: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -252,8 +252,8 @@ window.onload = function() {
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
-            tags: [ {gs: true} ],
-            discussion: "#",
+            tags: [ {gs: true, ffa: true} ],
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -265,8 +265,8 @@ window.onload = function() {
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
-            tags: [ {gs: true} ],
-            discussion: "#",
+            tags: [ {gs: true, season: "Christmas"} ],
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -278,8 +278,8 @@ window.onload = function() {
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
-            tags: [ {gs: true} ],
-            discussion: "#",
+            tags: [ {gs: true, season: "Halloween"} ],
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -300,12 +300,12 @@ window.onload = function() {
         }, {
             map: "Saaneckh",
             slug: "saaneckh",
-            path: "FFA/Saaneckh",
+            path: "FFA/Saaneckh/",
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {ffa: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -318,7 +318,7 @@ window.onload = function() {
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {ctf: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -331,7 +331,7 @@ window.onload = function() {
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {skywars: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -348,7 +348,7 @@ window.onload = function() {
                 {player_name: "Baggards", player_uuid: "15101f54-cdbc-4cb2-8ed7-51e876824b71"}
             ],
             tags: [ {dtc: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -362,21 +362,21 @@ window.onload = function() {
                 {player_name: "iLifting", player_uuid: "82d03646-d1a1-4383-a533-9509b130f751"}
             ],
             tags: [ {dtc: true} ],
-            discussion: "#",
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
             cardinal: false,
         }, {
             map: "SolitudeMC Christmas",
-            slug: "christmas",
+            slug: "solitudemc_christmas",
             path: "DTC/Christmas/SolitudeMC%20Christmas/",
             authors: [
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"},
                 {player_name: "iLifting", player_uuid: "82d03646-d1a1-4383-a533-9509b130f751"}
             ],
-            tags: [ {dtc: true} ],
-            discussion: "#",
+            tags: [ {dtc: true, season: "Christmas"} ],
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
@@ -389,8 +389,8 @@ window.onload = function() {
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"},
                 {player_name: "iLifting", player_uuid: "82d03646-d1a1-4383-a533-9509b130f751"}
             ],
-            tags: [ {dtc: true} ],
-            discussion: "#",
+            tags: [ {dtc: true, season: "Halloween"} ],
+            discussion: "",
             BY_NC_SA: true,
             download: false,
             xml: true,
