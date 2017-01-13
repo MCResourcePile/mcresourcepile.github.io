@@ -3763,6 +3763,7 @@ window.onload = function() {
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
+			{
                 "map": "Royal Garden CTW",
                 "slug": "royal_garden_ctw",
                 "tags": [{"ctw": true}],
