@@ -4,17 +4,18 @@ window.onload = function() {
     var data = {
         // CC licenses that are currently accepted: BY_SA: true, BY_NC_SA: true
         maps: [ {
-            map: "",
-            slug: "",
-            path: "",
+            map: "Clay Wars",
+            slug: "clay_wars",
+            path: "DTM/ClayWars/",
             authors: [
-                {player_name: "", player_uuid: ""}
+                {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
-            tags: [ {default: true} ],
+            tags: [ {dtm: true} ],
+            BY_NC_SA: true,
             locked: "",
             discussion: "",
-            download: false,
-            xml: false,
+            download: true,
+            xml: true,
             cardinal: false,
         }, ],
     };
