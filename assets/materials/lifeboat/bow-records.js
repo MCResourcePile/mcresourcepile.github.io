@@ -3368,7 +3368,7 @@ window.onload = function() {
                 "slug": "pipe_factory",
                 "tags": [{"tdm": true}],
                 "record_first": [{"player_name": "Baseballshane", "player_uuid": "dc07596f-1846-4177-913c-4375b15583ef", "distance": "57", "evidence": ""}],
-                "record_second": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "43", "evidence": "http://i.imgur.com/xGyPG0I.png"}],
+                "record_second": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "43", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
@@ -3759,7 +3759,7 @@ window.onload = function() {
 		"map": "Roar",
                 "slug": "roar",
                 "tags": [{"dtc": true}],
-                "record_first": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "55", "evidence"http://i.imgur.com/fCENgXd.png: ""}],
+                "record_first": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "55", "evidence"""}],
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
@@ -4937,7 +4937,7 @@ window.onload = function() {
                 "tags": [{"ffa": true}],
                 "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "58", "evidence": ""}],
                 "record_second": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "53", "evidence": ""}],
-                "record_third": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "42", "evidence": "http://i.imgur.com/VtCioVE.png"}]
+                "record_third": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "42", "evidence": ""}]
             },
             {
                 "map": "Viridun PearlBow RAGE",
