@@ -66,6 +66,32 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Bamboo Valley IV",
+            slug: "bamboo_valley_iv",
+            path: "Other/Tournament/straight-outta-capture/Bamboo%20Valley%20IV/",
+            authors: [
+                {player_name: "Strangey", player_uuid: "621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06"}
+            ],
+            tags: [ {cp: true, ranked: true, te: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Bamboo Valley V",
+            slug: "bamboo_valley_v",
+            path: "Other/Tournament/kung-fu-capture/Bamboo%20Valley%20V/",
+            authors: [
+                {player_name: "Strangey", player_uuid: "621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06"}
+            ],
+            tags: [ {ctw: true, te: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "BR: Christmas",
             slug: "block_runner_christmas",
             path: "Arcade/Block%20Runner-Christmas/",
@@ -349,6 +375,34 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Flush",
+            slug: "flush",
+            path: "Other/Tournament/straight-outta-capture/Flush/",
+            authors: [
+                {player_name: "Strangey", player_uuid: "621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06"},
+                {player_name: "NixaniaXi", player_uuid: "2958ea4c-3501-404e-88cc-12e8632f68cc"},
+                {player_name: "Claf", player_uuid: "6bec5c3a-4934-4b19-9aa8-c7c569820f7d"}
+            ],
+            tags: [ {ctf: true, te: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Foundry",
+            slug: "foundry",
+            path: "Other/Tournament/straight-outta-capture/Foundry/",
+            authors: [
+                {player_name: "NixaniaXi", player_uuid: "2958ea4c-3501-404e-88cc-12e8632f68cc"}
+            ],
+            tags: [ {cp: true, ranked: true, te: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Fracture",
             slug: "fracture",
             path: "KOTH/Standard/Fracture/",
@@ -357,6 +411,19 @@ window.onload = function() {
             ],
             tags: [ {koth: true} ],
             discussion: "https://oc.tc/forums/topics/58296360c296351f4f00001d",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Garden of Tholos",
+            slug: "garden_of_tholos",
+            path: "Other/Tournament/kung-fu-capture/Garden%20of%20Tholos/",
+            authors: [
+                {player_name: "samthecat43", player_uuid: "7ab24d14-0801-48ba-8fea-147ddf400067"}
+            ],
+            tags: [ {ctw: true, te: true} ],
+            discussion: "",
             BY_NC_SA: true,
             download: true,
             xml: true,
@@ -372,6 +439,19 @@ window.onload = function() {
             discussion: "",
             BY_NC_SA: true,
             download: false,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Gobi",
+            slug: "gobi",
+            path: "Other/Tournament/kung-fu-capture/Gobi/",
+            authors: [
+                {player_name: "DoomyBoy", player_uuid: "dff980ed-9f69-491e-b79c-30c21350baf2"}
+            ],
+            tags: [ {ctw: true, te: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -736,6 +816,19 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Siege",
+            slug: "siege",
+            path: "Other/Tournament/straight-outta-capture/Siege/",
+            authors: [
+                {player_name: "NixaniaXi", player_uuid: "2958ea4c-3501-404e-88cc-12e8632f68cc"}
+            ],
+            tags: [ {cp: true, ranked:true, te: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Snowish",
             slug: "snowish",
             path: "Skywars/Snowish/",
@@ -836,6 +929,19 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Space Race: 1969",
+            slug: "space_race_1969",
+            path: "Other/Tournament/straight-outta-capture/Space%20Race%201969/",
+            authors: [
+                {player_name: "NixaniaXi", player_uuid: "2958ea4c-3501-404e-88cc-12e8632f68cc"}
+            ],
+            tags: [ {ctf: true, te: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "SpOOky Diamonds",
             slug: "spooky_diamonds",
             path: "CTF/Halloween/SpOOky%20Diamonds/",
@@ -892,6 +998,19 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Thicket",
+            slug: "thicket",
+            path: "Other/Tournament/straight-outta-capture/Thicket/",
+            authors: [
+                {player_name: "NixaniaXi", player_uuid: "2958ea4c-3501-404e-88cc-12e8632f68cc"}
+            ],
+            tags: [ {ctw: true, te: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Undead Heat",
             slug: "undead_heat",
             path: "Blitz/Classic/Halloween/Undead%20Heat/",
@@ -918,6 +1037,19 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Versatile",
+            slug: "versatile",
+            path: "Other/Tournament/straight-outta-capture/Versatile/",
+            authors: [
+                {player_name: "LArrowHead", player_uuid: "a4266139-34f3-46c5-a730-f8828376a15a"}
+            ],
+            tags: [ {ctf: true, te: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Village",
             slug: "village",
             path: "Skywars/Village/",
@@ -926,6 +1058,34 @@ window.onload = function() {
             ],
             tags: [ {skywars: true} ],
             discussion: "https://oc.tc/forums/topics/5816dc0d5f35b97aab00001b",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Wallop",
+            slug: "wallop",
+            path: "Other/Tournament/straight-outta-capture/Wallop/",
+            authors: [
+                {player_name: "Claf", player_uuid: "6bec5c3a-4934-4b19-9aa8-c7c569820f7d"},
+                {player_name: "triplezko", player_uuid: "9929437a-9b7d-4d7a-b05d-e22fe93ac042"}
+            ],
+            tags: [ {ctw: true, te: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Wallop Too",
+            slug: "wallop_too",
+            path: "Other/Tournament/kung-fu-capture/Wallop%20Too/",
+            authors: [
+                {player_name: "Claf", player_uuid: "6bec5c3a-4934-4b19-9aa8-c7c569820f7d"},
+                {player_name: "triplezko", player_uuid: "9929437a-9b7d-4d7a-b05d-e22fe93ac042"}
+            ],
+            tags: [ {ctw: true, te: true} ],
+            discussion: "",
             BY_NC_SA: true,
             download: true,
             xml: true,
