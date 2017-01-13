@@ -95,15 +95,7 @@
                                                     <div class="map-authors">
                                                         <span class="map-author-name">created by</span>
                                                         {{#if authors}}
-                                                            {{#authors}}
-                                                                <li class="game-tag">
-                                                                    {{#if player_name}}
-                                                                        <img src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16"> <a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>
-                                                                        {{else}}
-                                                                        <img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>
-                                                                    {{/if}}
-                                                                </li>
-                                                            {{/authors}}
+                                                            {{#authors}}<li class="game-tag">{{#if player_name}}<img src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16"> <a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>{{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/if}}</li>{{/authors}}
                                                             {{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>
                                                         {{/if}}
                                                     </div>

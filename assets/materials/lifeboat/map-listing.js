@@ -4,6 +4,41 @@ window.onload = function() {
     var data = {
         // CC licenses that are currently accepted: BY_SA: true, BY_NC_SA: true
         maps: [ {
+            map: "A Journey Through History",
+            slug: "a_journey_through_history",
+            path: "Arcade/Rush/History%20Rush%20Map/",
+            authors: [
+                {player_name: "chle_", player_uuid: "a23a1d91-7e97-40b4-8f5e-1ab82d8f5ade"},
+                {player_name: "Bread__", player_uuid: "9c24ab22-dd46-42c1-9e07-4098ae96076c"},
+                {player_name: "_3Each", player_uuid: "5198dc37-537f-4ea5-8ee8-1e0952d4a36b"},
+                {player_name: "rockymine", player_uuid: "fe3608b7-d105-4029-8800-34b3147065b6"},
+                {player_name: "whiteveR", player_uuid: "7e7da86e-57a8-4b90-b297-4ef05e71dbdb"},
+                {player_name: "Oxinous", player_uuid: "829ed9df-e947-40a1-933e-81aa7cb05189"},
+                {player_name: "Aisak", player_uuid: "86a53ac5-11db-4435-b672-ea3773c31082"},
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "Kreost", player_uuid: "65722be1-29fd-4e7d-a47d-94ed616ed880"}
+            ],
+            tags: [ {arcade: true, other: "Rush"} ],
+            discussion: "https://oc.tc/forums/topics/57506694c296352cf500002f",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "A SpOOky Sunset",
+            slug: "a_spooky_sunset",
+            path: "CTF/Halloween/A%20SpOOky%20Sunset/",
+            authors: [
+                {player_name: "DoomyBoy", player_uuid: "dff980ed-9f69-491e-b79c-30c21350baf2"},
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {ctf: true, season: "Halloween"} ],
+            discussion: "https://oc.tc/forums/topics/56155330c29635f4960002c8",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Agrostid",
             slug: "agrostid",
             path: "CTW/Standard/Agrostid/",
@@ -15,6 +50,70 @@ window.onload = function() {
             discussion: "",
             BY_NC_SA: true,
             download: false,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Araxa",
+            slug: "araxa",
+            path: "CTW/Standard/Araxa",
+            authors: [
+                {player_name: "JonnyBallgame", player_uuid: "e41edd14-9b0e-4501-a0c5-7fda64d2b2f3"}
+            ],
+            tags: [ {ctw: true} ],
+            discussion: "https://oc.tc/forums/topics/5858427667d5226d63000045",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "BR: Christmas",
+            slug: "block_runner_christmas",
+            path: "Arcade/Block%20Runner-Christmas/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "Jexel", player_uuid: "9225421c-3c09-4d97-bb80-f6a77c1f360b"},
+                {player_name: "breadandcinnamon", player_uuid: "d3814d5a-3d37-42f2-9db8-916846bb70ad"},
+                {player_name: "xCand", player_uuid: "a37e4da3-1c6c-4dc9-b085-63783406a963"},
+                {player_name: "_3Each", player_uuid: "5198dc37-537f-4ea5-8ee8-1e0952d4a36b"},
+                {player_name: "MyChemicalKitten", player_uuid: "bd12f89a-2137-4068-8f8b-ab46e248d2a7"},
+                {player_name: "Principals", player_uuid: "5fe81b40-984e-4e0b-a125-2d5eebf5dd3a"},
+                {player_name: "Tywnix_", player_uuid: "5f386e2d-6962-45a3-a9b6-adf1b8075e08"},
+                {player_name: "GreatWallOfTrump", player_uuid: "97307a17-8869-4138-b573-5ce4cc050974"}
+            ],
+            tags: [ {arcade: true, season: "Christmas", other: "Block Runner"} ],
+            discussion: "https://oc.tc/forums/topics/5836f851c296350213000002",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "BR: Halloween",
+            slug: "block_runner_halloween",
+            path: "Arcade/Block%20Runner-Halloween/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "Kaskito", player_uuid: "cbd5c47c-1137-4f02-93dd-626a46bdd779"},
+                {player_name: "breadandcinnamon", player_uuid: "d3814d5a-3d37-42f2-9db8-916846bb70ad"},
+                {player_name: "Jexel", player_uuid: "9225421c-3c09-4d97-bb80-f6a77c1f360b"},
+                {player_name: "_3Each", player_uuid: "5198dc37-537f-4ea5-8ee8-1e0952d4a36b"},
+            ],
+            tags: [ {arcade: true, season: "Halloween", other: "Block Runner"} ],
+            discussion: "https://oc.tc/forums/topics/57f6cc0a5f35b97681000045",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "BR: World of Sports",
+            slug: "block_runner_world_of_sports",
+            path: "Arcade/Block%20Runner-World%20of%20Sports/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {arcade: true, other: "Block Runner"} ],
+            discussion: "https://oc.tc/forums/topics/571c34a55f35b94475000013",
+            BY_NC_SA: true,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -39,6 +138,46 @@ window.onload = function() {
             ],
             tags: [ {dtm: true} ],
             discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Chocolate Diamonds",
+            slug: "chocolate_diamonds",
+            path: "CTF/Standard/Chocolate%20Diamonds/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "Kreost", player_uuid: "65722be1-29fd-4e7d-a47d-94ed616ed880"}
+            ],
+            tags: [ {ctf: true} ],
+            discussion: "https://oc.tc/forums/topics/55ecdb4ec296352090007288",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Coral Reef",
+            slug: "coral_reef",
+            path: "DTM/Standard/Coral%20Reef/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {dtm: true} ],
+            discussion: "https://oc.tc/forums/topics/57af1f73c296354235000012",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Coral Reef II",
+            slug: "coral_reef_ii",
+            path: "",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {ctw: true, te: true} ],
+            discussion: "https://oc.tc/forums/topics/57fa5a2fc296351b7b00000a",
             BY_NC_SA: true,
             download: true,
             xml: true,
@@ -94,6 +233,92 @@ window.onload = function() {
             discussion: "",
             BY_NC_SA: true,
             download: false,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Desert Country",
+            slug: "desert_country",
+            path: "CTW/Standard/Desert%20Country/",
+            authors: [
+                {player_name: "OCNs_OMEN", player_uuid: "b5967591-14fc-421f-a5e2-931498e10fb8"},
+                {player_name: "nigges60", player_uuid: "7cbf2168-7f49-4fb3-aea8-6df8048a7ade"},
+                {player_name: "Sp33dfr3ak", player_uuid: "6d256510-f2ec-4a5b-b678-fc01c5abd7b3"},
+                {player_name: "Celestyan", player_uuid: "f066a092-d825-4316-bc9a-5f8ddd21b167"},
+                {player_name: "LunaticReturns", player_uuid: "e15f0cac-6ba7-4069-8c43-26aa38866f77"}
+            ],
+            tags: [ {ctw: true} ],
+            discussion: "https://oc.tc/forums/topics/56bb8ba45f35b92828000024",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Drow's Crevice: Blitz",
+            slug: "drow_s_crevice_blitz",
+            path: "Blitz/Classic/Standard/Drow%27s%20Crevice%20Blitz/",
+            authors: [
+                {player_name: "Draco_Rogue", player_uuid: "c65e66b3-e932-4b33-b907-fe4916806076"},
+                {player_name: "HardstyleRaver2", player_uuid: "8d812ffa-e5f1-4658-bb47-a18b785ccd27"}
+            ],
+            tags: [ {blitz: true} ],
+            discussion: "https://oc.tc/forums/topics/5325408712ca95016d00003c",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Drow's Crevice: UHC",
+            slug: "drow_s_crevice_uhc",
+            path: "Blitz/Classic/Standard/Drow%27s%20Crevice%20UHC/",
+            authors: [
+                {player_name: "Draco_Rogue", player_uuid: "c65e66b3-e932-4b33-b907-fe4916806076"},
+                {player_name: "HardstyleRaver2", player_uuid: "8d812ffa-e5f1-4658-bb47-a18b785ccd27"}
+            ],
+            tags: [ {blitz: true} ],
+            discussion: "https://oc.tc/forums/topics/5325408712ca95016d00003c",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Drow's Crevice II",
+            slug: "drow_s_crevice_ii",
+            path: "TDM/Standard/Drow%27s%20Crevice%20II/",
+            authors: [
+                {player_name: "Draco_Rogue", player_uuid: "c65e66b3-e932-4b33-b907-fe4916806076"},
+                {player_name: "HardstyleRaver2", player_uuid: "8d812ffa-e5f1-4658-bb47-a18b785ccd27"}
+            ],
+            tags: [ {tdm: true} ],
+            discussion: "https://oc.tc/forums/topics/5351f58b12ca95a71000c913",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Explosive Vengeance",
+            slug: "explosive_vengeance",
+            path: "TDM/Standard/Explosive%20Vengeance/",
+            authors: [
+                {player_name: "HardstyleRaver2", player_uuid: "8d812ffa-e5f1-4658-bb47-a18b785ccd27"},
+                {player_name: "DoomyBoy", player_uuid: "dff980ed-9f69-491e-b79c-30c21350baf2"}
+            ],
+            tags: [ {tdm: true, tnt: true} ],
+            discussion: "https://oc.tc/forums/topics/549b9d8f5f35b9cc7d001059",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Festive Village",
+            slug: "festive_village",
+            path: "Skywars/Festive%20Village/",
+            authors: [
+                {player_name: "Flashee", player_uuid: "f5d5c301-9ad3-4cb4-9cfd-a6b78e67734a"}
+            ],
+            tags: [ {skywars: true, season: "Christmas"} ],
+            discussion: "https://oc.tc/forums/topics/5847af83c296353c10000004",
+            BY_NC_SA: true,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -204,6 +429,32 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Library DTE",
+            slug: "library_dte",
+            path: "DTM/Standard/Library%20DTE/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {dtm: true, tnt: true} ],
+            discussion: "https://oc.tc/forums/topics/570c3d3d5f35b9035c000007",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Mesa",
+            slug: "mesa_5x5",
+            path: "FFA/Mesa%205x5/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {ffa: true, micro: true} ],
+            discussion: "https://oc.tc/forums/topics/572684f667d5226d63000055",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Net",
             slug: "net",
             path: "Skywars/Net",
@@ -230,6 +481,73 @@ window.onload = function() {
             discussion: "",
             BY_NC_SA: true,
             download: false,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Pirate Attack",
+            slug: "pirate_attack",
+            path: "CTF/Standard/Pirate%20Attack/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {ctf: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Pirate Cove",
+            slug: "pirate_cove_5x5",
+            path: "FFA/Pirate%20Cove%205x5",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {ffa: true, micro: true} ],
+            discussion: "https://oc.tc/forums/topics/571add0567d52221ab000018",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Pixel Run",
+            slug: "pixel_run",
+            path: "Arcade/Rush/Pixel%20Run",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {arcade: true, other: "Rush"} ],
+            discussion: "https://oc.tc/forums/topics/5648a15667d522e54600149b",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Pompeii",
+            slug: "pompeii_5x5",
+            path: "FFA/Pompeii%205x5/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "-3Each", player_uuid: "5198dc37-537f-4ea5-8ee8-1e0952d4a36b"}
+            ],
+            tags: [ {ffa: true, micro: true} ],
+            discussion: "https://oc.tc/forums/topics/570ae6825f35b90e47000001",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Prevagen",
+            slug: "prevagen",
+            path: "Skywars/Prevagen",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "breadandcinnamon", player_uuid: "d3814d5a-3d37-42f2-9db8-916846bb70ad"}
+            ],
+            tags: [ {skywars: true} ],
+            discussion: "https://oc.tc/forums/topics/585be39067d5223f1a000009",
+            BY_NC_SA: true,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -285,6 +603,20 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Retro KOTF",
+            slug: "retro_kotf_5x5",
+            path: "FFA/5x5%20Retro%20KotF/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "JTr", player_uuid: "105f6a09-f533-412b-93cb-501601763c11"}
+            ],
+            tags: [ {ctf: true, ffa: true, other: "King of the Flag"} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Rooted Frontier",
             slug: "rooted_frontier",
             path: "Blitz/Classic/Standard/Rooted%20Fontier/",
@@ -293,6 +625,32 @@ window.onload = function() {
             ],
             tags: [ {blitz: true} ],
             discussion: "https://oc.tc/forums/topics/58296360c296351f4f00001d",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Rush Wars Tournament 2: Attack of the Defenders",
+            slug: "rush_wars_tournament_2_attack_of_the_defenders",
+            path: "Arcade/Rush/Rush%20Wars%20Tournament%202%20Attack%20of%20the%20Defenders/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "samthecat43", player_uuid: "7ab24d14-0801-48ba-8fea-147ddf400067"},
+                {player_name: "_DISTRACTION_", player_uuid: "f876b863-1ccd-4ae2-acad-8a09e2209e81"},
+                {player_name: "breadandcinnamon", player_uuid: "d3814d5a-3d37-42f2-9db8-916846bb70ad"},
+                {player_name: "NixaniaXi", player_uuid: "2958ea4c-3501-404e-88cc-12e8632f68cc"},
+                {player_name: "Strangey", player_uuid: "621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06"},
+                {player_name: "Apollo2OP", player_uuid: "135737b8-7f2b-4f90-aa37-ec395c7c6a9b"},
+                {player_name: "Sixxxx", player_uuid: "97a0421a-068c-48d2-a92e-5b6d57c5d803"},
+                {player_name: "SheriffSoco", player_uuid: "6e347123-c684-4d7e-996c-44d4924ff172"},
+                {player_name: "Ny_", player_uuid: "a43135a4-d7b9-49ab-ac8d-a16bb2513c8d"},
+                {player_name: "xCand", player_uuid: "a37e4da3-1c6c-4dc9-b085-63783406a963"},
+                {player_name: "Jexel", player_uuid: "9225421c-3c09-4d97-bb80-f6a77c1f360b"},
+                {player_name: "Aisak", player_uuid: "86a53ac5-11db-4435-b672-ea3773c31082"},
+                {player_name: "Magikarp", player_uuid: "503b5493-d591-4bc6-8346-e92609d94d76"},
+            ],
+            tags: [ {arcade: true, other: "Rush"} ],
+            discussion: "https://oc.tc/forums/topics/57768d7967d5225c580000a9",
             BY_NC_SA: true,
             download: true,
             xml: true,
@@ -324,6 +682,20 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "School's Out!",
+            slug: "school_s_out_",
+            path: "Blitz/GS/Standard/School%27s%20Out/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "68pingy", player_uuid: "14aad06f-6fc0-4b26-be7b-187c3be8eb89"}
+            ],
+            tags: [ {gs: true} ],
+            discussion: "https://oc.tc/forums/topics/55917797c29635db9f002e01",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Snowish",
             slug: "snowish",
             path: "Skywars/Snowish/",
@@ -334,6 +706,20 @@ window.onload = function() {
             discussion: "",
             BY_NC_SA: true,
             download: false,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Snowy Diamonds",
+            slug: "snowy_diamonds",
+            path: "CTF/Christmas/Snowy%20Diamonds",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "Kreost", player_uuid: "65722be1-29fd-4e7d-a47d-94ed616ed880"}
+            ],
+            tags: [ {ctf: true, other: "Christmas"} ],
+            discussion: "https://oc.tc/forums/topics/565ef78a5f35b91e13001bb6",
+            BY_NC_SA: true,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -393,6 +779,102 @@ window.onload = function() {
             discussion: "",
             BY_NC_SA: true,
             download: false,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Sore Teeth",
+            slug: "sore_teeth",
+            path: "Blitz/Rage/Halloween/Sore%20Teeth/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "Headlight", player_uuid: "0eadbe6d-0a2e-41c6-aec3-e1ba291fb266"}
+            ],
+            tags: [ {blitz: true, rage: true, season: "Halloween"} ],
+            discussion: "https://oc.tc/forums/topics/5601ac7bc2963561c9000abe",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "SpOOky Diamonds",
+            slug: "spooky_diamonds",
+            path: "CTF/Halloween/SpOOky%20Diamonds/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "Kreost", player_uuid: "65722be1-29fd-4e7d-a47d-94ed616ed880"}
+            ],
+            tags: [ {ctf: true, season: "Halloween"} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Sweet Tooth",
+            slug: "sweet_tooth",
+            path: "Blitz/Rage/Standard/SweetTooth/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "Headlight", player_uuid: "0eadbe6d-0a2e-41c6-aec3-e1ba291fb266"}
+            ],
+            tags: [ {blitz: true, rage: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "The Last Sunset II",
+            slug: "the_last_sunset_ii",
+            path: "CTF/Standard/The%20Last%20Sunset%20II/",
+            authors: [
+                {player_name: "DoomyBoy", player_uuid: "dff980ed-9f69-491e-b79c-30c21350baf2"},
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {ctf: true, season: "Halloween"} ],
+            discussion: "https://oc.tc/forums/topics/5582b35a67d5222e450042b5",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "The Snowmelt Mines",
+            slug: "the_snowmelt_mines",
+            path: "FFA/The%20Snowmelt%20Mines%205x5/",
+            authors: [
+                {player_name: "JadSaa", player_uuid: "0347bb56-8ade-410e-9f32-31d54eb10598"},
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {ffa: true, micro: true} ],
+            discussion: "https://oc.tc/forums/topics/5765512fc296351d20000097",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Under the Sea",
+            slug: "under_the_sea_5x5",
+            path: "FFA/Under%20The%20Sea%205x5/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"}
+            ],
+            tags: [ {ffa: true, micro: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Village",
+            slug: "village",
+            path: "Skywars/Village/",
+            authors: [
+                {player_name: "Flashee", player_uuid: "f5d5c301-9ad3-4cb4-9cfd-a6b78e67734a"}
+            ],
+            tags: [ {skywars: true} ],
+            discussion: "https://oc.tc/forums/topics/5816dc0d5f35b97aab00001b",
+            BY_NC_SA: true,
+            download: true,
             xml: true,
             cardinal: false,
         }, ],
