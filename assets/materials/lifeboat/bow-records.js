@@ -5210,6 +5210,14 @@ window.onload = function() {
                 "record_first": [{"player_name": "Disproof", "player_uuid": "1d14f451-c8f0-4e02-a387-1ea808f8b5b3", "distance": "136", "evidence": ""}],
                 "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "121", "evidence": ""}],
                 "record_third": [{"player_name": "Crazy_", "player_uuid": "a9f11454-beac-4cc3-a138-1780802c8794", "distance": "57", "evidence": ""}]
+            },
+            {
+                "map": "Spaceship Battles Halloween",
+                "slug": "ssb_halloween",
+                "tags": [{"dtc": true, "dtm": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "62", "evidence": ""}],
+                "record_second": [{"player_name": "Creeps_", "player_uuid": "ee49dcbe-4cb5-48d9-9eb4-fb203fec40f4", "distance": "50", "evidence": ""}],
+                "record_third": [{"player_name": "SheriffSoco", "player_uuid": "6e347123-c684-4d7e-996c-44d4924ff172", "distance": "31", "evidence": ""}]
             }
 		]
     };
