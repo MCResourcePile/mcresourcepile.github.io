@@ -130,6 +130,20 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Build: Parkour",
+            slug: "build_parkour",
+            path: "Arcade/Build%20Parkour/",
+            authors: [
+                {player_name: "JcNumbers", player_uuid: "7475c44e-3066-468f-a4c6-488fe9612097"},
+                {player_name: "mitchiii_", player_uuid: "f690a591-348b-482e-a18d-7779d0c0a28c"}
+            ],
+            tags: [ {arcade: true} ],
+            discussion: "https://oc.tc/forums/topics/569bb6c75f35b94a59000003",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Ces",
             slug: "ces",
             path: "DTM/Standard/Ces/",
