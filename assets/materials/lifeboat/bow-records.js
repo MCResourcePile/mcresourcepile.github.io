@@ -631,7 +631,7 @@ window.onload = function() {
                 "map": "Dead Town",
                 "slug": "dead_town",
                 "tags": [{"rage": true}],
-                "record_first": [{"player_name": "LArrowDead", "player_uuid": "----", "distance": "109", "evidence": ""}],
+                "record_first": [{"player_name": "LArrowHead", "player_uuid": "a4266139-34f3-46c5-a730-f8828376a15a", "distance": "109", "evidence": ""}],
                 "record_second": [{"player_name": "Administrators", "player_uuid": "ae9d6074-bb27-4bbe-97ce-2d446f307a24", "distance": "78", "evidence": ""}],
                 "record_third": [{"player_name": "pulbos2", "player_uuid": "ab8a0c0e-f609-417c-9b07-ceacf2320cbe", "distance": "69", "evidence": ""}]
             },
@@ -1937,7 +1937,7 @@ window.onload = function() {
                 "tags": [{"ctw": true}],
                 "record_first": [{"player_name": "Atragon", "player_uuid": "a2bad288-3157-4e0a-b818-6d3441d52c13", "distance": "143", "evidence": ""}],
                 "record_second": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "139", "evidence": ""}],
-                "record_third": [{"player_name": "TapetepatoM(70", "player_uuid": "----", "distance": "locks)", "evidence": ""}]
+                "record_third": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "70", "evidence": ""}]
             },
             {
                 "map": "Two Castles",
@@ -2169,7 +2169,7 @@ window.onload = function() {
                 "tags": [{"dtc": true}],
                 "record_first": [{"player_name": "Chupaa", "player_uuid": "b5fb4dc3-d7ae-4a0f-ad15-1e8247582a90", "distance": "147", "evidence": ""}],
                 "record_second": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "142", "evidence": ""}],
-                "record_third": [{"player_name": "TapetepatoM(116", "player_uuid": "----", "distance": "locks)", "evidence": ""}]
+                "record_third": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "116", "evidence": ""}]
             },
             {
                 "map": "Bridge Over Troubled Water",
@@ -2223,7 +2223,7 @@ window.onload = function() {
                 "map": "Fortress Battles",
                 "slug": "fortress_battles",
                 "tags": [{"dtc": true}],
-                "record_first": [{"player_name": "Tapatepato", "player_uuid": "----", "distance": "104", "evidence": ""}],
+                "record_first": [{"player_name": "Tapatepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "104", "evidence": ""}],
                 "record_second": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "68", "evidence": ""}],
                 "record_third": [{"player_name": "Nemesis_", "player_uuid": "acbe8312-dabc-4977-80ec-82c337b6ce72", "distance": "55", "evidence": ""}]
             },
@@ -2689,7 +2689,7 @@ window.onload = function() {
                 "tags": [{"dtm": true}],
                 "record_first": [{"player_name": "Lamster", "player_uuid": "b213dddd-28e6-4c22-afa1-da9e62c594e6", "distance": "59", "evidence": ""}],
                 "record_second": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "53", "evidence": ""}],
-                "record_third": [{"player_name": "TapetepatoM(43", "player_uuid": "----", "distance": "locks)", "evidence": ""}]
+                "record_third": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "43", "evidence": ""}]
             },
             {
                 "map": "BoomBox",
@@ -2697,8 +2697,7 @@ window.onload = function() {
                 "tags": [{"dtm": true}],
                 "record_first": [{"player_name": "Fede", "player_uuid": "ffcbeed2-e75c-499a-a30d-328f4d44d2c7", "distance": "100", "evidence": ""}],
                 "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "100", "evidence": ""}],
-                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
-                "__record_third__": [{"player_name": "Nyco2", "player_uuid": "----", "distance": "94", "evidence": ""}]
+                "record_third": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "94", "evidence": ""}]
             },
             {
                 "map": "BoomBoxBigger",
@@ -3106,7 +3105,7 @@ window.onload = function() {
                 "tags": [{"dtm": true}],
                 "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "70", "evidence": ""}],
                 "record_second": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "60", "evidence": ""}],
-                "record_third": [{"player_name": "DJBuilders", "player_uuid": "67c9f752-bd3b-4c3c-a311-feb7a25c6584", "distance": "52", "evidence": ""}]
+                "record_third": [{"player_name": "Dyego", "player_uuid": "6803fe69-0905-47d1-ae04-8e3c4b648499", "distance": "52", "evidence": ""}]
             },
             {
                 "map": "Scorched Grove",
@@ -3144,7 +3143,7 @@ window.onload = function() {
                 "map": "Soviet Mills",
                 "slug": "soviet_mills",
                 "tags": [{"dtm": true}],
-                "record_first": [{"player_name": "Hoodavah", "player_uuid": "----", "distance": "126", "evidence": ""}],
+                "record_first": [{"player_name": "Hoodovah", "player_uuid": "bd029cbe-ec66-48cb-8760-6509c1607328", "distance": "126", "evidence": ""}],
                 "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "125", "evidence": ""}],
                 "record_third": [{"player_name": "Razeker", "player_uuid": "3b1c279f-1c95-4bf7-81ce-6d9f542336e4", "distance": "101", "evidence": ""}]
             },
@@ -3288,7 +3287,7 @@ window.onload = function() {
                 "map": "BalloonsDTM Halloween",
                 "slug": "balloonsdtm_halloween",
                 "tags": [{"dtm": true}],
-                "record_first": [{"player_name": "Taptetpato", "player_uuid": "----", "distance": "97", "evidence": ""}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "97", "evidence": ""}],
                 "record_second": [{"player_name": "SailorMojo", "player_uuid": "a53ab2da-36ed-4886-ac2a-49696de4622f", "distance": "63", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
@@ -3306,7 +3305,7 @@ window.onload = function() {
                 "tags": [{"dtm": true}],
                 "record_first": [{"player_name": "Daesc", "player_uuid": "822098d6-9da5-40a0-88ae-2b197c949a59", "distance": "110", "evidence": ""}],
                 "record_second": [{"player_name": "MeMyselfAndGhost", "player_uuid": "745bd516-ca42-4cad-a5d0-6da5b62af900", "distance": "47", "evidence": ""}],
-                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+                "record_third": [{"player_name": "", "p62f3cd20-c78d-4810-8a00-c5ecb0636783layer_uuid": "", "distance": "", "evidence": ""}]
             },
             {
                 "map": "Soviet Chills",
@@ -3320,7 +3319,7 @@ window.onload = function() {
                 "map": "Balloons DTM Christmas",
                 "slug": "balloons_dtm_christmas",
                 "tags": [{"dtm": true}],
-                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "101", "evidence": ""}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "", "distance": "101", "evidence": ""}],
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
@@ -3920,7 +3919,7 @@ window.onload = function() {
                 "map": "Abaddon",
                 "slug": "abaddon",
                 "tags": [{"koth": true}],
-                "record_first": [{"player_name": "Tpetepato", "player_uuid": "----", "distance": "66", "evidence": ""}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "66", "evidence": ""}],
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
@@ -3936,7 +3935,7 @@ window.onload = function() {
                 "map": "Abudor II",
                 "slug": "abudor_ii",
                 "tags": [{"koth": true}],
-                "record_first": [{"player_name": "Tpetepato", "player_uuid": "----", "distance": "23", "evidence": ""}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "23", "evidence": ""}],
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
@@ -4617,7 +4616,7 @@ window.onload = function() {
                 "slug": "immitis",
                 "tags": [{"tdm": true}],
                 "record_first": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "109", "evidence": ""}],
-                "record_second": [{"player_name": "Hoodobah", "player_uuid": "----", "distance": "107", "evidence": ""}],
+                "record_second": [{"player_name": "Hoodovah", "player_uuid": "bd029cbe-ec66-48cb-8760-6509c1607328", "distance": "107", "evidence": ""}],
                 "record_third": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "99", "evidence": ""}]
             },
             {
@@ -4946,7 +4945,7 @@ window.onload = function() {
                 "tags": [{"tdm": true}],
                 "record_first": [{"player_name": "EndangeredKoala", "player_uuid": "ebcb9401-ea2d-4f81-b393-a44a232c14dc", "distance": "120", "evidence": ""}],
                 "record_second": [{"player_name": "Deathstylus", "player_uuid": "a232aa94-dced-401e-b914-38ebee22981f", "distance": "113", "evidence": ""}],
-                "record_third": [{"player_name": "Hoodovahr", "player_uuid": "----", "distance": "98", "evidence": ""}]
+                "record_third": [{"player_name": "Hoodovah", "player_uuid": "bd029cbe-ec66-48cb-8760-6509c1607328", "distance": "98", "evidence": ""}]
             },
             {
                 "map": "Viridun PearlBow RAGE",
@@ -5001,7 +5000,7 @@ window.onload = function() {
                 "slug": "wrath_tor_rage",
                 "tags": [{"tdm": true}],
                 "record_first": [{"player_name": "xCand", "player_uuid": "a37e4da3-1c6c-4dc9-b085-63783406a963", "distance": "51", "evidence": ""}],
-                "record_second": [{"player_name": "Taptetpato", "player_uuid": "----", "distance": "45", "evidence": ""}],
+                "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "45", "evidence": ""}],
                 "record_third": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "40", "evidence": ""}]
             },
             {
@@ -5049,7 +5048,7 @@ window.onload = function() {
                 "slug": "superhallow",
                 "tags": [{"tdm": true}],
                 "record_first": [{"player_name": "dragonstomper64", "player_uuid": "6863869b-4b8c-4445-b778-a8e016775ae4", "distance": "70", "evidence": ""}],
-                "record_second": [{"player_name": "Taptetpato", "player_uuid": "----", "distance": "59", "evidence": ""}],
+                "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "59", "evidence": ""}],
                 "record_third": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "58", "evidence": ""}]
             },
             {
