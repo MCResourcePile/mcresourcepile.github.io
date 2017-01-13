@@ -49,7 +49,7 @@ window.onload = function() {
             tags: [ {ctw: true} ],
             discussion: "",
             BY_NC_SA: true,
-            download: false,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -233,7 +233,7 @@ window.onload = function() {
             tags: [ {tdm: true} ],
             discussion: "",
             BY_NC_SA: true,
-            download: false,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -246,7 +246,7 @@ window.onload = function() {
             tags: [ {tdm: true, season: "Halloween"} ],
             discussion: "",
             BY_NC_SA: true,
-            download: false,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -400,7 +400,7 @@ window.onload = function() {
             tags: [ {blitz: true, rage: true} ],
             discussion: "",
             BY_NC_SA: true,
-            download: false,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -426,7 +426,7 @@ window.onload = function() {
             tags: [ {ctf: true} ],
             discussion: "",
             BY_NC_SA: true,
-            download: false,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -478,7 +478,7 @@ window.onload = function() {
             tags: [ {skywars: true} ],
             discussion: "",
             BY_NC_SA: true,
-            download: false,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -574,7 +574,7 @@ window.onload = function() {
             tags: [ {gs: true} ],
             discussion: "",
             BY_NC_SA: true,
-            download: false,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -587,7 +587,7 @@ window.onload = function() {
             tags: [ {gs: true, ffa: true} ],
             discussion: "",
             BY_NC_SA: true,
-            download: false,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -600,7 +600,7 @@ window.onload = function() {
             tags: [ {gs: true, season: "Christmas"} ],
             discussion: "",
             BY_NC_SA: true,
-            download: false,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
@@ -613,7 +613,7 @@ window.onload = function() {
             tags: [ {gs: true, season: "Halloween"} ],
             discussion: "",
             BY_NC_SA: true,
-            download: false,
+            download: true,
             xml: true,
             cardinal: false,
         }, {
