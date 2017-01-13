@@ -250,6 +250,19 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Dead Heat",
+            slug: "dead_heat",
+            path: "Blitz/Classic/Standard/Dead%20Heat/",
+            authors: [
+                {player_name: "AMo", player_uuid: "a6a99e23-34c4-4957-8974-b78b4da9ce7c"}
+            ],
+            tags: [ {ctw:true, blitz: true, te:true} ],
+            discussion: "https://oc.tc/forums/topics/51222d79ba6087f491000295",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Desert Country",
             slug: "desert_country",
             path: "CTW/Standard/Desert%20Country/",
@@ -477,6 +490,19 @@ window.onload = function() {
             ],
             tags: [ {skywars: true} ],
             discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "No Return",
+            slug: "undead_heat",
+            path: "Blitz/Classic/Standard/No%20Return/",
+            authors: [
+                {player_name: "AMo", player_uuid: "a6a99e23-34c4-4957-8974-b78b4da9ce7c"}
+            ],
+            tags: [ {blitz: true} ],
+            discussion: "https://oc.tc/forums/topics/51801308ba608790cc004cb4",
             BY_NC_SA: true,
             download: true,
             xml: true,
@@ -861,6 +887,19 @@ window.onload = function() {
             ],
             tags: [ {ffa: true, micro: true} ],
             discussion: "https://oc.tc/forums/topics/5765512fc296351d20000097",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Undead Heat",
+            slug: "undead_heat",
+            path: "Blitz/Classic/Halloween/Undead%20Heat/",
+            authors: [
+                {player_name: "AMo", player_uuid: "a6a99e23-34c4-4957-8974-b78b4da9ce7c"}
+            ],
+            tags: [ {ctw:true, blitz: true, season: "Halloween"} ],
+            discussion: "https://oc.tc/forums/topics/52498572af7fb0371300249c",
             BY_NC_SA: true,
             download: true,
             xml: true,
