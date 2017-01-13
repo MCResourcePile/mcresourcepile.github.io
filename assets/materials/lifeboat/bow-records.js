@@ -3756,7 +3756,7 @@ window.onload = function() {
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
-				"map": "Roar",
+		"map": "Roar",
                 "slug": "roar",
                 "tags": [{"dtc": true}],
                 "record_first": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "55", "evidence"http://i.imgur.com/fCENgXd.png: ""}],
