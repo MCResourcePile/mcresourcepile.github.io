@@ -552,7 +552,7 @@ window.onload = function() {
                 "slug": "bam_boo_valley",
                 "tags": [{"ctw": true}],
                 "record_first": [{"player_name": "Hoodovah", "player_uuid": "bd029cbe-ec66-48cb-8760-6509c1607328", "distance": "92", "evidence": ""}],
-                "record_second": [{"player_name": "Creeps_", "player_uuid": "ee49dcbe-4cb5-48d9-9eb4-fb203fec40f4", "distance": "54", "evidence": ""}],
+                "record_second": [{"player_name": "RealCrazyCreeps", "player_uuid": "5b25f6bc-44d8-47a7-ab52-f985ed309758", "distance": "54", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
@@ -2271,7 +2271,7 @@ window.onload = function() {
                 "map": "Halloween Train",
                 "slug": "halloween_train",
                 "tags": [{"dtm": true}],
-                "record_first": [{"player_name": "Creeps_", "player_uuid": "ee49dcbe-4cb5-48d9-9eb4-fb203fec40f4", "distance": "91", "evidence": ""}],
+                "record_first": [{"player_name": "RealCrazyCreeps", "player_uuid": "5b25f6bc-44d8-47a7-ab52-f985ed309758", "distance": "91", "evidence": ""}],
                 "record_second": [{"player_name": "Lasse54210", "player_uuid": "0caa6216-70e0-408b-be4b-7a95778a48dd", "distance": "68", "evidence": ""}],
                 "record_third": [{"player_name": "SailorMojo", "player_uuid": "a53ab2da-36ed-4886-ac2a-49696de4622f", "distance": "48", "evidence": ""}]
             },
@@ -2380,9 +2380,9 @@ window.onload = function() {
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
-                "map": "Horizon",
-                "slug": "horizon",
-                "tags": [{"tdm": true}],
+                "map": "HorizonDTM",
+                "slug": "horizondtm",
+                "tags": [{"dtm": true}],
                 "record_first": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "28", "evidence": ""}],
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
@@ -2599,7 +2599,7 @@ window.onload = function() {
                 "map": "Irongate Harbor",
                 "slug": "irongate_harbor",
                 "tags": [{"dtm": true}],
-                "record_first": [{"player_name": "Shark", "player_uuid": "e52fb8a3-1f0b-4fd8-8233-131c0e23ddf7", "distance": "97", "evidence": ""}],
+                "record_first": [{"player_name": "ukital", "player_uuid": "171b4297-a99c-444b-bc24-8eb78ec184e1", "distance": "97", "evidence": ""}],
                 "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "96", "evidence": ""}],
                 "record_third": [{"player_name": "Hoodie_Ninja53", "player_uuid": "1e162367-a18f-41b7-a2a0-a096bd914fa4", "distance": "71", "evidence": ""}]
             },
@@ -3368,7 +3368,7 @@ window.onload = function() {
                 "slug": "pipe_factory",
                 "tags": [{"tdm": true}],
                 "record_first": [{"player_name": "Baseballshane", "player_uuid": "dc07596f-1846-4177-913c-4375b15583ef", "distance": "57", "evidence": ""}],
-                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "43", "evidence": "http://i.imgur.com/xGyPG0I.png"}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
@@ -3756,6 +3756,13 @@ window.onload = function() {
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
+				"map": "Roar",
+                "slug": "roar",
+                "tags": [{"dtc": true}],
+                "record_first": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "55", "evidence"http://i.imgur.com/fCENgXd.png: ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
                 "map": "Royal Garden CTW",
                 "slug": "royal_garden_ctw",
                 "tags": [{"ctw": true}],
@@ -4144,7 +4151,7 @@ window.onload = function() {
                 "slug": "ssb_halloween",
                 "tags": [{"dtc": true, "dtm": true}],
                 "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "62", "evidence": ""}],
-                "record_second": [{"player_name": "Creeps_", "player_uuid": "ee49dcbe-4cb5-48d9-9eb4-fb203fec40f4", "distance": "50", "evidence": ""}],
+                "record_second": [{"player_name": "RealCrazyCreeps", "player_uuid": "5b25f6bc-44d8-47a7-ab52-f985ed309758", "distance": "50", "evidence": ""}],
                 "record_third": [{"player_name": "SheriffSoco", "player_uuid": "6e347123-c684-4d7e-996c-44d4924ff172", "distance": "31", "evidence": ""}]
             },
             {
@@ -4929,7 +4936,7 @@ window.onload = function() {
                 "tags": [{"ffa": true}],
                 "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "58", "evidence": ""}],
                 "record_second": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "53", "evidence": ""}],
-                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+                "record_third": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "42", "evidence": "http://i.imgur.com/VtCioVE.png"}]
             },
             {
                 "map": "Viridun PearlBow RAGE",
