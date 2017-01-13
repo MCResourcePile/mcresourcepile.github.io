@@ -5090,6 +5090,126 @@ window.onload = function() {
                 "record_first": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "56", "evidence": ""}],
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "The 8th Law",
+                "slug": "the_8th_law",
+                "tags": [{"ctw": true, "dtm": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "71", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Bamboo Valley III",
+                "slug": "bamboo_valley_iii",
+                "tags": [{"dtc": true, "dtm": true}],
+                "record_first": [{"player_name": "Hoodovah", "player_uuid": "bd029cbe-ec66-48cb-8760-6509c1607328", "distance": "82", "evidence": ""}],
+                "record_second": [{"player_name": "vaneslair", "player_uuid": "5498fe2d-aa1f-4e84-a830-be965ef95252", "distance": "76", "evidence": ""}],
+                "record_third": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "66", "evidence": ""}]
+            },
+            {
+                "map": "Battle of Tenjin III",
+                "slug": "battle_of_tenjin_iii",
+                "tags": [{"dtc": true, "tdm": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "102", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Cardinal",
+                "slug": "cardinal",
+                "tags": [{"dtm": true, "koth": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Clover",
+                "slug": "clover",
+                "tags": [{"ctw": true, "dtc": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Ender Blast",
+                "slug": "ender_blast",
+                "tags": [{"ctw": true, "dtm": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "78", "evidence": ""}],
+                "record_second": [{"player_name": "Helver", "player_uuid": "1195b912-4869-4dfd-929a-bb2b344f9b1d", "distance": "73", "evidence": ""}],
+                "record_third": [{"player_name": "SheriffSoco", "player_uuid": "6e347123-c684-4d7e-996c-44d4924ff172", "distance": "24", "evidence": ""}]
+            },
+            {
+                "map": "Fractal Descent",
+                "slug": "fractal_descent",
+                "tags": [{"dtc": true, "dtm": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "124", "evidence": ""}],
+                "record_second": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "119", "evidence": ""}],
+                "record_third": [{"player_name": "Nemesis_", "player_uuid": "acbe8312-dabc-4977-80ec-82c337b6ce72", "distance": "63", "evidence": ""}]
+            },
+            {
+                "map": "Interitus",
+                "slug": "interitus",
+                "tags": [{"dtc": true, "dtm": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "83", "evidence": ""}],
+                "record_second": [{"player_name": "Capyv", "player_uuid": "a95b325d-b3c8-4714-8049-fdcf604cfa7c", "distance": "65", "evidence": ""}],
+                "record_third": [{"player_name": "SheriffSoco", "player_uuid": "6e347123-c684-4d7e-996c-44d4924ff172", "distance": "57", "evidence": ""}]
+            },
+            {
+                "map": "Retaliation 2",
+                "slug": "retaliation_2",
+                "tags": [{"dtc": true, "dtm": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "92", "evidence": ""}],
+                "record_second": [{"player_name": "Capyv", "player_uuid": "a95b325d-b3c8-4714-8049-fdcf604cfa7c", "distance": "91", "evidence": ""}],
+                "record_third": [{"player_name": "snatter", "player_uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1", "distance": "75", "evidence": ""}]
+            },
+            {
+                "map": "Revenge TE",
+                "slug": "revenge_te",
+                "tags": [{"dtc": true, "dtm": true}],
+                "record_first": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "81", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Spaceship Battles",
+                "slug": "spaceship_battles",
+                "tags": [{"dtc": true, "dtm": true}],
+                "record_first": [{"player_name": "Nidho0gg", "player_uuid": "f34625ab-8f27-4cb5-8424-671fa82d4033", "distance": "104", "evidence": ""}],
+                "record_second": [{"player_name": "Cascoid", "player_uuid": "ad3111ab-627d-4860-86d9-93a34542db09", "distance": "102", "evidence": ""}],
+                "record_third": [{"player_name": "mspotter", "player_uuid": "e69d382a-8425-455d-bdf1-ad8b0761f5fe", "distance": "81", "evidence": ""}]
+            },
+            {
+                "map": "Spaceship Battles II",
+                "slug": "spaceship_battles_ii",
+                "tags": [{"dtc": true, "dtm": true}],
+                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "85", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "The 4th Law",
+                "slug": "the_4th_law",
+                "tags": [{"ctw": true, "dtc": true}],
+                "record_first": [{"player_name": "LeFanceistBottom", "player_uuid": "f6ec0cb5-38a3-4e4b-a9aa-47d9aa4ab02a", "distance": "74", "evidence": ""}],
+                "record_second": [{"player_name": "Saimonti", "player_uuid": "30c45154-f25f-45b0-a96b-7301edb7e78c", "distance": "51", "evidence": ""}],
+                "record_third": [{"player_name": "SheriffSoco", "player_uuid": "6e347123-c684-4d7e-996c-44d4924ff172", "distance": "47", "evidence": ""}]
+            },
+            {
+                "map": "Wintery Cabin",
+                "slug": "wintery_cabin",
+                "tags": [{"dtc": true, "dtm": true}],
+                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Woodwork Harbor",
+                "slug": "woodwork_harbor",
+                "tags": [{"dtc": true, "dtm": true}],
+                "record_first": [{"player_name": "Disproof", "player_uuid": "1d14f451-c8f0-4e02-a387-1ea808f8b5b3", "distance": "136", "evidence": ""}],
+                "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "121", "evidence": ""}],
+                "record_third": [{"player_name": "Crazy_", "player_uuid": "a9f11454-beac-4cc3-a138-1780802c8794", "distance": "57", "evidence": ""}]
             }
 		]
     };
