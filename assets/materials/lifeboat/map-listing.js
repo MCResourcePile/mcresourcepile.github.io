@@ -496,12 +496,12 @@ window.onload = function() {
             cardinal: false,
         }, {
             map: "No Return",
-            slug: "undead_heat",
+            slug: "no_return",
             path: "Blitz/Classic/Standard/No%20Return/",
             authors: [
                 {player_name: "AMo", player_uuid: "a6a99e23-34c4-4957-8974-b78b4da9ce7c"}
             ],
-            tags: [ {blitz: true} ],
+            tags: [ {blitz: true, te: true} ],
             discussion: "https://oc.tc/forums/topics/51801308ba608790cc004cb4",
             BY_NC_SA: true,
             download: true,
