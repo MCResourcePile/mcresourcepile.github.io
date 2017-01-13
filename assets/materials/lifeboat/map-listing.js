@@ -47,7 +47,7 @@ window.onload = function() {
                 {player_name: "rockymine", player_uuid: "fe3608b7-d105-4029-8800-34b3147065b6"}
             ],
             tags: [ {ctw: true} ],
-            discussion: "",
+            discussion: "https://oc.tc/forums/topics/553d3ae5c29635217000800f",
             BY_NC_SA: true,
             download: true,
             xml: true,
@@ -231,7 +231,7 @@ window.onload = function() {
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {tdm: true} ],
-            discussion: "",
+            discussion: "https://oc.tc/forums/topics/547e0f2a5f35b9a6b5001614",
             BY_NC_SA: true,
             download: true,
             xml: true,
@@ -677,7 +677,7 @@ window.onload = function() {
                 {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
             ],
             tags: [ {ffa: true} ],
-            discussion: "",
+            discussion: "https://oc.tc/forums/topics/55756097c29635a0c8004000",
             BY_NC_SA: true,
             download: false,
             xml: true,
