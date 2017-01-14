@@ -1,12 +1,18 @@
+# Contributing to ResourcePile
+- How to contribute to [StatTrack](#contributions-to-stattrack).
+- How to contribute to [MapStack](#contributions-to-mapstack).
+- A list of [Map Tags](#map-tags).
+-----
+
 ##Contributions to StatTrack
 
-All records for StatTrack bow records are stored within a javascript file called `bow-records.js` which is located in the materials folder under each of the network's individual sectons. The `bow.html` file does **not** need to be edited.
+All records for StatTrack bow records are stored within a javascript file called `bow-records.js` which is located under each of the network's individual folder, under the materials folder, which is under the assets folder. The `bow.html` file does **not** need to be edited.
 
-* Lifeboat PC bow records: [`lifeboat/materials/bow-records.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/stattrack/lifeboat/materials/bow-records.js)
-* Avicus Network bow records: [`avicus/materials/bow-records.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/stattrack/avicus/materials/bow-records.js)
+* Lifeboat PC bow records: [`assets/materials/lifeboat/bow-records.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/lifeboat/bow-records.js)
+* Avicus Network bow records: [`assets/materials/avicus/bow-records.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/avicus/bow-records.js)
 
-Below is an example of how the records for the map `Abandoned Zoo` will look inside of this file. 
-```
+Below is an example of how the records for the map `Abandoned Zoo` will look inside of this file.
+```js
 {
     map: "Abandoned Zoo",
     slug: "abandoned_zoo",
@@ -29,6 +35,49 @@ Below is an example of how the records for the map `Abandoned Zoo` will look ins
 |`player_uuid: ""`|The player's UUID, which can be found by using https://mcuuid.net/|
 |`distance: ""`|The record distance|
 |`evidence: ""`|Additional evidence of the record which will be displayed next to the record. This is not required, but it encouraged that you link evidence with each new record.|
+
+-----
+
+##Contributions to MapStack
+
+All maps listed on MapStack are stored within a javascript file called `map-listing.js` which is located under each of the network's individual folder, under the materials folder, which is under the assets folder. The `lifeboat.html` or `avicus.html` in the mapstack folder does **not** need to be edited.
+
+* Lifeboat PC bow records: [`assets/materials/lifeboat/map-listing.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/lifeboat/map-listing.js)
+* Avicus Network bow records: [`assets/materials/avicus/bow-records.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/avicus/map-listing.js)
+
+Below is an example of how the map `Abandoned Zoo` will look inside of this file.
+```js
+{
+    map: "Abandoned Zoo",
+    slug: "abandoned_zoo",
+    path: "TDM/Standard/Abandoned%20Zoo/"
+    authors: {
+        {player_name: "Solo_Runner", player_uuid: "2fa85349-2276-4850-b7b5-d18c4f4c8376"}
+    }
+    tags: [ {tdm: true} ],
+    discussion: "https://oc.tc/forums/topics/51ddcd17af7fb0d4b2003633",
+    BY_NC_SA: true,
+    download: true,
+    xml: true,
+    cardinal: false,
+
+},
+```
+
+|Attribute|Description|
+|---|---|
+|`map: ""`|The map's display name|
+|`slug: ""`|The auto-generated identification string given to the map by the network. This is used to link the map back to its information back on the respective network. This slug can be found in the last part of the URL when viewing the map page. Eg. `https://oc.tc/maps/abandoned_zoo`|
+|`path: ""`|This is the last part of the URL when viewing on https://maps.oc.tc. Eg. `https://maps.oc.tc/TDM/Standard/Abandoned%20Zoo/`
+|`authors: ""`|The creator(s) of the map. There can be multiple authors. `player_name:` is the player's current name. `player_uuid:` is the player's uuid, which can be found using https://mcuuid.net/.|
+|`tags: []`|Descriptive tags given to the map to define game modes, sub game types, seasonal events and tournament editions. A full list of avaliable tags can be found [here](#map-tags).|
+|`discussion: ""`|The link of the map's discussion thread. Should be left blank if there isn't one.|
+|`BY_NC_SA: true/false`|If true, the map will fall under the [BY_NA_SA](https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode) license. If false, it will fall under the [BY-SA](https://creativecommons.org/licenses/by-sa/3.0/legalcode) license.|
+|`download: true/false`|Specify if the map has a download. All maps should have a download.|
+|`xml: true/false`|Specify if the map has an XML file. All maps should have an XML File.|
+|`cardinal: true/false`|Specify if the map works with [CardinalPGM](https://github.com/twizmwazin/CardinalPGM).|
+
+-----
 
 ###Map Tags
 
