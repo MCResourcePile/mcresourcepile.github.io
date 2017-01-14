@@ -2,6 +2,7 @@
 - How to contribute to [StatTrack](#contributions-to-stattrack).
 - How to contribute to [MapStack](#contributions-to-mapstack).
 - A list of [Map Tags](#map-tags).
+
 -----
 
 ##Contributions to StatTrack
@@ -72,7 +73,7 @@ Below is an example of how the map `Abandoned Zoo` will look inside of this file
 |`authors: ""`|The creator(s) of the map. There can be multiple authors. `player_name:` is the player's current name. `player_uuid:` is the player's uuid, which can be found using https://mcuuid.net/.|
 |`tags: []`|Descriptive tags given to the map to define game modes, sub game types, seasonal events and tournament editions. A full list of avaliable tags can be found [here](#map-tags).|
 |`discussion: ""`|The link of the map's discussion thread. Should be left blank if there isn't one.|
-|`BY_NC_SA: true/false`|If true, the map will fall under the [BY_NA_SA](https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode) license. If false, it will fall under the [BY-SA](https://creativecommons.org/licenses/by-sa/3.0/legalcode) license.|
+|`BY_NC_SA: true/false`|If true, the map will fall under the [BY_NC_SA](https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode) license. If false, it will fall under the [BY-SA](https://creativecommons.org/licenses/by-sa/3.0/legalcode) license.|
 |`download: true/false`|Specify if the map has a download. All maps should have a download.|
 |`xml: true/false`|Specify if the map has an XML file. All maps should have an XML File.|
 |`cardinal: true/false`|Specify if the map works with [CardinalPGM](https://github.com/twizmwazin/CardinalPGM).|
