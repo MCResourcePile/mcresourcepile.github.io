@@ -348,6 +348,19 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "DynaboOo",
+            slug: "dynamo_halloween",
+            path: "CTW/Halloween/Dynamo%20Halloween/",
+            authors: [
+                {player_name: "Brottweiler", player_uuid: "6968cbde-c2b7-479c-a8da-f33f109f013b"},
+                {player_name: "Dino_Saurus", player_uuid: "053ca59c-92f9-4c80-8c42-9ff175dff97e"}
+            ],
+            tags: [ {ctw: true, season: "Halloween"} ],
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Dynamo",
             slug: "dynamo",
             path: "CTW/Standard/Dynamo/",
@@ -357,19 +370,6 @@ window.onload = function() {
             ],
             tags: [ {ctw: true} ],
             discussion: "https://oc.tc/forums/topics/52154b1baf7fb0abea000351",
-            BY_NC_SA: true,
-            download: true,
-            xml: true,
-            cardinal: false,
-        }, {
-            map: "DynaboOo",
-            slug: "dynamo_halloween",
-            path: "CTW/Halloween/Dynamo Halloween/",
-            authors: [
-                {player_name: "Brottweiler", player_uuid: "6968cbde-c2b7-479c-a8da-f33f109f013b"},
-                {player_name: "Dino_Saurus", player_uuid: "053ca59c-92f9-4c80-8c42-9ff175dff97e"}
-            ],
-            tags: [ {ctw: true} ],
             BY_NC_SA: true,
             download: true,
             xml: true,
