@@ -648,7 +648,7 @@ window.onload = function() {
             path: "FFA/Pompeii%205x5/",
             authors: [
                 {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
-                {player_name: "-3Each", player_uuid: "5198dc37-537f-4ea5-8ee8-1e0952d4a36b"}
+                {player_name: "_3Each", player_uuid: "5198dc37-537f-4ea5-8ee8-1e0952d4a36b"}
             ],
             tags: [ {ffa: true, micro: true} ],
             discussion: "https://oc.tc/forums/topics/570ae6825f35b90e47000001",
