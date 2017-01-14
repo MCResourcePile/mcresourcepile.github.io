@@ -1117,6 +1117,21 @@ window.onload = function() {
             download: true,
             xml: true,
             cardinal: false,
+        }, {
+            map: "Winterhold",
+            slug: "winterhold",
+            path: "DTC/Standard/Winterhold/",
+            authors: [
+                {player_name: "Aceman1998", player_uuid: "90d4c2a3-137b-4965-b9e5-963ab5a23fa1"},
+                {player_name: "Brottweiler", player_uuid: "6968cbde-c2b7-479c-a8da-f33f109f013b"}
+            ],
+            tags: [ {dtc: true, tnt: true} ],
+            discussion: "https://oc.tc/forums/topics/514e495eba608794d50000e2",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+
         }, ],
     };
     var output = template(data);
