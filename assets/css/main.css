@@ -410,6 +410,11 @@ span.game-mode-button {
 .map-header:focus {
     font-size: 14px;
     color: #000;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 195px;
 }
 
 .map-tag,
@@ -504,18 +509,26 @@ span.game-mode-button {
 
 .external-thread {
     color: rgba(0, 0, 0, 0.55);
-    margin-top: 13px;
-    margin-right: 9px;
+    margin-top: 15px;
+    margin-right: 6px;
 }
 
 .external-thread-size {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .map-label {
     display: inline-block;
     margin-top: 2px;
     padding-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 244px;
+}
+
+.total-maps {
+    padding: 18px;
 }
 
 .well-custom-red {
