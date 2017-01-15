@@ -39,6 +39,35 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Acear I",
+            slug: "acear_i",
+            path: "CTF/Standard/Acear%20I/",
+            authors: [
+                {player_name: "nintendoboy11", player_uuid: "022321a8-578b-4438-b035-8a3ca735639f"},
+                {player_name: "Kaskito", player_uuid: "cbd5c47c-1137-4f02-93dd-626a46bdd779"}
+            ],
+            tags: [ {ctf: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Acear II",
+            slug: "acear_ii",
+            path: "DTM/Standard/Acear%20II/",
+            authors: [
+                {player_name: "nintendoboy11", player_uuid: "022321a8-578b-4438-b035-8a3ca735639f"},
+                {player_name: "Strmr", player_uuid: "755acf7d-c9b4-4f1d-b7ac-db4dfdfa2b26"},
+                {player_name: "Kaskito", player_uuid: "cbd5c47c-1137-4f02-93dd-626a46bdd779"}
+            ],
+            tags: [ {dtm: true} ],
+            discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Agrostid",
             slug: "agrostid",
             path: "CTW/Standard/Agrostid/",
@@ -87,6 +116,20 @@ window.onload = function() {
             ],
             tags: [ {ctw: true, te: true} ],
             discussion: "",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Biomes",
+            slug: "biomes",
+            path: "Arcade/Rush/Biomes/",
+            authors: [
+                {player_name: "GoldenOre", player_uuid: "38ab65dd-95f9-406f-917c-6accc995421f"},
+                {player_name: "rockymine", player_uuid: "fe3608b7-d105-4029-8800-34b3147065b6"}
+            ],
+            tags: [ {arcade: true} ],
+            discussion: "https://oc.tc/forums/topics/57e8319d67d52241d6000009",
             BY_NC_SA: true,
             download: true,
             xml: true,
@@ -571,6 +614,19 @@ window.onload = function() {
             ],
             tags: [ {dtm: true, tnt: true} ],
             discussion: "https://oc.tc/forums/topics/570c3d3d5f35b9035c000007",
+            BY_NC_SA: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Masarin II",
+            slug: "masarin_ii",
+            path: "Mixed/Standard/Masarin%20II/",
+            authors: [
+                {player_name: "AllttA", player_uuid: "ee864d09-99c7-4c3d-9e3e-852e51339107"}
+            ],
+            tags: [ {dtc: true, dtm: true} ],
+            discussion: "",
             BY_NC_SA: true,
             download: true,
             xml: true,
