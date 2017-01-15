@@ -389,6 +389,11 @@ span.game-mode-button {
 .map-header:focus {
     font-size: 14px;
     color: #000;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 195px;
 }
 
 .map-tag,
@@ -503,5 +508,4 @@ span.game-mode-button {
 
 .total-maps {
     padding: 18px;
-}
 }
