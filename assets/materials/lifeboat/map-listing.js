@@ -687,7 +687,7 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
-			map: "Ping Bomb",
+	    map: "Ping Bomb",
             slug: "ping_bomb",
             path: "Arcade/Ping%20Bomb/",
             authors: [
@@ -702,7 +702,7 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
-			map: "Ping Bomb II",
+	    map: "Ping Bomb II",
             slug: "ping_bomb_ii",
             path: "Arcade/Ping%20Bomb%20II/",
             authors: [
@@ -710,7 +710,7 @@ window.onload = function() {
                 {player_name: "majjus_", player_uuid: "453003c1-d3a2-4b0a-b491-1205e503de90"},
                 {player_name: "Flashee", player_uuid: "f5d5c301-9ad3-4cb4-9cfd-a6b78e67734a"},
             ],
-            tags: [ {dtm: arcade} ],
+            tags: [ {arcade: true} ],
             discussion: "",
             BY_NC_SA: true,
             download: true,
