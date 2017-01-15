@@ -95,12 +95,19 @@ SOFTWARE.
             return nextReturn;
         });
     };
-
+    
+    var commercial = false;
+    
     var _zipContents = function(filename, contents, callbackScope){
         var zip = new JSZip();
         contents.forEach(function(item){
             progressCallback.call(callbackScope, 'processing', 'Compressing ' + item.path,
                 ++progressCallback._idx / (progressCallback._len * 2) * 100);
+            if(commercial){
+                zip.file("LICENSE.txt", "This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n");
+            }else{
+                zip.file("LICENSE.txt", "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n");
+            }
             zip.file(item.path, item.content, {createFolders:true,base64:true});
         });
         if(isSafari){
