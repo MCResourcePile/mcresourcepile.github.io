@@ -235,8 +235,8 @@
                     <a class="game-mode-button license_by_sa" href="?s=by-sa"></a>
                 </div>
             </div>
-            <br>
-            <div id="maps-output" class="maps-output"></div>
+            <div class="total-maps center"></div>
+            <div id="maps-output"></div>
             <div class="modal fade" id="download-complete-message" tabindex="-1" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -285,13 +285,24 @@
             $('.record-search-container').on('click', function(){
                 makeSearchable()
             })
+            
+            $(document).on('keydown', function() {
+                makeSearchable()
+            });
 
+            var total_maps = 0;
+            var total_display = 0;
+            
             function makeSearchable(){
                 $('#maps-output .dynamic').searchable({
                     selector: 'div.map-thumbnail',
                     childSelector: '.map-float',
                     searchField: '#search'
                 })
+                
+                total_maps = $('.dynamic').children('.map-thumbnail').length;
+                total_display = $('.map-thumbnail:visible').length
+                $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps");
             }
         </script>
         <script type="text/javascript">
