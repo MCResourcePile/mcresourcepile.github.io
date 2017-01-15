@@ -7,6 +7,6 @@
    $("a:contains('Jexel')").html("<span class=\"position-helper\">Bucko511</span>")
    $("a:contains('freundTech')").html("<span class=\"position-helper\">freundTech</span>")
    $("a:contains('triplezko')").html("<span class=\"position-helper\">triplezko</span>")
-   $("a:contains('nanuscience')").html("<span class=\"position-designer\">Nanu</span>")
+   $("a:contains('nanuscience')").html("<span class=\"position-helper\">Nanu</span>")
    $("tr:contains('INT')").html("")
  };
