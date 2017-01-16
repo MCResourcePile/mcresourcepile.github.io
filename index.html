@@ -53,46 +53,58 @@
         <div class="background-splash-wash" style="text-align:center">
             <div class="container splash-header-body" id="wrapper-header">
                 <div class="splash-header">ResourcePile</div>
-                <div class="splash-subheader">Best collection of resources for the Lifeboat PC and Avicus networks.</div>
+                <div class="splash-subheader">The best collection of resources for the Overcast and Avicus Networks</div>
+                <div class="splash-buttons">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-2">
+                        <button href="#" class="btn map-link map-button" role="button" data-toggle="modal" data-target="#overcast-selection">Overcast</button> 
+                    </div>
+                    <div class="col-md-2">
+                        <button href="#" class="btn map-link map-button" role="button" data-toggle="modal" data-target="#avicus-selection">Avicus</button> 
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
             </div>
             <!-- Main page content -->
             <div class="page-content" id="wrapper-content">
+                <div class="content-title">Sections</div>
+                <div class="content-subtitle">Just a small selection of our resources</div>
                 <div class="container">
                     <div class="row" style="margin-top:18px;">
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <a href="stattrack/lifeboat/bow" class="object-card-link">
-                                <div class="object-card card-background-green center">
+                                <div class="object-card card-background-red center">
                                     <span class="object-card-display icon stat-bow-icon">
                                 </div>
-                                <span class="object-card-title"><strong>Lifeboat Bow Records</strong></span>
-                                <div class="object-card-discription">Longest bow kill distances on Lifeboat PC</div>
+                                <span class="object-card-title card-title-red"><strong>Overcast Bow Records</strong></span>
+                                <div class="object-card-discription">Tracking the longest bow kill distances recorded on the Overcast Network across all maps and gamemodes</div>
                             </a>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <a href="mapstack/lifeboat" class="object-card-link">
-                                <div class="object-card card-background-green center">
+                                <div class="object-card card-background-red-alt center">
                                     <span class="object-card-display icon stat-compass-icon">
                                 </div>
-                                <span class="object-card-title"><strong>Lifeboat Public Maps</strong></span>
-                                <div class="object-card-discription">A collection of publicly downloadable maps from Lifeboat PC</div>
+                                <span class="object-card-title card-title-red-alt"><strong>Overcast Map Downloads</strong></span>
+                                <div class="object-card-discription">A large collection of maps from the Overcast Network which have been made publicly downloadable</div>
                             </a>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <a href="stattrack/avicus/bow" class="object-card-link">
                                 <div class="object-card card-background-blue center">
                                     <span class="object-card-display icon stat-bow-icon">
                                 </div>
-                                <span class="object-card-title"><strong>Avicus Bow Records</strong></span>
-                                <div class="object-card-discription">Longest bow kill distances on the Avicus Network</div>
+                                <span class="object-card-title card-title-blue"><strong>Avicus Bow Records</strong></span>
+                                <div class="object-card-discription">Tracking the longest bow kill distances recorded on the Avicus Network across all maps and gamemodes</div>
                             </a>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <a href="mapstack/avicus" class="object-card-link">
-                                <div class="object-card card-background-blue center">
+                                <div class="object-card card-background-blue-alt center">
                                     <span class="object-card-display icon stat-compass-icon">
                                 </div>
-                                <span class="object-card-title"><strong>Avicus Public Maps</strong></span>
-                                <div class="object-card-discription">A collection of publicly downloadable maps from the Avicus Network</div>
+                                <span class="object-card-title card-title-blue-alt"><strong>Avicus Map Downloads</strong></span>
+                                <div class="object-card-discription">A large collection of maps from the Avicus Network which have been made publicly downloadable</div>
                             </a>
                         </div>
                     </div>
@@ -107,6 +119,56 @@
                               </ul>
                           </footer>
                           <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="overcast-selection" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Overcast Network Resources</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="well well-sm">
+                                <span class="object-card-title card-title-red"><strong>StatTrack</strong></span>
+                                <ul style="margin-top:12px;">
+                                    <li><a href="#" class="object-card-discription">Longest Bow Distance</a></li>
+                                    <li><a href="#" class="object-card-discription">Objective Leaderboards</a></li>
+                                    <li><a href="#" class="object-card-discription">Website Stats</a></li>
+                                </ul>
+                                <span class="object-card-title card-title-red-alt"><strong>MapStack</strong></span>
+                                <ul style="margin-top:12px;">
+                                    <li><a href="#" class="object-card-discription">Public Map Listing</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="avicus-selection" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Avicus Network Resources</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="well well-sm">
+                                <span class="object-card-title card-title-blue"><strong>StatTrack</strong></span>
+                                <ul style="margin-top:12px;">
+                                    <li><a href="#" class="object-card-discription">Longest Bow Distance</a></li>
+                                </ul>
+                                <span class="object-card-title card-title-blue-alt"><strong>MapStack</strong></span>
+                                <ul style="margin-top:12px;">
+                                    <li><a href="#" class="object-card-discription">Public Map Listing</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
