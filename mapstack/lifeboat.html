@@ -209,6 +209,7 @@
                     <a class="game-mode-button game_dtc" href="?s=dtc"></a>
                     <a class="game-mode-button game_dtm" href="?s=dtm"></a>
                     <a class="game-mode-button game_koth" href="?s=koth"></a>
+                    <a class="game-mode-button game_cp" href="?s=cp"></a>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <div class="game-mode-section-header">Deathmatch</div>
@@ -268,11 +269,11 @@
         <script type="text/javascript">
             setTimeout(function () {
                 makeSearchable()
-                
+
                 $(function () {
                     $('[data-toggle="tooltip"]').tooltip()
                 })
-                
+
                 var total_hidden = $('.dynamic').children('.no-download').length;
                 var maps_no_download = $.map($(".no-download"), function(n, i){
                     return "\n- " + n.id;
@@ -289,18 +290,18 @@
             $('.record-search-container').on('click', function(){
                 makeSearchable()
             })
-            
+
             $(document).on('keydown', function() {
                 makeSearchable()
             });
-            
+
             function makeSearchable(){
                 $('#maps-output .dynamic').searchable({
                     selector: 'div.map-thumbnail',
                     childSelector: '.map-float',
                     searchField: '#search'
                 })
-                
+
                 var total_maps = $('.dynamic').children('.map-thumbnail').length;
                 var total_display = $('.map-thumbnail:visible').length
                 $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps");
