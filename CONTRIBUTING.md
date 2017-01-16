@@ -44,7 +44,7 @@ Below is an example of how the records for the map `Abandoned Zoo` will look ins
 All maps listed on MapStack are stored within a javascript file called `map-listing.js` which is located under each of the network's individual folder, under the materials folder, which is under the assets folder. The `lifeboat.html` or `avicus.html` file in the mapstack folder does **not** need to be edited.
 
 * Lifeboat PC map listing: [`assets/materials/lifeboat/map-listing.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/lifeboat/map-listing.js)
-* Avicus Network map listing: [`assets/materials/avicus/bow-records.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/avicus/map-listing.js)
+* Avicus Network map listing: [`assets/materials/avicus/map-listing.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/avicus/map-listing.js)
 
 Below is an example of how the map `Abandoned Zoo` will look inside of this file.
 ```js
@@ -106,4 +106,3 @@ TNT || `tnt: true`
 Tournament Edition || `te: true`  
 Seasonal Edition | Christmas, Halloween, etc.. | `season: ""`  
 Other gamemode or sub-gamemode | Juggernaut gamemode from Lifeboat's arcade for example | `other: ""`
-
