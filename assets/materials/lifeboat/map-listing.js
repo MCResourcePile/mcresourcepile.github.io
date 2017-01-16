@@ -23,7 +23,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "A SpOOky Sunset",
             slug: "a_spooky_sunset",
@@ -66,7 +66,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Broken void regions
         }, {
             map: "Agrostid",
             slug: "agrostid",
@@ -93,7 +93,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Wool room block filters broken
         }, {
             map: "Bamboo Valley IV",
             slug: "bamboo_valley_iv",
@@ -106,7 +106,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Bamboo Valley V",
             slug: "bamboo_valley_v",
@@ -119,7 +119,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Biomes",
             slug: "biomes",
@@ -133,7 +133,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "BR: Christmas",
             slug: "block_runner_christmas",
@@ -154,7 +154,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "BR: Halloween",
             slug: "block_runner_halloween",
@@ -171,7 +171,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "BR: World of Sports",
             slug: "block_runner_world_of_sports",
@@ -184,7 +184,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Brisked",
             slug: "brisked",
@@ -197,7 +197,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Redeemable scoreboxes don't work
         }, {
             map: "Build: Parkour",
             slug: "build_parkour",
@@ -211,7 +211,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Everything about this is broken
         }, {
             map: "Ces",
             slug: "ces",
@@ -224,7 +224,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Monuments don't register as being broken
         }, {
             map: "Chocolate Diamonds",
             slug: "chocolate_diamonds",
@@ -238,7 +238,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Coral Reef",
             slug: "coral_reef",
@@ -264,7 +264,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Clayish",
             slug: "clayish",
@@ -304,7 +304,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Crenel Halloween",
             slug: "crenel_halloween",
@@ -317,7 +317,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Dead Heat",
             slug: "dead_heat",
@@ -330,7 +330,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Desert Country",
             slug: "desert_country",
@@ -347,7 +347,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Drow's Crevice: Blitz",
             slug: "drow_s_crevice_blitz",
@@ -361,7 +361,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Drow's Crevice: UHC",
             slug: "drow_s_crevice_uhc",
@@ -375,7 +375,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Drow's Crevice II",
             slug: "drow_s_crevice_ii",
@@ -389,7 +389,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "DynaboOo",
             slug: "dynamo_halloween",
@@ -402,7 +402,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Wool room enter filters broken
         }, {
             map: "Dynamo",
             slug: "dynamo",
@@ -416,7 +416,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Explosive Vengeance",
             slug: "explosive_vengeance",
@@ -430,7 +430,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Festive Village",
             slug: "festive_village",
@@ -443,7 +443,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Flush",
             slug: "flush",
@@ -458,7 +458,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Foundry",
             slug: "foundry",
@@ -471,7 +471,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Fracture",
             slug: "fracture",
@@ -484,7 +484,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Spawns don't work
         }, {
             map: "Garden of Tholos",
             slug: "garden_of_tholos",
@@ -497,7 +497,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Gift",
             slug: "gift",
@@ -510,7 +510,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: false,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Gobi",
             slug: "gobi",
@@ -523,7 +523,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Grad",
             slug: "grad",
@@ -591,7 +591,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Causes strange errors when cycled to
         }, {
             map: "Leyst",
             slug: "leyst",
@@ -604,7 +604,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: false,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Library DTE",
             slug: "library_dte",
@@ -617,7 +617,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Masarin II",
             slug: "masarin_ii",
@@ -630,7 +630,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Mesa",
             slug: "mesa_5x5",
@@ -643,7 +643,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Net",
             slug: "net",
@@ -656,7 +656,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "No Return",
             slug: "no_return",
@@ -669,7 +669,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Lava doesn't trigger
         }, {
             map: "Pavage",
             slug: "pavage",
@@ -700,7 +700,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Explosions are broken
         }, {
 	    map: "Ping Bomb II",
             slug: "ping_bomb_ii",
@@ -715,7 +715,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Explosions are broken
         }, {
             map: "Pirate Attack",
             slug: "pirate_attack",
@@ -728,7 +728,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Projectiles not supported
         }, {
             map: "Pirate Cove",
             slug: "pirate_cove_5x5",
@@ -741,7 +741,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Pixel Run",
             slug: "pixel_run",
@@ -754,7 +754,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Getting to the finish doesn't end the game
         }, {
             map: "Pompeii",
             slug: "pompeii_5x5",
@@ -768,7 +768,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Prevagen",
             slug: "prevagen",
@@ -782,7 +782,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Retro",
             slug: "retro",
@@ -795,7 +795,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // GS is broken
         }, {
             map: "Retro: FFA",
             slug: "retro_ffa",
@@ -808,7 +808,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // GS is broken, FFA not supported
         }, {
             map: "Retro Christmas",
             slug: "retro_christmas",
@@ -821,7 +821,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // GS is broken
         }, {
             map: "Retro Halloween",
             slug: "retro_halloween",
@@ -834,7 +834,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // GS is broken
         }, {
             map: "Retro KOTF",
             slug: "retro_kotf_5x5",
@@ -848,7 +848,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Rooted Frontier",
             slug: "rooted_frontier",
@@ -861,7 +861,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Spawns broken
         }, {
             map: "Rush Wars Tournament 2: Attack of the Defenders",
             slug: "rush_wars_tournament_2_attack_of_the_defenders",
@@ -887,7 +887,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Saaneckh",
             slug: "saaneckh",
@@ -927,7 +927,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // GS is broken
         }, {
             map: "Siege",
             slug: "siege",
@@ -940,7 +940,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Snowish",
             slug: "snowish",
@@ -953,7 +953,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: false,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Snowy Diamonds",
             slug: "snowy_diamonds",
@@ -967,7 +967,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Solitude",
             slug: "solitude",
@@ -1040,7 +1040,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Space Race: 1969",
             slug: "space_race_1969",
@@ -1053,7 +1053,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "SpOOky Diamonds",
             slug: "spooky_diamonds",
@@ -1067,7 +1067,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Sweet Tooth",
             slug: "sweet_tooth",
@@ -1081,7 +1081,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "The Last Sunset II",
             slug: "the_last_sunset_ii",
@@ -1095,7 +1095,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // No kits
         }, {
             map: "The Snowmelt Mines",
             slug: "the_snowmelt_mines",
@@ -1109,7 +1109,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Thicket",
             slug: "thicket",
@@ -1122,7 +1122,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Undead Heat",
             slug: "undead_heat",
@@ -1135,7 +1135,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Under the Sea",
             slug: "under_the_sea_5x5",
@@ -1148,7 +1148,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Versatile",
             slug: "versatile",
@@ -1161,7 +1161,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Village",
             slug: "village",
@@ -1174,7 +1174,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // FFA not supported
         }, {
             map: "Wallop",
             slug: "wallop",
@@ -1188,7 +1188,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Wallop Too",
             slug: "wallop_too",
@@ -1202,7 +1202,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: true,
         }, {
             map: "Winterhold",
             slug: "winterhold",
@@ -1216,7 +1216,7 @@ window.onload = function() {
             BY_NC_SA: true,
             download: true,
             xml: true,
-            cardinal: false,
+            cardinal: false, // Core objectives are broken
 
         }, ],
     };
