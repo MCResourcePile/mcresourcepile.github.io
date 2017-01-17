@@ -278,6 +278,20 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Cerulean Cave",
+            slug: "cerulean_cave",
+            authors: [
+                {player_name: "chle_", player_uuid: "a23a1d91-7e97-40b4-8f5e-1ab82d8f5ade"},
+                {player_name: "McFanta_", player_uuid: "dd495aa8-26a3-4b77-b3fa-e96e2e5a0d47"}
+            ],
+            tags: [ {ffa: true} ],
+            discussion: "https://oc.tc/forums/topics/56ce1e5ac296354239000014",
+            official: true,
+            commercial: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Ces",
             slug: "ces",
             path: "DTM/Standard/Ces/",
@@ -626,6 +640,20 @@ window.onload = function() {
             download: true,
             xml: true,
             cardinal: true,
+        }, {
+            map: "Geiran 5x5",
+            slug: "geiran_5x5",
+            authors: [
+                {player_name: "chle_", player_uuid: "a23a1d91-7e97-40b4-8f5e-1ab82d8f5ade"},
+                {player_name: "McFanta_", player_uuid: "dd495aa8-26a3-4b77-b3fa-e96e2e5a0d47"}
+            ],
+            tags: [ {ffa: true, micro: true} ],
+            discussion: "https://oc.tc/forums/topics/572224af5f35b91d73000009",
+            official: true,
+            commercial: true,
+            download: true,
+            xml: true,
+            cardinal: false,
         }, {
             map: "Gift",
             slug: "gift",
