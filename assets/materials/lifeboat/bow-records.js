@@ -988,13 +988,21 @@ window.onload = function() {
                 "record_third": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "61", "evidence": ""}]
             },
             {
+                "map": "Bunny Burrow",
+                "slug": "bunny_burrow",
+                "tags": [{"ctw": true}],
+                "record_first": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "2", "evidence": "https://i.imgur.com/PMsVQxk.png"}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+	    {
                 "map": "Buried Down",
                 "slug": "buried_down",
                 "tags": [{"ctw": true}],
                 "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
-            },
+            },	
             {
                 "map": "BVC",
                 "slug": "bvc",
@@ -5168,6 +5176,14 @@ window.onload = function() {
                 "slug": "ximorta",
                 "tags": [{"dtm": true}],
                 "record_first": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "68", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+	    {
+                "map": "Xion",
+                "slug": "xion",
+                "tags": [{"ctw": true}],
+                "record_first": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "20", "evidence": "https://i.imgur.com/rS9tD98.png"}],
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
