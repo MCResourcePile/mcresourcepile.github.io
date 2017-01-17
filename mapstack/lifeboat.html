@@ -26,24 +26,25 @@
                     <div id="{{slug}}" class="no-download"></div>
                     {{else}}
                     <!-- Main thumbnail body -->
-                    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+                    <div class="col-sm-6 col-lg-3 map-thumbnail center {{#if official}}official-map{{else}}unofficial-map{{/if}}">
                         <div id="{{id}}" class="thumbnail map-float">
                             <!-- Map image background, contains banner and labels -->
-                            <div class="map-image" style="background-image: url('https://maps.oc.tc/{{#if path}}{{path}}/map.png{{else}}404.png{{/if}}');">
+                            <!-- path will be depreciated once maps.oc.tc is no longer running, instead use a locally stored map.png for new maps -->
+                            <div class="map-image" style="background-image: url('{{#if path}}https://maps.oc.tc/{{path}}/map.png{{else}}https://raw.githubusercontent.com/MCResourcePile/MapStack-LifeboatPC/master/maps/{{slug}}/map.png{{/if}}');">
                                 <!-- Map banner, contains name, authors and quick links -->
-                                <div class="map-banner">
+                                <div class="map-banner {{#unless official}}map-banner-unofficial{{/unless}}">
                                     <!-- Map heading -->
                                     <a class="map-header" href="https://mcresourcepile.github.io/stattrack/lifeboat/bow?s={{slug}}"><strong>{{#if map}}<span class="map-featured" data-toggle="tooltip" data-placement="top" title="{{map}}">{{map}}</span>{{else}}<span class="map-featured">Untitled Map</span>{{/if}}</strong></a>
                                     {{#unless locked}}
                                         <!-- Quick links -->
-                                        {{#if slug}}
+                                        {{#if official}}
                                         <a href="https://oc.tc/maps/{{slug}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Lifeboat&nbsp;PC"><i class="external-thread fa fa-folder-open-o"></i></a>
                                         {{/if}}
                                         {{#if discussion}}
                                         <a href="{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
                                         {{/if}}
                                         {{#if cardinal}}
-                                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested with Cardinal"><i class="external-thread fa fa-certificate"></i></a>
+                                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
                                         {{/if}}
                                     {{/unless}}
                                     <!-- Game tags -->
@@ -82,6 +83,7 @@
                                 <!-- Map labels -->
                                 <div class="map-labels">
                                     <span class="label label-default map-label">Slug ID: {{slug}}</span>
+                                    {{#unless official}}<span class="label map-label-locked map-label" data-toggle="tooltip" data-placement="top" title="This map was not in the official Overcast repository">Unofficial Map</span>{{/unless}}
                                 </div>
                             </div>
                             <!-- / End map image container -->
@@ -325,9 +327,11 @@
                     searchField: '#search'
                 })
 
-                var total_maps = $('.dynamic').children('.map-thumbnail').length;
+                var total_maps = $('.dynamic').children('.map-thumbnail').length
                 var total_display = $('.map-thumbnail:visible').length
-                $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps");
+                var total_official = $('.dynamic').children('.official-map').length
+                var total_unofficial = $('.dynamic').children('.unofficial-map').length
+                $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps,<br>with " + total_official + " from the official Overcast repository");
             }
             
             var commercial = true;

@@ -101,7 +101,7 @@ window.onload = function() {
             cardinal: false, // Wool room block filters broken
         }, {
             map: "Ascendance",
-            slug: "ascendace",
+            slug: "ascendance",
             authors: [
                 {player_name: "Reshif", player_uuid: "459fd919-0d58-401a-9601-6cab1eb721ab"}
             ],
@@ -669,7 +669,7 @@ window.onload = function() {
             cardinal: false,
         }, {
             map: "Golden Drought III",
-            slug: "golden_drought",
+            slug: "golden_drought_iii",
             authors: [
                 {player_name: "Reshif", player_uuid: "459fd919-0d58-401a-9601-6cab1eb721ab"}
             ],
@@ -1385,7 +1385,7 @@ window.onload = function() {
             map: "Swamped",
             slug: "swamped",
             authors: [
-                {player_name: "Mikeg542", player_uuid: "e8d1ad63-bd9e-4d0e-9a6c-27f2b047d924"}
+                {player_name: "Mikeg542", player_uuid: "e8d1ad63-bd9e-4d0e-9a6c-27f2b047d924"},
                 {player_name: "minsii", player_uuid: "fcbc5806-e7fd-45f1-845a-22f1df93c9bf"}
             ],
             tags: [ {dtc: true} ],
