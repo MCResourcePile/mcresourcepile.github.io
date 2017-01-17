@@ -329,10 +329,10 @@
                     searchField: '#search'
                 })
 
-                var total_maps = $('.dynamic').children('.map-thumbnail').length
+                var total_maps = $('.map-thumbnail').length
                 var total_display = $('.map-thumbnail:visible').length
-                var total_official = $('.dynamic').children('.official-map').length
-                var total_unofficial = $('.dynamic').children('.unofficial-map').length
+                var total_official = $('.official-map:visible').length
+                var total_unofficial = $('.unofficial-map:visible').length
                 $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps,<br>with " + total_official + " from the official Overcast repository");
             }
             
