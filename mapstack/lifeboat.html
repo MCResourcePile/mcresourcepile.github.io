@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/gamemodes.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="/assets/favicon.ico">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="../assets/js/bootstrap.min.js"></script>
@@ -335,14 +336,14 @@
                 var total_unofficial = $('.unofficial-map:visible').length
                 $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps,<br>with " + total_official + " from the official Overcast repository");
             }
-            
+
             var commercial = true;
-            
+
             function commercialLicense(){
                 commercial = true;
                 console.log("This map is using a Creative Commons BY-SA 4.0 license")
             }
-            
+
             function noncommercialLicense(){
                 commercial = false;
                 console.log("This map is using a Creative Commons BY-NC-SA 4.0 license")

@@ -9,6 +9,7 @@
         <link href="../assets/css/main.css" rel="stylesheet">
         <link href="../assets/css/gamemodes.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="/assets/favicon.ico">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="../assets/js/bootstrap.min.js"></script>
@@ -250,11 +251,11 @@
         <script type="text/javascript">
             setTimeout(function () {
                 makeSearchable()
-                
+
                 $(function () {
                     $('[data-toggle="tooltip"]').tooltip()
                 })
-                
+
                 var total_hidden = $('.dynamic').children('.no-download').length;
                 var maps_no_download = $.map($(".no-download"), function(n, i){
                     return "\n- " + n.id;
@@ -271,18 +272,18 @@
             $('.record-search-container').on('click', function(){
                 makeSearchable()
             })
-            
+
             $(document).on('keydown', function() {
                 makeSearchable()
             });
-            
+
             function makeSearchable(){
                 $('#maps-output .dynamic').searchable({
                     selector: 'div.map-thumbnail',
                     childSelector: '.map-float',
                     searchField: '#search'
                 })
-                
+
                 var total_maps = $('.dynamic').children('.map-thumbnail').length;
                 var total_display = $('.map-thumbnail:visible').length
                 $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps");
