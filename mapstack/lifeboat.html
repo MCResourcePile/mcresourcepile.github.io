@@ -25,6 +25,7 @@
                     <!-- Thumbnail alt if no download -->
                     <div id="{{slug}}" class="no-download"></div>
                     {{else}}
+                    {{#if official}}
                     <!-- Main thumbnail body -->
                     <div class="col-sm-6 col-lg-3 map-thumbnail center {{#if official}}official-map{{else}}unofficial-map{{/if}}">
                         <div id="{{id}}" class="thumbnail map-float">
