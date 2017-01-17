@@ -151,7 +151,7 @@
                                             {{/unless}}
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" onclick="GitZip.zipRepo(&quot;https://github.com/MCResourcePile/MapStack-Avicus/tree/master/maps/{{slug}}&quot;);$('#download-{{slug}}').modal('hide')" data-toggle="modal" data-target="#download-complete-message" class="btn map-link">Download</button>
+                                            <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/MapStack-LifeboatPC/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide')" data-toggle="modal" data-target="#download-complete-message" class="btn map-link">Download</button>
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
@@ -334,12 +334,12 @@
             
             function commercialLicense(){
                 commercial = true;
-                console.log("This map is using a Creative Commons BY-NC-SA 4.0 license")
+                console.log("This map is using a Creative Commons BY-SA 4.0 license")
             }
             
             function noncommercialLicense(){
                 commercial = false;
-                console.log("This map is using a Creative Commons BY-SA 4.0 license")
+                console.log("This map is using a Creative Commons BY-NC-SA 4.0 license")
             }
         </script>
         <script type="text/javascript">
