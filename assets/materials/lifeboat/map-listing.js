@@ -391,7 +391,7 @@ window.onload = function() {
             cardinal: true,
         }, {
             map: "DynaboOo",
-            slug: "dynamo_halloween",
+            slug: "dynabooo",
             path: "CTW/Halloween/Dynamo%20Halloween/",
             authors: [
                 {player_name: "Brottweiler", player_uuid: "6968cbde-c2b7-479c-a8da-f33f109f013b"},
