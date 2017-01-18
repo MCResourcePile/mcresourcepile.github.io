@@ -76,7 +76,7 @@ Below is an example of how the map `Abandoned Zoo` will look inside of this file
 |`commercial: true/false`|Defaults to true and gives the map a [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/legalcode) license. If the map author does not want the map used for commercial purposes, set this to false and the map will be given a [CC BY_NC_SA](https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode) license instead. |`true`|
 |`download: true/false`|Specify if the map has a download. Maps that do not have a download will not be displayed on the map listing.|`true`|
 |`xml: true/false`|Specify if the map has an XML file. All maps should have an XML File.|`true`|
-|`cardinal: true/false`|Specify if the map works with [CardinalPGM](https://github.com/twizmwazin/CardinalPGM).|`false`|
+|`cardinal: true/false`|Specify if the map works with [CardinalPGM](https://github.com/twizmwazin/CardinalPGM)|`false`|
 
 -----
 
@@ -105,4 +105,4 @@ Team Deathmatch || `tdm: true`
 TNT || `tnt: true`
 Tournament Edition || `te: true`  
 Seasonal Edition | Christmas, Halloween, etc.. | `season: ""`  
-Other gamemode or sub-gamemode | Juggernaut gamemode from Lifeboat's arcade for example | `other: ""`
+Other gamemode or sub-gamemode | Eg. Juggernaut gamemode from Lifeboat's arcade | `other: ""`
