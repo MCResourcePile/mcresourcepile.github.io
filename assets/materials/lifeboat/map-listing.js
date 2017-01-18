@@ -406,6 +406,19 @@ window.onload = function() {
             xml: true,
             cardinal: true,
         }, {
+            map: "Crossfire",
+            slug: "crossfire",
+            authors: [
+                {player_name: "SheriffSoco", player_uuid: "6e347123-c684-4d7e-996c-44d4924ff172"}
+            ],
+            tags: [ {arcade: true, other: "Rush"} ],
+            discussion: "",
+            official: true,
+            commercial: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Dead Heat",
             slug: "dead_heat",
             path: "Blitz/Classic/Standard/Dead%20Heat/",
@@ -437,6 +450,19 @@ window.onload = function() {
             download: true,
             xml: true,
             cardinal: true,
+        }, {
+            map: "Dirsty",
+            slug: "dirsty",
+            authors: [
+                {player_name: "SheriffSoco", player_uuid: "6e347123-c684-4d7e-996c-44d4924ff172"}
+            ],
+            tags: [ {cp: true} ],
+            discussion: "",
+            official: true,
+            commercial: true,
+            download: true,
+            xml: true,
+            cardinal: false,
         }, {
             map: "Drow's Crevice: Blitz",
             slug: "drow_s_crevice_blitz",
@@ -814,6 +840,21 @@ window.onload = function() {
                 {player_name: "minsii", player_uuid: "fcbc5806-e7fd-45f1-845a-22f1df93c9bf"}
             ],
             tags: [ {ctw: true} ],
+            discussion: "",
+            official: true,
+            commercial: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
+            map: "Lazer Tag: Facility",
+            slug: "lazer_tag_facility",
+            authors: [
+                {player_name: "samethecat43", player_uuid: "7ab24d14-0801-48ba-8fea-147ddf400067"},
+                {player_name: "Ny_", player_uuid: "a43135a4-d7b9-49ab-ac8d-a16bb2513c8d"},
+                {player_name: "Mikeg542", player_uuid: "e8d1ad63-bd9e-4d0e-9a6c-27f2b047d924"}
+            ],
+            tags: [ {tdm: true} ],
             discussion: "",
             official: true,
             commercial: true,
@@ -1409,6 +1450,20 @@ window.onload = function() {
             download: true,
             xml: true,
             cardinal: true,
+        }, {
+            map: "Stonehenge",
+            slug: "stonehenge_5x5",
+            authors: [
+                {player_name: "samethecat43", player_uuid: "7ab24d14-0801-48ba-8fea-147ddf400067"},
+                {player_name: "Ny_", player_uuid: "a43135a4-d7b9-49ab-ac8d-a16bb2513c8d"}
+            ],
+            tags: [ {ffa: true, micro: true} ],
+            discussion: "",
+            official: true,
+            commercial: true,
+            download: true,
+            xml: true,
+            cardinal: false,
         }, {
             map: "Swamped",
             slug: "swamped",
