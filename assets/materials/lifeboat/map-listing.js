@@ -567,6 +567,19 @@ window.onload = function() {
             xml: true,
             cardinal: false,
         }, {
+            map: "Fallen Debris",
+            slug: "fallen_debris",
+            authors: [
+                {player_name: "Nanu", player_uuid: "77912861-9fc0-45fa-aac5-aa455614edbf"}
+            ],
+            tags: [ {ffa: true} ],
+            discussion: "",
+            official: true,
+            commercial: true,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Festive Village",
             slug: "festive_village",
             path: "Skywars/Festive%20Village/",
