@@ -22,20 +22,29 @@
         <script id="maps-template" type="text/x-handlebars-template">
             <div class="dynamic">
             {{#maps}}
-                {{#if download}}
-                    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+                {{#unless download}}
+                    <!-- Thumbnail alt if no download -->
+                    <div id="{{slug}}" class="no-download"></div>
+                    {{else}}
+                    <!-- Main thumbnail body -->
+                    <div class="col-sm-6 col-lg-3 map-thumbnail center {{#if official}}official-map{{else}}unofficial-map{{/if}}">
                         <div id="{{id}}" class="thumbnail map-float">
-                            <div class="map-image" style="background-image: url(&quot;https://maps.avicus.net/atlas/{{#if path}}{{path}}/map.png{{else}}default_map.png{{/if}}&quot;);">
+                            <!-- Map image background, contains banner and labels -->
+                            <div class="map-image" style="background-image: url('https://maps.avicus.net/atlas/{{#if path}}{{path}}/map.png{{else}}default_map.png{{/if}}');">
+                                <!-- Map banner, contains name, authors and quick links -->
                                 <div class="map-banner">
+                                    <!-- Map heading -->
                                     <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s={{slug}}"><strong>{{#if map}}<span class="map-featured" data-toggle="tooltip" data-placement="top" title="{{map}}">{{map}}</span>{{else}}<span class="map-featured">Untitled Map</span>{{/if}}</strong></a>
                                     {{#unless locked}}
-                                        {{#if slug}}
+                                        <!-- Quick links -->
+                                        {{#if official}}
                                         <a href="https://avicus.net/maps/map/{{slug}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus"><i class="external-thread fa fa-folder-open-o"></i></a>
                                         {{/if}}
                                         {{#if discussion}}
                                         <a href="{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
                                         {{/if}}
                                     {{/unless}}
+                                    <!-- Game tags -->
                                     <span style="display:block;margin-top:-8px;">
                                         {{#if tags}}
                                             {{#tags}}
@@ -59,10 +68,14 @@
                                         {{/if}}
                                     </span>
                                 </div>
+                                <!-- Map labels -->
                                 <div class="map-labels">
                                     <span class="label label-default map-label">Slug ID: {{slug}}</span>
+                                    {{#unless official}}<span class="label map-label-locked map-label" data-toggle="tooltip" data-placement="top" title="This map was not in the official Overcast repository">Unofficial Map</span>{{/unless}}
                                 </div>
                             </div>
+                            <!-- / End map image container -->
+                            <!-- Map authors -->
                             <div class="map-authors">
                                 <span class="map-author-name">by</span>
                                 {{#if authors}}
@@ -72,71 +85,73 @@
                                     {{else}}<span class="map-author-name">Ghost</span>
                                 {{/if}}
                             </div>
+                            <!-- / End map authors -->
+                            <!-- Main download buttons -->
                             <div style="padding-top:2%;" class="center">
                                 {{#if locked}}
+                                    <!-- Map locked banner -->
                                     <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="This map has been locked"><i class="fa fa-lock"></i></span>
                                     {{else}}
-                                    {{#if download}}
-                                        <button href="#" class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}"><i class="fa fa-download"></i></button>
-                                        <div class="modal fade" id="download-{{slug}}" tabindex="-1" role="dialog">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h4 class="modal-title">Downloading map files for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}}</h4>
-                                                        <div class="map-authors">
-                                                            <span class="map-author-name">created by</span>
-                                                            {{#if authors}}
-                                                                {{#authors}}<li class="game-tag">{{#if player_name}}<img src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16&overlay"> <a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>{{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/if}}</li>{{/authors}}
-                                                                {{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay"> <span class="map-author-name">Ghost</span>
-                                                            {{/if}}
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        {{#if BY_SA}}
-                                                            This download for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons Attribution-ShareAlike 3.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
-                                                            <br><br>
-                                                            <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" target="_blank">
-                                                                <img src="http://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
-                                                            </a>
-                                                            <br>
-                                                            You will be downloading the version of {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
-                                                            <br><br>
-                                                            <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
-                                                        {{/if}}
-                                                        {{#if BY_NC_SA}}
-                                                            This download for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
-                                                            <br><br>
-                                                            <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode" target="_blank">
-                                                                <img src="http://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
-                                                            </a>
-                                                            <br>
-                                                            You will be downloading the version of {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
-                                                            <br><br>
-                                                            <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
-                                                        {{/if}}
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" onclick="GitZip.zipRepo(&quot;https://github.com/MCResourcePile/MapStack-Avicus/tree/master/maps/{{slug}}&quot;);$('#download-{{slug}}').modal('hide')" data-toggle="modal" data-target="#download-complete-message" class="btn map-link">Download</button>
-                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{else}}
-                                        <span class="btn map-link-disabled map-button"><i class="fa fa-download"></i></span>
-                                    {{/if}}
-                                    {{#if xml}}
-                                        <a href="https://github.com/MCResourcePile/MapStack-Avicus/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
-                                        {{else}}
+                                    <!-- Download button (always enabled) -->
+                                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}" onclick="{{#unless commercial}}noncommercialLicense(){{else}}commercialLicense(){{/unless}}"><i class="fa fa-download"></i></button>
+                                    <!-- XML button -->
+                                    {{#unless xml}}
                                         <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
-                                    {{/if}}
+                                        {{else}}
+                                        <a href="https://github.com/MCResourcePile/MapStack-Avicus/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
+                                    {{/unless}}
                                 {{/if}}
                             </div>
+                            <!-- / End main download buttons -->
+                            <!-- Download and license modal -->
+                            <div class="modal fade" id="download-{{slug}}" tabindex="-1" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Downloading map files for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}}</h4>
+                                            <div class="map-authors">
+                                                <span class="map-author-name">created by</span>
+                                                {{#if authors}}
+                                                    {{#authors}}<li class="game-tag">{{#if player_name}}<img src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16&overlay"> <a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>{{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/if}}</li>{{/authors}}
+                                                    {{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay"> <span class="map-author-name">Ghost</span>
+                                                {{/if}}
+                                            </div>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{#unless commercial}}
+                                                This download for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                                <br><br>
+                                                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                                    <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                                </a>
+                                                <br>
+                                                You will be downloading the version of {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
+                                                <br><br>
+                                                <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                                {{else}}
+                                                This download for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                                <br><br>
+                                                <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                                    <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                                </a>
+                                                <br>
+                                                You will be downloading the version of {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
+                                                <br><br>
+                                                <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                            {{/unless}}
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/MapStack-Avicus/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide')" data-toggle="modal" data-target="#download-complete-message" class="btn map-link">Download</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / End download modal -->
                         </div>
                     </div>
-                {{else}}
-                    <div id="{{slug}}" class="no-download"></div>
-                {{/if}}
+                    <!-- / End main thumbnail body -->
+                {{/unless}}
             {{/maps}}
             </div>
         </script>
@@ -284,9 +299,23 @@
                     searchField: '#search'
                 })
 
-                var total_maps = $('.dynamic').children('.map-thumbnail').length;
+                var total_maps = $('.map-thumbnail').length
                 var total_display = $('.map-thumbnail:visible').length
-                $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps");
+                var total_official = $('.official-map:visible').length
+                var total_unofficial = $('.unofficial-map:visible').length
+                $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps,<br>with " + total_official + " from the official Avicus repository");
+            }
+
+            var commercial = true;
+
+            function commercialLicense(){
+                commercial = true;
+                console.log("This map is using a Creative Commons BY-SA 4.0 license")
+            }
+
+            function noncommercialLicense(){
+                commercial = false;
+                console.log("This map is using a Creative Commons BY-NC-SA 4.0 license")
             }
         </script>
         <script type="text/javascript">
