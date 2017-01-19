@@ -1992,7 +1992,7 @@ window.onload = function() {
                 "slug": "fourchette",
                 "tags": [{"ctw": true}],
                 "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "93", "evidence": ""}],
-                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "Spintown", "player_uuid": "bbcafea0-53cf-4d29-9dd9-27f383d02faa", "distance": "40", "evidence": "https://www.youtube.com/watch?v=5HHN1vNNzUY"}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
@@ -3783,7 +3783,7 @@ window.onload = function() {
                 "map": "Royal Garden DTC",
                 "slug": "royal_garden_dtc",
                 "tags": [{"dtc": true}],
-                "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_first": [{"player_name": "Spintown", "player_uuid": "bbcafea0-53cf-4d29-9dd9-27f383d02faa", "distance": "49", "evidence": "https://www.youtube.com/watch?v=zNREIL4gdHM"}],
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
@@ -4440,7 +4440,7 @@ window.onload = function() {
                 "slug": "tetrad",
                 "tags": [{"ctw": true}],
                 "record_first": [{"player_name": "Edeeen", "player_uuid": "27841252-a673-4c16-9acf-49e936871ac5", "distance": "81", "evidence": ""}],
-                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_second": [{"player_name": "Spintown", "player_uuid": "bbcafea0-53cf-4d29-9dd9-27f383d02faa", "distance": "33", "evidence": "https://www.youtube.com/watch?v=DRSb6wQXZ-c"}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
@@ -4943,9 +4943,9 @@ window.onload = function() {
                 "map": "Viridun FFA",
                 "slug": "viridun_ffa",
                 "tags": [{"ffa": true}],
-                "record_first": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "58", "evidence": ""}],
-                "record_second": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "53", "evidence": ""}],
-                "record_third": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "42", "evidence": ""}]
+		"record_first": [{"player_name": "dragonrider455", "player_uuid": "a63de09d-6fa9-436f-9070-26f5e9a4d27b", "distance": "72", "evidence": "http://imgur.com/NWX8W2Z.png"}]    
+                "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "58", "evidence": ""}],
+                "record_third": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "53", "evidence": ""}]
             },
             {
                 "map": "Viridun PearlBow RAGE",
