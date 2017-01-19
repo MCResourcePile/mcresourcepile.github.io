@@ -4943,7 +4943,7 @@ window.onload = function() {
                 "map": "Viridun FFA",
                 "slug": "viridun_ffa",
                 "tags": [{"ffa": true}],
-		"record_first": [{"player_name": "dragonrider455", "player_uuid": "a63de09d-6fa9-436f-9070-26f5e9a4d27b", "distance": "72", "evidence": "http://imgur.com/NWX8W2Z.png"}]    
+		"record_first": [{"player_name": "dragonrider455", "player_uuid": "a63de09d-6fa9-436f-9070-26f5e9a4d27b", "distance": "72", "evidence": "http://imgur.com/NWX8W2Z.png"}],    
                 "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "58", "evidence": ""}],
                 "record_third": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "53", "evidence": ""}]
             },
