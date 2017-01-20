@@ -665,7 +665,7 @@ window.onload = function() {
                 "tags": [{"dtm": true}],
                 "record_first": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "122", "evidence": ""}],
                 "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "119", "evidence": ""}],
-                "record_third": [{"player_name": "f89", "player_uuid": "03236737-c1f8-429c-83df-24b537365f5a", "distance": "75", "evidence": ""}]
+                "record_third": [{"player_name": "MeMyselfAndBader", "player_uuid": "920aeeea-eb63-4a14-b20c-8249e79ce59e", "distance": "106", "evidence": ""}]
             },
             {
                 "map": "Battle of Lyndanisse Blitz",
