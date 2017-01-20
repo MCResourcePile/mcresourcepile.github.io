@@ -2,7 +2,6 @@ window.onload = function() {
     var source = document.getElementById("maps-template").innerHTML;
     var template = Handlebars.compile(source);
     var data = {
-        // CC licenses that are currently accepted: BY_SA: true, BY_NC_SA: true
         maps: [ {
 			map: "Aardvark",
             slug: "aardvark",
