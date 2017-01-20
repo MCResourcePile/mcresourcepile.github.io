@@ -539,6 +539,19 @@ window.onload = function() {
             xml: true,
             cardinal: true,
         }, {
+            map: "Erth",
+            slug: "erth",
+            authors: [
+                {player_name: "Matic0B", player_uuid: "48924ea3-3aad-4e16-838c-368d8d9e0a25"}
+            ],
+            tags: [ {koth: true} ],
+            discussion: "https://oc.tc/forums/topics/57fa8f575f35b93245000013",
+            official: false,
+            commercial: false,
+            download: true,
+            xml: true,
+            cardinal: false,
+        }, {
             map: "Explosive Vengeance",
             slug: "explosive_vengeance",
             path: "TDM/Standard/Explosive%20Vengeance/",
