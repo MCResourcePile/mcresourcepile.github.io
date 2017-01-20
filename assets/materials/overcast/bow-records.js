@@ -1002,7 +1002,7 @@ window.onload = function() {
                 "record_first": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
-            },	
+            },
             {
                 "map": "BVC",
                 "slug": "bvc",
@@ -1889,7 +1889,7 @@ window.onload = function() {
                 "tags": [{"rage": true}],
                 "record_first": [{"player_name": "Eggyyyy", "player_uuid": "e4b99cb2-9d7a-49a5-9743-f5b107d21053", "distance": "105", "evidence": ""}],
                 "record_second": [{"player_name": "Lucaslyoko", "player_uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": "96", "evidence": ""}],
-                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+                "record_third": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "23", "evidence": ""}]
             },
             {
                 "map": "Fallencrests 2",
@@ -2760,6 +2760,14 @@ window.onload = function() {
                 "slug": "limivorous",
                 "tags": [{"dtm": true}],
                 "record_first": [{"player_name": "Brekou", "player_uuid": "b3e651a0-ab36-4be3-87a4-d1fd66d05a86", "distance": "33", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
+                "map": "Long Shot",
+                "slug": "long_shot",
+                "tags": [{"ctf": true}],
+                "record_first": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "71", "evidence": ""}],
                 "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
@@ -4844,6 +4852,14 @@ window.onload = function() {
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             },
             {
+                "map": "Unum Lana",
+                "slug": "unum_lana",
+                "tags": [{"ctw": true}],
+                "record_first": [{"player_name": "BTKing", "player_uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa", "distance": "39", "evidence": ""}],
+                "record_second": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}],
+                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+            },
+            {
                 "map": "Urban Jungle",
                 "slug": "urban_jungle",
                 "tags": [{"koth": true}],
@@ -4943,7 +4959,7 @@ window.onload = function() {
                 "map": "Viridun FFA",
                 "slug": "viridun_ffa",
                 "tags": [{"ffa": true}],
-		"record_first": [{"player_name": "dragonrider455", "player_uuid": "a63de09d-6fa9-436f-9070-26f5e9a4d27b", "distance": "72", "evidence": "http://imgur.com/NWX8W2Z.png"}],    
+		"record_first": [{"player_name": "dragonrider455", "player_uuid": "a63de09d-6fa9-436f-9070-26f5e9a4d27b", "distance": "72", "evidence": "http://imgur.com/NWX8W2Z.png"}],
                 "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "58", "evidence": ""}],
                 "record_third": [{"player_name": "TheKittyCat_", "player_uuid": "053b574d-2fa7-40d6-bfec-a1cefeda0da1", "distance": "53", "evidence": ""}]
             },
