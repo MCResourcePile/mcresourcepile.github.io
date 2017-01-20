@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Lifeboat Map Listing - ResourcePile</title>
+        <title>Overcast Map Listing - ResourcePile</title>
 
         <link rel="stylesheet" href="../assets/css/bootstrap.css">
         <link rel="stylesheet" href="../assets/css/main.css">
@@ -18,7 +18,7 @@
         <script src="../assets/js/jszip.js"></script>
         <script src="../assets/js/handlebars.js"></script>
         <script src="../assets/js/jquery.searchable-1.1.0.min.js"></script>
-        <script src="../assets/materials/lifeboat/map-listing.js"></script>
+        <script src="../assets/materials/overcast/map-listing.js"></script>
         <script id="maps-template" type="text/x-handlebars-template">
             <div class="dynamic">
             {{#maps}}
@@ -31,15 +31,15 @@
                         <div id="{{id}}" class="thumbnail map-float">
                             <!-- Map image background, contains banner and labels -->
                             <!-- path will be depreciated once maps.oc.tc is no longer running, instead use a locally stored map.png for new maps -->
-                            <div class="map-image" style="background-image: url('{{#if path}}https://maps.oc.tc/{{path}}/map.png{{else}}https://raw.githubusercontent.com/MCResourcePile/MapStack-LifeboatPC/master/maps/{{slug}}/map.png{{/if}}');">
+                            <div class="map-image" style="background-image: url('{{#if path}}https://maps.oc.tc/{{path}}/map.png{{else}}https://raw.githubusercontent.com/MCResourcePile/MapStack-OCN/master/maps/{{slug}}/map.png{{/if}}');">
                                 <!-- Map banner, contains name, authors and quick links -->
                                 <div class="map-banner {{#unless official}}map-banner-unofficial{{/unless}}">
                                     <!-- Map heading -->
-                                    <a class="map-header" href="https://mcresourcepile.github.io/stattrack/lifeboat/bow?s={{slug}}"><strong>{{#if map}}<span class="map-featured" data-toggle="tooltip" data-placement="top" title="{{map}}">{{map}}</span>{{else}}<span class="map-featured">Untitled Map</span>{{/if}}</strong></a>
+                                    <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s={{slug}}"><strong>{{#if map}}<span class="map-featured" data-toggle="tooltip" data-placement="top" title="{{map}}">{{map}}</span>{{else}}<span class="map-featured">Untitled Map</span>{{/if}}</strong></a>
                                     {{#unless locked}}
                                         <!-- Quick links -->
                                         {{#if official}}
-                                        <a href="https://oc.tc/maps/{{slug}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Lifeboat&nbsp;PC"><i class="external-thread fa fa-folder-open-o"></i></a>
+                                        <a href="https://oc.tc/maps/{{slug}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                                         {{/if}}
                                         {{#if discussion}}
                                         <a href="{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
@@ -109,7 +109,7 @@
                                     {{#unless xml}}
                                         <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
                                         {{else}}
-                                        <a href="https://github.com/MCResourcePile/MapStack-LifeboatPC/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
+                                        <a href="https://github.com/MCResourcePile/MapStack-OCN/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
                                     {{/unless}}
                                 {{/if}}
                             </div>
@@ -152,7 +152,7 @@
                                             {{/unless}}
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/MapStack-LifeboatPC/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide')" data-toggle="modal" data-target="#download-complete-message" class="btn map-link">Download</button>
+                                            <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/MapStack-OCN/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide')" data-toggle="modal" data-target="#download-complete-message" class="btn map-link">Download</button>
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
@@ -186,17 +186,17 @@
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> StatTrack <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../stattrack/lifeboat/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Lifeboat PC Bow Records</a></li>
+                                    <li><a href="../stattrack/overcast/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Overcast Network Bow Records</a></li>
                                     <li><a href="../stattrack/avicus/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Avicus Bow Records</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="../stattrack/lifeboat/website"><span class="fa fa-bookmark"></span> Lifeboat PC Website Stats</a></li>
-                                    <li><a href="../stattrack/lifeboat/objective"><span class="fa fa-signal"></span> Lifeboat PC Objective Leaderboards</a></li>
+                                    <li><a href="../stattrack/overcast/website"><span class="fa fa-bookmark"></span> Overcast Network Website Stats</a></li>
+                                    <li><a href="../stattrack/overcast/objective"><span class="fa fa-signal"></span> Overcast Network Objective Leaderboards</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> MapStack <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../../mapstack/lifeboat"><i class="icon stat-map-icon"></i> Lifeboat PC Map Collection</a></li>
+                                    <li><a href="../../mapstack/overcast"><i class="icon stat-map-icon"></i> Overcast Network Map Collection</a></li>
                                     <li><a href="../../mapstack/avicus"><i class="icon stat-map-icon"></i> Avicus Map Collection</a></li>
                                 </ul>
                             </li>
@@ -208,7 +208,7 @@
             <div class="content-header">
                 <div class="content-title">Public Map Listing</div>
                 <div class="content-subtitle">
-                    A collection of publicly downloadable maps from the <a href="http://oc.tc">Lifeboat PC Network</a>.
+                    A collection of publicly downloadable maps from the <a href="http://oc.tc">Overcast Network</a>.
                 </div>
             </div>
             <div class="row">
@@ -216,8 +216,8 @@
                 <div class="col-md-10 alert alert-info" style="margin-left: 18px;margin-right: 18px;overflow-x:hidden" role="alert">
                     <h4><i class="fa fa-info-circle" aria-hidden="true"></i> &nbsp;Tip</h4>
                     <p>You can include this entire repository on your <a href="https://github.com/twizmwazin/CardinalPGM" target="_blank" class="underline">Cardinal server</a> by adding the following to the <code>repos:</code> section of the plugin configuration:</p>
-                    <code>- git:https://github.com/MCResourcePile/MapStack-LifeboatPC.git</code><br>
-                    <p>Please note that not all these maps will work correctly on Cardinal, so if you do find any errors please create an <a href="https://github.com/MCResourcePile/MapStack-LifeboatPC/issues/new" target="_blank" class="underline">Issue on our tracker</a>.</p>
+                    <code>- git:https://github.com/MCResourcePile/MapStack-OCN.git</code><br>
+                    <p>Please note that not all these maps will work correctly on Cardinal, so if you do find any errors please create an <a href="https://github.com/MCResourcePile/MapStack-OCN/issues/new" target="_blank" class="underline">Issue on our tracker</a>.</p>
                 </div>
                 <div class="col-md-1"></div>
             </div>

@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Lifeboat PC Bow Records - ResourcePile</title>
+        <title>Overcast Bow Records - ResourcePile</title>
 
         <link href="../../assets/css/bootstrap.css" rel="stylesheet">
         <link href="../../assets/css/main.css" rel="stylesheet">
@@ -15,7 +15,7 @@
         <script src="../../assets/js/bootstrap.min.js"></script>
         <script src="../../assets/js/handlebars.js"></script>
         <script src="../../assets/js/jquery.searchable-1.1.0.min.js"></script>
-        <script src="../../assets/materials/lifeboat/bow-records.js"></script>
+        <script src="../../assets/materials/overcast/bow-records.js"></script>
         <script id="records-template" type="text/x-handlebars-template">
             <!-- Map searching table -->
             <table class="table tablesorter" id="table">
@@ -82,9 +82,9 @@
                                 <i class="fa fa-trophy record-trophy" aria-hidden="true"></i>
                                     <span class="distance-record">
                                     {{#record_first}}
-                                        {{#if player_name}}<a href="?s={{player_name}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=24&overlay"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=24&overlay">{{/if}}
+                                        {{#if player_name}}<a href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=24&overlay"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=24&overlay">{{/if}}
                                         <span class="record-description {{#unless distance}}record-unverified{{/unless}}">
-                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}">{{player_name}}</a>{{else}}Ghost{{/if}}
+                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="?s={{player_name}}">{{player_name}}</a>{{else}}Ghost{{/if}}
                                             <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
                                             {{#if distance}}{{distance}} blocks{{else}}0 blocks{{/if}}
                                             {{#if evidence}}
@@ -99,9 +99,9 @@
                                 <div class="col-md-6">
                                     <span class="distance-record">
                                     {{#record_second}}
-                                        {{#if player_name}}<a href="?s={{player_name}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16&overlay"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay">{{/if}}
+                                        {{#if player_name}}<a href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16&overlay"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay">{{/if}}
                                         <span class="record-description {{#unless distance}}record-unverified{{/unless}}">
-                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}">{{player_name}}</a>{{else}}Ghost{{/if}}
+                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="?s={{player_name}}">{{player_name}}</a>{{else}}Ghost{{/if}}
                                             <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
                                             {{#if distance}}{{distance}} blocks{{else}}0 blocks{{/if}}
                                             {{#if evidence}}
@@ -114,9 +114,9 @@
                                     </span><br>
                                     <span class="distance-record">
                                     {{#record_third}}
-                                        {{#if player_name}}<a href="?s={{player_name}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16&overlay"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay">{{/if}}
+                                        {{#if player_name}}<a href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16&overlay"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay">{{/if}}
                                         <span class="record-description {{#unless distance}}record-unverified{{/unless}}">
-                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}">{{player_name}}</a>{{else}}Ghost{{/if}}
+                                            {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="?s={{player_name}}">{{player_name}}</a>{{else}}Ghost{{/if}}
                                             <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
                                             {{#if distance}}{{distance}} blocks{{else}}0 blocks{{/if}}
                                             {{#if evidence}}
@@ -155,17 +155,17 @@
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> StatTrack <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../lifeboat/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Lifeboat PC Bow Records</a></li>
+                                    <li><a href="../overcast/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Overcast Network Bow Records</a></li>
                                     <li><a href="../avicus/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Avicus Bow Records</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="../lifeboat/website"><span class="fa fa-bookmark"></span> Lifeboat PC Website Stats</a></li>
-                                    <li><a href="../lifeboat/objective"><span class="fa fa-signal"></span> Lifeboat PC Objective Leaderboards</a></li>
+                                    <li><a href="../overcast/website"><span class="fa fa-bookmark"></span> Overcast Network Website Stats</a></li>
+                                    <li><a href="../overcast/objective"><span class="fa fa-signal"></span> Overcast Network Objective Leaderboards</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> MapStack <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../../mapstack/lifeboat"><i class="icon stat-map-icon"></i> Lifeboat PC Map Collection</a></li>
+                                    <li><a href="../../mapstack/overcast"><i class="icon stat-map-icon"></i> Overcast Network Map Collection</a></li>
                                     <li><a href="../../mapstack/avicus"><i class="icon stat-map-icon"></i> Avicus Map Collection</a></li>
                                 </ul>
                             </li>
@@ -177,7 +177,7 @@
             <div class="content-header">
                 <div class="content-title">Bow Records</div>
                 <div class="content-subtitle">
-                    A collection of the longest recorded bow kill distances from the <a href="http://oc.tc">Lifeboat PC Network</a>.
+                    A collection of the longest recorded bow kill distances from the <a href="http://oc.tc">Overcast Network</a>.
                 </div>
             </div>
             <!-- Game mode navigation menu -->

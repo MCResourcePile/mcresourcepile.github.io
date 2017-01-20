@@ -9,7 +9,7 @@
 
 All records for StatTrack bow records are stored within a javascript file called `bow-records.js` which is located under each of the network's individual folder, under the materials folder, which is under the assets folder. The `bow.html` file does **not** need to be edited.
 
-* Lifeboat PC bow records: [`assets/materials/lifeboat/bow-records.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/lifeboat/bow-records.js)
+* Overcast Network bow records: [`assets/materials/overcast/bow-records.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/overcast/bow-records.js)
 * Avicus Network bow records: [`assets/materials/avicus/bow-records.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/avicus/bow-records.js)
 
 Below is an example of how the records for the map `Abandoned Zoo` will look inside of this file.
@@ -41,9 +41,9 @@ Below is an example of how the records for the map `Abandoned Zoo` will look ins
 
 ##Contributions to MapStack
 
-All maps listed on MapStack are stored within a javascript file called `map-listing.js` which is located under each of the network's individual folder, under the materials folder, which is under the assets folder. The `lifeboat.html` or `avicus.html` file in the mapstack folder does **not** need to be edited.
+All maps listed on MapStack are stored within a javascript file called `map-listing.js` which is located under each of the network's individual folder, under the materials folder, which is under the assets folder. The `overcast.html` or `avicus.html` file in the mapstack folder does **not** need to be edited.
 
-* Lifeboat PC map listing: [`assets/materials/lifeboat/map-listing.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/lifeboat/map-listing.js)
+* Overcast Network map listing: [`assets/materials/overcast/map-listing.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/overcast/map-listing.js)
 * Avicus Network map listing: [`assets/materials/avicus/map-listing.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/avicus/map-listing.js)
 
 Below is an example of how the map `Abandoned Zoo` will look inside of this file.
@@ -85,7 +85,7 @@ Below is an example of how the map `Abandoned Zoo` will look inside of this file
 |Tag|Notes|Tag Reference|
 |---|---|---|
 Arcade || `arcade: true`   
-Blitz | Any map that uses the blitz module, not just classic blitz maps (Lifeboat PC only) | `blitz: true`  
+Blitz | Any map that uses the blitz module, not just classic blitz maps (Overcast Network only) | `blitz: true`  
 Capture Points | Hills that need to be captured to win, don't award points | `cp: true`  
 Capture the Flag || `ctf: true`  
 Capture the Wool || `ctw: true`  
@@ -95,14 +95,14 @@ Free-for-all || `ffa: true`
 Frenzy | (Avicus Network only) | `frenzy: true`  
 Ghost Squadron || `gs: true`  
 King of the Hill | Hills that award points when captured | `koth: true`  
-Micro | (Lifeboat PC only) | `mirco: true`  
+Micro | (Overcast Network only) | `mirco: true`  
 RAGE || `rage: ture`  
-Ranked Edition | (Lifeboat PC only) | `ranked: true`  
-Race for Wool | (Lifeboat PC only) | `rfw: true`  
+Ranked Edition | (Overcast Network only) | `ranked: true`  
+Race for Wool | (Overcast Network only) | `rfw: true`  
 Skywars || `skywars: true`   
-Survival Games | (Lifeboat PC only) | `sg: true`  
+Survival Games | (Overcast Network only) | `sg: true`  
 Team Deathmatch || `tdm: true`  
 TNT || `tnt: true`
 Tournament Edition || `te: true`  
 Seasonal Edition | Christmas, Halloween, etc.. | `season: ""`  
-Other gamemode or sub-gamemode | Eg. Juggernaut gamemode from Lifeboat's arcade | `other: ""`
+Other gamemode or sub-gamemode | Eg. Juggernaut gamemode from Overcast's arcade | `other: ""`
