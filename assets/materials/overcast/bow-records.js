@@ -3409,7 +3409,7 @@ window.onload = function() {
                 "tags": [{"ctw": true}],
                 "record_first": [{"player_name": "Nyco", "player_uuid": "fc57a05b-8344-4592-9817-3817780f194e", "distance": "144", "evidence": ""}],
                 "record_second": [{"player_name": "Tapetepato", "player_uuid": "62f3cd20-c78d-4810-8a00-c5ecb0636783", "distance": "129", "evidence": ""}],
-                "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
+                "record_third": [{"player_name": "Delacroid", "player_uuid": "adf0d541-00c3-4533-840c-b56ee49a11e8", "distance": "91", "evidence": ""}]
             },
             {
                 "map": "Placid Spring",
