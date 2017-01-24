@@ -1,8 +1,9 @@
-window.onload = function() {
-    var source = document.getElementById("records-template").innerHTML;
-    var template = Handlebars.compile(source);
-    var data = {
-        records: [
+{
+	"title": "Overcast Bow Records",
+	"css": "<link href=\"/assets/css/gamemodes.css\" rel=\"stylesheet\">",
+    "scripts": "<script src=\"/assets/js/jquery.searchable-1.1.0.min.js\"></script>",
+	"data": {
+        "records": [
 			    {
                 "map": "100 Rooms",
                 "slug": "100_rooms",
@@ -5260,7 +5261,5 @@ window.onload = function() {
                 "record_third": [{"player_name": "", "player_uuid": "", "distance": "", "evidence": ""}]
             }
 		]
-    };
-    var output = template(data);
-    document.getElementById("records-output").innerHTML = output;
+    }
 }

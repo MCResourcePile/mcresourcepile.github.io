@@ -4,11 +4,22 @@ module.exports = function(grunt) {
 		'compile-handlebars': {
 			info: {
 				files: [{
-					src: 'src/info.html',
-					dest: 'out/info.html'
+					expand: true,
+					cwd: 'src/',
+					src: '**/*.html',
+					dest: 'out/'
 				}],
+				helpers: 'src/helpers/title.js',
 				partials: ['src/partials/header.html', 'src/partials/footer.html'],
-				templateData: 'src/data/info.json'
+				templateData: 'src/data/**/*.json'
+			}
+		},
+		copy: {
+			assets: {
+				expand: true,
+				cwd: 'src/assets',
+				src: '**',
+				dest: 'out/assets'
 			}
 		},
 		clean: ['out/']
@@ -16,5 +27,7 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-compile-handlebars');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.registerTask('default', ['compile-handlebars']);
+	grunt.loadNpmTasks('grunt-contrib-copy');
+
+	grunt.registerTask('default', ['compile-handlebars', 'copy']);
 }

@@ -1,110 +1,40 @@
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>Example - ResourcePile</title>
-
-        <!-- Bootstrap core CSS -->
-        <link href="../assets/css/bootstrap.css" rel="stylesheet">
-        <link href="../assets/css/main.css" rel="stylesheet">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="shortcut icon" href="/assets/favicon.ico">
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="../assets/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <div class="container" style="margin-top: 60px">
-            <!-- Page navigation -->
-            <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="../index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
-                    </div>
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> StatTrack <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="../stattrack/overcast/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Overcast Network Bow Records</a></li>
-                                    <li><a href="../stattrack/avicus/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Avicus Bow Records</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="../stattrack/overcast/website"><span class="fa fa-bookmark"></span> Overcast Network Website Stats</a></li>
-                                    <li><a href="../stattrack/overcast/objective"><span class="fa fa-signal"></span> Overcast Network Objective Leaderboards</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> MapStack <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="../mapstack/overcast"><i class="icon stat-map-icon"></i> Overcast Network Map Collection</a></li>
-                                    <li><a href="../mapstack/avicus"><i class="icon stat-map-icon"></i> Avicus Map Collection</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="../info"><i class="fa fa-exclamation"></i> Info</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <!-- Page content -->
-                <div class="col-md-3 about-user center">
-                    <img class="about-user-avatar img-rounded" src="https://minotar.net/helm/MHF_Question">
-                    <div class="about-user-name">Example</div>
-                    <div class="about-user-nickname">Example Nickname</div>
-                    <div class="about-user-positions">
-                        <span class="label" style="background-color: 17BBB0; color: white">Helper</span>
-                    </div>
-                    <div class="about-user-description">Part of the team<br>since December 1, 2000.</div>
-                </div>
-                <div class="col-md-9 about-user-info">
-                    <div class="row" style="margin-bottom: 26px;">
-                        <div class="col-md-6">
-                            <div class="about-section-header">Profiles</div>
-                            <a class="about-info" href="https://oc.tc/users/username"><i class="fa fa-caret-right"></i> Overcast Network</a>
-                            <a class="about-info" href="https://avicus.net/users/username"><i class="fa fa-caret-right"></i> Avicus</a>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="about-section-header">Contact</div>
-                            <span class="about-info"><i class="about-info-icon fa fa-github" aria-hidden="true"></i> <a href="#">Example</a></span>
-                            <span class="about-info"><i class="about-info-icon fa fa-globe" aria-hidden="true"></i> <a href="#">Example</a></span>
-                            <span class="about-info"><i class="about-info-icon fa fa-skype" aria-hidden="true"></i> <a href="#">Example</a></span>
-                            <span class="about-info"><i class="about-info-icon fa fa-twitter" aria-hidden="true"></i> <a href="#">Example</a></span>
-                            <span class="about-info"><i class="about-info-icon fa fa-steam" aria-hidden="true"></i> <a href="#">Example</a></span>
-                            <span class="about-info"><i class="about-info-icon fa fa-twitch" aria-hidden="true"></i> <a href="#">Example</a></span>
-                            <span class="about-info"><i class="about-info-icon fa fa-youtube" aria-hidden="true"></i> <a href="#">Example</a></span>
-                            <span class="about-info"><i class="about-info-icon fa fa-microphone" aria-hidden="true"></i> Discord <code>example#0000</code></span>
-                        </div>
-                    </div>
-                    <div class="about-section-header">A little bit about Example</div>
-                    <div class="well well-sm">
-                        <!-- Begin editing profile here -->
-                        <p><i>Nothing here yet.</i></p>
-                        <!-- End editing profile here -->
-                    </div>
-                </div>
-            <!-- Page footer -->
-            <div class="row">
-                <div class="col-md-12">
-                  <hr>
-                  <footer>
-                      <ul class="nav nav-pills">
-                          <li class="resourcepile-copyright-year"></li>
-                          <li class="pull-right"><a href="../revisions/website">Revisions</a></li>
-                      </ul>
-                  </footer>
-                  <br>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+{{> header}}
+<div class="container" style="margin-top: 60px">
+	<!-- Page content -->
+	<div class="col-md-3 about-user center">
+		<img class="about-user-avatar img-rounded" src="https://minotar.net/helm/MHF_Question">
+		<div class="about-user-name">Example</div>
+		<div class="about-user-nickname">Example Nickname</div>
+		<div class="about-user-positions">
+			<span class="label" style="background-color: 17BBB0; color: white">Helper</span>
+		</div>
+		<div class="about-user-description">Part of the team<br>since December 1, 2000.</div>
+	</div>
+	<div class="col-md-9 about-user-info">
+		<div class="row" style="margin-bottom: 26px;">
+			<div class="col-md-6">
+				<div class="about-section-header">Profiles</div>
+				<a class="about-info" href="https://oc.tc/users/username"><i class="fa fa-caret-right"></i> Overcast Network</a>
+				<a class="about-info" href="https://avicus.net/users/username"><i class="fa fa-caret-right"></i> Avicus</a>
+			</div>
+			<div class="col-md-6">
+				<div class="about-section-header">Contact</div>
+				<span class="about-info"><i class="about-info-icon fa fa-github" aria-hidden="true"></i> <a href="#">Example</a></span>
+				<span class="about-info"><i class="about-info-icon fa fa-globe" aria-hidden="true"></i> <a href="#">Example</a></span>
+				<span class="about-info"><i class="about-info-icon fa fa-skype" aria-hidden="true"></i> <a href="#">Example</a></span>
+				<span class="about-info"><i class="about-info-icon fa fa-twitter" aria-hidden="true"></i> <a href="#">Example</a></span>
+				<span class="about-info"><i class="about-info-icon fa fa-steam" aria-hidden="true"></i> <a href="#">Example</a></span>
+				<span class="about-info"><i class="about-info-icon fa fa-twitch" aria-hidden="true"></i> <a href="#">Example</a></span>
+				<span class="about-info"><i class="about-info-icon fa fa-youtube" aria-hidden="true"></i> <a href="#">Example</a></span>
+				<span class="about-info"><i class="about-info-icon fa fa-microphone" aria-hidden="true"></i> Discord <code>example#0000</code></span>
+			</div>
+		</div>
+		<div class="about-section-header">A little bit about Example</div>
+		<div class="well well-sm">
+			<!-- Begin editing profile here -->
+			<p><i>Nothing here yet.</i></p>
+			<!-- End editing profile here -->
+		</div>
+	</div>
+</div>
+{{> footer}}
