@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- stable
+branches:
+    only:
+    - source
+before_script:
+- npm install -g grunt
+script: grunt
+after_success:
+- bash ./deploy.sh
+env:
+    global:
+    - ENCRYPTION_LABEL: "2ed699ca3770"
+    - COMMIT_AUTHOR_EMAIL: "freundtech@gmail.com"
