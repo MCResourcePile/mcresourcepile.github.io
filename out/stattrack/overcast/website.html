@@ -1,0 +1,290 @@
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Overcast Website Stats - ResourcePile</title>
+
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="/assets/favicon.ico">
+		<link href="/assets/css/gamemodes.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+		
+    </head>
+	<body >
+        <!-- Page navigation -->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> StatTrack <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/stattrack/overcast/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Overcast Network Bow Records</a></li>
+                                <li><a href="/stattrack/avicus/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Avicus Bow Records</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/stattrack/overcast/website"><span class="fa fa-bookmark"></span> Overcast Network Website Stats</a></li>
+                                <li><a href="/stattrack/overcast/objective"><span class="fa fa-signal"></span> Overcast Network Objective Leaderboards</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> MapStack <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/mapstack/overcast"><i class="icon stat-map-icon"></i> Overcast Network Map Collection</a></li>
+                                <li><a href="/mapstack/avicus"><i class="icon stat-map-icon"></i> Avicus Map Collection</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cog"></i> ToolRack <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="toolrack/resourcepack"><i class="fa fa-folder-o"></i> Resource Pack Collection</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/info"><i class="fa fa-exclamation"></i> Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<div class="container">
+	<!-- Page navigation -->
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../../index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> StatTrack <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="../overcast/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Overcast Network Bow Records</a></li>
+							<li><a href="../avicus/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Avicus Bow Records</a></li>
+							<li class="divider"></li>
+							<li><a href="../overcast/website"><span class="fa fa-bookmark"></span> Overcast Network Website Stats</a></li>
+							<li><a href="../overcast/objective"><span class="fa fa-signal"></span> Overcast Network Objective Leaderboards</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> MapStack <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="../../mapstack/overcast"><i class="icon stat-map-icon"></i> Overcast Network Map Collection</a></li>
+							<li><a href="../../mapstack/avicus"><i class="icon stat-map-icon"></i> Avicus Map Collection</a></li>
+						</ul>
+					</li>
+					<li><a href="../../info"><i class="fa fa-exclamation"></i> Info</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="content-header">
+		<div class="content-title">Website Stats</div>
+		<div class="content-subtitle">
+			A collection of various stats from the <a href="http://oc.tc">Overcast Network</a> website.
+		</div>
+	</div>
+	<!-- Game mode navigation menu -->
+	<div class="section">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="well well-sm well-custom-red">
+					<center><h3><i class="fa fa-file-o"></i> Topics Started</h3></center>
+					<ol>
+						<li><b> <img src="https://crafatar.com/avatars/bend?size=16"> bend </b><i>(431)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/HollyJollySam?size=16"> HollyJollySam </b><i>(388)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/Cratain?size=16"> Cratain </b><i>(380)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Matic0B?size=16"> Matic0B <i>(372)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Quannix?size=16"> Quannix <i>(257)</i></li>
+						<li> <img src="https://crafatar.com/avatars/khazhyk?size=16"> khazhyk <i>(241)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Scorpioon?size=16"> Scorpioon <i>(229)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Strangey?size=16"> Strangey <i>(218)</i></li>
+						<li> <img src="https://crafatar.com/avatars/rockymine?size=16"> rockymine <i>(205)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Apple?size=16"> Apple <i>(204)</i></li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="well well-sm well-custom-red">
+					<center><h3><i class="fa fa-comments"></i> Forum Posts</h3></center>
+					<ol>
+						<li><b> <img src="https://crafatar.com/avatars/Quannix?size=16"> Quannix </b><i>(12,768)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/Matic0B?size=16"> Matic0B </b><i>(9,929)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/bend?size=16"> bend </b><i>(9,477)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Brottweiler?size=16"> Brottweiler <i>(9,049)</i></li>
+						<li> <img src="https://crafatar.com/avatars/hive_raven?size=16"> hive_raven <i>(8,651)</i></li>
+						<li> <img src="https://crafatar.com/avatars/HollyJollySam?size=16"> HollyJollySam <i>(8,505)</i></li>
+						<li> <img src="https://crafatar.com/avatars/diamond22?size=16"> diamond22 <i>(7,861)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Cratain?size=16"> Cratain <i>(7,135)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Biixerv?size=16"> Biixerv <i>(6,581)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Avaleer?size=16"> Avaleer <i>(6,069)</i></li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="well well-sm well-custom-green">
+					<center><h3><i class="fa fa-users"></i> Friends Added</h3></center>
+					<ol>
+						<li><b> <img src="https://crafatar.com/avatars/diamond22?size=16"> diamond22 </b><i>(2,563)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/pmheys?size=16"> pmheys </b><i>(2,027)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/Avaleer?size=16"> Avaleer </b><i>(1,912)</i></li>
+						<li> <img src="https://crafatar.com/avatars/drewb6490?size=16"> drewb6490 <i>(1,163)</i></li>
+						<li> <img src="https://crafatar.com/avatars/__gavin?size=16"> __gavin <i>(1,015)</i></li>
+						<li> <img src="https://crafatar.com/avatars/JTr?size=16"> JTr <i>(976)</i></li>
+						<li> <img src="https://crafatar.com/avatars/bend?size=16"> bend <i>(839)</i></li>
+						<li> <img src="https://crafatar.com/avatars/lmpressive?size=16"> lmpressive <i>(715)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Sporadicamente?size=16"> Sporadicamente <i>(709)</i></li>
+						<li> <img src="https://crafatar.com/avatars/FunnyQuinn?size=16"> FunnyQuinn <i>(684)</i></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="well well-sm well-custom-purple">
+					<center><h3><i class="fa fa-cubes"></i> Map Creators</h3></center>
+					<ol>
+						<li><b> <img src="https://crafatar.com/avatars/Tywnis?size=16"> Tywnis </b><i>(107)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/Plastix?size=16"> Plastix </b><i>(61)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/ElectroidFilms?size=16"> ElectroidFilms </b><i>(55)</i></li>
+						<li> <img src="https://crafatar.com/avatars/StealthMedia?size=16"> StealthMedia <i>(48)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Reshif?size=16"> Reshif <i>(44)</i></li>
+						<li> <img src="https://crafatar.com/avatars/rockymine?size=16"> rockymine <i>(42)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Chicky?size=16"> Chicky <i>(41)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Strangey?size=16"> Strangey <i>(36)</i></li>
+						<li> <img src="https://crafatar.com/avatars/AtlasGames?size=16"> AtlasGames <i>(32)</i></li>
+						<li> <img src="https://crafatar.com/avatars/GoldenOre?size=16"> GoldenOre <i>(30)</i></li>
+					</ol>
+					<a href="mapauthors.txt"><i>View the full list of map creators</i></a>
+					<button class="btn btn-default pull-right" style="font-weight: bold" type="button" data-toggle="popover" data-placement="bottom" title="Information" data-content="The data was gathered by downloading map.xml files from maps.oc.tc and checking how many times a persons UUID was mentioned in the authors tag. There may be duplicates!"><i class="fa fa-question"></i></a>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="well well-sm well-custom-purple">
+					<center><h3><i class="fa fa-star"></i> Top Rated Maps</h3></center>
+					<ol>
+						<li><b> Sugar Cane Valley </b><i>(4.21)</i></li>
+						<li><b> A Journey Through History </b><i>(4.20)</i></li>
+						<li><b> Viridun: Elytra </b><i>(4.19)</i></li>
+						<li> The Grand Dueling Tournament II <i>(4.18)</i></li>
+						<li> Rainbow Road <i>(4.16)</i></li>
+						<li> Ozone: Elytra <i>(4.07)</i></li>
+						<li> Foundry <i>(4.06)</i></li>
+						<li> Wooly Woods RAGE <i>(4.05)</i></li>
+						<li> BVC <i>(4.04)</i></li>
+						<li> Pixel Run <i>(4.03)</i></li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="well well-sm well-custom-blue">
+					<center><h3><i class="fa fa-trophy"></i> Trophies Collected</h3></center>
+					<ol>
+						<li><b> <img src="https://crafatar.com/avatars/Giovanni?size=16"> Giovanni </b><i>(14)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/pbat?size=16"> pbat </b><i>(14)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/nicomoshi?size=16"> nicomoshi </b><i>(13)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Parkway?size=16"> Parkway <i>(13)</i></li>
+						<li> <img src="https://crafatar.com/avatars/SailorMojo?size=16"> SailorMojo <i>(13)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Crazy_?size=16"> Crazy_ <i>(12)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Strangey?size=16"> Strangey <i>(11)</i></li>
+						<li> <img src="https://crafatar.com/avatars/cscotz?size=16"> cscotz <i>(11)</i></li>
+						<li> <img src="https://crafatar.com/avatars/SheriffSoco?size=16"> SheriffSoco <i>(11)</i></li>
+						<li> <img src="https://crafatar.com/avatars/ginie1?size=16"> ginie1 <i>(10)</i></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="well well-sm well-custom-blue">
+					<center><h3><i class="fa fa-tint"></i> Raindrops</h3></center>
+					<ol>
+						<li><b> <img src="https://crafatar.com/avatars/7777Alex7777?size=16"> 7777Alex7777 </b><i>(1,146,485)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/Daiinty?size=16"> Daiinty </b><i>(845,499)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/2000thehecf1?size=16"> 2000thehecf1 </b><i>(802,687)</i></li>
+						<li> <img src="https://crafatar.com/avatars/_oxyoshi_?size=16"> _oxyoshi_ <i>(783,172)</i></li>
+						<li> <img src="https://crafatar.com/avatars/AdamChen?size=16"> AdamChen <i>(743,383)</i></li>
+						<li> <img src="https://crafatar.com/avatars/snatter?size=16"> snatter <i>(650,073)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Tapetepato?size=16"> Tapetepato <i>(593,545)</i></li>
+						<li> <img src="https://crafatar.com/avatars/teheggy?size=16"> teheggy <i>(584,404)</i></li>
+						<li> <img src="https://crafatar.com/avatars/weaboo511?size=16"> weaboo511 <i>(567,584)</i></li>
+						<li> <img src="https://crafatar.com/avatars/gloomp?size=16"> gloomp <i>(549,879)</i></li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="well well-sm well-custom-blue">
+					<center><h3><i class="fa fa-sign-in"></i> Teams Joined</h3></center>
+					<ol>
+						<li><b> <img src="https://crafatar.com/avatars/Vynious?size=16"> Vynious </b><i>(108,862)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/mikmikeme?size=16"> mikmikeme </b><i>(108,359)</i></li>
+						<li><b> <img src="https://crafatar.com/avatars/Eggyyyy?size=16"> Eggyyyy </b><i>(104,438)</i></li>
+						<li> <img src="https://crafatar.com/avatars/jimbot12345?size=16"> jimbot12345 <i>(102,138)</i></li>
+						<li> <img src="https://crafatar.com/avatars/pulbos2?size=16"> pulbos2 <i>(98,010)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Linehodres?size=16"> Linehodres <i>(88,754)</i></li>
+						<li> <img src="https://crafatar.com/avatars/amiralblendic?size=16"> amiralblendic <i>(84,824)</i></li>
+						<li> <img src="https://crafatar.com/avatars/JaysonTru?size=16"> JaysonTru <i>(79,294)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Ny_?size=16"> Ny_ <i>(73,850)</i></li>
+						<li> <img src="https://crafatar.com/avatars/Vexilarry?size=16"> Vexilarry <i>(82,870)</i></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="well well-sm well-custom-orange">
+					<center><h3><i class="fa fa-bookmark"></i> Interesting Facts</h3></center>
+					<ul>
+						<li><b> <img src="https://crafatar.com/avatars/Strangey?size=16"> Strangey </b>and <b> <img src="https://crafatar.com/avatars/amactus?size=16"> amactus </b>have the most badges on the website (6)!</li>
+						<li><b> <img src="https://crafatar.com/avatars/Salsori?size=16"> Salsori </b>won a 1v40 match on Cannon Duel!</li>
+						<li><b> <img src="https://crafatar.com/avatars/ukital?size=16"> ukital </b>purchased the last Decanus premium package before it was removed from the shop!</li>
+						<li><b> <img src="https://crafatar.com/avatars/Matic0B?size=16"> Matic0B </b>was promoted to 4 different staff ranks in just 40 days!</li>
+						<li>The <a href="https://oc.tc">Overcast Network</a> has been joined by 1.7 MILLION players during its existance.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+$(function () {
+	$('[data-toggle="popover"]').popover()
+})
+</script>
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+					  <hr>
+					  <footer>
+						  <ul class="nav nav-pills">
+							  <li class="resourcepile-copyright-year"></li>
+							  <li class="pull-right"><a href="/revisions/website"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Revisions</a></li>
+							  <li class="pull-right"><a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new"><i class="fa fa-github fa-fw" aria-hidden="true"></i>&nbsp; Report an Issue</a></li>
+						  </ul>
+					  </footer>
+					  <br>
+					</div>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>

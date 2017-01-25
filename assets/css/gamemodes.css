@@ -1,0 +1,51 @@
+/* Game sections long */
+.game_all:before {content: "All"}
+.game_arcade:before {content: "Arcade"}
+.game_blitz:before {content: "Blitz"}
+.game_cp:before {content: "Capture Points"}
+.game_ctf:before {content: "Capture the Flag"}
+.game_ctw:before {content: "Capture the Wool"}
+.game_dtc:before {content: "Destroy the Core"}
+.game_dtm:before {content: "Destroy the Monument"}
+.game_ffa:before {content: "Free-for-all"}
+.game_frenzy:before {content: "Frenzy"}
+.game_gs:before {content: "Ghost Squadron"}
+.game_koth:before {content: "King of the Hill"}
+.game_mixed:before {content: "Mixed"}
+.game_rage:before {content: "Rage"}
+.game_ranked:before {content: "Ranked"}
+.game_rfw:before {content: "Race for Wool"}
+.game_skywars:before {content: "Skywars"}
+.game_survival:before {content: "Survival Games"}
+.game_tdm:before {content: "Team Deathmatch"}
+.game_tournament:before {content: "Tournament Edition"}
+
+.license_by_nc_sa:before {content: "BY-NC-SA License"}
+.license_by_sa:before {content: "BY-SA License"}
+
+/* Game sections short
+@media screen and (max-width: 767px) {
+    .game_blitz:before {content: "Blitz"}
+    .game_cp:before {content: "CP"}
+    .game_ctf:before {content: "CTF"}
+    .game_ctw:before {content: "CTW"}
+    .game_dtc:before {content: "DTC"}
+    .game_dtm:before {content: "DTM"}
+    .game_ffa:before {content: "FFA"}
+    .game_gs:before {content: "GS"}
+    .game_koth:before {content: "KOTH"}
+    .game_rfw:before {content: "RFW"}
+    .game_survival:before {content: "SG"}
+    .game_tdm:before {content: "TDM"}
+    .game_tournament:before {content: "Tournament"}
+    
+    .license_by_nc_sa:before {content: "BYNCSA"}
+    .license_by_sa:before {content: "BYSA"}
+} */
+
+.tag_hidden {display: none}
+li.game-tag {display: inline; list-style-type: none;}
+li.game-tag:after {content: ", ";}
+li.game-tag:last-child:after {content: "";}
+li.author-tag:nth-child(n+4) {font-size: 0px;}
+li.author-tag:nth-child(4):before {font-size: 13px; content: " and more";}
