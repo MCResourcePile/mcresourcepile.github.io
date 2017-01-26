@@ -24,7 +24,7 @@ git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
 # Clean out existing contents
-rm -rf deploy/**/* || exit 0
+rm -rf deploy/!(.travis.yml|README.md) || exit 0
 
 # Run our compile script
 cp -a out/* deploy
