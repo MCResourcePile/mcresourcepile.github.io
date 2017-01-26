@@ -119,7 +119,7 @@
 								{{#unless xml}}
 									<span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
 									{{else}}
-									<a href="https://github.com/MCResourcePile/MapStack-Avicus/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
+									<a href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
 								{{/unless}}
 							{{/if}}
 						</div>
@@ -162,7 +162,7 @@
 										{{/unless}}
 									</div>
 									<div class="modal-footer">
-										<button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/MapStack-Avicus/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide')" data-toggle="modal" data-target="#download-complete-message" class="btn map-link">Download</button>
+										<button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide')" data-toggle="modal" data-target="#download-complete-message" class="btn map-link">Download</button>
 										<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 									</div>
 								</div>
