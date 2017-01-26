@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
+shopt -s extglob #Enable extended pattern matching
 
 SOURCE_BRANCH="source"
 TARGET_BRANCH="master"
