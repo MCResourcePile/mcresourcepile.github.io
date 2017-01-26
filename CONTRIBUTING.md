@@ -3,14 +3,16 @@
 - How to contribute to [MapStack](#contributions-to-mapstack).
 - A list of [Map Tags](#map-tags).
 
+**All edits must be made under the [`source`](https://github.com/MCResourcePile/MCResourcePile.github.io/tree/source) branch, not the `master` branch!**
+
 -----
 
 ##Contributions to StatTrack
 
-All records for StatTrack bow records are stored within a javascript file called `bow-records.js` which is located under each of the network's individual folder, under the materials folder, which is under the assets folder. The `bow.html` file does **not** need to be edited.
+All records for StatTrack bow records are stored within a json file called `bow.json`. The `bow.html` file does **not** need to be edited.
 
-* Overcast Network bow records: [`assets/materials/overcast/bow-records.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/overcast/bow-records.js)
-* Avicus Network bow records: [`assets/materials/avicus/bow-records.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/avicus/bow-records.js)
+* Overcast Network bow records: [`src/data/stattrack/overcast/bow.json`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/source/src/data/stattrack/overcast/bow.json)
+* Avicus Network bow records: [`src/data/stattrack/avicus/bow.json`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/source/src/data/stattrack/avicus/bow.json)
 
 Below is an example of how the records for the map `Abandoned Zoo` will look inside of this file.
 ```js
@@ -41,10 +43,10 @@ Below is an example of how the records for the map `Abandoned Zoo` will look ins
 
 ##Contributions to MapStack
 
-All maps listed on MapStack are stored within a javascript file called `map-listing.js` which is located under each of the network's individual folder, under the materials folder, which is under the assets folder. The `overcast.html` or `avicus.html` file in the mapstack folder does **not** need to be edited.
+All maps listed on MapStack are stored within a json file called `network.json`. The `overcast.html` or `avicus.html` file in the mapstack folder does **not** need to be edited.
 
-* Overcast Network map listing: [`assets/materials/overcast/map-listing.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/overcast/map-listing.js)
-* Avicus Network map listing: [`assets/materials/avicus/map-listing.js`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/master/assets/materials/avicus/map-listing.js)
+* Overcast Network map listing: [`src/data/mapstack/overcast.json`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/source/src/data/mapstack/overcast.json)
+* Avicus Network map listing: [`src/data/mapstack/avicus.json`](https://github.com/MCResourcePile/MCResourcePile.github.io/blob/source/src/data/mapstack/avicus.json)
 
 Below is an example of how the map `Abandoned Zoo` will look inside of this file.
 ```js
