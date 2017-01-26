@@ -68,14 +68,15 @@ Below is an example of how the map `Abandoned Zoo` will look inside of this file
 |---|---|---|
 |`map: ""`|The map's display name|
 |`slug: ""`|The auto-generated identification string given to the map by the network. This is used to link the map back to its information back on the respective network. This slug can be found in the last part of the URL when viewing the map page. Eg. `https://oc.tc/maps/abandoned_zoo`|
-|`authors: ""`|The creator(s) of the map. There can be multiple authors. `player_name:` is the player's current name. `player_uuid:` is the player's uuid, which can be found using https://mcuuid.net/.|
-|`tags: []`|Descriptive tags given to the map to define game modes, sub game types, seasonal events and tournament editions. A full list of avaliable tags can be found [here](#map-tags).|
-|`private: true/false`|Sets the map to private, disabling all the links. This shouldn't really ever be used.|`false`|
-|`discussion: ""`|The link of the map's discussion thread. Should be left blank if there isn't one.|`false`|
+|`authors: ""`|The creator(s) of the map. There can be multiple authors. `player_name:` is the player's current name. `player_uuid:` is the player's uuid, which can be found using https://mcuuid.net/|
+|`tags: []`|Descriptive tags given to the map to define game modes, sub game types, seasonal events and tournament editions. A full list of avaliable tags can be found [here](#map-tags)|
+|`private: true/false`|Sets the map to private, disabling all the links. This shouldn't really ever be used|`false`|
+|`discussion: ""`|The link of the map's discussion thread. Should be left blank if there isn't one|`false`|
 |`official: true/false`|If the map was in the official Overcast Network maps repository|`true`|
-|`commercial: true/false`|Defaults to true and gives the map a [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/legalcode) license. If the map author does not want the map used for commercial purposes, set this to false and the map will be given a [CC BY_NC_SA](https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode) license instead. |`true`|
-|`download: true/false`|Specify if the map has a download. Maps that do not have a download will not be displayed on the map listing.|`true`|
-|`xml: true/false`|Specify if the map has an XML file. All maps should have an XML File.|`true`|
+|`sourced: true/false`|If the map download was retrieved from the map's discussion thread|`false`|
+|`commercial: true/false`|Defaults to true and gives the map a [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/legalcode) license. If the map author does not want the map used for commercial purposes, set this to false and the map will be given a [CC BY_NC_SA](https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode) license instead|`true`|
+|`download: true/false`|Specify if the map has a download. Maps that do not have a download will not be displayed on the map listing|`true`|
+|`xml: true/false`|Specify if the map has an XML file. All maps should have an XML File|`true`|
 |`cardinal: true/false`|Specify if the map works with [CardinalPGM](https://github.com/twizmwazin/CardinalPGM)|`false`|
 
 -----
