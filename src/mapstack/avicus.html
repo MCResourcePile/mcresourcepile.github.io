@@ -162,7 +162,7 @@
 										{{/unless}}
 									</div>
 									<div class="modal-footer">
-										<button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide')" data-toggle="modal" data-target="#download-complete-message" class="btn map-link">Download</button>
+										<button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide')" class="btn map-link">Download</button>
 										<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 									</div>
 								</div>
@@ -186,6 +186,36 @@
 				<div class="modal-body">
 					Thank you for downloading this map from ResourcePile and supporting free public maps as well as the map authors.<br><br>
 					<small>If your download does not begin, an error may have occured or the map you are looking for may not exisit in our public repository yet. Please try again, but if the issue persists please report an issue on our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Issues Tracker</a>.</small>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="download-error-message" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">The download failed.</h4>
+				</div>
+				<div class="modal-body">
+				Something went wrong. Please try again. If the issue persists please report an issue on our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Issues Tracker</a>.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="download-rate-limit-message" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">You've hit the rate limit</h4>
+				</div>
+				<div class="modal-body">
+					Looks like you've hit GitHub's rate limit. Sadly there isn't anything we can do about that at the moment, but we are looking for solutions. Please try again in an hour.
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -248,6 +278,20 @@
 		commercial = false;
 		console.log("This map is using a Creative Commons BY-NC-SA 4.0 license")
 	}
+
+	GitZip.registerCallback(function(status, message, percent) {
+		if (status === "done") {
+			$("#download-complete-message").modal('show')
+		}
+		else if (status ==="error") {
+			if (message.indexOf("API rate limit exceeded for") === -1) {
+				$("#download-error-message").modal('show');
+			}
+			else {
+				$("#download-rate-limit-message").modal('show');
+			}
+		}
+	});
 </script>
 <script type="text/javascript">
 	var data=location.search;
