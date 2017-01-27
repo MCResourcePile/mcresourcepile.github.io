@@ -4,7 +4,7 @@
    $("a:contains('Matic0B')").html("<span class=\"position-manager\">Matic0B</span>")
    $("a:contains('xCand')").html("<span class=\"position-helper\">xCand</span>")
    $("a:contains('JexeI')").html("<span class=\"position-helper\">Jexel</span>")
-   $("a:contains('freundTech')").html("<span class=\"position-helper\">freundTech</span>")
+   $("a:contains('freundTech')").html("<span class=\"position-developer\">freundTech</span>")
    $("a:contains('triplezko')").html("<span class=\"position-helper\">triplezko</span>")
    $("a:contains('NanuSci')").html("<span class=\"position-helper\">Nanu</span>")
    $("a:contains('nintendoboy11')").html("<span class=\"position-helper\">nintendoboy11</span>")
