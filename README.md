@@ -18,7 +18,6 @@ Building the page
 
 Testing the site offline (optional):
 
-- Run `npm install -g `local-web-server`
+- Run `npm install -g local-web-server`
 - Run `ws` from the `out/` directory to start a webserver on localhost
 - Visit http://127.0.0.1:8000/index.html to test. You will manually have to add `.html` behind the URL every time you click a link.
-
