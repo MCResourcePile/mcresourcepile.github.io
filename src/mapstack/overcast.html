@@ -323,13 +323,16 @@
     GitZip.registerCallback(function(status, message, percent) {
         if (status === "done") {
             $("#download-complete-message").modal('show');
+            $('#download-starting-message').modal('hide');
         }
         else if (status === "error") {
             if (message.indexOf("API rate limit exceeded for") === -1) {
                 $("#download-error-message").modal('show');
+                $('#download-starting-message').modal('hide');
             }
             else {
                 $("#download-rate-limit-message").modal('show');
+                $('#download-starting-message').modal('hide');
             }
         }
     });
