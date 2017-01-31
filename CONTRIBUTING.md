@@ -53,9 +53,9 @@ Below is an example of how the map `Abandoned Zoo` will look inside of this file
 {
     "map": "Abandoned Zoo",
     "slug": "abandoned_zoo",
-    "authors": {
+    "authors": [
         {"player_name": "Solo_Runner", "player_uuid": "2fa85349-2276-4850-b7b5-d18c4f4c8376"}
-    }
+    ],
     "tags": [ {"tdm": true} ],
     "discussion": "https://oc.tc/forums/topics/51ddcd17af7fb0d4b2003633",
     "official": true,
