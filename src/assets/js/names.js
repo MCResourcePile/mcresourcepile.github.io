@@ -1,6 +1,8 @@
  window.onload = function() {
    $("a:contains('CrazyCreeper521')").html("<span class=\"position-manager\">Crazy_</span>")
+   $("a:contains('Crazy_')").html("<span class=\"position-manager\">Crazy_</span>")
    $("a:contains('mitchiiii')").html("<span class=\"position-developer\">mitchiii_</span>")
+   $("a:contains('mitchiii_')").html("<span class=\"position-developer\">mitchiii_</span>")
    $("a:contains('Matic0B')").html("<span class=\"position-manager\">Matic0B</span>")
    $("a:contains('xCand')").html("<span class=\"position-helper\">xCand</span>")
    $("a:contains('JexeI')").html("<span class=\"position-helper\">Jexel</span>")
