@@ -94,8 +94,8 @@
                                             {{#if cp}}<li class="game-tag"><a class="game-link map-tag" href="?s=cp">Capture Points</a><span class="tag_hidden">CP</span></li>{{/if}}
                                             {{#if ctf}}<li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag_hidden">CTF</span></li>{{/if}}
                                             {{#if ctw}}<li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag_hidden">CTW</span></li>{{/if}}
-                                            {{#if dtc}}<li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a><span class="tag_hidden">DTC</span></li>{{/if}}
-                                            {{#if dtm}}<li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag_hidden">DTM</span></li>{{/if}}
+                                            {{#if dtc}}<li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a>{{#if dtm}}<a class="game-link map-tag" href="?s=dtm"> and Monument</a>{{/if}}<span class="tag_hidden">DTC {{#if dtm}}DTM{{/if}}</span></li>{{/if}}
+                                            {{#if dtm}}{{#unless dtc}}<li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag_hidden">DTM</span></li>{{/unless}}{{/if}}
                                             {{#if ffa}}<li class="game-tag"><a class="game-link map-tag" href="?s=ffa">Free-for-all</a><span class="tag_hidden">Free for all FFA</span></li>{{/if}}
                                             {{#if gs}}<li class="game-tag"><a class="game-link map-tag" href="?s=gs">Ghost Squadron</a><span class="tag_hidden">GS</span></li>{{/if}}
                                             {{#if koth}}<li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag_hidden">KOTH</span></li>{{/if}}
