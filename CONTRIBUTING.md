@@ -99,7 +99,7 @@ Frenzy | (Avicus Network only) | `"frenzy": true`
 Ghost Squadron || `"gs": true`  
 King of the Hill | Hills that award points when captured | `"koth": true`  
 Micro | (Overcast Network only) | `"mirco": true`  
-RAGE || `"rage": ture`  
+RAGE || `"rage": true`  
 Ranked Edition | (Overcast Network only) | `"ranked": true`  
 Race for Wool | (Overcast Network only) | `"rfw": true`  
 Skywars || `"skywars": true`   
