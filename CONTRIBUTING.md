@@ -139,7 +139,7 @@ Below is an example of a single post.
 |`"heading": ""`|The post's title|
 |`"id": ""`|The post's unique ID|
 |`"important":`|If the post should be more visible, gives the post a green 'glow'|`false`|
-|`"date": ""`|The date in which the post was written, **must** be formatted at MM-DD-YYYY, eg. `01-29-2017`|
+|`"date": ""`|The date in which the post was written, **must** be formatted as MM-DD-YYYY, eg. `01-29-2017`|
 |`"content": ""`|The main post content, accepts HTML elements|
 |`"buttons": []`|Attribute containing button information (posts do not require buttons)|
 |`"details": ""`|The button's display text|`Learn More`|
