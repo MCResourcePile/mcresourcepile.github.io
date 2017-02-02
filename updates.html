@@ -102,7 +102,7 @@
             $('.convert').each(function (index, dateElem) {
                 var $dateElem = $(dateElem);
                 var relative = moment($dateElem.text(), "MM-DD-YYYY").fromNow();
-                var exact = moment($dateElem.text(), 'MM-DD-YYYY').format('MMMM DD, YYYY');
+                var exact = moment($dateElem.text(), 'MM-DD-YYYY').format('MMMM D, YYYY');
                 $dateElem.text(relative);
                 $dateElem.prop('title', exact);
             })
