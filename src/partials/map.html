@@ -1,18 +1,18 @@
 {{#unless download}}
-<!-- Thumbnail alt if no download -->
+{{! Thumbnail alt if no download }}
 <div id="{{slug}}" class="no-download"></div>
 {{else}}
-<!-- Main thumbnail body -->
+{{! Main thumbnail body }}
 <div class="col-sm-6 col-lg-3 map-thumbnail center {{#if official}}official-map{{else}}unofficial-map{{/if}}">
     <div id="{{id}}" class="thumbnail map-float">
-        <!-- Map image background, contains banner and labels -->
+        {{! Map image background, contains banner and labels }}
         <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{#page-category}}{{#if overcast}}overcast{{/if}}{{#if aviucs}}avicus{{/if}}{{/page-category}}-{{#if cardinal}}cardinal{{else}}{{#if official}}{{else}}unofficial{{/if}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
-            <!-- Map banner, contains name, authors and quick links -->
+            {{! Map banner, contains name, authors and quick links }}
             <div class="map-banner {{#unless official}}map-banner-unofficial{{/unless}}">
-                <!-- Map heading -->
+                {{! Map heading }}
                 <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{#page-category}}{{#if overcast}}overcast{{/if}}{{#if aviucs}}avicus{{/if}}{{/page-category}}/bow?s={{slug}}"><strong>{{#if map}}<span class="map-featured" data-toggle="tooltip" data-placement="top" title="{{map}}">{{map}}</span>{{else}}<span class="map-featured">Untitled Map</span>{{/if}}</strong></a>
                 {{#unless locked}}
-                <!-- Quick links -->
+                {{! Quick links }}
                 {{#if official}}
                 <a href="{{#page-category}}{{#if overcast}}http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/{{/if}}{{#if aviucs}}https://avicus.net/maps/map/{{/if}}{{/page-category}}{{slug}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{#page-category}}{{#if overcast}}Overcast{{/if}}{{#if aviucs}}Avicus{{/if}}{{/page-category}}&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                 {{/if}}
@@ -23,7 +23,7 @@
                 <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
                 {{/if}}
                 {{/unless}}
-                <!-- Game tags -->
+                {{! Game tags }}
                 <span style="display:block;margin-top:-8px;">
                     {{#if tags}}
                         {{#tags}}
@@ -56,14 +56,14 @@
                     {{/if}}
                 </span>
             </div>
-            <!-- Map labels -->
+            {{! Map labels }}
             <div class="map-labels">
                 <span class="label label-default map-label">Slug ID: {{slug}}</span>
                 {{#unless official}}<span class="label map-label-locked map-label" data-toggle="tooltip" data-placement="top" title="This map was not in the official {{#page-category}}{{#if overcast}}Overcast{{/if}}{{#if aviucs}}Avicus{{/if}}{{/page-category}} repository">Unofficial Map</span>{{/unless}}
             </div>
         </div>
-        <!-- / End map image container -->
-        <!-- Map authors -->
+        {{! / End map image container }}
+        {{! Map authors }}
         <div class="map-authors">
             <span class="map-author-name">by</span>
             {{#if authors}}
@@ -73,16 +73,16 @@
             {{else}}<span class="map-author-name">Ghost</span>
             {{/if}}
         </div>
-        <!-- / End map authors -->
-        <!-- Main download buttons -->
+        {{! / End map authors }}
+        {{! Main download buttons }}
         <div style="padding-top:2%;" class="center">
             {{#if locked}}
-            <!-- Map locked banner -->
+            {{! Map locked banner }}
             <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="This map has been locked"><i class="fa fa-lock"></i></span>
             {{else}}
-            <!-- Download button (always enabled) -->
+            {{! Download button (always enabled) }}
             <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}" onclick="{{#unless commercial}}noncommercialLicense(){{else}}commercialLicense(){{/unless}}"><i class="fa fa-download"></i></button>
-            <!-- XML button -->
+            {{! XML button }}
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
@@ -90,8 +90,8 @@
             {{/unless}}
             {{/if}}
         </div>
-        <!-- / End main download buttons -->
-        <!-- Download and license modal -->
+        {{! / End main download buttons }}
+        {{! Download and license modal }}
         <div class="modal fade" id="download-{{slug}}" tabindex="-1" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -137,8 +137,8 @@
                 </div>
             </div>
         </div>
-        <!-- / End download modal -->
+        {{! / End download modal }}
     </div>
 </div>
-<!-- / End main thumbnail body -->
+{{! / End main thumbnail body }}
 {{/unless}}
