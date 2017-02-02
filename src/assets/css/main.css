@@ -620,12 +620,15 @@ span.game-mode-button {
     border-radius: 4px;
     margin-top: 12px;
     margin-bottom: 12px;
+    display: table-row-group;
+    order: 2;
 }
 
 .post-thumbnail-important {
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 4px 1px #0CB035;
+    order: 1 !important;
 }
 
 .post-body.a {
@@ -640,4 +643,9 @@ span.game-mode-button {
 .content-alert {
     width: 86%;
     margin: 0 auto;
+}
+
+#post-output {
+    display: flex;
+    flex-direction: column;
 }
