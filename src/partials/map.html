@@ -56,9 +56,17 @@
             </div>
             {{! Map labels }}
             <div class="map-labels">
-                <span class="label label-default map-label">Slug ID: {{slug}}</span>
-                {{#unless licensed}}<span class="label map-label-locked map-label">Unlicensed</span>{{/unless}}
-                {{#unless official}}<span class="label map-label-locked map-label" data-toggle="tooltip" data-placement="top" title="This map was not in the official {{#if @root.page-category.overcast}}Overcast{{/if}}{{#if @root.page-category.avicus}}Avicus{{/if}} repository">Unofficial Map</span>{{/unless}}
+                {{#if unlicensed}}
+                {{else}}
+                    {{#if commercial}}
+                    <span class="label label-success map-label">CC BY-SA License</span>
+                    {{else}}
+                    <span class="label label-info map-label">CC BY-NC-SA License</span>
+                    {{/if}}
+                {{/if}}
+                {{#unless official}}
+                <span class="label map-label-locked map-label" data-toggle="tooltip" data-placement="top" title="This map was not in the official {{#if @root.page-category.overcast}}Overcast{{/if}}{{#if @root.page-category.avicus}}Avicus{{/if}} repository">Unofficial Map</span>
+                {{/unless}}
             </div>
         </div>
         {{! / End map image container }}
