@@ -102,11 +102,15 @@ SOFTWARE.
         contents.forEach(function(item){
             progressCallback.call(callbackScope, 'processing', 'Compressing ' + item.path,
                 ++progressCallback._idx / (progressCallback._len * 2) * 100);
-            if(commercial){
-                zip.file('LICENSE.txt', 'This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n');
-            }
-            if(!commercial){
-                zip.file('LICENSE.txt', 'This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n');
+            if(license){
+                if(commercial){
+                    zip.file('LICENSE.txt', 'This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n');
+                }
+                if(!commercial){
+                    zip.file('LICENSE.txt', 'This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n');
+                }
+            }else{
+                zip.file('NOTICE.txt', 'This work has no associated license attached to it. We recommend getting in contact with authors, which are listed on our site at https://mcresourcepile.github.io/, before using this work for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.\n');
             }
             zip.file(item.path, item.content, {createFolders:true,base64:true});
         });
