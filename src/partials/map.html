@@ -6,18 +6,16 @@
 <div class="col-sm-6 col-lg-3 map-thumbnail center {{#if official}}official-map{{else}}unofficial-map{{/if}}">
     <div id="{{id}}" class="thumbnail map-float">
         {{! Map image background, contains banner and labels }}
-        <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{#page-category}}{{#if overcast}}overcast{{/if}}{{#if aviucs}}avicus{{/if}}{{/page-category}}-{{#if cardinal}}cardinal{{else}}{{#if official}}{{else}}unofficial{{/if}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
             {{! Map banner, contains name, authors and quick links }}
             <div class="map-banner {{#unless official}}map-banner-unofficial{{/unless}}">
                 {{! Map heading }}
-                <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{#page-category}}{{#if overcast}}overcast{{/if}}{{#if aviucs}}avicus{{/if}}{{/page-category}}/bow?s={{slug}}"><strong>{{#if map}}<span class="map-featured" data-toggle="tooltip" data-placement="top" title="{{map}}">{{map}}</span>{{else}}<span class="map-featured">Untitled Map</span>{{/if}}</strong></a>
                 {{#unless locked}}
                 {{! Quick links }}
                 {{#if official}}
-                <a href="{{#page-category}}{{#if overcast}}http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/{{/if}}{{#if aviucs}}https://avicus.net/maps/map/{{/if}}{{/page-category}}{{slug}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{#page-category}}{{#if overcast}}Overcast{{/if}}{{#if aviucs}}Avicus{{/if}}{{/page-category}}&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                <a href="{{#if @root.page-category.overcast}}http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/{{/if}}{{#if @root.page-category.avicus}}https://avicus.net/maps/map/{{/if}}{{slug}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{#if @root.page-category.overcast}}Overcast{{/if}}{{#if @root.page-category.avicus}}Avicus{{/if}}&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                 {{/if}}
                 {{#if discussion}}
-                <a href="{{#page-category}}{{#if overcast}}http://webcache.googleusercontent.com/search?q=cache:{{/if}}{{/page-category}}{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
+                <a href="{{#if @root.page-category.overcast}}http://webcache.googleusercontent.com/search?q=cache:{{/if}}{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
                 {{/if}}
                 {{#if cardinal}}
                 <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
@@ -59,7 +57,8 @@
             {{! Map labels }}
             <div class="map-labels">
                 <span class="label label-default map-label">Slug ID: {{slug}}</span>
-                {{#unless official}}<span class="label map-label-locked map-label" data-toggle="tooltip" data-placement="top" title="This map was not in the official {{#page-category}}{{#if overcast}}Overcast{{/if}}{{#if aviucs}}Avicus{{/if}}{{/page-category}} repository">Unofficial Map</span>{{/unless}}
+                {{#unless licensed}}<span class="label map-label-locked map-label">Unlicensed</span>{{/unless}}
+                {{#unless official}}<span class="label map-label-locked map-label" data-toggle="tooltip" data-placement="top" title="This map was not in the official {{#if @root.page-category.overcast}}Overcast{{/if}}{{#if @root.page-category.avicus}}Avicus{{/if}} repository">Unofficial Map</span>{{/unless}}
             </div>
         </div>
         {{! / End map image container }}
@@ -86,7 +85,6 @@
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
-            <a href="https://github.com/MCResourcePile/{{#page-category}}{{#if overcast}}overcast{{/if}}{{#if aviucs}}avicus{{/if}}{{/page-category}}-{{#if cardinal}}cardinal{{else}}{{#if official}}{{else}}unofficial{{/if}}{{/if}}-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
             {{/unless}}
             {{/if}}
         </div>
@@ -131,7 +129,6 @@
                         {{/unless}}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{#page-category}}{{#if overcast}}overcast{{/if}}{{#if aviucs}}avicus{{/if}}{{/page-category}}-{{#if cardinal}}cardinal{{else}}{{#if official}}{{else}}unofficial{{/if}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
