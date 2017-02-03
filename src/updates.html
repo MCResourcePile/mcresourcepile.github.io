@@ -11,7 +11,7 @@
         {{#with data}}
             {{#posts}}
             <div id="{{id}}" class="post-thumbnail {{#if important}}post-thumbnail-important{{/if}}">
-                <div class="post-header">{{#if important}}<i class="fa fa-bookmark" aria-hidden="true"></i> {{/if}}{{#if heading}}{{heading}}{{else}}Untitiled announcement{{/if}}</div>
+                <div class="post-header">{{#if important}}<i class="fa fa-bookmark" aria-hidden="true"></i> {{/if}}<a href="#{{id}}" class="post-header">{{#if heading}}{{heading}}{{else}}Untitiled announcement{{/if}}</a></div>
                 <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/{{#if author}}{{author}}{{else}}MHF_Exclamation{{/if}}?size=12&overlay"> {{#if author}}<a href="https://mcresourcepile.github.io/staff/{{author}}">{{author}}</a>{{else}}<span class="position-manager">ResourcePile</span>{{/if}} {{#if date}}<span class="convert" data-toggle="tooltip" data-placement="top" title="Unknown date">{{date}}</span>{{/if}}</div>
                 <div class="post-body">{{{content}}}</div>
                 {{#if buttons}}
