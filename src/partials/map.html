@@ -6,9 +6,11 @@
 <div class="col-sm-6 col-lg-3 map-thumbnail center {{#if official}}official-map{{else}}unofficial-map{{/if}}">
     <div id="{{id}}" class="thumbnail map-float">
         {{! Map image background, contains banner and labels }}
+        <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{#if official}}{{else}}-unofficial{{/if}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
             {{! Map banner, contains name, authors and quick links }}
             <div class="map-banner {{#unless official}}map-banner-unofficial{{/unless}}">
                 {{! Map heading }}
+                <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{@root.map-group}}/bow?s={{slug}}"><strong>{{#if map}}<span class="map-featured" data-toggle="tooltip" data-placement="top" title="{{map}}">{{map}}</span>{{else}}<span class="map-featured">Untitled Map</span>{{/if}}</strong></a>
                 {{#unless locked}}
                 {{! Quick links }}
                 {{#if official}}
@@ -57,6 +59,7 @@
             {{! Map labels }}
             <div class="map-labels">
                 {{#if unlicensed}}
+                <span class="label label-default map-label">Unlicensed</span>
                 {{else}}
                     {{#if commercial}}
                     <span class="label label-success map-label">CC BY-SA License</span>
@@ -93,6 +96,7 @@
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
+            <a href="https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{#if official}}{{else}}-unofficial{{/if}}{{/if}}-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
             {{/unless}}
             {{/if}}
         </div>
@@ -137,6 +141,7 @@
                         {{/unless}}
                     </div>
                     <div class="modal-footer">
+                        <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{#if official}}{{else}}-unofficial{{/if}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
