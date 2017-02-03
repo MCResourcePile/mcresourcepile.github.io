@@ -91,7 +91,7 @@
             <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="This map has been locked"><i class="fa fa-lock"></i></span>
             {{else}}
             {{! Download button (always enabled) }}
-            <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}" onclick="{{#if soruced}}noLicense(){{else}}{{#unless commercial}}noncommercialLicense(){{else}}commercialLicense(){{/unless}}{{/if}}"><i class="fa fa-download"></i></button>
+            <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}" onclick="{{#if sourced}}noLicense(){{else}}{{#unless commercial}}noncommercialLicense(){{else}}commercialLicense(){{/unless}}{{/if}}"><i class="fa fa-download"></i></button>
             {{! XML button }}
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>

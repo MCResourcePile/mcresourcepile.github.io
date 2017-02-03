@@ -139,17 +139,25 @@
 		$(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps,<br>with " + total_official + " from the official Avicus repository");
 	}
 
-	var commercial = true;
+    var license = true;
+    var commercial = true;
 
-	function commercialLicense(){
-		commercial = true;
-		console.log("This map is using a Creative Commons BY-SA 4.0 license")
-	}
+    function commercialLicense(){
+        license = true;
+        commercial = true;
+        console.log("This map is using a Creative Commons BY-SA 4.0 license")
+    }
 
-	function noncommercialLicense(){
-		commercial = false;
-		console.log("This map is using a Creative Commons BY-NC-SA 4.0 license")
-	}
+    function noncommercialLicense(){
+        license = true;
+        commercial = false;
+        console.log("This map is using a Creative Commons BY-NC-SA 4.0 license")
+    }
+
+    function noLicense(){
+        license = false;
+        console.log("This map has no associated license; be careful when using this map in public servers")
+    }
 
 	GitZip.registerCallback(function(status, message, percent) {
 		if (status === "done") {
