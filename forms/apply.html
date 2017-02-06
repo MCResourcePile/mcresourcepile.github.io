@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Thank you - ResourcePile</title>
+        <title>Apply - ResourcePile</title>
 
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
@@ -65,12 +65,57 @@
                 View recent updates and announcements from ResourcePile with our new <a href="/updates" class="underline">updates page</a>!
             </div>
         </div>
-        <div class="content-title">Thank you</div>
+        <div class="content-title">Apply</div>
         <div class="content-subtitle">
-            Your details have been submitted
+            Apply for a position in the ResourcePile team
         </div>
     </div>
+    <div class="form-body">
+        <div class="form-section">Username</div>
+        <div class="form-section-hint">Your username</div>
+        <input type="text" name="username" id="username" placeholder="Username" required />
+        <br/>
+
+        <div class="form-section">Discord</div>
+        <div class="form-section-hint">Your discord username so we can get in contact with you</div>
+        <input type="text" name="discord" id="discord" placeholder="user#1234" required />
+        <br/>
+
+        <div class="form-section">Position</div>
+        <div class="form-section-hint">The positions you would like to apply for</div>
+        <input type="checkbox" name="developer" id="developer" value="yes"> Developer <small>(Help develop the website and future projects)</small><br>
+        <input type="checkbox" name="helper" id="helper" value="yes"> Helper <small>(Assist in collating data and maps as well as assisting in future projects)</small><br>
+        <input type="checkbox" name="designer" id="designer" value="yes"> Designer <small>(Create media for use on the website and associated services)</small><br>
+        <br/>
+
+        <div class="form-section">About Yourself</div>
+        <div class="form-section-hint">Tell us a little about yourself and why we should have you on the team</div>
+        <textarea type="text" name="about" id="about" placeholder="Type here..." style="width: 195px;" required ></textarea>
+        <br/>
+
+        <input class="form-submit" type="button" name="Submit" id="Submit" onclick="postContactToGoogle()" value="Submit" />
+    </div>
 </div>
+<script type="text/javascript">
+    function postContactToGoogle() {
+        var username=$('#username').val();
+        var discord=$('#discord').val();
+        var developer=$('#developer').val();
+        var helper=$('#helper').val();
+        var designer=$('#designer').val();
+        var about=$('#about').val();
+        $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLScVmw8r3H--iUR-yaYxWMCJVP7VEycX7KrYx3EIC8dtrEN2pQ/formResponse",
+            data: {"entry.1202166192":username, "entry.299353712":discord, "entry.2117081059":developer, "entry.1713634116":helper, "entry.331803582":designer, "entry.298721869":about},
+            type: "POST",
+            dataType: "xml",
+            statusCode: {
+                0:function() { window.location.replace("success");},
+                200:function(){window.location.replace("success");}
+            }
+        });
+    }
+</script>
 </div>
 <div class="footer">
     <div class="container">
