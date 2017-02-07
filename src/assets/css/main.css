@@ -724,3 +724,42 @@ span.game-mode-button {
   color: #ffffff;
   background-color: #2980b9;
 }
+.paginate-nav a {
+    position: relative;
+    float: left;
+    padding: 4px 12px;
+    line-height: 1.846;
+    text-decoration: none;
+    color: #fefefe;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    margin-left: -1px;
+    color: #666666;
+}
+
+.paginate-nav a.current,
+.paginate-nav a.current:hover {
+    z-index: 3;
+    color: #3e3d3d;
+    background-color: #f0f0f0;
+    border-color: #7b8be5;
+    cursor: default;
+}
+
+.paginate-nav a:hover {
+    z-index: 2;
+    color: #606060;
+    background-color: #fafafa;
+    border-color: #a7b2f0;
+    cursor: default;
+}
+
+.paginate-nav a:first-child {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.paginate-nav a:last-child {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
