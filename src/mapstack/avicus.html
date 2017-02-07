@@ -136,7 +136,14 @@
 		var total_display = $('.map-thumbnail:visible').length
 		var total_official = $('.official-map:visible').length
 		var total_unofficial = $('.unofficial-map:visible').length
-		$(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps");
+        
+        if (total_maps == "0") {
+            $(".total-maps").html("No maps successfully loaded<br>Please check the console for any errors and contact a page manager");
+        } else if (total_display == "0") {
+            $(".total-maps").html("Current query references no maps, please try searching something else");
+        } else {
+            $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps");
+        }
 	}
 
     var license = true;
