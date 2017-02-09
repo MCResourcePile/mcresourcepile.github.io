@@ -117,7 +117,7 @@ THE SOFTWARE.
 
                     var link_sha
                         return $('<a>')
-                            .attr("href", 'https://github.com/MCResourcePile/' + repo + '/commit/' + originalShaMessage)
+                            .attr("href", 'https://github.com/' + user + '/' + repo + '/commit/' + originalShaMessage)
                             .text(sha_short);
 
                     return link_sha;
