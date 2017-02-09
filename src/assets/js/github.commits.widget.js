@@ -68,7 +68,8 @@ THE SOFTWARE.
                     var li = $("<tr>");
 
                     var e_user = $('<td>');
-                    li.append(message_sha(cur.sha));
+                    var sha_td = $('<td>');
+                    sha_td.append(message_sha(cur.sha));
                     //add avatar & github link if possible
                     if (cur.author !== null) {
                         e_user.append(author(cur.author.login));
@@ -77,6 +78,7 @@ THE SOFTWARE.
                         e_user.append(cur.commit.committer.name);
                     }
 
+                    li.append(sha_td);
                     li.append(e_user);
 
                     //add commit message
@@ -112,9 +114,11 @@ THE SOFTWARE.
                 function message_sha(sha) {
                     var originalShaMessage = sha;
                     sha_short = sha.substring(0, 7);
-                    
-                    var link_sha = $('<td>')
-                        .text(sha_short);
+
+                    var link_sha
+                        return $('<a>')
+                            .attr("href", 'https://github.com/MCResourcePile/' + repo + '/commit/' + originalShaMessage)
+                            .text(sha_short);
 
                     return link_sha;
                 }
