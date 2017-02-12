@@ -1,0 +1,65 @@
+.size_8x:before {content: "8x"}
+.size_16x:before {content: "16x"}
+.size_32x:before {content: "32x"}
+.size_64x:before {content: "64x"}
+.size_128x:before {content: "128x"}
+.size_256x:before {content: "256x"}
+
+.version-1-11:before {content: "1.11"}
+.version-1-10:before {content: "1.10"}
+.version-1-9:before {content: "1.9"}
+.version-1-8:before {content: "1.8"}
+.version-1-7:before {content: "1.7"}
+.version-1-6:before {content: "1.6"}
+
+
+.tag_hidden {display: none}
+li.size-tag {display: inline; list-style-type: none;}
+li.size-tag:after {content: ", ";}
+li.size-tag:last-child::after {content: "";}
+
+li.author-tag:nth-child(n+4) {font-size: 0px;}
+li.author-tag:nth-child(4):before {font-size: 13px; content: " and more";}
+
+li.mcversion-tag {display: inline; list-style-type: none;}
+li.mcversion-tag:after {content: ", ";}
+li.mcversion-tag:last-child::after {content: "";}
+
+/*
+
+.resource-pack-navigation {
+    border-top: 1px solid #e7e7e7;
+    padding-top: 12px;
+}
+
+.resource-pack-button {
+    display: block;
+    margin-bottom: 3px;
+    margin-left: 8px;
+}
+
+a.resource-pack-button {
+    font-weight: 600;
+}
+
+span.resource-pack-button {
+    color: #868686;
+}
+
+.resource-pack-section-header {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.rp-tag,
+.rp-tag:hover,
+.rp-tag:focus {
+    font-size: 10px;
+    color: #393939;
+}
+
+.rp-author-name {
+    vertical-align: -1px;
+}
+
+*/

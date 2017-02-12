@@ -2,24 +2,35 @@
 <div class="container">
     <div class="content-header">
         {{> alert}}
-        <div class="content-title">Updates</div>
+        <div class="content-title">Resource Packs</div>
         <div class="content-subtitle">
-            Recent updates and announcements from ResourcePile.
+            A collection of various resource packs from the PVP community.
         </div>
     </div>
     <form name="search_form" class="record-search-container">
-        <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search records">
+        <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search Resource Packs">
     </form>
     <div class="game-mode-navigation row">
-        <div class="game-mode-section-header">Size</div>
-        <a class="game-mode-button" href="?s=8x">8x</a>
-        <a class="game-mode-button" href="?s=16x">16x</a>
-        <a class="game-mode-button" href="?s=32x">32x</a>
-        <a class="game-mode-button" href="?s=64x">64x</a>
-        <a class="game-mode-button" href="?s=128x">128x</a>
-        <a class="game-mode-button" href="?s=256x">256x</a>
+        <div class="col-xs-6 col-md-3">
+            <div class="game-mode-section-header">Texture Size</div>
+            <a class="game-mode-button size_8x" href="?s=8x"></a>
+            <a class="game-mode-button size_16x" href="?s=16x"></a>
+            <a class="game-mode-button size_32x" href="?s=32x"></a>
+            <a class="game-mode-button size_64x" href="?s=64x"></a>
+            <a class="game-mode-button size_128x" href="?s=128x"></a>
+            <a class="game-mode-button size_256x" href="?s=256x"></a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <div class="game-mode-section-header">Minecraft Version</div>
+            <a class="game-mode-button version-1-11" href="?s=1.11"></a>
+            <a class="game-mode-button version-1-10" href="?s=1.10"></a>
+            <a class="game-mode-button version-1-9" href="?s=1.9"></a>
+            <a class="game-mode-button version-1-8" href="?s=1.8"></a>
+            <a class="game-mode-button version-1-7" href="?s=1.7"></a>
+            <a class="game-mode-button version-1-6" href="?s=1.6"></a>
+        </div>
     </div>
-    <div id="resource-packs-output">
+    <div id="resource-packs-output" class="table-responsive">
         {{#with data}}
         <table class="table table-stripped" id="table">
             <thead>
@@ -35,7 +46,7 @@
             </thead>
             <tbody>
                 {{#resource-packs}}
-                <tr>
+                <tr id="{{id}}" class="resource-pack-table">
                     <td>
                         <img src="{{icon}}" height="25%">
                     </td>
@@ -50,32 +61,50 @@
                         {{#if authors}}
                             {{#authors}}
                                 {{#if player_name}}
-                                <a class="map-author-name" href="?s={{player_name}}">
-                                    <img class="img-rounded" src="https://crafatar.com/avatars/{{player_name}}?size=20"> {{player_name}}
+                                <img class="img-rounded" src="https://crafatar.com/avatars/{{player_name}}?size=20">
+                                <a class="rp-author-name" href="?s={{player_name}}">
+                                    {{player_name}}
                                 </a>
                                 {{else}}
-                                <span class="map-author-name">
-                                    <img class="img-rounded" src="https://crafatar.com/avatars/MHF_Question?size=20"> Ghost
+                                <img class="img-rounded" src="https://crafatar.com/avatars/MHF_Question?size=20">
+                                <span class="rp-author-name">
+                                    Ghost
                                 </span>
                                 {{/if}}
                             {{/authors}}
                             {{else}}
-                            <span class="map-author-name">
-                                <img class="img-rounded" src="https://crafatar.com/avatars/MHF_Question?size=20"> Ghost
+                            <img class="img-rounded" src="https://crafatar.com/avatars/MHF_Question?size=20">
+                            <span class="rp-author-name">
+                                Ghost
                             </span>
                         {{/if}}
                     </td>
-                    <td>{{size}}</td>
                     <td>
-                        {{#if size}}
-                            {{#if 8}}<p>8x</p>{{/if}}
-                            {{#if 16}}<p>16x</p>{{/if}}
-                            {{#if 32}}<p>32x</p>{{/if}}
-                            {{#if 64}}<p>64x</p>{{/if}}
-                            {{#if 128}}<p>128x</p>{{/if}}
-                            {{#if 256}}<p>256x</p>{{/if}}
-                        {{else}}
-                        <p>No size</p>
+                        {{#if sizes}}
+                            {{#sizes}}
+                                {{#if 8x}}<li class="size-tag"><a class="size-link" href="?s=8x">8x</a><span class="tag_hidden">8x8</span></li>{{/if}}
+                                {{#if 16x}}<li class="size-tag"><a class="size-link" href="?s=16x">16x</a><span class="tag_hidden">16x16</span></li>{{/if}}
+                                {{#if 32x}}<li class="size-tag"><a class="size-link" href="?s=32x">32x</a><span class="tag_hidden">32x32</span></li>{{/if}}
+                                {{#if 64x}}<li class="size-tag"><a class="size-link" href="?s=64x">64x</a><span class="tag_hidden">64x64</span></li>{{/if}}
+                                {{#if 128x}}<li class="size-tag"><a class="size-link" href="?s=128x">128x</a><span class="tag_hidden">128x128</span></li>{{/if}}
+                                {{#if 256x}}<li class="size-tag"><a class="size-link" href="?s=256x">256x</a><span class="tag_hidden">256x256</span></li>{{/if}}
+                            {{/sizes}}
+                            {{else}}
+                            <li class="size-tag"><span class="size-link size-tag">Unknown Size</span></li>
+                        {{/if}}
+                    </td>
+                    <td>
+                        {{#if mcversion}}
+                            {{#mcversion}}
+                                {{#if 1.11}}<li class="mcversion-tag"><a href="?s=1.11">1.11</a></li>{{/if}}
+                                {{#if 1.10}}<li class="mcversion-tag"><a href="?s=1.10">1.10</a></li>{{/if}}
+                                {{#if 1.9}}<li class="mcversion-tag"><a href="?s=1.9">1.9</a></li>{{/if}}
+                                {{#if 1.8}}<li class="mcversion-tag"><a href="?s=1.8">1.8</a></li>{{/if}}
+                                {{#if 1.7}}<li class="mcversion-tag"><a href="?s=1.7">1.7</a></li>{{/if}}
+                                {{#if 1.6}}<li class="mcversion-tag"><a  href="?s=1.6">1.6</a></li>{{/if}}
+                            {{/mcversion}}
+                            {{else}}
+                            <li class="mcversion-tag"><span class="mcversion-tag">Unknown Version</span></li>
                         {{/if}}
                     </td>
                     <td>
@@ -99,6 +128,56 @@
         {{/with}}
     </div>
 </div>
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    $(document).on('ready', function(){
+        makeSearchable()
+    })
+    $('.record-search-container').on('click', function(){
+        makeSearchable()
+    })
+    $(document).on('keydown', function() {
+        makeSearchable()
+    });
+    function makeSearchable(){
+        $('#resource-packs-output .dynamic').searchable({
+            selector: 'div.resource-pack-table',
+            childSelector: '.resource-pack-table',
+            searchField: '#search'
+        })
+
+        var total_resource_packs = $('.resource-pack-table').length
+        var total_display = $('.resource-pack-table:visible').length
+        var current_search = $('#search').val()
+
+        if (total_resource_packs == "0") {
+            $(".total_resource_packs").html("No resource packs successfully loaded<br>Please check the console for any errors and contact a page manager");
+        } else if (total_display == "0") {
+            $(".total_resource_packs").html("Your query of <code>" + current_search + "</code> references no resource packs, please try searching something else");
+        } else {
+            $(".total_resource_packs").html("Currently displaying " + total_display + " of " + total_resource_packs + " loaded resource packs");
+        }
+    }
+</script>
+<script type="text/javascript">
+    var data=location.search;
+    if(data) {
+        data=location.search.substring(1);
+        data=data.split('&');
+        var pairs={};
+        for(var i=0; i<data.length; i++){
+            var tmp=data[i].split('=');
+            pairs[tmp[0]]=tmp[1];
+        }
+        var f = document.search_form;
+        for (var i in pairs) {
+            if(f.elements[i]) {f.elements[i].value = pairs[i];}
+        }
+    }
+</script>
 {{> footer}}
 </body>
 </html>
