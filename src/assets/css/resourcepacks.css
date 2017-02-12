@@ -18,8 +18,11 @@ li.size-tag {display: inline; list-style-type: none;}
 li.size-tag:after {content: ", ";}
 li.size-tag:last-child::after {content: "";}
 
-li.author-tag:nth-child(n+4) {font-size: 0px;}
-li.author-tag:nth-child(4):before {font-size: 13px; content: " and more";}
+.author-tag {display: inline; list-style-type: none;}
+.author-tag:after {content: ", ";}
+.author-tag:last-child::after {content: "";}
+.author-tag:nth-child(n+4) {font-size: 0px;}
+.author-tag:nth-child(4):before {font-size: 13px; content: " and more";}
 
 li.mcversion-tag {display: inline; list-style-type: none;}
 li.mcversion-tag:after {content: ", ";}

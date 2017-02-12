@@ -8,7 +8,7 @@
         </div>
     </div>
     <form name="search_form" class="record-search-container">
-        <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search Resource Packs">
+        <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search resource packs">
     </form>
     <div class="game-mode-navigation row">
         <div class="col-xs-6 col-md-3">
@@ -27,28 +27,30 @@
             <a class="game-mode-button version-1-9" href="?s=1.9"></a>
             <a class="game-mode-button version-1-8" href="?s=1.8"></a>
             <a class="game-mode-button version-1-7" href="?s=1.7"></a>
-            <a class="game-mode-button version-1-6" href="?s=1.6"></a>
         </div>
     </div>
-    <div id="resource-packs-output" class="table-responsive">
+    <div class="total_resource_packs center"></div>
+    <div id="resource-packs-output">
         {{#with data}}
-        <table class="table table-stripped" id="table">
+        <table class="table tablesorter" id="table">
             <thead>
                 <tr>
                     <th width="5%"></th>
                     <th width="30%">Name</th>
                     <th width="25%">Authors</th>
                     <th width="10%">Size</th>
-                    <th width="10%">MC Version</th>
-                    <th width="10%">Album</th>
+                    <th width="10%"><abbr title="Minecraft">MC</abbr> Version</th>
+                    <th width="10%">Images</th>
                     <th width="10%">Download</th>
                 </tr>
             </thead>
             <tbody>
                 {{#resource-packs}}
-                <tr id="{{id}}" class="resource-pack-table">
+                <tr id="{{id}}" class="resource-pack">
                     <td>
-                        <img src="{{icon}}" height="25%">
+                        {{#if icon}}
+                            <img src="{{icon}}" height="25%">
+                        {{/if}}
                     </td>
                     <td>
                         {{#if name}}
@@ -61,50 +63,41 @@
                         {{#if authors}}
                             {{#authors}}
                                 {{#if player_name}}
-                                <img class="img-rounded" src="https://crafatar.com/avatars/{{player_name}}?size=20">
-                                <a class="rp-author-name" href="?s={{player_name}}">
-                                    {{player_name}}
-                                </a>
-                                {{else}}
-                                <img class="img-rounded" src="https://crafatar.com/avatars/MHF_Question?size=20">
-                                <span class="rp-author-name">
-                                    Ghost
-                                </span>
+                                <li class="author-tag">
+                                    <img class="img-rounded" src="https://crafatar.com/avatars/{{player_name}}?size=20"><a class="author-tag map-author-name" href="?s={{player_name}}"> {{player_name}}</a>{{else}}<img class="img-rounded" src="https://crafatar.com/avatars/MHF_Question?size=20"><span class="map-author-name"> Ghost</span>
+                                </li>
                                 {{/if}}
                             {{/authors}}
                             {{else}}
-                            <img class="img-rounded" src="https://crafatar.com/avatars/MHF_Question?size=20">
-                            <span class="rp-author-name">
-                                Ghost
-                            </span>
+                            <li class="author-tag">
+                                <img class="img-rounded" src="https://crafatar.com/avatars/MHF_Question?size=20"><span class="author-tag map-author-name">Ghost</span>
                         {{/if}}
                     </td>
                     <td>
                         {{#if sizes}}
                             {{#sizes}}
-                                {{#if 8x}}<li class="size-tag"><a class="size-link" href="?s=8x">8x</a><span class="tag_hidden">8x8</span></li>{{/if}}
-                                {{#if 16x}}<li class="size-tag"><a class="size-link" href="?s=16x">16x</a><span class="tag_hidden">16x16</span></li>{{/if}}
-                                {{#if 32x}}<li class="size-tag"><a class="size-link" href="?s=32x">32x</a><span class="tag_hidden">32x32</span></li>{{/if}}
-                                {{#if 64x}}<li class="size-tag"><a class="size-link" href="?s=64x">64x</a><span class="tag_hidden">64x64</span></li>{{/if}}
-                                {{#if 128x}}<li class="size-tag"><a class="size-link" href="?s=128x">128x</a><span class="tag_hidden">128x128</span></li>{{/if}}
-                                {{#if 256x}}<li class="size-tag"><a class="size-link" href="?s=256x">256x</a><span class="tag_hidden">256x256</span></li>{{/if}}
+                                {{#if 8x}}<li class="size-tag"><a href="?s=8x">8x</a><span class="tag_hidden">8x8</span></li>{{/if}}
+                                {{#if 16x}}<li class="size-tag"><a href="?s=16x">16x</a><span class="tag_hidden">16x16</span></li>{{/if}}
+                                {{#if 32x}}<li class="size-tag"><a href="?s=32x">32x</a><span class="tag_hidden">32x32</span></li>{{/if}}
+                                {{#if 64x}}<li class="size-tag"><a href="?s=64x">64x</a><span class="tag_hidden">64x64</span></li>{{/if}}
+                                {{#if 128x}}<li class="size-tag"><a href="?s=128x">128x</a><span class="tag_hidden">128x128</span></li>{{/if}}
+                                {{#if 256x}}<li class="size-tag"><a href="?s=256x">256x</a><span class="tag_hidden">256x256</span></li>{{/if}}
                             {{/sizes}}
                             {{else}}
                             <li class="size-tag"><span class="size-link size-tag">Unknown Size</span></li>
                         {{/if}}
                     </td>
                     <td>
-                        {{#if mcversion}}
-                            {{#mcversion}}
-                                {{#if 1.11}}<li class="mcversion-tag"><a href="?s=1.11">1.11</a></li>{{/if}}
-                                {{#if 1.10}}<li class="mcversion-tag"><a href="?s=1.10">1.10</a></li>{{/if}}
-                                {{#if 1.9}}<li class="mcversion-tag"><a href="?s=1.9">1.9</a></li>{{/if}}
-                                {{#if 1.8}}<li class="mcversion-tag"><a href="?s=1.8">1.8</a></li>{{/if}}
-                                {{#if 1.7}}<li class="mcversion-tag"><a href="?s=1.7">1.7</a></li>{{/if}}
-                                {{#if 1.6}}<li class="mcversion-tag"><a  href="?s=1.6">1.6</a></li>{{/if}}
-                            {{/mcversion}}
+                        {{#if mcversions}}
+                            {{#mcversions}}
+                                {{#if 1-7}}<li class="mcversion-tag"><a href="?s=1.7">1.7</a></li>{{/if}}
+                                {{#if 1-8}}<li class="mcversion-tag"><a href="?s=1.8">1.8</a></li>{{/if}}
+                                {{#if 1-9}}<li class="mcversion-tag"><a href="?s=1.9">1.9</a></li>{{/if}}
+                                {{#if 1-10}}<li class="mcversion-tag"><a href="?s=1.10">1.10</a></li>{{/if}}
+                                {{#if 1-11}}<li class="mcversion-tag"><a href="?s=1.11">1.11</a></li>{{/if}}
+                            {{/mcversions}}
                             {{else}}
-                            <li class="mcversion-tag"><span class="mcversion-tag">Unknown Version</span></li>
+                            <li class="size-tag"><span class="size-link size-tag">Unknown Version</span></li>
                         {{/if}}
                     </td>
                     <td>
@@ -143,14 +136,16 @@
         makeSearchable()
     });
     function makeSearchable(){
-        $('#resource-packs-output .dynamic').searchable({
-            selector: 'div.resource-pack-table',
-            childSelector: '.resource-pack-table',
+        $('#resource-packs-output .table').searchable({
+            striped: true,
+            oddRow: { 'background-color': '#fff' },
+            evenRow: { 'background-color': '#f0f0f0' },
+            searchType: 'default',
             searchField: '#search'
         })
 
-        var total_resource_packs = $('.resource-pack-table').length
-        var total_display = $('.resource-pack-table:visible').length
+        var total_resource_packs = $('.resource-pack').length
+        var total_display = $('.resource-pack:visible').length
         var current_search = $('#search').val()
 
         if (total_resource_packs == "0") {
@@ -158,7 +153,7 @@
         } else if (total_display == "0") {
             $(".total_resource_packs").html("Your query of <code>" + current_search + "</code> references no resource packs, please try searching something else");
         } else {
-            $(".total_resource_packs").html("Currently displaying " + total_display + " of " + total_resource_packs + " loaded resource packs");
+            $(".total_resource_packs").html("Currently displaying " + total_display + " of " + total_resource_packs + " resource packs");
         }
     }
 </script>
