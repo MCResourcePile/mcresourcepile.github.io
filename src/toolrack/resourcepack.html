@@ -29,7 +29,7 @@
             <a class="game-mode-button version-1-7" href="?s=1.7"></a>
         </div>
     </div>
-    <div class="total_resource_packs center"></div>
+    <div class="total_resource_packs center" style="padding-top: 10px; padding-bottom: 10px;"></div>
     <div id="resource-packs-output">
         {{#with data}}
         <table class="table tablesorter" id="table">
@@ -61,16 +61,10 @@
                     </td>
                     <td>
                         {{#if authors}}
-                            {{#authors}}
-                                {{#if player_name}}
-                                <li class="author-tag">
-                                    <img class="img-rounded" src="https://crafatar.com/avatars/{{player_name}}?size=20"><a class="author-tag map-author-name" href="?s={{player_name}}"> {{player_name}}</a>{{else}}<img class="img-rounded" src="https://crafatar.com/avatars/MHF_Question?size=20"><span class="map-author-name"> Ghost</span>
-                                </li>
-                                {{/if}}
-                            {{/authors}}
-                            {{else}}
-                            <li class="author-tag">
-                                <img class="img-rounded" src="https://crafatar.com/avatars/MHF_Question?size=20"><span class="author-tag map-author-name">Ghost</span>
+                        {{#authors}}
+                        <li class="game-tag author-tag">{{#if player_name}}<a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+                        {{/authors}}
+                        {{else}}<span class="map-author-name">Ghost</span>
                         {{/if}}
                     </td>
                     <td>
@@ -109,9 +103,13 @@
                     </td>
                     <td>
                         {{#if download}}
-                        <a href="{{download}}">Download</a>
+                            <a href="{{download}}">Download</a>
                         {{else}}
-                        <p>No Download</p>
+                            {{#if discussion}}
+                            <a href="{{discussion}}">Discussion Thread</a>
+                            {{else}}
+                            <li class="size-tag"><span class="size-link size-tag">No Download</span></li>
+                            {{/if}}
                         {{/if}}
                     </td>
                 </tr>
