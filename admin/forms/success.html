@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Test form - ResourcePile</title>
+        <title>Thank you - ResourcePile</title>
 
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
@@ -67,7 +67,6 @@
             </div>
         </div>
         <div class="content-background">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <div class="container">
     <div class="content-header">
         <div class="content-alert">
@@ -75,57 +74,26 @@
                 View recent updates and announcements from ResourcePile with our new <a href="/updates" class="underline">updates page</a>!
             </div>
         </div>
-        <div class="content-title">Test form</div>
+        <div class="content-title">Thank you</div>
         <div class="content-subtitle">
-            This is hopefully the start of our forms for submissions and contact.
+            Your details have been submitted
         </div>
     </div>
-    Username:<br/>
-    <input type="text" name="username" id="username" placeholder="Username" /><br/>
-
-    Map Title:<br/>
-    <input type="text" name="map" id="map" placeholder="Map Title" /><br/>
-    
-    Creative Commons License:<br/>
-    <select name="license" id="license">
-        <option value="none">Unlicensed</option>
-        <option value="by-nc-sa">Attribution-NonCommercial-ShareALike</option>
-        <option value="by-sa">Attribution-ShareALike</option>
-  </select>
-    
-    <input type="button" name="Submit" id="Submit" onclick="postContactToGoogle()" value="Submit"/>
 </div>
-<script type="text/javascript">
-    function postContactToGoogle() {
-        var username=$('#username').val();
-        var map=$('#map').val();
-        var license=$('#license').val();
-        $.ajax({
-            url: "https://docs.google.com/forms/d/e/1FAIpQLScnMMwNQxG0ei41KcoAR8bdqh0eVwckq5wXLuEhb2XOOdKyLg/formResponse",
-            data: {"entry.44203993":username, "entry.510101193":map, "entry.1739871891":license},
-            type: "POST",
-            dataType: "xml",
-            statusCode: {
-                0:function() { window.location.replace("success.html");},
-                200:function(){window.location.replace("success.html");}
-            }
-        });
-    }
-</script>
 </div>
 <div class="footer">
     <div class="container">
         <div class="row center" style="width: 70%">
             <div class="footer-section col-md-3">
                 <div class="footer-section-head">About</div>
-                <a class="footer-item" href="/forms/contact">Contact</a>
+                <a class="footer-item" href="admin/forms/contact">Contact</a>
                 <a class="footer-item" href="/updates">Updates</a>
                 <a class="footer-item" href="/staff">Staff</a>
             </div>
             <div class="footer-section col-md-3">
                 <div class="footer-section-head">Contributing</div>
-                <a class="footer-item" href="/forms/maps">Map Submission</a>
-                <a class="footer-item" href="/forms/apply">Positions</a>
+                <a class="footer-item" href="admin/forms/maps">Map Submission</a>
+                <a class="footer-item" href="admin/forms/apply">Positions</a>
             </div>
             <div class="footer-section col-md-3">
                 <div class="footer-section-head">Development</div>

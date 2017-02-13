@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Forms - ResourcePile</title>
+        <title>Apply - ResourcePile</title>
 
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
@@ -74,60 +74,71 @@
                 View recent updates and announcements from ResourcePile with our new <a href="/updates" class="underline">updates page</a>!
             </div>
         </div>
-        <div class="content-title">Forms</div>
+        <div class="content-title">Apply</div>
         <div class="content-subtitle">
-            Form manager and details
+            Apply for a position in the ResourcePile team
         </div>
     </div>
     <div class="form-body">
-        <div class="form-section">Apply</div>
-        <div class="form-section-hint">
-            <strong>Description:</strong> Apply for a position in the ResourcePile team<br>
-            <strong>Path:</strong> <a href="apply"><code>forms/apply</code></a><br>
-            <strong>External Path:</strong> <a href="https://drive.google.com/drive/folders/0B0JEXRc7UJAQXzk2SzRGMVBMTTg?usp=sharing"><code>ResourcePile/forms/positions/staff</code></a><br>
-            <strong>ID:</strong> 1FAIpQLScVmw8r3H--iUR-yaYxWMCJVP7VEycX7KrYx3EIC8dtrEN2pQ<br>
-            <strong>Responses:</strong> <a href="https://drive.google.com/drive/folders/0B0JEXRc7UJAQXzk2SzRGMVBMTTg?usp=sharing">Sheets</a><br>
-        </div>
-        <div class="form-section">Contact</div>
-        <div class="form-section-hint">
-            <strong>Description:</strong> Contact us with any questions you have<br>
-            <strong>Path:</strong> <a href="contact"><code>forms/contact</code></a><br>
-            <strong>External Path:</strong> <a href="https://drive.google.com/drive/folders/0B0JEXRc7UJAQWW1tZUNqUlFOcms?usp=sharing"><code>ResourcePile/forms/contact/contact</code></a><br>
-            <strong>ID:</strong> 1FAIpQLSeuxYz9LI-ufVofwje8CvbZE8-aXkWCRQ3F0p-KRXoCMvSU5Q<br>
-            <strong>Responses:</strong> <a href="https://drive.google.com/drive/folders/0B0JEXRc7UJAQWW1tZUNqUlFOcms?usp=sharing">Sheets</a><br>
-        </div>
-        
-        <div class="form-section">Maps</div>
-        <div class="form-section-hint">
-            <strong>Description:</strong> Submit your map to be featured in our MapStack repositories<br>
-            <strong>Path:</strong> <a href="maps"><code>forms/maps</code></a><br>
-            <strong>External Path:</strong> <a href="https://drive.google.com/drive/folders/0B0JEXRc7UJAQSjVReGhJanJySUE?usp=sharing"><code>ResourcePile/forms/maps/submission</code></a><br>
-            <strong>ID:</strong> 1FAIpQLScvcHHqbC2Rhkg7UjRiKDXAK7zYKIXR1kN897FQIx9oP1JWlQ<br>
-            <strong>Responses:</strong> <a href="https://drive.google.com/drive/folders/0B0JEXRc7UJAQSjVReGhJanJySUE?usp=sharing">Sheets</a><br>
-        </div>
-        
-        <div class="form-section">Test form</div>
-        <div class="form-section-hint">
-            <strong>Description:</strong> This is hopefully the start of our forms for submissions and contact<br>
-            <strong>Path:</strong> <a href="test"><code>forms/test</code></a><br>
-            <strong>ID:</strong> 1FAIpQLScnMMwNQxG0ei41KcoAR8bdqh0eVwckq5wXLuEhb2XOOdKyLg<br>
-        </div>
+        <div class="form-section">Username</div>
+        <div class="form-section-hint">Your username</div>
+        <input type="text" name="username" id="username" placeholder="Username" required />
+        <br/>
+
+        <div class="form-section">Discord</div>
+        <div class="form-section-hint">Your discord username so we can get in contact with you</div>
+        <input type="text" name="discord" id="discord" placeholder="user#1234" required />
+        <br/>
+
+        <div class="form-section">Position</div>
+        <div class="form-section-hint">The positions you would like to apply for</div>
+        <input type="checkbox" name="developer" id="developer" value="yes"> Developer <small>(Help develop the website and future projects)</small><br>
+        <input type="checkbox" name="helper" id="helper" value="yes"> Helper <small>(Assist in collating data and maps as well as assisting in future projects)</small><br>
+        <input type="checkbox" name="designer" id="designer" value="yes"> Designer <small>(Create media for use on the website and associated services)</small><br>
+        <br/>
+
+        <div class="form-section">About Yourself</div>
+        <div class="form-section-hint">Tell us a little about yourself and why we should have you on the team</div>
+        <textarea type="text" name="about" id="about" placeholder="Type here..." style="width: 195px;" required ></textarea>
+        <br/>
+
+        <input class="form-submit" type="button" name="Submit" id="Submit" onclick="postContactToGoogle()" value="Submit" />
     </div>
 </div>
+<script type="text/javascript">
+    function postContactToGoogle() {
+        var username=$('#username').val();
+        var discord=$('#discord').val();
+        var developer=$('#developer').val();
+        var helper=$('#helper').val();
+        var designer=$('#designer').val();
+        var about=$('#about').val();
+        $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLScVmw8r3H--iUR-yaYxWMCJVP7VEycX7KrYx3EIC8dtrEN2pQ/formResponse",
+            data: {"entry.1202166192":username, "entry.299353712":discord, "entry.2117081059":developer, "entry.1713634116":helper, "entry.331803582":designer, "entry.298721869":about},
+            type: "POST",
+            dataType: "xml",
+            statusCode: {
+                0:function() { window.location.replace("success");},
+                200:function(){window.location.replace("success");}
+            }
+        });
+    }
+</script>
 </div>
 <div class="footer">
     <div class="container">
         <div class="row center" style="width: 70%">
             <div class="footer-section col-md-3">
                 <div class="footer-section-head">About</div>
-                <a class="footer-item" href="/forms/contact">Contact</a>
+                <a class="footer-item" href="admin/forms/contact">Contact</a>
                 <a class="footer-item" href="/updates">Updates</a>
                 <a class="footer-item" href="/staff">Staff</a>
             </div>
             <div class="footer-section col-md-3">
                 <div class="footer-section-head">Contributing</div>
-                <a class="footer-item" href="/forms/maps">Map Submission</a>
-                <a class="footer-item" href="/forms/apply">Positions</a>
+                <a class="footer-item" href="admin/forms/maps">Map Submission</a>
+                <a class="footer-item" href="admin/forms/apply">Positions</a>
             </div>
             <div class="footer-section col-md-3">
                 <div class="footer-section-head">Development</div>

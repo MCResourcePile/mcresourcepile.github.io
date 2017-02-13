@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Contact - ResourcePile</title>
+        <title>Test form - ResourcePile</title>
 
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
@@ -67,6 +67,7 @@
             </div>
         </div>
         <div class="content-background">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <div class="container">
     <div class="content-header">
         <div class="content-alert">
@@ -74,49 +75,39 @@
                 View recent updates and announcements from ResourcePile with our new <a href="/updates" class="underline">updates page</a>!
             </div>
         </div>
-        <div class="content-title">Contact</div>
+        <div class="content-title">Test form</div>
         <div class="content-subtitle">
-            Contact us with any questions you have
+            This is hopefully the start of our forms for submissions and contact.
         </div>
     </div>
-    <div class="form-body">
-        <div class="form-section">Username</div>
-        <div class="form-section-hint">Your username</div>
-        <input type="text" name="username" id="username" placeholder="Username" required />
-        <br/>
+    Username:<br/>
+    <input type="text" name="username" id="username" placeholder="Username" /><br/>
 
-        <div class="form-section">Email</div>
-        <div class="form-section-hint">Your email so we can get in contact with you<br>You can alternativly provide us with your Discord below</div>
-        <input type="text" name="email" id="email" placeholder="user@example.com" />
-        <br/>
-
-        <div class="form-section">Discord</div>
-        <div class="form-section-hint">Your discord username so we can get in contact with you<br>This is an alternative contact form to using Email</div>
-        <input type="text" name="discord" id="discord" placeholder="user#1234" />
-        <br/>
-
-        <div class="form-section">Your message</div>
-        <div class="form-section-hint">Type your message below</div>
-        <textarea type="text" name="content" id="content" placeholder="Type here..." style="width: 195px;" required></textarea>
-        <br/>
-
-        <input class="form-submit" type="button" name="Submit" id="Submit" onclick="postContactToGoogle()" value="Submit" />
-    </div>
+    Map Title:<br/>
+    <input type="text" name="map" id="map" placeholder="Map Title" /><br/>
+    
+    Creative Commons License:<br/>
+    <select name="license" id="license">
+        <option value="none">Unlicensed</option>
+        <option value="by-nc-sa">Attribution-NonCommercial-ShareALike</option>
+        <option value="by-sa">Attribution-ShareALike</option>
+  </select>
+    
+    <input type="button" name="Submit" id="Submit" onclick="postContactToGoogle()" value="Submit"/>
 </div>
 <script type="text/javascript">
     function postContactToGoogle() {
         var username=$('#username').val();
-        var email=$('#email').val();
-        var discord=$('#discord').val();
-        var content=$('#content').val();
+        var map=$('#map').val();
+        var license=$('#license').val();
         $.ajax({
-            url: "https://docs.google.com/forms/d/e/1FAIpQLSeuxYz9LI-ufVofwje8CvbZE8-aXkWCRQ3F0p-KRXoCMvSU5Q/formResponse",
-            data: {"entry.1700558707":username, "entry.1567361955":email, "entry.1354041209":discord, "entry.875454530":content},
+            url: "https://docs.google.com/forms/d/e/1FAIpQLScnMMwNQxG0ei41KcoAR8bdqh0eVwckq5wXLuEhb2XOOdKyLg/formResponse",
+            data: {"entry.44203993":username, "entry.510101193":map, "entry.1739871891":license},
             type: "POST",
             dataType: "xml",
             statusCode: {
-                0:function() { window.location.replace("success");},
-                200:function(){window.location.replace("success");}
+                0:function() { window.location.replace("success.html");},
+                200:function(){window.location.replace("success.html");}
             }
         });
     }
@@ -127,14 +118,14 @@
         <div class="row center" style="width: 70%">
             <div class="footer-section col-md-3">
                 <div class="footer-section-head">About</div>
-                <a class="footer-item" href="/forms/contact">Contact</a>
+                <a class="footer-item" href="admin/forms/contact">Contact</a>
                 <a class="footer-item" href="/updates">Updates</a>
                 <a class="footer-item" href="/staff">Staff</a>
             </div>
             <div class="footer-section col-md-3">
                 <div class="footer-section-head">Contributing</div>
-                <a class="footer-item" href="/forms/maps">Map Submission</a>
-                <a class="footer-item" href="/forms/apply">Positions</a>
+                <a class="footer-item" href="admin/forms/maps">Map Submission</a>
+                <a class="footer-item" href="admin/forms/apply">Positions</a>
             </div>
             <div class="footer-section col-md-3">
                 <div class="footer-section-head">Development</div>

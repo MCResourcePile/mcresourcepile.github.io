@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Jexel - ResourcePile</title>
+        <title>Contact - ResourcePile</title>
 
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
@@ -68,43 +68,59 @@
         </div>
         <div class="content-background">
 <div class="container">
-	<div class="content-header" style="border-bottom:0px;">
+    <div class="content-header">
         <div class="content-alert">
             <div class="alert alert-success" role="alert">
                 View recent updates and announcements from ResourcePile with our new <a href="/updates" class="underline">updates page</a>!
             </div>
         </div>
+        <div class="content-title">Contact</div>
+        <div class="content-subtitle">
+            Contact us with any questions you have
+        </div>
     </div>
-	<!-- Page content -->
-	<div class="col-md-3 about-user center">
-		<img class="about-user-avatar img-rounded" src="https://crafatar.com/avatars/9225421c-3c09-4d97-bb80-f6a77c1f360b?overlay">
-		<div class="about-user-name">Jexel</div>
-		<div class="about-user-positions">
-			<span class="label" style="background-color: 17BBB0; color: white">Helper</span>
-		</div>
-		<div class="about-user-description">Part of the team<br>since October 5, 2016.</div>
-	</div>
-	<div class="col-md-9 about-user-info">
-		<div class="row" style="margin-bottom: 26px;">
-			<div class="col-md-6">
-				<div class="about-section-header">Profiles</div>
-				<a class="about-info" href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/Jexel"><i class="fa fa-caret-right"></i> Overcast Network</a>
-				<a class="about-info" href="https://avicus.net/users/Jexel"><i class="fa fa-caret-right"></i> Avicus</a>
-			</div>
-			<div class="col-md-6">
-				<div class="about-section-header">Contact</div>
-				<span class="about-info"><i class="about-info-icon fa fa-github" aria-hidden="true"></i> <a href="https://github.com/JexeI">Jexel</a></span>
-				<span class="about-info"><i class="about-info-icon fa fa-microphone" aria-hidden="true"></i> Discord <code>Jexel#0649</code></span>
-			</div>
-		</div>
-		<div class="about-section-header">A little bit about Jexel</div>
-		<div class="well well-sm">
-			<!-- Begin editing profile here -->
-			<p><i>Nothing here yet.</i></p>
-			<!-- End editing profile here -->
-		</div>
-	</div>
+    <div class="form-body">
+        <div class="form-section">Username</div>
+        <div class="form-section-hint">Your username</div>
+        <input type="text" name="username" id="username" placeholder="Username" required />
+        <br/>
+
+        <div class="form-section">Email</div>
+        <div class="form-section-hint">Your email so we can get in contact with you<br>You can alternativly provide us with your Discord below</div>
+        <input type="text" name="email" id="email" placeholder="user@example.com" />
+        <br/>
+
+        <div class="form-section">Discord</div>
+        <div class="form-section-hint">Your discord username so we can get in contact with you<br>This is an alternative contact form to using Email</div>
+        <input type="text" name="discord" id="discord" placeholder="user#1234" />
+        <br/>
+
+        <div class="form-section">Your message</div>
+        <div class="form-section-hint">Type your message below</div>
+        <textarea type="text" name="content" id="content" placeholder="Type here..." style="width: 195px;" required></textarea>
+        <br/>
+
+        <input class="form-submit" type="button" name="Submit" id="Submit" onclick="postContactToGoogle()" value="Submit" />
+    </div>
 </div>
+<script type="text/javascript">
+    function postContactToGoogle() {
+        var username=$('#username').val();
+        var email=$('#email').val();
+        var discord=$('#discord').val();
+        var content=$('#content').val();
+        $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLSeuxYz9LI-ufVofwje8CvbZE8-aXkWCRQ3F0p-KRXoCMvSU5Q/formResponse",
+            data: {"entry.1700558707":username, "entry.1567361955":email, "entry.1354041209":discord, "entry.875454530":content},
+            type: "POST",
+            dataType: "xml",
+            statusCode: {
+                0:function() { window.location.replace("success");},
+                200:function(){window.location.replace("success");}
+            }
+        });
+    }
+</script>
 </div>
 <div class="footer">
     <div class="container">
