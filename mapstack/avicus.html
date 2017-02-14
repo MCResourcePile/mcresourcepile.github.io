@@ -11,6 +11,7 @@
         <link href="/assets/css/gamemodes.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/assets/js/js.cookie.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -70,10 +71,20 @@
 <div class="container">
 	<div class="content-header">
         <div class="content-alert">
-            <div class="alert alert-success" role="alert">
-                View recent updates and announcements from ResourcePile with our new <a href="/updates" class="underline">updates page</a>!
+            <div id="uncomplete" class="alert alert-warning" role="alert">
+                We are conducting a survey regarding how users use the ResourcePile site and we would appericiate it if you were to fill it out. Thanks!<br><a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>.
+            </div>
+            <div id="complete" class="alert alert-success" role="alert">
+                Thank you for completing the survey.
             </div>
         </div>
+        <script>
+            if (Cookies.get('survey01_complete') == "true") {
+                $( "#uncomplete" ).hide();
+            } else {
+                $( "#complete" ).hide();
+            }
+        </script>
 		<div class="content-title">Public Map Listing</div>
 		<div class="content-subtitle">
 			A collection of publicly downloadable maps from the <a href="http://avicus.net">Avicus Network</a>.

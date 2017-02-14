@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>triplezko - ResourcePile</title>
+        <title>General Use Survey - ResourcePile</title>
 
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
@@ -69,7 +69,7 @@
         </div>
         <div class="content-background">
 <div class="container">
-	<div class="content-header" style="border-bottom:0px;">
+    <div class="content-header">
         <div class="content-alert">
             <div id="uncomplete" class="alert alert-warning" role="alert">
                 We are conducting a survey regarding how users use the ResourcePile site and we would appericiate it if you were to fill it out. Thanks!<br><a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>.
@@ -85,36 +85,66 @@
                 $( "#complete" ).hide();
             }
         </script>
+        <div class="content-title">General Use Survey</div>
+        <div class="content-subtitle">
+            Understanding our users and where we need to improve
+        </div>
     </div>
-	<!-- Page content -->
-	<div class="col-md-3 about-user center">
-		<img class="about-user-avatar img-rounded" src="https://crafatar.com/avatars/9929437a-9b7d-4d7a-b05d-e22fe93ac042?overlay">
-		<div class="about-user-name">triplezko</div>
-		<div class="about-user-positions">
-			<span class="label" style="background-color: 17BBB0; color: white">Helper</span>
-		</div>
-		<div class="about-user-description">Part of the team<br>since January 12, 2017.</div>
-	</div>
-	<div class="col-md-9 about-user-info">
-		<div class="row" style="margin-bottom: 26px;">
-			<div class="col-md-6">
-				<div class="about-section-header">Profiles</div>
-				<a class="about-info" href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/triplezko"><i class="fa fa-caret-right"></i> Overcast Network</a>
-			</div>
-			<div class="col-md-6">
-				<div class="about-section-header">Contact</div>
-				<span class="about-info"><i class="about-info-icon fa fa-github" aria-hidden="true"></i> <a href="https://github.com/triplezko">triplezko</a></span>
-				<span class="about-info"><i class="about-info-icon fa fa-microphone" aria-hidden="true"></i> Discord <code>triplezko#4978</code></span>
-			</div>
-		</div>
-		<div class="about-section-header">A little bit about triplezko</div>
-		<div class="well well-sm">
-			<!-- Begin editing profile here -->
-			<p><i>Nothing here yet.</i></p>
-			<!-- End editing profile here -->
-		</div>
-	</div>
+    <div class="form-body">
+        <div class="form-section">How did you discover ResourcePile?</div>
+        <select name="referral" id="referral" style="width: 195px;" required>
+            <option value="unknown">Select an option</option>
+            <option value="forums">Network forums</option>
+            <option value="social media">Social media</option>
+            <option value="discord">Discord</option>
+            <option value="friend">Friend</option>
+            <option value="other">Other</option>
+        </select>
+        <br/>
+
+        <div class="form-section">Which network do you primarily use ResourcePile for?</div> 
+        <select name="network" id="network" style="width: 195px;" required>
+            <option value="unknown">Select an option</option>
+            <option value="overcast">Overcast Network</option>
+            <option value="avicus">Avicus Network</option>
+        </select>
+        <br/>
+
+        <div class="form-section">What are you looking for from ResourcePile?</div>
+        <select name="use" id="use" style="width: 195px;" required>
+            <option value="unknown">Select an option</option>
+            <option value="stats">Statistics</option>
+            <option value="maps (public use)">Maps for public server use</option>
+            <option value="maps (private use)">Maps for private use</option>
+            <option value="other">Other</option>
+        </select>
+        <br/>
+
+        <div class="form-section">Is there anything that you believe we can improve on?</div>
+        <textarea type="text" name="improvement" id="improvement" placeholder="Type here..." style="width: 195px;" required></textarea>
+        <br/>
+
+        <input class="form-submit" type="button" name="submit" id="submit" onclick="postContactToGoogle();Cookies.set('survey01_complete', true);" value="Submit" />
+    </div>
 </div>
+<script type="text/javascript">
+    function postContactToGoogle() {
+        var referral=$('#referral').val();
+        var network=$('#network').val();
+        var use=$('#use').val();
+        var improvement=$('#improvement').val();
+        $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLScybdePvsz67mmZ7Bs2PAtv5JStuAMFzTN1CsvncbbIGkIKjg/formResponse",
+            data: {"entry.699181361":referral, "entry.1534520788":network, "entry.359932373":use, "entry.1920685387":improvement},
+            type: "POST",
+            dataType: "xml",
+            statusCode: {
+                0:function() { window.location.replace("success");},
+                200:function(){window.location.replace("success");}
+            }
+        });
+    }
+</script>
 </div>
 <div class="footer">
     <div class="container">
