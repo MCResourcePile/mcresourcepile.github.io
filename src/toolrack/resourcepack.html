@@ -4,7 +4,7 @@
         {{> alert}}
         <div class="content-title">Resource Packs</div>
         <div class="content-subtitle">
-            A collection of various resource packs from the PVP community.
+            A collection of various resource packs from the PvP community.
         </div>
     </div>
     <form name="search_form" class="record-search-container">
@@ -32,16 +32,15 @@
     <div class="total_resource_packs center" style="padding-top: 10px; padding-bottom: 10px;"></div>
     <div id="resource-packs-output">
         {{#with data}}
-        <table class="table tablesorter" id="table">
+        <table class="table" id="table">
             <thead>
                 <tr>
                     <th width="5%"></th>
                     <th width="30%">Name</th>
                     <th width="25%">Authors</th>
-                    <th width="10%">Size</th>
-                    <th width="10%"><abbr title="Minecraft">MC</abbr> Version</th>
-                    <th width="10%">Images</th>
-                    <th width="10%">Download</th>
+                    <th width="15%">Size</th>
+                    <th width="15%"><abbr title="Minecraft">MC</abbr> Version</th>
+                    <th width="10%"></th>
                 </tr>
             </thead>
             <tbody>
@@ -56,7 +55,7 @@
                         {{#if name}}
                         <p>{{name}}</p>
                         {{else}}
-                        <p>Unknown</p>
+                        <p>Unknown name</p>
                         {{/if}}
                     </td>
                     <td>
@@ -95,22 +94,40 @@
                         {{/if}}
                     </td>
                     <td>
-                        {{#if images}}
-                        <a href="{{images}}">Images</a>
-                        {{else}}
-                        <p>No Images</p>
-                        {{/if}}
-                    </td>
-                    <td>
-                        {{#if download}}
-                            <a href="{{download}}">Download</a>
-                        {{else}}
-                            {{#if discussion}}
-                            <a href="{{discussion}}">Discussion Thread</a>
-                            {{else}}
-                            <li class="size-tag"><span class="size-link size-tag">No Download</span></li>
-                            {{/if}}
-                        {{/if}}
+                        <div class="row">
+                            <div class="col-md-4">
+                                {{#if images}}
+                                <a href="{{images}}" target="_blank">
+                                    <i class="fa fa-picture-o" data-toggle="tooltip" data-placement="top" title="" data-original-title="Images"></i>
+                                </a>
+                                {{else}}
+                                <i class="fa fa-picture-o" data-toggle="tooltip" data-placement="top" title="" data-original-title="No Images"></i>
+                                {{/if}}
+                            </div>
+                            <div class="col-md-4">
+                                {{#if thread-dl-only}}
+                                <a href="{{discussion}}" target="_blank">
+                                    <i class="fa fa-download icon-links" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download in Discussion Thread"></i>
+                                </a>
+                                {{else}}
+                                    {{#if download}}
+                                    <a href="{{download}}" target="_blank">
+                                        <i class="fa fa-download icon-links" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"></i>
+                                    </a>
+                                    {{else}}
+                                    <i class="fa fa-download" data-toggle="tooltip" data-placement="top" title="" data-original-title="No Download"></i>
+                                    {{/if}}
+                                {{/if}}
+                            </div>
+                            <div class="col-md-4">
+                                {{#if discussion}}
+                                <a href="{{discussion}}" target="_blank">
+                                    <i class="fa fa-comments" href="{{discussion}}" data-toggle="tooltip" data-placement="top" title="" data-original-title="Discussion Thread"></i>
+                                </a>
+                                {{else}}
+                                <i class="fa fa-comments" data-toggle="tooltip" data-placement="top" title="" data-original-title="No Discussion Thread"></i>
+                                {{/if}}
+                            </div>
                     </td>
                 </tr>
                 {{/resource-packs}}
