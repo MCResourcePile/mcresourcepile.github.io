@@ -72,18 +72,13 @@
 	<!-- Page content -->
 	<div class="content-header">
         <div class="content-alert">
-            <div id="uncomplete" class="alert alert-warning" role="alert">
+            <div class="alert alert-warning" role="alert">
                 We are conducting a survey regarding how users use the ResourcePile site and we would appericiate it if you were to fill it out. Thanks!<br><a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>.
-            </div>
-            <div id="complete" class="alert alert-success" role="alert">
-                Thank you for completing the survey.
             </div>
         </div>
         <script>
             if (Cookies.get('survey01_complete') == "true") {
-                $( "#uncomplete" ).hide();
-            } else {
-                $( "#complete" ).hide();
+                $( ".alert" ).hide();
             }
         </script>
 		<div class="content-title">Information</div>
