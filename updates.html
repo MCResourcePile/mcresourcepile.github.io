@@ -72,12 +72,12 @@
     <div class="content-header">
         <div class="content-alert">
             <div class="alert alert-warning" role="alert">
-                We are conducting a survey regarding how users use the ResourcePile site and we would appericiate it if you were to fill it out. Thanks!<br><a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>.
+                We are conducting a survey about how you use ResourcePile and we would appericiate it if you were to fill it out so we can further improve our site.<br><a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>, or if you aren't interested, <a href="#" onclick="Cookies.set('survey01_complete', true);">hide this alert</a>.
             </div>
         </div>
         <script>
-            if (Cookies.get('survey01_complete') == "true") {
-                $( ".alert" ).hide();
+            if (Cookies.get('survey01_complete') == 'true') {
+                $('.alert').hide();
             }
         </script>
 		<div class="content-title">Updates</div>
@@ -86,6 +86,22 @@
 		</div>
 	</div>
     <div id="post-output">
+            <post id="contributing" class="post-thumbnail ">
+                <div class="post-header"><a href="#contributing" class="post-header">Contributing to ResourcePile</a></div>
+                <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/MHF_Exclamation?size=12&overlay"> <span class="position-manager">ResourcePile</span> <span class="convert" data-toggle="tooltip" data-placement="top" title="Unknown date">02-14-2017</span></div>
+                <div class="post-body">Our documents for contributing to our website have been converted and moved to our site rather than being located within in GitHub markdown file. They can now be accessed via the link below or through the link in the footer of each page.</div>
+                <div class="post-links">
+                    <a href="https://mcresourcepile.github.io/admin/docs/maps" target="_blank" class="btn btn-sm map-link post-button" role="button">Contributing docs</a>
+                </div>
+            </post>
+            <post id="map_submissions" class="post-thumbnail ">
+                <div class="post-header"><a href="#map_submissions" class="post-header">Now Accepting Map Submissions</a></div>
+                <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/mitchiii_?size=12&overlay"> <a href="https://mcresourcepile.github.io/staff/mitchiii_">mitchiii_</a> <span class="convert" data-toggle="tooltip" data-placement="top" title="Unknown date">02-12-2017</span></div>
+                <div class="post-body">We are now accepting map submissions for both maps that were, or are still, in the Overcast or Avicus Network map repository OR any maps that you had previously made for either of these networks that didn't end up making it onto their servers. To add your map to our collection, just fill out the submission form linked below, filling out all the required information, and then wait as we prepare your map for our public listing!</div>
+                <div class="post-links">
+                    <a href="https://mcresourcepile.github.io/admin/forms/maps" target="_blank" class="btn btn-sm map-link post-button" role="button">Submit you map</a>
+                </div>
+            </post>
             <post id="pepsidog_maps" class="post-thumbnail ">
                 <div class="post-header"><a href="#pepsidog_maps" class="post-header">Map Contributions from PepsiDog</a></div>
                 <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/mitchiii_?size=12&overlay"> <a href="https://mcresourcepile.github.io/staff/mitchiii_">mitchiii_</a> <span class="convert" data-toggle="tooltip" data-placement="top" title="Unknown date">02-03-2017</span></div>
@@ -102,8 +118,8 @@
                     <a href="https://mcresourcepile.github.io/mapstack/overcast?s&#x3D;Yoyo_" target="_blank" class="btn btn-sm map-link post-button" role="button">View Yoyo_&#x27;s maps</a>
                 </div>
             </post>
-            <post id="welcome" class="post-thumbnail post-thumbnail-important">
-                <div class="post-header"><i class="fa fa-bookmark" aria-hidden="true"></i> <a href="#welcome" class="post-header">Welcome to ResourcePile</a></div>
+            <post id="welcome" class="post-thumbnail ">
+                <div class="post-header"><a href="#welcome" class="post-header">Welcome to ResourcePile</a></div>
                 <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/MHF_Exclamation?size=12&overlay"> <span class="position-manager">ResourcePile</span> <span class="convert" data-toggle="tooltip" data-placement="top" title="Unknown date">02-01-2017</span></div>
                 <div class="post-body">Welcome to ResourcePile, a community driven project with contributors from Overcast Network and Avicus Network groups. This project offers a range of resources and tools related to these networks which can be broken down into three main groups:<ul><li><b><a href="https://mcresourcepile.github.io/stattrack/overcast/bow">StatTrack</a> - </b>Tracking various statistics such as longest kill distances by bow, and other website statistics like objective leaderboards</li><li><b><a href="https://mcresourcepile.github.io/mapstack/overcast">MapStack</a> - </b>A collection of publicly downloadable maps from Overcast Network and Avicus Network that players can use on their own servers or privately explore in single player</li><li><b><a href="#">ToolRack</a> - </b>A collection of various other handy tools</li></ul>Below are a few links to get you started!</div>
                 <div class="post-links">

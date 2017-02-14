@@ -72,12 +72,12 @@
 	<div class="content-header">
         <div class="content-alert">
             <div class="alert alert-warning" role="alert">
-                We are conducting a survey regarding how users use the ResourcePile site and we would appericiate it if you were to fill it out. Thanks!<br><a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>.
+                We are conducting a survey about how you use ResourcePile and we would appericiate it if you were to fill it out so we can further improve our site.<br><a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>, or if you aren't interested, <a href="#" onclick="Cookies.set('survey01_complete', true);">hide this alert</a>.
             </div>
         </div>
         <script>
-            if (Cookies.get('survey01_complete') == "true") {
-                $( ".alert" ).hide();
+            if (Cookies.get('survey01_complete') == 'true') {
+                $('.alert').hide();
             }
         </script>
 		<div class="content-title">Bow Records</div>
