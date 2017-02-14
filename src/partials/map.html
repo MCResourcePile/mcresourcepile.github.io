@@ -3,12 +3,12 @@
 <div id="{{slug}}" class="no-download"></div>
 {{else}}
 {{! Main thumbnail body }}
-<div class="col-sm-6 col-lg-3 map-thumbnail center {{#if official}}official-map{{else}}unofficial-map{{/if}}">
+<div class="col-sm-6 col-lg-3 map-thumbnail center">
     <div id="{{id}}" class="thumbnail map-float">
         {{! Map image background, contains banner and labels }}
         <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{#if official}}{{else}}-unofficial{{/if}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
             {{! Map banner, contains name, authors and quick links }}
-            <div class="map-banner {{#unless official}}map-banner-unofficial{{/unless}}">
+            <div class="map-banner">
                 {{! Map heading }}
                 <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{@root.map-group}}/bow?s={{slug}}"><strong>{{#if map}}<span class="map-featured" data-toggle="tooltip" data-placement="top" title="{{map}}">{{map}}</span>{{else}}<span class="map-featured">Untitled Map</span>{{/if}}</strong></a>
                 {{#unless locked}}
@@ -67,9 +67,6 @@
                     <span class="label label-info map-label">CC BY-NC-SA License</span>
                     {{/if}}
                 {{/if}}
-                {{#unless official}}
-                <span class="label map-label-locked map-label" data-toggle="tooltip" data-placement="top" title="This map was not in the official {{#if @root.page-category.overcast}}Overcast{{/if}}{{#if @root.page-category.avicus}}Avicus{{/if}} repository">Unofficial Map</span>
-                {{/unless}}
             </div>
         </div>
         {{! / End map image container }}
