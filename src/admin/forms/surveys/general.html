@@ -41,7 +41,7 @@
         <textarea type="text" name="improvement" id="improvement" placeholder="Type here..." style="width: 195px;" required></textarea>
         <br/>
 
-        <input class="form-submit" type="button" name="submit" id="submit" onclick="postContactToGoogle();Cookies.set('survey01_complete', true);" value="Submit" />
+        <input class="form-submit" type="button" name="submit" id="submit" onclick="postContactToGoogle();Cookies.set('survey01_complete', true, { expires: 7 });" value="Submit" />
     </div>
 </div>
 <script type="text/javascript">
