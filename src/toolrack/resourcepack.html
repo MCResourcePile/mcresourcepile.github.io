@@ -105,14 +105,14 @@
                                 {{/if}}
                             </div>
                             <div class="col-md-4">
-                                {{#if thread-dl-only}}
-                                <a href="{{discussion}}" target="_blank">
-                                    <i class="fa fa-download icon-links" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download in Discussion Thread"></i>
+                                {{#if download}}
+                                <a href="{{download}}" target="_blank">
+                                    <i class="fa fa-download icon-links" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"></i>
                                 </a>
                                 {{else}}
-                                    {{#if download}}
-                                    <a href="{{download}}" target="_blank">
-                                        <i class="fa fa-download icon-links" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"></i>
+                                    {{#if discussion}}
+                                    <a href="{{discussion}}" target="_blank">
+                                        <i class="fa fa-download icon-links" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download in Discussion Thread"></i>
                                     </a>
                                     {{else}}
                                     <i class="fa fa-download" data-toggle="tooltip" data-placement="top" title="" data-original-title="No Download"></i>
