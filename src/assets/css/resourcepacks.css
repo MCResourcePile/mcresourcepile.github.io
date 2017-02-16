@@ -18,15 +18,19 @@ li.size-tag {display: inline; list-style-type: none;}
 li.size-tag:after {content: ", ";}
 li.size-tag:last-child::after {content: "";}
 
-.author-tag {display: inline; list-style-type: none;}
-.author-tag:after {content: ", ";}
-.author-tag:last-child::after {content: "";}
-.author-tag:nth-child(3):before {font-size: 16px; content: " and more";}
-.author-tag:nth-child(n+3) {font-size: 0px;}
+.author-tag {display: inline; list-style-type: none; font-size: 13px; color: gray;}
+li.author-tag:after {content: ", ";}
+li.author-tag:last-child::after {content: "";}
+.author-tag:nth-child(4):before {font-size: 13px; content: " and more";}
+.author-tag:nth-child(n+4) {font-size: 0px;}
+
+.rp-name {margin-bottom: -5px;}
+.rp-icon {height: 25%; margin-top: 9px;}
 
 li.mcversion-tag {display: inline; list-style-type: none;}
 li.mcversion-tag:after {content: ", ";}
 li.mcversion-tag:last-child::after {content: "";}
+
 
 /*
 

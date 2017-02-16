@@ -35,36 +35,36 @@
         <table class="table" id="table">
             <thead>
                 <tr>
-                    <th width="5%"></th>
+                    <th width="5%" class="hidden-xs hidden-md"></th>
                     <th width="30%">Name</th>
-                    <th width="25%">Authors</th>
-                    <th width="15%">Size</th>
-                    <th width="15%"><abbr title="Minecraft">MC</abbr> Version</th>
-                    <th width="10%"></th>
+                    <th width="25%">Size</th>
+                    <th width="25%"><abbr title="Minecraft">MC</abbr> Version</th>
+                    <th width="15%"></th>
                 </tr>
             </thead>
             <tbody>
                 {{#resource-packs}}
                 <tr id="{{id}}" class="resource-pack">
-                    <td>
+                    <td class="hidden-xs hidden-md">
                         {{#if icon}}
-                            <img src="{{icon}}" height="25%">
+                            <img src="{{icon}}" class="rp-icon">
                         {{/if}}
                     </td>
                     <td>
                         {{#if name}}
-                        <p>{{name}}</p>
+                        <p class="rp-name">{{name}}</p>
                         {{else}}
-                        <p>Unknown name</p>
+                        <p class="rp-name">Unknown name</p>
                         {{/if}}
-                    </td>
-                    <td>
-                        {{#if authors}}
-                        {{#authors}}
-                        <li class="game-tag author-tag">{{#if player_name}}<a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
-                        {{/authors}}
-                        {{else}}<span class="map-author-name">Ghost</span>
-                        {{/if}}
+                        <span>
+                            <span class="author-tag">by</span>
+                            {{#if authors}}
+                            {{#authors}}
+                            <li class="game-tag author-tag">{{#if player_name}}<a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+                            {{/authors}}
+                            {{else}}<span class="map-author-name author-tag">Ghost</span>
+                            {{/if}}
+                        </span>
                     </td>
                     <td>
                         {{#if sizes}}
