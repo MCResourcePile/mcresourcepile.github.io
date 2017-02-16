@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> - ResourcePile</title>
+        <title>TheColdCrafter - ResourcePile</title>
 
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
@@ -25,8 +25,56 @@
     </head>
     <body >
         <!-- Page navigation -->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> StatTrack <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/stattrack/overcast/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Overcast Bow Records</a></li>
+                                <li><a href="/stattrack/overcast/website"><span class="fa fa-bookmark"></span> Overcast Website Stats</a></li>
+                                <li><a href="/stattrack/overcast/objective"><span class="fa fa-signal"></span> Overcast Objective Leaderboards</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/stattrack/avicus/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Avicus Bow Records</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> MapStack <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/mapstack/overcast"><i class="icon stat-map-icon"></i> Overcast Map Collection</a></li>
+                                <li><a href="/mapstack/unofficial/overcast"><i class="icon stat-map-icon"></i> Overcast Unofficial Collection</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/mapstack/avicus"><i class="icon stat-map-icon"></i> Avicus Map Collection</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cog"></i> ToolRack <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/toolrack/resourcepack"><i class="fa fa-folder-o"></i> Resource Pack Collection</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-background">
 <div class="container">
 	<div class="content-header" style="border-bottom:0px;">
+        <div class="content-alert">
+            <div id="survey" class="alert alert-warning" role="alert">
+                We are conducting a survey about how you use ResourcePile and we would appericiate it if you were to fill it out so we can further improve our site.<br><a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>, or if you aren't interested, <a href="#" onclick="Cookies.set('survey01_complete', true, { expires: 7 });$('.alert').hide();">hide this alert</a>.
+            </div>
+        </div>
         <script>
             if (Cookies.get('survey01_complete') == 'true') {
                 $('#survey').hide();

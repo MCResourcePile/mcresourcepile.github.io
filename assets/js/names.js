@@ -10,5 +10,6 @@
    $("a:contains('triplezko')").html("<span class=\"position-helper\">triplezko</span>")
    $("a:contains('NanuSci')").html("<span class=\"position-helper\">Nanu</span>")
    $("a:contains('nintendoboy11')").html("<span class=\"position-helper\">nintendoboy11</span>")
+   $("a:contains('TheColdCrafter')").html("<span class=\"position-helper\">TheColdCrafter</span>")
    $("tr:contains('INT')").html("")
  };
