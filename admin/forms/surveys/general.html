@@ -70,22 +70,16 @@
         <div class="content-background">
 <div class="container">
     <div class="content-header">
-        <div class="content-alert">
-            <div id="survey" class="alert alert-warning" role="alert">
-                We are conducting a survey about how you use ResourcePile and we would appericiate it if you were to fill it out so we can further improve our site.<br><a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>, or if you aren't interested, <a href="#" onclick="Cookies.set('survey01_complete', true, { expires: 7 });$('.alert').hide();">hide this alert</a>.
-            </div>
+        <div class="content-alert" style="display:none;">
+            <div class="alert alert-warning" role="alert"></div>
         </div>
-        <script>
-            if (Cookies.get('survey01_complete') == 'true') {
-                $('#survey').hide();
-            }
-        </script>
         <div class="content-title">General Use Survey</div>
         <div class="content-subtitle">
             Understanding our users and where we need to improve
         </div>
     </div>
     <div class="form-body">
+        <!--
         <div class="form-section">How did you discover ResourcePile?</div>
         <select name="referral" id="referral" style="width: 195px;" required>
             <option value="unknown">Select an option</option>
@@ -117,9 +111,9 @@
 
         <div class="form-section">Is there anything that you believe we can improve on?</div>
         <textarea type="text" name="improvement" id="improvement" placeholder="Type here..." style="width: 195px;" required></textarea>
-        <br/>
-
-        <input class="form-submit" type="button" name="submit" id="submit" onclick="postContactToGoogle();Cookies.set('survey01_complete', true, { expires: 7 });" value="Submit" />
+        <br/>-->
+        
+        <div class="alert alert-warning" role="alert">This survey is no longer accepting responses.</div>
     </div>
 </div>
 <script type="text/javascript">

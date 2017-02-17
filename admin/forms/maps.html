@@ -70,16 +70,9 @@
         <div class="content-background">
 <div class="container">
     <div class="content-header">
-        <div class="content-alert">
-            <div id="survey" class="alert alert-warning" role="alert">
-                We are conducting a survey about how you use ResourcePile and we would appericiate it if you were to fill it out so we can further improve our site.<br><a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>, or if you aren't interested, <a href="#" onclick="Cookies.set('survey01_complete', true, { expires: 7 });$('.alert').hide();">hide this alert</a>.
-            </div>
+        <div class="content-alert" style="display:none;">
+            <div class="alert alert-warning" role="alert"></div>
         </div>
-        <script>
-            if (Cookies.get('survey01_complete') == 'true') {
-                $('#survey').hide();
-            }
-        </script>
         <div class="content-title">Map Submissions</div>
         <div class="content-subtitle">
             Submit your map to be featured in our MapStack repositories
