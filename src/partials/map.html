@@ -4,9 +4,9 @@
 {{else}}
 {{! Main thumbnail body }}
 <div class="col-sm-6 col-lg-3 map-thumbnail center">
-    <div id="{{id}}" class="thumbnail map-float">
+    <div id="{{slug}}_body" class="thumbnail map-float">
         {{! Map image background, contains banner and labels }}
-        <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{#if official}}{{else}}-unofficial{{/if}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
+        <div id="{{slug}}" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{#if official}}{{else}}-unofficial{{/if}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
             {{! Map banner, contains name, authors and quick links }}
             <div class="map-banner">
                 {{! Map heading }}
@@ -56,6 +56,29 @@
                     {{/if}}
                 </span>
             </div>
+            <div id="favourite-{{slug}}" class="map-favourite" style="display:none;">
+                <span id="{{slug}}_add" onclick="Cookies.set('listen_{{slug}}', true, { expires: 365 });$('#{{slug}}_body').addClass('post-thumbnail-important');$('#{{slug}}_add').hide();$('#{{slug}}_remove').show();$('{{slug}}_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                <span id="{{slug}}_remove" onclick="Cookies.remove('listen_{{slug}}');$('#{{slug}}_body').removeClass('post-thumbnail-important');$('#{{slug}}_add').show();$('#{{slug}}_remove').hide();$('{{slug}}_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                <span id="{{slug}}_dummy" style="display:none"></span>
+            </div>
+            <script>
+                $("#{{slug}}").hover(function(){
+                    $('#favourite-{{slug}}').fadeIn();
+                },function(){
+                    $('#favourite-{{slug}}').fadeOut();
+                });
+                
+                if (Cookies.get('listen_{{slug}}') == 'true') {
+                    $('#{{slug}}_body').addClass('post-thumbnail-important');
+                    $('#{{slug}}_add').hide();
+                    $('#{{slug}}_remove').show();
+                    $('{{slug}}_dummy').text(fav_map);
+                } else {
+                    $('#{{slug}}_add').show();
+                    $('#{{slug}}_remove').hide();
+                    $('{{slug}}_dummy').text('');
+                }
+            </script>
             {{! Map labels }}
             <div class="map-labels">
                 {{#if sourced}}
