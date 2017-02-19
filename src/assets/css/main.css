@@ -9,6 +9,19 @@ body {
     background-color: #343436;
 }
 
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5){
+
+  html, body{
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+}
+
 .content-background {
     background-color: #fff;
     padding-bottom: 36px;
@@ -663,7 +676,7 @@ span.game-mode-button {
 }
 
 .footer {
-	width: 100%;
+    width: 100%;
     background-color: #343436;
     padding: 28px;
 }
@@ -762,34 +775,4 @@ span.game-mode-button {
 .paginate-nav a:last-child {
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
-}
-
-.section-head {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.secton-item {
-    display: block;
-    font-size: 14px;
-    padding-left: 6px;
-    margin-bottom: 4px;
-    color: #6f6f6f;
-    background-color: #ebebeb;
-    border-radius: 4px;
-}
-
-.secton-item:hover,
-.secton-item.active {
-    color: #fff;
-    background-color: #8982a2;
-    text-decoration: none;
-}
-
-.doc-table > tbody {
-    font-size: 14px;
-}
-
-.alert > a {
-    text-decoration: underline;
 }
