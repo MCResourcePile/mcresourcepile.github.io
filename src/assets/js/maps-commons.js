@@ -63,19 +63,49 @@ var commercial = true;
 function commercialLicense() {
     license = true;
     commercial = true;
-    console.log("This map is using a Creative Commons BY-SA 4.0 license")
+    console.log("This map is using a Creative Commons BY-SA 4.0 license");
+    getApiLimit();
 }
 
 function noncommercialLicense() {
     license = true;
     commercial = false;
-    console.log("This map is using a Creative Commons BY-NC-SA 4.0 license")
+    console.log("This map is using a Creative Commons BY-NC-SA 4.0 license");
+    getApiLimit();
 }
 
 function noLicense() {
     license = false;
-    console.log("This map has no associated license; be careful when using this map in public servers")
+    console.log("This map has no associated license; be careful when using this map in public servers");
+    getApiLimit();
 }
+
+
+
+// Get GitHub API request limit information
+function getApiLimit() {
+    limitResponse = (function () {
+            limitResponse = null;
+            $.ajax({
+                'async': false,
+                'global': false,
+                'url': 'https://api.github.com/rate_limit',
+                'dataType': "json",
+                'success': function (data) {
+                    limitResponse = data;
+                }
+            });
+        return limitResponse;
+        })(); 
+
+        sessionLimit = limitResponse.rate.limit;
+        sessionRemaining = limitResponse.rate.remaining;
+        sessionDownloads = Math.round(sessionRemaining / 8);
+}
+
+var sessionLimit = 0;
+var sessionRemaining = 0;
+var sessionDownloads = 0;
 
 
 
@@ -84,6 +114,12 @@ GitZip.registerCallback(function(status, message, percent) {
     if (status === "done") {
         $("#download-complete-message").modal('show');
         $('#download-starting-message').modal('hide');
+        
+        // Evaluate GitHub API request limit and display response in success modal
+        $("#api-request-remaining").html(sessionRemaining).css("font-weight", "bold");
+        $("#api-request-limit").html(sessionLimit).css("font-weight", "bold");
+        $("#api-request-approximate").html(sessionDownloads).css("font-weight", "bold");
+        
     } else if (status === "error") {
         if (message.indexOf("API rate limit exceeded for") === -1) {
             $("#download-error-message").modal('show');
