@@ -31,7 +31,7 @@
             ga('create', 'UA-91801520-1', 'auto');
             ga('send', 'pageview');
         </script>
-        <script src="/assets/js/gitzip-api.js"></script><script src="/assets/js/FileSaver.js"></script><script src="/assets/js/jszip.js"></script><script src="/assets/js/jquery.searchable-1.1.0.min.js"></script>
+        <script src="/assets/js/gitzip-api.js"></script><script src="/assets/js/FileSaver.js"></script><script src="/assets/js/jszip.js"></script><script src="/assets/js/jquery.searchable-1.1.0.min.js"></script><script src="/assets/js/maps-commons.js"></script>
     </head>
     <body >
         <!-- Page navigation -->
@@ -2539,138 +2539,71 @@
             </div>
 		</div>
 	</div>
-	<div class="modal fade" id="download-complete-message" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Your download will begin shortly...</h4>
-				</div>
-				<div class="modal-body">
-					Thank you for downloading this map from ResourcePile and supporting free public maps as well as the map authors.<br><br>
-					<small>If your download does not begin, an error may have occured or the map you are looking for may not exisit in our public repository yet. Please try again, but if the issue persists please report an issue on our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Issues Tracker</a>.</small>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="download-error-message" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">The download failed.</h4>
-				</div>
-				<div class="modal-body">
-				Something went wrong. Please try again. If the issue persists please report an issue on our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Issues Tracker</a>.
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="download-rate-limit-message" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">You've hit the rate limit</h4>
-				</div>
-				<div class="modal-body">
-					Looks like you've hit GitHub's rate limit. Sadly there isn't anything we can do about that at the moment, but we are looking for solutions. Please try again in an hour.
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="modal fade" id="download-starting-message" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Your download will begin shortly...</h4>
+                </div>
+                <div class="modal-body">
+                    Please wait while we compile your download.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="download-complete-message" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Your download has begun...</h4>
+                </div>
+                <div class="modal-body">
+                    Thank you for downloading this map from ResourcePile and supporting free public maps as well as the map authors.<br><br>
+                    This map is licensed undera Creative Commons license which has been included in your download. Please respect this license and the wishes of the map authors as this project would not be here without them.
+                    <hr>
+                    You currently have <span id="api-request-remaining"></span> out of <span id="api-request-limit"></span> requests left to the GitHub API.<br>
+                    This means that you can download approximately <spawn id="api-request-approximate"></spawn> more maps before you must wait an hour for the limit to reset.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="download-error-message" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Your download filed...</h4>
+                </div>
+                <div class="modal-body">
+                    Something went wrong while compiling your download. Please try again, but if the issue persists please report an issue on our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Issues Tracker</a>.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="download-rate-limit-message" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">You've hit the rate limit</h4>
+                </div>
+                <div class="modal-body">
+                    Looks like you've hit GitHub's rate limit. Sadly there isn't anything we can do about that at the moment, but we are looking for solutions. Please try again in an hour.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<script type="text/javascript">
-	setTimeout(function () {
-		makeSearchable()
-
-		$(function () {
-			$('[data-toggle="tooltip"]').tooltip()
-		})
-
-		var total_hidden = $('.dynamic').children('.no-download').length;
-		var maps_no_download = $.map($(".no-download"), function(n, i){
-			return "\n- " + n.id;
-		});
-		if(total_hidden > 0){
-			console.log(total_hidden + " maps have no download and have been hidden from this listing.\nPlease contact a page manager to add or enable the downloads for the following maps:" + maps_no_download)
-		}
-	}, 1000);
-
-	$(document).on('ready', function(){
-		makeSearchable()
-	})
-
-	$('.record-search-container').on('click', function(){
-		makeSearchable()
-	})
-
-	$(document).on('keydown', function() {
-		makeSearchable()
-	});
-
-	function makeSearchable(){
-		$('#maps-output .dynamic').searchable({
-			selector: 'div.map-thumbnail',
-			childSelector: '.map-float',
-			searchField: '#search'
-		})
-        
-        var total_maps = $('.map-thumbnail').length
-        var total_display = $('.map-thumbnail:visible').length
-        var total_official = $('.official-map:visible').length
-        var total_unofficial = $('.unofficial-map:visible').length
-        var current_search = $('#search').val()
-        
-        if (total_maps == "0") {
-            $(".total-maps").html("No maps successfully loaded<br>Please check the console for any errors and contact a page manager");
-        } else if (total_display == "0") {
-            $(".total-maps").html("Your query of <code>" + current_search + "</code> references no maps, please try searching something else");
-        } else {
-            $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps");
-        }
-	}
-
-    var license = true;
-    var commercial = true;
-
-    function commercialLicense(){
-        license = true;
-        commercial = true;
-        console.log("This map is using a Creative Commons BY-SA 4.0 license")
-    }
-
-    function noncommercialLicense(){
-        license = true;
-        commercial = false;
-        console.log("This map is using a Creative Commons BY-NC-SA 4.0 license")
-    }
-
-    function noLicense(){
-        license = false;
-        console.log("This map has no associated license; be careful when using this map in public servers")
-    }
-
-	GitZip.registerCallback(function(status, message, percent) {
-		if (status === "done") {
-			$("#download-complete-message").modal('show')
-		}
-		else if (status ==="error") {
-			if (message.indexOf("API rate limit exceeded for") === -1) {
-				$("#download-error-message").modal('show');
-			}
-			else {
-				$("#download-rate-limit-message").modal('show');
-			}
-		}
-	});
-</script>
 <script type="text/javascript">
 	var data=location.search;
 	if(data) {
