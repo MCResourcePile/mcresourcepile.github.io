@@ -64,20 +64,17 @@ function commercialLicense() {
     license = true;
     commercial = true;
     console.log("This map is using a Creative Commons BY-SA 4.0 license");
-    getApiLimit();
 }
 
 function noncommercialLicense() {
     license = true;
     commercial = false;
     console.log("This map is using a Creative Commons BY-NC-SA 4.0 license");
-    getApiLimit();
 }
 
 function noLicense() {
     license = false;
     console.log("This map has no associated license; be careful when using this map in public servers");
-    getApiLimit();
 }
 
 
@@ -100,7 +97,7 @@ function getApiLimit() {
 
         sessionLimit = limitResponse.rate.limit;
         sessionRemaining = limitResponse.rate.remaining;
-        sessionDownloads = Math.round(sessionRemaining / 8);
+        sessionDownloads = Math.round(sessionRemaining / 7);
 }
 
 var sessionLimit = 0;
@@ -116,6 +113,7 @@ GitZip.registerCallback(function(status, message, percent) {
         $('#download-starting-message').modal('hide');
         
         // Evaluate GitHub API request limit and display response in success modal
+        getApiLimit();
         $("#api-request-remaining").html(sessionRemaining).css("font-weight", "bold");
         $("#api-request-limit").html(sessionLimit).css("font-weight", "bold");
         $("#api-request-approximate").html(sessionDownloads).css("font-weight", "bold");
