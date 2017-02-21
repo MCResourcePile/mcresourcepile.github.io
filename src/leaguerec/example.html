@@ -1,0 +1,139 @@
+{{> header}}
+<div class="container">
+	<div class="content-header">
+        {{> alert}}
+		<div class="content-title">Tournament Name</div>
+		<div class="content-subtitle">
+			Information about <a href="#">Tournament Name</a> tournament hosted by <a href="#">Server Name</a>.
+		</div>
+	</div>
+	<div class="section">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Information</a></li>
+            <li role="presentation"><a href="#maps" aria-controls="maps" role="tab" data-toggle="tab">Map Pool</a></li>
+            <li role="presentation"><a href="#teams" aria-controls="teams" role="tab" data-toggle="tab">Teams</a></li>
+            <li role="presentation"><a href="#standings" aria-controls="standings" role="tab" data-toggle="tab">Standings</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="info">
+                <div class="row" style="text-align: center">
+                    <div class="col-md-4">
+                        <i class="fa fa-4x fa-star"></i>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fa fa-5x fa-trophy"></i>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fa fa-4x fa-star"></i>
+                    </div>
+                </div>
+                <div class="row" style="text-align: center">
+                    <div class="col-md-4">
+                        <h3><small>3rd Place</small></h3>
+                        <h3>Example Team</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <h2><small>1st Place</small></h2>
+                        <h2>Example Team</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <h3><small>2nd Place</small></h3>
+                        <h3>Example Team</h3>
+                    </div>
+                </div>
+                <hr>
+                <div class="page-header">
+                    <h2>Information</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-condensed">
+                            <tr>
+                                <td width="20%" style="font-weight: bold">Method</td>
+                                <td>Tournament Method</td>
+                            </tr>
+                            <tr>
+                                <td width="20%" style="font-weight: bold">Gamemodes</td>
+                                <td>Tournament Gamemodes</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-condensed">
+                            <tr>
+                                <td width="20%" style="font-weight: bold">Matches</td>
+                                <td>Time</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="maps">
+                <div class="page-header">
+                    <h2>Map Pool</h2>
+                </div>
+                <!-- Map tiles from MapStack -->
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="teams">
+                <div class="page-header">
+                    <h2>Teams</h2>
+                </div>
+                <div class="row">
+                    List the amount of teams and the way they were accepted<br>
+                    Write minimum and max players per team
+                </div>
+                <hr>
+                <div style="font-weight: bold" class="row">
+                    <div class="col-md-3">
+                        <ul>
+                            <li>Team Example</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li>Team Example</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li>Team Example</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li>Team Example</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="standings">
+                <div class="page-header">
+                    <h2>Standings</h2>
+                </div>
+                <div class="row">
+                    <!-- Challonge bracked -->
+                </div>
+            </div>
+        </div>
+</div>
+
+</div>
+<script type="text/javascript">
+	var data=location.search;
+	if(data) {
+		data=location.search.substring(1);
+		data=data.split('&');
+		var pairs={};
+		for(var i=0; i<data.length; i++){
+			var tmp=data[i].split('=');
+			pairs[tmp[0]]=tmp[1];
+		}
+		var f = document.search_form;
+		for (var i in pairs) {
+			if(f.elements[i]) {f.elements[i].value = pairs[i];}
+		}
+	}
+</script>
+{{> footer}}
+</body>
+</html>
