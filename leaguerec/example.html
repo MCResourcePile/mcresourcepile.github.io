@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title> - ResourcePile</title>
+        <title>Tournament Name - ResourcePile</title>
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,8 +35,56 @@
     </head>
     <body >
         <!-- Page navigation -->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> StatTrack <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/stattrack/overcast/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Overcast Bow Records</a></li>
+                                <li><a href="/stattrack/overcast/website"><span class="fa fa-bookmark"></span> Overcast Website Stats</a></li>
+                                <li><a href="/stattrack/overcast/objective"><span class="fa fa-signal"></span> Overcast Objective Leaderboards</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/stattrack/stratus/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Stratus Bow Records</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/stattrack/avicus/bow"><span class="icon stat-bow-icon icon-dropdown"></span> Avicus Bow Records</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> MapStack <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/mapstack/overcast"><i class="icon stat-map-icon"></i> Overcast Map Collection</a></li>
+                                <li><a href="/mapstack/unofficial/overcast"><i class="icon stat-map-icon"></i> Overcast Unofficial Collection</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/mapstack/avicus"><i class="icon stat-map-icon"></i> Avicus Map Collection</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cog"></i> ToolRack <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/toolrack/resourcepack"><i class="fa fa-folder-o"></i> Resource Pack Collection</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-background">
 <div class="container">
 	<div class="content-header">
+        <div class="content-alert" style="display:none;">
+            <div class="alert alert-warning" role="alert"></div>
+        </div>
 		<div class="content-title">Tournament Name</div>
 		<div class="content-subtitle">
 			Information about <a href="#">Tournament Name</a> tournament hosted by <a href="#">Server Name</a>.
@@ -49,6 +97,7 @@
             <li role="presentation"><a href="#teams" aria-controls="teams" role="tab" data-toggle="tab">Teams</a></li>
             <li role="presentation"><a href="#standings" aria-controls="standings" role="tab" data-toggle="tab">Standings</a></li>
         </ul>
+        <br>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="info">
                 <div class="row" style="text-align: center">
@@ -113,10 +162,10 @@
                 <div class="page-header">
                     <h2>Teams</h2>
                 </div>
-                <div class="row">
+                <p>
                     List the amount of teams and the way they were accepted<br>
                     Write minimum and max players per team
-                </div>
+                </p>
                 <hr>
                 <div style="font-weight: bold" class="row">
                     <div class="col-md-3">
@@ -146,7 +195,7 @@
                     <h2>Standings</h2>
                 </div>
                 <div class="row">
-                    <!-- Challonge bracked -->
+                    <!-- Challonge bracket -->
                 </div>
             </div>
         </div>
