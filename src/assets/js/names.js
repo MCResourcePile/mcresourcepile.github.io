@@ -11,5 +11,6 @@
    $("a:contains('NanuSci')").html("<span class=\"position-helper\">Nanu</span>")
    $("a:contains('nintendoboy11')").html("<span class=\"position-helper\">nintendoboy11</span>")
    $("a:contains('TheColdCrafter')").html("<span class=\"position-helper\">TheColdCrafter</span>")
+   $("a:contains('NerdifiedGames')").html("<span class=\"position-helper\">NerdifiedGames</span>")
    $("tr:contains('INT')").html("")
  };
