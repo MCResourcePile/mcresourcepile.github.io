@@ -1,0 +1,216 @@
+{{> header}}
+<div class="container">
+    <div class="content-header">
+        {{> alert}}
+        <div class="content-title">Bow Records</div>
+        <div class="content-subtitle">
+            A collection of the longest recorded bow kill distances from the <a href="https://discord.gg/f3RAc9J">Stratus Network</a>.
+        </div>
+    </div>
+    <!-- Game mode navigation menu -->
+    <form name="search_form" class="record-search-container">
+        <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search records">
+    </form>
+    <div class="game-mode-navigation row">
+        <div class="col-xs-6 col-md-3">
+            <div class="game-mode-section-header">Objectives</div>
+            <a class="game-mode-button game_ctf" href="?s=ctf"></a>
+            <a class="game-mode-button game_ctw" href="?s=ctw"></a>
+            <a class="game-mode-button game_dtc" href="?s=dtc"></a>
+            <a class="game-mode-button game_dtm" href="?s=dtm"></a>
+            <a class="game-mode-button game_koth" href="?s=koth"></a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <div class="game-mode-section-header">Deathmatch</div>
+            <a class="game-mode-button game_blitz" href="?s=blitz"></a>
+            <a class="game-mode-button game_rage" href="?s=rage"></a>
+            <a class="game-mode-button game_ffa" href="?s=ffa"></a>
+            <a class="game-mode-button game_skywars" href="?s=skywars"></a>
+            <a class="game-mode-button game_tdm" href="?s=tdm"></a>
+            <a class="game-mode-button game_survival" href="?s=survival"></a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <div class="game-mode-section-header">Competitive</div>
+            <a class="game-mode-button game_ranked" href="?s=ranked"></a>
+            <a class="game-mode-button game_tournament" href="?s=tournament"></a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <div class="game-mode-section-header">Other</div>
+            <a class="game-mode-button game_all" href="?s="></a>
+            <a class="game-mode-button game_arcade" href="?s=arcade"></a>
+            <a class="game-mode-button game_gs" href="?s=gs"></a>
+            <a class="game-mode-button game_rfw" href="?s=rfw"></a>
+        </div>
+    </div>
+    <br>
+    <div id="records-output">
+        {{#with data}}
+        <!-- Map searching table -->
+        <table class="table tablesorter" id="table">
+            <thead>
+                <tr>
+                    <th width="1%" class="table-counted">#</th>
+                    <th width="99%">Records</th>
+                </tr>
+            </thead>
+            <tbody class="counted-rows">
+                {{#records}}
+                <tr class="record-table">
+                    <td class="table-counted"></td>
+                    <td>
+                        <div class="col-md-2 col-xs-3" style="margin-left:-12px;">
+                            {{#if slug}}
+                                <a class="record-map" href="https://mcresourcepile.github.io/mapstack/overcast?s={{slug}}" target="_blank">
+                                    {{#if map}}
+                                        {{map}}{{else}}
+                                        Unknown Map
+                                    {{/if}}
+                                    <span class="tag_hidden">{{slug}}</span>
+                                </a>
+                                {{else}}
+                                <span class="record-map">
+                                    {{#if map}}
+                                        {{map}}{{else}}
+                                        Unknown Map
+                                    {{/if}}
+                                </span>
+                            {{/if}}
+                            <br>
+                            <ul class="map-game-mode">
+                                {{#if tags}}
+                                    {{#tags}}
+                                        {{#if arcade}}<li class="game-tag"><a class="game-link" href="?s=arcade">Arcade</a></li>{{/if}}
+                                        {{#if blitz}}<li class="game-tag"><a class="game-link" href="?s=blitz">Blitz</a></li>{{/if}}
+                                        {{#if cp}}<li class="game-tag"><a class="game-link" href="?s=cp">CP</a><span class="tag_hidden">Capture Points</span></li>{{/if}}
+                                        {{#if ctf}}<li class="game-tag"><a class="game-link" href="?s=ctf">CTF</a><span class="tag_hidden">Capture the Flags</span></li>{{/if}}
+                                        {{#if ctw}}<li class="game-tag"><a class="game-link" href="?s=ctw">CTW</a><span class="tag_hidden">Capture the Wools</span></li>{{/if}}
+                                        {{#if dtc}}<li class="game-tag"><a class="game-link" href="?s=dtc">DTC</a><span class="tag_hidden">Destroy the Cores</span></li>{{/if}}
+                                        {{#if dtm}}<li class="game-tag"><a class="game-link" href="?s=dtm">DTM</a><span class="tag_hidden">Destroy the Monuments</span></li>{{/if}}
+                                        {{#if ffa}}<li class="game-tag"><a class="game-link" href="?s=ffa">FFA</a><span class="tag_hidden">Free for all Free-for-all</span></li>{{/if}}
+                                        {{#if gs}}<li class="game-tag"><a class="game-link" href="?s=gs">GS</a><span class="tag_hidden">Ghost Squadron</span></li>{{/if}}
+                                        {{#if koth}}<li class="game-tag"><a class="game-link" href="?s=koth">KOTH</a><span class="tag_hidden">King of the Hills</span></li>{{/if}}
+                                        {{#if micro}}<li class="game-tag"><a class="game-link" href="?s=micro">Mirco</a><span class="tag_hidden">5x5</span></li>{{/if}}
+                                        {{#if mixed}}<li class="game-tag"><a class="game-link" href="?s=mixed">Mixed</a></li>{{/if}}
+                                        {{#if rage}}<li class="game-tag"><a class="game-link" href="?s=rage">Rage</a></li>{{/if}}
+                                        {{#if ranked}}<li class="game-tag"><a class="game-link" href="?s=ranked">Ranked</a></li>{{/if}}
+                                        {{#if rfw}}<li class="game-tag"><a class="game-link" href="?s=rfw">RFW</a><span class="tag_hidden">Race for Wool</span></li>{{/if}}
+                                        {{#if skywars}}<li class="game-tag"><a class="game-link" href="?s=skywars">Skywars</a><span class="tag_hidden">SW</span></li>{{/if}}
+                                        {{#if sg}}<li class="game-tag"><a class="game-link" href="?s=survival">SG</a><span class="tag_hidden">Survival Games</span></li>{{/if}}
+                                        {{#if tdm}}<li class="game-tag"><a class="game-link" href="?s=tdm">TDM</a><span class="tag_hidden">Team Death Match Deathmatch</span></li>{{/if}}
+                                        {{#if te}}<li class="game-tag"><a class="game-link" href="?s=tournament">Tournament</a><span class="tag_hidden">Tournament Edition TE</span></li>{{/if}}
+                                        {{#if season}}<li class="game-tag"><a class="game-link" href="?s={{season}}">{{season}}</a></li>{{/if}}
+                                        {{#if other}}<li class="game-tag"><a class="game-link" href="?s={{other}}">{{other}}</a></li>{{/if}}
+                                    {{/tags}}
+                                    {{else}}Unknown game tags
+                                {{/if}}
+                            </ul>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="col-md-6 record-first">
+                            <i class="fa fa-trophy record-trophy" aria-hidden="true"></i>
+                                <span class="distance-record">
+                                {{#record_first}}
+                                    {{#if player_name}}<a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=24&overlay"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=24&overlay">{{/if}}
+                                    <span class="record-description {{#unless distance}}record-unverified{{/unless}}">
+                                        {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="?s={{player_name}}">{{player_name}}</a>{{else}}Ghost{{/if}}
+                                        <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
+                                        {{#if distance}}{{distance}} blocks{{else}}0 blocks{{/if}}
+                                        {{#if evidence}}
+                                        <span class="record-evidence" data-toggle="tooltip" data-placement="top" title="Record Evidence">
+                                            <a href="{{evidence}}" target="_blank"><i class="fa fa-tag" aria-hidden="true"></i></a>
+                                        </span>
+                                        {{/if}}
+                                    </span>
+                                {{/record_first}}
+                                </span>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="distance-record">
+                                {{#record_second}}
+                                    {{#if player_name}}<a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16&overlay"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay">{{/if}}
+                                    <span class="record-description {{#unless distance}}record-unverified{{/unless}}">
+                                        {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="?s={{player_name}}">{{player_name}}</a>{{else}}Ghost{{/if}}
+                                        <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
+                                        {{#if distance}}{{distance}} blocks{{else}}0 blocks{{/if}}
+                                        {{#if evidence}}
+                                        <span class="record-evidence" data-toggle="tooltip" data-placement="top" title="Record Evidence">
+                                            <a href="{{evidence}}" target="_blank"><i class="fa fa-tag" aria-hidden="true"></i></a>
+                                        </span>
+                                        {{/if}}
+                                    </span>
+                                {{/record_second}}
+                                </span><br>
+                                <span class="distance-record">
+                                {{#record_third}}
+                                    {{#if player_name}}<a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}"><img class="record-player-avatar" src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16&overlay"></a>{{else}}<img class="record-player-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay">{{/if}}
+                                    <span class="record-description {{#unless distance}}record-unverified{{/unless}}">
+                                        {{#if player_name}}<a class="record-player {{#unless distance}}record-unverified{{/unless}}" href="?s={{player_name}}">{{player_name}}</a>{{else}}Ghost{{/if}}
+                                        <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
+                                        {{#if distance}}{{distance}} blocks{{else}}0 blocks{{/if}}
+                                        {{#if evidence}}
+                                        <span class="record-evidence" data-toggle="tooltip" data-placement="top" title="Record Evidence">
+                                            <a href="{{evidence}}" target="_blank"><i class="fa fa-tag" aria-hidden="true"></i></a>
+                                        </span>
+                                    {{/if}}
+                                    </span>
+                                {{/record_third}}
+                                </span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {{/records}}
+            </tbody>
+        </table>
+        {{/with}}
+    </div>
+</div>
+<script type="text/javascript">
+    setTimeout(function () {
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    }, 1000);
+</script>
+<script type="text/javascript">
+    setTimeout(function () {
+        makeSearchable()
+    }, 1000);
+
+    $(document).on('ready', function(){
+        makeSearchable()
+    })
+
+    $('.record-search-container').on('click', function(){
+        makeSearchable()
+    })
+
+    function makeSearchable(){
+        $('#records-output .table').searchable({
+            striped: true,
+            oddRow: { 'background-color': '#fff' },
+            evenRow: { 'background-color': '#f0f0f0' },
+            searchType: 'default',
+            searchField: '#search'
+        })
+    }
+</script>
+<script type="text/javascript">
+    var data=location.search;
+    if(data) {
+        data=location.search.substring(1);
+        data=data.split('&');
+        var pairs={};
+        for(var i=0; i<data.length; i++){
+            var tmp=data[i].split('=');
+            pairs[tmp[0]]=tmp[1];
+        }
+        var f = document.search_form;
+        for (var i in pairs) {
+            if(f.elements[i]) {f.elements[i].value = pairs[i];}
+        }
+    }
+</script>
+{{> footer}}
+</body>
+</html>
