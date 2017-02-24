@@ -4,6 +4,7 @@
 // of being put here.
 
 
+var fav_map = 'starred';
 
 // Count maps with no download and send alert to console
 var total_hidden = $('.dynamic').children('.no-download').length;
