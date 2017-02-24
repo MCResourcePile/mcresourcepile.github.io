@@ -114,7 +114,7 @@
         <div class="row">
             <div class="col-md-2 col-sm-4 col-xs-6 center">
                 <span class="contact-user-thumbnail thumbnail">
-                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/5f267306-27e4-4e95-9ddb-e717687685e9?overlay">
+                    <img data-toggle="tooltip" data-placement="bottom" title="October 4, 2016 - December 25, 2016" class="contact-user-avatar" src="https://crafatar.com/avatars/5f267306-27e4-4e95-9ddb-e717687685e9?overlay">
                 </span>
                 <div style="display:block;">
                     <div class="contact-user-name position-retired">NerdifiedGames</div>
@@ -123,7 +123,7 @@
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 center">
                 <span class="contact-user-thumbnail thumbnail">
-                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/a37e4da3-1c6c-4dc9-b085-63783406a963?overlay">
+                    <img data-toggle="tooltip" data-placement="bottom" title="October 3, 2016 - December 25, 2016" class="contact-user-avatar" src="https://crafatar.com/avatars/a37e4da3-1c6c-4dc9-b085-63783406a963?overlay">
                 </span>
                 <div style="display:block;">
                     <div class="contact-user-name position-retired">xCand</div>
@@ -132,7 +132,7 @@
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 center">
                 <span class="contact-user-thumbnail thumbnail">
-                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/9225421c-3c09-4d97-bb80-f6a77c1f360b?overlay">
+                    <img data-toggle="tooltip" data-placement="bottom" title="October 5, 2016 - February 21, 2017" class="contact-user-avatar" src="https://crafatar.com/avatars/9225421c-3c09-4d97-bb80-f6a77c1f360b?overlay">
                 </span>
                 <div style="display:block;">
                     <div class="contact-user-name position-retired">Jexel</div>
@@ -141,7 +141,7 @@
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 center">
                 <span class="contact-user-thumbnail thumbnail">
-                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/022321a8-578b-4438-b035-8a3ca735639f?overlay">
+                    <img data-toggle="tooltip" data-placement="bottom" title="January 15, 2017 - February 21, 2017"class="contact-user-avatar" src="https://crafatar.com/avatars/022321a8-578b-4438-b035-8a3ca735639f?overlay">
                 </span>
                 <div style="display:block;">
                     <div class="contact-user-name position-retired">nintendoboy11</div>
@@ -152,5 +152,10 @@
     </div>
 </div>
 {{> footer}}
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
 </body>
 </html>
