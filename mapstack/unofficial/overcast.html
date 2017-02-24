@@ -140,8 +140,8 @@
     <div id="maps-output">
         <div class="dynamic">
             <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="" class="thumbnail map-float">
-                    <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/assembly/map.png');">
+                <div id="assembly_body" class="thumbnail map-float">
+                    <div id="assembly" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/assembly/map.png');">
                         <div class="map-banner">
                             <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=assembly"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Assembly">Assembly</span></strong></a>
                             <span style="display:block;margin-top:-8px;">
@@ -170,6 +170,29 @@
                                         
                             </span>
                         </div>
+                        <div id="favourite-assembly" class="map-favourite" style="display:none;">
+                            <span id="assembly_add" onclick="Cookies.set('listen_assembly', true, { expires: 365 });$('#assembly_body').addClass('post-thumbnail-important');$('#assembly_add').hide();$('#assembly_remove').show();$('assembly_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                            <span id="assembly_remove" onclick="Cookies.remove('listen_assembly');$('#assembly_body').removeClass('post-thumbnail-important');$('#assembly_add').show();$('#assembly_remove').hide();$('assembly_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                            <span id="assembly_dummy" style="display:none"></span>
+                        </div>
+                        <script>
+                            $("#assembly").hover(function(){
+                                $('#favourite-assembly').fadeIn();
+                            },function(){
+                                $('#favourite-assembly').fadeOut();
+                            });
+                            
+                            if (Cookies.get('listen_assembly') == 'true') {
+                                $('#assembly_body').addClass('post-thumbnail-important');
+                                $('#assembly_add').hide();
+                                $('#assembly_remove').show();
+                                $('assembly_dummy').text(fav_map);
+                            } else {
+                                $('#assembly_add').show();
+                                $('#assembly_remove').hide();
+                                $('assembly_dummy').text('');
+                            }
+                        </script>
                         <div class="map-labels">
                                 <span class="label label-success map-label">CC BY-SA License</span>
                         </div>
@@ -219,8 +242,8 @@
                 </div>
             </div>
             <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="" class="thumbnail map-float">
-                    <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/cosmic_assault/map.png');">
+                <div id="cosmic_assault_body" class="thumbnail map-float">
+                    <div id="cosmic_assault" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/cosmic_assault/map.png');">
                         <div class="map-banner">
                             <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=cosmic_assault"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Cosmic Assault">Cosmic Assault</span></strong></a>
                             <span style="display:block;margin-top:-8px;">
@@ -249,6 +272,29 @@
                                         
                             </span>
                         </div>
+                        <div id="favourite-cosmic_assault" class="map-favourite" style="display:none;">
+                            <span id="cosmic_assault_add" onclick="Cookies.set('listen_cosmic_assault', true, { expires: 365 });$('#cosmic_assault_body').addClass('post-thumbnail-important');$('#cosmic_assault_add').hide();$('#cosmic_assault_remove').show();$('cosmic_assault_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                            <span id="cosmic_assault_remove" onclick="Cookies.remove('listen_cosmic_assault');$('#cosmic_assault_body').removeClass('post-thumbnail-important');$('#cosmic_assault_add').show();$('#cosmic_assault_remove').hide();$('cosmic_assault_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                            <span id="cosmic_assault_dummy" style="display:none"></span>
+                        </div>
+                        <script>
+                            $("#cosmic_assault").hover(function(){
+                                $('#favourite-cosmic_assault').fadeIn();
+                            },function(){
+                                $('#favourite-cosmic_assault').fadeOut();
+                            });
+                            
+                            if (Cookies.get('listen_cosmic_assault') == 'true') {
+                                $('#cosmic_assault_body').addClass('post-thumbnail-important');
+                                $('#cosmic_assault_add').hide();
+                                $('#cosmic_assault_remove').show();
+                                $('cosmic_assault_dummy').text(fav_map);
+                            } else {
+                                $('#cosmic_assault_add').show();
+                                $('#cosmic_assault_remove').hide();
+                                $('cosmic_assault_dummy').text('');
+                            }
+                        </script>
                         <div class="map-labels">
                                 <span class="label label-info map-label">CC BY-NC-SA License</span>
                         </div>
@@ -292,8 +338,8 @@
                 </div>
             </div>
             <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="" class="thumbnail map-float">
-                    <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/erth/map.png');">
+                <div id="erth_body" class="thumbnail map-float">
+                    <div id="erth" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/erth/map.png');">
                         <div class="map-banner">
                             <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=erth"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Erth">Erth</span></strong></a>
                             <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/forums/topics/57fa8f575f35b93245000013" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
@@ -323,6 +369,29 @@
                                         
                             </span>
                         </div>
+                        <div id="favourite-erth" class="map-favourite" style="display:none;">
+                            <span id="erth_add" onclick="Cookies.set('listen_erth', true, { expires: 365 });$('#erth_body').addClass('post-thumbnail-important');$('#erth_add').hide();$('#erth_remove').show();$('erth_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                            <span id="erth_remove" onclick="Cookies.remove('listen_erth');$('#erth_body').removeClass('post-thumbnail-important');$('#erth_add').show();$('#erth_remove').hide();$('erth_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                            <span id="erth_dummy" style="display:none"></span>
+                        </div>
+                        <script>
+                            $("#erth").hover(function(){
+                                $('#favourite-erth').fadeIn();
+                            },function(){
+                                $('#favourite-erth').fadeOut();
+                            });
+                            
+                            if (Cookies.get('listen_erth') == 'true') {
+                                $('#erth_body').addClass('post-thumbnail-important');
+                                $('#erth_add').hide();
+                                $('#erth_remove').show();
+                                $('erth_dummy').text(fav_map);
+                            } else {
+                                $('#erth_add').show();
+                                $('#erth_remove').hide();
+                                $('erth_dummy').text('');
+                            }
+                        </script>
                         <div class="map-labels">
                                 <span class="label label-info map-label">CC BY-NC-SA License</span>
                         </div>
@@ -366,8 +435,8 @@
                 </div>
             </div>
             <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="" class="thumbnail map-float">
-                    <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/gold_drught/map.png');">
+                <div id="gold_drught_body" class="thumbnail map-float">
+                    <div id="gold_drught" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/gold_drught/map.png');">
                         <div class="map-banner">
                             <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=gold_drught"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="gold drught 5">gold drught 5</span></strong></a>
                             <span style="display:block;margin-top:-8px;">
@@ -396,6 +465,29 @@
                                         
                             </span>
                         </div>
+                        <div id="favourite-gold_drught" class="map-favourite" style="display:none;">
+                            <span id="gold_drught_add" onclick="Cookies.set('listen_gold_drught', true, { expires: 365 });$('#gold_drught_body').addClass('post-thumbnail-important');$('#gold_drught_add').hide();$('#gold_drught_remove').show();$('gold_drught_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                            <span id="gold_drught_remove" onclick="Cookies.remove('listen_gold_drught');$('#gold_drught_body').removeClass('post-thumbnail-important');$('#gold_drught_add').show();$('#gold_drught_remove').hide();$('gold_drught_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                            <span id="gold_drught_dummy" style="display:none"></span>
+                        </div>
+                        <script>
+                            $("#gold_drught").hover(function(){
+                                $('#favourite-gold_drught').fadeIn();
+                            },function(){
+                                $('#favourite-gold_drught').fadeOut();
+                            });
+                            
+                            if (Cookies.get('listen_gold_drught') == 'true') {
+                                $('#gold_drught_body').addClass('post-thumbnail-important');
+                                $('#gold_drught_add').hide();
+                                $('#gold_drught_remove').show();
+                                $('gold_drught_dummy').text(fav_map);
+                            } else {
+                                $('#gold_drught_add').show();
+                                $('#gold_drught_remove').hide();
+                                $('gold_drught_dummy').text('');
+                            }
+                        </script>
                         <div class="map-labels">
                                 <span class="label label-success map-label">CC BY-SA License</span>
                         </div>
@@ -439,8 +531,8 @@
                 </div>
             </div>
             <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="" class="thumbnail map-float">
-                    <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/pharaohs_palace/map.png');">
+                <div id="pharaohs_palace_body" class="thumbnail map-float">
+                    <div id="pharaohs_palace" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/pharaohs_palace/map.png');">
                         <div class="map-banner">
                             <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=pharaohs_palace"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Pharaohs Palace">Pharaohs Palace</span></strong></a>
                             <span style="display:block;margin-top:-8px;">
@@ -469,6 +561,29 @@
                                         
                             </span>
                         </div>
+                        <div id="favourite-pharaohs_palace" class="map-favourite" style="display:none;">
+                            <span id="pharaohs_palace_add" onclick="Cookies.set('listen_pharaohs_palace', true, { expires: 365 });$('#pharaohs_palace_body').addClass('post-thumbnail-important');$('#pharaohs_palace_add').hide();$('#pharaohs_palace_remove').show();$('pharaohs_palace_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                            <span id="pharaohs_palace_remove" onclick="Cookies.remove('listen_pharaohs_palace');$('#pharaohs_palace_body').removeClass('post-thumbnail-important');$('#pharaohs_palace_add').show();$('#pharaohs_palace_remove').hide();$('pharaohs_palace_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                            <span id="pharaohs_palace_dummy" style="display:none"></span>
+                        </div>
+                        <script>
+                            $("#pharaohs_palace").hover(function(){
+                                $('#favourite-pharaohs_palace').fadeIn();
+                            },function(){
+                                $('#favourite-pharaohs_palace').fadeOut();
+                            });
+                            
+                            if (Cookies.get('listen_pharaohs_palace') == 'true') {
+                                $('#pharaohs_palace_body').addClass('post-thumbnail-important');
+                                $('#pharaohs_palace_add').hide();
+                                $('#pharaohs_palace_remove').show();
+                                $('pharaohs_palace_dummy').text(fav_map);
+                            } else {
+                                $('#pharaohs_palace_add').show();
+                                $('#pharaohs_palace_remove').hide();
+                                $('pharaohs_palace_dummy').text('');
+                            }
+                        </script>
                         <div class="map-labels">
                                 <span class="label label-success map-label">CC BY-SA License</span>
                         </div>
@@ -512,8 +627,8 @@
                 </div>
             </div>
             <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="" class="thumbnail map-float">
-                    <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/shave_harambe/map.png');">
+                <div id="shave_harambe_body" class="thumbnail map-float">
+                    <div id="shave_harambe" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/shave_harambe/map.png');">
                         <div class="map-banner">
                             <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=shave_harambe"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Shave Harambe">Shave Harambe</span></strong></a>
                             <span style="display:block;margin-top:-8px;">
@@ -542,6 +657,29 @@
                                         
                             </span>
                         </div>
+                        <div id="favourite-shave_harambe" class="map-favourite" style="display:none;">
+                            <span id="shave_harambe_add" onclick="Cookies.set('listen_shave_harambe', true, { expires: 365 });$('#shave_harambe_body').addClass('post-thumbnail-important');$('#shave_harambe_add').hide();$('#shave_harambe_remove').show();$('shave_harambe_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                            <span id="shave_harambe_remove" onclick="Cookies.remove('listen_shave_harambe');$('#shave_harambe_body').removeClass('post-thumbnail-important');$('#shave_harambe_add').show();$('#shave_harambe_remove').hide();$('shave_harambe_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                            <span id="shave_harambe_dummy" style="display:none"></span>
+                        </div>
+                        <script>
+                            $("#shave_harambe").hover(function(){
+                                $('#favourite-shave_harambe').fadeIn();
+                            },function(){
+                                $('#favourite-shave_harambe').fadeOut();
+                            });
+                            
+                            if (Cookies.get('listen_shave_harambe') == 'true') {
+                                $('#shave_harambe_body').addClass('post-thumbnail-important');
+                                $('#shave_harambe_add').hide();
+                                $('#shave_harambe_remove').show();
+                                $('shave_harambe_dummy').text(fav_map);
+                            } else {
+                                $('#shave_harambe_add').show();
+                                $('#shave_harambe_remove').hide();
+                                $('shave_harambe_dummy').text('');
+                            }
+                        </script>
                         <div class="map-labels">
                                 <span class="label label-info map-label">CC BY-NC-SA License</span>
                         </div>
