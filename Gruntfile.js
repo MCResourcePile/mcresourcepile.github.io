@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 					dest: 'out/'
 				}],
 				helpers: 'src/helpers/title.js',
-				partials: ['src/partials/header.html', 'src/partials/footer.html', 'src/partials/alert.html', 'src/partials/map.html'],
+				partials: ['src/partials/header.html', 'src/partials/footer.html', 'src/partials/alert.html', 'src/partials/map.html', 'src/partials/league.html'],
 				templateData: 'src/data/**/*.json'
 			}
 		},

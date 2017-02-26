@@ -1,0 +1,123 @@
+{{> header}}
+<div class="container">
+	<div class="content-header">
+        {{> alert}}
+		<div class="content-title">{{name}}</div>
+		<div class="content-subtitle">
+			Information about <a href="{{anounncement}}">{{name}}</a> tournament hosted by {{#if @root.page-category.overcast}}Overcast Network{{else}}{{#if @root.page-category.avicus}}Avicus Network{{/if}}{{/if}}.
+		</div>
+	</div>
+    
+    <!-- League banner -->
+    <div class="league-banner" style="background: url('../../assets/img/tournament/{{id}}/banner.png');background-position:center">{{name}}</div>
+    
+    <!-- League winners -->
+    <div class="league-results row center">
+        <div class="league-position col-sm-4">
+            <div class="fa fa-star"></div>
+            <div class="league-team">{{second}}</div>
+            <div class="league-team-position">2nd place</div>
+        </div>
+        <div class="league-position league-position-first col-sm-4">
+            <span class="fa fa-trophy"></span>
+            <div class="league-team">{{first}}</div>
+            <div class="league-team-position">1st place</div>
+        </div>
+        <div class="league-position col-sm-4">
+            <div class="fa fa-star"></div>
+            <div class="league-team">{{third}}</div>
+            <div class="league-team-position">3rd place</div>
+        </div>
+    </div>
+    
+    <!-- League information -->
+    <div class="league-info-section large">Tournament Information</div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well well-sm well-custom-blue">
+                <div class="league-info-section">Details</div>
+                <table class="league-info-table">
+                    <tbody>
+                        <tr>
+                            <td>Method</td>
+                            <td>{{method}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gamemodes</td>
+                            <td>{{gamemodes}}</td>
+                        </tr>
+                        <tr>
+                            <td>Teams</td>
+                            <td>{{selection}}</td>
+                        </tr>
+                        <tr>
+                            <td>Players</td>
+                            <td>{{players}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="well well-sm well-custom-blue">
+                <div class="league-info-section">Dates and Times</div>
+                <table class="league-info-table">
+                    <tbody>
+                        {{#dates}}
+                        <tr>
+                            <td>{{stage}}</td>
+                            <td>{{date}}</td>
+                        </tr>
+                        {{/dates}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Leage map pool -->
+    <div class="league-info-section large">Map Pool</div>
+    <div class="row">
+        {{#pool}}
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="{{slug}}" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/pool/{{slug}}.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>{{map}}</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">{{gamemode}}</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label">{{round}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/pool}}
+    </div>
+    
+    <!-- League teams -->
+    <div class="league-info-section large">Teams</div>
+    <div class="row">
+        {{#teams}}
+        <div class="col-md-3">
+            <div class="well well-sm well-custom-red">
+                <div class="league-info-section">{{group}}</div>
+                <ul>
+                    {{#participants}}
+                    <li>{{team}}</li>
+                    {{/participants}}
+                </ul>
+            </div>
+        </div>
+        {{/teams}}
+    </div>
+    
+    <!-- League standings -->
+    <div class="league-info-section large">Standings</div>
+    <iframe src="{{challonge}}" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+</div>
+{{> footer}}
+</body>
+</html>
