@@ -1,16 +1,16 @@
 {{> header}}
 <div class="container">
-	<div class="content-header">
+    <div class="content-header">
         {{> alert}}
-		<div class="content-title">{{name}}</div>
-		<div class="content-subtitle">
-			Information about <a href="{{anounncement}}">{{name}}</a> tournament hosted by {{#if @root.page-category.overcast}}Overcast Network{{else}}{{#if @root.page-category.avicus}}Avicus Network{{/if}}{{/if}}.
-		</div>
-	</div>
-    
+        <div class="content-title">{{name}}</div>
+        <div class="content-subtitle">
+            Information about {{#if announcement}}<a href="{{announcement}}" target="_blank">{{name}}</a>{{else}}{{name}}{{/if}} tournament hosted by {{#if @root.page-category.overcast}}Overcast Network{{else}}{{#if @root.page-category.avicus}}Avicus Network{{else}}{{host}}{{/if}}{{/if}}.
+        </div>
+    </div>
+
     <!-- League banner -->
     <div class="league-banner" style="background: url('../../assets/img/tournament/{{id}}/banner.png');background-position:center">{{name}}</div>
-    
+
     <!-- League winners -->
     <div class="league-results row center">
         <div class="league-position col-sm-4">
@@ -29,7 +29,7 @@
             <div class="league-team-position">3rd place</div>
         </div>
     </div>
-    
+
     <!-- League information -->
     <div class="league-info-section large">Tournament Information</div>
     <div class="row">
@@ -74,7 +74,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Leage map pool -->
     <div class="league-info-section large">Map Pool</div>
     <div class="row">
@@ -96,7 +96,7 @@
         </div>
         {{/pool}}
     </div>
-    
+
     <!-- League teams -->
     <div class="league-info-section large">Teams</div>
     <div class="row">
@@ -113,7 +113,7 @@
         </div>
         {{/teams}}
     </div>
-    
+
     <!-- League standings -->
     <div class="league-info-section large">Standings</div>
     <iframe src="{{challonge}}" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
