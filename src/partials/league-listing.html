@@ -1,0 +1,21 @@
+{{> header}}
+<div class="container">
+    <div class="content-header">
+        {{> alert}}
+        <div class="content-title">{{#if @root.page-category.overcast}}Overcast Network{{else}}{{#if @root.page-category.avicus}}Avicus Network{{else}}{{host}}{{/if}}{{/if}} - LeagueRec</div>
+        <div class="content-subtitle">
+            <p>List of {{#unless official}}Unofficial{{/unless}} Tournaments hosted by the {{#if @root.page-category.overcast}}<a href="https://oc.tc/" target="_blank">Overcast Network</a>{{else}}{{#if @root.page-category.avicus}}<a href="https://avicus.net/" target="_blank">Avicus Network</a>{{else}}{{host}}{{/if}}{{/if}}{{#unless official}} community{{/unless}}.</p>
+        </div>
+        <hr>
+        <div class="section">
+            {{#tournaments}}
+                <a href="/leaguerec/{{#if @root.page-category.overcast}}overcast{{else}}{{#if @root.page-category.avicus}}avicus{{else}}{{host}}{{/if}}{{/if}}{{#unless official}}_unofficial{{/unless}}/{{id}}">
+                    <div class="league-banner" style="background: url('../../assets/img/tournament/{{id}}/banner.png');background-position:center">{{name}}</div>
+                </a>
+            {{/tournaments}}
+        </div>
+    </div>
+</div>
+{{> footer}}
+</body>
+</html>
