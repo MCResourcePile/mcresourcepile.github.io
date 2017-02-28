@@ -9,7 +9,7 @@
         <hr>
         <div class="section">
             {{#tournaments}}
-                <a href="/leaguerec/{{#if @root.page-category.overcast}}overcast{{else}}{{#if @root.page-category.avicus}}avicus{{else}}{{host}}{{/if}}{{/if}}{{#unless official}}_unofficial{{/unless}}/{{id}}">
+                <a href="/leaguerec/{{#if @root.page-category.overcast}}overcast{{else}}{{#if @root.page-category.avicus}}avicus{{else}}{{host}}{{/if}}{{/if}}{{#unless @root.official}}_unofficial{{/unless}}/{{id}}">
                     <div class="league-banner" style="background: url('../../assets/img/tournament/{{id}}/banner.png');background-position:center">{{name}}</div>
                 </a>
             {{/tournaments}}
