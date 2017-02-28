@@ -114,9 +114,11 @@
         {{/teams}}
     </div>
 
+    {{#if challonge}}
     <!-- League standings -->
     <div class="league-info-section large">Standings</div>
     <iframe src="{{challonge}}" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    {{/if}}
 </div>
 {{> footer}}
 </body>
