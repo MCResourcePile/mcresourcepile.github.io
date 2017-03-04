@@ -34,7 +34,7 @@
             ga('create', 'UA-91801520-1', 'auto');
             ga('send', 'pageview');
         </script>
-        
+        <script src="/assets/js/jquery-validate.js"></script>
     </head>
     <body >
         <!-- Page navigation -->
@@ -103,47 +103,84 @@
             Contact us with any questions you have
         </div>
     </div>
-    <div class="form-body">
-        <div class="form-section">Username</div>
-        <div class="form-section-hint">Your username</div>
-        <input type="text" name="username" id="username" placeholder="Username" required />
-        <br/>
+    <div class="form-body" id="form">
+        <p class="form-required-text">* Required</p>
 
-        <div class="form-section">Email</div>
-        <div class="form-section-hint">Your email so we can get in contact with you<br>You can alternativly provide us with your Discord below</div>
-        <input type="text" name="email" id="email" placeholder="user@example.com" />
-        <br/>
+        <form>
+            <div class="form-group">
+                <div class="form-section control-label form-required">Username</div>
+                <div class="form-section-hint">Your username</div>
+                <input type="text" class="form-control form-text-box" name="username" id="username" placeholder="Username" required/>
+                <br/>
+            </form>
 
-        <div class="form-section">Discord</div>
-        <div class="form-section-hint">Your discord username so we can get in contact with you<br>This is an alternative contact form to using Email</div>
-        <input type="text" name="discord" id="discord" placeholder="user#1234" />
-        <br/>
+            <div class="form-group">
+                <div class="form-section">Email</div>
+                <div class="form-section-hint">Your email so we can get in contact with you<br/>You can alternativly provide us with your Discord below</div>
+                <input type="text" class="form-control form-text-box" name="email" id="email" placeholder="user@example.com"/>
+                <br/>
+            </div>
 
-        <div class="form-section">Your message</div>
-        <div class="form-section-hint">Type your message below</div>
-        <textarea type="text" name="content" id="content" placeholder="Type here..." style="width: 195px;" required></textarea>
-        <br/>
+            <div class="form-group">
+                <div class="form-section">Discord</div>
+                <div class="form-section-hint">Your discord username so we can get in contact with you<br/>This is an alternative contact form to using Email</div>
+                <input type="text" class="form-control form-text-box" name="discord" id="discord" placeholder="user#1234"/>
+                <br/>
+            </div>
 
-        <input class="form-submit" type="button" name="Submit" id="Submit" onclick="postContactToGoogle()" value="Submit" />
+            <div class="form-group">
+                <div class="form-section control-label form-required">Your message</div>
+                <div class="form-section-hint">Type your message below</div>
+                <textarea type="text" class="form-control" name="content" id="content" placeholder="Type here..." style="width: 195px;" required></textarea>
+                <br/>
+            </div>
+
+            <input class="form-submit btn btn-default" type="submit" name="submit" id="submit" value="Submit"/>
+        </form>
     </div>
 </div>
 <script type="text/javascript">
-    function postContactToGoogle() {
-        var username=$('#username').val();
-        var email=$('#email').val();
-        var discord=$('#discord').val();
-        var content=$('#content').val();
-        $.ajax({
-            url: "https://docs.google.com/forms/d/e/1FAIpQLSeuxYz9LI-ufVofwje8CvbZE8-aXkWCRQ3F0p-KRXoCMvSU5Q/formResponse",
-            data: {"entry.1700558707":username, "entry.1567361955":email, "entry.1354041209":discord, "entry.875454530":content},
-            type: "POST",
-            dataType: "xml",
-            statusCode: {
-                0:function() { window.location.replace("success");},
-                200:function(){window.location.replace("success");}
+    $(document).ready(function() {
+        $('form').validate({
+            rules: {
+                username: {
+                    required: true
+                },
+                email: {
+                    email: true,
+                    required: false
+                },
+                discord: {
+                    required: false
+                },
+                content: {
+                    required: true
+                }
+            },
+            highlight: function(element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function(element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            submitHandler: function(form) {
+                var username=$('#username').val();
+                var email=$('#email').val();
+                var discord=$('#discord').val();
+                var content=$('#content').val();
+                $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSeuxYz9LI-ufVofwje8CvbZE8-aXkWCRQ3F0p-KRXoCMvSU5Q/formResponse",
+                    data: {"entry.1700558707":username, "entry.1567361955":email, "entry.1354041209":discord, "entry.875454530":content},
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                        0:function() { window.location.replace("success");},
+                        200:function(){window.location.replace("success");}
+                    }
+                });
             }
         });
-    }
+    });
 </script>
 </div>
 <div class="footer">

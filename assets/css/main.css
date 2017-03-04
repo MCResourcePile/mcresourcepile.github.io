@@ -727,9 +727,23 @@ span.game-mode-button {
 
 .form-submit:hover,
 .form-submit:active {
-  color: #ffffff;
-  background-color: #2980b9;
+    color: #ffffff;
+    background-color: #2980b9;
 }
+
+.form-required::after {
+    content: " *";
+    color: #db4437;
+}
+
+.form-required-text {
+    color: #db4437;
+}
+
+.form-text-box {
+    width: 200px;
+}
+
 .paginate-nav a {
     position: relative;
     float: left;
