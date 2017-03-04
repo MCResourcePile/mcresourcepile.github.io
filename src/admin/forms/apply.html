@@ -7,51 +7,92 @@
             Apply for a position in the ResourcePile team
         </div>
     </div>
-    <div class="form-body">
-        <div class="form-section">Username</div>
-        <div class="form-section-hint">Your username</div>
-        <input type="text" name="username" id="username" placeholder="Username" required />
-        <br/>
+    <div class="form-body" id="form">
+        <p class="form-required-text">* Required</p>
 
-        <div class="form-section">Discord</div>
-        <div class="form-section-hint">Your discord username so we can get in contact with you</div>
-        <input type="text" name="discord" id="discord" placeholder="user#1234" required />
-        <br/>
+        <form>
+            <div class="form-group">
+                <div class="form-section control-label form-required">Username</div>
+                <div class="form-section-hint">Your username</div>
+                <input type="text" class="form-control form-text-box" name="username" id="username" placeholder="Username" required/>
+                <br/>
+            </div>
 
-        <div class="form-section">Position</div>
-        <div class="form-section-hint">The positions you would like to apply for</div>
-        <input type="checkbox" name="developer" id="developer" value="yes"> Developer <small>(Help develop the website and future projects)</small><br>
-        <input type="checkbox" name="helper" id="helper" value="yes"> Helper <small>(Assist in collating data and maps as well as assisting in future projects)</small><br>
-        <input type="checkbox" name="designer" id="designer" value="yes"> Designer <small>(Create media for use on the website and associated services)</small><br>
-        <br/>
+            <div class="form-group">
+                <div class="form-section control-label form-required">Discord</div>
+                <div class="form-section-hint">Your discord username so we can get in contact with you</div>
+                <input type="text" class="form-control form-text-box" name="discord" id="discord" placeholder="user#1234" required/>
+                <br/>
+            </div>
 
-        <div class="form-section">About Yourself</div>
-        <div class="form-section-hint">Tell us a little about yourself and why we should have you on the team</div>
-        <textarea type="text" name="about" id="about" placeholder="Type here..." style="width: 195px;" required ></textarea>
-        <br/>
+            <div class="form-group">
+                <div class="form-section control-label form-required">Position</div>
+                <div class="form-section-hint">The positions you would like to apply for</div>
+                <input type="checkbox" name="position" id="developer" value="yes"> Developer <small>(Help develop the website and future projects)</small><br>
+                <input type="checkbox" name="position" id="helper" value="yes"> Helper <small>(Assist in collating data and maps as well as assisting in future projects)</small><br>
+                <input type="checkbox" name="position" id="designer" value="yes"> Designer <small>(Create media for use on the website and associated services)</small><br>
+                <br/>
+            </div>
 
-        <input class="form-submit" type="button" name="Submit" id="Submit" onclick="postContactToGoogle()" value="Submit" />
+            <div class="form-group">
+                <div class="form-section control-label form-required">About Yourself</div>
+                <div class="form-section-hint">Tell us a little about yourself and why we should have you on the team</div>
+                <textarea type="text" class="form-control form-text-box" name="about" id="about" placeholder="Type here..." style="width: 195px;" required ></textarea>
+                <br/>
+            </div>
+
+            <input class="form-submit btn btn-default" type="submit" name="submit" id="submit" value="Submit"/>
+        </form>
     </div>
 </div>
 <script type="text/javascript">
-    function postContactToGoogle() {
-        var username=$('#username').val();
-        var discord=$('#discord').val();
-        var developer=$('#developer').val();
-        var helper=$('#helper').val();
-        var designer=$('#designer').val();
-        var about=$('#about').val();
-        $.ajax({
-            url: "https://docs.google.com/forms/d/e/1FAIpQLScVmw8r3H--iUR-yaYxWMCJVP7VEycX7KrYx3EIC8dtrEN2pQ/formResponse",
-            data: {"entry.1202166192":username, "entry.299353712":discord, "entry.2117081059":developer, "entry.1713634116":helper, "entry.331803582":designer, "entry.298721869":about},
-            type: "POST",
-            dataType: "xml",
-            statusCode: {
-                0:function() { window.location.replace("success");},
-                200:function(){window.location.replace("success");}
+    $(document).ready(function() {
+        $('form').validate({
+            rules: {
+                username: {
+                    required: true
+                },
+                discord: {
+                    required: true
+                },
+                position: {
+                    required: true
+                },
+                about: {
+                    required: true
+                }
+            },
+            messages: {
+                position: {
+                    required: ""
+                }
+            },
+            highlight: function(element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function(element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            submitHandler: function(form) {
+                var username=$('#username').val();
+                var discord=$('#discord').val();
+                var developer=$('#developer').val();
+                var helper=$('#helper').val();
+                var designer=$('#designer').val();
+                var about=$('#about').val();
+                $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLScVmw8r3H--iUR-yaYxWMCJVP7VEycX7KrYx3EIC8dtrEN2pQ/formResponse",
+                    data: {"entry.1202166192":username, "entry.299353712":discord, "entry.2117081059":developer, "entry.1713634116":helper, "entry.331803582":designer, "entry.298721869":about},
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                        0:function() { window.location.replace("success");},
+                        200:function(){window.location.replace("success");}
+                    }
+                });
             }
         });
-    }
+    });
 </script>
 {{> footer}}
 </body>

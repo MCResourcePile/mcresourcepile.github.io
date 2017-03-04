@@ -7,61 +7,99 @@
             Submit your map to be featured in our MapStack repositories
         </div>
     </div>
-    <div class="form-body">
-        <div class="form-section">Username</div>
-        <div class="form-section-hint">Your username, and the username of any other authors</div>
-        <input type="text" name="username" id="username" placeholder="Username" required />
-        <br/>
+    <div class="form-body" id="form">
+        <p class="form-required-text">* Required</p>
 
-        <div class="form-section">Map Name</div>
-        <div class="form-section-hint">The display name for your map</div>
-        <input type="text" name="map" id="map" placeholder="Map Name" required />
-        <br/>
+        <form>
+            <div class="form-group">
+                <div class="form-section control-label form-required">Username</div>
+                <div class="form-section-hint">Your username, and the username of any other authors</div>
+                <input type="text" class="form-control form-text-box" name="username" id="username" placeholder="Username" required/>
+                <br/>
+            </div>
 
-        <div class="form-section">Download URL</div>
-        <div class="form-section-hint">Download URL for your map - only use this if your map was not in the official repository</div>
-        <input type="text" name="download" id="download" placeholder="Download URL" />
-        <br/>
+            <div class="form-group">
+                <div class="form-section control-label form-required">Map Name</div>
+                <div class="form-section-hint">The display name for your map</div>
+                <input type="text" class="form-control form-text-box" name="map" id="map" placeholder="Map Name" required />
+                <br/>
+            </div>
 
-        <div class="form-section">Creative Commons License</div>
-        <div class="form-section-hint">The Creative Commons License associated with your map and distributed copies.<br/> All licenses include <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Attribution</a> and <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">ShareALike</a>, but you can chose if your map can be used for <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">commercial purposes</a> or not</div>
-        <select name="license" id="license" style="width: 195px;" required>
-            <option value="unknown">Select an option</option>
-            <option value="by-sa">Commercial</option>
-            <option value="by-nc-sa">Non-Commercial</option>
-        </select>
-        <br/>
+            <div class="form-group">
+                <div class="form-section">Download URL</div>
+                <div class="form-section-hint">Download URL for your map - only use this if your map was not in the official repository</div>
+                <input type="text" class="form-control form-text-box" name="download" id="download" placeholder="Download URL" />
+                <br/>
+            </div>
 
-        <div class="form-section">Network</div>
-        <div class="form-section-hint">The network which the map was loaded on or you are submitting your map to</div>
-        <select name="network" id="network" style="width: 195px;" required>
-            <option value="unknown">Select an option</option>
-            <option value="overcast">Overcast Network</option>
-            <option value="avicus">Avicus Network</option>
-        </select>
-        <br/>
+            <div class="form-group">
+                <div class="form-section control-label form-required">Creative Commons License</div>
+                <div class="form-section-hint">The Creative Commons License associated with your map and distributed copies.<br/> All licenses include <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Attribution</a> and <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">ShareALike</a>, but you can chose if your map can be used for <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">commercial purposes</a> or not</div>
+                <select class="form-control required" name="license" id="license" style="width: 195px;" required>
+                    <option value="">Select an option</option>
+                    <option value="by-sa">Commercial</option>
+                    <option value="by-nc-sa">Non-Commercial</option>
+                </select>
+                <br/>
+            </div>
 
-        <input class="form-submit" type="button" name="submit" id="submit" onclick="postContactToGoogle()" value="Submit" />
+            <div class="form-group">
+                <div class="form-section control-label form-required">Network</div>
+                <div class="form-section-hint">The network which the map was loaded on or you are submitting your map to</div>
+                <select class="form-control required" name="network" id="network" style="width: 195px;" required>
+                    <option value="">Select an option</option>
+                    <option value="overcast">Overcast Network</option>
+                    <option value="avicus">Avicus Network</option>
+                </select>
+                <br/>
+            </div>
+
+            <input class="form-submit btn btn-default" type="submit" name="submit" id="submit" value="Submit"/>
+        </form>
     </div>
 </div>
 <script type="text/javascript">
-    function postContactToGoogle() {
-        var username=$('#username').val();
-        var map=$('#map').val();
-        var download=$('#download').val();
-        var license=$('#license').val();
-        var network=$('#network').val();
-        $.ajax({
-            url: "https://docs.google.com/forms/d/e/1FAIpQLScvcHHqbC2Rhkg7UjRiKDXAK7zYKIXR1kN897FQIx9oP1JWlQ/formResponse",
-            data: {"entry.46679831":username, "entry.1525499051":map, "entry.303161302":download, "entry.1108251078":license, "entry.232672519":network},
-            type: "POST",
-            dataType: "xml",
-            statusCode: {
-                0:function() { window.location.replace("success");},
-                200:function(){window.location.replace("success");}
+    $(document).ready(function() {
+        $('form').validate({
+            rules: {
+                username: {
+                    required: true
+                },
+                map: {
+                    required: true
+                },
+                license: {
+                    required: true
+                },
+                network: {
+                    required: true
+                }
+            },
+            highlight: function(element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function(element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            submitHandler: function(form) {
+                var username=$('#username').val();
+                var map=$('#map').val();
+                var download=$('#download').val();
+                var license=$('#license').val();
+                var network=$('#network').val();
+                $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLScvcHHqbC2Rhkg7UjRiKDXAK7zYKIXR1kN897FQIx9oP1JWlQ/formResponse",
+                    data: {"entry.46679831":username, "entry.1525499051":map, "entry.303161302":download, "entry.1108251078":license, "entry.232672519":network},
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                        0:function() { window.location.replace("success");},
+                        200:function(){window.location.replace("success");}
+                    }
+                });
             }
         });
-    }
+    });
 </script>
 {{> footer}}
 </body>
