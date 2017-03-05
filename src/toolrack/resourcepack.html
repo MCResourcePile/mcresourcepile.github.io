@@ -13,121 +13,122 @@
     <div class="game-mode-navigation row">
         <div class="col-xs-6 col-md-3">
             <div class="game-mode-section-header">Texture Size</div>
-            <a class="game-mode-button size_8x" href="?s=8x"></a>
-            <a class="game-mode-button size_16x" href="?s=16x"></a>
-            <a class="game-mode-button size_32x" href="?s=32x"></a>
-            <a class="game-mode-button size_64x" href="?s=64x"></a>
-            <a class="game-mode-button size_128x" href="?s=128x"></a>
-            <a class="game-mode-button size_256x" href="?s=256x"></a>
+            <div class="row">
+                <div class="col-xs-6">
+                    <a class="game-mode-button size_8x" href="?s=8x"></a>
+                    <a class="game-mode-button size_32x" href="?s=32x"></a>
+                    <a class="game-mode-button size_128x" href="?s=128x"></a>
+                </div>
+                <div class="col-xs-6">
+                    <a class="game-mode-button size_16x" href="?s=16x"></a>
+                    <a class="game-mode-button size_64x" href="?s=64x"></a>
+                    <a class="game-mode-button size_256x" href="?s=256x"></a>
+                </div>
+            </div>
         </div>
         <div class="col-xs-6 col-md-3">
             <div class="game-mode-section-header">Minecraft Version</div>
-            <a class="game-mode-button version-1-11" href="?s=1.11"></a>
-            <a class="game-mode-button version-1-10" href="?s=1.10"></a>
-            <a class="game-mode-button version-1-9" href="?s=1.9"></a>
-            <a class="game-mode-button version-1-8" href="?s=1.8"></a>
-            <a class="game-mode-button version-1-7" href="?s=1.7"></a>
+            <div class="row">
+                <div class="col-xs-6">
+                    <a class="game-mode-button version-1-11" href="?s=1.11"></a>
+                    <a class="game-mode-button version-1-9" href="?s=1.9"></a>
+                    <a class="game-mode-button version-1-7" href="?s=1.7"></a>
+                </div>
+                <div class="col-xs-6">
+                    <a class="game-mode-button version-1-10" href="?s=1.10"></a>
+                    <a class="game-mode-button version-1-8" href="?s=1.8"></a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="total_resource_packs center" style="padding-top: 10px; padding-bottom: 10px;"></div>
     <div id="resource-packs-output">
         {{#with data}}
         <table class="table" id="table">
-            <thead>
-                <tr>
-                    <th width="5%" class="hidden-xs hidden-md"></th>
-                    <th width="30%">Name</th>
-                    <th width="25%">Size</th>
-                    <th width="25%"><abbr title="Minecraft">MC</abbr> Version</th>
-                    <th width="15%"></th>
-                </tr>
-            </thead>
             <tbody>
                 {{#resource-packs}}
                 <tr id="{{id}}" class="resource-pack">
-                    <td class="hidden-xs hidden-md">
-                        {{#if icon}}
-                            <img src="{{icon}}" class="rp-icon">
-                        {{/if}}
-                    </td>
-                    <td>
-                        {{#if name}}
-                        <p class="rp-name">{{name}}</p>
-                        {{else}}
-                        <p class="rp-name">Unknown name</p>
-                        {{/if}}
-                        <span>
-                            <span class="author-tag">by</span>
-                            {{#if authors}}
-                            {{#authors}}
-                            <li class="game-tag author-tag">{{#if player_name}}<a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
-                            {{/authors}}
-                            {{else}}<span class="map-author-name author-tag">Ghost</span>
-                            {{/if}}
-                        </span>
-                    </td>
-                    <td>
-                        {{#if sizes}}
-                            {{#sizes}}
-                                {{#if 8x}}<li class="size-tag"><a href="?s=8x">8x</a><span class="tag_hidden">8x8</span></li>{{/if}}
-                                {{#if 16x}}<li class="size-tag"><a href="?s=16x">16x</a><span class="tag_hidden">16x16</span></li>{{/if}}
-                                {{#if 32x}}<li class="size-tag"><a href="?s=32x">32x</a><span class="tag_hidden">32x32</span></li>{{/if}}
-                                {{#if 64x}}<li class="size-tag"><a href="?s=64x">64x</a><span class="tag_hidden">64x64</span></li>{{/if}}
-                                {{#if 128x}}<li class="size-tag"><a href="?s=128x">128x</a><span class="tag_hidden">128x128</span></li>{{/if}}
-                                {{#if 256x}}<li class="size-tag"><a href="?s=256x">256x</a><span class="tag_hidden">256x256</span></li>{{/if}}
-                            {{/sizes}}
-                            {{else}}
-                            <li class="size-tag"><span class="size-link size-tag">Unknown Size</span></li>
-                        {{/if}}
-                    </td>
-                    <td>
-                        {{#if mcversions}}
-                            {{#mcversions}}
-                                {{#if 1-7}}<li class="mcversion-tag"><a href="?s=1.7">1.7</a></li>{{/if}}
-                                {{#if 1-8}}<li class="mcversion-tag"><a href="?s=1.8">1.8</a></li>{{/if}}
-                                {{#if 1-9}}<li class="mcversion-tag"><a href="?s=1.9">1.9</a></li>{{/if}}
-                                {{#if 1-10}}<li class="mcversion-tag"><a href="?s=1.10">1.10</a></li>{{/if}}
-                                {{#if 1-11}}<li class="mcversion-tag"><a href="?s=1.11">1.11</a></li>{{/if}}
-                            {{/mcversions}}
-                            {{else}}
-                            <li class="size-tag"><span class="size-link size-tag">Unknown Version</span></li>
-                        {{/if}}
-                    </td>
                     <td>
                         <div class="row">
                             <div class="col-md-4">
-                                {{#if images}}
-                                <a href="{{images}}" target="_blank">
-                                    <i class="fa fa-picture-o" data-toggle="tooltip" data-placement="top" title="" data-original-title="Images"></i>
-                                </a>
-                                {{else}}
-                                <i class="fa fa-picture-o" data-toggle="tooltip" data-placement="top" title="" data-original-title="No Images"></i>
-                                {{/if}}
-                            </div>
-                            <div class="col-md-4">
-                                {{#if download}}
-                                <a href="{{download}}" target="_blank">
-                                    <i class="fa fa-download icon-links" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"></i>
-                                </a>
-                                {{else}}
-                                    {{#if discussion}}
-                                    <a href="{{discussion}}" target="_blank">
-                                        <i class="fa fa-download icon-links" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download in Discussion Thread"></i>
-                                    </a>
-                                    {{else}}
-                                    <i class="fa fa-download" data-toggle="tooltip" data-placement="top" title="" data-original-title="No Download"></i>
+                                <img src="{{#if icon}}{{icon}}{{else}}/assets/img/logo.png{{/if}}" class="rp-icon">
+                                <div class="rp-info">
+                                    {{#if name}}
+                                        <p class="rp-name">{{name}}</p>
+                                        {{else}}
+                                        <p class="rp-name">Untitled Pack</p>
                                     {{/if}}
-                                {{/if}}
+                                    <div>
+                                        <span class="author-tag">by</span>
+                                        {{#if authors}}
+                                            {{#authors}}
+                                            <li class="game-tag author-tag">{{#if player_name}}<a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+                                            {{/authors}}
+                                            {{else}}<span class="map-author-name author-tag">Ghost</span>
+                                        {{/if}}
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-4">
-                                {{#if discussion}}
-                                <a href="{{discussion}}" target="_blank">
-                                    <i class="fa fa-comments" href="{{discussion}}" data-toggle="tooltip" data-placement="top" title="" data-original-title="Discussion Thread"></i>
-                                </a>
-                                {{else}}
-                                <i class="fa fa-comments" data-toggle="tooltip" data-placement="top" title="" data-original-title="No Discussion Thread"></i>
-                                {{/if}}
+                            <div class="col-md-8 row center">
+                                <div class="col-xs-6 col-md-4 rp-details">
+                                    {{#if sizes}}
+                                        {{#sizes}}
+                                            {{#if 8x}}<li class="size-tag"><a href="?s=8x">8x</a><span class="tag_hidden">8x8</span></li>{{/if}}
+                                            {{#if 16x}}<li class="size-tag"><a href="?s=16x">16x</a><span class="tag_hidden">16x16</span></li>{{/if}}
+                                            {{#if 32x}}<li class="size-tag"><a href="?s=32x">32x</a><span class="tag_hidden">32x32</span></li>{{/if}}
+                                            {{#if 64x}}<li class="size-tag"><a href="?s=64x">64x</a><span class="tag_hidden">64x64</span></li>{{/if}}
+                                            {{#if 128x}}<li class="size-tag"><a href="?s=128x">128x</a><span class="tag_hidden">128x128</span></li>{{/if}}
+                                            {{#if 256x}}<li class="size-tag"><a href="?s=256x">256x</a><span class="tag_hidden">256x256</span></li>{{/if}}
+                                        {{/sizes}}
+                                        {{else}}
+                                        <li class="size-tag"><span class="size-link size-tag">Unknown Size</span></li>
+                                    {{/if}}
+                                </div>
+                                <div class="col-xs-6 col-md-4 rp-details">
+                                    {{#if mcversions}}
+                                        {{#mcversions}}
+                                            {{#if 1-7}}<li class="mcversion-tag"><a href="?s=1.7">1.7</a></li>{{/if}}
+                                            {{#if 1-8}}<li class="mcversion-tag"><a href="?s=1.8">1.8</a></li>{{/if}}
+                                            {{#if 1-9}}<li class="mcversion-tag"><a href="?s=1.9">1.9</a></li>{{/if}}
+                                            {{#if 1-10}}<li class="mcversion-tag"><a href="?s=1.10">1.10</a></li>{{/if}}
+                                            {{#if 1-11}}<li class="mcversion-tag"><a href="?s=1.11">1.11</a></li>{{/if}}
+                                        {{/mcversions}}
+                                        {{else}}
+                                        <li class="size-tag"><span class="size-link size-tag">Unknown Version</span></li>
+                                    {{/if}}
+                                </div>
+                                <div class="col-xs-12 col-md-4 row rp-details">
+                                    <div class="col-xs-4">
+                                        {{#if images}}
+                                        <a class="fa fa-picture-o icon-links" href="{{images}}" target="_blank"></a>
+                                        {{else}}
+                                        <span class="fa fa-picture-o icon-links"></span>
+                                        {{/if}}
+                                    </div>
+                                    <div class="col-xs-4">
+                                        {{#if download}}
+                                        <a class="fa fa-download icon-links" href="{{download}}" target="_blank"></a>
+                                        {{else}}
+                                            {{#if discussion}}
+                                            <a href="{{discussion}}" target="_blank">
+                                                <span class="fa fa-comments-o icon-links icon-links-alt"></span>
+                                                <span class="fa fa-download icon-links"></span>
+                                            </a>
+                                            {{else}}
+                                            <span class="fa fa-download icon-links"></span>
+                                            {{/if}}
+                                        {{/if}}
+                                    </div>
+                                    <div class="col-xs-4">
+                                        {{#if discussion}}
+                                        <a class="fa fa-comments icon-links" href="{{discussion}}" target="_blank"></a>
+                                        {{else}}
+                                        <span class="fa fa-comments icon-links"></span>
+                                        {{/if}}
+                                    </div>
+                                </div>
                             </div>
+                        </div>
                     </td>
                 </tr>
                 {{/resource-packs}}
