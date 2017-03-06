@@ -99,13 +99,6 @@
                                 </div>
                                 <div class="col-xs-12 col-md-4 row rp-details">
                                     <div class="col-xs-4">
-                                        {{#if images}}
-                                        <a class="fa fa-picture-o icon-links" href="{{images}}" target="_blank"></a>
-                                        {{else}}
-                                        <span class="fa fa-picture-o icon-links"></span>
-                                        {{/if}}
-                                    </div>
-                                    <div class="col-xs-4">
                                         {{#if download}}
                                         <a class="fa fa-download icon-links" href="{{download}}" target="_blank"></a>
                                         {{else}}
@@ -117,6 +110,13 @@
                                             {{else}}
                                             <span class="fa fa-download icon-links"></span>
                                             {{/if}}
+                                        {{/if}}
+                                    </div>
+                                    <div class="col-xs-4">
+                                        {{#if images}}
+                                        <a class="fa fa-picture-o icon-links" href="{{images}}" target="_blank"></a>
+                                        {{else}}
+                                        <span class="fa fa-picture-o icon-links"></span>
                                         {{/if}}
                                     </div>
                                     <div class="col-xs-4">
