@@ -1,3 +1,5 @@
+{{#with data}}
+{{#maps}}
 {{#unless download}}
 {{! Thumbnail alt if no download }}
 <div id="{{slug}}" class="no-download"></div>
@@ -6,7 +8,7 @@
 <div class="col-sm-6 col-lg-3 map-thumbnail center">
     <div id="{{slug}}_body" class="thumbnail map-float">
         {{! Map image background, contains banner and labels }}
-        <div id="{{slug}}" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{#if official}}{{else}}-unofficial{{/if}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
+        <div id="{{slug}}" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}{{#if @root.page-category.unofficial}}-unofficial{{else}}{{#if cardinal}}-cardinal{{else}}{{/if}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
             {{! Map banner, contains name, authors and quick links }}
             <div class="map-banner">
                 {{! Map heading }}
@@ -56,11 +58,10 @@
                     {{/if}}
                 </span>
             </div>
-            <!--
             <div id="favourite-{{slug}}" class="map-favourite" style="display:none;">
-                <span id="{{slug}}_add" onclick="Cookies.set('listen_{{slug}}', true, { expires: 365 });$('#{{slug}}_body').addClass('post-thumbnail-important');$('#{{slug}}_add').hide();$('#{{slug}}_remove').show();$('{{slug}}_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                <span id="{{slug}}_remove" onclick="Cookies.remove('listen_{{slug}}');$('#{{slug}}_body').removeClass('post-thumbnail-important');$('#{{slug}}_add').show();$('#{{slug}}_remove').hide();$('{{slug}}_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                <span id="{{slug}}_dummy" style="display:none"></span>
+                <span id="{{slug}}_add" onclick="Cookies.set('listen_{{slug}}', true, { expires: 7 });$('#{{slug}}_body').addClass('post-thumbnail-important');$('#{{slug}}_add').hide();$('#{{slug}}_remove').show();$('#{{slug}}_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                <span id="{{slug}}_remove" onclick="Cookies.remove('listen_{{slug}}');$('#{{slug}}_body').removeClass('post-thumbnail-important');$('#{{slug}}_add').show();$('#{{slug}}_remove').hide();$('#{{slug}}_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                <span id="{{slug}}_dummy" class="tag_hidden"></span>
             </div>
             <script>
                 $("#{{slug}}").hover(function(){
@@ -73,13 +74,13 @@
                     $('#{{slug}}_body').addClass('post-thumbnail-important');
                     $('#{{slug}}_add').hide();
                     $('#{{slug}}_remove').show();
-                    $('{{slug}}_dummy').text(fav_map);
+                    $('#{{slug}}_dummy').text(fav_map);
                 } else {
                     $('#{{slug}}_add').show();
                     $('#{{slug}}_remove').hide();
-                    $('{{slug}}_dummy').text('');
+                    $('#{{slug}}_dummy').text('');
                 }
-            </script>-->
+            </script>
             {{! Map labels }}
             <div class="map-labels">
                 {{#if sourced}}
@@ -117,7 +118,7 @@
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
-            <a href="https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{#if official}}{{else}}-unofficial{{/if}}{{/if}}-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
+            <a href="https://github.com/MCResourcePile/{{@root.map-group}}{{#if @root.page-category.unofficial}}-unofficial{{else}}{{#if cardinal}}-cardinal{{else}}{{/if}}{{/if}}-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
             {{/unless}}
             {{/if}}
         </div>
@@ -166,7 +167,7 @@
                         {{/if}}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{#if official}}{{else}}-unofficial{{/if}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
+                        <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}{{#if @root.page-category.unofficial}}-unofficial{{else}}{{#if cardinal}}-cardinal{{else}}{{/if}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -177,3 +178,77 @@
 </div>
 {{! / End main thumbnail body }}
 {{/unless}}
+{{/maps}}
+{{/with}}
+<!--
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <span class="btn map-link-disabled map-button"><i class="fa fa-download"></i> Download starred maps</span>
+    </div>
+    <div class="col-md-4"></div>
+</div>-->
+<div class="modal fade" id="download-starting-message" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Your download will begin shortly...</h4>
+            </div>
+            <div class="modal-body">
+                Please wait while we compile your download.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="download-complete-message" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Your download has begun...</h4>
+            </div>
+            <div class="modal-body">
+                Thank you for downloading this map from ResourcePile and supporting free public maps as well as the map authors.<br><br>
+                This map is licensed undera Creative Commons license which has been included in your download. Please respect this license and the wishes of the map authors as this project would not be here without them.
+                <hr>
+                You currently have <span id="api-request-remaining"></span> out of <span id="api-request-limit"></span> requests left to the GitHub API.<br>
+                This means that you can download approximately <spawn id="api-request-approximate"></spawn> more maps before you must wait an hour for the limit to reset.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="download-error-message" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Your download filed...</h4>
+            </div>
+            <div class="modal-body">
+                Something went wrong while compiling your download. Please try again, but if the issue persists please report an issue on our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Issues Tracker</a>.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="download-rate-limit-message" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">You've hit the rate limit</h4>
+            </div>
+            <div class="modal-body">
+                Looks like you've hit GitHub's rate limit. Sadly there isn't anything we can do about that at the moment, but we are looking for solutions. Please try again in an hour.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
