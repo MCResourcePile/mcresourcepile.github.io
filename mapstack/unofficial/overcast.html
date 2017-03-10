@@ -116,692 +116,695 @@
     <div class="game-mode-navigation row">
         <div class="col-xs-6 col-md-3">
             <div class="game-mode-section-header">Objectives</div>
-            <a class="game-mode-button game_ctf" href="?s=ctf"></a>
-            <a class="game-mode-button game_ctw" href="?s=ctw"></a>
-            <a class="game-mode-button game_dtc" href="?s=dtc"></a>
-            <a class="game-mode-button game_dtm" href="?s=dtm"></a>
-            <a class="game-mode-button game_koth" href="?s=koth"></a>
-            <a class="game-mode-button game_cp" href="?s=cp"></a>
+            <a class="game-mode-button game-ctf" href="?s=ctf"></a>
+            <a class="game-mode-button game-ctw" href="?s=ctw"></a>
+            <a class="game-mode-button game-dtc" href="?s=dtc"></a>
+            <a class="game-mode-button game-dtm" href="?s=dtm"></a>
+            <a class="game-mode-button game-koth" href="?s=koth"></a>
+            <a class="game-mode-button game-cp" href="?s=cp"></a>
         </div>
         <div class="col-xs-6 col-md-3">
             <div class="game-mode-section-header">Deathmatch</div>
-            <a class="game-mode-button game_blitz" href="?s=blitz"></a>
-            <a class="game-mode-button game_rage" href="?s=rage"></a>
-            <a class="game-mode-button game_ffa" href="?s=ffa"></a>
-            <a class="game-mode-button game_skywars" href="?s=skywars"></a>
-            <a class="game-mode-button game_tdm" href="?s=tdm"></a>
+            <a class="game-mode-button game-blitz" href="?s=blitz"></a>
+            <a class="game-mode-button game-rage" href="?s=rage"></a>
+            <a class="game-mode-button game-ffa" href="?s=ffa"></a>
+            <a class="game-mode-button game-skywars" href="?s=skywars"></a>
+            <a class="game-mode-button game-tdm" href="?s=tdm"></a>
         </div>
         <div class="col-xs-6 col-md-3">
             <div class="game-mode-section-header">Competitive</div>
-            <a class="game-mode-button game_ranked" href="?s=ranked"></a>
-            <a class="game-mode-button game_tournament" href="?s=tournament"></a>
+            <a class="game-mode-button game-ranked" href="?s=ranked"></a>
+            <a class="game-mode-button game-tournament" href="?s=tournament"></a>
         </div>
         <div class="col-xs-6 col-md-3">
             <div class="game-mode-section-header">Other</div>
-            <a class="game-mode-button game_all" href="?s="></a>
-            <a class="game-mode-button game_arcade" href="?s=arcade"></a>
-            <a class="game-mode-button game_gs" href="?s=gs"></a>
+            <a class="game-mode-button game-all" href="?s="></a>
+            <a class="game-mode-button game-arcade" href="?s=arcade"></a>
+            <a class="game-mode-button game-gs" href="?s=gs"></a>
+            <a class="game-mode-button custom-starred" href="?s=starred"></a>
             <span class="game-mode-button">Licenses:</span>
-            <a class="game-mode-button license_by_nc_sa" href="?s=by-nc-sa"></a>
-            <a class="game-mode-button license_by_sa" href="?s=by-sa"></a>
+            <a class="game-mode-button license-by-nc-sa" href="?s=by-nc-sa"></a>
+            <a class="game-mode-button license-by-sa" href="?s=by-sa"></a>
         </div>
     </div>
     <div class="total-maps center"></div>
     <div id="maps-output">
         <div class="dynamic">
-            <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="assembly_body" class="thumbnail map-float">
-                    <div id="assembly" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/assembly/map.png');">
-                        <div class="map-banner">
-                            <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=assembly"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Assembly">Assembly</span></strong></a>
-                            <span style="display:block;margin-top:-8px;">
-                                        
-                                        
-                                        
-                                        
-                                        <li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag_hidden">CTF</span></li>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                            </span>
-                        </div>
-                        <!--
-                        <div id="favourite-assembly" class="map-favourite" style="display:none;">
-                            <span id="assembly_add" onclick="Cookies.set('listen_assembly', true, { expires: 365 });$('#assembly_body').addClass('post-thumbnail-important');$('#assembly_add').hide();$('#assembly_remove').show();$('assembly_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                            <span id="assembly_remove" onclick="Cookies.remove('listen_assembly');$('#assembly_body').removeClass('post-thumbnail-important');$('#assembly_add').show();$('#assembly_remove').hide();$('assembly_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                            <span id="assembly_dummy" style="display:none"></span>
-                        </div>
-                        <script>
-                            $("#assembly").hover(function(){
-                                $('#favourite-assembly').fadeIn();
-                            },function(){
-                                $('#favourite-assembly').fadeOut();
-                            });
-                            
-                            if (Cookies.get('listen_assembly') == 'true') {
-                                $('#assembly_body').addClass('post-thumbnail-important');
-                                $('#assembly_add').hide();
-                                $('#assembly_remove').show();
-                                $('assembly_dummy').text(fav_map);
-                            } else {
-                                $('#assembly_add').show();
-                                $('#assembly_remove').hide();
-                                $('assembly_dummy').text('');
-                            }
-                        </script>-->
-                        <div class="map-labels">
-                                <span class="label label-success map-label">CC BY-SA License</span>
-                        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="assembly_body" class="thumbnail map-float">
+                <div id="assembly" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/assembly/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=assembly"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Assembly">Assembly</span></strong></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag_hidden">CTF</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
                     </div>
-                    <div class="map-authors">
-                        <span class="map-author-name">by</span>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=Reshif">Reshif</a></li>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=Strangey">Strangey</a></li>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=Cratain">Cratain</a></li>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=NixaniaXi">NixaniaXi</a></li>
-                                </div>
-                    <div style="padding-top:2%;" class="center">
-                        <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-assembly" onclick="commercialLicense()"><i class="fa fa-download"></i></button>
-                        <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/assembly/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
+                    <div id="favourite-assembly" class="map-favourite" style="display:none;">
+                        <span id="assembly_add" onclick="Cookies.set('listen_assembly', true, { expires: 7 });$('#assembly_body').addClass('post-thumbnail-important');$('#assembly_add').hide();$('#assembly_remove').show();$('#assembly_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="assembly_remove" onclick="Cookies.remove('listen_assembly');$('#assembly_body').removeClass('post-thumbnail-important');$('#assembly_add').show();$('#assembly_remove').hide();$('#assembly_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="assembly_dummy" class="tag_hidden"></span>
                     </div>
-                    <div class="modal fade" id="download-assembly" tabindex="-1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Downloading map files for Assembly</h4>
-                                    <div class="map-authors">
-                                        <span class="map-author-name">created by</span>
-                                        <li class="game-tag"><img src="https://crafatar.com/avatars/459fd919-0d58-401a-9601-6cab1eb721ab?size=16&overlay"> <a class="map-author-name" href="?s=Reshif">Reshif</a></li>
-                                        <li class="game-tag"><img src="https://crafatar.com/avatars/621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06?size=16&overlay"> <a class="map-author-name" href="?s=Strangey">Strangey</a></li>
-                                        <li class="game-tag"><img src="https://crafatar.com/avatars/cbdc7b1d-7a07-465b-bebb-4f20bfb8ebd8?size=16&overlay"> <a class="map-author-name" href="?s=Cratain">Cratain</a></li>
-                                        <li class="game-tag"><img src="https://crafatar.com/avatars/2958ea4c-3501-404e-88cc-12e8632f68cc?size=16&overlay"> <a class="map-author-name" href="?s=NixaniaXi">NixaniaXi</a></li>
-                                                                </div>
-                                </div>
-                                <div class="modal-body">
-                                        This download for Assembly and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
-                                        <br><br>
-                                        <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
-                                            <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
-                                        </a>
-                                        <br>
-                                        You will be downloading the version of Assembly that has been provided to ResourcePile, not the original.  
-                                        <br><br>
-                                        <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/assembly');$('#download-assembly').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
+                    <script>
+                        $("#assembly").hover(function(){
+                            $('#favourite-assembly').fadeIn();
+                        },function(){
+                            $('#favourite-assembly').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_assembly') == 'true') {
+                            $('#assembly_body').addClass('post-thumbnail-important');
+                            $('#assembly_add').hide();
+                            $('#assembly_remove').show();
+                            $('#assembly_dummy').text(fav_map);
+                        } else {
+                            $('#assembly_add').show();
+                            $('#assembly_remove').hide();
+                            $('#assembly_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label">CC BY-SA License</span>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="cosmic_assault_body" class="thumbnail map-float">
-                    <div id="cosmic_assault" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/cosmic_assault/map.png');">
-                        <div class="map-banner">
-                            <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=cosmic_assault"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Cosmic Assault">Cosmic Assault</span></strong></a>
-                            <span style="display:block;margin-top:-8px;">
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        <li class="game-tag"><a class="game-link map-tag" href="?s=skywars">Skywars</a><span class="tag_hidden">SW</span></li>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                            </span>
-                        </div>
-                        <!--
-                        <div id="favourite-cosmic_assault" class="map-favourite" style="display:none;">
-                            <span id="cosmic_assault_add" onclick="Cookies.set('listen_cosmic_assault', true, { expires: 365 });$('#cosmic_assault_body').addClass('post-thumbnail-important');$('#cosmic_assault_add').hide();$('#cosmic_assault_remove').show();$('cosmic_assault_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                            <span id="cosmic_assault_remove" onclick="Cookies.remove('listen_cosmic_assault');$('#cosmic_assault_body').removeClass('post-thumbnail-important');$('#cosmic_assault_add').show();$('#cosmic_assault_remove').hide();$('cosmic_assault_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                            <span id="cosmic_assault_dummy" style="display:none"></span>
-                        </div>
-                        <script>
-                            $("#cosmic_assault").hover(function(){
-                                $('#favourite-cosmic_assault').fadeIn();
-                            },function(){
-                                $('#favourite-cosmic_assault').fadeOut();
-                            });
-                            
-                            if (Cookies.get('listen_cosmic_assault') == 'true') {
-                                $('#cosmic_assault_body').addClass('post-thumbnail-important');
-                                $('#cosmic_assault_add').hide();
-                                $('#cosmic_assault_remove').show();
-                                $('cosmic_assault_dummy').text(fav_map);
-                            } else {
-                                $('#cosmic_assault_add').show();
-                                $('#cosmic_assault_remove').hide();
-                                $('cosmic_assault_dummy').text('');
-                            }
-                        </script>-->
-                        <div class="map-labels">
-                                <span class="label label-info map-label">CC BY-NC-SA License</span>
-                        </div>
-                    </div>
-                    <div class="map-authors">
-                        <span class="map-author-name">by</span>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=amactus">amactus</a></li>
-                                </div>
-                    <div style="padding-top:2%;" class="center">
-                        <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-cosmic_assault" onclick="noncommercialLicense()"><i class="fa fa-download"></i></button>
-                        <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/cosmic_assault/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
-                    </div>
-                    <div class="modal fade" id="download-cosmic_assault" tabindex="-1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Downloading map files for Cosmic Assault</h4>
-                                    <div class="map-authors">
-                                        <span class="map-author-name">created by</span>
-                                        <li class="game-tag"><img src="https://crafatar.com/avatars/715769c5-8c4c-4489-bdf8-f9cee2b2ae8a?size=16&overlay"> <a class="map-author-name" href="?s=amactus">amactus</a></li>
-                                                                </div>
-                                </div>
-                                <div class="modal-body">
-                                        This download for Cosmic Assault and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
-                                        <br><br>
-                                        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
-                                            <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
-                                        </a>
-                                        <br>
-                                        You will be downloading the version of Cosmic Assault that has been provided to ResourcePile, not the original.  
-                                        <br><br>
-                                        <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/cosmic_assault');$('#download-cosmic_assault').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Reshif">Reshif</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Strangey">Strangey</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Cratain">Cratain</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=NixaniaXi">NixaniaXi</a></li>
                             </div>
-                        </div>
-                    </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-assembly" onclick="commercialLicense()"><i class="fa fa-download"></i></button>
+                    <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/assembly/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
                 </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="erth_body" class="thumbnail map-float">
-                    <div id="erth" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/erth/map.png');">
-                        <div class="map-banner">
-                            <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=erth"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Erth">Erth</span></strong></a>
-                            <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/forums/topics/57fa8f575f35b93245000013" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
-                            <span style="display:block;margin-top:-8px;">
-                                        
-                                        
-                                        
-                                        <li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag_hidden">KOTH</span></li>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                            </span>
-                        </div>
-                        <!--
-                        <div id="favourite-erth" class="map-favourite" style="display:none;">
-                            <span id="erth_add" onclick="Cookies.set('listen_erth', true, { expires: 365 });$('#erth_body').addClass('post-thumbnail-important');$('#erth_add').hide();$('#erth_remove').show();$('erth_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                            <span id="erth_remove" onclick="Cookies.remove('listen_erth');$('#erth_body').removeClass('post-thumbnail-important');$('#erth_add').show();$('#erth_remove').hide();$('erth_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                            <span id="erth_dummy" style="display:none"></span>
-                        </div>
-                        <script>
-                            $("#erth").hover(function(){
-                                $('#favourite-erth').fadeIn();
-                            },function(){
-                                $('#favourite-erth').fadeOut();
-                            });
-                            
-                            if (Cookies.get('listen_erth') == 'true') {
-                                $('#erth_body').addClass('post-thumbnail-important');
-                                $('#erth_add').hide();
-                                $('#erth_remove').show();
-                                $('erth_dummy').text(fav_map);
-                            } else {
-                                $('#erth_add').show();
-                                $('#erth_remove').hide();
-                                $('erth_dummy').text('');
-                            }
-                        </script>-->
-                        <div class="map-labels">
-                                <span class="label label-info map-label">CC BY-NC-SA License</span>
-                        </div>
-                    </div>
-                    <div class="map-authors">
-                        <span class="map-author-name">by</span>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=Matic0B">Matic0B</a></li>
-                                </div>
-                    <div style="padding-top:2%;" class="center">
-                        <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-erth" onclick="noncommercialLicense()"><i class="fa fa-download"></i></button>
-                        <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/erth/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
-                    </div>
-                    <div class="modal fade" id="download-erth" tabindex="-1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Downloading map files for Erth</h4>
-                                    <div class="map-authors">
-                                        <span class="map-author-name">created by</span>
-                                        <li class="game-tag"><img src="https://crafatar.com/avatars/48924ea3-3aad-4e16-838c-368d8d9e0a25?size=16&overlay"> <a class="map-author-name" href="?s=Matic0B">Matic0B</a></li>
-                                                                </div>
-                                </div>
-                                <div class="modal-body">
-                                        This download for Erth and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
-                                        <br><br>
-                                        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
-                                            <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
-                                        </a>
-                                        <br>
-                                        You will be downloading the version of Erth that has been provided to ResourcePile, not the original.  If you would prefer to download this map from the original location, please visit the map's <a href="https://oc.tc/forums/topics/57fa8f575f35b93245000013" target="_blank">discussion thread</a>.
-                                        <br><br>
-                                        <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/erth');$('#download-erth').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
+                <div class="modal fade" id="download-assembly" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Assembly</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/459fd919-0d58-401a-9601-6cab1eb721ab?size=16&overlay"> <a class="map-author-name" href="?s=Reshif">Reshif</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06?size=16&overlay"> <a class="map-author-name" href="?s=Strangey">Strangey</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/cbdc7b1d-7a07-465b-bebb-4f20bfb8ebd8?size=16&overlay"> <a class="map-author-name" href="?s=Cratain">Cratain</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/2958ea4c-3501-404e-88cc-12e8632f68cc?size=16&overlay"> <a class="map-author-name" href="?s=NixaniaXi">NixaniaXi</a></li>
+                                                            </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="gold_drught_body" class="thumbnail map-float">
-                    <div id="gold_drught" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/gold_drught/map.png');">
-                        <div class="map-banner">
-                            <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=gold_drught"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="gold drught 5">gold drught 5</span></strong></a>
-                            <span style="display:block;margin-top:-8px;">
-                                        
-                                        <li class="game-tag"><a class="game-link map-tag" href="?s=tdm">Team Deathmatch</a><span class="tag_hidden">Team Death Match TDM</span></li>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                            </span>
-                        </div>
-                        <!--
-                        <div id="favourite-gold_drught" class="map-favourite" style="display:none;">
-                            <span id="gold_drught_add" onclick="Cookies.set('listen_gold_drught', true, { expires: 365 });$('#gold_drught_body').addClass('post-thumbnail-important');$('#gold_drught_add').hide();$('#gold_drught_remove').show();$('gold_drught_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                            <span id="gold_drught_remove" onclick="Cookies.remove('listen_gold_drught');$('#gold_drught_body').removeClass('post-thumbnail-important');$('#gold_drught_add').show();$('#gold_drught_remove').hide();$('gold_drught_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                            <span id="gold_drught_dummy" style="display:none"></span>
-                        </div>
-                        <script>
-                            $("#gold_drught").hover(function(){
-                                $('#favourite-gold_drught').fadeIn();
-                            },function(){
-                                $('#favourite-gold_drught').fadeOut();
-                            });
-                            
-                            if (Cookies.get('listen_gold_drught') == 'true') {
-                                $('#gold_drught_body').addClass('post-thumbnail-important');
-                                $('#gold_drught_add').hide();
-                                $('#gold_drught_remove').show();
-                                $('gold_drught_dummy').text(fav_map);
-                            } else {
-                                $('#gold_drught_add').show();
-                                $('#gold_drught_remove').hide();
-                                $('gold_drught_dummy').text('');
-                            }
-                        </script>-->
-                        <div class="map-labels">
-                                <span class="label label-success map-label">CC BY-SA License</span>
-                        </div>
-                    </div>
-                    <div class="map-authors">
-                        <span class="map-author-name">by</span>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=Reshif">Reshif</a></li>
-                                </div>
-                    <div style="padding-top:2%;" class="center">
-                        <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-gold_drught" onclick="commercialLicense()"><i class="fa fa-download"></i></button>
-                        <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/gold_drught/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
-                    </div>
-                    <div class="modal fade" id="download-gold_drught" tabindex="-1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Downloading map files for gold drught 5</h4>
-                                    <div class="map-authors">
-                                        <span class="map-author-name">created by</span>
-                                        <li class="game-tag"><img src="https://crafatar.com/avatars/459fd919-0d58-401a-9601-6cab1eb721ab?size=16&overlay"> <a class="map-author-name" href="?s=Reshif">Reshif</a></li>
-                                                                </div>
-                                </div>
-                                <div class="modal-body">
-                                        This download for gold drught 5 and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
-                                        <br><br>
-                                        <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
-                                            <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
-                                        </a>
-                                        <br>
-                                        You will be downloading the version of gold drught 5 that has been provided to ResourcePile, not the original.  
-                                        <br><br>
-                                        <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/gold_drught');$('#download-gold_drught').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
+                            <div class="modal-body">
+                                    This download for Assembly and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Assembly that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="pharaohs_palace_body" class="thumbnail map-float">
-                    <div id="pharaohs_palace" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/pharaohs_palace/map.png');">
-                        <div class="map-banner">
-                            <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=pharaohs_palace"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Pharaohs Palace">Pharaohs Palace</span></strong></a>
-                            <span style="display:block;margin-top:-8px;">
-                                        
-                                        
-                                        
-                                        
-                                        <li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag_hidden">CTF</span></li>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                            </span>
-                        </div>
-                        <!--
-                        <div id="favourite-pharaohs_palace" class="map-favourite" style="display:none;">
-                            <span id="pharaohs_palace_add" onclick="Cookies.set('listen_pharaohs_palace', true, { expires: 365 });$('#pharaohs_palace_body').addClass('post-thumbnail-important');$('#pharaohs_palace_add').hide();$('#pharaohs_palace_remove').show();$('pharaohs_palace_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                            <span id="pharaohs_palace_remove" onclick="Cookies.remove('listen_pharaohs_palace');$('#pharaohs_palace_body').removeClass('post-thumbnail-important');$('#pharaohs_palace_add').show();$('#pharaohs_palace_remove').hide();$('pharaohs_palace_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                            <span id="pharaohs_palace_dummy" style="display:none"></span>
-                        </div>
-                        <script>
-                            $("#pharaohs_palace").hover(function(){
-                                $('#favourite-pharaohs_palace').fadeIn();
-                            },function(){
-                                $('#favourite-pharaohs_palace').fadeOut();
-                            });
-                            
-                            if (Cookies.get('listen_pharaohs_palace') == 'true') {
-                                $('#pharaohs_palace_body').addClass('post-thumbnail-important');
-                                $('#pharaohs_palace_add').hide();
-                                $('#pharaohs_palace_remove').show();
-                                $('pharaohs_palace_dummy').text(fav_map);
-                            } else {
-                                $('#pharaohs_palace_add').show();
-                                $('#pharaohs_palace_remove').hide();
-                                $('pharaohs_palace_dummy').text('');
-                            }
-                        </script>-->
-                        <div class="map-labels">
-                                <span class="label label-success map-label">CC BY-SA License</span>
-                        </div>
-                    </div>
-                    <div class="map-authors">
-                        <span class="map-author-name">by</span>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=Reshif">Reshif</a></li>
-                                </div>
-                    <div style="padding-top:2%;" class="center">
-                        <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-pharaohs_palace" onclick="commercialLicense()"><i class="fa fa-download"></i></button>
-                        <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/pharaohs_palace/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
-                    </div>
-                    <div class="modal fade" id="download-pharaohs_palace" tabindex="-1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Downloading map files for Pharaohs Palace</h4>
-                                    <div class="map-authors">
-                                        <span class="map-author-name">created by</span>
-                                        <li class="game-tag"><img src="https://crafatar.com/avatars/459fd919-0d58-401a-9601-6cab1eb721ab?size=16&overlay"> <a class="map-author-name" href="?s=Reshif">Reshif</a></li>
-                                                                </div>
-                                </div>
-                                <div class="modal-body">
-                                        This download for Pharaohs Palace and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
-                                        <br><br>
-                                        <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
-                                            <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
-                                        </a>
-                                        <br>
-                                        You will be downloading the version of Pharaohs Palace that has been provided to ResourcePile, not the original.  
-                                        <br><br>
-                                        <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/pharaohs_palace');$('#download-pharaohs_palace').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 map-thumbnail center">
-                <div id="shave_harambe_body" class="thumbnail map-float">
-                    <div id="shave_harambe" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/shave_harambe/map.png');">
-                        <div class="map-banner">
-                            <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=shave_harambe"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Shave Harambe">Shave Harambe</span></strong></a>
-                            <span style="display:block;margin-top:-8px;">
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag_hidden">DTM</span></li>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                            </span>
-                        </div>
-                        <!--
-                        <div id="favourite-shave_harambe" class="map-favourite" style="display:none;">
-                            <span id="shave_harambe_add" onclick="Cookies.set('listen_shave_harambe', true, { expires: 365 });$('#shave_harambe_body').addClass('post-thumbnail-important');$('#shave_harambe_add').hide();$('#shave_harambe_remove').show();$('shave_harambe_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                            <span id="shave_harambe_remove" onclick="Cookies.remove('listen_shave_harambe');$('#shave_harambe_body').removeClass('post-thumbnail-important');$('#shave_harambe_add').show();$('#shave_harambe_remove').hide();$('shave_harambe_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                            <span id="shave_harambe_dummy" style="display:none"></span>
-                        </div>
-                        <script>
-                            $("#shave_harambe").hover(function(){
-                                $('#favourite-shave_harambe').fadeIn();
-                            },function(){
-                                $('#favourite-shave_harambe').fadeOut();
-                            });
-                            
-                            if (Cookies.get('listen_shave_harambe') == 'true') {
-                                $('#shave_harambe_body').addClass('post-thumbnail-important');
-                                $('#shave_harambe_add').hide();
-                                $('#shave_harambe_remove').show();
-                                $('shave_harambe_dummy').text(fav_map);
-                            } else {
-                                $('#shave_harambe_add').show();
-                                $('#shave_harambe_remove').hide();
-                                $('shave_harambe_dummy').text('');
-                            }
-                        </script>-->
-                        <div class="map-labels">
-                                <span class="label label-info map-label">CC BY-NC-SA License</span>
-                        </div>
-                    </div>
-                    <div class="map-authors">
-                        <span class="map-author-name">by</span>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=amactus">amactus</a></li>
-                                </div>
-                    <div style="padding-top:2%;" class="center">
-                        <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-shave_harambe" onclick="noncommercialLicense()"><i class="fa fa-download"></i></button>
-                        <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/shave_harambe/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
-                    </div>
-                    <div class="modal fade" id="download-shave_harambe" tabindex="-1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Downloading map files for Shave Harambe</h4>
-                                    <div class="map-authors">
-                                        <span class="map-author-name">created by</span>
-                                        <li class="game-tag"><img src="https://crafatar.com/avatars/715769c5-8c4c-4489-bdf8-f9cee2b2ae8a?size=16&overlay"> <a class="map-author-name" href="?s=amactus">amactus</a></li>
-                                                                </div>
-                                </div>
-                                <div class="modal-body">
-                                        This download for Shave Harambe and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
-                                        <br><br>
-                                        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
-                                            <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
-                                        </a>
-                                        <br>
-                                        You will be downloading the version of Shave Harambe that has been provided to ResourcePile, not the original.  
-                                        <br><br>
-                                        <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/shave_harambe');$('#download-shave_harambe').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/assembly');$('#download-assembly').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="download-starting-message" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Your download will begin shortly...</h4>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="cosmic_assault_body" class="thumbnail map-float">
+                <div id="cosmic_assault" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/cosmic_assault/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=cosmic_assault"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Cosmic Assault">Cosmic Assault</span></strong></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=skywars">Skywars</a><span class="tag_hidden">SW</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-cosmic_assault" class="map-favourite" style="display:none;">
+                        <span id="cosmic_assault_add" onclick="Cookies.set('listen_cosmic_assault', true, { expires: 7 });$('#cosmic_assault_body').addClass('post-thumbnail-important');$('#cosmic_assault_add').hide();$('#cosmic_assault_remove').show();$('#cosmic_assault_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="cosmic_assault_remove" onclick="Cookies.remove('listen_cosmic_assault');$('#cosmic_assault_body').removeClass('post-thumbnail-important');$('#cosmic_assault_add').show();$('#cosmic_assault_remove').hide();$('#cosmic_assault_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="cosmic_assault_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#cosmic_assault").hover(function(){
+                            $('#favourite-cosmic_assault').fadeIn();
+                        },function(){
+                            $('#favourite-cosmic_assault').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_cosmic_assault') == 'true') {
+                            $('#cosmic_assault_body').addClass('post-thumbnail-important');
+                            $('#cosmic_assault_add').hide();
+                            $('#cosmic_assault_remove').show();
+                            $('#cosmic_assault_dummy').text(fav_map);
+                        } else {
+                            $('#cosmic_assault_add').show();
+                            $('#cosmic_assault_remove').hide();
+                            $('#cosmic_assault_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    Please wait while we compile your download.
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=amactus">amactus</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-cosmic_assault" onclick="noncommercialLicense()"><i class="fa fa-download"></i></button>
+                    <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/cosmic_assault/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <div class="modal fade" id="download-cosmic_assault" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Cosmic Assault</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/715769c5-8c4c-4489-bdf8-f9cee2b2ae8a?size=16&overlay"> <a class="map-author-name" href="?s=amactus">amactus</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Cosmic Assault and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Cosmic Assault that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/cosmic_assault');$('#download-cosmic_assault').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="download-complete-message" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Your download has begun...</h4>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="erth_body" class="thumbnail map-float">
+                <div id="erth" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/erth/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=erth"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Erth">Erth</span></strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/forums/topics/57fa8f575f35b93245000013" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag_hidden">KOTH</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-erth" class="map-favourite" style="display:none;">
+                        <span id="erth_add" onclick="Cookies.set('listen_erth', true, { expires: 7 });$('#erth_body').addClass('post-thumbnail-important');$('#erth_add').hide();$('#erth_remove').show();$('#erth_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="erth_remove" onclick="Cookies.remove('listen_erth');$('#erth_body').removeClass('post-thumbnail-important');$('#erth_add').show();$('#erth_remove').hide();$('#erth_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="erth_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#erth").hover(function(){
+                            $('#favourite-erth').fadeIn();
+                        },function(){
+                            $('#favourite-erth').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_erth') == 'true') {
+                            $('#erth_body').addClass('post-thumbnail-important');
+                            $('#erth_add').hide();
+                            $('#erth_remove').show();
+                            $('#erth_dummy').text(fav_map);
+                        } else {
+                            $('#erth_add').show();
+                            $('#erth_remove').hide();
+                            $('#erth_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    Thank you for downloading this map from ResourcePile and supporting free public maps as well as the map authors.<br><br>
-                    This map is licensed undera Creative Commons license which has been included in your download. Please respect this license and the wishes of the map authors as this project would not be here without them.
-                    <hr>
-                    You currently have <span id="api-request-remaining"></span> out of <span id="api-request-limit"></span> requests left to the GitHub API.<br>
-                    This means that you can download approximately <spawn id="api-request-approximate"></spawn> more maps before you must wait an hour for the limit to reset.
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Matic0B">Matic0B</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-erth" onclick="noncommercialLicense()"><i class="fa fa-download"></i></button>
+                    <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/erth/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <div class="modal fade" id="download-erth" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Erth</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/48924ea3-3aad-4e16-838c-368d8d9e0a25?size=16&overlay"> <a class="map-author-name" href="?s=Matic0B">Matic0B</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Erth and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Erth that has been provided to ResourcePile, not the original.  If you would prefer to download this map from the original location, please visit the map's <a href="https://oc.tc/forums/topics/57fa8f575f35b93245000013" target="_blank">discussion thread</a>.
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/erth');$('#download-erth').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="download-error-message" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Your download filed...</h4>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="gold_drught_body" class="thumbnail map-float">
+                <div id="gold_drught" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/gold_drught/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=gold_drught"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="gold drught 5">gold drught 5</span></strong></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=tdm">Team Deathmatch</a><span class="tag_hidden">Team Death Match TDM</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-gold_drught" class="map-favourite" style="display:none;">
+                        <span id="gold_drught_add" onclick="Cookies.set('listen_gold_drught', true, { expires: 7 });$('#gold_drught_body').addClass('post-thumbnail-important');$('#gold_drught_add').hide();$('#gold_drught_remove').show();$('#gold_drught_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="gold_drught_remove" onclick="Cookies.remove('listen_gold_drught');$('#gold_drught_body').removeClass('post-thumbnail-important');$('#gold_drught_add').show();$('#gold_drught_remove').hide();$('#gold_drught_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="gold_drught_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#gold_drught").hover(function(){
+                            $('#favourite-gold_drught').fadeIn();
+                        },function(){
+                            $('#favourite-gold_drught').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_gold_drught') == 'true') {
+                            $('#gold_drught_body').addClass('post-thumbnail-important');
+                            $('#gold_drught_add').hide();
+                            $('#gold_drught_remove').show();
+                            $('#gold_drught_dummy').text(fav_map);
+                        } else {
+                            $('#gold_drught_add').show();
+                            $('#gold_drught_remove').hide();
+                            $('#gold_drught_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label">CC BY-SA License</span>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    Something went wrong while compiling your download. Please try again, but if the issue persists please report an issue on our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Issues Tracker</a>.
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Reshif">Reshif</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-gold_drught" onclick="commercialLicense()"><i class="fa fa-download"></i></button>
+                    <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/gold_drught/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <div class="modal fade" id="download-gold_drught" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for gold drught 5</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/459fd919-0d58-401a-9601-6cab1eb721ab?size=16&overlay"> <a class="map-author-name" href="?s=Reshif">Reshif</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for gold drught 5 and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of gold drught 5 that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/gold_drught');$('#download-gold_drught').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="download-rate-limit-message" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">You've hit the rate limit</h4>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="pharaohs_palace_body" class="thumbnail map-float">
+                <div id="pharaohs_palace" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/pharaohs_palace/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=pharaohs_palace"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Pharaohs Palace">Pharaohs Palace</span></strong></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag_hidden">CTF</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-pharaohs_palace" class="map-favourite" style="display:none;">
+                        <span id="pharaohs_palace_add" onclick="Cookies.set('listen_pharaohs_palace', true, { expires: 7 });$('#pharaohs_palace_body').addClass('post-thumbnail-important');$('#pharaohs_palace_add').hide();$('#pharaohs_palace_remove').show();$('#pharaohs_palace_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="pharaohs_palace_remove" onclick="Cookies.remove('listen_pharaohs_palace');$('#pharaohs_palace_body').removeClass('post-thumbnail-important');$('#pharaohs_palace_add').show();$('#pharaohs_palace_remove').hide();$('#pharaohs_palace_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="pharaohs_palace_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#pharaohs_palace").hover(function(){
+                            $('#favourite-pharaohs_palace').fadeIn();
+                        },function(){
+                            $('#favourite-pharaohs_palace').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_pharaohs_palace') == 'true') {
+                            $('#pharaohs_palace_body').addClass('post-thumbnail-important');
+                            $('#pharaohs_palace_add').hide();
+                            $('#pharaohs_palace_remove').show();
+                            $('#pharaohs_palace_dummy').text(fav_map);
+                        } else {
+                            $('#pharaohs_palace_add').show();
+                            $('#pharaohs_palace_remove').hide();
+                            $('#pharaohs_palace_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label">CC BY-SA License</span>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    Looks like you've hit GitHub's rate limit. Sadly there isn't anything we can do about that at the moment, but we are looking for solutions. Please try again in an hour.
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Reshif">Reshif</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-pharaohs_palace" onclick="commercialLicense()"><i class="fa fa-download"></i></button>
+                    <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/pharaohs_palace/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <div class="modal fade" id="download-pharaohs_palace" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Pharaohs Palace</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/459fd919-0d58-401a-9601-6cab1eb721ab?size=16&overlay"> <a class="map-author-name" href="?s=Reshif">Reshif</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Pharaohs Palace and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Pharaohs Palace that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/pharaohs_palace');$('#download-pharaohs_palace').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="shave_harambe_body" class="thumbnail map-float">
+                <div id="shave_harambe" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-unofficial-maps/master/maps/shave_harambe/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=shave_harambe"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Shave Harambe">Shave Harambe</span></strong></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag_hidden">DTM</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-shave_harambe" class="map-favourite" style="display:none;">
+                        <span id="shave_harambe_add" onclick="Cookies.set('listen_shave_harambe', true, { expires: 7 });$('#shave_harambe_body').addClass('post-thumbnail-important');$('#shave_harambe_add').hide();$('#shave_harambe_remove').show();$('#shave_harambe_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="shave_harambe_remove" onclick="Cookies.remove('listen_shave_harambe');$('#shave_harambe_body').removeClass('post-thumbnail-important');$('#shave_harambe_add').show();$('#shave_harambe_remove').hide();$('#shave_harambe_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="shave_harambe_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#shave_harambe").hover(function(){
+                            $('#favourite-shave_harambe').fadeIn();
+                        },function(){
+                            $('#favourite-shave_harambe').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_shave_harambe') == 'true') {
+                            $('#shave_harambe_body').addClass('post-thumbnail-important');
+                            $('#shave_harambe_add').hide();
+                            $('#shave_harambe_remove').show();
+                            $('#shave_harambe_dummy').text(fav_map);
+                        } else {
+                            $('#shave_harambe_add').show();
+                            $('#shave_harambe_remove').hide();
+                            $('#shave_harambe_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=amactus">amactus</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-shave_harambe" onclick="noncommercialLicense()"><i class="fa fa-download"></i></button>
+                    <a href="https://github.com/MCResourcePile/overcast-unofficial-maps/raw/master/maps/shave_harambe/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
+                </div>
+                <div class="modal fade" id="download-shave_harambe" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Shave Harambe</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/715769c5-8c4c-4489-bdf8-f9cee2b2ae8a?size=16&overlay"> <a class="map-author-name" href="?s=amactus">amactus</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Shave Harambe and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Shave Harambe that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-unofficial-maps/tree/master/maps/shave_harambe');$('#download-shave_harambe').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <span class="btn map-link-disabled map-button"><i class="fa fa-download"></i> Download starred maps</span>
+            </div>
+            <div class="col-md-4"></div>
+        </div>-->
+        <div class="modal fade" id="download-starting-message" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Your download will begin shortly...</h4>
+                    </div>
+                    <div class="modal-body">
+                        Please wait while we compile your download.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="download-complete-message" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Your download has begun...</h4>
+                    </div>
+                    <div class="modal-body">
+                        Thank you for downloading this map from ResourcePile and supporting free public maps as well as the map authors.<br><br>
+                        This map is licensed undera Creative Commons license which has been included in your download. Please respect this license and the wishes of the map authors as this project would not be here without them.
+                        <hr>
+                        You currently have <span id="api-request-remaining"></span> out of <span id="api-request-limit"></span> requests left to the GitHub API.<br>
+                        This means that you can download approximately <spawn id="api-request-approximate"></spawn> more maps before you must wait an hour for the limit to reset.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="download-error-message" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Your download filed...</h4>
+                    </div>
+                    <div class="modal-body">
+                        Something went wrong while compiling your download. Please try again, but if the issue persists please report an issue on our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Issues Tracker</a>.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="download-rate-limit-message" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">You've hit the rate limit</h4>
+                    </div>
+                    <div class="modal-body">
+                        Looks like you've hit GitHub's rate limit. Sadly there isn't anything we can do about that at the moment, but we are looking for solutions. Please try again in an hour.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 </div>

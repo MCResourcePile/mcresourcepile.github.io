@@ -98,6 +98,7 @@ SOFTWARE.
     
     var _zipContents = function(filename, contents, callbackScope){
         var zip = new JSZip();
+        var zipContent = zip.folder(filename);
         
         contents.forEach(function(item){
             progressCallback.call(callbackScope, 'processing', 'Compressing ' + item.path,
@@ -112,7 +113,7 @@ SOFTWARE.
             }else{
                 zip.file('NOTICE.txt', 'This work has no associated license attached to it. We recommend getting in contact with authors, which are listed on our site at https://mcresourcepile.github.io/, before using this work for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.\n');
             }
-            zip.file(item.path, item.content, {createFolders:true,base64:true});
+            zipContent.file(item.path, item.content, {createFolders:true,base64:true});
         });
         if(isSafari){
             zip.generateAsync({type:"base64"})
