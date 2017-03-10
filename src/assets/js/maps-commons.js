@@ -48,7 +48,11 @@ function makeSearchable() {
     if (total_maps == "0") {
         $(".total-maps").html("No maps successfully loaded<br>Please check the console for any errors and contact a page manager");
     } else if (total_display == "0") {
-        $(".total-maps").html("Your query of <code>" + current_search + "</code> references no maps, please try searching something else");
+        if (current_search == "starred") {
+            $(".total-maps").html("You have not starred any maps yet!\nHover over a map's thumbnail and click to star that map.");
+        } else {
+            $(".total-maps").html("Your query of <code>" + current_search + "</code> references no maps, please try searching something else");
+        }
     } else {
         $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps");
     }
