@@ -113,12 +113,12 @@
             <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="This map has been locked"><i class="fa fa-lock"></i></span>
             {{else}}
             {{! Download button (always enabled) }}
-            <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}" onclick="{{#if sourced}}noLicense(){{else}}{{#unless commercial}}noncommercialLicense(){{else}}commercialLicense(){{/unless}}{{/if}}"><i class="fa fa-download"></i></button>
+            <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}" onclick="{{#if sourced}}noLicense(){{else}}{{#unless commercial}}noncommercialLicense(){{else}}commercialLicense(){{/unless}}{{/if}};"><i class="fa fa-download"></i></button>
             {{! XML button }}
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
-            <a href="https://github.com/MCResourcePile/{{@root.map-group}}{{#if @root.page-category.unofficial}}-unofficial{{else}}{{#if cardinal}}-cardinal{{else}}{{/if}}{{/if}}-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button" role="button"><i class="fa fa-code"></i></a>
+            <a id="{{map}}" href="https://github.com/MCResourcePile/{{@root.map-group}}{{#if @root.page-category.unofficial}}-unofficial{{else}}{{#if cardinal}}-cardinal{{else}}{{/if}}{{/if}}-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{map}}" class="fa fa-code click-xml"></i></a>
             {{/unless}}
             {{/if}}
         </div>
@@ -167,7 +167,7 @@
                         {{/if}}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}{{#if @root.page-category.unofficial}}-unofficial{{else}}{{#if cardinal}}-cardinal{{else}}{{/if}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show');" class="btn map-link">Download</button>
+                        <button type="button" id="{{map}}" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}{{#if @root.page-category.unofficial}}-unofficial{{else}}{{#if cardinal}}-cardinal{{else}}{{/if}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
