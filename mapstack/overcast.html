@@ -671,6 +671,96 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="airship_battle_body" class="thumbnail map-float">
+                <div id="airship_battle" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-cardinal-maps/master/maps/airship_battle/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=airship_battle"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Airship Battle">Airship Battle</span></strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/airship_battle" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a><span class="tag_hidden">DTC </span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-airship_battle" class="map-favourite" style="display:none;">
+                        <span id="airship_battle_add" onclick="Cookies.set('listen_airship_battle', true, { expires: 7 });$('#airship_battle_body').addClass('post-thumbnail-important');$('#airship_battle_add').hide();$('#airship_battle_remove').show();$('#airship_battle_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="airship_battle_remove" onclick="Cookies.remove('listen_airship_battle');$('#airship_battle_body').removeClass('post-thumbnail-important');$('#airship_battle_add').show();$('#airship_battle_remove').hide();$('#airship_battle_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="airship_battle_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#airship_battle").hover(function(){
+                            $('#favourite-airship_battle').fadeIn();
+                        },function(){
+                            $('#favourite-airship_battle').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_airship_battle') == 'true') {
+                            $('#airship_battle_body').addClass('post-thumbnail-important');
+                            $('#airship_battle_add').hide();
+                            $('#airship_battle_remove').show();
+                            $('#airship_battle_dummy').text(fav_map);
+                        } else {
+                            $('#airship_battle_add').show();
+                            $('#airship_battle_remove').hide();
+                            $('#airship_battle_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                        <span class="label label-default map-label">Unlicensed</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=dewtroid">dewtroid</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-airship_battle" onclick="noLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Airship Battle" href="https://github.com/MCResourcePile/overcast-cardinal-maps/raw/master/maps/airship_battle/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Airship Battle" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-airship_battle" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Airship Battle</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/30e27366-0b14-4076-8f55-0819ece49ce3?size=16&overlay"> <a class="map-author-name" href="?s=dewtroid">dewtroid</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                This download for Airship Battle and other files included in this download have no associated license attached to them. We recommend getting in contact with <li class="game-tag">dewtroid</li> before using Airship Battle for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors. This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i> 
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Airship Battle" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/airship_battle');$('#download-airship_battle').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="antiquis_body" class="thumbnail map-float">
                 <div id="antiquis" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-cardinal-maps/master/maps/antiquis/map.png');">
                     <div class="map-banner">
