@@ -3,9 +3,7 @@
     <div class="content-header">
         {{> alert}}
         <div class="content-title">{{name}}</div>
-        <div class="content-subtitle">
-            Information about {{#if announcement}}<a href="{{announcement}}" target="_blank">{{name}}</a>{{else}}{{name}}{{/if}} tournament hosted by {{#if @root.page-category.overcast}}Overcast Network{{else}}{{#if @root.page-category.avicus}}Avicus Network{{else}}{{host}}{{/if}}{{/if}}.
-        </div>
+        <div class="content-subtitle">Information about {{#if announcement}}<a href="{{announcement}}" target="_blank">{{name}}</a>{{else}}{{name}}{{/if}} tournament hosted by {{#if host}}{{host}}{{else}}an unknown host{{/if}}.</div>
     </div>
 
     <!-- League banner -->
