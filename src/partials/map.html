@@ -8,16 +8,16 @@
 <div class="col-sm-6 col-lg-3 map-thumbnail center">
     <div id="{{slug}}_body" class="thumbnail map-float">
         {{! Map image background, contains banner and labels }}
-        <div id="{{slug}}" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}{{#if @root.page-category.unofficial}}-unofficial{{else}}{{#if cardinal}}-cardinal{{else}}{{/if}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
+        <div id="{{slug}}" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
             {{! Map banner, contains name, authors and quick links }}
             <div class="map-banner">
                 {{! Map heading }}
                 <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{@root.map-group}}/bow?s={{slug}}"><strong>{{#if map}}<span class="map-featured" data-toggle="tooltip" data-placement="top" title="{{map}}">{{map}}</span>{{else}}<span class="map-featured">Untitled Map</span>{{/if}}</strong></a>
                 {{#unless locked}}
                 {{! Quick links }}
-                {{#if official}}
+                {{#unless @root.page-category.pgm}}
                 <a href="{{#if @root.page-category.overcast}}http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/{{/if}}{{#if @root.page-category.avicus}}https://avicus.net/maps/map/{{/if}}{{slug}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{#if @root.page-category.overcast}}Overcast{{/if}}{{#if @root.page-category.avicus}}Avicus{{/if}}&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
-                {{/if}}
+                {{/unless}}
                 {{#if discussion}}
                 <a href="{{#if @root.page-category.overcast}}http://webcache.googleusercontent.com/search?q=cache:{{/if}}{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
                 {{/if}}
@@ -118,7 +118,7 @@
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
-            <a id="{{map}}" href="https://github.com/MCResourcePile/{{@root.map-group}}{{#if @root.page-category.unofficial}}-unofficial{{else}}{{#if cardinal}}-cardinal{{else}}{{/if}}{{/if}}-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{map}}" class="fa fa-code click-xml"></i></a>
+            <a id="{{map}}" href="https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{map}}" class="fa fa-code click-xml"></i></a>
             {{/unless}}
             {{/if}}
         </div>
@@ -167,7 +167,7 @@
                         {{/if}}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="{{map}}" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}{{#if @root.page-category.unofficial}}-unofficial{{else}}{{#if cardinal}}-cardinal{{else}}{{/if}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                        <button type="button" id="{{map}}" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
