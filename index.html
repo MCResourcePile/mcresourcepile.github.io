@@ -48,7 +48,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> Resource Pile</a>
+                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -87,6 +87,7 @@
                                 <li><a href="/toolrack/resourcepack"><i class="fa fa-folder-o"></i> Resource Packs</a></li>
                             </ul>
                         </li>
+                        <li><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
                     </ul>
                 </div>
             </div>
@@ -96,12 +97,7 @@
 <div class="background-splash-wash" style="text-align:center">
     <div class="container splash-header-body" id="wrapper-header">
         <div class="splash-header">ResourcePile</div>
-        <div class="splash-subheader">The best collection of resources for the Overcast and Avicus Networks</div>
-        <div class="splash-buttons">
-            <button href="#" class="btn map-link map-button" role="button" data-toggle="modal" data-target="#overcast-selection">Overcast</button>
-            <button href="#" class="btn map-link map-button" role="button" data-toggle="modal" data-target="#avicus-selection">Avicus</button>
-            <button href="#" class="btn map-link-alt map-button" role="button" data-toggle="modal" data-target="#other-selection">Other</button>
-        </div>
+        <div class="splash-subheader"></div>
     </div>
     <!-- Main page content -->
     <div class="page-content" id="wrapper-content">
@@ -151,6 +147,7 @@
                 </div>
             </div>
         </div>
+        <br>
         </div>
         <div class="footer">
             <div class="container">
@@ -185,89 +182,23 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="overcast-selection" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Overcast Network Resources</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="well well-sm">
-                        <span class="object-card-title card-title-red"><strong>StatTrack</strong></span>
-                        <ul style="margin-top:12px;">
-                            <li><a href="/stattrack/overcast/bow" class="object-card-discription">Longest Bow Distance</a></li>
-                            <li><a href="/stattrack/overcast/objective" class="object-card-discription">Objective Leaderboards</a></li>
-                            <li><a href="/stattrack/overcast/website" class="object-card-discription">Website Stats</a></li>
-                        </ul>
-                        <span class="object-card-title card-title-red-alt"><strong>MapStack</strong></span>
-                        <ul style="margin-top:12px;">
-                            <li><a href="/mapstack/overcast" class="object-card-discription">Public Map Listing</a></li>
-                        </ul>
-                        <span class="object-card-title card-title-red-alt"><strong>LeagueRec</strong></span>
-                        <ul style="margin-top:12px;">
-                            <li><a href="/leaguerec/overcast_unofficial" class="object-card-discription">Unofficial Tournament Listing</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="avicus-selection" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Avicus Network Resources</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="well well-sm">
-                        <span class="object-card-title card-title-blue"><strong>StatTrack</strong></span>
-                        <ul style="margin-top:12px;">
-                            <li><a href="/stattrack/avicus/bow" class="object-card-discription">Longest Bow Distance</a></li>
-                        </ul>
-                        <span class="object-card-title card-title-blue-alt"><strong>MapStack</strong></span>
-                        <ul style="margin-top:12px;">
-                            <li><a href="/mapstack/avicus" class="object-card-discription">Public Map Listing</a></li>
-                        </ul>
-                        <span class="object-card-title card-title-blue-alt"><strong>LeagueRec</strong></span>
-                        <ul style="margin-top:12px;">
-                            <li><a href="/leaguerec/avicus" class="object-card-discription">Official Tournament History</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="other-selection" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Other Resources</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="well well-sm">
-                        <span class="object-card-title card-title-blue"><strong>ToolRack</strong></span>
-                        <ul style="margin-top:12px;">
-                            <li><a href="/toolrack/resourcepack" class="object-card-discription">Resource Pack Collection</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 <script type="text/javascript">
     $('[data-toggle="tooltip"]').tooltip();
     var images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg'];
     $('.background-splash').css({'background': 'url(assets/img/splash/' + [Math.floor(Math.random() * images.length) + 1] + '.jpg) no-repeat center fixed'});
+    var splash_quotes = [
+        'The best collection of resources for the Overcast and Avicus Networks',
+        'Mostly known for our Overcast Network map collection',
+        'The place you go when you ask "where do i download ocn maps?"',
+        'Hosting a large collection of competitive Minecraft PVP maps... and other things',
+        'New Overcast Network maps? Soon™',
+        'We also have pages for Stratus Network!',
+    ]
+    var splash_quotes_count = splash_quotes.length;
+    var rng_quote = Math.floor(Math.random() * splash_quotes_count);
+    var splash_quote_text = splash_quotes[rng_quote];
+    $('.splash-subheader').text(splash_quote_text);
 </script>
 </body>
 </html>
