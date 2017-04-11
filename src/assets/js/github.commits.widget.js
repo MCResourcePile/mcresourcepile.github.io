@@ -160,7 +160,13 @@ THE SOFTWARE.
                     } else if (differenceInDays == 1) {
                         return '<td>yesterday</td>';
                     }
-                    return '<td> ' + differenceInDays + ' days ago</td>';
+                    if (differenceInDays > 60) {
+                        return '<td>' + Math.floor( differenceInDays / 30)  + ' months ago</td>';
+                    }
+                    if (differenceInDays > 730) {
+                        return '<td>' + Math.floor( differenceInDays / 365)  + ' years ago</td>';
+                    }
+                    return '<td>' + differenceInDays + ' days ago</td>';
                 }
             });
         }
