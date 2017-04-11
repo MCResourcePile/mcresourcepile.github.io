@@ -108,7 +108,7 @@ THE SOFTWARE.
                     if (commitMessage.includes("\n\n")) {
                         var commitSummary = commitMessage.substring(0, commitMessage.indexOf('\n\n'));
                         var commitDescription = commitMessage.substring(commitMessage.indexOf('\n\n') + 1);
-                        commitDescription = commitDescription.replace(/(\r\n|\n|\r)/gm,"");
+                        commitDescription = commitDescription.replace(/(\r\n|\n|\r)/gm," ");
                         
                         var link = $('<td>')
                             .html(commitSummary + '<br><small class="revisions-commit-description">' + commitDescription + '</small>');
@@ -160,7 +160,13 @@ THE SOFTWARE.
                     } else if (differenceInDays == 1) {
                         return '<td>yesterday</td>';
                     }
-                    return '<td> ' + differenceInDays + ' days ago</td>';
+                    if (differenceInDays > 60) {
+                        return '<td>' + Math.floor( differenceInDays / 30)  + ' months ago</td>';
+                    }
+                    if (differenceInDays > 730) {
+                        return '<td>' + Math.floor( differenceInDays / 365)  + ' years ago</td>';
+                    }
+                    return '<td>' + differenceInDays + ' days ago</td>';
                 }
             });
         }
