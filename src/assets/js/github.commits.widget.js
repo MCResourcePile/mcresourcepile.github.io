@@ -108,7 +108,7 @@ THE SOFTWARE.
                     if (commitMessage.includes("\n\n")) {
                         var commitSummary = commitMessage.substring(0, commitMessage.indexOf('\n\n'));
                         var commitDescription = commitMessage.substring(commitMessage.indexOf('\n\n') + 1);
-                        commitDescription = commitDescription.replace(/(\r\n|\n|\r)/gm,"");
+                        commitDescription = commitDescription.replace(/(\r\n|\n|\r)/gm," ");
                         
                         var link = $('<td>')
                             .html(commitSummary + '<br><small class="revisions-commit-description">' + commitDescription + '</small>');
