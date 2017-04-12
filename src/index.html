@@ -15,7 +15,7 @@
                 <div class="col-sm-6 col-md-3">
                     <a href="mapstack/overcast" class="object-card-link">
                         <div class="object-card card-background-red-alt center">
-                            <span class="object-card-display icon stat-compass-icon">
+                            <span class="object-card-display icon stat-compass-icon"></span>
                         </div>
                         <span class="object-card-title card-title-red-alt"><strong>Overcast Map Downloads</strong></span>
                         <div class="object-card-discription">A large collection of maps from the Overcast Network which have been made publicly downloadable</div>
@@ -24,7 +24,7 @@
                 <div class="col-sm-6 col-md-3">
                     <a href="stattrack/stratus/bow" class="object-card-link">
                         <div class="object-card card-background-blue center">
-                            <span class="object-card-display icon stat-bow-icon">
+                            <span class="object-card-display icon stat-bow-icon"></span>
                         </div>
                         <span class="object-card-title card-title-blue"><strong>Stratus Bow Records</strong></span>
                         <div class="object-card-discription">Tracking the longest bow kill distances recorded on the Stratus Network across all maps and gamemodes</div>
@@ -33,7 +33,7 @@
                 <div class="col-sm-6 col-md-3">
                     <a href="stattrack/avicus/bow" class="object-card-link">
                         <div class="object-card card-background-blue-alt center">
-                            <span class="object-card-display icon stat-bow-icon">
+                            <span class="object-card-display icon stat-bow-icon"></span>
                         </div>
                         <span class="object-card-title card-title-blue-alt"><strong>Avicus Bow Records</strong></span>
                         <div class="object-card-discription">Tracking the longest bow kill distances recorded on the Avicus Network across all maps and gamemodes</div>
@@ -42,7 +42,7 @@
                 <div class="col-sm-6 col-md-3">
                     <a href="mapstack/avicus" class="object-card-link">
                         <div class="object-card card-background-blue-alt center">
-                            <span class="object-card-display icon stat-compass-icon">
+                            <span class="object-card-display icon stat-compass-icon"></span>
                         </div>
                         <span class="object-card-title card-title-blue-alt"><strong>Avicus Map Downloads</strong></span>
                         <div class="object-card-discription">A large collection of maps from the Avicus Network which have been made publicly downloadable</div>
@@ -65,11 +65,11 @@
         'Hosting a large collection of competitive Minecraft PVP maps... and other things',
         'New Overcast Network maps? Soon™',
         'We also have pages for Stratus Network!',
+        '<objective>Download all of the maps!</objective>',
+        '<objective>Get the longest kill distance with a bow!</objective>',
+        'Loading Overcast Network maps repository... 14% complete',
     ]
-    var splash_quotes_count = splash_quotes.length;
-    var rng_quote = Math.floor(Math.random() * splash_quotes_count);
-    var splash_quote_text = splash_quotes[rng_quote];
-    $('.splash-subheader').text(splash_quote_text);
+    $('.splash-subheader').text(splash_quotes[Math.floor(Math.random()*splash_quotes.length)]);
 </script>
 </body>
 </html>
