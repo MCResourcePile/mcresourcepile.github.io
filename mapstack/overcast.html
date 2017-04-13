@@ -96,8 +96,7 @@
 <div class="container">
     <div class="content-header">
         <div class="content-alert">
-            <!--
-            <div class="alert alert-success" role="alert"></div>-->
+            <div class="alert alert-success" role="alert">We are now accepting your map submissions to add to our public map collection. If you are interested in sharing your map, find out how to get your map featured in our collection <a href="https://mcresourcepile.github.io/updates#map_submissions">here</a>!</div>
         </div>
         <div class="content-title">Overcast Map Collection</div>
         <div class="content-subtitle">
@@ -6870,6 +6869,103 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Flush" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/flush');$('#download-flush').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="forsaken_fort_body" class="thumbnail map-float">
+                <div id="forsaken_fort" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/forsaken_fort/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=forsaken_fort"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Forsaken Fort">Forsaken Fort</span></strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/forsaken_fort" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-forsaken_fort" class="map-favourite" style="display:none;">
+                        <span id="forsaken_fort_add" onclick="Cookies.set('listen_forsaken_fort', true, { expires: 7 });$('#forsaken_fort_body').addClass('post-thumbnail-important');$('#forsaken_fort_add').hide();$('#forsaken_fort_remove').show();$('#forsaken_fort_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="forsaken_fort_remove" onclick="Cookies.remove('listen_forsaken_fort');$('#forsaken_fort_body').removeClass('post-thumbnail-important');$('#forsaken_fort_add').show();$('#forsaken_fort_remove').hide();$('#forsaken_fort_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="forsaken_fort_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#forsaken_fort").hover(function(){
+                            $('#favourite-forsaken_fort').fadeIn();
+                        },function(){
+                            $('#favourite-forsaken_fort').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_forsaken_fort') == 'true') {
+                            $('#forsaken_fort_body').addClass('post-thumbnail-important');
+                            $('#forsaken_fort_add').hide();
+                            $('#forsaken_fort_remove').show();
+                            $('#forsaken_fort_dummy').text(fav_map);
+                        } else {
+                            $('#forsaken_fort_add').show();
+                            $('#forsaken_fort_remove').hide();
+                            $('#forsaken_fort_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label">CC BY-SA License</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=mitchiii_">mitchiii_</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-forsaken_fort" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Forsaken Fort" href="https://github.com/MCResourcePile/overcast-maps/raw/master/maps/forsaken_fort/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Forsaken Fort" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-forsaken_fort" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Forsaken Fort</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/f690a591-348b-482e-a18d-7779d0c0a28c?size=16&overlay"> <a class="map-author-name" href="?s=mitchiii_">mitchiii_</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Forsaken Fort and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Forsaken Fort that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Forsaken Fort" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps/tree/master/maps/forsaken_fort');$('#download-forsaken_fort').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -16590,6 +16686,103 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Tree of Life" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/tree_of_life');$('#download-tree_of_life').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="trinus_body" class="thumbnail map-float">
+                <div id="trinus" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/trinus/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=trinus"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Trinus">Trinus</span></strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/trinus" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=cp">Capture Points</a><span class="tag_hidden">CP</span></li>
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag_hidden">CTF</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-trinus" class="map-favourite" style="display:none;">
+                        <span id="trinus_add" onclick="Cookies.set('listen_trinus', true, { expires: 7 });$('#trinus_body').addClass('post-thumbnail-important');$('#trinus_add').hide();$('#trinus_remove').show();$('#trinus_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="trinus_remove" onclick="Cookies.remove('listen_trinus');$('#trinus_body').removeClass('post-thumbnail-important');$('#trinus_add').show();$('#trinus_remove').hide();$('#trinus_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="trinus_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#trinus").hover(function(){
+                            $('#favourite-trinus').fadeIn();
+                        },function(){
+                            $('#favourite-trinus').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_trinus') == 'true') {
+                            $('#trinus_body').addClass('post-thumbnail-important');
+                            $('#trinus_add').hide();
+                            $('#trinus_remove').show();
+                            $('#trinus_dummy').text(fav_map);
+                        } else {
+                            $('#trinus_add').show();
+                            $('#trinus_remove').hide();
+                            $('#trinus_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label">CC BY-SA License</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=mitchiii_">mitchiii_</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-trinus" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Trinus" href="https://github.com/MCResourcePile/overcast-maps/raw/master/maps/trinus/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Trinus" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-trinus" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Trinus</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/f690a591-348b-482e-a18d-7779d0c0a28c?size=16&overlay"> <a class="map-author-name" href="?s=mitchiii_">mitchiii_</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Trinus and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Trinus that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Trinus" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps/tree/master/maps/trinus');$('#download-trinus').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
