@@ -3422,6 +3422,103 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="build_dropper_body" class="thumbnail map-float">
+                <div id="build_dropper" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/build_dropper/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=build_dropper"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Build: Dropper">Build: Dropper</span></strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/build_dropper" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-build_dropper" class="map-favourite" style="display:none;">
+                        <span id="build_dropper_add" onclick="Cookies.set('listen_build_dropper', true, { expires: 7 });$('#build_dropper_body').addClass('post-thumbnail-important');$('#build_dropper_add').hide();$('#build_dropper_remove').show();$('#build_dropper_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="build_dropper_remove" onclick="Cookies.remove('listen_build_dropper');$('#build_dropper_body').removeClass('post-thumbnail-important');$('#build_dropper_add').show();$('#build_dropper_remove').hide();$('#build_dropper_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="build_dropper_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#build_dropper").hover(function(){
+                            $('#favourite-build_dropper').fadeIn();
+                        },function(){
+                            $('#favourite-build_dropper').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_build_dropper') == 'true') {
+                            $('#build_dropper_body').addClass('post-thumbnail-important');
+                            $('#build_dropper_add').hide();
+                            $('#build_dropper_remove').show();
+                            $('#build_dropper_dummy').text(fav_map);
+                        } else {
+                            $('#build_dropper_add').show();
+                            $('#build_dropper_remove').hide();
+                            $('#build_dropper_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label">CC BY-SA License</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=mitchiii_">mitchiii_</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-build_dropper" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Build: Dropper" href="https://github.com/MCResourcePile/overcast-maps/raw/master/maps/build_dropper/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Build: Dropper" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-build_dropper" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Build: Dropper</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/f690a591-348b-482e-a18d-7779d0c0a28c?size=16&overlay"> <a class="map-author-name" href="?s=mitchiii_">mitchiii_</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Build: Dropper and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Build: Dropper that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Build: Dropper" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps/tree/master/maps/build_dropper');$('#download-build_dropper').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="build_parkour_body" class="thumbnail map-float">
                 <div id="build_parkour" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/build_parkour/map.png');">
                     <div class="map-banner">
