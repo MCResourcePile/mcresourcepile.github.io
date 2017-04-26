@@ -1,18 +1,18 @@
 <html>
     <head>
-        <title>Test form - ResourcePile</title>
+        <title>Overcast Network - League Records - ResourcePile</title>
         <!-- Page meta data -->
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="description">
-        <meta content="Test form - ResourcePile" property="og:title">
+        <meta content="Overcast Network - League Records - ResourcePile" property="og:title">
         <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="og:description">
         <meta content="website" property="og:type">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
-        <meta content="Test form - ResourcePile" name="twitter:title">
+        <meta content="Overcast Network - League Records - ResourcePile" name="twitter:title">
         <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
@@ -60,7 +60,7 @@
                                 <li><a href="/mapstack/avicus"><i class="icon stat-map-icon"></i> Avicus Collection</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown ">
+                        <li class="dropdown active">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-sitemap"></i> League Records <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li class="disabled"><a href="/leaguerec/overcast"><i class="fa fa-shield"></i> Overcast Network</a></li>
@@ -88,49 +88,22 @@
             </div>
         </div>
         <div class="content-background">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <div class="container">
     <div class="content-header">
         <div class="content-alert">
             <div class="alert alert-success" role="alert">We are now accepting your map submissions to add to our public map collection. If you are interested in sharing your map, find out how to get your map featured in our collection <a href="https://mcresourcepile.github.io/updates#map_submissions">here</a>!</div>
         </div>
-        <div class="content-title">Test form</div>
+        <div class="content-title">Overcast Network Leagues</div>
         <div class="content-subtitle">
-            This is hopefully the start of our forms for submissions and contact.
+            <p>List of tournaments hosted by the <a href="https://oc.tc/">Overcast Network</a>.</p>
         </div>
     </div>
-    Username:<br/>
-    <input type="text" name="username" id="username" placeholder="Username" /><br/>
-
-    Map Title:<br/>
-    <input type="text" name="map" id="map" placeholder="Map Title" /><br/>
-    
-    Creative Commons License:<br/>
-    <select name="license" id="license">
-        <option value="none">Unlicensed</option>
-        <option value="by-nc-sa">Attribution-NonCommercial-ShareALike</option>
-        <option value="by-sa">Attribution-ShareALike</option>
-  </select>
-    
-    <input type="button" name="Submit" id="Submit" onclick="postContactToGoogle()" value="Submit"/>
+    <div class="section leagues">
+        <a href="/leaguerec/overcast/">
+            <div class="league-banner" style="background: url('../../assets/img/tournament/banners/.jpg');background-position:center">Nothing here yet.</div>
+        </a>
+    </div>
 </div>
-<script type="text/javascript">
-    function postContactToGoogle() {
-        var username=$('#username').val();
-        var map=$('#map').val();
-        var license=$('#license').val();
-        $.ajax({
-            url: "https://docs.google.com/forms/d/e/1FAIpQLScnMMwNQxG0ei41KcoAR8bdqh0eVwckq5wXLuEhb2XOOdKyLg/formResponse",
-            data: {"entry.44203993":username, "entry.510101193":map, "entry.1739871891":license},
-            type: "POST",
-            dataType: "xml",
-            statusCode: {
-                0:function() { window.location.replace("success.html");},
-                200:function(){window.location.replace("success.html");}
-            }
-        });
-    }
-</script>
 </div>
 <div class="footer">
     <div class="container">
