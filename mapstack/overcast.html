@@ -9840,7 +9840,7 @@
                                     <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
                                     
                                     
-                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
                                     
                                     
                                     
@@ -9938,7 +9938,7 @@
                                     <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
                                     
                                     
-                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
                                     
                                     
                                     
@@ -10823,7 +10823,7 @@
                                     <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
                                     
                                     
-                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
                                     
                                     
                                     
@@ -10891,6 +10891,104 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Infinite Horror" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/infinite_horror');$('#download-infinite_horror').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="infinite_rage_body" class="thumbnail map-float">
+                <div id="infinite_rage" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-cardinal-maps/master/maps/infinite_rage/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=infinite_rage"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Infinite Rage">Infinite Rage</span></strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/infinite_rage" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-infinite_rage" class="map-favourite" style="display:none;">
+                        <span id="infinite_rage_add" onclick="Cookies.set('listen_infinite_rage', true, { expires: 7 });$('#infinite_rage_body').addClass('post-thumbnail-important');$('#infinite_rage_add').hide();$('#infinite_rage_remove').show();$('#infinite_rage_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="infinite_rage_remove" onclick="Cookies.remove('listen_infinite_rage');$('#infinite_rage_body').removeClass('post-thumbnail-important');$('#infinite_rage_add').show();$('#infinite_rage_remove').hide();$('#infinite_rage_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="infinite_rage_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#infinite_rage").hover(function(){
+                            $('#favourite-infinite_rage').fadeIn();
+                        },function(){
+                            $('#favourite-infinite_rage').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_infinite_rage') == 'true') {
+                            $('#infinite_rage_body').addClass('post-thumbnail-important');
+                            $('#infinite_rage_add').hide();
+                            $('#infinite_rage_remove').show();
+                            $('#infinite_rage_dummy').text(fav_map);
+                        } else {
+                            $('#infinite_rage_add').show();
+                            $('#infinite_rage_remove').hide();
+                            $('#infinite_rage_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label">CC BY-SA License</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=AtlasGames">AtlasGames</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-infinite_rage" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Infinite Rage" href="https://github.com/MCResourcePile/overcast-cardinal-maps/raw/master/maps/infinite_rage/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Infinite Rage" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-infinite_rage" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Infinite Rage</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/e79fbdc9-627e-4dac-97a6-81a3046220d7?size=16&overlay"> <a class="map-author-name" href="?s=AtlasGames">AtlasGames</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Infinite Rage and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Infinite Rage that has been provided to ResourcePile, not the original. This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i> 
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Infinite Rage" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/infinite_rage');$('#download-infinite_rage').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -13158,6 +13256,104 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="netherrage_body" class="thumbnail map-float">
+                <div id="netherrage" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-cardinal-maps/master/maps/netherrage/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=netherrage"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Netherrage">Netherrage</span></strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/netherrage" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-netherrage" class="map-favourite" style="display:none;">
+                        <span id="netherrage_add" onclick="Cookies.set('listen_netherrage', true, { expires: 7 });$('#netherrage_body').addClass('post-thumbnail-important');$('#netherrage_add').hide();$('#netherrage_remove').show();$('#netherrage_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="netherrage_remove" onclick="Cookies.remove('listen_netherrage');$('#netherrage_body').removeClass('post-thumbnail-important');$('#netherrage_add').show();$('#netherrage_remove').hide();$('#netherrage_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="netherrage_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#netherrage").hover(function(){
+                            $('#favourite-netherrage').fadeIn();
+                        },function(){
+                            $('#favourite-netherrage').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_netherrage') == 'true') {
+                            $('#netherrage_body').addClass('post-thumbnail-important');
+                            $('#netherrage_add').hide();
+                            $('#netherrage_remove').show();
+                            $('#netherrage_dummy').text(fav_map);
+                        } else {
+                            $('#netherrage_add').show();
+                            $('#netherrage_remove').hide();
+                            $('#netherrage_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label">CC BY-SA License</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=AtlasGames">AtlasGames</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-netherrage" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Netherrage" href="https://github.com/MCResourcePile/overcast-cardinal-maps/raw/master/maps/netherrage/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Netherrage" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-netherrage" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Netherrage</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/e79fbdc9-627e-4dac-97a6-81a3046220d7?size=16&overlay"> <a class="map-author-name" href="?s=AtlasGames">AtlasGames</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Netherrage and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Netherrage that has been provided to ResourcePile, not the original. This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i> 
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Netherrage" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/netherrage');$('#download-netherrage').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="neyud_body" class="thumbnail map-float">
                 <div id="neyud" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/neyud/map.png');">
                     <div class="map-banner">
@@ -14429,6 +14625,104 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="pride_body" class="thumbnail map-float">
+                <div id="pride" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-cardinal-maps/master/maps/pride/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=pride"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Pride">Pride</span></strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/pride" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-pride" class="map-favourite" style="display:none;">
+                        <span id="pride_add" onclick="Cookies.set('listen_pride', true, { expires: 7 });$('#pride_body').addClass('post-thumbnail-important');$('#pride_add').hide();$('#pride_remove').show();$('#pride_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="pride_remove" onclick="Cookies.remove('listen_pride');$('#pride_body').removeClass('post-thumbnail-important');$('#pride_add').show();$('#pride_remove').hide();$('#pride_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="pride_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#pride").hover(function(){
+                            $('#favourite-pride').fadeIn();
+                        },function(){
+                            $('#favourite-pride').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_pride') == 'true') {
+                            $('#pride_body').addClass('post-thumbnail-important');
+                            $('#pride_add').hide();
+                            $('#pride_remove').show();
+                            $('#pride_dummy').text(fav_map);
+                        } else {
+                            $('#pride_add').show();
+                            $('#pride_remove').hide();
+                            $('#pride_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label">CC BY-SA License</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=AtlasGames">AtlasGames</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-pride" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Pride" href="https://github.com/MCResourcePile/overcast-cardinal-maps/raw/master/maps/pride/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Pride" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-pride" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Pride</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/e79fbdc9-627e-4dac-97a6-81a3046220d7?size=16&overlay"> <a class="map-author-name" href="?s=AtlasGames">AtlasGames</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Pride and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Pride that has been provided to ResourcePile, not the original. This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i> 
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Pride" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/pride');$('#download-pride').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="puddin_pops_body" class="thumbnail map-float">
                 <div id="puddin_pops" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/puddin_pops/map.png');">
                     <div class="map-banner">
@@ -14728,8 +15022,6 @@
                 <div id="rage_quit" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-cardinal-maps/master/maps/rage_quit/map.png');">
                     <div class="map-banner">
                         <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=rage_quit"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Rage Quit">Rage Quit</span></strong></a>
-                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/rage_quit" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
-                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
                                     
@@ -14788,8 +15080,7 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=Plastix">Plastix</a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-rage_quit" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Rage Quit" href="https://github.com/MCResourcePile/overcast-cardinal-maps/raw/master/maps/rage_quit/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Rage Quit" class="fa fa-code click-xml"></i></a>
+                    <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="This map has been locked"><i class="fa fa-lock"></i></span>
                 </div>
                 <div class="modal fade" id="download-rage_quit" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -17076,6 +17367,104 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Siege" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/siege');$('#download-siege').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="Sin_body" class="thumbnail map-float">
+                <div id="Sin" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-cardinal-maps/master/maps/Sin/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=Sin"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Sin">Sin</span></strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/Sin" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=Halloween">Halloween</a></li>
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-Sin" class="map-favourite" style="display:none;">
+                        <span id="Sin_add" onclick="Cookies.set('listen_Sin', true, { expires: 7 });$('#Sin_body').addClass('post-thumbnail-important');$('#Sin_add').hide();$('#Sin_remove').show();$('#Sin_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="Sin_remove" onclick="Cookies.remove('listen_Sin');$('#Sin_body').removeClass('post-thumbnail-important');$('#Sin_add').show();$('#Sin_remove').hide();$('#Sin_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="Sin_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#Sin").hover(function(){
+                            $('#favourite-Sin').fadeIn();
+                        },function(){
+                            $('#favourite-Sin').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_Sin') == 'true') {
+                            $('#Sin_body').addClass('post-thumbnail-important');
+                            $('#Sin_add').hide();
+                            $('#Sin_remove').show();
+                            $('#Sin_dummy').text(fav_map);
+                        } else {
+                            $('#Sin_add').show();
+                            $('#Sin_remove').hide();
+                            $('#Sin_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label">CC BY-SA License</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=AtlasGames">AtlasGames</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-Sin" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Sin" href="https://github.com/MCResourcePile/overcast-cardinal-maps/raw/master/maps/Sin/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Sin" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-Sin" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Sin</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/e79fbdc9-627e-4dac-97a6-81a3046220d7?size=16&overlay"> <a class="map-author-name" href="?s=AtlasGames">AtlasGames</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Sin and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Sin that has been provided to ResourcePile, not the original. This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i> 
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Sin" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/Sin');$('#download-Sin').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -20666,6 +21055,104 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Wit&#x27;s End" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps/tree/master/maps/wit_s_end');$('#download-wit_s_end').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="wonderland_body" class="thumbnail map-float">
+                <div id="wonderland" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-cardinal-maps/master/maps/wonderland/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=wonderland"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Wonderland">Wonderland</span></strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/wonderland" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-wonderland" class="map-favourite" style="display:none;">
+                        <span id="wonderland_add" onclick="Cookies.set('listen_wonderland', true, { expires: 7 });$('#wonderland_body').addClass('post-thumbnail-important');$('#wonderland_add').hide();$('#wonderland_remove').show();$('#wonderland_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="wonderland_remove" onclick="Cookies.remove('listen_wonderland');$('#wonderland_body').removeClass('post-thumbnail-important');$('#wonderland_add').show();$('#wonderland_remove').hide();$('#wonderland_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="wonderland_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#wonderland").hover(function(){
+                            $('#favourite-wonderland').fadeIn();
+                        },function(){
+                            $('#favourite-wonderland').fadeOut();
+                        });
+                        
+                        if (Cookies.get('listen_wonderland') == 'true') {
+                            $('#wonderland_body').addClass('post-thumbnail-important');
+                            $('#wonderland_add').hide();
+                            $('#wonderland_remove').show();
+                            $('#wonderland_dummy').text(fav_map);
+                        } else {
+                            $('#wonderland_add').show();
+                            $('#wonderland_remove').hide();
+                            $('#wonderland_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label">CC BY-SA License</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=AtlasGames">AtlasGames</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-wonderland" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Wonderland" href="https://github.com/MCResourcePile/overcast-cardinal-maps/raw/master/maps/wonderland/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Wonderland" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-wonderland" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Wonderland</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/e79fbdc9-627e-4dac-97a6-81a3046220d7?size=16&overlay"> <a class="map-author-name" href="?s=AtlasGames">AtlasGames</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Wonderland and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Wonderland that has been provided to ResourcePile, not the original. This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i> 
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Wonderland" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/wonderland');$('#download-wonderland').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
