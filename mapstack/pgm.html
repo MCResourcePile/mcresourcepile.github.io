@@ -91,7 +91,7 @@
 <div class="container">
     <div class="content-header">
         <div class="content-alert">
-            <div class="alert alert-success" role="alert">We are now accepting your map submissions to add to our public map collection. If you are interested in sharing your map, find out how to get your map featured in our collection <a href="https://mcresourcepile.github.io/updates#map_submissions">here</a>!</div>
+            <div class="alert alert-success" role="alert">We are now accepting your map submissions to add to our public map collection. If you are interested in sharing your map, find out how to get your map featured in our collection <a href="https://mcresourcepile.github.io/admin/forms/maps">here</a>!</div>
         </div>
         <div class="content-title">PGM Map Collection</div>
         <div class="content-subtitle">
@@ -127,9 +127,9 @@
         </div>
         <div class="col-xs-6 col-md-3">
             <div class="game-mode-section-header">Other</div>
-            <a class="game-mode-button game-all" href="?s="></a>
             <a class="game-mode-button game-arcade" href="?s=arcade"></a>
             <a class="game-mode-button game-gs" href="?s=gs"></a>
+            <a class="game-mode-button custom-popular" href="?s=popular"></a>
             <a class="game-mode-button custom-starred" href="?s=starred"></a>
             <span class="game-mode-button">Licenses:</span>
             <a class="game-mode-button license-by-nc-sa" href="?s=by-nc-sa"></a>
@@ -140,10 +140,10 @@
     <div id="maps-output">
         <div class="dynamic">
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="assembly_body" class="thumbnail map-float">
+            <div id="assembly_body" class="thumbnail map-float ">
                 <div id="assembly" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/assembly/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=assembly"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Assembly">Assembly</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=assembly" data-toggle="tooltip" data-placement="top" title="Assembly"><strong>Assembly</strong></a>
                         <span style="display:block;margin-top:-8px;">
                                     
                                     
@@ -171,8 +171,8 @@
                         </span>
                     </div>
                     <div id="favourite-assembly" class="map-favourite" style="display:none;">
-                        <span id="assembly_add" onclick="Cookies.set('listen_assembly', true, { expires: 7 });$('#assembly_body').addClass('post-thumbnail-important');$('#assembly_add').hide();$('#assembly_remove').show();$('#assembly_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="assembly_remove" onclick="Cookies.remove('listen_assembly');$('#assembly_body').removeClass('post-thumbnail-important');$('#assembly_add').show();$('#assembly_remove').hide();$('#assembly_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="assembly_add" onclick="Cookies.set('star_assembly', true, { expires: 7 });$('#assembly_body').addClass('map-glow-favourite');$('#assembly_add').hide();$('#assembly_remove').show();$('#assembly_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="assembly_remove" onclick="Cookies.remove('star_assembly');$('#assembly_body').removeClass('map-glow-favourite');$('#assembly_add').show();$('#assembly_remove').hide();$('#assembly_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="assembly_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -182,8 +182,8 @@
                             $('#favourite-assembly').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_assembly') == 'true') {
-                            $('#assembly_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_assembly') == 'true') {
+                            $('#assembly_body').addClass('map-glow-favourite');
                             $('#assembly_add').hide();
                             $('#assembly_remove').show();
                             $('#assembly_dummy').text(fav_map);
@@ -194,7 +194,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -231,6 +231,7 @@
                                     You will be downloading the version of Assembly that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Assembly" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/pgm-maps/tree/master/maps/assembly');$('#download-assembly').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -242,10 +243,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="cosmic_assault_body" class="thumbnail map-float">
+            <div id="cosmic_assault_body" class="thumbnail map-float ">
                 <div id="cosmic_assault" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/cosmic_assault/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=cosmic_assault"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Cosmic Assault">Cosmic Assault</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=cosmic_assault" data-toggle="tooltip" data-placement="top" title="Cosmic Assault"><strong>Cosmic Assault</strong></a>
                         <span style="display:block;margin-top:-8px;">
                                     
                                     
@@ -273,8 +274,8 @@
                         </span>
                     </div>
                     <div id="favourite-cosmic_assault" class="map-favourite" style="display:none;">
-                        <span id="cosmic_assault_add" onclick="Cookies.set('listen_cosmic_assault', true, { expires: 7 });$('#cosmic_assault_body').addClass('post-thumbnail-important');$('#cosmic_assault_add').hide();$('#cosmic_assault_remove').show();$('#cosmic_assault_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="cosmic_assault_remove" onclick="Cookies.remove('listen_cosmic_assault');$('#cosmic_assault_body').removeClass('post-thumbnail-important');$('#cosmic_assault_add').show();$('#cosmic_assault_remove').hide();$('#cosmic_assault_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="cosmic_assault_add" onclick="Cookies.set('star_cosmic_assault', true, { expires: 7 });$('#cosmic_assault_body').addClass('map-glow-favourite');$('#cosmic_assault_add').hide();$('#cosmic_assault_remove').show();$('#cosmic_assault_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="cosmic_assault_remove" onclick="Cookies.remove('star_cosmic_assault');$('#cosmic_assault_body').removeClass('map-glow-favourite');$('#cosmic_assault_add').show();$('#cosmic_assault_remove').hide();$('#cosmic_assault_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="cosmic_assault_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -284,8 +285,8 @@
                             $('#favourite-cosmic_assault').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_cosmic_assault') == 'true') {
-                            $('#cosmic_assault_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_cosmic_assault') == 'true') {
+                            $('#cosmic_assault_body').addClass('map-glow-favourite');
                             $('#cosmic_assault_add').hide();
                             $('#cosmic_assault_remove').show();
                             $('#cosmic_assault_dummy').text(fav_map);
@@ -296,7 +297,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -327,6 +328,7 @@
                                     You will be downloading the version of Cosmic Assault that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Cosmic Assault" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/pgm-maps/tree/master/maps/cosmic_assault');$('#download-cosmic_assault').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -338,10 +340,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="erth_body" class="thumbnail map-float">
+            <div id="erth_body" class="thumbnail map-float ">
                 <div id="erth" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/erth/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=erth"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Erth">Erth</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=erth" data-toggle="tooltip" data-placement="top" title="Erth"><strong>Erth</strong></a>
                         <a href="https://oc.tc/forums/topics/57fa8f575f35b93245000013" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -370,8 +372,8 @@
                         </span>
                     </div>
                     <div id="favourite-erth" class="map-favourite" style="display:none;">
-                        <span id="erth_add" onclick="Cookies.set('listen_erth', true, { expires: 7 });$('#erth_body').addClass('post-thumbnail-important');$('#erth_add').hide();$('#erth_remove').show();$('#erth_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="erth_remove" onclick="Cookies.remove('listen_erth');$('#erth_body').removeClass('post-thumbnail-important');$('#erth_add').show();$('#erth_remove').hide();$('#erth_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="erth_add" onclick="Cookies.set('star_erth', true, { expires: 7 });$('#erth_body').addClass('map-glow-favourite');$('#erth_add').hide();$('#erth_remove').show();$('#erth_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="erth_remove" onclick="Cookies.remove('star_erth');$('#erth_body').removeClass('map-glow-favourite');$('#erth_add').show();$('#erth_remove').hide();$('#erth_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="erth_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -381,8 +383,8 @@
                             $('#favourite-erth').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_erth') == 'true') {
-                            $('#erth_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_erth') == 'true') {
+                            $('#erth_body').addClass('map-glow-favourite');
                             $('#erth_add').hide();
                             $('#erth_remove').show();
                             $('#erth_dummy').text(fav_map);
@@ -393,7 +395,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -424,6 +426,7 @@
                                     You will be downloading the version of Erth that has been provided to ResourcePile, not the original.  If you would prefer to download this map from the original location, please visit the map's <a href="https://oc.tc/forums/topics/57fa8f575f35b93245000013" target="_blank">discussion thread</a>.
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Erth" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/pgm-maps/tree/master/maps/erth');$('#download-erth').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -435,10 +438,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="gold_drught_body" class="thumbnail map-float">
+            <div id="gold_drught_body" class="thumbnail map-float ">
                 <div id="gold_drught" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/gold_drught/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=gold_drught"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="gold drught 5">gold drught 5</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=gold_drught" data-toggle="tooltip" data-placement="top" title="gold drught 5"><strong>gold drught 5</strong></a>
                         <span style="display:block;margin-top:-8px;">
                                     
                                     <li class="game-tag"><a class="game-link map-tag" href="?s=tdm">Team Deathmatch</a><span class="tag_hidden">Team Death Match TDM</span></li>
@@ -466,8 +469,8 @@
                         </span>
                     </div>
                     <div id="favourite-gold_drught" class="map-favourite" style="display:none;">
-                        <span id="gold_drught_add" onclick="Cookies.set('listen_gold_drught', true, { expires: 7 });$('#gold_drught_body').addClass('post-thumbnail-important');$('#gold_drught_add').hide();$('#gold_drught_remove').show();$('#gold_drught_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="gold_drught_remove" onclick="Cookies.remove('listen_gold_drught');$('#gold_drught_body').removeClass('post-thumbnail-important');$('#gold_drught_add').show();$('#gold_drught_remove').hide();$('#gold_drught_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="gold_drught_add" onclick="Cookies.set('star_gold_drught', true, { expires: 7 });$('#gold_drught_body').addClass('map-glow-favourite');$('#gold_drught_add').hide();$('#gold_drught_remove').show();$('#gold_drught_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="gold_drught_remove" onclick="Cookies.remove('star_gold_drught');$('#gold_drught_body').removeClass('map-glow-favourite');$('#gold_drught_add').show();$('#gold_drught_remove').hide();$('#gold_drught_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="gold_drught_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -477,8 +480,8 @@
                             $('#favourite-gold_drught').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_gold_drught') == 'true') {
-                            $('#gold_drught_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_gold_drught') == 'true') {
+                            $('#gold_drught_body').addClass('map-glow-favourite');
                             $('#gold_drught_add').hide();
                             $('#gold_drught_remove').show();
                             $('#gold_drught_dummy').text(fav_map);
@@ -489,7 +492,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -520,6 +523,7 @@
                                     You will be downloading the version of gold drught 5 that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="gold drught 5" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/pgm-maps/tree/master/maps/gold_drught');$('#download-gold_drught').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -531,10 +535,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="pharaohs_palace_body" class="thumbnail map-float">
+            <div id="pharaohs_palace_body" class="thumbnail map-float ">
                 <div id="pharaohs_palace" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/pharaohs_palace/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=pharaohs_palace"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Pharaohs Palace">Pharaohs Palace</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=pharaohs_palace" data-toggle="tooltip" data-placement="top" title="Pharaohs Palace"><strong>Pharaohs Palace</strong></a>
                         <span style="display:block;margin-top:-8px;">
                                     
                                     
@@ -562,8 +566,8 @@
                         </span>
                     </div>
                     <div id="favourite-pharaohs_palace" class="map-favourite" style="display:none;">
-                        <span id="pharaohs_palace_add" onclick="Cookies.set('listen_pharaohs_palace', true, { expires: 7 });$('#pharaohs_palace_body').addClass('post-thumbnail-important');$('#pharaohs_palace_add').hide();$('#pharaohs_palace_remove').show();$('#pharaohs_palace_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="pharaohs_palace_remove" onclick="Cookies.remove('listen_pharaohs_palace');$('#pharaohs_palace_body').removeClass('post-thumbnail-important');$('#pharaohs_palace_add').show();$('#pharaohs_palace_remove').hide();$('#pharaohs_palace_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="pharaohs_palace_add" onclick="Cookies.set('star_pharaohs_palace', true, { expires: 7 });$('#pharaohs_palace_body').addClass('map-glow-favourite');$('#pharaohs_palace_add').hide();$('#pharaohs_palace_remove').show();$('#pharaohs_palace_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="pharaohs_palace_remove" onclick="Cookies.remove('star_pharaohs_palace');$('#pharaohs_palace_body').removeClass('map-glow-favourite');$('#pharaohs_palace_add').show();$('#pharaohs_palace_remove').hide();$('#pharaohs_palace_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="pharaohs_palace_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -573,8 +577,8 @@
                             $('#favourite-pharaohs_palace').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_pharaohs_palace') == 'true') {
-                            $('#pharaohs_palace_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_pharaohs_palace') == 'true') {
+                            $('#pharaohs_palace_body').addClass('map-glow-favourite');
                             $('#pharaohs_palace_add').hide();
                             $('#pharaohs_palace_remove').show();
                             $('#pharaohs_palace_dummy').text(fav_map);
@@ -585,7 +589,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -616,6 +620,7 @@
                                     You will be downloading the version of Pharaohs Palace that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Pharaohs Palace" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/pgm-maps/tree/master/maps/pharaohs_palace');$('#download-pharaohs_palace').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -627,10 +632,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="shave_harambe_body" class="thumbnail map-float">
+            <div id="shave_harambe_body" class="thumbnail map-float ">
                 <div id="shave_harambe" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/shave_harambe/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=shave_harambe"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Shave Harambe">Shave Harambe</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=shave_harambe" data-toggle="tooltip" data-placement="top" title="Shave Harambe"><strong>Shave Harambe</strong></a>
                         <span style="display:block;margin-top:-8px;">
                                     
                                     
@@ -658,8 +663,8 @@
                         </span>
                     </div>
                     <div id="favourite-shave_harambe" class="map-favourite" style="display:none;">
-                        <span id="shave_harambe_add" onclick="Cookies.set('listen_shave_harambe', true, { expires: 7 });$('#shave_harambe_body').addClass('post-thumbnail-important');$('#shave_harambe_add').hide();$('#shave_harambe_remove').show();$('#shave_harambe_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="shave_harambe_remove" onclick="Cookies.remove('listen_shave_harambe');$('#shave_harambe_body').removeClass('post-thumbnail-important');$('#shave_harambe_add').show();$('#shave_harambe_remove').hide();$('#shave_harambe_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="shave_harambe_add" onclick="Cookies.set('star_shave_harambe', true, { expires: 7 });$('#shave_harambe_body').addClass('map-glow-favourite');$('#shave_harambe_add').hide();$('#shave_harambe_remove').show();$('#shave_harambe_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="shave_harambe_remove" onclick="Cookies.remove('star_shave_harambe');$('#shave_harambe_body').removeClass('map-glow-favourite');$('#shave_harambe_add').show();$('#shave_harambe_remove').hide();$('#shave_harambe_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="shave_harambe_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -669,8 +674,8 @@
                             $('#favourite-shave_harambe').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_shave_harambe') == 'true') {
-                            $('#shave_harambe_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_shave_harambe') == 'true') {
+                            $('#shave_harambe_body').addClass('map-glow-favourite');
                             $('#shave_harambe_add').hide();
                             $('#shave_harambe_remove').show();
                             $('#shave_harambe_dummy').text(fav_map);
@@ -681,7 +686,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -712,6 +717,7 @@
                                     You will be downloading the version of Shave Harambe that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Shave Harambe" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/pgm-maps/tree/master/maps/shave_harambe');$('#download-shave_harambe').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>

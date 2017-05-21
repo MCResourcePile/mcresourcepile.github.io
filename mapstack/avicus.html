@@ -91,7 +91,7 @@
 <div class="container">
 	<div class="content-header">
         <div class="content-alert">
-            <div class="alert alert-success" role="alert">We are now accepting your map submissions to add to our public map collection. If you are interested in sharing your map, find out how to get your map featured in our collection <a href="https://mcresourcepile.github.io/updates#map_submissions">here</a>!</div>
+            <div class="alert alert-success" role="alert">We are now accepting your map submissions to add to our public map collection. If you are interested in sharing your map, find out how to get your map featured in our collection <a href="https://mcresourcepile.github.io/admin/forms/maps">here</a>!</div>
         </div>
 		<div class="content-title">Avicus Map Collection</div>
 		<div class="content-subtitle">
@@ -123,8 +123,8 @@
 		</div>
 		<div class="col-xs-6 col-md-3">
 			<div class="game-mode-section-header">Other</div>
-			<a class="game-mode-button game-all" href="?s=" ></a>
-			<a class="game-mode-button game-arcade" href="?s=arcade"></a>
+            <a class="game-mode-button game-arcade" href="?s=arcade"></a>
+            <a class="game-mode-button custom-popular" href="?s=popular"></a>
             <a class="game-mode-button custom-starred" href="?s=starred"></a>
 			<span class="game-mode-button">Licenses:</span>
 			<a class="game-mode-button license-by-nc-sa" href="?s=by-nc-sa"></a>
@@ -135,10 +135,10 @@
 	<div id="maps-output" class="maps-output">
 		<div class="dynamic">
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="aardvark_body" class="thumbnail map-float">
+            <div id="aardvark_body" class="thumbnail map-float ">
                 <div id="aardvark" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/aardvark/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=aardvark"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Aardvark">Aardvark</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=aardvark" data-toggle="tooltip" data-placement="top" title="Aardvark"><strong>Aardvark</strong></a>
                         <a href="https://avicus.net/maps/map/aardvark" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -167,8 +167,8 @@
                         </span>
                     </div>
                     <div id="favourite-aardvark" class="map-favourite" style="display:none;">
-                        <span id="aardvark_add" onclick="Cookies.set('listen_aardvark', true, { expires: 7 });$('#aardvark_body').addClass('post-thumbnail-important');$('#aardvark_add').hide();$('#aardvark_remove').show();$('#aardvark_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="aardvark_remove" onclick="Cookies.remove('listen_aardvark');$('#aardvark_body').removeClass('post-thumbnail-important');$('#aardvark_add').show();$('#aardvark_remove').hide();$('#aardvark_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="aardvark_add" onclick="Cookies.set('star_aardvark', true, { expires: 7 });$('#aardvark_body').addClass('map-glow-favourite');$('#aardvark_add').hide();$('#aardvark_remove').show();$('#aardvark_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="aardvark_remove" onclick="Cookies.remove('star_aardvark');$('#aardvark_body').removeClass('map-glow-favourite');$('#aardvark_add').show();$('#aardvark_remove').hide();$('#aardvark_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="aardvark_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -178,8 +178,8 @@
                             $('#favourite-aardvark').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_aardvark') == 'true') {
-                            $('#aardvark_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_aardvark') == 'true') {
+                            $('#aardvark_body').addClass('map-glow-favourite');
                             $('#aardvark_add').hide();
                             $('#aardvark_remove').show();
                             $('#aardvark_dummy').text(fav_map);
@@ -190,7 +190,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -221,6 +221,7 @@
                                     You will be downloading the version of Aardvark that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Aardvark" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/aardvark');$('#download-aardvark').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -232,10 +233,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="boolean-classic_body" class="thumbnail map-float">
+            <div id="boolean-classic_body" class="thumbnail map-float ">
                 <div id="boolean-classic" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/boolean-classic/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=boolean-classic"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Boolean Classic">Boolean Classic</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=boolean-classic" data-toggle="tooltip" data-placement="top" title="Boolean Classic"><strong>Boolean Classic</strong></a>
                         <a href="https://avicus.net/maps/map/boolean-classic" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -264,8 +265,8 @@
                         </span>
                     </div>
                     <div id="favourite-boolean-classic" class="map-favourite" style="display:none;">
-                        <span id="boolean-classic_add" onclick="Cookies.set('listen_boolean-classic', true, { expires: 7 });$('#boolean-classic_body').addClass('post-thumbnail-important');$('#boolean-classic_add').hide();$('#boolean-classic_remove').show();$('#boolean-classic_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="boolean-classic_remove" onclick="Cookies.remove('listen_boolean-classic');$('#boolean-classic_body').removeClass('post-thumbnail-important');$('#boolean-classic_add').show();$('#boolean-classic_remove').hide();$('#boolean-classic_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="boolean-classic_add" onclick="Cookies.set('star_boolean-classic', true, { expires: 7 });$('#boolean-classic_body').addClass('map-glow-favourite');$('#boolean-classic_add').hide();$('#boolean-classic_remove').show();$('#boolean-classic_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="boolean-classic_remove" onclick="Cookies.remove('star_boolean-classic');$('#boolean-classic_body').removeClass('map-glow-favourite');$('#boolean-classic_add').show();$('#boolean-classic_remove').hide();$('#boolean-classic_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="boolean-classic_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -275,8 +276,8 @@
                             $('#favourite-boolean-classic').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_boolean-classic') == 'true') {
-                            $('#boolean-classic_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_boolean-classic') == 'true') {
+                            $('#boolean-classic_body').addClass('map-glow-favourite');
                             $('#boolean-classic_add').hide();
                             $('#boolean-classic_remove').show();
                             $('#boolean-classic_dummy').text(fav_map);
@@ -287,7 +288,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -318,6 +319,7 @@
                                     You will be downloading the version of Boolean Classic that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Boolean Classic" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/boolean-classic');$('#download-boolean-classic').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -329,10 +331,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="sastella_body" class="thumbnail map-float">
+            <div id="sastella_body" class="thumbnail map-float ">
                 <div id="sastella" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/sastella/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=sastella"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Castella">Castella</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=sastella" data-toggle="tooltip" data-placement="top" title="Castella"><strong>Castella</strong></a>
                         <a href="https://avicus.net/maps/map/sastella" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -361,8 +363,8 @@
                         </span>
                     </div>
                     <div id="favourite-sastella" class="map-favourite" style="display:none;">
-                        <span id="sastella_add" onclick="Cookies.set('listen_sastella', true, { expires: 7 });$('#sastella_body').addClass('post-thumbnail-important');$('#sastella_add').hide();$('#sastella_remove').show();$('#sastella_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="sastella_remove" onclick="Cookies.remove('listen_sastella');$('#sastella_body').removeClass('post-thumbnail-important');$('#sastella_add').show();$('#sastella_remove').hide();$('#sastella_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="sastella_add" onclick="Cookies.set('star_sastella', true, { expires: 7 });$('#sastella_body').addClass('map-glow-favourite');$('#sastella_add').hide();$('#sastella_remove').show();$('#sastella_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="sastella_remove" onclick="Cookies.remove('star_sastella');$('#sastella_body').removeClass('map-glow-favourite');$('#sastella_add').show();$('#sastella_remove').hide();$('#sastella_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="sastella_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -372,8 +374,8 @@
                             $('#favourite-sastella').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_sastella') == 'true') {
-                            $('#sastella_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_sastella') == 'true') {
+                            $('#sastella_body').addClass('map-glow-favourite');
                             $('#sastella_add').hide();
                             $('#sastella_remove').show();
                             $('#sastella_dummy').text(fav_map);
@@ -384,7 +386,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -417,6 +419,7 @@
                                     You will be downloading the version of Castella that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Castella" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/sastella');$('#download-sastella').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -428,10 +431,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="cherrylandmc_body" class="thumbnail map-float">
+            <div id="cherrylandmc_body" class="thumbnail map-float ">
                 <div id="cherrylandmc" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/cherrylandmc/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=cherrylandmc"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="CherrylandMC">CherrylandMC</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=cherrylandmc" data-toggle="tooltip" data-placement="top" title="CherrylandMC"><strong>CherrylandMC</strong></a>
                         <a href="https://avicus.net/maps/map/cherrylandmc" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -460,8 +463,8 @@
                         </span>
                     </div>
                     <div id="favourite-cherrylandmc" class="map-favourite" style="display:none;">
-                        <span id="cherrylandmc_add" onclick="Cookies.set('listen_cherrylandmc', true, { expires: 7 });$('#cherrylandmc_body').addClass('post-thumbnail-important');$('#cherrylandmc_add').hide();$('#cherrylandmc_remove').show();$('#cherrylandmc_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="cherrylandmc_remove" onclick="Cookies.remove('listen_cherrylandmc');$('#cherrylandmc_body').removeClass('post-thumbnail-important');$('#cherrylandmc_add').show();$('#cherrylandmc_remove').hide();$('#cherrylandmc_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="cherrylandmc_add" onclick="Cookies.set('star_cherrylandmc', true, { expires: 7 });$('#cherrylandmc_body').addClass('map-glow-favourite');$('#cherrylandmc_add').hide();$('#cherrylandmc_remove').show();$('#cherrylandmc_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="cherrylandmc_remove" onclick="Cookies.remove('star_cherrylandmc');$('#cherrylandmc_body').removeClass('map-glow-favourite');$('#cherrylandmc_add').show();$('#cherrylandmc_remove').hide();$('#cherrylandmc_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="cherrylandmc_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -471,8 +474,8 @@
                             $('#favourite-cherrylandmc').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_cherrylandmc') == 'true') {
-                            $('#cherrylandmc_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_cherrylandmc') == 'true') {
+                            $('#cherrylandmc_body').addClass('map-glow-favourite');
                             $('#cherrylandmc_add').hide();
                             $('#cherrylandmc_remove').show();
                             $('#cherrylandmc_dummy').text(fav_map);
@@ -483,7 +486,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -516,6 +519,7 @@
                                     You will be downloading the version of CherrylandMC that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="CherrylandMC" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/cherrylandmc');$('#download-cherrylandmc').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -527,10 +531,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="clay-wars_body" class="thumbnail map-float">
+            <div id="clay-wars_body" class="thumbnail map-float ">
                 <div id="clay-wars" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/clay-wars/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=clay-wars"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Clay Wars">Clay Wars</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=clay-wars" data-toggle="tooltip" data-placement="top" title="Clay Wars"><strong>Clay Wars</strong></a>
                         <a href="https://avicus.net/maps/map/clay-wars" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -559,8 +563,8 @@
                         </span>
                     </div>
                     <div id="favourite-clay-wars" class="map-favourite" style="display:none;">
-                        <span id="clay-wars_add" onclick="Cookies.set('listen_clay-wars', true, { expires: 7 });$('#clay-wars_body').addClass('post-thumbnail-important');$('#clay-wars_add').hide();$('#clay-wars_remove').show();$('#clay-wars_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="clay-wars_remove" onclick="Cookies.remove('listen_clay-wars');$('#clay-wars_body').removeClass('post-thumbnail-important');$('#clay-wars_add').show();$('#clay-wars_remove').hide();$('#clay-wars_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="clay-wars_add" onclick="Cookies.set('star_clay-wars', true, { expires: 7 });$('#clay-wars_body').addClass('map-glow-favourite');$('#clay-wars_add').hide();$('#clay-wars_remove').show();$('#clay-wars_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="clay-wars_remove" onclick="Cookies.remove('star_clay-wars');$('#clay-wars_body').removeClass('map-glow-favourite');$('#clay-wars_add').show();$('#clay-wars_remove').hide();$('#clay-wars_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="clay-wars_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -570,8 +574,8 @@
                             $('#favourite-clay-wars').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_clay-wars') == 'true') {
-                            $('#clay-wars_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_clay-wars') == 'true') {
+                            $('#clay-wars_body').addClass('map-glow-favourite');
                             $('#clay-wars_add').hide();
                             $('#clay-wars_remove').show();
                             $('#clay-wars_dummy').text(fav_map);
@@ -582,7 +586,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -613,6 +617,7 @@
                                     You will be downloading the version of Clay Wars that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Clay Wars" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/clay-wars');$('#download-clay-wars').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -624,10 +629,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="cobweb-hills_body" class="thumbnail map-float">
+            <div id="cobweb-hills_body" class="thumbnail map-float ">
                 <div id="cobweb-hills" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/cobweb-hills/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=cobweb-hills"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Cobweb Hills">Cobweb Hills</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=cobweb-hills" data-toggle="tooltip" data-placement="top" title="Cobweb Hills"><strong>Cobweb Hills</strong></a>
                         <a href="https://avicus.net/maps/map/cobweb-hills" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -656,8 +661,8 @@
                         </span>
                     </div>
                     <div id="favourite-cobweb-hills" class="map-favourite" style="display:none;">
-                        <span id="cobweb-hills_add" onclick="Cookies.set('listen_cobweb-hills', true, { expires: 7 });$('#cobweb-hills_body').addClass('post-thumbnail-important');$('#cobweb-hills_add').hide();$('#cobweb-hills_remove').show();$('#cobweb-hills_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="cobweb-hills_remove" onclick="Cookies.remove('listen_cobweb-hills');$('#cobweb-hills_body').removeClass('post-thumbnail-important');$('#cobweb-hills_add').show();$('#cobweb-hills_remove').hide();$('#cobweb-hills_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="cobweb-hills_add" onclick="Cookies.set('star_cobweb-hills', true, { expires: 7 });$('#cobweb-hills_body').addClass('map-glow-favourite');$('#cobweb-hills_add').hide();$('#cobweb-hills_remove').show();$('#cobweb-hills_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="cobweb-hills_remove" onclick="Cookies.remove('star_cobweb-hills');$('#cobweb-hills_body').removeClass('map-glow-favourite');$('#cobweb-hills_add').show();$('#cobweb-hills_remove').hide();$('#cobweb-hills_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="cobweb-hills_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -667,8 +672,8 @@
                             $('#favourite-cobweb-hills').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_cobweb-hills') == 'true') {
-                            $('#cobweb-hills_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_cobweb-hills') == 'true') {
+                            $('#cobweb-hills_body').addClass('map-glow-favourite');
                             $('#cobweb-hills_add').hide();
                             $('#cobweb-hills_remove').show();
                             $('#cobweb-hills_dummy').text(fav_map);
@@ -679,7 +684,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -712,6 +717,7 @@
                                     You will be downloading the version of Cobweb Hills that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Cobweb Hills" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/cobweb-hills');$('#download-cobweb-hills').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -723,10 +729,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="dragonblaze-peaks_body" class="thumbnail map-float">
+            <div id="dragonblaze-peaks_body" class="thumbnail map-float ">
                 <div id="dragonblaze-peaks" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/dragonblaze-peaks/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=dragonblaze-peaks"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Dragonblaze Peaks">Dragonblaze Peaks</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=dragonblaze-peaks" data-toggle="tooltip" data-placement="top" title="Dragonblaze Peaks"><strong>Dragonblaze Peaks</strong></a>
                         <a href="https://avicus.net/maps/map/dragonblaze-peaks" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -755,8 +761,8 @@
                         </span>
                     </div>
                     <div id="favourite-dragonblaze-peaks" class="map-favourite" style="display:none;">
-                        <span id="dragonblaze-peaks_add" onclick="Cookies.set('listen_dragonblaze-peaks', true, { expires: 7 });$('#dragonblaze-peaks_body').addClass('post-thumbnail-important');$('#dragonblaze-peaks_add').hide();$('#dragonblaze-peaks_remove').show();$('#dragonblaze-peaks_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="dragonblaze-peaks_remove" onclick="Cookies.remove('listen_dragonblaze-peaks');$('#dragonblaze-peaks_body').removeClass('post-thumbnail-important');$('#dragonblaze-peaks_add').show();$('#dragonblaze-peaks_remove').hide();$('#dragonblaze-peaks_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="dragonblaze-peaks_add" onclick="Cookies.set('star_dragonblaze-peaks', true, { expires: 7 });$('#dragonblaze-peaks_body').addClass('map-glow-favourite');$('#dragonblaze-peaks_add').hide();$('#dragonblaze-peaks_remove').show();$('#dragonblaze-peaks_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="dragonblaze-peaks_remove" onclick="Cookies.remove('star_dragonblaze-peaks');$('#dragonblaze-peaks_body').removeClass('map-glow-favourite');$('#dragonblaze-peaks_add').show();$('#dragonblaze-peaks_remove').hide();$('#dragonblaze-peaks_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="dragonblaze-peaks_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -766,8 +772,8 @@
                             $('#favourite-dragonblaze-peaks').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_dragonblaze-peaks') == 'true') {
-                            $('#dragonblaze-peaks_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_dragonblaze-peaks') == 'true') {
+                            $('#dragonblaze-peaks_body').addClass('map-glow-favourite');
                             $('#dragonblaze-peaks_add').hide();
                             $('#dragonblaze-peaks_remove').show();
                             $('#dragonblaze-peaks_dummy').text(fav_map);
@@ -778,7 +784,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -811,6 +817,7 @@
                                     You will be downloading the version of Dragonblaze Peaks that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Dragonblaze Peaks" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/dragonblaze-peaks');$('#download-dragonblaze-peaks').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -822,10 +829,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="drystep_body" class="thumbnail map-float">
+            <div id="drystep_body" class="thumbnail map-float ">
                 <div id="drystep" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/drystep/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=drystep"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Dyrstep">Dyrstep</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=drystep" data-toggle="tooltip" data-placement="top" title="Dyrstep"><strong>Dyrstep</strong></a>
                         <a href="https://avicus.net/maps/map/drystep" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -854,8 +861,8 @@
                         </span>
                     </div>
                     <div id="favourite-drystep" class="map-favourite" style="display:none;">
-                        <span id="drystep_add" onclick="Cookies.set('listen_drystep', true, { expires: 7 });$('#drystep_body').addClass('post-thumbnail-important');$('#drystep_add').hide();$('#drystep_remove').show();$('#drystep_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="drystep_remove" onclick="Cookies.remove('listen_drystep');$('#drystep_body').removeClass('post-thumbnail-important');$('#drystep_add').show();$('#drystep_remove').hide();$('#drystep_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="drystep_add" onclick="Cookies.set('star_drystep', true, { expires: 7 });$('#drystep_body').addClass('map-glow-favourite');$('#drystep_add').hide();$('#drystep_remove').show();$('#drystep_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="drystep_remove" onclick="Cookies.remove('star_drystep');$('#drystep_body').removeClass('map-glow-favourite');$('#drystep_add').show();$('#drystep_remove').hide();$('#drystep_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="drystep_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -865,8 +872,8 @@
                             $('#favourite-drystep').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_drystep') == 'true') {
-                            $('#drystep_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_drystep') == 'true') {
+                            $('#drystep_body').addClass('map-glow-favourite');
                             $('#drystep_add').hide();
                             $('#drystep_remove').show();
                             $('#drystep_dummy').text(fav_map);
@@ -877,7 +884,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -908,6 +915,7 @@
                                     You will be downloading the version of Dyrstep that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Dyrstep" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/drystep');$('#download-drystep').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -919,10 +927,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="elevated_body" class="thumbnail map-float">
+            <div id="elevated_body" class="thumbnail map-float ">
                 <div id="elevated" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/elevated/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=elevated"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Elevated">Elevated</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=elevated" data-toggle="tooltip" data-placement="top" title="Elevated"><strong>Elevated</strong></a>
                         <a href="https://avicus.net/maps/map/elevated" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -951,8 +959,8 @@
                         </span>
                     </div>
                     <div id="favourite-elevated" class="map-favourite" style="display:none;">
-                        <span id="elevated_add" onclick="Cookies.set('listen_elevated', true, { expires: 7 });$('#elevated_body').addClass('post-thumbnail-important');$('#elevated_add').hide();$('#elevated_remove').show();$('#elevated_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="elevated_remove" onclick="Cookies.remove('listen_elevated');$('#elevated_body').removeClass('post-thumbnail-important');$('#elevated_add').show();$('#elevated_remove').hide();$('#elevated_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="elevated_add" onclick="Cookies.set('star_elevated', true, { expires: 7 });$('#elevated_body').addClass('map-glow-favourite');$('#elevated_add').hide();$('#elevated_remove').show();$('#elevated_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="elevated_remove" onclick="Cookies.remove('star_elevated');$('#elevated_body').removeClass('map-glow-favourite');$('#elevated_add').show();$('#elevated_remove').hide();$('#elevated_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="elevated_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -962,8 +970,8 @@
                             $('#favourite-elevated').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_elevated') == 'true') {
-                            $('#elevated_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_elevated') == 'true') {
+                            $('#elevated_body').addClass('map-glow-favourite');
                             $('#elevated_add').hide();
                             $('#elevated_remove').show();
                             $('#elevated_dummy').text(fav_map);
@@ -974,7 +982,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -1009,6 +1017,7 @@
                                     You will be downloading the version of Elevated that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Elevated" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/elevated');$('#download-elevated').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1020,10 +1029,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="elevated-2_body" class="thumbnail map-float">
+            <div id="elevated-2_body" class="thumbnail map-float ">
                 <div id="elevated-2" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/elevated-2/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=elevated-2"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Elevated 2">Elevated 2</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=elevated-2" data-toggle="tooltip" data-placement="top" title="Elevated 2"><strong>Elevated 2</strong></a>
                         <a href="https://avicus.net/maps/map/elevated-2" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -1052,8 +1061,8 @@
                         </span>
                     </div>
                     <div id="favourite-elevated-2" class="map-favourite" style="display:none;">
-                        <span id="elevated-2_add" onclick="Cookies.set('listen_elevated-2', true, { expires: 7 });$('#elevated-2_body').addClass('post-thumbnail-important');$('#elevated-2_add').hide();$('#elevated-2_remove').show();$('#elevated-2_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="elevated-2_remove" onclick="Cookies.remove('listen_elevated-2');$('#elevated-2_body').removeClass('post-thumbnail-important');$('#elevated-2_add').show();$('#elevated-2_remove').hide();$('#elevated-2_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="elevated-2_add" onclick="Cookies.set('star_elevated-2', true, { expires: 7 });$('#elevated-2_body').addClass('map-glow-favourite');$('#elevated-2_add').hide();$('#elevated-2_remove').show();$('#elevated-2_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="elevated-2_remove" onclick="Cookies.remove('star_elevated-2');$('#elevated-2_body').removeClass('map-glow-favourite');$('#elevated-2_add').show();$('#elevated-2_remove').hide();$('#elevated-2_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="elevated-2_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -1063,8 +1072,8 @@
                             $('#favourite-elevated-2').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_elevated-2') == 'true') {
-                            $('#elevated-2_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_elevated-2') == 'true') {
+                            $('#elevated-2_body').addClass('map-glow-favourite');
                             $('#elevated-2_add').hide();
                             $('#elevated-2_remove').show();
                             $('#elevated-2_dummy').text(fav_map);
@@ -1075,7 +1084,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -1106,6 +1115,7 @@
                                     You will be downloading the version of Elevated 2 that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Elevated 2" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/elevated-2');$('#download-elevated-2').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1117,10 +1127,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="fatal-temple_body" class="thumbnail map-float">
+            <div id="fatal-temple_body" class="thumbnail map-float ">
                 <div id="fatal-temple" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/fatal-temple/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=fatal-temple"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Fatal Temple">Fatal Temple</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=fatal-temple" data-toggle="tooltip" data-placement="top" title="Fatal Temple"><strong>Fatal Temple</strong></a>
                         <a href="https://avicus.net/maps/map/fatal-temple" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
@@ -1149,8 +1159,8 @@
                         </span>
                     </div>
                     <div id="favourite-fatal-temple" class="map-favourite" style="display:none;">
-                        <span id="fatal-temple_add" onclick="Cookies.set('listen_fatal-temple', true, { expires: 7 });$('#fatal-temple_body').addClass('post-thumbnail-important');$('#fatal-temple_add').hide();$('#fatal-temple_remove').show();$('#fatal-temple_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="fatal-temple_remove" onclick="Cookies.remove('listen_fatal-temple');$('#fatal-temple_body').removeClass('post-thumbnail-important');$('#fatal-temple_add').show();$('#fatal-temple_remove').hide();$('#fatal-temple_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="fatal-temple_add" onclick="Cookies.set('star_fatal-temple', true, { expires: 7 });$('#fatal-temple_body').addClass('map-glow-favourite');$('#fatal-temple_add').hide();$('#fatal-temple_remove').show();$('#fatal-temple_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="fatal-temple_remove" onclick="Cookies.remove('star_fatal-temple');$('#fatal-temple_body').removeClass('map-glow-favourite');$('#fatal-temple_add').show();$('#fatal-temple_remove').hide();$('#fatal-temple_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="fatal-temple_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -1160,8 +1170,8 @@
                             $('#favourite-fatal-temple').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_fatal-temple') == 'true') {
-                            $('#fatal-temple_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_fatal-temple') == 'true') {
+                            $('#fatal-temple_body').addClass('map-glow-favourite');
                             $('#fatal-temple_add').hide();
                             $('#fatal-temple_remove').show();
                             $('#fatal-temple_dummy').text(fav_map);
@@ -1172,7 +1182,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -1203,6 +1213,7 @@
                                     You will be downloading the version of Fatal Temple that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Fatal Temple" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/fatal-temple');$('#download-fatal-temple').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1214,10 +1225,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="fort-aqua_body" class="thumbnail map-float">
+            <div id="fort-aqua_body" class="thumbnail map-float ">
                 <div id="fort-aqua" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/fort-aqua/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=fort-aqua"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Fort Aqua">Fort Aqua</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=fort-aqua" data-toggle="tooltip" data-placement="top" title="Fort Aqua"><strong>Fort Aqua</strong></a>
                         <a href="https://avicus.net/maps/map/fort-aqua" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -1246,8 +1257,8 @@
                         </span>
                     </div>
                     <div id="favourite-fort-aqua" class="map-favourite" style="display:none;">
-                        <span id="fort-aqua_add" onclick="Cookies.set('listen_fort-aqua', true, { expires: 7 });$('#fort-aqua_body').addClass('post-thumbnail-important');$('#fort-aqua_add').hide();$('#fort-aqua_remove').show();$('#fort-aqua_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="fort-aqua_remove" onclick="Cookies.remove('listen_fort-aqua');$('#fort-aqua_body').removeClass('post-thumbnail-important');$('#fort-aqua_add').show();$('#fort-aqua_remove').hide();$('#fort-aqua_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="fort-aqua_add" onclick="Cookies.set('star_fort-aqua', true, { expires: 7 });$('#fort-aqua_body').addClass('map-glow-favourite');$('#fort-aqua_add').hide();$('#fort-aqua_remove').show();$('#fort-aqua_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="fort-aqua_remove" onclick="Cookies.remove('star_fort-aqua');$('#fort-aqua_body').removeClass('map-glow-favourite');$('#fort-aqua_add').show();$('#fort-aqua_remove').hide();$('#fort-aqua_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="fort-aqua_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -1257,8 +1268,8 @@
                             $('#favourite-fort-aqua').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_fort-aqua') == 'true') {
-                            $('#fort-aqua_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_fort-aqua') == 'true') {
+                            $('#fort-aqua_body').addClass('map-glow-favourite');
                             $('#fort-aqua_add').hide();
                             $('#fort-aqua_remove').show();
                             $('#fort-aqua_dummy').text(fav_map);
@@ -1269,7 +1280,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -1300,6 +1311,7 @@
                                     You will be downloading the version of Fort Aqua that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Fort Aqua" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/fort-aqua');$('#download-fort-aqua').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1311,10 +1323,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="jungletree-bazooka_body" class="thumbnail map-float">
+            <div id="jungletree-bazooka_body" class="thumbnail map-float ">
                 <div id="jungletree-bazooka" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/jungletree-bazooka/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=jungletree-bazooka"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Jungletree Bazooka">Jungletree Bazooka</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=jungletree-bazooka" data-toggle="tooltip" data-placement="top" title="Jungletree Bazooka"><strong>Jungletree Bazooka</strong></a>
                         <a href="https://avicus.net/maps/map/jungletree-bazooka" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -1343,8 +1355,8 @@
                         </span>
                     </div>
                     <div id="favourite-jungletree-bazooka" class="map-favourite" style="display:none;">
-                        <span id="jungletree-bazooka_add" onclick="Cookies.set('listen_jungletree-bazooka', true, { expires: 7 });$('#jungletree-bazooka_body').addClass('post-thumbnail-important');$('#jungletree-bazooka_add').hide();$('#jungletree-bazooka_remove').show();$('#jungletree-bazooka_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="jungletree-bazooka_remove" onclick="Cookies.remove('listen_jungletree-bazooka');$('#jungletree-bazooka_body').removeClass('post-thumbnail-important');$('#jungletree-bazooka_add').show();$('#jungletree-bazooka_remove').hide();$('#jungletree-bazooka_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="jungletree-bazooka_add" onclick="Cookies.set('star_jungletree-bazooka', true, { expires: 7 });$('#jungletree-bazooka_body').addClass('map-glow-favourite');$('#jungletree-bazooka_add').hide();$('#jungletree-bazooka_remove').show();$('#jungletree-bazooka_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="jungletree-bazooka_remove" onclick="Cookies.remove('star_jungletree-bazooka');$('#jungletree-bazooka_body').removeClass('map-glow-favourite');$('#jungletree-bazooka_add').show();$('#jungletree-bazooka_remove').hide();$('#jungletree-bazooka_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="jungletree-bazooka_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -1354,8 +1366,8 @@
                             $('#favourite-jungletree-bazooka').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_jungletree-bazooka') == 'true') {
-                            $('#jungletree-bazooka_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_jungletree-bazooka') == 'true') {
+                            $('#jungletree-bazooka_body').addClass('map-glow-favourite');
                             $('#jungletree-bazooka_add').hide();
                             $('#jungletree-bazooka_remove').show();
                             $('#jungletree-bazooka_dummy').text(fav_map);
@@ -1366,7 +1378,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -1401,6 +1413,7 @@
                                     You will be downloading the version of Jungletree Bazooka that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Jungletree Bazooka" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/jungletree-bazooka');$('#download-jungletree-bazooka').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1412,10 +1425,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="knuckles-and-goggles_body" class="thumbnail map-float">
+            <div id="knuckles-and-goggles_body" class="thumbnail map-float ">
                 <div id="knuckles-and-goggles" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/knuckles-and-goggles/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=knuckles-and-goggles"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Knuckles and Goggles">Knuckles and Goggles</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=knuckles-and-goggles" data-toggle="tooltip" data-placement="top" title="Knuckles and Goggles"><strong>Knuckles and Goggles</strong></a>
                         <a href="https://avicus.net/maps/map/knuckles-and-goggles" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -1444,8 +1457,8 @@
                         </span>
                     </div>
                     <div id="favourite-knuckles-and-goggles" class="map-favourite" style="display:none;">
-                        <span id="knuckles-and-goggles_add" onclick="Cookies.set('listen_knuckles-and-goggles', true, { expires: 7 });$('#knuckles-and-goggles_body').addClass('post-thumbnail-important');$('#knuckles-and-goggles_add').hide();$('#knuckles-and-goggles_remove').show();$('#knuckles-and-goggles_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="knuckles-and-goggles_remove" onclick="Cookies.remove('listen_knuckles-and-goggles');$('#knuckles-and-goggles_body').removeClass('post-thumbnail-important');$('#knuckles-and-goggles_add').show();$('#knuckles-and-goggles_remove').hide();$('#knuckles-and-goggles_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="knuckles-and-goggles_add" onclick="Cookies.set('star_knuckles-and-goggles', true, { expires: 7 });$('#knuckles-and-goggles_body').addClass('map-glow-favourite');$('#knuckles-and-goggles_add').hide();$('#knuckles-and-goggles_remove').show();$('#knuckles-and-goggles_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="knuckles-and-goggles_remove" onclick="Cookies.remove('star_knuckles-and-goggles');$('#knuckles-and-goggles_body').removeClass('map-glow-favourite');$('#knuckles-and-goggles_add').show();$('#knuckles-and-goggles_remove').hide();$('#knuckles-and-goggles_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="knuckles-and-goggles_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -1455,8 +1468,8 @@
                             $('#favourite-knuckles-and-goggles').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_knuckles-and-goggles') == 'true') {
-                            $('#knuckles-and-goggles_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_knuckles-and-goggles') == 'true') {
+                            $('#knuckles-and-goggles_body').addClass('map-glow-favourite');
                             $('#knuckles-and-goggles_add').hide();
                             $('#knuckles-and-goggles_remove').show();
                             $('#knuckles-and-goggles_dummy').text(fav_map);
@@ -1467,7 +1480,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -1498,6 +1511,7 @@
                                     You will be downloading the version of Knuckles and Goggles that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Knuckles and Goggles" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/knuckles-and-goggles');$('#download-knuckles-and-goggles').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1509,10 +1523,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="la-cove_body" class="thumbnail map-float">
+            <div id="la-cove_body" class="thumbnail map-float ">
                 <div id="la-cove" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/la-cove/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=la-cove"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="La Cove">La Cove</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=la-cove" data-toggle="tooltip" data-placement="top" title="La Cove"><strong>La Cove</strong></a>
                         <a href="https://avicus.net/maps/map/la-cove" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -1541,8 +1555,8 @@
                         </span>
                     </div>
                     <div id="favourite-la-cove" class="map-favourite" style="display:none;">
-                        <span id="la-cove_add" onclick="Cookies.set('listen_la-cove', true, { expires: 7 });$('#la-cove_body').addClass('post-thumbnail-important');$('#la-cove_add').hide();$('#la-cove_remove').show();$('#la-cove_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="la-cove_remove" onclick="Cookies.remove('listen_la-cove');$('#la-cove_body').removeClass('post-thumbnail-important');$('#la-cove_add').show();$('#la-cove_remove').hide();$('#la-cove_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="la-cove_add" onclick="Cookies.set('star_la-cove', true, { expires: 7 });$('#la-cove_body').addClass('map-glow-favourite');$('#la-cove_add').hide();$('#la-cove_remove').show();$('#la-cove_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="la-cove_remove" onclick="Cookies.remove('star_la-cove');$('#la-cove_body').removeClass('map-glow-favourite');$('#la-cove_add').show();$('#la-cove_remove').hide();$('#la-cove_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="la-cove_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -1552,8 +1566,8 @@
                             $('#favourite-la-cove').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_la-cove') == 'true') {
-                            $('#la-cove_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_la-cove') == 'true') {
+                            $('#la-cove_body').addClass('map-glow-favourite');
                             $('#la-cove_add').hide();
                             $('#la-cove_remove').show();
                             $('#la-cove_dummy').text(fav_map);
@@ -1564,7 +1578,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -1597,6 +1611,7 @@
                                     You will be downloading the version of La Cove that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="La Cove" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/la-cove');$('#download-la-cove').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1608,10 +1623,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="maisosen_body" class="thumbnail map-float">
+            <div id="maisosen_body" class="thumbnail map-float ">
                 <div id="maisosen" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/maisosen/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=maisosen"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Maisosen">Maisosen</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=maisosen" data-toggle="tooltip" data-placement="top" title="Maisosen"><strong>Maisosen</strong></a>
                         <a href="https://avicus.net/maps/map/maisosen" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -1640,8 +1655,8 @@
                         </span>
                     </div>
                     <div id="favourite-maisosen" class="map-favourite" style="display:none;">
-                        <span id="maisosen_add" onclick="Cookies.set('listen_maisosen', true, { expires: 7 });$('#maisosen_body').addClass('post-thumbnail-important');$('#maisosen_add').hide();$('#maisosen_remove').show();$('#maisosen_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="maisosen_remove" onclick="Cookies.remove('listen_maisosen');$('#maisosen_body').removeClass('post-thumbnail-important');$('#maisosen_add').show();$('#maisosen_remove').hide();$('#maisosen_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="maisosen_add" onclick="Cookies.set('star_maisosen', true, { expires: 7 });$('#maisosen_body').addClass('map-glow-favourite');$('#maisosen_add').hide();$('#maisosen_remove').show();$('#maisosen_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="maisosen_remove" onclick="Cookies.remove('star_maisosen');$('#maisosen_body').removeClass('map-glow-favourite');$('#maisosen_add').show();$('#maisosen_remove').hide();$('#maisosen_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="maisosen_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -1651,8 +1666,8 @@
                             $('#favourite-maisosen').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_maisosen') == 'true') {
-                            $('#maisosen_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_maisosen') == 'true') {
+                            $('#maisosen_body').addClass('map-glow-favourite');
                             $('#maisosen_add').hide();
                             $('#maisosen_remove').show();
                             $('#maisosen_dummy').text(fav_map);
@@ -1663,7 +1678,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -1696,6 +1711,7 @@
                                     You will be downloading the version of Maisosen that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Maisosen" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/maisosen');$('#download-maisosen').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1707,10 +1723,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="parkour-deris_body" class="thumbnail map-float">
+            <div id="parkour-deris_body" class="thumbnail map-float ">
                 <div id="parkour-deris" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/parkour-deris/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=parkour-deris"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Parkour: Debris">Parkour: Debris</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=parkour-deris" data-toggle="tooltip" data-placement="top" title="Parkour: Debris"><strong>Parkour: Debris</strong></a>
                         <a href="https://avicus.net/maps/map/parkour-deris" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
@@ -1739,8 +1755,8 @@
                         </span>
                     </div>
                     <div id="favourite-parkour-deris" class="map-favourite" style="display:none;">
-                        <span id="parkour-deris_add" onclick="Cookies.set('listen_parkour-deris', true, { expires: 7 });$('#parkour-deris_body').addClass('post-thumbnail-important');$('#parkour-deris_add').hide();$('#parkour-deris_remove').show();$('#parkour-deris_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="parkour-deris_remove" onclick="Cookies.remove('listen_parkour-deris');$('#parkour-deris_body').removeClass('post-thumbnail-important');$('#parkour-deris_add').show();$('#parkour-deris_remove').hide();$('#parkour-deris_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="parkour-deris_add" onclick="Cookies.set('star_parkour-deris', true, { expires: 7 });$('#parkour-deris_body').addClass('map-glow-favourite');$('#parkour-deris_add').hide();$('#parkour-deris_remove').show();$('#parkour-deris_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="parkour-deris_remove" onclick="Cookies.remove('star_parkour-deris');$('#parkour-deris_body').removeClass('map-glow-favourite');$('#parkour-deris_add').show();$('#parkour-deris_remove').hide();$('#parkour-deris_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="parkour-deris_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -1750,8 +1766,8 @@
                             $('#favourite-parkour-deris').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_parkour-deris') == 'true') {
-                            $('#parkour-deris_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_parkour-deris') == 'true') {
+                            $('#parkour-deris_body').addClass('map-glow-favourite');
                             $('#parkour-deris_add').hide();
                             $('#parkour-deris_remove').show();
                             $('#parkour-deris_dummy').text(fav_map);
@@ -1762,7 +1778,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -1793,6 +1809,7 @@
                                     You will be downloading the version of Parkour: Debris that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Parkour: Debris" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/parkour-deris');$('#download-parkour-deris').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1804,10 +1821,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="presta_body" class="thumbnail map-float">
+            <div id="presta_body" class="thumbnail map-float ">
                 <div id="presta" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/presta/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=presta"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Presta">Presta</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=presta" data-toggle="tooltip" data-placement="top" title="Presta"><strong>Presta</strong></a>
                         <a href="https://avicus.net/maps/map/presta" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -1836,8 +1853,8 @@
                         </span>
                     </div>
                     <div id="favourite-presta" class="map-favourite" style="display:none;">
-                        <span id="presta_add" onclick="Cookies.set('listen_presta', true, { expires: 7 });$('#presta_body').addClass('post-thumbnail-important');$('#presta_add').hide();$('#presta_remove').show();$('#presta_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="presta_remove" onclick="Cookies.remove('listen_presta');$('#presta_body').removeClass('post-thumbnail-important');$('#presta_add').show();$('#presta_remove').hide();$('#presta_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="presta_add" onclick="Cookies.set('star_presta', true, { expires: 7 });$('#presta_body').addClass('map-glow-favourite');$('#presta_add').hide();$('#presta_remove').show();$('#presta_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="presta_remove" onclick="Cookies.remove('star_presta');$('#presta_body').removeClass('map-glow-favourite');$('#presta_add').show();$('#presta_remove').hide();$('#presta_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="presta_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -1847,8 +1864,8 @@
                             $('#favourite-presta').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_presta') == 'true') {
-                            $('#presta_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_presta') == 'true') {
+                            $('#presta_body').addClass('map-glow-favourite');
                             $('#presta_add').hide();
                             $('#presta_remove').show();
                             $('#presta_dummy').text(fav_map);
@@ -1859,7 +1876,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -1894,6 +1911,7 @@
                                     You will be downloading the version of Presta that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Presta" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/presta');$('#download-presta').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1905,10 +1923,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="quarry_body" class="thumbnail map-float">
+            <div id="quarry_body" class="thumbnail map-float ">
                 <div id="quarry" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/quarry/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=quarry"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Quarry">Quarry</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=quarry" data-toggle="tooltip" data-placement="top" title="Quarry"><strong>Quarry</strong></a>
                         <a href="https://avicus.net/maps/map/quarry" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
@@ -1937,8 +1955,8 @@
                         </span>
                     </div>
                     <div id="favourite-quarry" class="map-favourite" style="display:none;">
-                        <span id="quarry_add" onclick="Cookies.set('listen_quarry', true, { expires: 7 });$('#quarry_body').addClass('post-thumbnail-important');$('#quarry_add').hide();$('#quarry_remove').show();$('#quarry_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="quarry_remove" onclick="Cookies.remove('listen_quarry');$('#quarry_body').removeClass('post-thumbnail-important');$('#quarry_add').show();$('#quarry_remove').hide();$('#quarry_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="quarry_add" onclick="Cookies.set('star_quarry', true, { expires: 7 });$('#quarry_body').addClass('map-glow-favourite');$('#quarry_add').hide();$('#quarry_remove').show();$('#quarry_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="quarry_remove" onclick="Cookies.remove('star_quarry');$('#quarry_body').removeClass('map-glow-favourite');$('#quarry_add').show();$('#quarry_remove').hide();$('#quarry_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="quarry_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -1948,8 +1966,8 @@
                             $('#favourite-quarry').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_quarry') == 'true') {
-                            $('#quarry_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_quarry') == 'true') {
+                            $('#quarry_body').addClass('map-glow-favourite');
                             $('#quarry_add').hide();
                             $('#quarry_remove').show();
                             $('#quarry_dummy').text(fav_map);
@@ -1960,7 +1978,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -1991,6 +2009,7 @@
                                     You will be downloading the version of Quarry that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Quarry" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/quarry');$('#download-quarry').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2002,10 +2021,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="rendezvous-2k17_body" class="thumbnail map-float">
+            <div id="rendezvous-2k17_body" class="thumbnail map-float ">
                 <div id="rendezvous-2k17" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/rendezvous-2k17/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=rendezvous-2k17"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Rendezvous 2k17">Rendezvous 2k17</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=rendezvous-2k17" data-toggle="tooltip" data-placement="top" title="Rendezvous 2k17"><strong>Rendezvous 2k17</strong></a>
                         <a href="https://avicus.net/maps/map/rendezvous-2k17" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -2034,8 +2053,8 @@
                         </span>
                     </div>
                     <div id="favourite-rendezvous-2k17" class="map-favourite" style="display:none;">
-                        <span id="rendezvous-2k17_add" onclick="Cookies.set('listen_rendezvous-2k17', true, { expires: 7 });$('#rendezvous-2k17_body').addClass('post-thumbnail-important');$('#rendezvous-2k17_add').hide();$('#rendezvous-2k17_remove').show();$('#rendezvous-2k17_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="rendezvous-2k17_remove" onclick="Cookies.remove('listen_rendezvous-2k17');$('#rendezvous-2k17_body').removeClass('post-thumbnail-important');$('#rendezvous-2k17_add').show();$('#rendezvous-2k17_remove').hide();$('#rendezvous-2k17_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="rendezvous-2k17_add" onclick="Cookies.set('star_rendezvous-2k17', true, { expires: 7 });$('#rendezvous-2k17_body').addClass('map-glow-favourite');$('#rendezvous-2k17_add').hide();$('#rendezvous-2k17_remove').show();$('#rendezvous-2k17_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="rendezvous-2k17_remove" onclick="Cookies.remove('star_rendezvous-2k17');$('#rendezvous-2k17_body').removeClass('map-glow-favourite');$('#rendezvous-2k17_add').show();$('#rendezvous-2k17_remove').hide();$('#rendezvous-2k17_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="rendezvous-2k17_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -2045,8 +2064,8 @@
                             $('#favourite-rendezvous-2k17').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_rendezvous-2k17') == 'true') {
-                            $('#rendezvous-2k17_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_rendezvous-2k17') == 'true') {
+                            $('#rendezvous-2k17_body').addClass('map-glow-favourite');
                             $('#rendezvous-2k17_add').hide();
                             $('#rendezvous-2k17_remove').show();
                             $('#rendezvous-2k17_dummy').text(fav_map);
@@ -2057,7 +2076,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -2092,6 +2111,7 @@
                                     You will be downloading the version of Rendezvous 2k17 that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Rendezvous 2k17" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/rendezvous-2k17');$('#download-rendezvous-2k17').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2103,10 +2123,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="rendezvous-meadows_body" class="thumbnail map-float">
+            <div id="rendezvous-meadows_body" class="thumbnail map-float ">
                 <div id="rendezvous-meadows" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/rendezvous-meadows/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=rendezvous-meadows"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Rendezvous Meadows">Rendezvous Meadows</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=rendezvous-meadows" data-toggle="tooltip" data-placement="top" title="Rendezvous Meadows"><strong>Rendezvous Meadows</strong></a>
                         <a href="https://avicus.net/maps/map/rendezvous-meadows" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -2135,8 +2155,8 @@
                         </span>
                     </div>
                     <div id="favourite-rendezvous-meadows" class="map-favourite" style="display:none;">
-                        <span id="rendezvous-meadows_add" onclick="Cookies.set('listen_rendezvous-meadows', true, { expires: 7 });$('#rendezvous-meadows_body').addClass('post-thumbnail-important');$('#rendezvous-meadows_add').hide();$('#rendezvous-meadows_remove').show();$('#rendezvous-meadows_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="rendezvous-meadows_remove" onclick="Cookies.remove('listen_rendezvous-meadows');$('#rendezvous-meadows_body').removeClass('post-thumbnail-important');$('#rendezvous-meadows_add').show();$('#rendezvous-meadows_remove').hide();$('#rendezvous-meadows_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="rendezvous-meadows_add" onclick="Cookies.set('star_rendezvous-meadows', true, { expires: 7 });$('#rendezvous-meadows_body').addClass('map-glow-favourite');$('#rendezvous-meadows_add').hide();$('#rendezvous-meadows_remove').show();$('#rendezvous-meadows_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="rendezvous-meadows_remove" onclick="Cookies.remove('star_rendezvous-meadows');$('#rendezvous-meadows_body').removeClass('map-glow-favourite');$('#rendezvous-meadows_add').show();$('#rendezvous-meadows_remove').hide();$('#rendezvous-meadows_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="rendezvous-meadows_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -2146,8 +2166,8 @@
                             $('#favourite-rendezvous-meadows').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_rendezvous-meadows') == 'true') {
-                            $('#rendezvous-meadows_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_rendezvous-meadows') == 'true') {
+                            $('#rendezvous-meadows_body').addClass('map-glow-favourite');
                             $('#rendezvous-meadows_add').hide();
                             $('#rendezvous-meadows_remove').show();
                             $('#rendezvous-meadows_dummy').text(fav_map);
@@ -2158,7 +2178,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -2191,6 +2211,7 @@
                                     You will be downloading the version of Rendezvous Meadows that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Rendezvous Meadows" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/rendezvous-meadows');$('#download-rendezvous-meadows').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2202,10 +2223,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="rolexius_body" class="thumbnail map-float">
+            <div id="rolexius_body" class="thumbnail map-float ">
                 <div id="rolexius" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/rolexius/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=rolexius"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Rolexius">Rolexius</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=rolexius" data-toggle="tooltip" data-placement="top" title="Rolexius"><strong>Rolexius</strong></a>
                         <a href="https://avicus.net/maps/map/rolexius" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -2234,8 +2255,8 @@
                         </span>
                     </div>
                     <div id="favourite-rolexius" class="map-favourite" style="display:none;">
-                        <span id="rolexius_add" onclick="Cookies.set('listen_rolexius', true, { expires: 7 });$('#rolexius_body').addClass('post-thumbnail-important');$('#rolexius_add').hide();$('#rolexius_remove').show();$('#rolexius_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="rolexius_remove" onclick="Cookies.remove('listen_rolexius');$('#rolexius_body').removeClass('post-thumbnail-important');$('#rolexius_add').show();$('#rolexius_remove').hide();$('#rolexius_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="rolexius_add" onclick="Cookies.set('star_rolexius', true, { expires: 7 });$('#rolexius_body').addClass('map-glow-favourite');$('#rolexius_add').hide();$('#rolexius_remove').show();$('#rolexius_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="rolexius_remove" onclick="Cookies.remove('star_rolexius');$('#rolexius_body').removeClass('map-glow-favourite');$('#rolexius_add').show();$('#rolexius_remove').hide();$('#rolexius_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="rolexius_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -2245,8 +2266,8 @@
                             $('#favourite-rolexius').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_rolexius') == 'true') {
-                            $('#rolexius_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_rolexius') == 'true') {
+                            $('#rolexius_body').addClass('map-glow-favourite');
                             $('#rolexius_add').hide();
                             $('#rolexius_remove').show();
                             $('#rolexius_dummy').text(fav_map);
@@ -2257,7 +2278,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -2292,6 +2313,7 @@
                                     You will be downloading the version of Rolexius that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Rolexius" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/rolexius');$('#download-rolexius').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2303,10 +2325,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="salzburg_body" class="thumbnail map-float">
+            <div id="salzburg_body" class="thumbnail map-float ">
                 <div id="salzburg" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/salzburg/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=salzburg"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Salzburg">Salzburg</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=salzburg" data-toggle="tooltip" data-placement="top" title="Salzburg"><strong>Salzburg</strong></a>
                         <a href="https://avicus.net/maps/map/salzburg" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -2335,8 +2357,8 @@
                         </span>
                     </div>
                     <div id="favourite-salzburg" class="map-favourite" style="display:none;">
-                        <span id="salzburg_add" onclick="Cookies.set('listen_salzburg', true, { expires: 7 });$('#salzburg_body').addClass('post-thumbnail-important');$('#salzburg_add').hide();$('#salzburg_remove').show();$('#salzburg_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="salzburg_remove" onclick="Cookies.remove('listen_salzburg');$('#salzburg_body').removeClass('post-thumbnail-important');$('#salzburg_add').show();$('#salzburg_remove').hide();$('#salzburg_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="salzburg_add" onclick="Cookies.set('star_salzburg', true, { expires: 7 });$('#salzburg_body').addClass('map-glow-favourite');$('#salzburg_add').hide();$('#salzburg_remove').show();$('#salzburg_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="salzburg_remove" onclick="Cookies.remove('star_salzburg');$('#salzburg_body').removeClass('map-glow-favourite');$('#salzburg_add').show();$('#salzburg_remove').hide();$('#salzburg_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="salzburg_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -2346,8 +2368,8 @@
                             $('#favourite-salzburg').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_salzburg') == 'true') {
-                            $('#salzburg_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_salzburg') == 'true') {
+                            $('#salzburg_body').addClass('map-glow-favourite');
                             $('#salzburg_add').hide();
                             $('#salzburg_remove').show();
                             $('#salzburg_dummy').text(fav_map);
@@ -2358,7 +2380,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -2389,6 +2411,7 @@
                                     You will be downloading the version of Salzburg that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Salzburg" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/salzburg');$('#download-salzburg').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2400,10 +2423,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="salzburg_2_body" class="thumbnail map-float">
+            <div id="salzburg_2_body" class="thumbnail map-float ">
                 <div id="salzburg_2" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/salzburg_2/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=salzburg_2"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Salzburg 2">Salzburg 2</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=salzburg_2" data-toggle="tooltip" data-placement="top" title="Salzburg 2"><strong>Salzburg 2</strong></a>
                         <a href="https://avicus.net/maps/map/salzburg_2" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -2432,8 +2455,8 @@
                         </span>
                     </div>
                     <div id="favourite-salzburg_2" class="map-favourite" style="display:none;">
-                        <span id="salzburg_2_add" onclick="Cookies.set('listen_salzburg_2', true, { expires: 7 });$('#salzburg_2_body').addClass('post-thumbnail-important');$('#salzburg_2_add').hide();$('#salzburg_2_remove').show();$('#salzburg_2_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="salzburg_2_remove" onclick="Cookies.remove('listen_salzburg_2');$('#salzburg_2_body').removeClass('post-thumbnail-important');$('#salzburg_2_add').show();$('#salzburg_2_remove').hide();$('#salzburg_2_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="salzburg_2_add" onclick="Cookies.set('star_salzburg_2', true, { expires: 7 });$('#salzburg_2_body').addClass('map-glow-favourite');$('#salzburg_2_add').hide();$('#salzburg_2_remove').show();$('#salzburg_2_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="salzburg_2_remove" onclick="Cookies.remove('star_salzburg_2');$('#salzburg_2_body').removeClass('map-glow-favourite');$('#salzburg_2_add').show();$('#salzburg_2_remove').hide();$('#salzburg_2_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="salzburg_2_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -2443,8 +2466,8 @@
                             $('#favourite-salzburg_2').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_salzburg_2') == 'true') {
-                            $('#salzburg_2_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_salzburg_2') == 'true') {
+                            $('#salzburg_2_body').addClass('map-glow-favourite');
                             $('#salzburg_2_add').hide();
                             $('#salzburg_2_remove').show();
                             $('#salzburg_2_dummy').text(fav_map);
@@ -2455,7 +2478,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -2486,6 +2509,7 @@
                                     You will be downloading the version of Salzburg 2 that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Salzburg 2" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/salzburg_2');$('#download-salzburg_2').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2497,10 +2521,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="scaffold_body" class="thumbnail map-float">
+            <div id="scaffold_body" class="thumbnail map-float ">
                 <div id="scaffold" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/scaffold/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=scaffold"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Scaffold">Scaffold</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=scaffold" data-toggle="tooltip" data-placement="top" title="Scaffold"><strong>Scaffold</strong></a>
                         <a href="https://avicus.net/maps/map/scaffold" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -2529,8 +2553,8 @@
                         </span>
                     </div>
                     <div id="favourite-scaffold" class="map-favourite" style="display:none;">
-                        <span id="scaffold_add" onclick="Cookies.set('listen_scaffold', true, { expires: 7 });$('#scaffold_body').addClass('post-thumbnail-important');$('#scaffold_add').hide();$('#scaffold_remove').show();$('#scaffold_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="scaffold_remove" onclick="Cookies.remove('listen_scaffold');$('#scaffold_body').removeClass('post-thumbnail-important');$('#scaffold_add').show();$('#scaffold_remove').hide();$('#scaffold_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="scaffold_add" onclick="Cookies.set('star_scaffold', true, { expires: 7 });$('#scaffold_body').addClass('map-glow-favourite');$('#scaffold_add').hide();$('#scaffold_remove').show();$('#scaffold_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="scaffold_remove" onclick="Cookies.remove('star_scaffold');$('#scaffold_body').removeClass('map-glow-favourite');$('#scaffold_add').show();$('#scaffold_remove').hide();$('#scaffold_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="scaffold_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -2540,8 +2564,8 @@
                             $('#favourite-scaffold').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_scaffold') == 'true') {
-                            $('#scaffold_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_scaffold') == 'true') {
+                            $('#scaffold_body').addClass('map-glow-favourite');
                             $('#scaffold_add').hide();
                             $('#scaffold_remove').show();
                             $('#scaffold_dummy').text(fav_map);
@@ -2552,7 +2576,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -2583,6 +2607,7 @@
                                     You will be downloading the version of Scaffold that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Scaffold" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/scaffold');$('#download-scaffold').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2594,10 +2619,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="shadient_body" class="thumbnail map-float">
+            <div id="shadient_body" class="thumbnail map-float ">
                 <div id="shadient" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/shadient/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=shadient"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Shadient">Shadient</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=shadient" data-toggle="tooltip" data-placement="top" title="Shadient"><strong>Shadient</strong></a>
                         <a href="https://avicus.net/maps/map/shadient" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -2626,8 +2651,8 @@
                         </span>
                     </div>
                     <div id="favourite-shadient" class="map-favourite" style="display:none;">
-                        <span id="shadient_add" onclick="Cookies.set('listen_shadient', true, { expires: 7 });$('#shadient_body').addClass('post-thumbnail-important');$('#shadient_add').hide();$('#shadient_remove').show();$('#shadient_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="shadient_remove" onclick="Cookies.remove('listen_shadient');$('#shadient_body').removeClass('post-thumbnail-important');$('#shadient_add').show();$('#shadient_remove').hide();$('#shadient_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="shadient_add" onclick="Cookies.set('star_shadient', true, { expires: 7 });$('#shadient_body').addClass('map-glow-favourite');$('#shadient_add').hide();$('#shadient_remove').show();$('#shadient_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="shadient_remove" onclick="Cookies.remove('star_shadient');$('#shadient_body').removeClass('map-glow-favourite');$('#shadient_add').show();$('#shadient_remove').hide();$('#shadient_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="shadient_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -2637,8 +2662,8 @@
                             $('#favourite-shadient').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_shadient') == 'true') {
-                            $('#shadient_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_shadient') == 'true') {
+                            $('#shadient_body').addClass('map-glow-favourite');
                             $('#shadient_add').hide();
                             $('#shadient_remove').show();
                             $('#shadient_dummy').text(fav_map);
@@ -2649,7 +2674,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -2680,6 +2705,7 @@
                                     You will be downloading the version of Shadient that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Shadient" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/shadient');$('#download-shadient').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2691,10 +2717,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="silentas-violent_body" class="thumbnail map-float">
+            <div id="silentas-violent_body" class="thumbnail map-float ">
                 <div id="silentas-violent" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/silentas-violent/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=silentas-violent"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Silentas Violent">Silentas Violent</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=silentas-violent" data-toggle="tooltip" data-placement="top" title="Silentas Violent"><strong>Silentas Violent</strong></a>
                         <a href="https://avicus.net/maps/map/silentas-violent" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -2723,8 +2749,8 @@
                         </span>
                     </div>
                     <div id="favourite-silentas-violent" class="map-favourite" style="display:none;">
-                        <span id="silentas-violent_add" onclick="Cookies.set('listen_silentas-violent', true, { expires: 7 });$('#silentas-violent_body').addClass('post-thumbnail-important');$('#silentas-violent_add').hide();$('#silentas-violent_remove').show();$('#silentas-violent_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="silentas-violent_remove" onclick="Cookies.remove('listen_silentas-violent');$('#silentas-violent_body').removeClass('post-thumbnail-important');$('#silentas-violent_add').show();$('#silentas-violent_remove').hide();$('#silentas-violent_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="silentas-violent_add" onclick="Cookies.set('star_silentas-violent', true, { expires: 7 });$('#silentas-violent_body').addClass('map-glow-favourite');$('#silentas-violent_add').hide();$('#silentas-violent_remove').show();$('#silentas-violent_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="silentas-violent_remove" onclick="Cookies.remove('star_silentas-violent');$('#silentas-violent_body').removeClass('map-glow-favourite');$('#silentas-violent_add').show();$('#silentas-violent_remove').hide();$('#silentas-violent_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="silentas-violent_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -2734,8 +2760,8 @@
                             $('#favourite-silentas-violent').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_silentas-violent') == 'true') {
-                            $('#silentas-violent_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_silentas-violent') == 'true') {
+                            $('#silentas-violent_body').addClass('map-glow-favourite');
                             $('#silentas-violent_add').hide();
                             $('#silentas-violent_remove').show();
                             $('#silentas-violent_dummy').text(fav_map);
@@ -2746,7 +2772,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -2777,6 +2803,7 @@
                                     You will be downloading the version of Silentas Violent that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Silentas Violent" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/silentas-violent');$('#download-silentas-violent').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2788,10 +2815,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="simon_body" class="thumbnail map-float">
+            <div id="simon_body" class="thumbnail map-float ">
                 <div id="simon" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/simon/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=simon"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Simon">Simon</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=simon" data-toggle="tooltip" data-placement="top" title="Simon"><strong>Simon</strong></a>
                         <a href="https://avicus.net/maps/map/simon" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -2820,8 +2847,8 @@
                         </span>
                     </div>
                     <div id="favourite-simon" class="map-favourite" style="display:none;">
-                        <span id="simon_add" onclick="Cookies.set('listen_simon', true, { expires: 7 });$('#simon_body').addClass('post-thumbnail-important');$('#simon_add').hide();$('#simon_remove').show();$('#simon_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="simon_remove" onclick="Cookies.remove('listen_simon');$('#simon_body').removeClass('post-thumbnail-important');$('#simon_add').show();$('#simon_remove').hide();$('#simon_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="simon_add" onclick="Cookies.set('star_simon', true, { expires: 7 });$('#simon_body').addClass('map-glow-favourite');$('#simon_add').hide();$('#simon_remove').show();$('#simon_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="simon_remove" onclick="Cookies.remove('star_simon');$('#simon_body').removeClass('map-glow-favourite');$('#simon_add').show();$('#simon_remove').hide();$('#simon_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="simon_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -2831,8 +2858,8 @@
                             $('#favourite-simon').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_simon') == 'true') {
-                            $('#simon_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_simon') == 'true') {
+                            $('#simon_body').addClass('map-glow-favourite');
                             $('#simon_add').hide();
                             $('#simon_remove').show();
                             $('#simon_dummy').text(fav_map);
@@ -2843,7 +2870,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -2878,6 +2905,7 @@
                                     You will be downloading the version of Simon that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Simon" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/simon');$('#download-simon').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2889,10 +2917,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="spore_body" class="thumbnail map-float">
+            <div id="spore_body" class="thumbnail map-float ">
                 <div id="spore" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/spore/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=spore"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Spore">Spore</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=spore" data-toggle="tooltip" data-placement="top" title="Spore"><strong>Spore</strong></a>
                         <a href="https://avicus.net/maps/map/spore" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -2921,8 +2949,8 @@
                         </span>
                     </div>
                     <div id="favourite-spore" class="map-favourite" style="display:none;">
-                        <span id="spore_add" onclick="Cookies.set('listen_spore', true, { expires: 7 });$('#spore_body').addClass('post-thumbnail-important');$('#spore_add').hide();$('#spore_remove').show();$('#spore_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="spore_remove" onclick="Cookies.remove('listen_spore');$('#spore_body').removeClass('post-thumbnail-important');$('#spore_add').show();$('#spore_remove').hide();$('#spore_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="spore_add" onclick="Cookies.set('star_spore', true, { expires: 7 });$('#spore_body').addClass('map-glow-favourite');$('#spore_add').hide();$('#spore_remove').show();$('#spore_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="spore_remove" onclick="Cookies.remove('star_spore');$('#spore_body').removeClass('map-glow-favourite');$('#spore_add').show();$('#spore_remove').hide();$('#spore_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="spore_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -2932,8 +2960,8 @@
                             $('#favourite-spore').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_spore') == 'true') {
-                            $('#spore_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_spore') == 'true') {
+                            $('#spore_body').addClass('map-glow-favourite');
                             $('#spore_add').hide();
                             $('#spore_remove').show();
                             $('#spore_dummy').text(fav_map);
@@ -2944,7 +2972,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -2977,6 +3005,7 @@
                                     You will be downloading the version of Spore that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Spore" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/spore');$('#download-spore').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2988,10 +3017,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="tasty-fight_body" class="thumbnail map-float">
+            <div id="tasty-fight_body" class="thumbnail map-float ">
                 <div id="tasty-fight" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/tasty-fight/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=tasty-fight"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Tasty Fight">Tasty Fight</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=tasty-fight" data-toggle="tooltip" data-placement="top" title="Tasty Fight"><strong>Tasty Fight</strong></a>
                         <a href="https://avicus.net/maps/map/tasty-fight" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -3020,8 +3049,8 @@
                         </span>
                     </div>
                     <div id="favourite-tasty-fight" class="map-favourite" style="display:none;">
-                        <span id="tasty-fight_add" onclick="Cookies.set('listen_tasty-fight', true, { expires: 7 });$('#tasty-fight_body').addClass('post-thumbnail-important');$('#tasty-fight_add').hide();$('#tasty-fight_remove').show();$('#tasty-fight_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="tasty-fight_remove" onclick="Cookies.remove('listen_tasty-fight');$('#tasty-fight_body').removeClass('post-thumbnail-important');$('#tasty-fight_add').show();$('#tasty-fight_remove').hide();$('#tasty-fight_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="tasty-fight_add" onclick="Cookies.set('star_tasty-fight', true, { expires: 7 });$('#tasty-fight_body').addClass('map-glow-favourite');$('#tasty-fight_add').hide();$('#tasty-fight_remove').show();$('#tasty-fight_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="tasty-fight_remove" onclick="Cookies.remove('star_tasty-fight');$('#tasty-fight_body').removeClass('map-glow-favourite');$('#tasty-fight_add').show();$('#tasty-fight_remove').hide();$('#tasty-fight_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="tasty-fight_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -3031,8 +3060,8 @@
                             $('#favourite-tasty-fight').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_tasty-fight') == 'true') {
-                            $('#tasty-fight_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_tasty-fight') == 'true') {
+                            $('#tasty-fight_body').addClass('map-glow-favourite');
                             $('#tasty-fight_add').hide();
                             $('#tasty-fight_remove').show();
                             $('#tasty-fight_dummy').text(fav_map);
@@ -3043,7 +3072,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-success map-label">CC BY-SA License</span>
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -3074,6 +3103,7 @@
                                     You will be downloading the version of Tasty Fight that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Tasty Fight" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/tasty-fight');$('#download-tasty-fight').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -3085,10 +3115,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="u-bahn_body" class="thumbnail map-float">
+            <div id="u-bahn_body" class="thumbnail map-float ">
                 <div id="u-bahn" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/u-bahn/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=u-bahn"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="U-Bahn">U-Bahn</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=u-bahn" data-toggle="tooltip" data-placement="top" title="U-Bahn"><strong>U-Bahn</strong></a>
                         <a href="https://avicus.net/maps/map/u-bahn" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -3117,8 +3147,8 @@
                         </span>
                     </div>
                     <div id="favourite-u-bahn" class="map-favourite" style="display:none;">
-                        <span id="u-bahn_add" onclick="Cookies.set('listen_u-bahn', true, { expires: 7 });$('#u-bahn_body').addClass('post-thumbnail-important');$('#u-bahn_add').hide();$('#u-bahn_remove').show();$('#u-bahn_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="u-bahn_remove" onclick="Cookies.remove('listen_u-bahn');$('#u-bahn_body').removeClass('post-thumbnail-important');$('#u-bahn_add').show();$('#u-bahn_remove').hide();$('#u-bahn_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="u-bahn_add" onclick="Cookies.set('star_u-bahn', true, { expires: 7 });$('#u-bahn_body').addClass('map-glow-favourite');$('#u-bahn_add').hide();$('#u-bahn_remove').show();$('#u-bahn_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="u-bahn_remove" onclick="Cookies.remove('star_u-bahn');$('#u-bahn_body').removeClass('map-glow-favourite');$('#u-bahn_add').show();$('#u-bahn_remove').hide();$('#u-bahn_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="u-bahn_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -3128,8 +3158,8 @@
                             $('#favourite-u-bahn').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_u-bahn') == 'true') {
-                            $('#u-bahn_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_u-bahn') == 'true') {
+                            $('#u-bahn_body').addClass('map-glow-favourite');
                             $('#u-bahn_add').hide();
                             $('#u-bahn_remove').show();
                             $('#u-bahn_dummy').text(fav_map);
@@ -3140,7 +3170,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -3173,6 +3203,7 @@
                                     You will be downloading the version of U-Bahn that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="U-Bahn" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/u-bahn');$('#download-u-bahn').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -3184,10 +3215,10 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="volcano-turmoil_body" class="thumbnail map-float">
+            <div id="volcano-turmoil_body" class="thumbnail map-float ">
                 <div id="volcano-turmoil" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/volcano-turmoil/map.png');">
                     <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=volcano-turmoil"><strong><span class="map-featured" data-toggle="tooltip" data-placement="top" title="Volcano Turmoil">Volcano Turmoil</span></strong></a>
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=volcano-turmoil" data-toggle="tooltip" data-placement="top" title="Volcano Turmoil"><strong>Volcano Turmoil</strong></a>
                         <a href="https://avicus.net/maps/map/volcano-turmoil" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
                                     
@@ -3216,8 +3247,8 @@
                         </span>
                     </div>
                     <div id="favourite-volcano-turmoil" class="map-favourite" style="display:none;">
-                        <span id="volcano-turmoil_add" onclick="Cookies.set('listen_volcano-turmoil', true, { expires: 7 });$('#volcano-turmoil_body').addClass('post-thumbnail-important');$('#volcano-turmoil_add').hide();$('#volcano-turmoil_remove').show();$('#volcano-turmoil_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="volcano-turmoil_remove" onclick="Cookies.remove('listen_volcano-turmoil');$('#volcano-turmoil_body').removeClass('post-thumbnail-important');$('#volcano-turmoil_add').show();$('#volcano-turmoil_remove').hide();$('#volcano-turmoil_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="volcano-turmoil_add" onclick="Cookies.set('star_volcano-turmoil', true, { expires: 7 });$('#volcano-turmoil_body').addClass('map-glow-favourite');$('#volcano-turmoil_add').hide();$('#volcano-turmoil_remove').show();$('#volcano-turmoil_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="volcano-turmoil_remove" onclick="Cookies.remove('star_volcano-turmoil');$('#volcano-turmoil_body').removeClass('map-glow-favourite');$('#volcano-turmoil_add').show();$('#volcano-turmoil_remove').hide();$('#volcano-turmoil_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                         <span id="volcano-turmoil_dummy" class="tag_hidden"></span>
                     </div>
                     <script>
@@ -3227,8 +3258,8 @@
                             $('#favourite-volcano-turmoil').fadeOut();
                         });
                         
-                        if (Cookies.get('listen_volcano-turmoil') == 'true') {
-                            $('#volcano-turmoil_body').addClass('post-thumbnail-important');
+                        if (Cookies.get('star_volcano-turmoil') == 'true') {
+                            $('#volcano-turmoil_body').addClass('map-glow-favourite');
                             $('#volcano-turmoil_add').hide();
                             $('#volcano-turmoil_remove').show();
                             $('#volcano-turmoil_dummy').text(fav_map);
@@ -3239,7 +3270,7 @@
                         }
                     </script>
                     <div class="map-labels">
-                            <span class="label label-info map-label">CC BY-NC-SA License</span>
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -3272,6 +3303,7 @@
                                     You will be downloading the version of Volcano Turmoil that has been provided to ResourcePile, not the original.  
                                     <br><br>
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Volcano Turmoil" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/volcano-turmoil');$('#download-volcano-turmoil').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
