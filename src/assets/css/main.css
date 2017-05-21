@@ -55,6 +55,80 @@ body {
     content: "© 2017 ResourcePile"
 }
 
+.navbar-menu-title {
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 6px;
+    margin-bottom: -4px;
+    color: #bbbbbb;
+}
+
+.footer {
+    width: 100%;
+    background-color: #343436;
+    padding: 28px;
+}
+
+.footer-section {
+    margin-bottom: 12px;
+}
+
+.footer-section-head {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #777777;
+    margin-bottom: 8px;
+}
+
+.footer-item {
+    display: block;
+    color: #bfbfbf;
+}
+
+.footer-item:hover,
+.footer-item:focus {
+    color: #efebeb;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    width: 50%;
+    border-top: 1px solid #464242;
+    margin-top: 20px;
+    padding-top: 28px;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+thead {
+    background-color: #f0f0f0;
+}
+
+tbody.counted-rows {
+    counter-reset: rowNumber;
+}
+
+tbody.counted-rows tr {
+    counter-increment: rowNumber;
+}
+
+tbody.counted-rows tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+
+.revisions-commit-description {
+    color: #6a6a6a;
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-left: 1px solid #989898;
+}
+
 .distance-record {
     color: #343434;
 }
@@ -93,14 +167,6 @@ body {
     padding-left: 0.4em;
 }
 
-tr:nth-child(even) {
-    background-color: #f0f0f0;
-}
-
-thead {
-    background-color: #f0f0f0;
-}
-
 .record-table:hover,
 .record-table:focus {
     background-color: #f4f4f4;
@@ -111,34 +177,13 @@ thead {
     transition: .5s;
 }
 
-.map-game-mode {
-    font-size: 12px;
-    color: #898989;
-    display: inline;
-    padding: 0px;
-}
-
 .record-map {
-    text-decoration: none !important;\
+    text-decoration: none !important;
 }
 
 .record-search-box {
     font-size: 11px;
     max-height: 28px;
-}
-
-tbody.counted-rows {
-    counter-reset: rowNumber;
-}
-
-tbody.counted-rows tr {
-    counter-increment: rowNumber;
-}
-
-tbody.counted-rows tr td:first-child::before {
-    content: counter(rowNumber);
-    min-width: 1em;
-    margin-right: 0.5em;
 }
 
 @media screen and (max-width: 768px) {
@@ -442,6 +487,13 @@ span.game-mode-button {
     text-align: left;
 }
 
+.map-game-mode {
+    font-size: 12px;
+    color: #898989;
+    display: inline;
+    padding: 0px;
+}
+
 .map-image {
     width: 260px;
     height: 218px;
@@ -563,7 +615,6 @@ span.game-mode-button {
     background-color: #16a085;
 }
 
-
 .map-author-name {
     vertical-align: -1px;
 }
@@ -590,6 +641,36 @@ span.game-mode-button {
 
 .total-maps {
     padding: 18px;
+}
+
+.map-glow-featured {
+    outline: none;
+    border-color: #9ecaed;
+    /* box-shadow: 0 0 4px 1px #2f6bde; */
+    box-shadow: 0 0 4px 1px #ea3b3b;
+}
+
+.map-glow-favourite {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 4px 1px #0cb035;
+}
+
+.map-favourite {
+    background-color: rgba(0, 0, 0, 0.56);
+    position: absolute;
+    width: 260px;
+    height: 178px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 70px;
+    color: rgba(255, 255, 255, 0.69);
+    font-size: 36px;
+}
+
+.map-favourite-icon {
+    cursor: pointer;
 }
 
 .well-custom-red {
@@ -636,7 +717,6 @@ span.game-mode-button {
 }
 
 .post-details {
-    /* border-top: 1px solid #cbcaca; */
     border-bottom: 1px solid #cbcaca;
     padding-bottom: 2px;
     margin-bottom: 8px;
@@ -686,41 +766,6 @@ span.game-mode-button {
 #post-output {
     display: flex;
     flex-direction: column;
-}
-
-.footer {
-    width: 100%;
-    background-color: #343436;
-    padding: 28px;
-}
-
-.footer-section {
-    margin-bottom: 12px;
-}
-
-.footer-section-head {
-    text-transform: uppercase;
-    font-weight: 600;
-    color: #777777;
-    margin-bottom: 8px;
-}
-
-.footer-item {
-    display: block;
-    color: #bfbfbf;
-}
-
-.footer-item:hover,
-.footer-item:focus {
-    color: #efebeb;
-    text-decoration: none;
-}
-
-.footer-bottom {
-    width: 50%;
-    border-top: 1px solid #464242;
-    margin-top: 20px;
-    padding-top: 28px;
 }
 
 .form-body {
@@ -943,39 +988,4 @@ span.game-mode-button {
     padding-left: 32px;
     padding-right: 32px;
     padding-top: 10px;
-
-}
-
-.map-favourite {
-    background-color: rgba(0, 0, 0, 0.56);
-    position: absolute;
-    width: 260px;
-    height: 178px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding-top: 70px;
-    color: rgba(255, 255, 255, 0.69);
-    font-size: 36px;
-}
-
-.map-favourite-icon {
-    cursor: pointer;
-}
-
-.navbar-menu-title {
-    float: left;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 6px;
-    margin-bottom: -4px;
-    color: #bbbbbb;
-}
-
-.revisions-commit-description {
-    color: #6a6a6a;
-    padding-left: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border-left: 1px solid #989898;
 }

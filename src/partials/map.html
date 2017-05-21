@@ -6,13 +6,13 @@
 {{else}}
 {{! Main thumbnail body }}
 <div class="col-sm-6 col-lg-3 map-thumbnail center">
-    <div id="{{slug}}_body" class="thumbnail map-float">
+    <div id="{{slug}}_body" class="thumbnail map-float {{#if featured}}map-glow-featured{{/if}}">
         {{! Map image background, contains banner and labels }}
         <div id="{{slug}}" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
             {{! Map banner, contains name, authors and quick links }}
             <div class="map-banner">
                 {{! Map heading }}
-                <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{@root.map-group}}/bow?s={{slug}}"><strong>{{#if map}}<span class="map-featured" data-toggle="tooltip" data-placement="top" title="{{map}}">{{map}}</span>{{else}}<span class="map-featured">Untitled Map</span>{{/if}}</strong></a>
+                <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{@root.map-group}}/bow?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{map}}"><strong>{{#if map}}{{map}}{{else}}Untitled Map{{/if}}</strong></a>
                 {{#unless locked}}
                 {{! Quick links }}
                 {{#unless @root.page-category.pgm}}
@@ -59,8 +59,8 @@
                 </span>
             </div>
             <div id="favourite-{{slug}}" class="map-favourite" style="display:none;">
-                <span id="{{slug}}_add" onclick="Cookies.set('listen_{{slug}}', true, { expires: 7 });$('#{{slug}}_body').addClass('post-thumbnail-important');$('#{{slug}}_add').hide();$('#{{slug}}_remove').show();$('#{{slug}}_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                <span id="{{slug}}_remove" onclick="Cookies.remove('listen_{{slug}}');$('#{{slug}}_body').removeClass('post-thumbnail-important');$('#{{slug}}_add').show();$('#{{slug}}_remove').hide();$('#{{slug}}_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                <span id="{{slug}}_add" onclick="Cookies.set('star_{{slug}}', true, { expires: 7 });$('#{{slug}}_body').addClass('map-glow-favourite');$('#{{slug}}_add').hide();$('#{{slug}}_remove').show();$('#{{slug}}_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                <span id="{{slug}}_remove" onclick="Cookies.remove('star_{{slug}}');$('#{{slug}}_body').removeClass('map-glow-favourite');$('#{{slug}}_add').show();$('#{{slug}}_remove').hide();$('#{{slug}}_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
                 <span id="{{slug}}_dummy" class="tag_hidden"></span>
             </div>
             <script>
@@ -70,8 +70,8 @@
                     $('#favourite-{{slug}}').fadeOut();
                 });
                 
-                if (Cookies.get('listen_{{slug}}') == 'true') {
-                    $('#{{slug}}_body').addClass('post-thumbnail-important');
+                if (Cookies.get('star_{{slug}}') == 'true') {
+                    $('#{{slug}}_body').addClass('map-glow-favourite');
                     $('#{{slug}}_add').hide();
                     $('#{{slug}}_remove').show();
                     $('#{{slug}}_dummy').text(fav_map);
@@ -83,13 +83,16 @@
             </script>
             {{! Map labels }}
             <div class="map-labels">
+                {{#if featured}}
+                <span class="label label-danger map-label">Popular Download</span>
+                {{/if}}
                 {{#if sourced}}
                 <span class="label label-default map-label">Unlicensed</span>
                 {{else}}
                     {{#if commercial}}
-                    <span class="label label-success map-label">CC BY-SA License</span>
+                    <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     {{else}}
-                    <span class="label label-info map-label">CC BY-NC-SA License</span>
+                    <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     {{/if}}
                 {{/if}}
             </div>
@@ -165,6 +168,7 @@
                             <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                             {{/unless}}
                         {{/if}}
+                        <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                     </div>
                     <div class="modal-footer">
                         <button type="button" id="{{map}}" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
