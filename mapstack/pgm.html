@@ -140,6 +140,113 @@
     <div id="maps-output">
         <div class="dynamic">
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="aetheril_body" class="thumbnail map-float ">
+                <div id="aetheril" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/aetheril/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/pgm/bow?s=aetheril" data-toggle="tooltip" data-placement="top" title="Aetheril"><strong>Aetheril</strong></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-aetheril" class="map-favourite" style="display:none;">
+                        <span id="aetheril_add" onclick="Cookies.set('star_aetheril', true, { expires: 7 });$('#aetheril_body').addClass('map-glow-favourite');$('#aetheril_add').hide();$('#aetheril_remove').show();$('#aetheril_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="aetheril_remove" onclick="Cookies.remove('star_aetheril');$('#aetheril_body').removeClass('map-glow-favourite');$('#aetheril_add').show();$('#aetheril_remove').hide();$('#aetheril_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="aetheril_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#aetheril").hover(function(){
+                            $('#favourite-aetheril').fadeIn();
+                        },function(){
+                            $('#favourite-aetheril').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_aetheril') == 'true') {
+                            $('#aetheril_body').addClass('map-glow-favourite');
+                            $('#aetheril_add').hide();
+                            $('#aetheril_remove').show();
+                            $('#aetheril_dummy').text(fav_map);
+                        } else {
+                            $('#aetheril_add').show();
+                            $('#aetheril_remove').hide();
+                            $('#aetheril_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Jexel">Jexel</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=iMasky">iMasky</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Royston22">Royston22</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=4bash">4bash</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=GreatWallOfTrump">GreatWallOfTrump</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=weaboo511">weaboo511</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-aetheril" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Aetheril" href="https://github.com/MCResourcePile/pgm-maps/raw/master/maps/aetheril/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Aetheril" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-aetheril" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Aetheril</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/9225421c-3c09-4d97-bb80-f6a77c1f360b?size=16&overlay"> <a class="map-author-name" href="?s=Jexel">Jexel</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/e9a74abb-c807-47e9-993a-2f6c990ec8ea?size=16&overlay"> <a class="map-author-name" href="?s=iMasky">iMasky</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/9463f0f0-0437-49a1-9237-ccd8826b61a6?size=16&overlay"> <a class="map-author-name" href="?s=Royston22">Royston22</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/f5465612-c4e4-4e97-a9f1-f942aec82b53?size=16&overlay"> <a class="map-author-name" href="?s=4bash">4bash</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/97307a17-8869-4138-b573-5ce4cc050974?size=16&overlay"> <a class="map-author-name" href="?s=GreatWallOfTrump">GreatWallOfTrump</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/9d903e52-8b1b-4bc5-8c18-905a71a25af0?size=16&overlay"> <a class="map-author-name" href="?s=weaboo511">weaboo511</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Aetheril and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Aetheril that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Aetheril" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/pgm-maps/tree/master/maps/aetheril');$('#download-aetheril').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="assembly_body" class="thumbnail map-float ">
                 <div id="assembly" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/assembly/map.png');">
                     <div class="map-banner">
