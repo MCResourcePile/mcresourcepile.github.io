@@ -5450,6 +5450,108 @@
         </div>
         <div id="clayish" class="no-download"></div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="clutter_body" class="thumbnail map-float ">
+                <div id="clutter" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/clutter/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=clutter" data-toggle="tooltip" data-placement="top" title="Clutter"><strong>Clutter</strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/clutter" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=micro">Micro</a><span class="tag_hidden">5x5</span></li>
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=ffa">Free-for-all</a><span class="tag_hidden">Free for all FFA</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-clutter" class="map-favourite" style="display:none;">
+                        <span id="clutter_add" onclick="Cookies.set('star_clutter', true, { expires: 7 });$('#clutter_body').addClass('map-glow-favourite');$('#clutter_add').hide();$('#clutter_remove').show();$('#clutter_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="clutter_remove" onclick="Cookies.remove('star_clutter');$('#clutter_body').removeClass('map-glow-favourite');$('#clutter_add').show();$('#clutter_remove').hide();$('#clutter_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="clutter_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#clutter").hover(function(){
+                            $('#favourite-clutter').fadeIn();
+                        },function(){
+                            $('#favourite-clutter').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_clutter') == 'true') {
+                            $('#clutter_body').addClass('map-glow-favourite');
+                            $('#clutter_add').hide();
+                            $('#clutter_remove').show();
+                            $('#clutter_dummy').text(fav_map);
+                        } else {
+                            $('#clutter_add').show();
+                            $('#clutter_remove').hide();
+                            $('#clutter_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Anthonny">Anthonny</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=JTr">JTr</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=PepsiDog">PepsiDog</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-clutter" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Clutter" href="https://github.com/MCResourcePile/overcast-maps/raw/master/maps/clutter/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Clutter" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-clutter" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Clutter</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/bb628049-e368-4b1c-b8aa-d4557ae9416b?size=16&overlay"> <a class="map-author-name" href="?s=Anthonny">Anthonny</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/105f6a09-f533-412b-93cb-501601763c11?size=16&overlay"> <a class="map-author-name" href="?s=JTr">JTr</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/060baa18-2852-40d8-afcb-e61607c04be3?size=16&overlay"> <a class="map-author-name" href="?s=PepsiDog">PepsiDog</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Clutter and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Clutter that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Clutter" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps/tree/master/maps/clutter');$('#download-clutter').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="creep_slap_body" class="thumbnail map-float ">
                 <div id="creep_slap" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/creep_slap/map.png');">
                     <div class="map-banner">
@@ -10019,6 +10121,106 @@
         </div>
         <div id="gridlock_2" class="no-download"></div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="grub_ctf_body" class="thumbnail map-float ">
+                <div id="grub_ctf" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/grub_ctf/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=grub_ctf" data-toggle="tooltip" data-placement="top" title="Grub"><strong>Grub</strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/grub_ctf" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag_hidden">CTF</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-grub_ctf" class="map-favourite" style="display:none;">
+                        <span id="grub_ctf_add" onclick="Cookies.set('star_grub_ctf', true, { expires: 7 });$('#grub_ctf_body').addClass('map-glow-favourite');$('#grub_ctf_add').hide();$('#grub_ctf_remove').show();$('#grub_ctf_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="grub_ctf_remove" onclick="Cookies.remove('star_grub_ctf');$('#grub_ctf_body').removeClass('map-glow-favourite');$('#grub_ctf_add').show();$('#grub_ctf_remove').hide();$('#grub_ctf_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="grub_ctf_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#grub_ctf").hover(function(){
+                            $('#favourite-grub_ctf').fadeIn();
+                        },function(){
+                            $('#favourite-grub_ctf').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_grub_ctf') == 'true') {
+                            $('#grub_ctf_body').addClass('map-glow-favourite');
+                            $('#grub_ctf_add').hide();
+                            $('#grub_ctf_remove').show();
+                            $('#grub_ctf_dummy').text(fav_map);
+                        } else {
+                            $('#grub_ctf_add').show();
+                            $('#grub_ctf_remove').hide();
+                            $('#grub_ctf_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Anthonny">Anthonny</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=JTr">JTr</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-grub_ctf" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Grub" href="https://github.com/MCResourcePile/overcast-maps/raw/master/maps/grub_ctf/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Grub" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-grub_ctf" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Grub</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/bb628049-e368-4b1c-b8aa-d4557ae9416b?size=16&overlay"> <a class="map-author-name" href="?s=Anthonny">Anthonny</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/105f6a09-f533-412b-93cb-501601763c11?size=16&overlay"> <a class="map-author-name" href="?s=JTr">JTr</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Grub and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Grub that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Grub" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps/tree/master/maps/grub_ctf');$('#download-grub_ctf').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="halfway_home_body" class="thumbnail map-float ">
                 <div id="halfway_home" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/halfway_home/map.png');">
                     <div class="map-banner">
@@ -10901,6 +11103,106 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Hot Dam: Mini" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps/tree/master/maps/hot_dam_mini');$('#download-hot_dam_mini').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="humble_jungle_body" class="thumbnail map-float ">
+                <div id="humble_jungle" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/humble_jungle/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=humble_jungle" data-toggle="tooltip" data-placement="top" title="Humble Jungle"><strong>Humble Jungle</strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/humble_jungle" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=micro">Micro</a><span class="tag_hidden">5x5</span></li>
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=ffa">Free-for-all</a><span class="tag_hidden">Free for all FFA</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-humble_jungle" class="map-favourite" style="display:none;">
+                        <span id="humble_jungle_add" onclick="Cookies.set('star_humble_jungle', true, { expires: 7 });$('#humble_jungle_body').addClass('map-glow-favourite');$('#humble_jungle_add').hide();$('#humble_jungle_remove').show();$('#humble_jungle_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="humble_jungle_remove" onclick="Cookies.remove('star_humble_jungle');$('#humble_jungle_body').removeClass('map-glow-favourite');$('#humble_jungle_add').show();$('#humble_jungle_remove').hide();$('#humble_jungle_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="humble_jungle_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#humble_jungle").hover(function(){
+                            $('#favourite-humble_jungle').fadeIn();
+                        },function(){
+                            $('#favourite-humble_jungle').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_humble_jungle') == 'true') {
+                            $('#humble_jungle_body').addClass('map-glow-favourite');
+                            $('#humble_jungle_add').hide();
+                            $('#humble_jungle_remove').show();
+                            $('#humble_jungle_dummy').text(fav_map);
+                        } else {
+                            $('#humble_jungle_add').show();
+                            $('#humble_jungle_remove').hide();
+                            $('#humble_jungle_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Timothee38">Timothee38</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Anthonny">Anthonny</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-humble_jungle" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Humble Jungle" href="https://github.com/MCResourcePile/overcast-maps/raw/master/maps/humble_jungle/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Humble Jungle" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-humble_jungle" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Humble Jungle</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/8f9344cf-7367-4e28-9f24-5c66422f28c9?size=16&overlay"> <a class="map-author-name" href="?s=Timothee38">Timothee38</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/bb628049-e368-4b1c-b8aa-d4557ae9416b?size=16&overlay"> <a class="map-author-name" href="?s=Anthonny">Anthonny</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Humble Jungle and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Humble Jungle that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Humble Jungle" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps/tree/master/maps/humble_jungle');$('#download-humble_jungle').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -15570,6 +15872,203 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="pseudo_body" class="thumbnail map-float ">
+                <div id="pseudo" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/pseudo/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=pseudo" data-toggle="tooltip" data-placement="top" title="Pseudo"><strong>Pseudo</strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/pseudo" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=gs">Ghost Squadron</a><span class="tag_hidden">GS</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-pseudo" class="map-favourite" style="display:none;">
+                        <span id="pseudo_add" onclick="Cookies.set('star_pseudo', true, { expires: 7 });$('#pseudo_body').addClass('map-glow-favourite');$('#pseudo_add').hide();$('#pseudo_remove').show();$('#pseudo_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="pseudo_remove" onclick="Cookies.remove('star_pseudo');$('#pseudo_body').removeClass('map-glow-favourite');$('#pseudo_add').show();$('#pseudo_remove').hide();$('#pseudo_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="pseudo_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#pseudo").hover(function(){
+                            $('#favourite-pseudo').fadeIn();
+                        },function(){
+                            $('#favourite-pseudo').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_pseudo') == 'true') {
+                            $('#pseudo_body').addClass('map-glow-favourite');
+                            $('#pseudo_add').hide();
+                            $('#pseudo_remove').show();
+                            $('#pseudo_dummy').text(fav_map);
+                        } else {
+                            $('#pseudo_add').show();
+                            $('#pseudo_remove').hide();
+                            $('#pseudo_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=ViceWatercolour">ViceWatercolour</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-pseudo" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Pseudo" href="https://github.com/MCResourcePile/overcast-maps/raw/master/maps/pseudo/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Pseudo" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-pseudo" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Pseudo</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/bf331953-4f92-43ee-8abc-7544b8234936?size=16&overlay"> <a class="map-author-name" href="?s=ViceWatercolour">ViceWatercolour</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Pseudo and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Pseudo that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Pseudo" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps/tree/master/maps/pseudo');$('#download-pseudo').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="pyradic_body" class="thumbnail map-float ">
+                <div id="pyradic" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-cardinal-maps/master/maps/pyradic/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=pyradic" data-toggle="tooltip" data-placement="top" title="Pyradic"><strong>Pyradic</strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/pyradic" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-pyradic" class="map-favourite" style="display:none;">
+                        <span id="pyradic_add" onclick="Cookies.set('star_pyradic', true, { expires: 7 });$('#pyradic_body').addClass('map-glow-favourite');$('#pyradic_add').hide();$('#pyradic_remove').show();$('#pyradic_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="pyradic_remove" onclick="Cookies.remove('star_pyradic');$('#pyradic_body').removeClass('map-glow-favourite');$('#pyradic_add').show();$('#pyradic_remove').hide();$('#pyradic_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="pyradic_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#pyradic").hover(function(){
+                            $('#favourite-pyradic').fadeIn();
+                        },function(){
+                            $('#favourite-pyradic').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_pyradic') == 'true') {
+                            $('#pyradic_body').addClass('map-glow-favourite');
+                            $('#pyradic_add').hide();
+                            $('#pyradic_remove').show();
+                            $('#pyradic_dummy').text(fav_map);
+                        } else {
+                            $('#pyradic_add').show();
+                            $('#pyradic_remove').hide();
+                            $('#pyradic_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Anthonny">Anthonny</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-pyradic" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Pyradic" href="https://github.com/MCResourcePile/overcast-cardinal-maps/raw/master/maps/pyradic/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Pyradic" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-pyradic" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Pyradic</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/bb628049-e368-4b1c-b8aa-d4557ae9416b?size=16&overlay"> <a class="map-author-name" href="?s=Anthonny">Anthonny</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Pyradic and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Pyradic that has been provided to ResourcePile, not the original. This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i> 
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Pyradic" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/pyradic');$('#download-pyradic').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="retaliation_body" class="thumbnail map-float ">
                 <div id="retaliation" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-cardinal-maps/master/maps/retaliation/map.png');">
                     <div class="map-banner">
@@ -19632,7 +20131,7 @@
                         <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=grand_tournament" data-toggle="tooltip" data-placement="top" title="The Grand Dueling Tournament"><strong>The Grand Dueling Tournament</strong></a>
                         <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/grand_tournament" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
-                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
                                     
                                     
                                     
@@ -19730,7 +20229,7 @@
                         <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=grand_tournament_ii" data-toggle="tooltip" data-placement="top" title="The Grand Dueling Tournament II"><strong>The Grand Dueling Tournament II</strong></a>
                         <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/grand_tournament_ii" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
                         <span style="display:block;margin-top:-8px;">
-                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
                                     
                                     
                                     
@@ -19814,6 +20313,106 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="The Grand Dueling Tournament II" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps/tree/master/maps/grand_tournament_ii');$('#download-grand_tournament_ii').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="the_grand_spleefing_tournament_body" class="thumbnail map-float ">
+                <div id="the_grand_spleefing_tournament" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps/master/maps/the_grand_spleefing_tournament/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=the_grand_spleefing_tournament" data-toggle="tooltip" data-placement="top" title="The Grand Spleefing Tournament"><strong>The Grand Spleefing Tournament</strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/the_grand_spleefing_tournament" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-the_grand_spleefing_tournament" class="map-favourite" style="display:none;">
+                        <span id="the_grand_spleefing_tournament_add" onclick="Cookies.set('star_the_grand_spleefing_tournament', true, { expires: 7 });$('#the_grand_spleefing_tournament_body').addClass('map-glow-favourite');$('#the_grand_spleefing_tournament_add').hide();$('#the_grand_spleefing_tournament_remove').show();$('#the_grand_spleefing_tournament_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="the_grand_spleefing_tournament_remove" onclick="Cookies.remove('star_the_grand_spleefing_tournament');$('#the_grand_spleefing_tournament_body').removeClass('map-glow-favourite');$('#the_grand_spleefing_tournament_add').show();$('#the_grand_spleefing_tournament_remove').hide();$('#the_grand_spleefing_tournament_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="the_grand_spleefing_tournament_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#the_grand_spleefing_tournament").hover(function(){
+                            $('#favourite-the_grand_spleefing_tournament').fadeIn();
+                        },function(){
+                            $('#favourite-the_grand_spleefing_tournament').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_the_grand_spleefing_tournament') == 'true') {
+                            $('#the_grand_spleefing_tournament_body').addClass('map-glow-favourite');
+                            $('#the_grand_spleefing_tournament_add').hide();
+                            $('#the_grand_spleefing_tournament_remove').show();
+                            $('#the_grand_spleefing_tournament_dummy').text(fav_map);
+                        } else {
+                            $('#the_grand_spleefing_tournament_add').show();
+                            $('#the_grand_spleefing_tournament_remove').hide();
+                            $('#the_grand_spleefing_tournament_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Yoyo_">Yoyo_</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Pugzy">Pugzy</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-the_grand_spleefing_tournament" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="The Grand Spleefing Tournament" href="https://github.com/MCResourcePile/overcast-maps/raw/master/maps/the_grand_spleefing_tournament/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="The Grand Spleefing Tournament" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-the_grand_spleefing_tournament" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for The Grand Spleefing Tournament</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/07fa10c6-f564-4630-861e-fe134ae27527?size=16&overlay"> <a class="map-author-name" href="?s=Yoyo_">Yoyo_</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/75fd93dd-8e48-4698-81a2-97dae2ec5b5f?size=16&overlay"> <a class="map-author-name" href="?s=Pugzy">Pugzy</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for The Grand Spleefing Tournament and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of The Grand Spleefing Tournament that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="The Grand Spleefing Tournament" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps/tree/master/maps/the_grand_spleefing_tournament');$('#download-the_grand_spleefing_tournament').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -20526,6 +21125,109 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Tree of Life" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/tree_of_life');$('#download-tree_of_life').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="trinity_body" class="thumbnail map-float ">
+                <div id="trinity" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-cardinal-maps/master/maps/trinity/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/overcast/bow?s=trinity" data-toggle="tooltip" data-placement="top" title="Trinity"><strong>Trinity</strong></a>
+                        <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/maps/trinity" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Overcast&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-trinity" class="map-favourite" style="display:none;">
+                        <span id="trinity_add" onclick="Cookies.set('star_trinity', true, { expires: 7 });$('#trinity_body').addClass('map-glow-favourite');$('#trinity_add').hide();$('#trinity_remove').show();$('#trinity_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="trinity_remove" onclick="Cookies.remove('star_trinity');$('#trinity_body').removeClass('map-glow-favourite');$('#trinity_add').show();$('#trinity_remove').hide();$('#trinity_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="trinity_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#trinity").hover(function(){
+                            $('#favourite-trinity').fadeIn();
+                        },function(){
+                            $('#favourite-trinity').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_trinity') == 'true') {
+                            $('#trinity_body').addClass('map-glow-favourite');
+                            $('#trinity_add').hide();
+                            $('#trinity_remove').show();
+                            $('#trinity_dummy').text(fav_map);
+                        } else {
+                            $('#trinity_add').show();
+                            $('#trinity_remove').hide();
+                            $('#trinity_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=ViceWatercolour">ViceWatercolour</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Slicorn">Slicorn</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Sethskye">Sethskye</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-trinity" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Trinity" href="https://github.com/MCResourcePile/overcast-cardinal-maps/raw/master/maps/trinity/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Trinity" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-trinity" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Trinity</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/bf331953-4f92-43ee-8abc-7544b8234936?size=16&overlay"> <a class="map-author-name" href="?s=ViceWatercolour">ViceWatercolour</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/0b8f95fa-0f40-4f28-9fd0-b8e243bb6800?size=16&overlay"> <a class="map-author-name" href="?s=Slicorn">Slicorn</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/3cce0080-9faa-48f9-82cf-64410305822a?size=16&overlay"> <a class="map-author-name" href="?s=Sethskye">Sethskye</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Trinity and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Trinity that has been provided to ResourcePile, not the original. This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i> 
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Trinity" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-cardinal-maps/tree/master/maps/trinity');$('#download-trinity').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
