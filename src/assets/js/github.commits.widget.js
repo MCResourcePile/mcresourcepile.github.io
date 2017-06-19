@@ -62,7 +62,7 @@ THE SOFTWARE.
 
                 element.empty();
 
-                var list = $('<table class="table table condensed" style="color: #2f2f2f;font-size: 13px;"><tr class="active" style="color:#202020"><th width="6%">SHA</th><th width="10%">Author</th><th width="70%">Description</th><th width="14%">When</th></tr>').appendTo(element);
+                var list = $('<table class="table table condensed" style="color:#2f2f2f;font-size:13px;"><tr class="active" style="color:#202020"><th width="6%">SHA</th><th width="10%">Author</th><th width="70%">Description</th><th width="14%">When</th></tr>').appendTo(element);
                 for (var c = 0; c < totalCommits; c++) {
                     var cur = commits[c];
                     var li = $("<tr>");
@@ -111,7 +111,7 @@ THE SOFTWARE.
                         commitDescription = commitDescription.replace(/(\r\n|\n|\r)/gm," ");
                         
                         var link = $('<td>')
-                            .html(commitSummary + '<br><small class="revisions-commit-description">' + commitDescription + '</small>');
+                            .html(commitSummary + '<br><small style="color:#6a6a6a;padding-left:5px;padding-top:2px;padding-bottom:2px;border-left:1px solid #989898;">' + commitDescription + '</small>');
                     } else {
                         var commitSummary = commitMessage;
                         var commitDescription = null;
