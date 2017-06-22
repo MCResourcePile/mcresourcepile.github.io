@@ -12,7 +12,7 @@
             {{! Map banner, contains name, authors and quick links }}
             <div class="map-banner">
                 {{! Map heading }}
-                <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{@root.map-group}}/bow?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{map}}"><strong>{{#if map}}{{map}}{{else}}Untitled Map{{/if}}</strong></a>
+                <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{@root.map-group}}/bow?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{map}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
                 {{#unless locked}}
                 {{! Quick links }}
                 {{#unless @root.page-category.pgm}}

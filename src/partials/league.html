@@ -11,20 +11,20 @@
 
     <!-- League winners -->
     <div class="league-results row center">
-        {{#if first}}
+        {{#if first_placing}}
         <div class="league-position col-sm-4">
             <div class="fa fa-star"></div>
-            <div class="league-team">{{second}}</div>
+            <div class="league-team">{{second_placing}}</div>
             <div class="league-team-position">2nd place</div>
         </div>
         <div class="league-position league-position-first col-sm-4">
             <span class="fa fa-trophy"></span>
-            <div class="league-team">{{first}}</div>
+            <div class="league-team">{{first_placing}}</div>
             <div class="league-team-position">1st place</div>
         </div>
         <div class="league-position col-sm-4">
             <div class="fa fa-star"></div>
-            <div class="league-team">{{third}}</div>
+            <div class="league-team">{{third_placing}}</div>
             <div class="league-team-position">3rd place</div>
         </div>
         {{else}}
@@ -89,13 +89,13 @@
             <div id="{{slug}}" class="thumbnail map-float">
                 <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/{{slug}}.png');">
                     <div class="map-banner">
-                        <span class="map-header"><strong>{{map}}</strong></span>
+                        <span class="map-header"><strong>{{name}}</strong></span>
                         <span style="display:block;margin-top:-6px;">
                             <span class="game-tag map-tag">{{gamemode}}</span>
                         </span>
                     </div>
                     <div class="map-labels">
-                        <span class="label label-info map-label">{{round}}</span>
+                        <span class="label label-info map-label">{{stage}}</span>
                     </div>
                 </div>
             </div>
