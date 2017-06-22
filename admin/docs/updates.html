@@ -116,7 +116,7 @@
         </div>
         <div class="col-sm-9">
             <h6>
-                Update posts allow simple one-way communication between the ResourcePile staff and the users by creating simple blog-like posts regarding and changes, additions or announcements which may be of interest to readers. Update posts are not designed to be short descriptions of minor changes such as a map update as that it what the vision pages are for.<br><br>
+                Update posts allow simple one-way communication between the ResourcePile staff and the users by creating simple blog-like posts regarding and changes, additions or announcements which may be of interest to readers. Update posts are not designed to be short descriptions of minor changes such as a map update as that it what the vision pages are for. Content for update posts are written in markdown form and are saved to a <code>posts</code> folder in the site source. These files must match the <code>"id":</code> of the post in order for it to be displayed there when the site is built.<br><br>
                 Update posts: <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/blob/source/src/data/updates.json"><code>src/data/updates.json</code></a><br>
             </h6>
             <h5>Main post attributes</h5>
@@ -143,6 +143,18 @@
                         <td><code></code></td>
                     </tr>
                     <tr>
+                        <td><code>"author":</code></td>
+                        <td>The post's author. Leaving this blank will make the post author ResourcePile.</td>
+                        <td><span class="label label-info">String</span></td>
+                        <td><code></code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"date":</code></td>
+                        <td>The date in which the post was written, and <b>must</b> be formatted as MM-DD-YYYY (eg. <code>01-29-2017</code>).</td>
+                        <td><span class="label label-info">Date</span></td>
+                        <td><code></code></td>
+                    </tr>
+                    <tr>
                         <td><code>"important":</code></td>
                         <td>Outlines the post making it more visible while also forcing it to the front page.</td>
                         <td><span class="label label-info">Boolean</span></td>
@@ -153,24 +165,6 @@
                         <td>Hides the post from the site for archiving purposes</td>
                         <td><span class="label label-info">Boolean</span></td>
                         <td><code>false</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>"date":</code></td>
-                        <td>The date in which the post was written, and <b>must</b> be formatted as MM-DD-YYYY (eg. <code>01-29-2017</code>).</td>
-                        <td><span class="label label-info">Date</span></td>
-                        <td><code></code></td>
-                    </tr>
-                    <tr>
-                        <td><code>"author":</code></td>
-                        <td>The post's author. Leaving this blank will make the post author ResourcePile.</td>
-                        <td><span class="label label-info">String</span></td>
-                        <td><code></code></td>
-                    </tr>
-                    <tr>
-                        <td><code>"content":</code></td>
-                        <td>The main posts content, accepts HTML elements.</td>
-                        <td><span class="label label-info">String</span></td>
-                        <td><code></code></td>
                     </tr>
                     <tr>
                         <td><code>"buttons": []</code></td>
