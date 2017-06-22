@@ -1,0 +1,1 @@
+Our documents for contributing to our website have been converted and moved to our site rather than being located within in GitHub markdown file. They can now be accessed via the link below or through the link in the footer of each page.

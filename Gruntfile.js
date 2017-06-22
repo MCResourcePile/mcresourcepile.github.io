@@ -9,8 +9,8 @@ module.exports = function(grunt) {
                     src: ['**/*.html', '!**/partials/**'],
                     dest: 'out/'
                 }],
-                helpers: 'src/helpers/title.js',
-                partials: ['src/partials/header.html', 'src/partials/footer.html', 'src/partials/alert.html', 'src/partials/map.html', 'src/partials/league.html', 'src/partials/league-listing.html'],
+                helpers: ['handlebars-helpers', 'src/helpers/title.js'],
+                partials: ['src/posts/*.md', 'src/partials/*.html'],
                 templateData: 'src/data/**/*.json'
             }
         },
@@ -32,7 +32,12 @@ module.exports = function(grunt) {
         },
         clean: ['out/']
     });
-
+    
+    var handlebars = require('handlebars');
+    var helpers = require('handlebars-helpers')({
+      handlebars: handlebars
+    });
+    
     grunt.loadNpmTasks('grunt-compile-handlebars');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');

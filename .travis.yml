@@ -6,6 +6,7 @@ branches:
     - source
 before_script:
 - npm install -g grunt
+- npm install -g handlebars-helpers
 script: grunt
 after_success:
 - bash ./deploy.sh
