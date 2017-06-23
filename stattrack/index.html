@@ -1,18 +1,18 @@
 <html>
     <head>
-        <title>Home - ResourcePile</title>
+        <title>Statistics - ResourcePile</title>
         <!-- Page meta data -->
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="description">
-        <meta content="Home - ResourcePile" property="og:title">
+        <meta content="Statistics - ResourcePile" property="og:title">
         <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="og:description">
         <meta content="website" property="og:type">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
-        <meta content="Home - ResourcePile" name="twitter:title">
+        <meta content="Statistics - ResourcePile" name="twitter:title">
         <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
@@ -37,7 +37,7 @@
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
         
     </head>
-    <body class="background-splash" id="wrapper">
+    <body id="wrapper">
         <!-- Page navigation -->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -69,7 +69,7 @@
                                 <li><a href="/leaguerec/avicus"><i class="fa fa-shield"></i> Avicus Network</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown ">
+                        <li class="dropdown active">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> Statistics <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><p class="navbar-menu-title">Overcast</p></li>
@@ -87,107 +87,95 @@
                 </div>
             </div>
         </div>
-        <div >
-<!-- Page header, splash wash -->
-<div class="background-splash-wash" style="text-align:center">
-    <div class="container splash-header-body" id="wrapper-header">
-        <div class="splash-header">ResourcePile</div>
-        <div class="splash-subheader"></div>
-    </div>
-    <!-- Main page content -->
-    <div class="page-content" id="wrapper-content">
-        <div class="index-alerts">
+        <div class="content-background">
+<div class="container">
+    <div class="content-header">
+        <div class="content-alert">
             <div class="alert alert-success" role="alert">We are now accepting your map submissions to add to our public map collection. If you are interested in sharing your map, find out how to get your map featured in our collection <a href="https://mcresourcepile.github.io/admin/forms/maps">here</a>!</div>
         </div>
-        <div class="content-title">Sections</div>
-        <div class="content-subtitle">Just a small selection of our resources</div>
-        <div class="container">
-            <div class="row" style="margin-top:18px;">
-                <div class="col-sm-6 col-md-4">
-                    <a href="mapstack" class="object-card-link">
-                        <div class="object-card card-background-default center">
-                            <span class="object-card-display fa fa-cubes"></span>
-                        </div>
-                        <span class="object-card-title card-title-default"><strong>Map Collections</strong></span>
-                        <div class="object-card-discription">Our selection of maps from various competitive Minecraft networks</div>
-                    </a>
+        <div class="content-title">Statistics</div>
+        <div class="content-subtitle">Statistic records from various competitive Minecraft networks</div>
+    </div>
+    <div class="row" style="margin-top:18px;text-align:center">
+        <div class="col-sm-6 col-md-3">
+            <a href="overcast/bow" class="object-card-link">
+                <div class="object-card card-background-overcast center">
+                    <span class="object-card-display fa fa-crosshairs"></span>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <a href="leaguerec" class="object-card-link">
-                        <div class="object-card card-background-default center">
-                            <span class="object-card-display fa fa-sitemap"></span>
-                        </div>
-                        <span class="object-card-title card-title-default"><strong>Leagues</strong></span>
-                        <div class="object-card-discription">Records for tournaments hosted by various competitive Minecraft networks</div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <a href="stattrack" class="object-card-link">
-                        <div class="object-card card-background-default center">
-                            <span class="object-card-display fa fa-trophy"></span>
-                        </div>
-                        <span class="object-card-title card-title-default"><strong>Statistics</strong></span>
-                        <div class="object-card-discription">Statistic records from various competitive Minecraft networks</div>
-                    </a>
-                </div>
-            </div>
+                <span class="object-card-title card-title-overcast"><strong>Overcast Bow Records</strong></span>
+                <div class="object-card-discription">Tracking the longest bow kill distances recorded on the Overcast Network</div>
+            </a>
         </div>
-        <br>
+        <div class="col-sm-6 col-md-3">
+            <a href="overcast/objective" class="object-card-link">
+                <div class="object-card card-background-overcast center">
+                    <span class="object-card-display fa fa-signal"></span>
+                </div>
+                <span class="object-card-title card-title-overcast"><strong>Overcast Leaderboards</strong></span>
+                <div class="object-card-discription">Top listings of the objective leaderboards on the Overcast Network</div>
+            </a>
         </div>
-        <div class="footer">
-            <div class="container">
-                <div class="row center" style="width: 70%">
-                    <div class="footer-section col-md-3">
-                        <div class="footer-section-head">About</div>
-                        <a class="footer-item" href="/staff">Staff</a>
-                        <a class="footer-item" href="/admin/forms/contact">Contact</a>
-                        <a class="footer-item" href="/admin/forms/apply">Positions</a>
-                    </div>
-                    <div class="footer-section col-md-3">
-                        <div class="footer-section-head">Development</div>
-                        <a class="footer-item" href="/updates">Update Posts</a>
-                        <a class="footer-item" href="/revisions/website">Revisions</a>
-                        <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
-                        <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
-                    </div>
-                    <div class="footer-section col-md-3">
-                        <div class="footer-section-head">Contributing</div>
-                        <a class="footer-item" href="/admin/docs/maps">Documentation</a>
-                        <a class="footer-item" href="/admin/forms/maps">Map Submission</a>
-                    </div>
-                    <div class="footer-section col-md-3">
-                        <div class="footer-section-head">Policies</div>
-                        <a class="footer-item" href="/policies/terms">Terms of Use</a>
-                        <a class="footer-item" href="/policies/maps">Map Policy</a>
-                    </div>
+        <div class="col-sm-6 col-md-3">
+            <a href="overcast/website" class="object-card-link">
+                <div class="object-card card-background-overcast center">
+                    <span class="object-card-display fa fa-bookmark"></span>
                 </div>
-                <div class="footer-bottom center">
-                    <div class="resourcepile-copyright-year"></div>
+                <span class="object-card-title card-title-overcast"><strong>Overcast Miscellaneous</strong></span>
+                <div class="object-card-discription">Various other website based statistics from the Overcast Network</div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <a href="stratus/bow" class="object-card-link">
+                <div class="object-card card-background-stratus center">
+                    <span class="object-card-display fa fa-crosshairs"></span>
                 </div>
-            </div>
+                <span class="object-card-title card-title-stratus"><strong>Stratus Bow Records</strong></span>
+                <div class="object-card-discription">Tracking the longest bow kill distances recorded on the Stratus Network</div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <a href="avicus/bow" class="object-card-link">
+                <div class="object-card card-background-avicus center">
+                    <span class="object-card-display fa fa-crosshairs"></span>
+                </div>
+                <span class="object-card-title card-title-avicus"><strong>Avicus Bow Records</strong></span>
+                <div class="object-card-discription">Tracking the longest bow kill distances recorded on the Avicus Network</div>
+            </a>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $('[data-toggle="tooltip"]').tooltip();
-    var images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg'];
-    $('.background-splash').css({'background': 'url(assets/img/splash/' + [Math.floor(Math.random() * images.length) + 1] + '.jpg) no-repeat center fixed'});
-    var splash_quotes = [
-        'The best collection of resources for the Overcast and Avicus Networks',
-        'Mostly known for our Overcast Network map collection',
-        'The place you go when you ask "where do I download ocn maps?"',
-        'Hosting a large collection of competitive Minecraft PVP maps',
-        'New Overcast Network maps? Soon™',
-        'We also have pages for Stratus Network!',
-        '<objective> Download all of the maps! </objective>',
-        '<objective> Get the longest kill distance with a bow! </objective>',
-        'Loading Overcast Network maps repository... 16% complete',
-        'Could not find map "The Nile" when parsing file data/maps/overcast.json',
-        'Could not find map "Race for Victory" when parsing file data/maps/overcast.json',
-        'Could not find map "Medieval Warfare" when parsing file data/maps/overcast.json',
-        'Could not find map "Shroom Trip" when parsing file data/maps/overcast.json'
-    ]
-    $('.splash-subheader').text(splash_quotes[Math.floor(Math.random()*splash_quotes.length)]);
-</script>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row center" style="width: 70%">
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">About</div>
+                <a class="footer-item" href="/staff">Staff</a>
+                <a class="footer-item" href="/admin/forms/contact">Contact</a>
+                <a class="footer-item" href="/admin/forms/apply">Positions</a>
+            </div>
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">Development</div>
+                <a class="footer-item" href="/updates">Update Posts</a>
+                <a class="footer-item" href="/revisions/website">Revisions</a>
+                <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
+                <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
+            </div>
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">Contributing</div>
+                <a class="footer-item" href="/admin/docs/maps">Documentation</a>
+                <a class="footer-item" href="/admin/forms/maps">Map Submission</a>
+            </div>
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">Policies</div>
+                <a class="footer-item" href="/policies/terms">Terms of Use</a>
+                <a class="footer-item" href="/policies/maps">Map Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom center">
+            <div class="resourcepile-copyright-year"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
