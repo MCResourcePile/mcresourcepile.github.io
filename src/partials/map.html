@@ -12,7 +12,7 @@
             {{! Map banner, contains name, authors and quick links }}
             <div class="map-banner">
                 {{! Map heading }}
-                <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{@root.map-group}}/bow?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{map}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
+                <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{@root.map-group}}/bow?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
                 {{#unless locked}}
                 {{! Quick links }}
                 {{#unless @root.page-category.pgm}}
@@ -121,7 +121,7 @@
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
-            <a id="{{map}}" href="https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{map}}" class="fa fa-code click-xml"></i></a>
+            <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{name}}" class="fa fa-code click-xml"></i></a>
             {{/unless}}
             {{/if}}
         </div>
@@ -131,7 +131,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Downloading map files for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}}</h4>
+                        <h4 class="modal-title">Downloading map files for {{#if name}}{{name}}{{else}}Untitiled Map{{/if}}</h4>
                         <div class="map-authors">
                             <span class="map-author-name">created by</span>
                             {{#if authors}}
@@ -144,34 +144,34 @@
                     </div>
                     <div class="modal-body">
                         {{#if sourced}}
-                        This download for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} and other files included in this download have no associated license attached to them. We recommend getting in contact with {{#authors}}<li class="game-tag">{{#if player_name}}{{player_name}}{{else}}Ghost{{/if}}</li>{{/authors}} before using {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors. {{#if cardinal}}This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i>{{/if}} {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
+                        This download for {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} and other files included in this download have no associated license attached to them. We recommend getting in contact with {{#authors}}<li class="game-tag">{{#if player_name}}{{player_name}}{{else}}Ghost{{/if}}</li>{{/authors}} before using {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors. {{#if cardinal}}This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i>{{/if}} {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
                         {{else}}
                             {{#unless commercial}}
-                            This download for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                            This download for {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
                             <br><br>
                             <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
                                 <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
                             </a>
                             <br>
-                            You will be downloading the version of {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if cardinal}}This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i>{{/if}} {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
+                            You will be downloading the version of {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if cardinal}}This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i>{{/if}} {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
                             <br><br>
-                            <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BT-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                             {{else}}
-                            This download for {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                            This download for {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
                             <br><br>
                             <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
                                 <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
                             </a>
                             <br>
-                            You will be downloading the version of {{#if map}}{{map}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if cardinal}}This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i>{{/if}} {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
+                            You will be downloading the version of {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if cardinal}}This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i>{{/if}} {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
                             <br><br>
-                            <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BT-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                            <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                             {{/unless}}
                         {{/if}}
                         <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="{{map}}" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                        <button type="button" id="{{name}}" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
