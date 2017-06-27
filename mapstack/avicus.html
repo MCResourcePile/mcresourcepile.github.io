@@ -731,6 +731,108 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="deadlock_body" class="thumbnail map-float ">
+                <div id="deadlock" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/deadlock/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=deadlock" data-toggle="tooltip" data-placement="top" title="Deadlock"><strong>Deadlock</strong></a>
+                        <a href="https://avicus.net/maps/map/deadlock" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag_hidden">CTW</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-deadlock" class="map-favourite" style="display:none;">
+                        <span id="deadlock_add" onclick="Cookies.set('star_deadlock', true, { expires: 7 });$('#deadlock_body').addClass('map-glow-favourite');$('#deadlock_add').hide();$('#deadlock_remove').show();$('#deadlock_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="deadlock_remove" onclick="Cookies.remove('star_deadlock');$('#deadlock_body').removeClass('map-glow-favourite');$('#deadlock_add').show();$('#deadlock_remove').hide();$('#deadlock_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="deadlock_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#deadlock").hover(function(){
+                            $('#favourite-deadlock').fadeIn();
+                        },function(){
+                            $('#favourite-deadlock').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_deadlock') == 'true') {
+                            $('#deadlock_body').addClass('map-glow-favourite');
+                            $('#deadlock_add').hide();
+                            $('#deadlock_remove').show();
+                            $('#deadlock_dummy').text(fav_map);
+                        } else {
+                            $('#deadlock_add').show();
+                            $('#deadlock_remove').hide();
+                            $('#deadlock_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=ViceWatercolour">ViceWatercolour</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Endeavour">Endeavour</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=QFrog">QFrog</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-deadlock" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Deadlock" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/deadlock/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Deadlock" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-deadlock" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Deadlock</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/bf331953-4f92-43ee-8abc-7544b8234936?size=16&overlay"> <a class="map-author-name" href="?s=ViceWatercolour">ViceWatercolour</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/ea12aaa8-f4fb-4a5e-9b66-76d68f5ba6e9?size=16&overlay"> <a class="map-author-name" href="?s=Endeavour">Endeavour</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/a2741a55-873a-4241-8e0a-5ff795f7731b?size=16&overlay"> <a class="map-author-name" href="?s=QFrog">QFrog</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Deadlock and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Deadlock that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Deadlock" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/deadlock');$('#download-deadlock').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="dragonblaze-peaks_body" class="thumbnail map-float ">
                 <div id="dragonblaze-peaks" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/dragonblaze-peaks/map.png');">
                     <div class="map-banner">
@@ -1121,6 +1223,106 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Elevated 2" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/elevated-2');$('#download-elevated-2').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="eternal-virus_body" class="thumbnail map-float ">
+                <div id="eternal-virus" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/eternal-virus/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=eternal-virus" data-toggle="tooltip" data-placement="top" title="Eternal Virus"><strong>Eternal Virus</strong></a>
+                        <a href="https://avicus.net/maps/map/eternal-virus" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag_hidden">KOTH</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-eternal-virus" class="map-favourite" style="display:none;">
+                        <span id="eternal-virus_add" onclick="Cookies.set('star_eternal-virus', true, { expires: 7 });$('#eternal-virus_body').addClass('map-glow-favourite');$('#eternal-virus_add').hide();$('#eternal-virus_remove').show();$('#eternal-virus_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="eternal-virus_remove" onclick="Cookies.remove('star_eternal-virus');$('#eternal-virus_body').removeClass('map-glow-favourite');$('#eternal-virus_add').show();$('#eternal-virus_remove').hide();$('#eternal-virus_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="eternal-virus_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#eternal-virus").hover(function(){
+                            $('#favourite-eternal-virus').fadeIn();
+                        },function(){
+                            $('#favourite-eternal-virus').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_eternal-virus') == 'true') {
+                            $('#eternal-virus_body').addClass('map-glow-favourite');
+                            $('#eternal-virus_add').hide();
+                            $('#eternal-virus_remove').show();
+                            $('#eternal-virus_dummy').text(fav_map);
+                        } else {
+                            $('#eternal-virus_add').show();
+                            $('#eternal-virus_remove').hide();
+                            $('#eternal-virus_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=pannenkoek2012">pannenkoek2012</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Zintenka">Zintenka</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-eternal-virus" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Eternal Virus" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/eternal-virus/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Eternal Virus" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-eternal-virus" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Eternal Virus</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/d9b4ffbc-11d0-453a-a93f-82dc59fca4b6?size=16&overlay"> <a class="map-author-name" href="?s=pannenkoek2012">pannenkoek2012</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/1865ac01-271f-4f69-b979-b43a78c39989?size=16&overlay"> <a class="map-author-name" href="?s=Zintenka">Zintenka</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Eternal Virus and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Eternal Virus that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Eternal Virus" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/eternal-virus');$('#download-eternal-virus').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -1717,6 +1919,106 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Maisosen" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/maisosen');$('#download-maisosen').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="mudslide_body" class="thumbnail map-float ">
+                <div id="mudslide" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/mudslide/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=mudslide" data-toggle="tooltip" data-placement="top" title="Mudslide"><strong>Mudslide</strong></a>
+                        <a href="https://avicus.net/maps/map/mudslide" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag_hidden">KOTH</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-mudslide" class="map-favourite" style="display:none;">
+                        <span id="mudslide_add" onclick="Cookies.set('star_mudslide', true, { expires: 7 });$('#mudslide_body').addClass('map-glow-favourite');$('#mudslide_add').hide();$('#mudslide_remove').show();$('#mudslide_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="mudslide_remove" onclick="Cookies.remove('star_mudslide');$('#mudslide_body').removeClass('map-glow-favourite');$('#mudslide_add').show();$('#mudslide_remove').hide();$('#mudslide_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="mudslide_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#mudslide").hover(function(){
+                            $('#favourite-mudslide').fadeIn();
+                        },function(){
+                            $('#favourite-mudslide').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_mudslide') == 'true') {
+                            $('#mudslide_body').addClass('map-glow-favourite');
+                            $('#mudslide_add').hide();
+                            $('#mudslide_remove').show();
+                            $('#mudslide_dummy').text(fav_map);
+                        } else {
+                            $('#mudslide_add').show();
+                            $('#mudslide_remove').hide();
+                            $('#mudslide_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Mehrp">Mehrp</a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=pannenkoek2012">pannenkoek2012</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-mudslide" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Mudslide" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/mudslide/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Mudslide" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-mudslide" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Mudslide</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/59d434b5-4cc4-49b4-a696-43476ddf09ed?size=16&overlay"> <a class="map-author-name" href="?s=Mehrp">Mehrp</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/d9b4ffbc-11d0-453a-a93f-82dc59fca4b6?size=16&overlay"> <a class="map-author-name" href="?s=pannenkoek2012">pannenkoek2012</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Mudslide and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Mudslide that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Mudslide" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/mudslide');$('#download-mudslide').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -3209,6 +3511,104 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="U-Bahn" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/u-bahn');$('#download-u-bahn').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="venezuelan-hacker_body" class="thumbnail map-float ">
+                <div id="venezuelan-hacker" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/venezuelan-hacker/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/stattrack/avicus/bow?s=venezuelan-hacker" data-toggle="tooltip" data-placement="top" title="Venezuelan Hacker"><strong>Venezuelan Hacker</strong></a>
+                        <a href="https://avicus.net/maps/map/venezuelan-hacker" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Avicus&nbsp;Network"><i class="external-thread fa fa-folder-open-o"></i></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    <li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag_hidden">KOTH</span></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div id="favourite-venezuelan-hacker" class="map-favourite" style="display:none;">
+                        <span id="venezuelan-hacker_add" onclick="Cookies.set('star_venezuelan-hacker', true, { expires: 7 });$('#venezuelan-hacker_body').addClass('map-glow-favourite');$('#venezuelan-hacker_add').hide();$('#venezuelan-hacker_remove').show();$('#venezuelan-hacker_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
+                        <span id="venezuelan-hacker_remove" onclick="Cookies.remove('star_venezuelan-hacker');$('#venezuelan-hacker_body').removeClass('map-glow-favourite');$('#venezuelan-hacker_add').show();$('#venezuelan-hacker_remove').hide();$('#venezuelan-hacker_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
+                        <span id="venezuelan-hacker_dummy" class="tag_hidden"></span>
+                    </div>
+                    <script>
+                        $("#venezuelan-hacker").hover(function(){
+                            $('#favourite-venezuelan-hacker').fadeIn();
+                        },function(){
+                            $('#favourite-venezuelan-hacker').fadeOut();
+                        });
+                        
+                        if (Cookies.get('star_venezuelan-hacker') == 'true') {
+                            $('#venezuelan-hacker_body').addClass('map-glow-favourite');
+                            $('#venezuelan-hacker_add').hide();
+                            $('#venezuelan-hacker_remove').show();
+                            $('#venezuelan-hacker_dummy').text(fav_map);
+                        } else {
+                            $('#venezuelan-hacker_add').show();
+                            $('#venezuelan-hacker_remove').hide();
+                            $('#venezuelan-hacker_dummy').text('');
+                        }
+                    </script>
+                    <div class="map-labels">
+                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=pannenkoek2012">pannenkoek2012</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-venezuelan-hacker" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Venezuelan Hacker" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/venezuelan-hacker/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Venezuelan Hacker" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-venezuelan-hacker" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Venezuelan Hacker</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/d9b4ffbc-11d0-453a-a93f-82dc59fca4b6?size=16&overlay"> <a class="map-author-name" href="?s=pannenkoek2012">pannenkoek2012</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Venezuelan Hacker and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Venezuelan Hacker that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Venezuelan Hacker" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/venezuelan-hacker');$('#download-venezuelan-hacker').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
