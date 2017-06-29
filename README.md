@@ -3,8 +3,11 @@ ResourcePile
 
 ResourcePile is a community project worked on by many people that wish to improve the experience of users playing on Minecraft networks.
 
- - **StatTrack** is the longest going project and currently runs on 2 networks. It tracks various statistics such as longest bow shots or website stats.
- - **MapStack** is a collection of publicly available maps so players can download them and play with their friends on their own servers. The project is currently running on 2 networks.
+ - **Maps** - Collection of publicly available maps from networks such as Overcast and Avicus.
+ - **League Records** - Records of tournaments ran by PvP networks and the community.
+ - **Statistics** - Tracking various statistics from multiple networks such as bow records, objective leaderboards and more.
+
+Read the [documentation](https://mcresourcepile.github.io/admin/docs/maps) to learn how to contribute to various parts of the website.
 
 
 Building the page
