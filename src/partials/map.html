@@ -12,7 +12,7 @@
             {{! Map banner, contains name, authors and quick links }}
             <div class="map-banner">
                 {{! Map heading }}
-                <a class="map-header" href="https://mcresourcepile.github.io/stattrack/{{@root.map-group}}/bow?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
+                <a class="map-header" href="https://mcresourcepile.github.io/mapstack/{{@root.map-group}}?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
                 {{#unless locked}}
                 {{! Quick links }}
                 {{#unless @root.page-category.pgm}}
@@ -69,7 +69,7 @@
                 },function(){
                     $('#favourite-{{slug}}').fadeOut();
                 });
-                
+
                 if (Cookies.get('star_{{slug}}') == 'true') {
                     $('#{{slug}}_body').addClass('map-glow-favourite');
                     $('#{{slug}}_add').hide();
@@ -215,7 +215,7 @@
             </div>
             <div class="modal-body">
                 Thank you for downloading this map from ResourcePile and supporting free public maps as well as the map authors.<br><br>
-                This map is licensed undera Creative Commons license which has been included in your download. Please respect this license and the wishes of the map authors as this project would not be here without them.
+                This map is licensed under a Creative Commons license which has been included in your download. Please respect this license and the wishes of the map authors as this project would not be here without them.
                 <hr>
                 You currently have <span id="api-request-remaining"></span> out of <span id="api-request-limit"></span> requests left to the GitHub API.<br>
                 This means that you can download approximately <spawn id="api-request-approximate"></spawn> more maps before you must wait an hour for the limit to reset.
