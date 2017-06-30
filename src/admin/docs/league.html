@@ -48,9 +48,9 @@
                         <td><code></code></td>
                     </tr>
                     <tr>
-                        <td>Host</td>
-                        <td>Where the league tournament was hosted. This is defined in the page's <code>"page-category":</code> and can either be <code>"overcast": true</code> or <code>"avicus": true</code>.</td>
-                        <td></td>
+                        <td>"host":</td>
+                        <td>The network or individual who hosted the tournament.</td>
+                        <td><span class="label label-info">String</span></td>
                         <td><code></code></td>
                     </tr>
                     <tr>
@@ -90,6 +90,12 @@
                         <td><code></code></td>
                     </tr>
                     <tr>
+                        <td><code>"panels": []</code></td>
+                        <td>Panels which can contain extra information or details about the league. This is not required. <a href="#panels" class="fa fa-chevron-down"></a></td>
+                        <td><span class="label label-default">Optional information</span></td>
+                        <td><code></code></td>
+                    </tr>
+                    <tr>
                         <td><code>"pool": []</code></td>
                         <td>The maps which were played during the league tournament. <a href="#maps" class="fa fa-chevron-down"></a></td>
                         <td><span class="label label-default">Map info</span></td>
@@ -114,8 +120,8 @@
                         <td><code></code></td>
                     </tr>
                     <tr>
-                        <td><code>"teams": []</code></td>
-                        <td>The teams which participated in the league tournament. <a href="#teams" class="fa fa-chevron-down"></a></td>
+                        <td><code>"groups": []</code></td>
+                        <td>The teams which participated in the league tournament. <a href="#groups" class="fa fa-chevron-down"></a></td>
                         <td><span class="label label-default">Team info</span></td>
                         <td><code></code></td>
                     </tr>
@@ -147,7 +153,57 @@
                     </tr>
                 </tbody>
             </table>
-            <h5 id="stages">Map Pool Information</h5>
+            <h5 id="panels">Panels</h5>
+            <h6>Panels can contain pretty much anything regarding the league information that hasn't already been covered. Panels can come in two sizes; <code>full</code> which spans the whole screen width, or <code>half</code> which only covers half the screen width.</h6>
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <td width="20%">Attribute</td>
+                        <td width="50%">Description</td>
+                        <td width="10%">Value</td>
+                        <td width="10%">Default</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"label":</code></td>
+                        <td>The label which is displayed as the panel title.</td>
+                        <td><span class="label label-info">String</span></td>
+                        <td><code></code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"panel_size":</code></td>
+                        <td>The size of the panel. Can either be <code>full</code> or <code>half</code>.</td>
+                        <td><span class="label label-info">Option string</span></td>
+                        <td><code>half</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"rows": []</code></td>
+                        <td>Contains the specifc rows which will be displayed on the panel</td>
+                        <td></td>
+                        <td><code></code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rows sub-attributes</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"row_label":</code></td>
+                        <td>The row label displayed on the left. This is optional and if left blank the content will span the entire row.</td>
+                        <td><span class="label label-info">String</span></td>
+                        <td><code></code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"row_content":</code></td>
+                        <td>The text displayed inside of the row</td>
+                        <td><span class="label label-info">String</span></td>
+                        <td><code></code></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5 id="maps">Map Pool Information</h5>
             <h6>Provides information about the different maps that were played during the league tournament. Image thumbnails for these maps must be put into a folder called <code>pool</code> inside another folder which is the same as the league ID. These images must have the same name as the slug reference ID of the map.</h6>
             <table class="table doc-table">
                 <thead>
@@ -185,7 +241,7 @@
                     </tr>
                 </tbody>
             </table>
-            <h5 id="stages">Team Information</h5>
+            <h5 id="groups">Group Information</h5>
             <h6>Provides information about the teams that participated in the league tournament and the group stages.</h6>
             <table class="table doc-table">
                 <thead>
@@ -208,6 +264,12 @@
                         <td>The teams which are included in this group.</td>
                         <td></td>
                         <td><code></code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Participants sub-attributes</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td><code>"team":</code></td>

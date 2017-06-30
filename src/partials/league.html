@@ -40,7 +40,7 @@
     <div class="league-info-section large">Tournament Information</div>
     <div class="row">
         <div class="col-md-6">
-            <div class="well well-sm well-custom-blue">
+            <div class="well well-sm well-custom-green">
                 <div class="league-info-section">Details</div>
                 <table class="league-info-table">
                     <tbody>
@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="well well-sm well-custom-blue">
+            <div class="well well-sm well-custom-green">
                 <div class="league-info-section">Dates and Times</div>
                 <table class="league-info-table">
                     <tbody>
@@ -79,6 +79,35 @@
                 </table>
             </div>
         </div>
+        {{#if panels}}
+        {{#panels}}
+        <div class="col-md-{{#is panel_size 'full'}}12{{else}}6{{/is}}">
+            <div class="well well-sm well-custom-blue">
+                <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
+                <table class="league-info-table">
+                    <tbody>
+                        {{#if rows}}
+                        {{#rows}}
+                        <tr>
+                            {{#if row_label}}
+                            <td>{{row_label}}</td>
+                            <td>{{row_content}}</td>
+                            {{else}}
+                            <td colspan="2">{{row_content}}</td>
+                            {{/if}}
+                        </tr>
+                        {{/rows}}
+                        {{else}}
+                        <tr>
+                            <td>This panel has no information.</td>
+                        </tr>
+                        {{/if}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{/panels}}
+        {{/if}}
     </div>
 
     <!-- Leage map pool -->
@@ -106,7 +135,7 @@
     <!-- League teams -->
     <div class="league-info-section large">Teams</div>
     <div class="row">
-        {{#teams}}
+        {{#groups}}
         <div class="col-md-3">
             <div class="well well-sm well-custom-red">
                 <div class="league-info-section">{{group}}</div>
@@ -117,7 +146,7 @@
                 </ul>
             </div>
         </div>
-        {{/teams}}
+        {{/groups}}
     </div>
 
     {{#if challonge}}
