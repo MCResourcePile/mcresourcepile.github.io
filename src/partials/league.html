@@ -81,7 +81,7 @@
         </div>
         {{#if panels}}
         {{#panels}}
-        <div class="col-md-{{#is panel_size 'full'}}12{{else}}6{{/is}}">
+        <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
             <div class="well well-sm well-custom-blue">
                 <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
                 <table class="league-info-table">
@@ -89,11 +89,11 @@
                         {{#if rows}}
                         {{#rows}}
                         <tr>
-                            {{#if row_label}}
-                            <td>{{row_label}}</td>
-                            <td>{{row_content}}</td>
+                            {{#if label}}
+                            <td>{{label}}</td>
+                            <td>{{{content}}}</td>
                             {{else}}
-                            <td colspan="2" style="font-weight:400">{{row_content}}</td>
+                            <td colspan="2" style="font-weight:400">{{{content}}}</td>
                             {{/if}}
                         </tr>
                         {{/rows}}
