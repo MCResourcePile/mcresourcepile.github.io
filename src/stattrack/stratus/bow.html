@@ -55,6 +55,7 @@
             </thead>
             <tbody class="counted-rows">
                 {{#records}}
+                {{#if record_first}}
                 <tr class="record-table">
                     <td class="table-counted"></td>
                     <td>
@@ -159,6 +160,7 @@
                         </div>
                     </td>
                 </tr>
+                {{/if}}
                 {{/records}}
             </tbody>
         </table>
