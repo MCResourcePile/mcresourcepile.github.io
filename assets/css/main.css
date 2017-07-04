@@ -872,21 +872,30 @@ span.game-mode-button {
 }
 
 .league-banner {
-    border-radius: 4px;
+    background-color: #343436 !important;
     color: #fff;
-    height: 210px;
     font-size: 50px;
     font-weight: 700;
-    padding-left: 40px;
-    padding-top: 60px;
-    margin-bottom: 20px;
     text-shadow: 3px 3px #1c1c1c;
+    border-radius: 4px;
+    padding: 80px;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.league-banner-custom {
     background-color: #343436 !important;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 90%;
 }
 
 @media (max-width: 768px) {
     .league-banner {
-        font-size: 30px;
+        font-size: 20px;
+        padding: 8%;
+        padding-left: 20px;
     }
 }
 
@@ -896,11 +905,17 @@ span.game-mode-button {
 }
 
 .league-banner:hover,
-.league-banner:focus {
-    -webkit-box-shadow: 0 10px 6px -6px #4d4c4c;
-    -moz-box-shadow: 0 10px 6px -6px #4d4c4c;
-    box-shadow: 0 10px 6px -6px #4d4c4c;\
-    transition: 0.3s;
+.league-banner:focus,
+.league-banner-custom:hover,
+.league-banner-custom:focus {
+    -webkit-box-shadow: 0 0 4px 1px #2f6bde;
+    -moz-box-shadow: 0 0 4px 1px #2f6bde;
+    box-shadow: 0 0 4px 1px #2f6bde;
+    -o-transition: .7s;
+    -ms-transition: .7s;
+    -moz-transition: .7s;
+    -webkit-transition: .7s;
+    transition: .7s;
 }
 
 
