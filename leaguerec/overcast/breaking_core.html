@@ -1,19 +1,19 @@
 <html>
     <head>
-        <title> - ResourcePile</title>
+        <title>Breaking Core - ResourcePile</title>
         <!-- Page meta data -->
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="description">
-        <meta content=" - ResourcePile" property="og:title">
-        <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="og:description">
+        <meta content="Records for Breaking Core, a tournament hosted by Overcast Network." name="description">
+        <meta content="Breaking Core - ResourcePile" property="og:title">
+        <meta content="Records for Breaking Core, a tournament hosted by Overcast Network." name="og:description">
         <meta content="website" property="og:type">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
-        <meta content=" - ResourcePile" name="twitter:title">
-        <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="twitter:description">
+        <meta content="Breaking Core - ResourcePile" name="twitter:title">
+        <meta content="Records for Breaking Core, a tournament hosted by Overcast Network." name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
@@ -39,23 +39,87 @@
     </head>
     <body >
         <!-- Page navigation -->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> Maps <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><p class="navbar-menu-title">PvP Maps</p></li>
+                                <li><a href="/mapstack/overcast"><i class="fa fa-globe"></i> Overcast Collection</a></li>
+                                <li><a href="/mapstack/pgm"><i class="fa fa-globe"></i> PGM Collection</a></li>
+                                <li><a href="/mapstack/avicus"><i class="fa fa-globe"></i> Avicus Collection</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown active">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-sitemap"></i> League Records <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><p class="navbar-menu-title">PvP Tournaments</p></li>
+                                <li><a href="/leaguerec/overcast"><i class="fa fa-shield"></i> Overcast Network</a></li>
+                                <li><a href="/leaguerec/pgm"><i class="fa fa-shield"></i> PGM Community</a></li>
+                                <li><a href="/leaguerec/stratus"><i class="fa fa-shield"></i> Stratus Network</a></li>
+                                <li><a href="/leaguerec/avicus"><i class="fa fa-shield"></i> Avicus Network</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> Statistics <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><p class="navbar-menu-title">Overcast</p></li>
+                                <li><a href="/stattrack/overcast/bow"><span class="fa fa-crosshairs"></span> Bow Records</a></li>
+                                <li><a href="/stattrack/overcast/website"><span class="fa fa-bookmark"></span> Website Stats</a></li>
+                                <li><a href="/stattrack/overcast/objective"><span class="fa fa-signal"></span> Objective Leaderboards</a></li><!--
+                                <li><p class="navbar-menu-title">Stratus</p></li>
+                                <li><a href="/stattrack/stratus/bow"><span class="fa fa-crosshairs"></span> Bow Records</a></li>
+                                <li><p class="navbar-menu-title">Avicus</p></li>
+                                <li><a href="/stattrack/avicus/bow"><span class="fa fa-crosshairs"></span> Bow Records</a></li>-->
+                            </ul>
+                        </li>
+                        <li class=""><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-background">
 <div class="container">
     <div class="content-header">
-        <div class="content-title"></div>
-        <div class="content-subtitle">Information about  tournament hosted by an unknown host.</div>
+        <div class="content-alert">
+            <div class="alert alert-success" role="alert">We are now accepting your map submissions to add to our public map collection. If you are interested in sharing your map, find out how to get your map featured in our collection <a href="https://mcresourcepile.github.io/admin/forms/maps">here</a>!</div>
+        </div>
+        <div class="content-title">Breaking Core</div>
+        <div class="content-subtitle">Information about Breaking Core tournament hosted by Overcast Network.</div>
     </div>
 
     <!-- League banner -->
     <div class="center">
-        <img class="league-banner-custom" src="../../assets/img/tournament/banners/.png">
+        <img class="league-banner-custom" src="../../assets/img/tournament/banners/breaking_core.png">
     </div>
 
     <!-- League winners -->
     <div class="league-results row center">
-        <div class="league-position league-position-first col-sm-12">
-            <span class="fa fa-exclamation-triangle"></span>
-            <div class="league-team">This tournament has not concluded!</div>
-            <div class="league-team-position">Information on this page may not be confirmed</div>
+        <div class="league-position col-sm-4">
+            <div class="fa fa-star"></div>
+            <div class="league-team">Game Mode 1</div>
+            <div class="league-team-position">2nd place</div>
+        </div>
+        <div class="league-position league-position-first col-sm-4">
+            <span class="fa fa-trophy"></span>
+            <div class="league-team">LunGGlove</div>
+            <div class="league-team-position">1st place</div>
+        </div>
+        <div class="league-position col-sm-4">
+            <div class="fa fa-star"></div>
+            <div class="league-team">Instant Crash</div>
+            <div class="league-team-position">3rd place</div>
         </div>
     </div>
 
@@ -69,19 +133,19 @@
                     <tbody>
                         <tr>
                             <td>Method</td>
-                            <td></td>
+                            <td>Single Elimination</td>
                         </tr>
                         <tr>
                             <td>Gamemodes</td>
-                            <td></td>
+                            <td>Destroy the Monument, Destroy the Core</td>
                         </tr>
                         <tr>
                             <td>Teams</td>
-                            <td></td>
+                            <td>16 teams</td>
                         </tr>
                         <tr>
                             <td>Players</td>
-                            <td></td>
+                            <td>Unknown</td>
                         </tr>
                     </tbody>
                 </table>
@@ -92,6 +156,10 @@
                 <div class="league-info-section">Dates and Times</div>
                 <table class="league-info-table">
                     <tbody>
+                        <tr>
+                            <td>Event</td>
+                            <td>Unknown</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -101,13 +169,219 @@
     <!-- Leage map pool -->
     <div class="league-info-section large">Map Pool</div>
     <div class="row">
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="abandoned_zoo" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/abandoned_zoo.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Abandoned Zoo</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Team Deathmatch</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="blocks_dtc" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/blocks_dtc.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Blocks DTC</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Destroy the Core</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="boom" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/boom.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Boom</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Destroy the Monument</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="facility" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/facility.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Facility</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Team Deathmatch</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="fortress_battles" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/fortress_battles.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Fortress Battles</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Destroy the Core</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="fractal_descent" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/fractal_descent.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Fractal Descent</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Destroy the Monument, Destroy the Core</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="interitus" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/interitus.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Interitus</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Destroy the Core</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="iris_dtc" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/iris_dtc.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Iris DTC</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Destroy the Core</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="iris_dtm" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/iris_dtm.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Iris DTM</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Destroy the Monument</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="retaliation_2" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/retaliation_2.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Retaliation 2</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Destroy the Core</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="runes_of_ruin" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/runes_of_ruin.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Runes of Ruin</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Destroy the Core</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="spaceship_battles" class="thumbnail map-float">
+                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/spaceship_battles.png');">
+                    <div class="map-banner">
+                        <span class="map-header"><strong>Spaceship Battles</strong></span>
+                        <span style="display:block;margin-top:-6px;">
+                            <span class="game-tag map-tag">Destroy the Monument, Destroy the Core</span>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- League teams -->
     <div class="league-info-section large">Teams</div>
     <div class="row">
+        <div class="col-md-3">
+            <div class="well well-sm well-custom-red">
+                <div class="league-info-section">Participants</div>
+                <ul>
+                    <li>Starfish</li>
+                    <li>Ninja Squad</li>
+                    <li>Wolves in Quebec</li>
+                    <li>Game Mode 1</li>
+                    <li>Orbit</li>
+                    <li>Instant Crash</li>
+                    <li>Tactical Info</li>
+                    <li>Vindicate</li>
+                    <li>Team Fishy</li>
+                    <li>Punishers</li>
+                    <li>Ambush</li>
+                    <li>LunGGlove</li>
+                    <li>Team Grief</li>
+                    <li>Proximity</li>
+                    <li>Space Monkey Mafia</li>
+                    <li>Impact</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
+    <!-- League standings -->
+    <div class="league-info-section large">Standings</div>
+    <iframe src="https://ocn.challonge.com/bc/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
 </div>
 </div>
 <div class="footer">
