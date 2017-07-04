@@ -7,7 +7,7 @@
             <p>List of tournaments hosted by the {{#if host}}{{#if host-site}}<a href="{{host-site}}">{{host}}</a>{{else}}{{host}}{{/if}}{{else}}Unknown Host{{/if}}.</p>
         </div>
     </div>
-    <div class="section leagues">
+    <div class="section leagues center">
     {{#tournaments}}
         <a href="{{#if disabled}}#{{else}}/leaguerec/{{@root.host-reference}}/{{id}}{{/if}}">
             {{#if heading}}
