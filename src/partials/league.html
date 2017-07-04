@@ -7,7 +7,13 @@
     </div>
 
     <!-- League banner -->
-    <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{id}}.jpg');background-position:center">{{name}}</div>
+    <div class="center">
+        {{#if heading}}
+        <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{id}}.jpg');background-position:center">{{name}}</div>
+        {{else}}
+        <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{id}}.png">
+        {{/if}}
+    </div>
 
     <!-- League winners -->
     <div class="league-results row center">

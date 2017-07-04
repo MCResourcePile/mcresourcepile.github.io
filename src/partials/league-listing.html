@@ -9,8 +9,12 @@
     </div>
     <div class="section leagues">
     {{#tournaments}}
-        <a href="/leaguerec/{{@root.host-reference}}/{{id}}">
+        <a href="{{#if disabled}}#{{else}}/leaguerec/{{@root.host-reference}}/{{id}}{{/if}}">
+            {{#if heading}}
             <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{id}}.jpg');background-position:center">{{name}}</div>
+            {{else}}
+            <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{id}}.png">
+            {{/if}}
         </a>
     {{/tournaments}}
     </div>
