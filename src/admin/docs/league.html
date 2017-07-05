@@ -24,7 +24,7 @@
             <h6>
                 Each league page must have a json data file with the following information as well as a HTML page containing only <code>&#123;&#123;> league&#125;&#125;</code> in the saved document, nothing else. In addition to the following attributes the page data file must also include a <code>"title": ""</code> and <code>"page-category": {}</code> information like all other pages. Images for the league (including banners and map thumbnails) must be located at <code>assets/img/tournament/{{id}}</code> with map images in a folder called <code>pool</code>.
             </h6>
-            <h5>Main map attributes</h5>
+            <h5>Main league attributes</h5>
             <table class="table doc-table">
                 <thead>
                     <tr>
@@ -37,15 +37,21 @@
                 <tbody>
                     <tr>
                         <td><code>"name":</code></td>
-                        <td>The name of the league.</td>
+                        <td>The name of the tournament.</td>
                         <td><span class="label label-info">String</span></td>
                         <td><code></code></td>
                     </tr>
                     <tr>
                         <td><code>"id":</code></td>
-                        <td>The ID used to reference the league's assets.</td>
+                        <td>The ID used to reference the tournament assets.</td>
                         <td><span class="label label-info">String</span></td>
                         <td><code></code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"heading":</code></td>
+                        <td>Display a text heading in the tournament banner. Tournaments without custom banners need this to be true.</td>
+                        <td><span class="label label-info">Boolean</span></td>
+                        <td><code>false</code></td>
                     </tr>
                     <tr>
                         <td><code>"host":</code></td>
@@ -55,7 +61,7 @@
                     </tr>
                     <tr>
                         <td><code>"anounncement":</code></td>
-                        <td>The page which contains the league details.</td>
+                        <td>The page which contains the tournament details.</td>
                         <td><span class="label label-info">URL</span></td>
                         <td><code></code></td>
                     </tr>
@@ -73,7 +79,7 @@
                     </tr>
                     <tr>
                         <td><code>"selection":</code></td>
-                        <td>The amount of teams selected for the league and the method of selection (if appropriate).</td>
+                        <td>The amount of teams selected for the tournament and the method of selection (if appropriate).</td>
                         <td><span class="label label-info">String</span></td>
                         <td><code></code></td>
                     </tr>
@@ -91,13 +97,13 @@
                     </tr>
                     <tr>
                         <td><code>"panels": []</code></td>
-                        <td>Panels which can contain extra information or details about the league. This is not required. <a href="#panels" class="fa fa-chevron-down"></a></td>
+                        <td>Panels which can contain extra information or details about the tournament. This is not required. <a href="#panels" class="fa fa-chevron-down"></a></td>
                         <td><span class="label label-default">Optional information</span></td>
                         <td><code></code></td>
                     </tr>
                     <tr>
                         <td><code>"pool": []</code></td>
-                        <td>The maps which were played during the league tournament. <a href="#maps" class="fa fa-chevron-down"></a></td>
+                        <td>The maps which were played during the tournament. <a href="#maps" class="fa fa-chevron-down"></a></td>
                         <td><span class="label label-default">Map info</span></td>
                         <td><code></code></td>
                     </tr>
@@ -121,14 +127,14 @@
                     </tr>
                     <tr>
                         <td><code>"groups": []</code></td>
-                        <td>The teams which participated in the league tournament. <a href="#groups" class="fa fa-chevron-down"></a></td>
+                        <td>The teams which participated in the tournament. <a href="#groups" class="fa fa-chevron-down"></a></td>
                         <td><span class="label label-default">Team info</span></td>
                         <td><code></code></td>
                     </tr>
                 </tbody>
             </table>
             <h5 id="stages">Stage Information</h5>
-            <h6>Provides information about the different stages of the league tournament.</h6>
+            <h6>Provides information about the different stages of the tournament.</h6>
             <table class="table doc-table">
                 <thead>
                     <tr>
@@ -154,7 +160,7 @@
                 </tbody>
             </table>
             <h5 id="panels">Panels</h5>
-            <h6>Panels can contain pretty much anything regarding the league information that hasn't already been covered. Panels can come in two sizes; <code>full</code> which spans the whole screen width, or <code>half</code> which only covers half the screen width.</h6>
+            <h6>Panels can contain pretty much anything regarding the tournament information that hasn't already been covered. Panels can come in two sizes; <code>full</code> which spans the whole screen width, or <code>half</code> which only covers half the screen width.</h6>
             <table class="table doc-table">
                 <thead>
                     <tr>
@@ -204,7 +210,7 @@
                 </tbody>
             </table>
             <h5 id="maps">Map Pool Information</h5>
-            <h6>Provides information about the different maps that were played during the league tournament. Image thumbnails for these maps must be put into a folder called <code>pool</code> inside another folder which is the same as the league ID. These images must have the same name as the slug reference ID of the map.</h6>
+            <h6>Provides information about the different maps that were played during the tournament. Image thumbnails for these maps must be put into a folder called <code>pool</code> inside another folder which is the same as the tournament ID. These images must have the same name as the slug reference ID of the map.</h6>
             <table class="table doc-table">
                 <thead>
                     <tr>
@@ -242,7 +248,7 @@
                 </tbody>
             </table>
             <h5 id="groups">Group Information</h5>
-            <h6>Provides information about the teams that participated in the league tournament and the group stages.</h6>
+            <h6>Provides information about the teams that participated in the tournament and the group stages.</h6>
             <table class="table doc-table">
                 <thead>
                     <tr>
@@ -276,6 +282,44 @@
                         <td>The name of the team.</td>
                         <td><span class="label label-info">String</span></td>
                         <td><code></code></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Updating the tournament listing</h5>
+            <h6>Data for the tournament listing pages are seperate from the tournament's individual data file and is located within the <code>(network)/index.json</code> file.</h6>
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <td width="20%">Attribute</td>
+                        <td width="50%">Description</td>
+                        <td width="10%">Value</td>
+                        <td width="10%">Default</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"name":</code></td>
+                        <td>The name of the tournament.</td>
+                        <td><span class="label label-info">String</span></td>
+                        <td><code></code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"id":</code></td>
+                        <td>The ID used to reference the tournament assets and page.</td>
+                        <td><span class="label label-info">String</span></td>
+                        <td><code></code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"heading":</code></td>
+                        <td>Display a text heading in the tournament banner. Tournaments without custom banners need this to be true.</td>
+                        <td><span class="label label-info">Boolean</span></td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"disabled":</code></td>
+                        <td>Hide the tournament from the public listing.</td>
+                        <td><span class="label label-info">Boolean</span></td>
+                        <td><code>false</code></td>
                     </tr>
                 </tbody>
             </table>
