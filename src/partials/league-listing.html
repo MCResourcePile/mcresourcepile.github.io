@@ -13,7 +13,7 @@
             {{#if heading}}
             <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{id}}.jpg');background-position:center">{{name}}</div>
             {{else}}
-            <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{id}}.png">
+            <img class="league-banner-custom {{#if disabled}}hide{{/if}}" src="../../assets/img/tournament/banners/{{id}}.png">
             {{/if}}
         </a>
     {{/tournaments}}
