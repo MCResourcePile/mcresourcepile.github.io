@@ -158,7 +158,14 @@
     {{#if challonge}}
     <!-- League standings -->
     <div class="league-info-section large">Standings</div>
-    <iframe src="{{challonge}}" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        {{#challonge}}
+        <div class="challonge-bracket">
+            {{#if description}}
+            <span>{{description}}</span>
+            {{/if}}
+            <iframe src="{{bracket}}" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
+        {{/challonge}}
     {{/if}}
 </div>
 {{> footer}}
