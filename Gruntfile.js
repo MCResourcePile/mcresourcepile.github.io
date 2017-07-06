@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                     src: ['**/*.html', '!**/partials/**'],
                     dest: 'out/'
                 }],
-                helpers: ['handlebars-helpers', 'src/helpers/title.js'],
+                helpers: ['handlebars-helpers', 'src/helpers/*.js'],
                 partials: ['src/posts/*.md', 'src/partials/*.html'],
                 templateData: 'src/data/**/*.json'
             }

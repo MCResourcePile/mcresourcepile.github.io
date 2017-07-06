@@ -1,3 +1,3 @@
 module.exports = function(options) {
-	  return options.fn(this) + " - ResourcePile";
+    return options.fn(this) + " - ResourcePile";
 };
