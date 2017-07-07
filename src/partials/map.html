@@ -8,7 +8,7 @@
 <div class="col-sm-6 col-lg-3 map-thumbnail center">
     <div id="{{slug}}_body" class="thumbnail map-float {{#if featured}}map-glow-featured{{/if}}">
         {{! Map image background, contains banner and labels }}
-        <div id="{{slug}}" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/master/maps/{{slug}}/map.png');">
+        <div id="{{slug}}" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png');">
             {{! Map banner, contains name, authors and quick links }}
             <div class="map-banner">
                 {{! Map heading }}
@@ -121,7 +121,7 @@
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
-            <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{name}}" class="fa fa-code click-xml"></i></a>
+            <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{name}}" class="fa fa-code click-xml"></i></a>
             {{/unless}}
             {{/if}}
         </div>
@@ -171,7 +171,7 @@
                         <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="{{name}}" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}{{#if cardinal}}-cardinal{{else}}{{/if}}-maps/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                        <button type="button" id="{{name}}" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
