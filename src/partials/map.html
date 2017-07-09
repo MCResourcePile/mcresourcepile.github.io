@@ -103,7 +103,7 @@
             <span class="map-author-name">by</span>
             {{#if authors}}
             {{#authors}}
-            <li class="game-tag author-tag">{{#if player_name}}<a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+            <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="?s={{username}}">{{username}}</a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
             {{/authors}}
             {{else}}<span class="map-author-name">Ghost</span>
             {{/if}}
@@ -136,7 +136,7 @@
                             <span class="map-author-name">created by</span>
                             {{#if authors}}
                             {{#authors}}
-                            <li class="game-tag">{{#if player_name}}<img src="https://crafatar.com/avatars/{{#if player_uuid}}{{player_uuid}}{{else}}{{player_name}}{{/if}}?size=16&overlay"> <a class="map-author-name" href="?s={{player_name}}">{{player_name}}</a>{{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/if}}</li>
+                            <li class="game-tag">{{#if username}}<img src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&overlay"> <a class="map-author-name" href="?s={{username}}">{{username}}</a>{{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/if}}</li>
                             {{/authors}}
                             {{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay"> <span class="map-author-name">Ghost</span>
                             {{/if}}
@@ -144,7 +144,7 @@
                     </div>
                     <div class="modal-body">
                         {{#if sourced}}
-                        This download for {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} and other files included in this download have no associated license attached to them. We recommend getting in contact with {{#authors}}<li class="game-tag">{{#if player_name}}{{player_name}}{{else}}Ghost{{/if}}</li>{{/authors}} before using {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors. {{#if cardinal}}This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i>{{/if}} {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
+                        This download for {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} and other files included in this download have no associated license attached to them. We recommend getting in contact with {{#authors}}<li class="game-tag">{{#if username}}{{username}}{{else}}Ghost{{/if}}</li>{{/authors}} before using {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors. {{#if cardinal}}This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i>{{/if}} {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
                         {{else}}
                             {{#unless commercial}}
                             This download for {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.

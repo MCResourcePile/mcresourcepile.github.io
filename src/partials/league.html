@@ -75,12 +75,12 @@
                 <div class="league-info-section">Dates and Times</div>
                 <table class="league-info-table">
                     <tbody>
-                        {{#dates}}
+                        {{#stages}}
                         <tr>
                             <td>{{stage}}</td>
                             <td>{{date}}</td>
                         </tr>
-                        {{/dates}}
+                        {{/stages}}
                     </tbody>
                 </table>
             </div>
@@ -146,9 +146,9 @@
             <div class="well well-sm well-custom-red">
                 <div class="league-info-section">{{group}}</div>
                 <ul>
-                    {{#participants}}
+                    {{#teams}}
                     <li>{{team}}</li>
-                    {{/participants}}
+                    {{/teams}}
                 </ul>
             </div>
         </div>
