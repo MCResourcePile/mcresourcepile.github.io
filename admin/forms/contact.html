@@ -93,7 +93,7 @@
 <div class="container">
     <div class="content-header">
         <div class="content-alert">
-            <div class="alert alert-info" role="alert">Thank you all for <b>1000 users</b>! Everyone at ResourcePile is pleased to see how many people have come to use what we have created which began as a simple place to find your favourite maps from the Overcast Network. You can read more about this milestone <a href="https://mcresourcepile.github.io/updates#1k_users">here</a>.</div>
+            <div class="alert alert-info" role="alert">We have <a href="https://mcresourcepile.github.io/updates#discord"></a>opened our Discord channel</a> to the public. Click <a href="https://discord.gg/ygNgxKj">here</a> to join!</div>
         </div>
         <div class="content-title">Contact</div>
         <div class="content-subtitle">
@@ -101,84 +101,9 @@
         </div>
     </div>
     <div class="form-body" id="form">
-        <p class="form-required-text">* Required</p>
-
-        <form>
-            <div class="form-group">
-                <div class="form-section control-label form-required">Username</div>
-                <div class="form-section-hint">Your username</div>
-                <input type="text" class="form-control form-text-box" name="username" id="username" placeholder="Username" required/>
-                <br/>
-            </div>
-
-            <div class="form-group">
-                <div class="form-section">Email</div>
-                <div class="form-section-hint">Your email so we can get in contact with you.<br/>You can alternativly provide us with your Discord below</div>
-                <input type="email" class="form-control form-text-box" name="email" id="email" placeholder="user@example.com"/>
-                <br/>
-            </div>
-
-            <div class="form-group">
-                <div class="form-section">Discord</div>
-                <div class="form-section-hint">Your discord username so we can get in contact with you.<br/>This is an alternative contact form to using Email</div>
-                <input type="text" class="form-control form-text-box" name="discord" id="discord" placeholder="user#1234"/>
-                <br/>
-            </div>
-
-            <div class="form-group">
-                <div class="form-section control-label form-required">Your message</div>
-                <div class="form-section-hint">Type your message below</div>
-                <textarea type="text" class="form-control" name="content" id="content" placeholder="Type here..." style="width: 195px;" required></textarea>
-                <br/>
-            </div>
-
-            <input class="form-submit btn btn-default" type="submit" name="submit" id="submit" value="Submit"/>
-        </form>
+        <div class="alert alert-warning" role="alert">This form is no longer accepting responses.<br>If you would like to contact our staff, please do so through our <a href="https://discord.gg/ygNgxKj" target="_blank">discord channel</a>.</div>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('form').validate({
-            rules: {
-                username: {
-                    required: true
-                },
-                email: {
-                    email: true,
-                    required: false
-                },
-                discord: {
-                    required: false
-                },
-                content: {
-                    required: true
-                }
-            },
-            highlight: function(element) {
-                $(element).closest('.form-group').addClass('has-error');
-            },
-            unhighlight: function(element) {
-                $(element).closest('.form-group').removeClass('has-error');
-            },
-            submitHandler: function(form) {
-                var username=$('#username').val();
-                var email=$('#email').val();
-                var discord=$('#discord').val();
-                var content=$('#content').val();
-                $.ajax({
-                    url: "https://docs.google.com/forms/d/e/1FAIpQLSeuxYz9LI-ufVofwje8CvbZE8-aXkWCRQ3F0p-KRXoCMvSU5Q/formResponse",
-                    data: {"entry.1700558707":username, "entry.1567361955":email, "entry.1354041209":discord, "entry.875454530":content},
-                    type: "POST",
-                    dataType: "xml",
-                    statusCode: {
-                        0:function() { window.location.replace("success");},
-                        200:function(){window.location.replace("success");}
-                    }
-                });
-            }
-        });
-    });
-</script>
 </div>
 <div class="footer">
     <div class="container">
