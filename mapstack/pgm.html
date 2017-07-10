@@ -132,7 +132,6 @@
             <a class="game-mode-button game-arcade" href="?s=arcade"></a>
             <a class="game-mode-button game-gs" href="?s=gs"></a>
             <a class="game-mode-button custom-popular" href="?s=popular"></a>
-            <a class="game-mode-button custom-starred" href="?s=starred"></a>
             <span class="game-mode-button">Licenses:</span>
             <a class="game-mode-button license-by-nc-sa" href="?s=by-nc-sa"></a>
             <a class="game-mode-button license-by-sa" href="?s=by-sa"></a>
@@ -172,29 +171,6 @@
                                     
                         </span>
                     </div>
-                    <div id="favourite-aetheril" class="map-favourite" style="display:none;">
-                        <span id="aetheril_add" onclick="Cookies.set('star_aetheril', true, { expires: 7 });$('#aetheril_body').addClass('map-glow-favourite');$('#aetheril_add').hide();$('#aetheril_remove').show();$('#aetheril_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="aetheril_remove" onclick="Cookies.remove('star_aetheril');$('#aetheril_body').removeClass('map-glow-favourite');$('#aetheril_add').show();$('#aetheril_remove').hide();$('#aetheril_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                        <span id="aetheril_dummy" class="tag_hidden"></span>
-                    </div>
-                    <script>
-                        $("#aetheril").hover(function(){
-                            $('#favourite-aetheril').fadeIn();
-                        },function(){
-                            $('#favourite-aetheril').fadeOut();
-                        });
-        
-                        if (Cookies.get('star_aetheril') == 'true') {
-                            $('#aetheril_body').addClass('map-glow-favourite');
-                            $('#aetheril_add').hide();
-                            $('#aetheril_remove').show();
-                            $('#aetheril_dummy').text(fav_map);
-                        } else {
-                            $('#aetheril_add').show();
-                            $('#aetheril_remove').hide();
-                            $('#aetheril_dummy').text('');
-                        }
-                    </script>
                     <div class="map-labels">
                             <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
@@ -279,29 +255,6 @@
                                     
                         </span>
                     </div>
-                    <div id="favourite-assembly" class="map-favourite" style="display:none;">
-                        <span id="assembly_add" onclick="Cookies.set('star_assembly', true, { expires: 7 });$('#assembly_body').addClass('map-glow-favourite');$('#assembly_add').hide();$('#assembly_remove').show();$('#assembly_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="assembly_remove" onclick="Cookies.remove('star_assembly');$('#assembly_body').removeClass('map-glow-favourite');$('#assembly_add').show();$('#assembly_remove').hide();$('#assembly_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                        <span id="assembly_dummy" class="tag_hidden"></span>
-                    </div>
-                    <script>
-                        $("#assembly").hover(function(){
-                            $('#favourite-assembly').fadeIn();
-                        },function(){
-                            $('#favourite-assembly').fadeOut();
-                        });
-        
-                        if (Cookies.get('star_assembly') == 'true') {
-                            $('#assembly_body').addClass('map-glow-favourite');
-                            $('#assembly_add').hide();
-                            $('#assembly_remove').show();
-                            $('#assembly_dummy').text(fav_map);
-                        } else {
-                            $('#assembly_add').show();
-                            $('#assembly_remove').hide();
-                            $('#assembly_dummy').text('');
-                        }
-                    </script>
                     <div class="map-labels">
                             <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
@@ -382,29 +335,6 @@
                                     
                         </span>
                     </div>
-                    <div id="favourite-bn_oil_rig" class="map-favourite" style="display:none;">
-                        <span id="bn_oil_rig_add" onclick="Cookies.set('star_bn_oil_rig', true, { expires: 7 });$('#bn_oil_rig_body').addClass('map-glow-favourite');$('#bn_oil_rig_add').hide();$('#bn_oil_rig_remove').show();$('#bn_oil_rig_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="bn_oil_rig_remove" onclick="Cookies.remove('star_bn_oil_rig');$('#bn_oil_rig_body').removeClass('map-glow-favourite');$('#bn_oil_rig_add').show();$('#bn_oil_rig_remove').hide();$('#bn_oil_rig_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                        <span id="bn_oil_rig_dummy" class="tag_hidden"></span>
-                    </div>
-                    <script>
-                        $("#bn_oil_rig").hover(function(){
-                            $('#favourite-bn_oil_rig').fadeIn();
-                        },function(){
-                            $('#favourite-bn_oil_rig').fadeOut();
-                        });
-        
-                        if (Cookies.get('star_bn_oil_rig') == 'true') {
-                            $('#bn_oil_rig_body').addClass('map-glow-favourite');
-                            $('#bn_oil_rig_add').hide();
-                            $('#bn_oil_rig_remove').show();
-                            $('#bn_oil_rig_dummy').text(fav_map);
-                        } else {
-                            $('#bn_oil_rig_add').show();
-                            $('#bn_oil_rig_remove').hide();
-                            $('#bn_oil_rig_dummy').text('');
-                        }
-                    </script>
                     <div class="map-labels">
                             <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
@@ -479,29 +409,6 @@
                                     
                         </span>
                     </div>
-                    <div id="favourite-cosmic_assault" class="map-favourite" style="display:none;">
-                        <span id="cosmic_assault_add" onclick="Cookies.set('star_cosmic_assault', true, { expires: 7 });$('#cosmic_assault_body').addClass('map-glow-favourite');$('#cosmic_assault_add').hide();$('#cosmic_assault_remove').show();$('#cosmic_assault_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="cosmic_assault_remove" onclick="Cookies.remove('star_cosmic_assault');$('#cosmic_assault_body').removeClass('map-glow-favourite');$('#cosmic_assault_add').show();$('#cosmic_assault_remove').hide();$('#cosmic_assault_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                        <span id="cosmic_assault_dummy" class="tag_hidden"></span>
-                    </div>
-                    <script>
-                        $("#cosmic_assault").hover(function(){
-                            $('#favourite-cosmic_assault').fadeIn();
-                        },function(){
-                            $('#favourite-cosmic_assault').fadeOut();
-                        });
-        
-                        if (Cookies.get('star_cosmic_assault') == 'true') {
-                            $('#cosmic_assault_body').addClass('map-glow-favourite');
-                            $('#cosmic_assault_add').hide();
-                            $('#cosmic_assault_remove').show();
-                            $('#cosmic_assault_dummy').text(fav_map);
-                        } else {
-                            $('#cosmic_assault_add').show();
-                            $('#cosmic_assault_remove').hide();
-                            $('#cosmic_assault_dummy').text('');
-                        }
-                    </script>
                     <div class="map-labels">
                             <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
@@ -576,29 +483,6 @@
                                     
                         </span>
                     </div>
-                    <div id="favourite-creep_slap_vier" class="map-favourite" style="display:none;">
-                        <span id="creep_slap_vier_add" onclick="Cookies.set('star_creep_slap_vier', true, { expires: 7 });$('#creep_slap_vier_body').addClass('map-glow-favourite');$('#creep_slap_vier_add').hide();$('#creep_slap_vier_remove').show();$('#creep_slap_vier_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="creep_slap_vier_remove" onclick="Cookies.remove('star_creep_slap_vier');$('#creep_slap_vier_body').removeClass('map-glow-favourite');$('#creep_slap_vier_add').show();$('#creep_slap_vier_remove').hide();$('#creep_slap_vier_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                        <span id="creep_slap_vier_dummy" class="tag_hidden"></span>
-                    </div>
-                    <script>
-                        $("#creep_slap_vier").hover(function(){
-                            $('#favourite-creep_slap_vier').fadeIn();
-                        },function(){
-                            $('#favourite-creep_slap_vier').fadeOut();
-                        });
-        
-                        if (Cookies.get('star_creep_slap_vier') == 'true') {
-                            $('#creep_slap_vier_body').addClass('map-glow-favourite');
-                            $('#creep_slap_vier_add').hide();
-                            $('#creep_slap_vier_remove').show();
-                            $('#creep_slap_vier_dummy').text(fav_map);
-                        } else {
-                            $('#creep_slap_vier_add').show();
-                            $('#creep_slap_vier_remove').hide();
-                            $('#creep_slap_vier_dummy').text('');
-                        }
-                    </script>
                     <div class="map-labels">
                             <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
@@ -674,29 +558,6 @@
                                     
                         </span>
                     </div>
-                    <div id="favourite-erth" class="map-favourite" style="display:none;">
-                        <span id="erth_add" onclick="Cookies.set('star_erth', true, { expires: 7 });$('#erth_body').addClass('map-glow-favourite');$('#erth_add').hide();$('#erth_remove').show();$('#erth_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="erth_remove" onclick="Cookies.remove('star_erth');$('#erth_body').removeClass('map-glow-favourite');$('#erth_add').show();$('#erth_remove').hide();$('#erth_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                        <span id="erth_dummy" class="tag_hidden"></span>
-                    </div>
-                    <script>
-                        $("#erth").hover(function(){
-                            $('#favourite-erth').fadeIn();
-                        },function(){
-                            $('#favourite-erth').fadeOut();
-                        });
-        
-                        if (Cookies.get('star_erth') == 'true') {
-                            $('#erth_body').addClass('map-glow-favourite');
-                            $('#erth_add').hide();
-                            $('#erth_remove').show();
-                            $('#erth_dummy').text(fav_map);
-                        } else {
-                            $('#erth_add').show();
-                            $('#erth_remove').hide();
-                            $('#erth_dummy').text('');
-                        }
-                    </script>
                     <div class="map-labels">
                             <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
@@ -771,29 +632,6 @@
                                     
                         </span>
                     </div>
-                    <div id="favourite-gold_drught" class="map-favourite" style="display:none;">
-                        <span id="gold_drught_add" onclick="Cookies.set('star_gold_drught', true, { expires: 7 });$('#gold_drught_body').addClass('map-glow-favourite');$('#gold_drught_add').hide();$('#gold_drught_remove').show();$('#gold_drught_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="gold_drught_remove" onclick="Cookies.remove('star_gold_drught');$('#gold_drught_body').removeClass('map-glow-favourite');$('#gold_drught_add').show();$('#gold_drught_remove').hide();$('#gold_drught_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                        <span id="gold_drught_dummy" class="tag_hidden"></span>
-                    </div>
-                    <script>
-                        $("#gold_drught").hover(function(){
-                            $('#favourite-gold_drught').fadeIn();
-                        },function(){
-                            $('#favourite-gold_drught').fadeOut();
-                        });
-        
-                        if (Cookies.get('star_gold_drught') == 'true') {
-                            $('#gold_drught_body').addClass('map-glow-favourite');
-                            $('#gold_drught_add').hide();
-                            $('#gold_drught_remove').show();
-                            $('#gold_drught_dummy').text(fav_map);
-                        } else {
-                            $('#gold_drught_add').show();
-                            $('#gold_drught_remove').hide();
-                            $('#gold_drught_dummy').text('');
-                        }
-                    </script>
                     <div class="map-labels">
                             <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
@@ -868,29 +706,6 @@
                                     
                         </span>
                     </div>
-                    <div id="favourite-indursti" class="map-favourite" style="display:none;">
-                        <span id="indursti_add" onclick="Cookies.set('star_indursti', true, { expires: 7 });$('#indursti_body').addClass('map-glow-favourite');$('#indursti_add').hide();$('#indursti_remove').show();$('#indursti_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="indursti_remove" onclick="Cookies.remove('star_indursti');$('#indursti_body').removeClass('map-glow-favourite');$('#indursti_add').show();$('#indursti_remove').hide();$('#indursti_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                        <span id="indursti_dummy" class="tag_hidden"></span>
-                    </div>
-                    <script>
-                        $("#indursti").hover(function(){
-                            $('#favourite-indursti').fadeIn();
-                        },function(){
-                            $('#favourite-indursti').fadeOut();
-                        });
-        
-                        if (Cookies.get('star_indursti') == 'true') {
-                            $('#indursti_body').addClass('map-glow-favourite');
-                            $('#indursti_add').hide();
-                            $('#indursti_remove').show();
-                            $('#indursti_dummy').text(fav_map);
-                        } else {
-                            $('#indursti_add').show();
-                            $('#indursti_remove').hide();
-                            $('#indursti_dummy').text('');
-                        }
-                    </script>
                     <div class="map-labels">
                             <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
@@ -965,29 +780,6 @@
                                     
                         </span>
                     </div>
-                    <div id="favourite-pharaohs_palace" class="map-favourite" style="display:none;">
-                        <span id="pharaohs_palace_add" onclick="Cookies.set('star_pharaohs_palace', true, { expires: 7 });$('#pharaohs_palace_body').addClass('map-glow-favourite');$('#pharaohs_palace_add').hide();$('#pharaohs_palace_remove').show();$('#pharaohs_palace_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="pharaohs_palace_remove" onclick="Cookies.remove('star_pharaohs_palace');$('#pharaohs_palace_body').removeClass('map-glow-favourite');$('#pharaohs_palace_add').show();$('#pharaohs_palace_remove').hide();$('#pharaohs_palace_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                        <span id="pharaohs_palace_dummy" class="tag_hidden"></span>
-                    </div>
-                    <script>
-                        $("#pharaohs_palace").hover(function(){
-                            $('#favourite-pharaohs_palace').fadeIn();
-                        },function(){
-                            $('#favourite-pharaohs_palace').fadeOut();
-                        });
-        
-                        if (Cookies.get('star_pharaohs_palace') == 'true') {
-                            $('#pharaohs_palace_body').addClass('map-glow-favourite');
-                            $('#pharaohs_palace_add').hide();
-                            $('#pharaohs_palace_remove').show();
-                            $('#pharaohs_palace_dummy').text(fav_map);
-                        } else {
-                            $('#pharaohs_palace_add').show();
-                            $('#pharaohs_palace_remove').hide();
-                            $('#pharaohs_palace_dummy').text('');
-                        }
-                    </script>
                     <div class="map-labels">
                             <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map can be used for commercial purposes">Commercial</span>
                     </div>
@@ -1062,29 +854,6 @@
                                     
                         </span>
                     </div>
-                    <div id="favourite-shave_harambe" class="map-favourite" style="display:none;">
-                        <span id="shave_harambe_add" onclick="Cookies.set('star_shave_harambe', true, { expires: 7 });$('#shave_harambe_body').addClass('map-glow-favourite');$('#shave_harambe_add').hide();$('#shave_harambe_remove').show();$('#shave_harambe_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                        <span id="shave_harambe_remove" onclick="Cookies.remove('star_shave_harambe');$('#shave_harambe_body').removeClass('map-glow-favourite');$('#shave_harambe_add').show();$('#shave_harambe_remove').hide();$('#shave_harambe_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                        <span id="shave_harambe_dummy" class="tag_hidden"></span>
-                    </div>
-                    <script>
-                        $("#shave_harambe").hover(function(){
-                            $('#favourite-shave_harambe').fadeIn();
-                        },function(){
-                            $('#favourite-shave_harambe').fadeOut();
-                        });
-        
-                        if (Cookies.get('star_shave_harambe') == 'true') {
-                            $('#shave_harambe_body').addClass('map-glow-favourite');
-                            $('#shave_harambe_add').hide();
-                            $('#shave_harambe_remove').show();
-                            $('#shave_harambe_dummy').text(fav_map);
-                        } else {
-                            $('#shave_harambe_add').show();
-                            $('#shave_harambe_remove').hide();
-                            $('#shave_harambe_dummy').text('');
-                        }
-                    </script>
                     <div class="map-labels">
                             <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
                     </div>
@@ -1128,14 +897,6 @@
                 </div>
             </div>
         </div>
-        <!--
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <span class="btn map-link-disabled map-button"><i class="fa fa-download"></i> Download starred maps</span>
-            </div>
-            <div class="col-md-4"></div>
-        </div>-->
         <div class="modal fade" id="download-starting-message" tabindex="-1" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
