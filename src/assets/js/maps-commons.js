@@ -15,17 +15,15 @@ if (total_hidden > 0) {
     console.log(total_hidden + " maps have no download and have been hidden from this listing.\nPlease contact a page manager to add or enable the downloads for the following maps:" + maps_no_download)
 }
 
-
-
 /* Enable thumbnail searching */
-$(document).on('ready', function() {
+$(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip()
     makeSearchable()
-})
-$('.record-search-container').on('click', function() {
+});
+$('.record-search-container').click(function() {
     makeSearchable()
-})
-$(document).on('keydown', function() {
+});
+$(document).keyup(function() {
     makeSearchable()
 });
 
