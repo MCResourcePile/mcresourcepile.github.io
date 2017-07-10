@@ -5,8 +5,6 @@
  * of being put here.
  */
 
-var fav_map = 'starred';
-
 /* Count maps with no download and send alert to console */
 var total_hidden = $('.dynamic').children('.no-download').length;
 var maps_no_download = $.map($(".no-download"), function(n, i) {
@@ -58,6 +56,7 @@ function makeSearchable() {
 /* Check which license each map is using */
 var license = true;
 var commercial = true;
+
 function commercialLicense() {
     license = true;
     commercial = true;
@@ -95,8 +94,6 @@ function getApiLimit() {
 var sessionLimit = 0;
 var sessionRemaining = 0;
 var sessionDownloads = 0;
-
-
 
 /* Modal control for download progress and error messages */
 GitZip.registerCallback(function(status, message, percent) {

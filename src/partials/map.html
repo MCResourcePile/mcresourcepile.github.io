@@ -58,29 +58,6 @@
                     {{/if}}
                 </span>
             </div>
-            <div id="favourite-{{slug}}" class="map-favourite" style="display:none;">
-                <span id="{{slug}}_add" onclick="Cookies.set('star_{{slug}}', true, { expires: 7 });$('#{{slug}}_body').addClass('map-glow-favourite');$('#{{slug}}_add').hide();$('#{{slug}}_remove').show();$('#{{slug}}_dummy').text(fav_map);" data-toggle="tooltip" data-placement="top" title="Star this map" class="map-favourite-icon fa fa-star"></span>
-                <span id="{{slug}}_remove" onclick="Cookies.remove('star_{{slug}}');$('#{{slug}}_body').removeClass('map-glow-favourite');$('#{{slug}}_add').show();$('#{{slug}}_remove').hide();$('#{{slug}}_dummy').text('');" data-toggle="tooltip" data-placement="top" title="Unstar this map" class="map-favourite-icon fa fa-times"></span>
-                <span id="{{slug}}_dummy" class="tag_hidden"></span>
-            </div>
-            <script>
-                $("#{{slug}}").hover(function(){
-                    $('#favourite-{{slug}}').fadeIn();
-                },function(){
-                    $('#favourite-{{slug}}').fadeOut();
-                });
-
-                if (Cookies.get('star_{{slug}}') == 'true') {
-                    $('#{{slug}}_body').addClass('map-glow-favourite');
-                    $('#{{slug}}_add').hide();
-                    $('#{{slug}}_remove').show();
-                    $('#{{slug}}_dummy').text(fav_map);
-                } else {
-                    $('#{{slug}}_add').show();
-                    $('#{{slug}}_remove').hide();
-                    $('#{{slug}}_dummy').text('');
-                }
-            </script>
             {{! Map labels }}
             <div class="map-labels">
                 {{#if featured}}
@@ -184,14 +161,6 @@
 {{/unless}}
 {{/maps}}
 {{/with}}
-<!--
-<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-        <span class="btn map-link-disabled map-button"><i class="fa fa-download"></i> Download starred maps</span>
-    </div>
-    <div class="col-md-4"></div>
-</div>-->
 <div class="modal fade" id="download-starting-message" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
