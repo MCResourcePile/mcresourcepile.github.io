@@ -8,61 +8,9 @@
         </div>
     </div>
     <div class="form-body">
-        <!--
-        <div class="form-section">How did you discover ResourcePile?</div>
-        <select name="referral" id="referral" style="width: 195px;" required>
-            <option value="unknown">Select an option</option>
-            <option value="forums">Network forums</option>
-            <option value="social media">Social media</option>
-            <option value="discord">Discord</option>
-            <option value="friend">Friend</option>
-            <option value="other">Other</option>
-        </select>
-        <br/>
-
-        <div class="form-section">Which network do you primarily use ResourcePile for?</div> 
-        <select name="network" id="network" style="width: 195px;" required>
-            <option value="unknown">Select an option</option>
-            <option value="overcast">Overcast Network</option>
-            <option value="avicus">Avicus Network</option>
-        </select>
-        <br/>
-
-        <div class="form-section">What are you looking for from ResourcePile?</div>
-        <select name="use" id="use" style="width: 195px;" required>
-            <option value="unknown">Select an option</option>
-            <option value="stats">Statistics</option>
-            <option value="maps (public use)">Maps for public server use</option>
-            <option value="maps (private use)">Maps for private use</option>
-            <option value="other">Other</option>
-        </select>
-        <br/>
-
-        <div class="form-section">Is there anything that you believe we can improve on?</div>
-        <textarea type="text" name="improvement" id="improvement" placeholder="Type here..." style="width: 195px;" required></textarea>
-        <br/>-->
-        
         <div class="alert alert-warning" role="alert">This survey is no longer accepting responses.</div>
     </div>
 </div>
-<script type="text/javascript">
-    function postContactToGoogle() {
-        var referral=$('#referral').val();
-        var network=$('#network').val();
-        var use=$('#use').val();
-        var improvement=$('#improvement').val();
-        $.ajax({
-            url: "https://docs.google.com/forms/d/e/1FAIpQLScybdePvsz67mmZ7Bs2PAtv5JStuAMFzTN1CsvncbbIGkIKjg/formResponse",
-            data: {"entry.699181361":referral, "entry.1534520788":network, "entry.359932373":use, "entry.1920685387":improvement},
-            type: "POST",
-            dataType: "xml",
-            statusCode: {
-                0:function() { window.location.replace("success");},
-                200:function(){window.location.replace("success");}
-            }
-        });
-    }
-</script>
 {{> footer}}
 </body>
 </html>
