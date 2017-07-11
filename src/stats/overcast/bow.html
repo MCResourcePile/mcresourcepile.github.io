@@ -4,9 +4,15 @@
         {{> alert}}
         <div class="content-title">Bow Records</div>
         <div class="content-subtitle">
-            A collection of the longest recorded bow kill distances from the <a href="http://stratus.network">Stratus Network</a>.
+            A collection of the longest recorded bow kill distances from the <a href="http://oc.tc">Overcast Network</a>.
         </div>
     </div>
+    <div class="content-alert">
+        <div class="alert alert-danger" style="overflow-x:hidden" role="alert">
+            <p>Please note that these records are no longer being maintained and submissions for new records will not be taken.</p>
+        </div>
+    </div>
+    <br>
     <!-- Game mode navigation menu -->
     <form name="search_form" class="record-search-container">
         <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search records">
@@ -26,8 +32,8 @@
             <a class="game-mode-button game-rage" href="?s=rage"></a>
             <a class="game-mode-button game-ffa" href="?s=ffa"></a>
             <a class="game-mode-button game-skywars" href="?s=skywars"></a>
-            <a class="game-mode-button game-tdm" href="?s=tdm"></a>
             <a class="game-mode-button game-survival" href="?s=survival"></a>
+            <a class="game-mode-button game-tdm" href="?s=tdm"></a>
         </div>
         <div class="col-xs-6 col-md-3">
             <div class="game-mode-section-header">Competitive</div>
@@ -61,7 +67,7 @@
                     <td>
                         <div class="col-md-2 col-xs-3" style="margin-left:-12px;">
                             {{#if slug}}
-                                <a class="record-map" href="https://mcresourcepile.github.io/mapstack/overcast?s={{slug}}" target="_blank">
+                                <a class="record-map" href="https://mcresourcepile.github.io/maps/overcast?s={{slug}}" target="_blank">
                                     {{#if name}}
                                         {{name}}{{else}}
                                         Unknown Map

@@ -2,7 +2,7 @@
     <div id="{{slug}}_body" class="thumbnail map-float {{#if featured}}map-glow-featured{{/if}}">
         <div id="{{slug}}" class="map-image" style="background-image: url('{{#if @root.page-category.league}}../../assets/img/tournament/shared/maps/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/if}}');">
             <div class="map-banner">
-                <a class="map-header" {{#if @root.page-category.mapstack}}href="https://mcresourcepile.github.io/mapstack/{{@root.map-group}}?s={{slug}}"{{/if}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
+                <a class="map-header" {{#if @root.page-category.maps}}href="https://mcresourcepile.github.io/maps/{{@root.map-group}}?s={{slug}}"{{/if}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
                 {{#if discussion}}
                 <a href="{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
                 {{/if}}
@@ -46,7 +46,7 @@
                 </span>
             </div>
             <div class="map-labels">
-                {{#if @root.page-category.mapstack}}
+                {{#if @root.page-category.maps}}
                 {{#if featured}}
                 <span class="label label-danger map-label">Popular Download</span>
                 {{/if}}
