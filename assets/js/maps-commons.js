@@ -1,6 +1,6 @@
 /***
- * Common JS functions and variables which all MapStack pages use.
- * Anything that is unique to a MapStack page or can't be used by 
+ * Common JS functions and variables which all maps pages use.
+ * Anything that is unique to a maps page or can't be used by 
  * any other of the pages must be left in that document instead
  * of being put here.
  */

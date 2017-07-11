@@ -1,0 +1,337 @@
+<html>
+    <head>
+        <title>Stratus Map Collection - ResourcePile</title>
+        <!-- Page meta data -->
+        <meta charset=" UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="A collection of publicly downloadable Minecraft maps from the Stratus Network." name="description">
+        <meta content="Stratus Map Collection - ResourcePile" property="og:title">
+        <meta content="A collection of publicly downloadable Minecraft maps from the Stratus Network." name="og:description">
+        <meta content="website" property="og:type">
+        <meta content="https://mcresourcepile.github.io/" property="og:url">
+        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
+        <meta content="summary" name="twitter:card">
+        <meta content="Stratus Map Collection - ResourcePile" name="twitter:title">
+        <meta content="A collection of publicly downloadable Minecraft maps from the Stratus Network." name="twitter:description">
+        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <!-- Page stylesheets -->
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="/assets/favicon.ico">
+        <link href="/assets/css/gamemodes.css" rel="stylesheet">
+        <!-- Page script files -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/assets/js/js.cookie.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-91801520-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
+        <script src="/assets/js/gitzip-api.js"></script><script src="/assets/js/FileSaver.js"></script><script src="/assets/js/jszip.js"></script><script src="/assets/js/jquery.searchable-1.1.0.min.js"></script><script src="/assets/js/maps-commons.js"></script>
+    </head>
+    <body >
+        <!-- Page navigation -->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown active">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> Maps <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><p class="navbar-menu-title">PvP Maps</p></li>
+                                <li><a href="/maps/overcast"><i class="fa fa-globe"></i> Overcast Collection</a></li>
+                                <li><a href="/maps/pgm"><i class="fa fa-globe"></i> PGM Collection</a></li>
+                                <li><a href="/maps/avicus"><i class="fa fa-globe"></i> Avicus Collection</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-sitemap"></i> Competitive <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><p class="navbar-menu-title">PvP Tournaments</p></li>
+                                <li><a href="/leagues/overcast"><i class="fa fa-shield"></i> Overcast Network</a></li>
+                                <li><a href="/leagues/pgm"><i class="fa fa-shield"></i> PGM Community</a></li>
+                                <li><a href="/leagues/stratus"><i class="fa fa-shield"></i> Stratus Network</a></li>
+                                <li><a href="/leagues/avicus"><i class="fa fa-shield"></i> Avicus Network</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> Statistics <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><p class="navbar-menu-title">Overcast</p></li>
+                                <li><a href="/stats/overcast/bow"><span class="fa fa-crosshairs"></span> Bow Records</a></li>
+                                <li><a href="/stats/overcast/miscellaneous"><span class="fa fa-bookmark"></span> Miscellaneous</a></li>
+                                <li><a href="/stats/overcast/objective"><span class="fa fa-signal"></span> Objective Leaderboards</a></li><!--
+                                <li><p class="navbar-menu-title">Stratus</p></li>
+                                <li><a href="/stats/stratus/bow"><span class="fa fa-crosshairs"></span> Bow Records</a></li>
+                                <li><p class="navbar-menu-title">Avicus</p></li>
+                                <li><a href="/stats/avicus/bow"><span class="fa fa-crosshairs"></span> Bow Records</a></li>-->
+                            </ul>
+                        </li>
+                        <li class=""><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-background">
+<div class="container">
+    <div class="content-header">
+        <div class="content-alert">
+            <div class="alert alert-info" role="alert">We have <a href="https://mcresourcepile.github.io/updates#discord"></a>opened our Discord channel</a> to the public. Click <a href="https://discord.gg/ygNgxKj">here</a> to join!</div>
+        </div>
+        <div class="content-title">Stratus Map Collection</div>
+        <div class="content-subtitle">
+            A collection of publicly downloadable maps from the <a href="http://stratus.network">Stratus Network</a>.
+        </div>
+    </div>
+    <div class="content-alert">
+        <div class="alert alert-danger" style="overflow-x:hidden" role="alert">
+            <h4><i class="fa fa-info-circle" aria-hidden="true"></i> &nbsp;Warning</h4>
+            <p>The Stratus Network uses some maps that were originaly created for the Overcast Network. The map you may be searching for could be listed under the <a href="overcast">Overcast Map Collection</a>.</p>
+        </div>
+    </div>
+    <br>
+    <!-- Game mode navigation menu -->
+    <form name="search_form" class="record-search-container">
+        <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
+    </form>
+    <div class="game-mode-navigation row">
+        <div class="col-xs-6 col-md-3">
+            <div class="game-mode-section-header">Objectives</div>
+            <a class="game-mode-button game-ctf" href="?s=ctf"></a>
+            <a class="game-mode-button game-ctw" href="?s=ctw"></a>
+            <a class="game-mode-button game-dtc" href="?s=dtc"></a>
+            <a class="game-mode-button game-dtm" href="?s=dtm"></a>
+            <a class="game-mode-button game-koth" href="?s=koth"></a>
+            <a class="game-mode-button game-cp" href="?s=cp"></a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <div class="game-mode-section-header">Deathmatch</div>
+            <a class="game-mode-button game-blitz" href="?s=blitz"></a>
+            <a class="game-mode-button game-rage" href="?s=rage"></a>
+            <a class="game-mode-button game-ffa" href="?s=ffa"></a>
+            <a class="game-mode-button game-tdm" href="?s=tdm"></a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <div class="game-mode-section-header">Competitive</div>
+            <a class="game-mode-button game-tournament" href="?s=tournament"></a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <div class="game-mode-section-header">Other</div>
+            <a class="game-mode-button custom-popular" href="?s=popular"></a>
+            <span class="game-mode-button">Licenses:</span>
+            <a class="game-mode-button license-by-nc-sa" href="?s=by-nc-sa"></a>
+            <a class="game-mode-button license-by-sa" href="?s=by-sa"></a>
+        </div>
+    </div>
+    <div class="total-maps center"></div>
+    <div id="maps-output">
+        <div class="dynamic">
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="Example_body" class="thumbnail map-float ">
+                <div id="Example" class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/Example/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=Example" data-toggle="tooltip" data-placement="top" title="Example"><strong>Example</strong></a>
+                        <span style="display:block;margin-top:-8px;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map may not be used for commercial purposes">Noncommercial</span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=Example">Example</a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-Example" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Example" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/Example/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Example" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-Example" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Example</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/Example?size=16&overlay"> <a class="map-author-name" href="?s=Example">Example</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Example and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Example that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Example" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/stratus-maps/tree/master/maps/Example');$('#download-Example').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="download-starting-message" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Your download will begin shortly...</h4>
+                    </div>
+                    <div class="modal-body">
+                        Please wait while we compile your download.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="download-complete-message" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Your download has begun...</h4>
+                    </div>
+                    <div class="modal-body">
+                        Thank you for downloading this map from ResourcePile and supporting free public maps as well as the map authors.<br><br>
+                        This map is licensed under a Creative Commons license which has been included in your download. Please respect this license and the wishes of the map authors as this project would not be here without them.
+                        <hr>
+                        You currently have <span id="api-request-remaining"></span> out of <span id="api-request-limit"></span> requests left to the GitHub API.<br>
+                        This means that you can download approximately <spawn id="api-request-approximate"></spawn> more maps before you must wait an hour for the limit to reset.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="download-error-message" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Your download failed...</h4>
+                    </div>
+                    <div class="modal-body">
+                        Something went wrong while compiling your download. Please try again, but if the issue persists please report an issue on our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Issues Tracker</a>.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="download-rate-limit-message" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">You've hit the rate limit</h4>
+                    </div>
+                    <div class="modal-body">
+                        Looks like you've hit GitHub's rate limit. Sadly there isn't anything we can do about that at the moment, but we are looking for solutions. Please try again in an hour.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var data=location.search;
+    if(data) {
+        data=location.search.substring(1);
+        data=data.split('&');
+        var pairs={};
+        for(var i=0; i<data.length; i++){
+            var tmp=data[i].split('=');
+            pairs[tmp[0]]=tmp[1];
+        }
+        var f = document.search_form;
+        for (var i in pairs) {
+            if(f.elements[i]) {f.elements[i].value = pairs[i];}
+        }
+    }
+</script>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row center" style="width: 70%">
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">About</div>
+                <a class="footer-item" href="/staff">Staff</a>
+                <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
+                <a class="footer-item" href="/admin/forms/apply">Positions</a>
+            </div>
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">Development</div>
+                <a class="footer-item" href="/updates">Update Posts</a>
+                <a class="footer-item" href="/revisions/website">Revisions</a>
+                <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
+                <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
+            </div>
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">Contributing</div>
+                <a class="footer-item" href="/admin/docs/maps">Documentation</a>
+                <a class="footer-item" href="/admin/forms/maps">Map Submission</a>
+            </div>
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">Policies</div>
+                <a class="footer-item" href="/policies/terms">Terms of Use</a>
+                <a class="footer-item" href="/policies/maps">Map Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom center">
+            <div class="resourcepile-copyright-year"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
