@@ -39,12 +39,14 @@ function makeSearchable() {
     var total_unofficial = $('.unofficial-map:visible').length
     var current_search = $('#search').val()
     if (total_maps == "0") {
-        $(".total-maps").html("No maps successfully loaded<br>Please check the console for any errors and contact a page manager");
+        $(".total-maps").html("There are no maps to display.");
     } else if (total_display == "0") {
-        if (current_search == "starred") {
-            $(".total-maps").html("You have not starred any maps yet!\nHover over a map's thumbnail and click to star that map.");
+        if (current_search == "new") {
+            $(".total-maps").html("There aren't any new map additions to display. Check back later!");
+        } else if (current_search == "popular") {
+            $(".total-maps").html("There aren't any popular maps at the moment. Check back later!");
         } else {
-            $(".total-maps").html("Your query of <code>" + current_search + "</code> references no maps, please try searching something else");
+            $(".total-maps").html("Your search of <code>" + current_search + "</code> references no maps. Maybe try searching something else.");
         }
     } else {
         $(".total-maps").html("Currently displaying " + total_display + " of " + total_maps + " loaded maps");
