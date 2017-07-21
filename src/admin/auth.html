@@ -1,0 +1,25 @@
+{{> header}}
+<div class="container">
+    <div class="well well-custom-blue center" style="margin-top:18%;margin-bottom:18%;width:50%;">
+        <input type="text" name="access_token" id="access_token" tabindex="1" class="form-control form-text-box" style="width:100%" placeholder="Access Token" value="">
+        <input type="submit" name="token-submit" id="token-submit" tabindex="4" class="form-submit btn" value="Save Access Token">
+        <hr>
+        <a href="#" class="btn btn-sm btn-primary">See Steps</a>
+        <a href="https://mcresourcepile.github.io/portal/auth/maps/overcast/y13jgwnn3yir.html" class="btn btn-sm btn-primary">Generate Access Token</a>
+    </div>
+</div>
+<style>.content-background {background-color: #ededed;}</style>
+<script>
+    var token_current = Cookies.get('rp_user_token');
+    if (token_current != null) {
+        $('#access_token').val(token_current);
+    }
+    
+    function saveToken() {
+        var token_input = $('#access_token').val();
+        Cookies.set('rp_user_token', token_input, { expires: 365 });
+    }
+</script>
+{{> footer}}
+</body>
+</html>
