@@ -3,7 +3,7 @@
     <div class="well well-custom-blue center" style="margin-top:18%;margin-bottom:18%;width:50%;">
         <div id="save-success" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Saved access token.</div>
         <input type="text" name="access_token" id="access_token" tabindex="1" class="form-control form-text-box" style="width:100%" placeholder="Access Token" value="">
-        <input type="submit" name="token-submit" id="token-submit" tabindex="4" class="form-submit btn" onclick="saveToken()" value="Save Access Token">
+        <input type="submit" name="token-submit" id="token-submit" tabindex="4" class="form-submit btn" onclick="saveToken()" value="Save Token">
         <hr>
         <a href="#" class="btn btn-sm btn-primary">See Steps</a>
         <a href="https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216" class="btn btn-sm btn-primary">Generate Access Token</a>
@@ -12,14 +12,16 @@
 <style>.content-background {background-color: #ededed;}</style>
 <script>
     var token_current = Cookies.get('rp_user_token');
-    if (token_current != null) {
+    if (token_current) {
         $('#access_token').val(token_current);
     }
     
     function saveToken() {
         var token_input = $('#access_token').val();
-        Cookies.set('rp_user_token', token_input, { expires: 3 });
-        $("#save-success").show().delay(5000).fadeOut();
+        if (token_input) {
+            Cookies.set('rp_user_token', token_input, { expires: 3 });
+            $("#save-success").show().delay(5000).fadeOut();
+        }
     }
 </script>
 {{> footer}}
