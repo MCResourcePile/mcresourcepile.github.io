@@ -34,6 +34,9 @@ SOFTWARE.
         /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
 
     var token;
+    if (token = null) {
+        token = Cookies.get('rp_user_token');
+    }
 
     var statusHandle = function(status){
         if(status == 'error' || status == 'done') isBusy = false;
@@ -397,15 +400,10 @@ SOFTWARE.
         }
     }
 
-    function setAccessToken(strToken){
-        token = strToken;
-    }
-
     fn.zipRepo = createURL;
     fn.zipFromApiUrl = zipIt;
     fn.downloadFile = downloadZip;
     fn.registerCallback = registerCallback;
-    fn.setAccessToken = setAccessToken;
 
     scope.GitZip = fn;
 

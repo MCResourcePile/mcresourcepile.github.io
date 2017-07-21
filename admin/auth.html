@@ -1,18 +1,18 @@
 <html>
     <head>
-        <title>Auth - ResourcePile</title>
+        <title>Access Tokens - ResourcePile</title>
         <!-- Page meta data -->
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="description">
-        <meta content="Auth - ResourcePile" property="og:title">
+        <meta content="Access Tokens - ResourcePile" property="og:title">
         <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="og:description">
         <meta content="website" property="og:type">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
-        <meta content="Auth - ResourcePile" name="twitter:title">
+        <meta content="Access Tokens - ResourcePile" name="twitter:title">
         <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
@@ -92,11 +92,12 @@
         <div class="content-background">
 <div class="container">
     <div class="well well-custom-blue center" style="margin-top:18%;margin-bottom:18%;width:50%;">
+        <div id="save-success" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Saved access token.</div>
         <input type="text" name="access_token" id="access_token" tabindex="1" class="form-control form-text-box" style="width:100%" placeholder="Access Token" value="">
-        <input type="submit" name="token-submit" id="token-submit" tabindex="4" class="form-submit btn" value="Save Access Token">
+        <input type="submit" name="token-submit" id="token-submit" tabindex="4" class="form-submit btn" onclick="saveToken()" value="Save Access Token">
         <hr>
         <a href="#" class="btn btn-sm btn-primary">See Steps</a>
-        <a href="https://mcresourcepile.github.io/portal/auth/maps/overcast/y13jgwnn3yir.html" class="btn btn-sm btn-primary">Generate Access Token</a>
+        <a href="https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216" class="btn btn-sm btn-primary">Generate Access Token</a>
     </div>
 </div>
 <style>.content-background {background-color: #ededed;}</style>
@@ -108,7 +109,8 @@
     
     function saveToken() {
         var token_input = $('#access_token').val();
-        Cookies.set('rp_user_token', token_input, { expires: 365 });
+        Cookies.set('rp_user_token', token_input, { expires: 3 });
+        $("#save-success").show().delay(5000).fadeOut();
     }
 </script>
 </div>
