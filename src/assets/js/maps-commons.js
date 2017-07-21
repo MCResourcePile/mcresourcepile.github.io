@@ -61,15 +61,18 @@ function commercialLicense() {
     license = true;
     commercial = true;
     console.log("This map is using a Creative Commons BY-SA 4.0 license");
+    isAuthenticated()
 }
 function noncommercialLicense() {
     license = true;
     commercial = false;
     console.log("This map is using a Creative Commons BY-NC-SA 4.0 license");
+    isAuthenticated()
 }
 function noLicense() {
     license = false;
     console.log("This map has no associated license; be careful when using this map in public servers");
+    isAuthenticated()
 }
 
 /* Get GitHub API request limit information */
@@ -107,6 +110,16 @@ var sessionLimit = 0;
 var sessionRemaining = 0;
 var sessionDownloads = 0;
 var current_token = Cookies.get('rp_user_token');
+
+function isAuthenticated() {
+    if (current_token) {
+        $( ".auth-enabled" ).show();
+        $( ".auth-disabled" ).hide();
+    } else {
+        $( ".auth-enabled" ).hide();
+        $( ".auth-disabled" ).show();
+    }
+}
 
 /* Modal control for download progress and error messages */
 GitZip.registerCallback(function(status, message, percent) {
