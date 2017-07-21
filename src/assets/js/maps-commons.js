@@ -76,15 +76,27 @@ function noLicense() {
 function getApiLimit() {
     limitResponse = (function () {
             limitResponse = null;
-            $.ajax({
-                'async': false,
-                'global': false,
-                'url': 'https://api.github.com/rate_limit',
-                'dataType': "json",
-                'success': function (data) {
-                    limitResponse = data;
-                }
-            });
+            if (current_token != null) {
+                $.ajax({
+                    'async': false,
+                    'global': false,
+                    'url': 'https://api.github.com/rate_limit?access_token=' + current_token,
+                    'dataType': "json",
+                    'success': function (data) {
+                        limitResponse = data;
+                    }
+                });
+            } else {
+                $.ajax({
+                    'async': false,
+                    'global': false,
+                    'url': 'https://api.github.com/rate_limit',
+                    'dataType': "json",
+                    'success': function (data) {
+                        limitResponse = data;
+                    }
+                });
+            }
         return limitResponse;
         })(); 
         sessionLimit = limitResponse.rate.limit;
@@ -94,6 +106,7 @@ function getApiLimit() {
 var sessionLimit = 0;
 var sessionRemaining = 0;
 var sessionDownloads = 0;
+var current_token = Cookies.get('rp_user_token');
 
 /* Modal control for download progress and error messages */
 GitZip.registerCallback(function(status, message, percent) {
