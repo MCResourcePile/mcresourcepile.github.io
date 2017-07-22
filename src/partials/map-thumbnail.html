@@ -48,18 +48,18 @@
             <div class="map-labels">
                 {{#if @root.page-category.maps}}
                 {{#inArray @root.data.new slug}}
-                <span class="label label-primary map-label">New</span>
+                <a href="?s=new" class="label label-primary map-label">New</a>
                 {{/inArray}}
                 {{#inArray @root.data.popular slug}}
-                <span class="label label-danger map-label">Popular</span>
+                <a href="?s=popular" class="label label-danger map-label">Popular</a>
                 {{/inArray}}
                 {{#if sourced}}
                 <span class="label label-default map-label">Unlicensed</span>
                 {{else}}
                     {{#if commercial}}
-                    <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</span>
+                    <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     {{else}}
-                    <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</span>
+                    <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     {{/if}}
                 {{/if}}
                 {{/if}}
