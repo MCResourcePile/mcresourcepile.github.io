@@ -87,6 +87,12 @@
                         </li>
                         <li class="{{#if updates}}active{{/if}}"><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
                     </ul>
+                    {{#if maps}}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="navbar-right"><a href="/admin/auth"><span class="fa fa-github-alt"></span> GitHub API: <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger">Unauthenticated</span></a></li>
+                    </ul>
+                    <script>isAuthenticated()</script>
+                    {{/if}}
                 </div>
             </div>
         </div>
