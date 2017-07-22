@@ -87,10 +87,8 @@
                         <li class=""><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar-right"><a data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit" href="/admin/auth"><span class="fa fa-github-alt"></span> GitHub API: <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger">Unauthenticated</span></a></li>
+                        <li class="navbar-right"><a href="/admin/auth"><span class="fa fa-github-alt"></span> GitHub API: <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
                     </ul>
-                    <script>isAuthenticated()</script>
-                    <script>$('[data-toggle="tooltip"]').tooltip();</script>
                 </div>
             </div>
         </div>
@@ -153,5 +151,6 @@
         </div>
     </div>
 </div>
+<script src="/assets/js/commons.js"></script>
 </body>
 </html>
