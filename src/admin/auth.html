@@ -1,9 +1,14 @@
 {{> header}}
 <div class="container">
     <div class="well well-custom-blue center" style="margin-top:18%;margin-bottom:18%;width:50%;">
-        <div id="save-success" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Saved access token.</div>
+        <div id="save-success" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token successfully saved</div>
+        <div id="token-revoked" class="alert alert-info alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token has been revoked</div>
+        <div id="bad-credentials" class="alert alert-warning alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token unable to be saved - bad credentials</div>
+        <div id="no-input" class="alert alert-warning alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Please enter a valid access token</div>
         <input type="text" name="access_token" id="access_token" tabindex="1" class="form-control form-text-box" style="width:100%" placeholder="Access Token" value="">
-        <input type="submit" name="token-submit" id="token-submit" tabindex="4" class="form-submit btn" onclick="saveToken()" value="Save Token">
+        <br>
+        <a class="btn btn-danger" onclick="revokeToken()">Revoke</a>
+        <a class="btn btn-info" onclick="saveToken()">Save</a>
         <hr>
         <a href="#" class="btn btn-sm btn-primary">See Steps</a>
         <a href="https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216" class="btn btn-sm btn-primary">Generate Access Token</a>
@@ -16,11 +21,47 @@
         $('#access_token').val(token_current);
     }
     
+    function revokeToken() {
+        if (token_current) {
+            $("#save-success").hide();
+            $("#token-revoked").hide();
+            $("#bad-credentials").hide();
+            $("#no-input").hide();
+            Cookies.remove('rp_user_token');
+            $("#token-revoked").show().delay(5000).fadeOut();
+            $('#access_token').val('');
+            isAuthenticated()
+        }
+    }
+    
     function saveToken() {
+        isAuthenticated()
         var token_input = $('#access_token').val();
-        if (token_input) {
+        $("#save-success").hide();
+        $("#token-revoked").hide();
+        $("#bad-credentials").hide();
+        $("#no-input").hide();
+        response = (function () {
+                response = null;
+                $.ajax({
+                    'async': false,
+                    'global': false,
+                    'url': 'https://api.github.com/rate_limit?access_token=' + token_input,
+                    'dataType': "json",
+                    'success': function (data) {
+                        response = data;
+                    }
+                });
+            return response;
+        })();
+        if (token_input == '') {
+            $("#no-input").show().delay(5000).fadeOut();
+        } else if (token_input && response !== null) {
             Cookies.set('rp_user_token', token_input, { expires: 3 });
             $("#save-success").show().delay(5000).fadeOut();
+        } else {
+            $("#bad-credentials").show().delay(5000).fadeOut();
+            $('#access_token').val('');
         }
     }
 </script>
