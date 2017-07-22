@@ -86,6 +86,10 @@
                         </li>
                         <li class=""><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="navbar-right"><a href="/admin/auth"><span class="fa fa-github-alt"></span> GitHub API: <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger">Unauthenticated</span></a></li>
+                    </ul>
+                    <script>isAuthenticated()</script>
                 </div>
             </div>
         </div>
@@ -173,7 +177,7 @@
                         </span>
                     </div>
                     <div class="map-labels">
-                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</span>
+                            <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -259,7 +263,7 @@
                         </span>
                     </div>
                     <div class="map-labels">
-                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</span>
+                            <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -341,7 +345,7 @@
                         </span>
                     </div>
                     <div class="map-labels">
-                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</span>
+                            <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -417,7 +421,7 @@
                         </span>
                     </div>
                     <div class="map-labels">
-                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</span>
+                            <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -493,8 +497,8 @@
                         </span>
                     </div>
                     <div class="map-labels">
-                        <span class="label label-primary map-label">New</span>
-                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</span>
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                            <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -571,7 +575,7 @@
                         </span>
                     </div>
                     <div class="map-labels">
-                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</span>
+                            <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -647,7 +651,7 @@
                         </span>
                     </div>
                     <div class="map-labels">
-                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</span>
+                            <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -723,8 +727,8 @@
                         </span>
                     </div>
                     <div class="map-labels">
-                        <span class="label label-primary map-label">New</span>
-                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</span>
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                            <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -800,7 +804,7 @@
                         </span>
                     </div>
                     <div class="map-labels">
-                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</span>
+                            <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -876,7 +880,7 @@
                         </span>
                     </div>
                     <div class="map-labels">
-                            <span class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</span>
+                            <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     </div>
                 </div>
                 <div class="map-authors">
@@ -952,8 +956,8 @@
                         </span>
                     </div>
                     <div class="map-labels">
-                        <span class="label label-primary map-label">New</span>
-                            <span class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</span>
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                            <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     </div>
                 </div>
                 <div class="map-authors">
