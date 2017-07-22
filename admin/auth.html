@@ -114,20 +114,24 @@
     if (token_current) {
         $('#access_token').val(token_current);
     }
-    
+
     function revokeToken() {
         if (token_current) {
-            $("#save-success").hide();
-            $("#token-revoked").hide();
-            $("#bad-credentials").hide();
-            $("#no-input").hide();
-            Cookies.remove('rp_user_token');
-            $("#token-revoked").show().delay(5000).fadeOut();
-            $('#access_token').val('');
-            isAuthenticated()
+            if (confirm("Are you sure you want to revoke your access token?") == true) {
+                $("#save-success").hide();
+                $("#token-revoked").hide();
+                $("#bad-credentials").hide();
+                $("#no-input").hide();
+                Cookies.remove('rp_user_token');
+                $("#token-revoked").show().delay(5000).fadeOut();
+                $('#access_token').val('');
+                isAuthenticated()
+            } else {
+                return false;
+            }
         }
     }
-    
+
     function saveToken() {
         isAuthenticated()
         var token_input = $('#access_token').val();
