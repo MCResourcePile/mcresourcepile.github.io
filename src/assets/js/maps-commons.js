@@ -109,17 +109,6 @@ function getApiLimit() {
 var sessionLimit = 0;
 var sessionRemaining = 0;
 var sessionDownloads = 0;
-var current_token = Cookies.get('rp_user_token');
-
-function isAuthenticated() {
-    if (current_token) {
-        $( ".auth-enabled" ).show();
-        $( ".auth-disabled" ).hide();
-    } else {
-        $( ".auth-enabled" ).hide();
-        $( ".auth-disabled" ).show();
-    }
-}
 
 /* Modal control for download progress and error messages */
 GitZip.registerCallback(function(status, message, percent) {
