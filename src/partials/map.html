@@ -1,13 +1,12 @@
-{{#with data}}
-{{#maps}}
+{{#data}}
+{{#withSort maps "name"}}
 {{#unless download}}
-{{! Thumbnail alt if no download }}
 <div id="{{slug}}" class="no-download"></div>
 {{else}}
 {{> map-thumbnail}}
 {{/unless}}
-{{/maps}}
-{{/with}}
+{{/withSort}}
+{{/data}}
 <div class="modal fade" id="download-starting-message" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
