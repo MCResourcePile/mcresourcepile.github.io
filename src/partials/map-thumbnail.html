@@ -1,8 +1,8 @@
 <div class="col-sm-6 col-lg-3 map-thumbnail center">
-    <div id="{{slug}}_body" class="thumbnail map-float {{#inArray @root.data.new slug}}map-glow-new{{/inArray}} {{#inArray @root.data.popular slug}}map-glow-popular{{/inArray}}">
-        <div id="{{slug}}" class="map-image" style="background-image: url('{{#if @root.page-category.league}}../../assets/img/tournament/shared/maps/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/if}}');">
+    <div id="{{slug}}" class="thumbnail map-float {{#inArray @root.data.new slug}}map-glow-new{{/inArray}} {{#inArray @root.data.popular slug}}map-glow-popular{{/inArray}}">
+        <div class="map-image" style="background-image: url('{{#if @root.page-category.league}}../../assets/img/tournament/shared/maps/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/if}}');">
             <div class="map-banner">
-                <a class="map-header" {{#if @root.page-category.maps}}href="https://mcresourcepile.github.io/maps/{{@root.map-group}}?s={{slug}}"{{/if}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
+                <a class="map-header" {{#if @root.page-category.maps}}href="https://mcresourcepile.github.io/maps/{{@root.map-group}}?s={{slug}}"{{/if}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong><span class="tag_hidden">{{slug}}</span></a>
                 {{#if discussion}}
                 <a href="{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
                 {{/if}}
