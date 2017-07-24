@@ -39,7 +39,6 @@
     }
 
     function saveToken() {
-        isAuthenticated()
         var token_input = $('#access_token').val();
         $("#save-success").hide();
         $("#token-revoked").hide();
@@ -61,11 +60,11 @@
         if (token_input == '') {
             $("#no-input").show().delay(5000).fadeOut();
         } else if (token_input && response !== null) {
-            Cookies.set('rp_user_token', token_input, { expires: 3 });
+            Cookies.set('rp_user_token', token_input, { expires: 365 });
             $("#save-success").show().delay(5000).fadeOut();
+            isAuthenticated()
         } else {
             $("#bad-credentials").show().delay(5000).fadeOut();
-            $('#access_token').val('');
         }
     }
 </script>
