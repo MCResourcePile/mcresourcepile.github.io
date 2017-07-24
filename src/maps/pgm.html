@@ -57,18 +57,18 @@
     </div>
 </div>
 <script type="text/javascript">
-    var data=location.search;
+    var data = location.search;
     if(data) {
-        data=location.search.substring(1);
-        data=data.split('&');
-        var pairs={};
-        for(var i=0; i<data.length; i++){
-            var tmp=data[i].split('=');
-            pairs[tmp[0]]=tmp[1];
+        data = location.search.substring(1);
+        data = data.split('&');
+        var pairs = {};
+        for(var i = 0; i < data.length; i++){
+            var tmp = data[i].split('=');
+            pairs[tmp[0]] = tmp[1];
         }
         var f = document.search_form;
         for (var i in pairs) {
-            if(f.elements[i]) {f.elements[i].value = pairs[i];}
+            if(f.elements[i]) {f.elements[i].value = pairs[i].split('+').join(' ');}
         }
     }
 </script>
