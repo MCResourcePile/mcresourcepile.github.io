@@ -35,7 +35,7 @@
             ga('send', 'pageview');
         </script>
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
-        <script src="assets/js/names.js"></script><script src="assets/js/moment.js"></script><script src="assets/js/paginate.js"></script>
+        <script src="assets/js/names.js"></script><script src="assets/js/moment.js"></script>
     </head>
     <body >
         <!-- Page navigation -->
@@ -358,11 +358,6 @@ League Records is a collection of information about competitive events that have
             var exact = moment($dateElem.text(), 'MM-DD-YYYY').format('MMMM D, YYYY');
             $dateElem.text(relative);
             $dateElem.prop('title', exact);
-        });
-
-        $('#post-output').easyPaginate({
-            paginateElement: 'post',
-            elementsPerPage: 6,
         });
     });
 </script>
