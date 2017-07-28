@@ -22,12 +22,12 @@ module.exports = function(grunt) {
                 dest: 'out/assets'
             },
             mapauthors: {
-                src: "src/stattrack/overcast/mapauthors.txt",
-                dest: "out/stattrack/overcast/mapauthors.txt"
+                src: "src/stats/overcast/mapauthors.txt",
+                dest: "out/stats/overcast/mapauthors.txt"
             },
             downloads: {
-                src: "src/mapstack/downloads.txt",
-                dest: "out/mapstack/downloads.txt"
+                src: "src/maps/downloads.txt",
+                dest: "out/maps/downloads.txt"
             }
         },
         clean: ['out/']
