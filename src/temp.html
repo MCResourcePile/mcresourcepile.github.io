@@ -1,0 +1,18 @@
+{{> header}}
+<div class="container">
+    <div class="content-header">
+        {{> alert}}
+        <div class="content-title">Temp</div>
+        <div class="content-subtitle">
+            Testing page for alternate map thumbnails
+        </div>
+    </div>
+    <div id="maps-output">
+        {{#submissions}}
+        {{> map-thumbnail}}
+        {{/submissions}}
+    </div>
+</div>
+{{> footer}}
+</body>
+</html>

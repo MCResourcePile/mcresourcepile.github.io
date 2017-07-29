@@ -1,6 +1,6 @@
 <div class="col-sm-6 col-lg-3 map-thumbnail center">
     <div id="{{slug}}" class="thumbnail map-float {{#inArray @root.data.new slug}}map-glow-new{{/inArray}} {{#inArray @root.data.popular slug}}map-glow-popular{{/inArray}}">
-        <div class="map-image" style="background-image: url('{{#if @root.page-category.league}}../../assets/img/tournament/shared/maps/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/if}}');">
+        <div class="map-image" style="background-image: url('{{#if @root.page-category.league}}../../assets/img/{{#if @root.page-category.contest}}contest/{{@root.id}}{{else}}tournament/shared/maps{{/if}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/if}}');">
             <div class="map-banner">
                 <a class="map-header" {{#if @root.page-category.maps}}href="https://mcresourcepile.github.io/maps/{{@root.map-group}}?s={{slug}}"{{/if}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong><span class="tag_hidden">{{slug}}</span></a>
                 {{#if discussion}}
@@ -47,6 +47,7 @@
             </div>
             <div class="map-labels">
                 {{#if @root.page-category.maps}}
+                {{#unless @root.page-category.contest}}
                 {{#inArray @root.data.new slug}}
                 <a href="?s=new" class="label label-primary map-label">New</a>
                 {{/inArray}}
@@ -62,13 +63,14 @@
                     <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     {{/if}}
                 {{/if}}
+                {{/unless}}
                 {{/if}}
                 {{#if @root.page-category.league}}
                 <span class="label label-info map-label">{{stage}}</span>
                 {{/if}}
             </div>
         </div>
-        {{#unless @root.page-category.league}}
+        {{#if @root.page-category.maps}}
         <div class="map-authors">
             <span class="map-author-name">by</span>
             {{#if authors}}
@@ -78,6 +80,7 @@
             {{else}}<span class="map-author-name">Ghost</span>
             {{/if}}
         </div>
+        {{#unless @root.page-category.league}}
         <div style="padding-top:2%;" class="center">
             {{#if locked}}
             <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="This map has been locked"><i class="fa fa-lock"></i></span>
@@ -148,5 +151,6 @@
         </div>
         {{/if}}
         {{/unless}}
+        {{/if}}
     </div>
 </div>
