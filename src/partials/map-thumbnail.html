@@ -80,6 +80,15 @@
             {{else}}<span class="map-author-name">Ghost</span>
             {{/if}}
         </div>
+        {{#if @root.page-category.contest}}
+        <div class="map-scores">
+            {{#scores}}
+            <div class="progress" data-toggle="tooltip" data-placement="top" title="{{properties @root.criteria this.criteria 'label'}}">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{score}}" aria-valuemin="0" aria-valuemax="{{properties @root.criteria this.criteria 'max'}}">{{properties @root.criteria this.criteria 'label'}} ({{score}}/{{properties @root.criteria this.criteria 'max'}})</div>
+            </div>
+            {{/scores}}
+        </div>
+        {{/if}}
         {{#unless @root.page-category.league}}
         <div style="padding-top:2%;" class="center">
             {{#if locked}}

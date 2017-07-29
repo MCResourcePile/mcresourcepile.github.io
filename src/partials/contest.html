@@ -1,0 +1,139 @@
+{{> header}}
+<div class="container">
+    <div class="content-header">
+        {{> alert}}
+        <div class="content-title">{{name}}</div>
+        <div class="content-subtitle">Information about {{#if announcement}}<a href="{{announcement}}" target="_blank">{{name}}</a>{{else}}{{name}}{{/if}} contest hosted by {{#if host}}{{host}}{{else}}an unknown host{{/if}}.</div>
+    </div>
+
+    <!-- Contest banner -->
+    <div class="center">
+        {{#if heading}}
+        <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{id}}.jpg');background-position:center">{{name}}</div>
+        {{else}}
+        <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{id}}.png">
+        {{/if}}
+    </div>
+
+    <!-- Contest winners -->
+    <div class="league-results row center">
+        {{#if first_place}}
+        <div class="league-position col-sm-4">
+            <div class="fa fa-star"></div>
+            <div class="league-team">{{second_place}}</div>
+            <div class="league-team-position">2nd place</div>
+        </div>
+        <div class="league-position league-position-first col-sm-4">
+            <span class="fa fa-trophy"></span>
+            <div class="league-team">{{first_place}}</div>
+            <div class="league-team-position">1st place</div>
+        </div>
+        <div class="league-position col-sm-4">
+            <div class="fa fa-star"></div>
+            <div class="league-team">{{third_place}}</div>
+            <div class="league-team-position">3rd place</div>
+        </div>
+        {{else}}
+        <div class="league-position league-position-first col-sm-12">
+            <span class="fa fa-exclamation-triangle"></span>
+            <div class="league-team">This contest has not concluded!</div>
+            <div class="league-team-position">Information on this page may not be confirmed</div>
+        </div>
+        {{/if}}
+    </div>
+
+    <!-- Contest information -->
+    <div class="league-info-section large">Contest Information</div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well well-sm well-custom-green">
+                <div class="league-info-section">Dates and Times</div>
+                <table class="league-info-table">
+                    <tbody>
+                        {{#stages}}
+                        <tr>
+                            <td>{{stage}}</td>
+                            <td>{{date}}</td>
+                        </tr>
+                        {{/stages}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{#if panels}}
+        {{#panels}}
+        <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
+            <div class="well well-sm well-custom-blue">
+                <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
+                <table class="league-info-table">
+                    <tbody>
+                        {{#if rows}}
+                        {{#rows}}
+                        <tr>
+                            {{#if label}}
+                            <td>{{label}}</td>
+                            <td>{{{content}}}</td>
+                            {{else}}
+                            <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                            {{/if}}
+                        </tr>
+                        {{/rows}}
+                        {{else}}
+                        <tr>
+                            <td>This panel has no information.</td>
+                        </tr>
+                        {{/if}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{/panels}}
+        {{/if}}
+    </div>
+
+    <!-- Contest submissions -->
+    <div class="league-info-section large">Submissions</div>
+    <div class="row">
+        {{#submissions}}
+        {{> map-thumbnail}}
+        {{/submissions}}
+    </div>
+
+    <!-- Contest results -->
+    <div class="league-info-section large">Results</div>
+    <div class="well well-sm well-custom-green">
+        <table class="league-info-table">
+            <tbody>
+                {{#submissions}}
+                <tr>
+                    <td>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</td>
+                    {{#scores}}
+                    <td><strong>{{properties @root.criteria this.criteria 'label'}}:</strong> <code>{{score}}/{{properties @root.criteria this.criteria 'max'}}</code></td>
+                    {{/scores}}
+                    <td><strong>Total score:</strong> <code>0/0</code></td>
+                </tr>
+                {{/submissions}}
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+{{> footer}}
+<script>
+    $('.progress-bar').each(function(i, obj) {
+        var score_current = $(this).attr('aria-valuenow')
+        var score_max = $(this).attr('aria-valuemax')
+        var score_percentage = Math.floor((score_current / score_max) * 100) + '%'
+        $(this).css({ 'width': score_percentage });
+        if (score_percentage > '80') {
+            $(this).addClass( 'progress-bar-success' );
+        } else if (score_percentage > '50') {
+            $(this).addClass( 'progress-bar-info' );
+        } else {
+            $(this).addClass( 'progress-bar-danger' );
+            
+        }
+    });    
+</script>
+</body>
+</html>
