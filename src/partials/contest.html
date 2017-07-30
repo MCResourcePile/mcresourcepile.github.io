@@ -123,16 +123,11 @@
     $('.progress-bar').each(function(i, obj) {
         var score_current = $(this).attr('aria-valuenow')
         var score_max = $(this).attr('aria-valuemax')
-        var score_percentage = Math.floor((score_current / score_max) * 100) + '%'
-        $(this).css({ 'width': score_percentage });
-        if (score_percentage > '80') {
-            $(this).addClass( 'progress-bar-success' );
-        } else if (score_percentage > '50') {
-            $(this).addClass( 'progress-bar-info' );
-        } else {
-            $(this).addClass( 'progress-bar-danger' );
-            
-        }
+        var score_percentage = Math.floor((score_current / score_max) * 100)
+        $(this).css({ 
+            'width': score_percentage + '%',
+            'background-color': 'rgba(21, 57, 177, ' + score_percentage / 100 + ')'
+        });
     });    
 </script>
 </body>
