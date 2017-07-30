@@ -112,24 +112,6 @@
         {{> map-thumbnail}}
         {{/submissions}}
     </div>
-
-    <!-- Contest results -->
-    <div class="league-info-section large">Results</div>
-    <div class="well well-sm well-custom-green">
-        <table class="league-info-table">
-            <tbody>
-                {{#submissions}}
-                <tr>
-                    <td>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</td>
-                    {{#scores}}
-                    <td><strong>{{properties @root.criteria this.criteria 'label'}}:</strong> <code>{{score}} / {{properties @root.criteria this.criteria 'max'}}</code></td>
-                    {{/scores}}
-                    <td><strong>Total score:</strong> <code>0/0</code></td>
-                </tr>
-                {{/submissions}}
-            </tbody>
-        </table>
-    </div>
     
 </div>
 {{> footer}}
