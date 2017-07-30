@@ -9,9 +9,9 @@
     <!-- Contest banner -->
     <div class="center">
         {{#if heading}}
-        <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{id}}.jpg');background-position:center">{{name}}</div>
+        <div class="league-banner" style="background: url('../../assets/img/contest/{{id}}/banner.jpg');background-position:center">{{name}}</div>
         {{else}}
-        <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{id}}.png">
+        <img class="league-banner-custom" src="../../assets/img/contest/{{id}}/banner.png">
         {{/if}}
     </div>
 
@@ -108,7 +108,7 @@
                 <tr>
                     <td>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</td>
                     {{#scores}}
-                    <td><strong>{{properties @root.criteria this.criteria 'label'}}:</strong> <code>{{score}}/{{properties @root.criteria this.criteria 'max'}}</code></td>
+                    <td><strong>{{properties @root.criteria this.criteria 'label'}}:</strong> <code>{{score}} / {{properties @root.criteria this.criteria 'max'}}</code></td>
                     {{/scores}}
                     <td><strong>Total score:</strong> <code>0/0</code></td>
                 </tr>
