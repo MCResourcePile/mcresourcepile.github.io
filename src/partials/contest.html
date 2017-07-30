@@ -60,6 +60,20 @@
                 </table>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="well well-sm well-custom-green">
+                <div class="league-info-section">Scoring</div>
+                <table class="league-info-table">
+                    <tbody>
+                        {{#each criteria}}
+                        <tr>
+                            <td style="font-weight:400"><strong>{{this.label}}</strong> out of <code>{{this.max}}</code> {{#if this.weight}}(weighted {{this.weight}}%){{/if}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
         {{#if panels}}
         {{#panels}}
         <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
