@@ -167,13 +167,15 @@
             var value = $(this).text();
             var weight = $(this).attr('weight')
             if ( weight ) {
-                value = value * weight / 100
+                // divide by total points
+                value = value * weight / 35
             }
             scores[scores.length] = value;
             $.each(scores,function(){total+=parseFloat(this) || 0;});
         });
         $(this).find(':last-child').text(total.toFixed(2))
-        var score_max = 30;
+        // calculate total points or use 100 if weighted
+        var score_max = 100;
         var score_percentage = Math.floor((total / score_max) * 100)
         $('#' + map + '_score').css({ 
             'width': score_percentage + '%',
