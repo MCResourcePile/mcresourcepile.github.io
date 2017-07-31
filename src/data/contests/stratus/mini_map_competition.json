@@ -2,6 +2,7 @@
     "title": "Mini Map Making Competition",
     "page-category": {"league": true, "maps": true, "contest": true, "stratus": true},
     "css_includes": "<link href=\"/assets/css/gamemodes.css\" rel=\"stylesheet\">",
+    "scripts": "<script src=\"/assets/js/jquery.tablesorter.min.js\"></script>",
     "name": "Mini Map Making Competition",
     "id": "mini_map_competition",
     "heading": true,
@@ -36,12 +37,13 @@
     "first_place": "Pond",
     "second_place": "Verlate",
     "third_place": "Jactus",
+    "score_method": "percent",
     "criteria": {
         "public":     {"label": "Public rating", "max": "5",   "weight": "20"},
         "gameplay":   {"label": "Gameplay",      "max": "10",  "weight": "40"},
         "aesthetics": {"label": "Aesthetics",    "max": "10",  "weight": "30"},
         "innovation": {"label": "Innovation",    "max": "10",  "weight": "10"},
-        "bonus":      {"label": "XML Bonus",     "max": "100", "weight": "3"},
+        "bonus":      {"label": "Bonus", "operation": "percent", "amount": "3", "reason": "XML with minimal errors"}
     },
     "submissions": [ {
             "name": "Pond",
@@ -55,7 +57,8 @@
                 {"criteria": "public",     "score": "3.67"},
                 {"criteria": "gameplay",   "score": "7.2"},
                 {"criteria": "aesthetics", "score": "8.83"},
-                {"criteria": "innovation", "score": "7"}
+                {"criteria": "innovation", "score": "7"},
+                {"criteria": "bonus",      "eligible": true}
             ]
         }, {
             "name": "Verlate",
@@ -69,7 +72,8 @@
                 {"criteria": "public",     "score": "3.22"},
                 {"criteria": "gameplay",   "score": "7"},
                 {"criteria": "aesthetics", "score": "8"},
-                {"criteria": "innovation", "score": "6.43"}
+                {"criteria": "innovation", "score": "6.43"},
+                {"criteria": "bonus",      "eligible": true}
             ]
         }, {
             "name": "Jactus",
@@ -84,7 +88,8 @@
                 {"criteria": "public",     "score": "3.55"},
                 {"criteria": "gameplay",   "score": "8"},
                 {"criteria": "aesthetics", "score": "7"},
-                {"criteria": "innovation", "score": "5.33"}
+                {"criteria": "innovation", "score": "5.33"},
+                {"criteria": "bonus",      "eligible": false}
             ]
         }, {
             "name": "Boulders",
@@ -97,7 +102,8 @@
                 {"criteria": "public",     "score": "3.45"},
                 {"criteria": "gameplay",   "score": "6.14"},
                 {"criteria": "aesthetics", "score": "8.29"},
-                {"criteria": "innovation", "score": "5.86"}
+                {"criteria": "innovation", "score": "5.86"},
+                {"criteria": "bonus",      "eligible": true}
             ]
         }, {
             "name": "Grenouille de l'armee",
@@ -110,7 +116,8 @@
                 {"criteria": "public",     "score": "3.32"},
                 {"criteria": "gameplay",   "score": "6.33"},
                 {"criteria": "aesthetics", "score": "8"},
-                {"criteria": "innovation", "score": "5.5"}
+                {"criteria": "innovation", "score": "5.5"},
+                {"criteria": "bonus",      "eligible": true}
             ]
         }, {
             "name": "Dorreak",
@@ -123,7 +130,8 @@
                 {"criteria": "public",     "score": "3.48"},
                 {"criteria": "gameplay",   "score": "6"},
                 {"criteria": "aesthetics", "score": "7.57"},
-                {"criteria": "innovation", "score": "5.43"}
+                {"criteria": "innovation", "score": "5.43"},
+                {"criteria": "bonus",      "eligible": false}
             ]
         }, {
             "name": "Campgrounds",
@@ -137,7 +145,8 @@
                 {"criteria": "public",     "score": "3.33"},
                 {"criteria": "gameplay",   "score": "5.67"},
                 {"criteria": "aesthetics", "score": "6.83"},
-                {"criteria": "innovation", "score": "3.33"}
+                {"criteria": "innovation", "score": "3.33"},
+                {"criteria": "bonus",      "eligible": true}
             ]
         }, {
             "name": "Puyt",
@@ -150,7 +159,8 @@
                 {"criteria": "public",     "score": "3.43"},
                 {"criteria": "gameplay",   "score": "7.4"},
                 {"criteria": "aesthetics", "score": "5.33"},
-                {"criteria": "innovation", "score": "5.17"}
+                {"criteria": "innovation", "score": "5.17"},
+                {"criteria": "bonus",      "eligible": false}
             ]
         }, {
             "name": "Tribe",
@@ -164,7 +174,8 @@
                 {"criteria": "public",     "score": "3.23"},
                 {"criteria": "gameplay",   "score": "6.25"},
                 {"criteria": "aesthetics", "score": "5.33"},
-                {"criteria": "innovation", "score": "7.5"}
+                {"criteria": "innovation", "score": "7.5"},
+                {"criteria": "bonus",      "eligible": false}
             ]
         }, {
             "name": "Xyth II King",
@@ -177,7 +188,8 @@
                 {"criteria": "public",     "score": "3.16"},
                 {"criteria": "gameplay",   "score": "5"},
                 {"criteria": "aesthetics", "score": "6.29"},
-                {"criteria": "innovation", "score": "8.86"}
+                {"criteria": "innovation", "score": "8.86"},
+                {"criteria": "bonus",      "eligible": true}
             ]
         }, {
             "name": "The Hills",
@@ -190,7 +202,8 @@
                 {"criteria": "public",     "score": "3"},
                 {"criteria": "gameplay",   "score": "6"},
                 {"criteria": "aesthetics", "score": "6.83"},
-                {"criteria": "innovation", "score": "6.67"}
+                {"criteria": "innovation", "score": "6.67"},
+                {"criteria": "bonus",      "eligible": false}
             ]
         }, {
             "name": "Curly Wools II",
@@ -203,7 +216,8 @@
                 {"criteria": "public",     "score": "3.24"},
                 {"criteria": "gameplay",   "score": "5.8"},
                 {"criteria": "aesthetics", "score": "6.57"},
-                {"criteria": "innovation", "score": "6.42"}
+                {"criteria": "innovation", "score": "6.42"},
+                {"criteria": "bonus",      "eligible": false}
             ]
         }, {
             "name": "Mijuku",
@@ -216,7 +230,8 @@
                 {"criteria": "public",     "score": "3.52"},
                 {"criteria": "gameplay",   "score": "5.33"},
                 {"criteria": "aesthetics", "score": "5.83"},
-                {"criteria": "innovation", "score": "5.83"}
+                {"criteria": "innovation", "score": "5.83"},
+                {"criteria": "bonus",      "eligible": false}
             ]
         }, {
             "name": "Tower Blast",
@@ -229,7 +244,8 @@
                 {"criteria": "public",     "score": "3.63"},
                 {"criteria": "gameplay",   "score": "4.4"},
                 {"criteria": "aesthetics", "score": "4.2"},
-                {"criteria": "innovation", "score": "8"}
+                {"criteria": "innovation", "score": "8"},
+                {"criteria": "bonus",      "eligible": true}
             ]
         }, {
             "name": "Ender-fortress",
@@ -242,7 +258,8 @@
                 {"criteria": "public",     "score": "2.89"},
                 {"criteria": "gameplay",   "score": "5.2"},
                 {"criteria": "aesthetics", "score": "3.17"},
-                {"criteria": "innovation", "score": "8"}
+                {"criteria": "innovation", "score": "8"},
+                {"criteria": "bonus",      "eligible": true}
             ]
         }, {
             "name": "Boat Blitz",
@@ -255,7 +272,8 @@
                 {"criteria": "public",     "score": "2.91"},
                 {"criteria": "gameplay",   "score": "5.4"},
                 {"criteria": "aesthetics", "score": "3.29"},
-                {"criteria": "innovation", "score": "5.83"}
+                {"criteria": "innovation", "score": "5.83"},
+                {"criteria": "bonus",      "eligible": true}
             ]
         }, {
             "name": "Trapp",
@@ -268,7 +286,8 @@
                 {"criteria": "public",     "score": "2.64"},
                 {"criteria": "gameplay",   "score": "5.5"},
                 {"criteria": "aesthetics", "score": "4.5"},
-                {"criteria": "innovation", "score": "5.83"}
+                {"criteria": "innovation", "score": "5.83"},
+                {"criteria": "bonus",      "eligible": false}
             ]
         }, {
             "name": "Three Choices",
@@ -281,7 +300,8 @@
                 {"criteria": "public",     "score": "2.9"},
                 {"criteria": "gameplay",   "score": "4.75"},
                 {"criteria": "aesthetics", "score": "4.2"},
-                {"criteria": "innovation", "score": "8.6"}
+                {"criteria": "innovation", "score": "8.6"},
+                {"criteria": "bonus",      "eligible": false}
             ]
         },
     ]

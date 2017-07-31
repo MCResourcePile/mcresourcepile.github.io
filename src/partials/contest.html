@@ -62,13 +62,20 @@
         </div>
         <div class="col-md-6">
             <div class="well well-sm well-custom-green">
-                <div class="league-info-section">Scoring</div>
+                <div class="league-info-section">Scoring <small>(Total scores are {{#is score_method 'percent'}}a percentage out of 100{{else}}the sum of each criteria{{/is}})</small></div>
                 <table class="league-info-table">
                     <tbody>
                         {{#each criteria}}
+                        {{#if max}}
                         <tr>
                             <td style="font-weight:400"><strong>{{this.label}}</strong> out of <code>{{this.max}}</code> {{#if this.weight}}(weighted {{this.weight}}%){{/if}}</td>
                         </tr>
+                        {{/if}}
+                        {{#if amount}}
+                        <tr>
+                            <td style="font-weight:400"><strong>Additional {{this.label}}</strong> of <code>{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}</code> for {{this.reason}}</td>
+                        </tr>
+                        {{/if}}
                         {{/each}}
                     </tbody>
                 </table>
@@ -112,6 +119,33 @@
         {{> map-thumbnail}}
         {{/submissions}}
     </div>
+
+    <!-- Contest submissions score breakdown -->
+    <div class="league-info-section large">Score Breakdown</div>
+    <div class="row">
+        <table id="scores-breakdown" class="league-info-table table table-striped">
+            <thead>
+                <tr>
+                    <td>Map</td>
+                    {{#each criteria}}
+                    <td>{{this.label}} <small style="font-size: 12px;">/ {{this.max}}</small></td>
+                    {{/each}}
+                    <td>Total</td>
+                </tr>
+            </thead>
+            <tbody>
+                {{#submissions}}
+                <tr class="map-score-breakdown">
+                    <td name="{{slug}}">{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</td>
+                    {{#scores}}
+                    <td class="map-score"{{#if (properties @root.criteria this.criteria 'weight')}} weight="{{properties @root.criteria this.criteria 'weight'}}"{{/if}}>{{score}}</td>
+                    {{/scores}}
+                    <td class="map-score-total">0</td>
+                </tr>
+                {{/submissions}}
+            </tbody>
+        </table>
+    </div>
     
 </div>
 {{> footer}}
@@ -124,7 +158,29 @@
             'width': score_percentage + '%',
             'background-color': 'rgba(21, 57, 177, ' + score_percentage / 100 + ')'
         });
-    });    
+    });
+    $('.map-score-breakdown').each(function(i, obj) {
+        var map = $(this).find(':first-child').attr('name');
+        var scores = []
+        var total = 0;
+        $(this).find('.map-score').each(function(){
+            var value = $(this).text();
+            var weight = $(this).attr('weight')
+            if ( weight ) {
+                value = value * weight / 100
+            }
+            scores[scores.length] = value;
+            $.each(scores,function(){total+=parseFloat(this) || 0;});
+        });
+        $(this).find(':last-child').text(total.toFixed(2))
+        var score_max = 30;
+        var score_percentage = Math.floor((total / score_max) * 100)
+        $('#' + map + '_score').css({ 
+            'width': score_percentage + '%',
+            'background-color': 'rgba(21, 57, 177, ' + score_percentage / 100 + ')'
+        });
+    });
+    $('#scores-breakdown').tablesorter({ cssIcon: 'fa fa-sort', cssIconAsc: 'fa fa-sort-up', cssIconDesc: 'fa fa-sort-down' });
 </script>
 </body>
 </html>
