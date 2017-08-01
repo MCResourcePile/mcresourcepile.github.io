@@ -1,0 +1,207 @@
+{{> header}}
+<div class="container">
+    <div class="content-header">
+        {{> alert}}
+        <div class="content-title">{{name}}</div>
+        <div class="content-subtitle">Information about {{#if announcement}}<a href="{{announcement}}" target="_blank">{{name}}</a>{{else}}{{name}}{{/if}} contest hosted by {{#if host}}{{host}}{{else}}an unknown host{{/if}}.</div>
+    </div>
+
+    <!-- Contest banner -->
+    <div class="center">
+        {{#if heading}}
+        <div class="league-banner" style="background: url('../../assets/img/contest/{{id}}/banner.jpg');background-position:center">{{name}}</div>
+        {{else}}
+        <img class="league-banner-custom" src="../../assets/img/contest/{{id}}/banner.png">
+        {{/if}}
+    </div>
+
+    <!-- Contest winners -->
+    <div class="league-results row center">
+        {{#if first_place}}
+        <div class="league-position col-sm-4">
+            <div class="fa fa-star"></div>
+            <div class="league-team">{{second_place}}</div>
+            <div class="league-team-position">2nd place</div>
+        </div>
+        <div class="league-position league-position-first col-sm-4">
+            <span class="fa fa-trophy"></span>
+            <div class="league-team">{{first_place}}</div>
+            <div class="league-team-position">1st place</div>
+        </div>
+        <div class="league-position col-sm-4">
+            <div class="fa fa-star"></div>
+            <div class="league-team">{{third_place}}</div>
+            <div class="league-team-position">3rd place</div>
+        </div>
+        {{else}}
+        <div class="league-position league-position-first col-sm-12">
+            <span class="fa fa-exclamation-triangle"></span>
+            <div class="league-team">This contest has not concluded!</div>
+            <div class="league-team-position">Information on this page may not be confirmed</div>
+        </div>
+        {{/if}}
+    </div>
+
+    <!-- Contest information -->
+    <div class="league-info-section large">Contest Information</div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well well-sm well-custom-green">
+                <div class="league-info-section">Dates and Times</div>
+                <table class="league-info-table">
+                    <tbody>
+                        {{#stages}}
+                        <tr>
+                            <td>{{stage}}</td>
+                            <td>{{date}}</td>
+                        </tr>
+                        {{/stages}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="well well-sm well-custom-green">
+                <div class="league-info-section">Scoring <small>(Total scores are {{#is score_method 'percent'}}a percentage out of 100{{else}}the sum of each criteria{{/is}})</small></div>
+                <table class="league-info-table">
+                    <tbody>
+                        {{#each criteria}}
+                        {{#if max}}
+                        <tr>
+                            <td style="font-weight:400"><strong>{{this.label}}</strong> out of <code>{{this.max}}</code> {{#if this.weight}}(weighted {{this.weight}}%){{/if}}</td>
+                        </tr>
+                        {{/if}}
+                        {{#if amount}}
+                        <tr>
+                            <td style="font-weight:400"><strong>Additional {{this.label}}</strong> of <code>{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}</code> for {{this.reason}}</td>
+                        </tr>
+                        {{/if}}
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{#if panels}}
+        {{#panels}}
+        <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
+            <div class="well well-sm well-custom-blue">
+                <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
+                <table class="league-info-table">
+                    <tbody>
+                        {{#if rows}}
+                        {{#rows}}
+                        <tr>
+                            {{#if label}}
+                            <td>{{label}}</td>
+                            <td>{{{content}}}</td>
+                            {{else}}
+                            <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                            {{/if}}
+                        </tr>
+                        {{/rows}}
+                        {{else}}
+                        <tr>
+                            <td>This panel has no information.</td>
+                        </tr>
+                        {{/if}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{/panels}}
+        {{/if}}
+    </div>
+
+    <!-- Contest submissions -->
+    <div class="league-info-section large">Submissions</div>
+    <div class="row">
+        {{#submissions}}
+        {{> map-thumbnail}}
+        {{/submissions}}
+    </div>
+
+    <!-- Contest submissions score breakdown -->
+    <div class="league-info-section large">Score Breakdown</div>
+    <div class="row">
+        <table id="scores-breakdown" class="league-info-table table table-striped">
+            <thead>
+                <tr>
+                    <td>Map</td>
+                    {{#each criteria}}
+                    <td>{{this.label}} <small style="font-size: 12px;">{{#if max}}/ {{this.max}}{{else}}{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}{{/if}}</small></td>
+                    {{/each}}
+                    <td>Total</td>
+                </tr>
+            </thead>
+            <tbody>
+                {{#submissions}}
+                <tr class="map-score-breakdown">
+                    <td name="{{slug}}">{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</td>
+                    {{#scores}}
+                    {{#if (properties @root.criteria this.criteria 'max')}}
+                    <td class="map-score" max="{{properties @root.criteria this.criteria 'max'}}"{{#is @root.score_method 'percent'}} weight="{{#if (properties @root.criteria this.criteria 'weight')}}{{properties @root.criteria this.criteria 'weight'}}{{else}}0{{/if}}"{{/is}}>{{score}}</td>
+                    {{else}}
+                    <td class="map-bonus" operation="{{#if (properties @root.criteria this.criteria 'operation')}}{{properties @root.criteria this.criteria 'operation'}}{{else}}add{{/if}}" amount="{{#if (properties @root.criteria this.criteria 'amount')}}{{properties @root.criteria this.criteria 'amount'}}{{else}}1{{/if}}">{{#if eligible}}Yes{{else}}No{{/if}}</td>
+                    {{/if}}
+                    {{/scores}}
+                    <td class="map-score-total">0</td>
+                </tr>
+                {{/submissions}}
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+{{> footer}}
+<script>
+    $('#scores-breakdown').tablesorter({ cssIcon: 'fa fa-sort', cssIconAsc: 'fa fa-sort-up', cssIconDesc: 'fa fa-sort-down' });
+    $('.progress-bar').each(function(i, obj) {
+        var points_current = $(this).attr('aria-valuenow');
+        var points_max = $(this).attr('aria-valuemax');
+        var points_percentage = Math.floor((points_current / points_max) * 100);
+        $(this).css({ 
+            'width': points_percentage + '%',
+            'background-color': 'rgba(21, 57, 177, ' + points_percentage / 100 + ')'
+        });
+    });
+    $('.map-score-breakdown').each(function(i, obj) {
+        var map = $(this).find(':first-child').attr('name');
+        var points_given = [];
+        var points_total = 0;
+        var points_bonus = false;
+        var points_method = '{{#is score_method 'percent'}}percent{{else}}sum{{/is}}'
+        // calculate total score for map
+        $(this).find('.map-score').each(function(){
+            var points = $(this).text();
+            var max = $(this).attr('max');
+            var points_percentage = points / max
+            var weight = $(this).attr('weight');
+            if ( points_method == 'percent' ) {
+                points = points_percentage * weight
+            }
+            points_given.push(points);
+        });
+        $.each(points_given, function() { points_total += parseFloat(this) || 0;});
+        $(this).find('.map-bonus').each(function(){
+            var bonus = $(this).text();
+            if (bonus == 'Yes') {
+                points_bonus = true
+            }
+            var operation = $(this).attr('operation');
+            var amount = parseFloat($(this).attr('amount'));
+            if (points_bonus == true) {
+                if (operation == 'percent') {
+                    points_total = points_total + (amount / points_total)
+                } else if (operation == 'multiply') {
+                    points_total = points_total * amount
+                } else {
+                    points_total = points_total + amount
+                }
+            }
+        });
+        $(this).find(':last-child').text(points_total.toFixed(2));
+    });
+    $('#scores-breakdown').tablesorter({ cssIcon: 'fa fa-sort', cssIconAsc: 'fa fa-sort-up', cssIconDesc: 'fa fa-sort-down' });
+</script>
+</body>
+</html>

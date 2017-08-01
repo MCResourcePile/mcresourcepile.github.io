@@ -1,0 +1,308 @@
+{
+    "title": "Mini Map Making Competition",
+    "page-category": {"league": true, "maps": true, "contest": true, "stratus": true},
+    "css_includes": "<link href=\"/assets/css/gamemodes.css\" rel=\"stylesheet\">",
+    "scripts": "<script src=\"/assets/js/jquery.tablesorter.min.js\"></script>",
+    "name": "Mini Map Making Competition",
+    "id": "mini_map_competition",
+    "heading": true,
+    "host": "Stratus Network",
+    "map-group": "pgm",
+    "announcement": "http://stratus.network/",
+    "stages": [
+        {"stage": "Submissions open",  "date": "July 14th, 2017"},
+        {"stage": "Submissions close", "date": "August 20th, 2017"},
+        {"stage": "Public testing",    "date": "September 1st, 2017"},
+        {"stage": "Results announced", "date": "September 8th, 2017"}
+    ],
+    "panels": [ {
+            "label": "Details and Guidelines",
+            "size": "half",
+            "rows": [
+                {"content": "Maps could be any gamemode, but must be no larger than <code>16 v 16</code>"},
+                {"content": "XML documents were to be included with the submission"},
+                {"content": "Authors were allowed to be author on up to 3 maps, but only their top scored map was counted"},
+                {"content": "Maps previously submitted to Stratus Network could not be entered into the contest"}
+            ]
+        }, {
+            "label": "Prizes",
+            "size": "half",
+            "rows": [
+                {"label": "First",  "content": "Strato, 3 months of Stratus+, winner tag on discord"},
+                {"label": "Second", "content": "3 months of Stratus+, runner up tag on discord"},
+                {"label": "Third",  "content": "3 months of Stratus-"}
+            ]
+        },
+    ],
+    "first_place": "Pond",
+    "second_place": "Verlate",
+    "third_place": "Jactus",
+    "score_method": "percent",
+    "criteria": {
+        "public":     {"label": "Public rating", "max": "5",   "weight": "20"},
+        "gameplay":   {"label": "Gameplay",      "max": "10",  "weight": "40"},
+        "aesthetics": {"label": "Aesthetics",    "max": "10",  "weight": "30"},
+        "innovation": {"label": "Innovation",    "max": "10",  "weight": "10"},
+        "bonus":      {"label": "Bonus", "operation": "percent", "amount": "3", "reason": "XML with minimal errors"}
+    },
+    "submissions": [ {
+            "name": "Pond",
+            "slug": "pond",
+            "authors": [
+                {"username": "Claf", "uuid": "6bec5c3a-4934-4b19-9aa8-c7c569820f7d"},
+                {"username": "triplezko", "uuid": "9929437a-9b7d-4d7a-b05d-e22fe93ac042"}
+            ],
+            "gamemode": "Destroy the Monument",
+            "scores": [
+                {"criteria": "public",     "score": "3.67"},
+                {"criteria": "gameplay",   "score": "7.2"},
+                {"criteria": "aesthetics", "score": "8.83"},
+                {"criteria": "innovation", "score": "7"},
+                {"criteria": "bonus",      "eligible": true}
+            ]
+        }, {
+            "name": "Verlate",
+            "slug": "verlate",
+            "authors": [
+                {"username": "Obelistics", "uuid": "b03360db-b8cd-49de-8ba1-b7920c2238a9"},
+                {"username": "Ceroh", "uuid": "5c6751aa-96b0-478b-b46d-c55a7d8b6ed1"}
+            ],
+            "gamemode": "King of the Hill",
+            "scores": [
+                {"criteria": "public",     "score": "3.22"},
+                {"criteria": "gameplay",   "score": "7"},
+                {"criteria": "aesthetics", "score": "8"},
+                {"criteria": "innovation", "score": "6.43"},
+                {"criteria": "bonus",      "eligible": true}
+            ]
+        }, {
+            "name": "Jactus",
+            "slug": "jactus",
+            "authors": [
+                {"username": "Stoudyo", "uuid": "8a3f4bb0-308f-4f06-a07c-087f3f77575c"},
+                {"username": "Spalgra", "uuid": "4a643ce8-9ae7-4440-95c7-b7371fcad43c"},
+                {"username": "iBreezly", "uuid": "42534d9b-b687-42f1-aaf4-baa697548311"}
+            ],
+            "gamemode": "Capture the Wool",
+            "scores": [
+                {"criteria": "public",     "score": "3.55"},
+                {"criteria": "gameplay",   "score": "8"},
+                {"criteria": "aesthetics", "score": "7"},
+                {"criteria": "innovation", "score": "5.33"},
+                {"criteria": "bonus",      "eligible": false}
+            ]
+        }, {
+            "name": "Boulders",
+            "slug": "boulders",
+            "authors": [
+                {"username": "rockymine", "uuid": "fe3608b7-d105-4029-8800-34b3147065b6"}
+            ],
+            "gamemode": "Capture the Wool",
+            "scores": [
+                {"criteria": "public",     "score": "3.45"},
+                {"criteria": "gameplay",   "score": "6.14"},
+                {"criteria": "aesthetics", "score": "8.29"},
+                {"criteria": "innovation", "score": "5.86"},
+                {"criteria": "bonus",      "eligible": true}
+            ]
+        }, {
+            "name": "Grenouille de l'armee",
+            "slug": "grenouille_de_larmee",
+            "authors": [
+                {"username": "_ArmyFrog", "uuid": "96f9aa16-9c93-4b1d-9bce-18b8c212074b"}
+            ],
+            "gamemode": "Capture the Wool",
+            "scores": [
+                {"criteria": "public",     "score": "3.32"},
+                {"criteria": "gameplay",   "score": "6.33"},
+                {"criteria": "aesthetics", "score": "8"},
+                {"criteria": "innovation", "score": "5.5"},
+                {"criteria": "bonus",      "eligible": true}
+            ]
+        }, {
+            "name": "Dorreak",
+            "slug": "dorreak",
+            "authors": [
+                {"username": "Obelistics", "uuid": "b03360db-b8cd-49de-8ba1-b7920c2238a9"}
+            ],
+            "gamemode": "Capture the Wool",
+            "scores": [
+                {"criteria": "public",     "score": "3.48"},
+                {"criteria": "gameplay",   "score": "6"},
+                {"criteria": "aesthetics", "score": "7.57"},
+                {"criteria": "innovation", "score": "5.43"},
+                {"criteria": "bonus",      "eligible": false}
+            ]
+        }, {
+            "name": "Campgrounds",
+            "slug": "campgrounds",
+            "authors": [
+                {"username": "Claf", "uuid": "6bec5c3a-4934-4b19-9aa8-c7c569820f7d"},
+                {"username": "Strangey", "uuid": "621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06"}
+            ],
+            "gamemode": "Capture the Flag",
+            "scores": [
+                {"criteria": "public",     "score": "3.33"},
+                {"criteria": "gameplay",   "score": "5.67"},
+                {"criteria": "aesthetics", "score": "6.83"},
+                {"criteria": "innovation", "score": "3.33"},
+                {"criteria": "bonus",      "eligible": true}
+            ]
+        }, {
+            "name": "Puyt",
+            "slug": "puyt",
+            "authors": [
+                {"username": "Obelistics", "uuid": "b03360db-b8cd-49de-8ba1-b7920c2238a9"}
+            ],
+            "gamemode": "Capture the Wool",
+            "scores": [
+                {"criteria": "public",     "score": "3.43"},
+                {"criteria": "gameplay",   "score": "7.4"},
+                {"criteria": "aesthetics", "score": "5.33"},
+                {"criteria": "innovation", "score": "5.17"},
+                {"criteria": "bonus",      "eligible": false}
+            ]
+        }, {
+            "name": "Tribe",
+            "slug": "tribe",
+            "authors": [
+                {"username": "dragonrider455", "uuid": "a63de09d-6fa9-436f-9070-26f5e9a4d27b"},
+                {"username": "ItsCal", "uuid": "4ed106c2-12b9-43d2-83c7-2e963440444f"}
+            ],
+            "gamemode": "Capture the Wool",
+            "scores": [
+                {"criteria": "public",     "score": "3.23"},
+                {"criteria": "gameplay",   "score": "6.25"},
+                {"criteria": "aesthetics", "score": "5.33"},
+                {"criteria": "innovation", "score": "7.5"},
+                {"criteria": "bonus",      "eligible": false}
+            ]
+        }, {
+            "name": "Xyth II King",
+            "slug": "xyth_ii_king",
+            "authors": [
+                {"username": "Tywnis", "uuid": "2ca8072f-74be-4798-85b8-bbce03aa91af"}
+            ],
+            "gamemode": "King of the Flag",
+            "scores": [
+                {"criteria": "public",     "score": "3.16"},
+                {"criteria": "gameplay",   "score": "5"},
+                {"criteria": "aesthetics", "score": "6.29"},
+                {"criteria": "innovation", "score": "8.86"},
+                {"criteria": "bonus",      "eligible": true}
+            ]
+        }, {
+            "name": "The Hills",
+            "slug": "the_hills",
+            "authors": [
+                {"username": "Kezugo", "uuid": "105b02c7-9004-45ed-a668-971359021f82"}
+            ],
+            "gamemode": "Capture the Wool",
+            "scores": [
+                {"criteria": "public",     "score": "3"},
+                {"criteria": "gameplay",   "score": "6"},
+                {"criteria": "aesthetics", "score": "6.83"},
+                {"criteria": "innovation", "score": "6.67"},
+                {"criteria": "bonus",      "eligible": false}
+            ]
+        }, {
+            "name": "Curly Wools II",
+            "slug": "curly_wools_ii",
+            "authors": [
+                {"username": "Ruediger_LP", "uuid": "e2d2c2c6-cea9-4510-9ab2-a091b5605b30"}
+            ],
+            "gamemode": "Capture the Wool",
+            "scores": [
+                {"criteria": "public",     "score": "3.24"},
+                {"criteria": "gameplay",   "score": "5.8"},
+                {"criteria": "aesthetics", "score": "6.57"},
+                {"criteria": "innovation", "score": "6.42"},
+                {"criteria": "bonus",      "eligible": false}
+            ]
+        }, {
+            "name": "Mijuku",
+            "slug": "mijuku",
+            "authors": [
+                {"username": "Antnecb", "uuid": "b1521072-6993-4fe4-ae60-dbeeb7dc0cfa"}
+            ],
+            "gamemode": "Destroy the Monument",
+            "scores": [
+                {"criteria": "public",     "score": "3.52"},
+                {"criteria": "gameplay",   "score": "5.33"},
+                {"criteria": "aesthetics", "score": "5.83"},
+                {"criteria": "innovation", "score": "5.83"},
+                {"criteria": "bonus",      "eligible": false}
+            ]
+        }, {
+            "name": "Tower Blast",
+            "slug": "tower_blast",
+            "authors": [
+                {"username": "Ensix", "uuid": "b3bf822a-4218-4f96-9110-278cad1ab848"}
+            ],
+            "gamemode": "Destroy the Monument",
+            "scores": [
+                {"criteria": "public",     "score": "3.63"},
+                {"criteria": "gameplay",   "score": "4.4"},
+                {"criteria": "aesthetics", "score": "4.2"},
+                {"criteria": "innovation", "score": "8"},
+                {"criteria": "bonus",      "eligible": true}
+            ]
+        }, {
+            "name": "Ender-fortress",
+            "slug": "ender_fortress",
+            "authors": [
+                {"username": "mrcookie_13", "uuid": "cef67055-9c27-4b58-a16f-278d793ff6bc"}
+            ],
+            "gamemode": "Capture the Wool",
+            "scores": [
+                {"criteria": "public",     "score": "2.89"},
+                {"criteria": "gameplay",   "score": "5.2"},
+                {"criteria": "aesthetics", "score": "3.17"},
+                {"criteria": "innovation", "score": "8"},
+                {"criteria": "bonus",      "eligible": true}
+            ]
+        }, {
+            "name": "Boat Blitz",
+            "slug": "boat_blitz",
+            "authors": [
+                {"username": "Ensix", "uuid": "b3bf822a-4218-4f96-9110-278cad1ab848"}
+            ],
+            "gamemode": "Blitz",
+            "scores": [
+                {"criteria": "public",     "score": "2.91"},
+                {"criteria": "gameplay",   "score": "5.4"},
+                {"criteria": "aesthetics", "score": "3.29"},
+                {"criteria": "innovation", "score": "5.83"},
+                {"criteria": "bonus",      "eligible": true}
+            ]
+        }, {
+            "name": "Trapp",
+            "slug": "trapp",
+            "authors": [
+                {"username": "ayendrew", "uuid": "b8539c6d-533b-4be2-8f0d-3f70431eee87"}
+            ],
+            "gamemode": "Capture the Wool",
+            "scores": [
+                {"criteria": "public",     "score": "2.64"},
+                {"criteria": "gameplay",   "score": "5.5"},
+                {"criteria": "aesthetics", "score": "4.5"},
+                {"criteria": "innovation", "score": "5.83"},
+                {"criteria": "bonus",      "eligible": false}
+            ]
+        }, {
+            "name": "Three Choices",
+            "slug": "three_choices",
+            "authors": [
+                {"username": "sammyboo", "uuid": "0875279f-d502-457a-a89c-36bbed32ae47"}
+            ],
+            "gamemode": "Capture the Wool",
+            "scores": [
+                {"criteria": "public",     "score": "2.9"},
+                {"criteria": "gameplay",   "score": "4.75"},
+                {"criteria": "aesthetics", "score": "4.2"},
+                {"criteria": "innovation", "score": "8.6"},
+                {"criteria": "bonus",      "eligible": false}
+            ]
+        },
+    ]
+}
