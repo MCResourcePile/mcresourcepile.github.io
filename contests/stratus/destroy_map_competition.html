@@ -1,0 +1,379 @@
+<html>
+    <head>
+        <title>Destroy Map Making Competition - ResourcePile</title>
+        <!-- Page meta data -->
+        <meta charset=" UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="description">
+        <meta content="Destroy Map Making Competition - ResourcePile" property="og:title">
+        <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="og:description">
+        <meta content="website" property="og:type">
+        <meta content="https://mcresourcepile.github.io/" property="og:url">
+        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
+        <meta content="summary" name="twitter:card">
+        <meta content="Destroy Map Making Competition - ResourcePile" name="twitter:title">
+        <meta content="A community project worked on by many people that wish to improve the experience of users playing on Minecraft networks." name="twitter:description">
+        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <!-- Page stylesheets -->
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="/assets/favicon.ico">
+        <link href="/assets/css/gamemodes.css" rel="stylesheet">
+        <!-- Page script files -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/assets/js/js.cookie.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-91801520-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
+        <script src="/assets/js/jquery.tablesorter.min.js"></script>
+    </head>
+    <body >
+        <!-- Page navigation -->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> Maps <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><p class="navbar-menu-title">PvP Maps</p></li>
+                                <li><a href="/maps/overcast"><i class="fa fa-globe"></i> Overcast Collection</a></li>
+                                <li><a href="/maps/pgm"><i class="fa fa-globe"></i> PGM Collection</a></li>
+                                <li><a href="/maps/stratus" style="font-weight: bold; color: red"><i class="fa fa-globe"></i> NEW: Stratus Collection</a></li>
+                                <li><a href="/maps/avicus"><i class="fa fa-globe"></i> Avicus Collection</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown active">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-sitemap"></i> Competitive <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><p class="navbar-menu-title">PvP Tournaments</p></li>
+                                <li><a href="/leagues/overcast"><i class="fa fa-shield"></i> Overcast Network</a></li>
+                                <li><a href="/leagues/pgm"><i class="fa fa-shield"></i> PGM Community</a></li>
+                                <li><a href="/leagues/stratus"><i class="fa fa-shield"></i> Stratus Network</a></li>
+                                <li><a href="/leagues/avicus"><i class="fa fa-shield"></i> Avicus Network</a></li>
+                                <li><p class="navbar-menu-title">Map Contests</p></li>
+                                <!-- <li><a href="/contests/overcast"><i class="fa fa-map"></i> Overcast Network</a></li> -->
+                                <li><a href="/contests/stratus"><i class="fa fa-map"></i> Stratus Network</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> Statistics <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><p class="navbar-menu-title">Overcast</p></li>
+                                <li><a href="/stats/overcast/bow"><span class="fa fa-crosshairs"></span> Bow Records</a></li>
+                                <li><a href="/stats/overcast/miscellaneous"><span class="fa fa-bookmark"></span> Miscellaneous</a></li>
+                                <li><a href="/stats/overcast/objective"><span class="fa fa-signal"></span> Objective Leaderboards</a></li><!--
+                                <li><p class="navbar-menu-title">Stratus</p></li>
+                                <li><a href="/stats/stratus/bow"><span class="fa fa-crosshairs"></span> Bow Records</a></li>
+                                <li><p class="navbar-menu-title">Avicus</p></li>
+                                <li><a href="/stats/avicus/bow"><span class="fa fa-crosshairs"></span> Bow Records</a></li>-->
+                            </ul>
+                        </li>
+                        <li class=""><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-background">
+<div class="container">
+    <div class="content-header">
+        <div class="content-alert">
+            <noscript>
+                <div class="alert alert-danger" style="margin-bottom:8px;" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+            </noscript>
+            <div class="alert alert-info" role="alert">We have <a href="https://mcresourcepile.github.io/updates#discord"></a>opened our Discord channel</a> to the public. Click <a href="https://discord.gg/ygNgxKj">here</a> to join!</div>
+        </div>
+        <div class="content-title">Destroy Map Making Competition</div>
+        <div class="content-subtitle">Information about <a href="http://stratus.network/destroy-map-competition" target="_blank">Destroy Map Making Competition</a> contest hosted by Stratus Network.</div>
+    </div>
+
+    <!-- Contest banner -->
+    <div class="center">
+        <div class="league-banner" style="background: url('../../assets/img/contest/destroy_map_competition/banner.jpg');background-position:center">Destroy Map Making Competition</div>
+    </div>
+
+    <!-- Contest winners -->
+    <div class="league-results row center">
+        <div class="league-position league-position-first col-sm-12">
+            <span class="fa fa-exclamation-triangle"></span>
+            <div class="league-team">This contest has not concluded!</div>
+            <div class="league-team-position">Information on this page may not be confirmed</div>
+        </div>
+    </div>
+
+    <!-- Contest information -->
+    <div class="league-info-section large">Contest Information</div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well well-sm well-custom-green">
+                <div class="league-info-section">Dates and Times</div>
+                <table class="league-info-table">
+                    <tbody>
+                        <tr>
+                            <td>Submissions open</td>
+                            <td>July 14th, 2017</td>
+                        </tr>
+                        <tr>
+                            <td>Submissions close</td>
+                            <td>August 20th, 2017</td>
+                        </tr>
+                        <tr>
+                            <td>Public testing</td>
+                            <td>September 1st, 2017</td>
+                        </tr>
+                        <tr>
+                            <td>Results announced</td>
+                            <td>September 8th, 2017</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="well well-sm well-custom-green">
+                <div class="league-info-section">Scoring <small>(Total scores are a percentage out of 100)</small></div>
+                <table class="league-info-table">
+                    <tbody>
+                        <tr>
+                            <td style="font-weight:400"><strong>Public rating</strong> out of <code>5</code> (weighted 20%)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:400"><strong>Gameplay</strong> out of <code>10</code> (weighted 40%)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:400"><strong>Aesthetics</strong> out of <code>10</code> (weighted 25%)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:400"><strong>Innovation</strong> out of <code>10</code> (weighted 15%)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:400"><strong>Additional Bonus</strong> of <code>3%</code> for XML with minimal errors</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="well well-sm well-custom-blue">
+                <div class="league-info-section">Details and Guidelines</div>
+                <table class="league-info-table">
+                    <tbody>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Maps can be any size / team size</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">The only gamemode allowed is <b>Destroy</b>. This includes DTC/DTM. Mix maps with anything other than DTC/DTM will not be accepted</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">No more than 3 authors per map</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Map must be a dry map and may not contain excess of TNT</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">You are allowed to be author on up to 3 maps, but only your top scored map will be counted (anyone over 3 maps will be DQ’d)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">XML must be included when submitting a map</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Maps can be submitted any time before the deadline</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Maps must be packaged correctly for a submission to count</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">You are NOT allowed to ask a Map Developer for feedback on the map but may ask for XML assistance</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Use [DMC] in the title of your submission to take part in the competition (ie: “[DMC] [DTC] Avalon Funland”)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Maps previously submitted to Stratus are not allowed to be entered into this competition</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Maps must be submitted through <a href='https://github.com/StratusNetwork/Map-Rotations/issues' target='_blank'>Github</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="well well-sm well-custom-blue">
+                <div class="league-info-section">Prizes</div>
+                <table class="league-info-table">
+                    <tbody>
+                        <tr>
+                            <td>First</td>
+                            <td>Strato,  winner tag on discord</td>
+                        </tr>
+                        <tr>
+                            <td>Second</td>
+                            <td>1 month of Stratus-, runner up tag on discord</td>
+                        </tr>
+                        <tr>
+                            <td>Third</td>
+                            <td>1 stack of tokens</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contest submissions -->
+    <div class="league-info-section large">Submissions</div>
+    <div class="row">
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="" class="thumbnail map-float   ">
+                <div class="map-image" style="background-image: url('../../assets/img/contest/destroy_map_competition/maps/.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=" data-toggle="tooltip" data-placement="top" title="Maps unconfirmed"><strong>Maps unconfirmed</strong><span class="tag_hidden"></span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><span class="game-link map-tag">Unknown tags</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <span class="label label-info map-label"></span>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+        <span class="map-author-name">Ghost</span>
+                </div>
+                <div class="map-scores">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contest submissions score breakdown -->
+    <div class="league-info-section large">Score Breakdown</div>
+    <div class="table-responsive">
+        <table id="scores-breakdown" class="league-info-table table table-striped">
+            <thead>
+                <tr >
+                    <td>Map</td>
+                    <td>Public rating <small style="font-size: 12px;">/ 5</small></td>
+                    <td>Gameplay <small style="font-size: 12px;">/ 10</small></td>
+                    <td>Aesthetics <small style="font-size: 12px;">/ 10</small></td>
+                    <td>Innovation <small style="font-size: 12px;">/ 10</small></td>
+                    <td>Bonus <small style="font-size: 12px;">3%</small></td>
+                    <td>Total</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="map-score-breakdown">
+                    <td name="">Maps unconfirmed</td>
+                    <td class="map-score-total">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row center" style="width: 70%">
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">About</div>
+                <a class="footer-item" href="/staff">Staff</a>
+                <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
+                <a class="footer-item" href="/admin/forms/apply">Positions</a>
+            </div>
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">Development</div>
+                <a class="footer-item" href="/updates">Update Posts</a>
+                <a class="footer-item" href="/revisions/website">Revisions</a>
+                <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
+                <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
+            </div>
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">Contributing</div>
+                <a class="footer-item" href="/admin/references/maps">References</a>
+                <a class="footer-item" href="/admin/forms/maps">Submit a Map</a>
+            </div>
+            <div class="footer-section col-md-3">
+                <div class="footer-section-head">Policies</div>
+                <a class="footer-item" href="/policies/terms">Terms of Use</a>
+                <a class="footer-item" href="/policies/maps">Map Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom center">
+            <div class="resourcepile-copyright-year"></div>
+        </div>
+    </div>
+</div>
+<script src="/assets/js/commons.js"></script>
+<script>
+    $('#scores-breakdown').tablesorter({ cssIcon: 'fa fa-sort', cssIconAsc: 'fa fa-sort-up', cssIconDesc: 'fa fa-sort-down' });
+    $('.progress-bar').each(function(i, obj) {
+        var points_current = $(this).attr('aria-valuenow');
+        var points_max = $(this).attr('aria-valuemax');
+        var points_percentage = Math.floor((points_current / points_max) * 100);
+        $(this).css({
+            'width': points_percentage + '%',
+            'background-color': 'rgba(21, 57, 177, ' + points_percentage / 100 + ')'
+        });
+    });
+    $('.map-score-breakdown').each(function(i, obj) {
+        var map = $(this).find(':first-child').attr('name');
+        var points_given = [];
+        var points_total = 0;
+        var points_bonus = false;
+        var points_method = 'percent'
+        // calculate total score for map
+        $(this).find('.map-score').each(function(){
+            var points = $(this).text();
+            var max = $(this).attr('max');
+            var points_percentage = points / max
+            var weight = $(this).attr('weight');
+            if ( points_method == 'percent' ) {
+                points = points_percentage * weight
+            }
+            points_given.push(points);
+        });
+        $.each(points_given, function() { points_total += parseFloat(this) || 0;});
+        $(this).find('.map-bonus').each(function(){
+            var bonus = $(this).text();
+            if (bonus == 'Yes') {
+                points_bonus = true
+            }
+            var operation = $(this).attr('operation');
+            var amount = parseFloat($(this).attr('amount'));
+            if (points_bonus == true) {
+                if (operation == 'percent') {
+                    points_total = points_total + (amount / points_total)
+                } else if (operation == 'multiply') {
+                    points_total = points_total * amount
+                } else {
+                    points_total = points_total + amount
+                }
+            }
+        });
+        $(this).find(':last-child').text(points_total.toFixed(2));
+    });
+    $('#scores-breakdown').tablesorter({ cssIcon: 'fa fa-sort', cssIconAsc: 'fa fa-sort-up', cssIconDesc: 'fa fa-sort-down' });
+</script>
+</body>
+</html>
