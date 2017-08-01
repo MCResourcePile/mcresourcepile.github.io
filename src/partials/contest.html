@@ -169,13 +169,14 @@
         var points_given = [];
         var points_total = 0;
         var points_bonus = false;
+        var points_method = '{{#is score_method 'percent'}}percent{{else}}sum{{/is}}'
         // calculate total score for map
         $(this).find('.map-score').each(function(){
             var points = $(this).text();
             var max = $(this).attr('max');
             var points_percentage = points / max
             var weight = $(this).attr('weight');
-            if ( weight ) {
+            if ( points_method == 'percent' ) {
                 points = points_percentage * weight
             }
             points_given.push(points);
