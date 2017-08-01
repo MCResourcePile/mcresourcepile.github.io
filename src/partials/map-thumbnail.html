@@ -82,9 +82,6 @@
         </div>
         {{#if @root.page-category.contest}}
         <div class="map-scores">
-            <div class="progress">
-                <div id="{{slug}}_score" class="progress-bar" role="progressbar">Score (<span id="{{slug}}_score_total"></span>/<span class="contest_score_total"></span>)</div>
-            </div>
             {{#scores}}
             {{#if score}}
             <div class="progress" data-toggle="tooltip" data-placement="top" title="{{properties @root.criteria this.criteria 'label'}} ({{score}} / {{properties @root.criteria this.criteria 'max'}})">
