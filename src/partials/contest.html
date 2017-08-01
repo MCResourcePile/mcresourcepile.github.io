@@ -122,10 +122,10 @@
 
     <!-- Contest submissions score breakdown -->
     <div class="league-info-section large">Score Breakdown</div>
-    <div class="row">
+    <div class="table-responsive">
         <table id="scores-breakdown" class="league-info-table table table-striped">
             <thead>
-                <tr>
+                <tr >
                     <td>Map</td>
                     {{#each criteria}}
                     <td>{{this.label}} <small style="font-size: 12px;">{{#if max}}/ {{this.max}}{{else}}{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}{{/if}}</small></td>
@@ -150,7 +150,7 @@
             </tbody>
         </table>
     </div>
-    
+
 </div>
 {{> footer}}
 <script>
@@ -159,7 +159,7 @@
         var points_current = $(this).attr('aria-valuenow');
         var points_max = $(this).attr('aria-valuemax');
         var points_percentage = Math.floor((points_current / points_max) * 100);
-        $(this).css({ 
+        $(this).css({
             'width': points_percentage + '%',
             'background-color': 'rgba(21, 57, 177, ' + points_percentage / 100 + ')'
         });
