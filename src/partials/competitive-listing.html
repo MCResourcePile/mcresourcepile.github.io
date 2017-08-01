@@ -2,9 +2,9 @@
 <div class="container">
     <div class="content-header">
         {{> alert}}
-        <div class="content-title">{{#if host}}{{host}}{{else}}Unknown Host{{/if}} Leagues</div>
+        <div class="content-title">{{#if host}}{{host}}{{else}}Unknown Host{{/if}} {{#if @root.page-category.contest}}Map Contests{{else}}{{#if @root.page-category.league}}Leagues{{/if}}{{/if}}</div>
         <div class="content-subtitle">
-            <p>List of tournaments hosted by the {{#if host}}{{#if host-site}}<a href="{{host-site}}">{{host}}</a>{{else}}{{host}}{{/if}}{{else}}Unknown Host{{/if}}.</p>
+            <p>List of {{#if @root.page-category.contest}}map contests{{else}}{{#if @root.page-category.league}}tournaments{{/if}}{{/if}} hosted by the {{#if host}}{{#if host-site}}<a href="{{host-site}}">{{host}}</a>{{else}}{{host}}{{/if}}{{else}}Unknown Host{{/if}}.</p>
         </div>
     </div>
     <div class="section leagues center">
