@@ -360,8 +360,7 @@ League Records is a collection of information about competitive events that have
             var $dateElem = $(dateElem);
             var relative = moment($dateElem.text(), "MM-DD-YYYY").fromNow();
             var exact = moment($dateElem.text(), 'MM-DD-YYYY').format('MMMM D, YYYY');
-            $dateElem.text(relative);
-            $dateElem.prop('title', exact);
+            $(this).text(relative).attr('data-original-title', exact);
         });
     });
 </script>
