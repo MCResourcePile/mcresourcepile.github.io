@@ -4,7 +4,7 @@
             <div class="map-banner">
                 <a class="map-header" {{#if @root.page-category.maps}}href="https://mcresourcepile.github.io/maps/{{@root.map-group}}?s={{slug}}"{{/if}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong><span class="tag_hidden">{{slug}}</span></a>
                 {{#if contest}}
-                <a href="/contests/{{@root.map-group}}/{{contest}}#{{slug}}" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{capitalizeFirst (@root.map-group)}} contest submission"><i class="external-thread fa fa-map"></i></a>
+                <a href="/contests/{{@root.map-group}}/{{contest}}#{{slug}}" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{sentence @root.map-group}} contest submission"><i class="external-thread fa fa-map"></i></a>
                 {{/if}}
                 {{#if discussion}}
                 <a href="{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
