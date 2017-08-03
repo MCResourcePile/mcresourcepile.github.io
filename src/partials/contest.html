@@ -131,7 +131,7 @@
                     {{#each criteria}}
                     <td>{{this.label}} <small style="font-size: 12px;">{{#if max}}/ {{this.max}}{{else}}{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}{{/if}}</small></td>
                     {{/each}}
-                    <td>Total</td>
+                    <td {{#is @root.score_method 'percent'}}Weighted score{{else}}Summmed score{{/is}}>Total</td>
                 </tr>
             </thead>
             <tbody>
