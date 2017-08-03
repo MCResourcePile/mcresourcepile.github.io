@@ -17,20 +17,20 @@
 
     <!-- League winners -->
     <div class="league-results row center">
-        {{#if first_placing}}
+        {{#if first_place}}
         <div class="league-position col-sm-4">
             <div class="fa fa-star"></div>
-            <div class="league-team">{{second_placing}}</div>
+            <div class="league-team">{{second_place}}</div>
             <div class="league-team-position">2nd place</div>
         </div>
         <div class="league-position league-position-first col-sm-4">
             <span class="fa fa-trophy"></span>
-            <div class="league-team">{{first_placing}}</div>
+            <div class="league-team">{{first_place}}</div>
             <div class="league-team-position">1st place</div>
         </div>
         <div class="league-position col-sm-4">
             <div class="fa fa-star"></div>
-            <div class="league-team">{{third_placing}}</div>
+            <div class="league-team">{{third_place}}</div>
             <div class="league-team-position">3rd place</div>
         </div>
         {{else}}
