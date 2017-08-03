@@ -10,15 +10,16 @@
     <div class="row">
         <div class="col-sm-3">
             <h5>Sections</h5>
-            <div class="section-head">Statistics</div>
-            <a href="bow" class="section-item">Bow Records</a>
             <div class="section-head">Maps</div>
             <a href="maps" class="section-item active">PvP Maps</a>
-            <div class="section-head">League Records</div>
+            <div class="section-head">Competitions</div>
             <a href="league" class="section-item">PvP Tournaments</a>
+            <a href="league" class="section-item">Map Contests</a>
+            <div class="section-head">Statistics</div>
+            <a href="bow" class="section-item">Bow Records</a>
             <div class="section-head">ResourcePile</div>
-            <a href="tags" class="section-item">Tags</a>
             <a href="updates" class="section-item">Updates</a>
+            <a href="tags" class="section-item">Tags</a>
         </div>
         <div class="col-sm-9">
             <h6>
@@ -103,6 +104,12 @@
                         <td>If the map works with the latest version of Cardinal. Working maps must be placed in the cardinal ResourcePile repository.</td>
                         <td><span class="label label-info">Boolean</span></td>
                         <td><code>false</code></td>
+                   </tr>
+                    <tr>
+                        <td><code>"contest":</code></td>
+                        <td>If the map was submitted to a contest which is in our records.</td>
+                        <td><span class="label label-info">Contest ID</span></td>
+                        <td></td>
                    </tr>
                 </tbody>
             </table>
