@@ -11,7 +11,8 @@ module.exports = function(grunt) {
                 }],
                 helpers: ['handlebars-helpers', 'src/helpers/*.js'],
                 partials: ['src/posts/*.md', 'src/partials/*.html'],
-                templateData: 'src/data/**/*.json'
+                templateData: 'src/data/**/*.json',
+                globals: ['src/data/global.json']
             }
         },
         copy: {
