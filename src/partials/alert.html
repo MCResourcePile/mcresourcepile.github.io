@@ -1,13 +1,16 @@
-{{#page-category}}
-<div class="{{#if home}}index-alerts{{else}}content-alert{{/if}}">
+<div class="{{#page-category}}{{#if home}}index-alerts{{else}}content-alert{{/if}}{{/page-category}}">
     <noscript>
-        <div class="alert alert-danger" style="margin-bottom:8px;" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+        <div class="alert alert-{{alerts.noscript.class}} alert-global" role="alert">{{{alerts.noscript.message}}}</div>
     </noscript>
-    {{! Alert colours:          }}
-    {{! Green --> alert-success }}
-    {{! Blue ---> alert-info    }}
-    {{! Yellow -> alert-warning }}
-    {{! Red ----> alert-danger  }}
-    <div class="alert alert-info" role="alert">We have <a href="https://mcresourcepile.github.io/updates#discord"></a>opened our Discord channel</a> to the public. Click <a href="https://discord.gg/ygNgxKj">here</a> to join!</div>
+    {{#if alerts.enabled}}
+    {{#each alerts.globals}}
+    <div id="alert-{{hyphenate (lowercase (truncate message 12))}}" class="alert alert-{{class}} alert-global" role="alert">
+        {{{message}}}
+        {{#if dismissible}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
+        <script>$("#alert-{{hyphenate (lowercase (truncate message 12))}}").on("closed.bs.alert",function(){Cookies.set("alert-{{hyphenate (lowercase (truncate message 12))}}-hidden",!0,{expires:365})}),Cookies.get("alert-{{hyphenate (lowercase (truncate message 12))}}-hidden")&&$("#alert-{{hyphenate (lowercase (truncate message 12))}}").alert("close");</script>
+        {{/if}}
+    </div>
+    {{/each}}
+    {{/if}}
 </div>
-{{/page-category}}
