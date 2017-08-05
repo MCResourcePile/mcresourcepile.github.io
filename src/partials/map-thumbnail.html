@@ -78,7 +78,7 @@
             <span class="map-author-name">by</span>
             {{#if authors}}
             {{#authors}}
-            <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" {{#unless @root.page-category.contest}}href="?s={{uuid}}"{{/unless}}>{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+            <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="{{#if @root.page-category.contest}}/maps/{{@root.map-group}}{{/if}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
             {{/authors}}
             {{else}}<span class="map-author-name">Ghost</span>
             {{/if}}
