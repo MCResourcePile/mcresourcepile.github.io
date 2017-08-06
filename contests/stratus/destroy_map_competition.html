@@ -257,7 +257,6 @@
 </div>
 <script src="/assets/js/commons.js"></script>
 <script>
-    $('#scores-breakdown').tablesorter({ cssIcon: 'fa fa-sort', cssIconAsc: 'fa fa-sort-up', cssIconDesc: 'fa fa-sort-down' });
     $('.progress-bar').each(function(i, obj) {
         var points_current = $(this).attr('aria-valuenow');
         var points_max = $(this).attr('aria-valuemax');
@@ -303,8 +302,9 @@
             }
         });
         $(this).find(':last-child').text(points_total.toFixed(2));
+    }).promise().done( function() {
+        $('#scores-breakdown').tablesorter();
     });
-    $('#scores-breakdown').tablesorter();
 </script>
 </body>
 </html>
