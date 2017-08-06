@@ -1,5 +1,5 @@
 <div class="col-sm-6 col-lg-3 map-thumbnail center">
-    <div id="{{slug}}" class="thumbnail map-float {{#inArray @root.data.new slug}}map-glow-new{{/inArray}} {{#inArray @root.data.popular slug}}map-glow-popular{{/inArray}} {{#if @root.page-category.contest}}{{#is @root.first_place name}}map-glow-contest-first{{/is}}{{#is @root.second_place name}}map-glow-contest-second{{/is}}{{#is @root.third_place name}}map-glow-contest-third{{/is}}{{/if}}">
+    <div id="{{slug}}" class="thumbnail map-float {{#inArray @root.data.new slug}}map-glow-new{{/inArray}} {{#inArray @root.data.popular slug}}map-glow-popular{{/inArray}} {{#if @root.page-category.contest}}{{#is position '1'}}map-glow-contest-first{{/is}}{{#is position '2'}}map-glow-contest-second{{/is}}{{#is position '3'}}map-glow-contest-third{{/is}}{{/if}}">
         <div class="map-image" style="background-image: url('{{#if @root.page-category.league}}../../assets/img/{{#if @root.page-category.contest}}contest/{{@root.id}}/maps{{else}}tournament/shared/maps{{/if}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/if}}');">
             <div class="map-banner">
                 <a class="map-header" {{#if @root.page-category.maps}}href="https://mcresourcepile.github.io/maps/{{@root.map-group}}?s={{slug}}"{{/if}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong><span class="tag_hidden">{{slug}}</span></a>
@@ -12,6 +12,15 @@
                 {{#if cardinal}}
                 <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="external-thread fa fa-certificate"></i></a>
                 {{/if}}
+                {{#is position '1'}}
+                <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="1st&nbsp;place&nbsp;winner"><i class="external-thread fa fa-trophy"></i></a>
+                {{/is}}
+                {{#is position '2'}}
+                <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="2nd&nbsp;place&nbsp;runner&nbsp;up"><i class="external-thread fa fa-trophy"></i></a>
+                {{/is}}
+                {{#is position '3'}}
+                <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="3rd&nbsp;pplace"><i class="external-thread fa fa-trophy"></i></a>
+                {{/is}}
                 <span style="display:block;margin-top:-8px;">
                     {{#if tags}}
                         {{#tags}}
@@ -50,6 +59,9 @@
             </div>
             <div class="map-labels">
                 {{#if @root.page-category.maps}}
+                {{#if @root.page-category.contest}}
+                <span class="label {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}label-default{{/is}}{{/is}}{{/is}} map-label">{{ordinalize position}} place</span>
+                {{/if}}
                 {{#unless @root.page-category.contest}}
                 {{#inArray @root.data.new slug}}
                 <a href="?s=new" class="label label-primary map-label">New</a>

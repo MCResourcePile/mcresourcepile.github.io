@@ -126,9 +126,10 @@
     <!-- Contest submissions score breakdown -->
     <div class="league-info-section large">Score Breakdown</div>
     <div class="table-responsive">
-        <table id="scores-breakdown" class="league-info-table table table-striped">
+        <table id="scores-breakdown" class="league-info-table contest-info-table table table-striped">
             <thead>
-                <tr >
+                <tr>
+                    <td>#</td>
                     <td>Map</td>
                     {{#each criteria}}
                     <td>{{this.label}} <small style="font-size: 12px;">{{#if max}}/ {{this.max}}{{else}}{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}{{/if}}</small></td>
@@ -138,7 +139,8 @@
             </thead>
             <tbody>
                 {{#submissions}}
-                <tr class="map-score-breakdown">
+                <tr class="map-score-breakdown {{#is position '1'}}contest-table-first{{else}}{{#is position '2'}}contest-table-second{{else}}{{#is position '3'}}contest-table-third{{/is}}{{/is}}{{/is}}">
+                    <td>{{ordinalize position}}</td>
                     <td name="{{slug}}">{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</td>
                     {{#scores}}
                     {{#if (properties @root.criteria this.criteria 'max')}}
