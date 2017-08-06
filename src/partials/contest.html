@@ -205,7 +205,7 @@
         });
         $(this).find(':last-child').text(points_total.toFixed(2));
     }).promise().done( function() {
-        $('#scores-breakdown').tablesorter();
+        $('#scores-breakdown').tablesorter({sortList: [[0,0]]});
     });
 </script>
 </body>
