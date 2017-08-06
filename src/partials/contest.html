@@ -116,11 +116,11 @@
     
     {{#if submissions}}
     <!-- Contest submissions -->
-    <div class="league-info-section large">Submissions</div>
+    <div class="league-info-section large">Submissions <small>({{length submissions}} maps)</small></div>
     <div class="row">
-        {{#submissions}}
+        {{#withSort submissions "name"}}
         {{> map-thumbnail}}
-        {{/submissions}}
+        {{/withSort}}
     </div>
 
     <!-- Contest submissions score breakdown -->
