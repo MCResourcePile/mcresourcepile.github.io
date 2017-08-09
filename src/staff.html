@@ -81,7 +81,7 @@
                 <span class="contact-user-thumbnail thumbnail">
                     <img class="contact-user-avatar" src="https://crafatar.com/avatars/{{properties ../this this.username 'uuid'}}?overlay">
                 </span>
-                <div class="contact-user-details">>
+                <div class="contact-user-details">
                     <div class="contact-user-name position-helper">{{username}}</div>
                     <div class="contact-user-description">{{#if role}}{{role}}{{else}}Helper{{/if}}</div>
                     {{#if (properties ../this this.username 'github')}}<a class="contact-user-outlet" href="https://github.com/{{properties ../this this.username 'github'}}"><i class="fa fa-github"></i></a>{{/if}}
