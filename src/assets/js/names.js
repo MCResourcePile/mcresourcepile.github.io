@@ -9,5 +9,7 @@
    $("a:contains('NanuSci')").html("<span class=\"position-helper\">Nanu</span>")
    $("a:contains('ViceWatercolour')").html("<span class=\"position-developer\">ViceWatercolour</span>")
    $("a:contains('Palmidence')").html("<span class=\"position-developer\">ViceWatercolour</span>")
+   $("a:contains('jck')").html("<span class=\"position-helper\">jck</span>")
+   $("a:contains('jackbear9')").html("<span class=\"position-helper\">jck</span>")
    $("tr:contains('INT')").html("")
  };
