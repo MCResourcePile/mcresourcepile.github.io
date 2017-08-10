@@ -83,6 +83,7 @@
                     </div>
                 </div>
                 <div class="map-authors">
+                    <span class="map-author-name">by</span>
                     {{#if authors}}
                     {{#authors}}
                     <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="{{#if @root.page-category.contest}}/maps/{{@root.map-group}}{{/if}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
@@ -175,7 +176,7 @@
         {{/panels}}
         {{/if}}
     </div>
-    
+
     {{#if submissions}}
     <!-- Contest submissions -->
     <div class="league-info-section large">Submissions <small>({{length submissions}} maps)</small></div>
