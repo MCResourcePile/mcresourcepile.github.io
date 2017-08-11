@@ -11,5 +11,7 @@
    $("a:contains('Palmidence')").html("<span class=\"position-developer\">ViceWatercolour</span>")
    $("a:contains('jck')").html("<span class=\"position-helper\">jck</span>")
    $("a:contains('jackbear9')").html("<span class=\"position-helper\">jck</span>")
+   $("a:contains('_3Each')").html("<span class=\"position-helper\">_3Each</span>")
+   $("a:contains('3Each')").html("<span class=\"position-helper\">_3Each</span>")
    $("tr:contains('INT')").html("")
  };
