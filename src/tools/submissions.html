@@ -1,0 +1,140 @@
+{{> header}}
+<div class="container">
+    <!-- Page content -->
+    <div class="content-header">
+        <div class="content-alert">
+            <noscript>
+                <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+            </noscript>
+            <div id="alert-want-to-help" class="alert alert-warning alert-global" role="alert">
+                Want to help expand ResourcePile? We're looking for people to join our team! Find out more <a href="https://mcresourcepile.github.io/updates#want_to_help_expand_resourcepile">here</a>.
+            </div>
+        </div>
+        <div class="content-title">Map Submission Thread Builder</div>
+        <div class="content-subtitle">
+            Generate a submission thread for your map on the Stratus Network
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <form id="input-form" class="form-horizontal" action="#" method="post">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input-name">Name</label>  
+                        <div class="col-md-7">
+                            <input id="input-name" name="input-name" type="text" placeholder="Name" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input-description">Description</label>
+                        <div class="col-md-7">                     
+                            <textarea class="form-control" id="input-description" name="input-description" placeholder="A description of your map"></textarea>
+                            <span class="help-block">Accepts HTML elements</span>  
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input-download">Download URL</label>  
+                        <div class="col-md-7">
+                            <input id="input-download" name="input-download" type="text" placeholder="https://www.dropbox.com/sh/..." class="form-control input-md" required="">
+                            <span class="help-block">Please make sure you have packaged your map correctly, and only use Dropbox or Google Drive</span>  
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input-xml">XML URL</label>  
+                        <div class="col-md-7">
+                            <input id="input-xml" name="input-xml" type="text" placeholder="https://gist.github.com/..." class="form-control input-md"> 
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input-album">Images URL</label>  
+                        <div class="col-md-7">
+                            <input id="input-album" name="input-album" type="text" placeholder="https://imgur.com/a/..." class="form-control input-md" required="">
+                        </div>
+                    </div>
+                    
+                    <div class="center">
+                        <button id="input-submit" name="input-submit" class="btn btn-success" type="submit">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <ul id="output-tabs" class="nav nav-tabs" style="margin-bottom: 16px;">
+                <li role="presentation" class="active"><a href="#output" data-toggle="tab">Output</a></li>
+                <li role="presentation"><a href="#preview" data-toggle="tab">Preview</a></li>
+            </ul>
+            <div id="output-tabs-content" class="tab-content">
+                <div class="tab-pane active in" id="output">
+                    <div class="well well-output" id="thread-output-box">
+ +                       Loading output...
+ +                   </div>
+                    <div id="output-dummy" class="hidden"></div>
+                </div>
+                <div class="tab-pane" id="preview">
+                    Loading preview...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.2/showdown.min.js"></script>
+<script id="output-template" type="text/x-handlebars-template">
+### &#123;&#123;input-name&#125;&#125;<br>
+    
+&#123;&#123;&#123;input-description&#125;&#125;&#125;<br>
+    
+**[Download](&#123;&#123;input-download&#125;&#125;)**<br>
+&#123;&#123;#if input-xml&#125;&#125;**[XML](&#123;&#123;input-xml&#125;&#125;)**<br>&#123;&#123;/if&#125;&#125;
+**[Images](&#123;&#123;input-album&#125;&#125;)**
+</script>
+<script>
+    var markdown = new showdown.Converter();
+    var data = {};
+    
+    var rawTemplate = $('#output-template').html().replace('&#125;', '}').replace('&#123;', '{');
+    $('#output-dummy').html(rawTemplate);
+    outputTemplate = Handlebars.compile( $('#output-dummy').html() );
+    var output;
+    var compiledOutput;
+    
+    (function ($) {
+        $.fn.serializeFormJSON = function () {
+
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function () {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+    })(jQuery);
+
+    $('form').submit(function (e) {
+        e.preventDefault();
+        data = $(this).serializeFormJSON();
+        console.log(JSON.stringify(data));
+        updatePreview();
+    });
+    
+    function updatePreview() {
+        output = outputTemplate(data);
+        compiledOutput = markdown.makeHtml(outputTemplate(data));
+        $('#thread-output-box').html(output);
+        $('#preview').html(compiledOutput);
+    }
+</script>
+{{> footer}}
+</body>
+</html>
