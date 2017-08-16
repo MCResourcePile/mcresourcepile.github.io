@@ -12,7 +12,7 @@
         </div>
         <div class="content-title">Map Submission Thread Builder</div>
         <div class="content-subtitle">
-            Generate a submission thread for your map on the Stratus Network
+            Generate a submission thread for your map on the <a href="http://stratus.network/">Stratus Network</a>
         </div>
     </div>
     <div class="row">
@@ -22,29 +22,39 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="input-name">Name</label>  
                         <div class="col-md-7">
-                            <input id="input-name" name="input-name" type="text" placeholder="Name" class="form-control input-md" required="">
+                            <input id="input-name" name="input-name" type="text" placeholder="Name" class="form-control input-md" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="input-name">Overview Image</label>  
                         <div class="col-md-7">
-                            <input id="input-image" name="input-image" type="text" placeholder="Image" class="form-control input-md">
+                            <input id="input-image" name="input-image" type="url" placeholder="Image URL" class="form-control input-md" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="input-description">Description</label>
                         <div class="col-md-7">                     
-                            <textarea class="form-control" id="input-description" name="input-description" placeholder="A description of your map"></textarea>
-                            <span class="help-block">Accepts HTML elements</span>  
+                            <textarea class="form-control" id="input-description" name="input-description" placeholder="A description of your map" required></textarea>
+                            <span class="help-block">Accepts Markdown and HTML</span>  
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input-description">
+                            Authors<br>
+                            <small id="author-add"><a href="#"><i class="fa fa-plus"></i> Add</a></small>
+                        </label>
+                        <div class="col-md-7" id="author-wrapper">                     
+                            <div><input id="input-author" name="input-author" type="text" placeholder="Author name" class="form-control input-md" required></div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="input-download">Download URL</label>  
                         <div class="col-md-7">
-                            <input id="input-download" name="input-download" type="text" placeholder="https://www.dropbox.com/sh/..." class="form-control input-md" required="">
+                            <input id="input-download" name="input-download" type="url" placeholder="https://www.dropbox.com/sh/..." class="form-control input-md" required>
                             <span class="help-block">Please make sure you have packaged your map correctly, and only use Dropbox or Google Drive</span>  
                         </div>
                     </div>
@@ -52,14 +62,14 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="input-xml">XML URL</label>  
                         <div class="col-md-7">
-                            <input id="input-xml" name="input-xml" type="text" placeholder="https://gist.github.com/..." class="form-control input-md"> 
+                            <input id="input-xml" name="input-xml" type="url" placeholder="https://gist.github.com/..." class="form-control input-md"> 
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="input-album">Images URL</label>  
                         <div class="col-md-7">
-                            <input id="input-album" name="input-album" type="text" placeholder="https://imgur.com/a/..." class="form-control input-md" required="">
+                            <input id="input-album" name="input-album" type="url" placeholder="https://imgur.com/a/..." class="form-control input-md" required>
                         </div>
                     </div>
                     
@@ -76,32 +86,34 @@
             </ul>
             <div id="output-tabs-content" class="tab-content">
                 <div class="tab-pane active in" id="output">
-                    <div class="well well-output" id="thread-output-box">
- +                       Loading output...
- +                   </div>
+                    <code id="thread-output-box">
+                        Nothing to output - complete the form to generate markdown
+                    </code>
                     <div id="output-dummy" class="hidden"></div>
                 </div>
                 <div class="tab-pane" id="preview">
-                    Loading preview...
+                    Nothing to preview - complete the form to generate preview
                 </div>
             </div>
+                <div class="alert alert-warning alert-global alert-sm" role="alert">Please note that things may appear slightly different on the Stratus forums</div>
         </div>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.2/showdown.min.js"></script>
 <script id="output-template" type="text/x-handlebars-template">
-### &#123;&#123;input-name&#125;&#125;<br><br>
+### &#123;&#123;input-name&#125;&#125;&nbsp;&nbsp;<br>
+##### Created by &#123;&#123;#with input-author as |author|&#125;&#125;&#123;&#123;author&#125;&#125;  &#123;&#123;/with&#125;&#125;<br><br>
     
 ![&#123;&#123;input-image&#125;&#125;](&#123;&#123;input-image&#125;&#125;)<br><br>
     
-&#123;&#123;&#123;input-description&#125;&#125;&#125;  <br><br>
+&#123;&#123;&#123;input-description&#125;&#125;&#125;&nbsp;&nbsp;<br><br>
     
-**[Download](&#123;&#123;input-download&#125;&#125;)**  <br><br>
-&#123;&#123;#if input-xml&#125;&#125;**[XML](&#123;&#123;input-xml&#125;&#125;)**  <br><br>&#123;&#123;/if&#125;&#125;
-**[Images](&#123;&#123;input-album&#125;&#125;)**  <br><br>
+**[Download](&#123;&#123;input-download&#125;&#125;)**&nbsp;&nbsp;<br>
+&#123;&#123;#if input-xml&#125;&#125;**[XML](&#123;&#123;input-xml&#125;&#125;)**&nbsp;&nbsp;<br>&#123;&#123;/if&#125;&#125;
+**[Images](&#123;&#123;input-album&#125;&#125;)**&nbsp;&nbsp;<br><br>
 
-> Generated with ResourcePile's [map submission thread builder](https://mcresourcepile.github.io/tools/submissions)
+*Created with ResourcePile's [map submission thread builder](https://mcresourcepile.github.io/tools/submissions)*
 </script>
 <script>
     var markdown = new showdown.Converter();
@@ -109,9 +121,27 @@
     
     var rawTemplate = $('#output-template').html().replace('&#125;', '}').replace('&#123;', '{');
     $('#output-dummy').html(rawTemplate);
+    console.log($('#output-dummy').html());
     outputTemplate = Handlebars.compile( $('#output-dummy').html() );
     var output;
     var compiledOutput;
+    
+    $(document).ready(function() {
+        var max_fields = 10;
+        var wrapper  = $('#author-wrapper');
+        var add_button = $('#author-add');
+        var x = 1;
+        $(add_button).click(function(e){
+            e.preventDefault();
+            if(x < max_fields){
+                x++;
+                $(wrapper).append('<div style="margin-top:8px;"><input id="input-author" name="input-author" type="text" placeholder="Author name" class="form-control input-md" required><a href="#" class="pull-right remove_field"><i class="fa fa-times"></i></a></div>');
+            }
+        });
+        $(wrapper).on("click",".remove_field", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+    });
     
     (function ($) {
         $.fn.serializeFormJSON = function () {
