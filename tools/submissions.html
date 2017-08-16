@@ -121,6 +121,13 @@
                             <input id="input-name" name="input-name" type="text" placeholder="Name" class="form-control input-md" required="">
                         </div>
                     </div>
+                    
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input-name">Overview Image</label>  
+                        <div class="col-md-7">
+                            <input id="input-image" name="input-image" type="text" placeholder="Image" class="form-control input-md">
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="input-description">Description</label>
@@ -180,13 +187,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.2/showdown.min.js"></script>
 <script id="output-template" type="text/x-handlebars-template">
-### &#123;&#123;input-name&#125;&#125;<br>
+### &#123;&#123;input-name&#125;&#125;<br><br>
     
-&#123;&#123;&#123;input-description&#125;&#125;&#125;<br>
+![&#123;&#123;input-image&#125;&#125;](&#123;&#123;input-image&#125;&#125;)<br><br>
     
-**[Download](&#123;&#123;input-download&#125;&#125;)**<br>
-&#123;&#123;#if input-xml&#125;&#125;**[XML](&#123;&#123;input-xml&#125;&#125;)**<br>&#123;&#123;/if&#125;&#125;
-**[Images](&#123;&#123;input-album&#125;&#125;)**
+&#123;&#123;&#123;input-description&#125;&#125;&#125;  <br><br>
+    
+**[Download](&#123;&#123;input-download&#125;&#125;)**  <br><br>
+&#123;&#123;#if input-xml&#125;&#125;**[XML](&#123;&#123;input-xml&#125;&#125;)**  <br><br>&#123;&#123;/if&#125;&#125;
+**[Images](&#123;&#123;input-album&#125;&#125;)**  <br><br>
+
+> Generated with ResourcePile's [map submission thread builder](https://mcresourcepile.github.io/tools/submissions)
 </script>
 <script>
     var markdown = new showdown.Converter();
