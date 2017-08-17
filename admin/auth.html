@@ -195,7 +195,8 @@
                 $('#auth-well').removeClass('well-custom-green');
                 $('.auth-group-1').hide();
                 $('.auth-group-2').show();
-                isAuthenticated()
+                $('.auth-enabled').hide();
+                $('.auth-disabled').show();
             } else {
                 return false;
             }
@@ -225,7 +226,8 @@
             $('#auth-well').addClass('well-custom-green');
             $('.auth-group-1').show();
             $('.auth-group-2').hide();
-            isAuthenticated()
+            $('.auth-enabled').show();
+            $('.auth-disabled').hide();
         } else {
             $("#bad-credentials").show().delay(5000).fadeOut();
         }
