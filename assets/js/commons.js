@@ -13,7 +13,7 @@ function isAuthenticated() {
 
 var selected_theme = Cookies.get('rp_user_theme');
 if (selected_theme == 'dark') {
-    $('head').append('<link href="/assets/css/dark.css" rel="stylesheet">');
+    $('head').prepend('<link href="/assets/css/dark.css" rel="stylesheet">');
 } else {
     Cookies.set('rp_user_theme', 'default', { expires: 365 });
 }
