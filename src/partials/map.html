@@ -1,17 +1,23 @@
 {{#data}}
 {{#withSort maps "name"}}
-{{#unless download}}
+{{#if download}}
+{{> map-thumbnail}}
+{{else}}
+{{#if sourced}}
+{{#is sourced true}}
 <div id="{{slug}}" class="no-download"></div>
 {{else}}
 {{> map-thumbnail}}
-{{/unless}}
+{{/is}}
+{{/if}}
+{{/if}}
 {{/withSort}}
 {{/data}}
 <div class="modal fade" id="download-starting-message" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Your download will begin shortly...</h4>
+                <h4 class="modal-title">Your download will begin shortly.</h4>
             </div>
             <div class="modal-body">
                 Please wait while we compile your download.
@@ -26,7 +32,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Your download has begun...</h4>
+                <h4 class="modal-title">Your download has begun.</h4>
             </div>
             <div class="modal-body">
                 Thank you for downloading this map from ResourcePile and supporting free public maps as well as the map authors.<br><br>
@@ -41,11 +47,26 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="download-opened" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Your download has been opened in a new window.</h4>
+            </div>
+            <div class="modal-body">
+                You have been directed to the location of the original download for this map.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="download-error-message" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Your download failed...</h4>
+                <h4 class="modal-title">Your download failed.</h4>
             </div>
             <div class="modal-body">
                 Something went wrong while compiling your download. Please try again, but if the issue persists please report an issue on our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Issues Tracker</a>.
