@@ -258,7 +258,7 @@
             var amount = parseFloat($(this).attr('amount'));
             if (points_bonus == true) {
                 if (operation == 'percent') {
-                    points_total = points_total + (amount / points_total)
+                    points_total = points_total + ((amount / 100) * points_total)
                 } else if (operation == 'multiply') {
                     points_total = points_total * amount
                 } else {
