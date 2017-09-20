@@ -15,5 +15,8 @@
    $("a:contains('3Each')").html("<span class=\"position-helper\">_3Each</span>")
    $("a:contains('McFarlin')").html("<span class=\"position-helper\">McFarlin</span>")
    $("a:contains('McFarlinMC')").html("<span class=\"position-helper\">McFarlin</span>")
+   $("a:contains('Epicness')").html("<span class=\"position-addon-project\">Epicness</span>")
+   $("a:contains('EpicnessGitHub')").html("<span class=\"position-addon-project\">Epicness</span>")
+   $("a:contains('amactus')").html("<span class=\"position-addon-project\">amactus</span>")
    $("tr:contains('INT')").html("")
  };
