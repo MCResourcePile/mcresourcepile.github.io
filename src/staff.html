@@ -53,7 +53,7 @@
     {{/if}}
     {{#if addonproject}}
     <div class="contact-position-section">
-        <div class="contact-position-title position-developer">Addon Project Managers <small>{{length addonproject}}</small></div>
+        <div class="contact-position-title position-addon-project">Addon Project Managers <small>{{length addonproject}}</small></div>
         <div class="row">
             {{#each addonproject}}
             <div class="col-md-2 col-sm-4 col-xs-6 center">
@@ -61,7 +61,7 @@
                     <img class="contact-user-avatar" src="https://crafatar.com/avatars/{{properties ../this this.username 'uuid'}}?overlay">
                 </span>
                 <div class="contact-user-details">
-                    <div class="contact-user-name position-developer">{{username}}</div>
+                    <div class="contact-user-name position-addon-project">{{username}}</div>
                     <div class="contact-user-description">{{#if role}}{{role}}{{else}}Addon Project Manager{{/if}}</div>
                     {{#if (properties ../this this.username 'github')}}<a class="contact-user-outlet" href="https://github.com/{{properties ../this this.username 'github'}}"><i class="fa fa-github"></i></a>{{/if}}
                     {{#if (properties ../this this.username 'twitter')}}<a class="contact-user-outlet" href="https://twitter.com/{{properties ../this this.username 'twitter'}}"><i class="fa fa-twitter"></i></a>{{/if}}
