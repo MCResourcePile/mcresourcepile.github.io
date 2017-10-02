@@ -1,31 +1,32 @@
 <html>
     <head>
-        <title>Access Tokens - ResourcePile</title>
+        <title>Preferences - ResourcePile</title>
         <!-- Page meta data -->
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="A collection of resources for various competitive Minecraft networks." name="description">
-        <meta content="Access Tokens - ResourcePile" property="og:title">
-        <meta content="A collection of resources for various competitive Minecraft networks." name="og:description">
+        <meta content="Customize your ResourcePile experience" name="description">
+        <meta content="Preferences - ResourcePile" property="og:title">
+        <meta content="Customize your ResourcePile experience" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
-        <meta content="Access Tokens - ResourcePile" name="twitter:title">
-        <meta content="A collection of resources for various competitive Minecraft networks." name="twitter:description">
+        <meta content="Preferences - ResourcePile" name="twitter:title">
+        <meta content="Customize your ResourcePile experience" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="shortcut icon" href="/assets/favicon.ico">
-        <link href="/assets/css/index.css" rel="stylesheet">
+        
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
         <script src="/assets/js/js.cookie.js"></script>
+        <script src="/assets/js/preferences.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -38,7 +39,7 @@
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
         
     </head>
-    <body id="wrapper">
+    <body >
         <!-- Page navigation -->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -88,25 +89,32 @@
                         <li><a href="/addon-project/wiki"><span class="fa fa-globe"></span> Wiki</a></li>
                         <li class=""><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar-right"><a href="/admin/auth"><span class="fa fa-github-alt"></span> GitHub API: <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
-                    </ul>
                 </div>
             </div>
         </div>
-        <div class="content-background content-background-full">
-<div class="container" id="wrapper-header">
+        <div class="content-background ">
+<div class="container">
+    <div class="content-header">
+        <div class="content-alert">
+            <noscript>
+                <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+            </noscript>
+        </div>
+        <div class="content-title">Preferences</div>
+        <div class="content-subtitle">Customize your ResourcePile experience</div>
+    </div>
     <div class="row">
-        <div class="col-md-6 col-md-push-3">
+        <div class="col-md-6 col-sm-12">
             <div id="auth-well" class="well well-custom-red">
+                <div class="well-header">GitHub Access Token</div>
                 <noscript>
                     <div class="alert alert-danger alert-sm" role="alert" style="margin-bottom: 12px;">You must have JavaScript enabled to authenticate with the GitHub API</div>
                 </noscript>
-                <div id="save-success" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token successfully saved</div>
+                <div id="token-save-success" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token successfully saved</div>
                 <div id="token-revoked" class="alert alert-info alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token has been revoked</div>
-                <div id="bad-credentials" class="alert alert-warning alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token unable to be saved - bad credentials</div>
-                <div id="no-input" class="alert alert-warning alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Please enter a valid access token</div>
-                <input type="text" name="access_token" id="access_token" tabindex="1" class="form-control form-text-box" style="width:100%" placeholder="Access Token" value="">
+                <div id="token-bad-credentials" class="alert alert-warning alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token unable to be saved - bad credentials</div>
+                <div id="token-no-input" class="alert alert-warning alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Please enter a valid access token</div>
+                <input type="text" name="access_token" id="access_token" tabindex="1" class="form-control form-text-box" style="width:100%" placeholder="Token" value="">
                 <div class="row" style="margin-top:12px;">
                     <div class="col-md-6">
                         <div class="auth-group-1" style="display:none">
@@ -139,95 +147,22 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6 col-sm-12">
+            <div id="theme-well" class="well well-custom-blue">
+                <div class="well-header">Site Theme</div>
+                <div id="theme-updated" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Theme successfully updated</div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <a class="btn btn-default btn-auth" onclick="Cookies.set('rp_user_theme', 'default', { expires: 365 });updateTheme()">Default (light)</a>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <a class="btn btn-default btn-auth" onclick="Cookies.set('rp_user_theme', 'dark', { expires: 365 });updateTheme()">Dark</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<script>
-    var token_current = Cookies.get('rp_user_token');
-    if (token_current) {
-        $('#access_token').val(token_current);
-        $('#auth-well').addClass('well-custom-green');
-        $('.auth-group-1').show();
-        user = (function () {
-                user = null;
-                $.ajax({
-                    'async': false,
-                    'global': false,
-                    'url': 'https://api.github.com/user?access_token=' + token_current,
-                    'dataType': "json",
-                    'success': function (data) {
-                        user = data;
-                    }
-                });
-            return user;
-        })();
-        $('#user_user_name').text(user.login);
-        ratelimit = (function () {
-                ratelimit = null;
-                $.ajax({
-                    'async': false,
-                    'global': false,
-                    'url': 'https://api.github.com/rate_limit?access_token=' + token_current,
-                    'dataType': "json",
-                    'success': function (data) {
-                        ratelimit = data;
-                    }
-                });
-            return ratelimit;
-        })();
-        $('#user_rate_remaining').text(ratelimit.rate.remaining);
-        $('#user_rate_limit').text(ratelimit.rate.limit);
-        $('#user_rate_approximate').text(Math.round(ratelimit.rate.remaining / 7));
-    } else {
-        $('.auth-group-2').show();
-    }
-
-    function revokeToken() {
-        if (token_current) {
-            if (confirm("Are you sure you want to revoke your access token?") == true) {
-                Cookies.remove('rp_user_token');
-                $("#token-revoked").show().delay(5000).fadeOut();
-                $('#access_token').val('');
-                $('#auth-well').removeClass('well-custom-green');
-                $('.auth-group-1').hide();
-                $('.auth-group-2').show();
-                $('.auth-enabled').hide();
-                $('.auth-disabled').show();
-            } else {
-                return false;
-            }
-        }
-    }
-
-    function saveToken() {
-        var token_input = $('#access_token').val();
-        response = (function () {
-                response = null;
-                $.ajax({
-                    'async': false,
-                    'global': false,
-                    'url': 'https://api.github.com/rate_limit?access_token=' + token_input,
-                    'dataType': "json",
-                    'success': function (data) {
-                        response = data;
-                    }
-                });
-            return response;
-        })();
-        if (token_input == '') {
-            $("#no-input").show().delay(5000).fadeOut();
-        } else if (token_input && response !== null) {
-            Cookies.set('rp_user_token', token_input, { expires: 365 });
-            $("#save-success").show().delay(5000).fadeOut();
-            $('#auth-well').addClass('well-custom-green');
-            $('.auth-group-1').show();
-            $('.auth-group-2').hide();
-            $('.auth-enabled').show();
-            $('.auth-disabled').hide();
-        } else {
-            $("#bad-credentials").show().delay(5000).fadeOut();
-        }
-    }
-</script>
 </div>
 <div class="footer">
     <div class="container">
@@ -253,7 +188,9 @@
             </div>
             <div class="footer-section col-md-3">
                 <div class="footer-section-head">Site</div>
-                <a class="footer-item" href="/updates">Update Posts</a>
+                <a class="footer-item" href="/updates">Updates</a>
+                <a class="footer-item" href="/preferences">Preferences</a>
+                <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
                 <a class="footer-item" href="/other">Other Networks</a>
             </div>
         </div>
