@@ -70,10 +70,6 @@ code {
     border-top: 1px solid #222222;
 }
 
-.table-striped > tbody > tr:nth-of-type(even) {
-    background-color: #343436;
-}
-
 .navbar-inverse {
     background-color: #414141;
 }
@@ -197,7 +193,7 @@ code {
 }
 
 .progress-bar:last-child:before {
-    background-color: #afaeb7;
+    background-color: #afaeb7 !important;
 }
 
 /* index.css */
@@ -247,11 +243,13 @@ code {
     color: #a2a2a2;
 }
 
-tr:nth-child(odd) {
+tr:nth-child(odd),
+.table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #2c2c2c;
 }
 
-tr:nth-child(even) {
+tr:nth-child(even),
+.table-striped > tbody > tr:nth-of-type(even) {
     background-color: #343436;
 }
 
@@ -387,5 +385,6 @@ td {
 .sidenav > li > a:focus,
 .sidenav > li.active > a:hover,
 .sidenav > li.active > a:focus {
-    color: #3c3c3c
+    background-color: #2f2f2f;
+    color: #fff;
 }
