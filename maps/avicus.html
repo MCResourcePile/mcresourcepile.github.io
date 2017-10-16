@@ -116,44 +116,50 @@
 			A collection of publicly downloadable maps from the <a href="http://avicus.net">Avicus Network</a>.
 		</div>
 	</div>
-	<!-- Game mode navigation menu -->
-	<form name="search_form" class="record-search-container">
-		<input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
-	</form>
-	<div class="game-mode-navigation row">
-        <div class="col-xs-12 col-md-6">
-            <div class="col-xs-6">
-                <div class="game-mode-section-header">Objectives</div>
-                <a class="game-mode-button game-ctf" href="?s=ctf"></a>
-                <a class="game-mode-button game-ctw" href="?s=ctw"></a>
-                <a class="game-mode-button game-dtm" href="?s=dtm"></a>
-                <a class="game-mode-button game-dtc" href="?s=dtc"></a>
-                <a class="game-mode-button game-koth" href="?s=koth"></a>
-            </div>
-            <div class="col-xs-6">
-                <div class="game-mode-section-header">Deathmatch</div>
-                <a class="game-mode-button game-frenzy" href="?s=frenzy"></a>
-                <a class="game-mode-button game-skywars" href="?s=skywars"></a>
-                <a class="game-mode-button game-tdm" href="?s=tdm"></a>
+    <div class="thumbnail">
+        <form name="search_form" class="record-search-container">
+            <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
+        </form>
+        <div class="game-mode-navigation row">
+            <div class="col-xs-12 col-md-12">
+                <div class="col-xs-2">
+                    <div class="game-mode-section-header">Objectives</div>
+                    <a class="game-mode-button game-ctf" href="?s=ctf"></a>
+                    <a class="game-mode-button game-ctw" href="?s=ctw"></a>
+                    <a class="game-mode-button game-dtc" href="?s=dtc"></a>
+                    <a class="game-mode-button game-dtm" href="?s=dtm"></a>
+                </div>
+                <div class="col-xs-2">
+                    <div class="game-mode-section-header">Deathmatch</div>
+                    <a class="game-mode-button game-koth" href="?s=koth"></a>
+                    <a class="game-mode-button game-tdm" href="?s=tdm"></a>
+                </div>
+                <div class="col-xs-2">
+                    <div class="game-mode-section-header">Blitz</div>
+                    <a class="game-mode-button game-arcade" href="?s=arcade"></a>
+                    <a class="game-mode-button game-frenzy" href="?s=frenzy"></a>
+                    <a class="game-mode-button game-skywars" href="?s=skywars"></a>
+                </div>
+                <div class="col-xs-2">
+                    <div class="game-mode-section-header">Competitive</div>
+                    <a class="game-mode-button game-tournament" href="?s=tournament"></a>
+                </div>
+                <div class="col-xs-2">
+                    <div class="game-mode-section-header">Seasons</div>
+                    <a class="game-mode-button season-christmas" href="?s=christmas"></a>
+                    <a class="game-mode-button season-halloween" href="?s=halloween"></a>
+                    <a class="game-mode-button game-throwback" href="?s=throwback"></a>
+                </div>
+                <div class="col-xs-2">
+                    <div class="game-mode-section-header">Other</div>
+                    <a class="game-mode-button custom-new" href="?s=new"></a>
+                    <a class="game-mode-button custom-popular" href="?s=popular"></a>
+                    <a class="game-mode-button license-by-nc-sa" href="?s=by-nc-sa"></a>
+                    <a class="game-mode-button license-by-sa" href="?s=by-sa"></a>
+                </div>
             </div>
         </div>
-        <div class="col-xs-12 col-md-6">
-            <div class="col-xs-6">
-                <div class="game-mode-section-header">Other</div>
-                <a class="game-mode-button game-arcade" href="?s=arcade"></a>
-                <a class="game-mode-button game-throwback" href="?s=throwback"></a>
-                <a class="game-mode-button game-tournament" href="?s=tournament"></a>
-            </div>
-            <div class="col-xs-6">
-                <div class="game-mode-section-header">&nbsp;</div>
-                <a class="game-mode-button custom-new" href="?s=new"></a>
-                <a class="game-mode-button custom-popular" href="?s=popular"></a>
-                <span class="game-mode-button">Licenses:</span>
-                <a class="game-mode-button license-by-nc-sa" href="?s=by-nc-sa"></a>
-                <a class="game-mode-button license-by-sa" href="?s=by-sa"></a>
-            </div>
-        </div>
-	</div>
+    </div>
 	<div class="total-maps center"></div>
 	<div id="maps-output" class="maps-output">
 		<div class="dynamic">
