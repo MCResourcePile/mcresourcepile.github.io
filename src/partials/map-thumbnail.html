@@ -21,7 +21,7 @@
                 {{#is position '3'}}
                 <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="3rd&nbsp;place"><i class="external-thread fa fa-trophy"></i></a>
                 {{/is}}
-                <span style="display:block;margin-top:-8px;">
+                <span style="display:block;margin-top:-{{#if @root.page-category.league}}4{{else}}8{{/if}}px;">
                     {{#if tags}}
                         {{#tags}}
                             {{#if arcade}}<li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>{{/if}}
@@ -129,7 +129,7 @@
                             <span class="map-author-name">created by</span>
                             {{#if authors}}
                             {{#authors}}
-                            <li class="game-tag">{{#if username}}<img src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&overlay"> <a class="map-author-name" href="?s={{uuid}}">{{username}}</a>{{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/if}}</li>
+                            <li class="game-tag">{{#if username}}<img src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s={{uuid}}">{{username}}</a>{{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/if}}</li>
                             {{/authors}}
                             {{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay"> <span class="map-author-name">Ghost</span>
                             {{/if}}
