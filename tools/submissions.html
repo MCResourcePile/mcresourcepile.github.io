@@ -185,13 +185,13 @@
             </ul>
             <div id="output-tabs-content" class="tab-content">
                 <div class="tab-pane active in" id="output">
-                    <code id="thread-output-box">
-                        Nothing to output - complete the form to generate markdown
-                    </code>
+                    <pre id="thread-output-box">
+                        Nothing to output; complete the form to generate markdown.
+                    </pre>
                     <div id="output-dummy" class="hidden"></div>
                 </div>
                 <div class="tab-pane" id="preview">
-                    Nothing to preview - complete the form to generate preview
+                    Nothing to preview; complete the form to generate preview.
                 </div>
             </div>
             <div class="alert alert-warning alert-global alert-sm" role="alert">Please note that things may appear slightly different on the Stratus forums</div>
@@ -199,21 +199,29 @@
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.2/showdown.min.js"></script>
-<script id="output-template" type="text/x-handlebars-template">
-### **‹‹input-name››**&nbsp;&nbsp;<br>
-##### Created by ‹‹#with input-author as |author|››‹‹author››‹‹/with››<br><br>
-    
-![‹‹input-image››](‹‹input-image››)<br><br>
-    
-‹‹‹input-description›››&nbsp;&nbsp;<br><br>
-    
-**[Download](‹‹input-download››)**&nbsp;&nbsp;  <br>
-**[Images](‹‹input-album››)**&nbsp;&nbsp;  <br>
-‹‹#if input-xml››**[XML](‹‹input-xml››)**<br>‹‹/if››<br>
-
-*Created with ResourcePile's [map submission thread builder](https://mcresourcepile.github.io/tools/submissions)*
+<script>
+Handlebars.registerHelper('ifObject', function(item, options) {
+    if(typeof item === "object") {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});               
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.2/showdown.min.js"></script>
+<script id="output-template" type="text/x-handlebars-template">### **‹‹input-name››**  
+###### Created by ‹‹#ifObject input-author››‹‹#each input-author as |author|››‹‹author››‹‹#unless @last››, ‹‹/unless››‹‹/each››‹‹else››‹‹input-author››‹‹/ifObject››
+    
+![‹‹input-image››](‹‹input-image››)
+    
+‹‹‹input-description›››  
+    ‹‹#with input-author as |author|››**‹‹author››**‹‹/with››
+    
+**[Download](‹‹input-download››)**    
+**[Images](‹‹input-album››)**  
+‹‹#if input-xml››**[XML](‹‹input-xml››)**‹‹/if››
+
+*Created with ResourcePile's [map submission thread builder](https://mcresourcepile.github.io/tools/submissions)*</script>
 <script>
     var markdown = new showdown.Converter();
     var data = {};
@@ -269,8 +277,8 @@
     });
     
     function updatePreview() {
-        output = outputTemplate(data);
-        compiledOutput = markdown.makeHtml(outputTemplate(data).replace(/<br>/g, ''));
+        output = outputTemplate(data).replace(/\_/g, '&#x5f;');
+        compiledOutput = markdown.makeHtml(output);
         $('#thread-output-box').html(output);
         $('#preview').html(compiledOutput);
     }
