@@ -13,30 +13,30 @@
             <form id="input-form" class="form-horizontal" action="#" method="post">
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="input-name">Name</label>  
+                        <label class="col-md-3 control-label" for="input-name">Name*</label>  
                         <div class="col-md-8">
                             <input id="input-name" name="input-name" type="text" placeholder="Name" class="form-control input-md" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="input-name">Overview Image</label>  
+                        <label class="col-md-3 control-label" for="input-name">Overview Image*</label>  
                         <div class="col-md-8">
                             <input id="input-image" name="input-image" type="url" placeholder="Image URL" class="form-control input-md" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="input-description">Description</label>
+                        <label class="col-md-3 control-label" for="input-description">Description*</label>
                         <div class="col-md-8">                     
                             <textarea class="form-control" id="input-description" name="input-description" placeholder="A description of your map" required></textarea>
-                            <span class="help-block">Accepts Markdown and HTML</span>  
+                            <span class="help-block">Accepts markdown</span>  
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="input-description">
-                            Authors<br>
+                            Authors*<br>
                             <small id="author-add"><a href="#"><i class="fa fa-plus"></i> Add</a></small>
                         </label>
                         <div class="col-md-8" id="author-wrapper">                     
@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="input-download">Download URL</label>  
+                        <label class="col-md-3 control-label" for="input-download">Download URL*</label>  
                         <div class="col-md-8">
                             <input id="input-download" name="input-download" type="url" placeholder="https://www.dropbox.com/sh/..." class="form-control input-md" required>
                             <span class="help-block">Please make sure you have packaged your map correctly, and only use Dropbox or Google Drive</span>  
@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="input-album">Images URL</label>  
+                        <label class="col-md-3 control-label" for="input-album">Images URL*</label>  
                         <div class="col-md-8">
                             <input id="input-album" name="input-album" type="url" placeholder="https://imgur.com/a/..." class="form-control input-md" required>
                         </div>
@@ -74,18 +74,14 @@
         </div>
         <div class="col-md-6">
             <ul id="output-tabs" class="nav nav-tabs" style="margin-bottom: 16px;">
-                <li role="presentation" class="active"><a href="#output" data-toggle="tab">Output</a></li>
-                <li role="presentation"><a href="#preview" data-toggle="tab">Preview</a></li>
+                <li role="presentation" class="active"><a href="#preview" data-toggle="tab">Preview</a></li>
+                <li role="presentation"><a href="#output" data-toggle="tab">Output</a></li>
             </ul>
             <div id="output-tabs-content" class="tab-content">
-                <div class="tab-pane active in" id="output">
-                    <pre id="thread-output-box">
-                        Nothing to output; complete the form to generate markdown.
-                    </pre>
+                <div class="tab-pane active in" id="preview">Nothing to preview; complete the form to generate preview.</div>
+                <div class="tab-pane" id="output">
+                    <pre id="thread-output-box">Nothing to output; complete the form to generate markdown.</pre>
                     <div id="output-dummy" class="hidden"></div>
-                </div>
-                <div class="tab-pane" id="preview">
-                    Nothing to preview; complete the form to generate preview.
                 </div>
             </div>
             <div class="alert alert-warning alert-global alert-sm" role="alert">Please note that things may appear slightly different on the Stratus forums</div>
@@ -93,15 +89,6 @@
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-<script>
-Handlebars.registerHelper('ifObject', function(item, options) {
-    if(typeof item === "object") {
-        return options.fn(this);
-    } else {
-        return options.inverse(this);
-    }
-});               
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.2/showdown.min.js"></script>
 <script id="output-template" type="text/x-handlebars-template">### **‹‹input-name››**  
 ###### Created by ‹‹#ifObject input-author››‹‹#each input-author as |author|››‹‹author››‹‹#unless @last››, ‹‹/unless››‹‹/each››‹‹else››‹‹input-author››‹‹/ifObject››
@@ -109,7 +96,6 @@ Handlebars.registerHelper('ifObject', function(item, options) {
 ![‹‹input-image››](‹‹input-image››)
     
 ‹‹‹input-description›››  
-    ‹‹#with input-author as |author|››**‹‹author››**‹‹/with››
     
 **[Download](‹‹input-download››)**    
 **[Images](‹‹input-album››)**  
@@ -117,6 +103,14 @@ Handlebars.registerHelper('ifObject', function(item, options) {
 
 *Created with ResourcePile's [map submission thread builder](https://mcresourcepile.github.io/tools/submissions)*</script>
 <script>
+    Handlebars.registerHelper('ifObject', function(item, options) {
+        if(typeof item === "object") {
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
+    });
+    
     var markdown = new showdown.Converter();
     var data = {};
     
