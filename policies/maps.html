@@ -107,6 +107,8 @@
             </div>
             <div id="alert-we-now-have-" class="alert alert-info alert-global" role="alert">
                 We now have a dark theme! To turn it on, go to your <a href="https://mcresourcepile.github.io/admin/preferences">preferences</a>.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
+                <script>$("#alert-we-now-have-").on("closed.bs.alert",function(){Cookies.set("alert-we-now-have--hidden",!0,{expires:365})}),Cookies.get("alert-we-now-have--hidden")&&$("#alert-we-now-have-").alert("close");</script>
             </div>
         </div>
 		<div class="content-title">Map Policy</div>
