@@ -118,6 +118,13 @@
 			A collection of publicly downloadable maps from the <a href="http://avicus.net">Avicus Network</a>.
 		</div>
 	</div>
+    <div class="content-alert">
+        <div id="alert-avicus-maps" class="alert alert-danger alert-global" role="alert" style="margin-bottom:24px;">
+            Please note that this map's XML will not work on servers running the open source PGM plugin.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">×</span></button>
+            <script>$("#alert-avicus-maps").on("closed.bs.alert",function(){Cookies.set("alert-avicus-maps-hidden",!0,{expires:365})}),Cookies.get("alert-avicus-maps-hidden")&&$("#alert-avicus-maps").alert("close");</script>
+        </div>
+    </div>
     <div class="thumbnail">
         <form name="search_form" class="record-search-container">
             <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
@@ -207,8 +214,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-aardvark" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Aardvark" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/aardvark/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Aardvark" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-aardvark" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Aardvark" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/aardvark/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Aardvark" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-aardvark" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -232,6 +239,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Aardvark" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/aardvark');$('#download-aardvark').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -284,8 +292,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=d9b4ffbc-11d0-453a-a93f-82dc59fca4b6">Squiddard<span class="tag_hidden">d9b4ffbc-11d0-453a-a93f-82dc59fca4b6</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-boolean-classic" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Boolean Classic" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/boolean-classic/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Boolean Classic" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-boolean-classic" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Boolean Classic" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/boolean-classic/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Boolean Classic" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-boolean-classic" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -309,6 +317,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Boolean Classic" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/boolean-classic');$('#download-boolean-classic').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -361,8 +370,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-castella" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Castella" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/castella/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Castella" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-castella" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Castella" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/castella/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Castella" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-castella" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -387,6 +396,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Castella" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/castella');$('#download-castella').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -439,8 +449,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=916c8d6f-12d3-4a23-8553-d3ddcfcd248c">Winfinity<span class="tag_hidden">916c8d6f-12d3-4a23-8553-d3ddcfcd248c</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-cherrylandmc" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="CherrylandMC" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/cherrylandmc/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="CherrylandMC" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-cherrylandmc" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="CherrylandMC" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/cherrylandmc/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="CherrylandMC" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-cherrylandmc" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -465,6 +475,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="CherrylandMC" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/cherrylandmc');$('#download-cherrylandmc').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -516,8 +527,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=48924ea3-3aad-4e16-838c-368d8d9e0a25">Matic0B<span class="tag_hidden">48924ea3-3aad-4e16-838c-368d8d9e0a25</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-clay-wars" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Clay Wars" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/clay-wars/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Clay Wars" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-clay-wars" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Clay Wars" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/clay-wars/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Clay Wars" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-clay-wars" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -541,6 +552,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Clay Wars" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/clay-wars');$('#download-clay-wars').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -593,8 +605,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=ec00f0bb-1c45-4876-8f11-2b033b35c7e2">Arigenn<span class="tag_hidden">ec00f0bb-1c45-4876-8f11-2b033b35c7e2</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-cobweb-hills" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Cobweb Hills" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/cobweb-hills/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Cobweb Hills" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-cobweb-hills" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Cobweb Hills" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/cobweb-hills/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Cobweb Hills" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-cobweb-hills" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -619,6 +631,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Cobweb Hills" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/cobweb-hills');$('#download-cobweb-hills').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -672,8 +685,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=a2741a55-873a-4241-8e0a-5ff795f7731b">QFrog<span class="tag_hidden">a2741a55-873a-4241-8e0a-5ff795f7731b</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-deadlock" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Deadlock" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/deadlock/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Deadlock" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-deadlock" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Deadlock" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/deadlock/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Deadlock" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-deadlock" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -699,6 +712,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Deadlock" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/deadlock');$('#download-deadlock').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -751,8 +765,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-dragonblaze-peaks" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Dragonblaze Peaks" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/dragonblaze-peaks/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Dragonblaze Peaks" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-dragonblaze-peaks" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Dragonblaze Peaks" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/dragonblaze-peaks/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Dragonblaze Peaks" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-dragonblaze-peaks" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -777,6 +791,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Dragonblaze Peaks" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/dragonblaze-peaks');$('#download-dragonblaze-peaks').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -828,8 +843,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=d9b4ffbc-11d0-453a-a93f-82dc59fca4b6">Squiddard<span class="tag_hidden">d9b4ffbc-11d0-453a-a93f-82dc59fca4b6</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-drystep" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Drystep" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/drystep/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Drystep" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-drystep" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Drystep" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/drystep/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Drystep" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-drystep" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -853,6 +868,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Drystep" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/drystep');$('#download-drystep').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -906,8 +922,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=0b8f95fa-0f40-4f28-9fd0-b8e243bb6800">Fouled<span class="tag_hidden">0b8f95fa-0f40-4f28-9fd0-b8e243bb6800</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-elevated" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Elevated" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/elevated/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Elevated" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-elevated" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Elevated" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/elevated/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Elevated" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-elevated" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -933,6 +949,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Elevated" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/elevated');$('#download-elevated').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -984,8 +1001,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-elevated-2" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Elevated 2" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/elevated-2/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Elevated 2" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-elevated-2" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Elevated 2" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/elevated-2/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Elevated 2" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-elevated-2" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1009,6 +1026,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Elevated 2" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/elevated-2');$('#download-elevated-2').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1060,8 +1078,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=42b10520-7c51-4252-92d9-8b65df108b12">PieZ<span class="tag_hidden">42b10520-7c51-4252-92d9-8b65df108b12</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-ender-hill" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Ender Hill" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/ender-hill/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Ender Hill" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-ender-hill" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Ender Hill" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/ender-hill/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Ender Hill" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-ender-hill" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1085,6 +1103,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Ender Hill" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/ender-hill');$('#download-ender-hill').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1137,8 +1156,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=1865ac01-271f-4f69-b979-b43a78c39989">Zintenka<span class="tag_hidden">1865ac01-271f-4f69-b979-b43a78c39989</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-eternal-virus" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Eternal Virus" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/eternal-virus/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Eternal Virus" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-eternal-virus" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Eternal Virus" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/eternal-virus/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Eternal Virus" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-eternal-virus" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1163,6 +1182,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Eternal Virus" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/eternal-virus');$('#download-eternal-virus').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1214,8 +1234,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=d9b4ffbc-11d0-453a-a93f-82dc59fca4b6">Squiddard<span class="tag_hidden">d9b4ffbc-11d0-453a-a93f-82dc59fca4b6</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-fatal-temple" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Fatal Temple" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/fatal-temple/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Fatal Temple" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-fatal-temple" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Fatal Temple" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/fatal-temple/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Fatal Temple" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-fatal-temple" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1239,6 +1259,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Fatal Temple" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/fatal-temple');$('#download-fatal-temple').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1290,8 +1311,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-fort-aqua" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Fort Aqua" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/fort-aqua/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Fort Aqua" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-fort-aqua" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Fort Aqua" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/fort-aqua/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Fort Aqua" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-fort-aqua" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1315,6 +1336,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Fort Aqua" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/fort-aqua');$('#download-fort-aqua').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1368,8 +1390,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=3cce0080-9faa-48f9-82cf-64410305822a">ProfessorUtonium<span class="tag_hidden">3cce0080-9faa-48f9-82cf-64410305822a</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-jungletree-bazooka" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Jungletree Bazooka" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/jungletree-bazooka/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Jungletree Bazooka" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-jungletree-bazooka" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Jungletree Bazooka" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/jungletree-bazooka/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Jungletree Bazooka" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-jungletree-bazooka" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1395,6 +1417,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Jungletree Bazooka" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/jungletree-bazooka');$('#download-jungletree-bazooka').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1446,8 +1469,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-knuckles-and-broken-goggles" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Knuckles and Broken Goggles" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/knuckles-and-broken-goggles/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Knuckles and Broken Goggles" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-knuckles-and-broken-goggles" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Knuckles and Broken Goggles" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/knuckles-and-broken-goggles/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Knuckles and Broken Goggles" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-knuckles-and-broken-goggles" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1471,6 +1494,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Knuckles and Broken Goggles" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/knuckles-and-broken-goggles');$('#download-knuckles-and-broken-goggles').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1523,8 +1547,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=0b8f95fa-0f40-4f28-9fd0-b8e243bb6800">Fouled<span class="tag_hidden">0b8f95fa-0f40-4f28-9fd0-b8e243bb6800</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-la-cove" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="La Cove" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/la-cove/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="La Cove" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-la-cove" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="La Cove" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/la-cove/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="La Cove" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-la-cove" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1549,6 +1573,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="La Cove" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/la-cove');$('#download-la-cove').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1601,8 +1626,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=3cce0080-9faa-48f9-82cf-64410305822a">ProfessorUtonium<span class="tag_hidden">3cce0080-9faa-48f9-82cf-64410305822a</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-maisosen" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Maisosen" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/maisosen/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Maisosen" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-maisosen" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Maisosen" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/maisosen/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Maisosen" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-maisosen" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1627,6 +1652,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Maisosen" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/maisosen');$('#download-maisosen').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1679,8 +1705,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=d9b4ffbc-11d0-453a-a93f-82dc59fca4b6">pannenkoek2012<span class="tag_hidden">d9b4ffbc-11d0-453a-a93f-82dc59fca4b6</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-mudslide" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Mudslide" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/mudslide/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Mudslide" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-mudslide" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Mudslide" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/mudslide/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Mudslide" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-mudslide" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1705,6 +1731,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Mudslide" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/mudslide');$('#download-mudslide').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1756,8 +1783,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=d9b4ffbc-11d0-453a-a93f-82dc59fca4b6">Squiddard<span class="tag_hidden">d9b4ffbc-11d0-453a-a93f-82dc59fca4b6</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-parkour-debris" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Parkour: Debris" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/parkour-debris/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Parkour: Debris" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-parkour-debris" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Parkour: Debris" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/parkour-debris/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Parkour: Debris" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-parkour-debris" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1781,6 +1808,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Parkour: Debris" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/parkour-debris');$('#download-parkour-debris').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1834,8 +1862,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=38cc237d-9272-4e01-ad24-f5b0110130c1">Strucken<span class="tag_hidden">38cc237d-9272-4e01-ad24-f5b0110130c1</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-presta" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Presta" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/presta/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Presta" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-presta" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Presta" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/presta/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Presta" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-presta" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1861,6 +1889,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Presta" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/presta');$('#download-presta').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1912,8 +1941,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=d9b4ffbc-11d0-453a-a93f-82dc59fca4b6">Squiddard<span class="tag_hidden">d9b4ffbc-11d0-453a-a93f-82dc59fca4b6</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-quarry" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Quarry" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/quarry/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Quarry" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-quarry" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Quarry" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/quarry/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Quarry" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-quarry" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -1937,6 +1966,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Quarry" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/quarry');$('#download-quarry').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -1990,8 +2020,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-rendezvous-2k17" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Rendezvous 2k17" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/rendezvous-2k17/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Rendezvous 2k17" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-rendezvous-2k17" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Rendezvous 2k17" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/rendezvous-2k17/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Rendezvous 2k17" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-rendezvous-2k17" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2017,6 +2047,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Rendezvous 2k17" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/rendezvous-2k17');$('#download-rendezvous-2k17').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2069,8 +2100,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=50849f8f-dd10-4947-b0cf-5d91fa3634a2">Crimson_Aught<span class="tag_hidden">50849f8f-dd10-4947-b0cf-5d91fa3634a2</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-rendezvous-meadows" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Rendezvous Meadows" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/rendezvous-meadows/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Rendezvous Meadows" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-rendezvous-meadows" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Rendezvous Meadows" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/rendezvous-meadows/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Rendezvous Meadows" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-rendezvous-meadows" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2095,6 +2126,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Rendezvous Meadows" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/rendezvous-meadows');$('#download-rendezvous-meadows').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2148,8 +2180,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=b333ddfc-019d-4de6-9e47-7a7fd232ce97">spexxi90<span class="tag_hidden">b333ddfc-019d-4de6-9e47-7a7fd232ce97</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-rolexius" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Rolexius" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/rolexius/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Rolexius" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-rolexius" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Rolexius" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/rolexius/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Rolexius" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-rolexius" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2175,6 +2207,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Rolexius" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/rolexius');$('#download-rolexius').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2226,8 +2259,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-salzburg" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Salzburg" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/salzburg/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Salzburg" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-salzburg" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Salzburg" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/salzburg/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Salzburg" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-salzburg" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2251,6 +2284,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Salzburg" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/salzburg');$('#download-salzburg').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2302,8 +2336,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-salzburg-2" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Salzburg 2" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/salzburg-2/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Salzburg 2" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-salzburg-2" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Salzburg 2" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/salzburg-2/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Salzburg 2" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-salzburg-2" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2327,6 +2361,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Salzburg 2" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/salzburg-2');$('#download-salzburg-2').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2378,8 +2413,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-scaffold" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Scaffold" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/scaffold/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Scaffold" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-scaffold" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Scaffold" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/scaffold/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Scaffold" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-scaffold" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2403,6 +2438,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Scaffold" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/scaffold');$('#download-scaffold').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2454,8 +2490,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=d9b4ffbc-11d0-453a-a93f-82dc59fca4b6">Squiddard<span class="tag_hidden">d9b4ffbc-11d0-453a-a93f-82dc59fca4b6</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-shadient" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Shadient" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/shadient/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Shadient" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-shadient" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Shadient" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/shadient/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Shadient" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-shadient" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2479,6 +2515,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Shadient" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/shadient');$('#download-shadient').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2530,8 +2567,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-silentas-violent" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Silentas Violent" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/silentas-violent/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Silentas Violent" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-silentas-violent" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Silentas Violent" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/silentas-violent/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Silentas Violent" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-silentas-violent" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2555,6 +2592,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Silentas Violent" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/silentas-violent');$('#download-silentas-violent').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2608,8 +2646,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=38cc237d-9272-4e01-ad24-f5b0110130c1">Strucken<span class="tag_hidden">38cc237d-9272-4e01-ad24-f5b0110130c1</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-simon" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Simon" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/simon/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Simon" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-simon" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Simon" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/simon/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Simon" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-simon" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2635,6 +2673,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Simon" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/simon');$('#download-simon').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2687,8 +2726,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=50849f8f-dd10-4947-b0cf-5d91fa3634a2">Crimson_Aught<span class="tag_hidden">50849f8f-dd10-4947-b0cf-5d91fa3634a2</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-spore" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Spore" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/spore/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Spore" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-spore" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Spore" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/spore/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Spore" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-spore" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2713,6 +2752,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Spore" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/spore');$('#download-spore').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2764,8 +2804,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=50849f8f-dd10-4947-b0cf-5d91fa3634a2">Crimson_Aught<span class="tag_hidden">50849f8f-dd10-4947-b0cf-5d91fa3634a2</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-tasty-fight" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Tasty Fight" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/tasty-fight/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Tasty Fight" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-tasty-fight" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Tasty Fight" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/tasty-fight/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Tasty Fight" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-tasty-fight" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2789,6 +2829,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Tasty Fight" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/tasty-fight');$('#download-tasty-fight').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2841,8 +2882,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-u-bahn" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="U-Bahn" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/u-bahn/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="U-Bahn" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-u-bahn" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="U-Bahn" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/u-bahn/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="U-Bahn" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-u-bahn" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2867,6 +2908,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="U-Bahn" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/u-bahn');$('#download-u-bahn').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2918,8 +2960,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=d9b4ffbc-11d0-453a-a93f-82dc59fca4b6">pannenkoek2012<span class="tag_hidden">d9b4ffbc-11d0-453a-a93f-82dc59fca4b6</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-venezuelan-hacker" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Venezuelan Hacker" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/venezuelan-hacker/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Venezuelan Hacker" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-venezuelan-hacker" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Venezuelan Hacker" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/venezuelan-hacker/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Venezuelan Hacker" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-venezuelan-hacker" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -2943,6 +2985,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Venezuelan Hacker" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/venezuelan-hacker');$('#download-venezuelan-hacker').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
@@ -2995,8 +3038,8 @@
                     <li class="game-tag author-tag"><a class="map-author-name" href="?s=bf331953-4f92-43ee-8abc-7544b8234936">ViceWatercolour<span class="tag_hidden">bf331953-4f92-43ee-8abc-7544b8234936</span></a></li>
                             </div>
                 <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-volcano-turmoil" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Volcano Turmoil" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/volcano-turmoil/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Volcano Turmoil" class="fa fa-code click-xml"></i></a>
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-volcano-turmoil" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Volcano Turmoil" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/volcano-turmoil/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Volcano Turmoil" class="fa fa-code click-xml"></i></a>
                 </div>
                 <div class="modal fade" id="download-volcano-turmoil" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
@@ -3021,6 +3064,7 @@
                                     <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
                                 <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Volcano Turmoil" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/volcano-turmoil');$('#download-volcano-turmoil').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
