@@ -13,6 +13,8 @@
    $("a:contains('jackbear9')").html("<span class=\"position-helper\">jck</span>")
    $("a:contains('_3Each')").html("<span class=\"position-helper\">_3Each</span>")
    $("a:contains('3Each')").html("<span class=\"position-helper\">_3Each</span>")
+   $("a:contains('Starkman123')").html("<span class=\"position-helper\">AranoixStark</span>")
+   $("a:contains('AranoixStark')").html("<span class=\"position-helper\">AranoixStark</span>")
    $("a:contains('Epicness')").html("<span class=\"position-addon-project\">Epicness</span>")
    $("a:contains('EpicnessGitHub')").html("<span class=\"position-addon-project\">Epicness</span>")
    $("td:contains('Christian')").html("<span class=\"position-addon-project\">Epicness</span>")
