@@ -23,32 +23,13 @@
                 {{/is}}
                 <span style="display:block;margin-top:-{{#if @root.page-category.league}}4{{else}}8{{/if}}px;">
                     {{#if tags}}
-                        {{#tags}}
-                            {{#if arcade}}<li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>{{/if}}
-                            {{#if tdm}}<li class="game-tag"><a class="game-link map-tag" href="?s=tdm">Team Deathmatch</a><span class="tag_hidden">Team Death Match TDM</span></li>{{/if}}
-                            {{#if cp}}<li class="game-tag"><a class="game-link map-tag" href="?s=cp">Capture Points</a><span class="tag_hidden">CP</span></li>{{/if}}
-                            {{#if koth}}<li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag_hidden">KOTH</span></li>{{/if}}
-                            {{#if ctf}}<li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag_hidden">CTF</span></li>{{/if}}
-                            {{#if ctw}}<li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag_hidden">CTW</span></li>{{/if}}
-                            {{#if dtc}}<li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a>{{#if dtm}} and <a class="game-link map-tag" href="?s=dtm">Monument</a>{{/if}}<span class="tag_hidden">DTC {{#if dtm}}DTM DTCM DTMC{{/if}}</span></li>{{/if}}
-                            {{#if dtm}}{{#unless dtc}}<li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag_hidden">DTM</span></li>{{/unless}}{{/if}}
-                            {{#if gs}}<li class="game-tag"><a class="game-link map-tag" href="?s=gs">Ghost Squadron</a><span class="tag_hidden">GS</span></li>{{/if}}
-                            {{#if rfw}}<li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag_hidden">RFW</span></li>{{/if}}
-                            {{#if skywars}}<li class="game-tag"><a class="game-link map-tag" href="?s=skywars">Skywars</a><span class="tag_hidden">SW</span></li>{{/if}}
-                            {{#if sg}}<li class="game-tag"><a class="game-link map-tag" href="?s=survival">Survival Games</a><span class="tag_hidden">SG</span></li>{{/if}}
-                            {{#if blitz}}<li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>{{/if}}
-                            {{#if frenzy}}<li class="game-tag"><a class="game-link map-tag" href="?s=frenzy">Frenzy</a></li>{{/if}}
-                            {{#if micro}}<li class="game-tag"><a class="game-link map-tag" href="?s=micro">Micro</a><span class="tag_hidden">5x5</span></li>{{/if}}
-                            {{#if rage}}<li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>{{/if}}
-                            {{#if ffa}}<li class="game-tag"><a class="game-link map-tag" href="?s=ffa">Free-for-all</a><span class="tag_hidden">Free for all FFA</span></li>{{/if}}
-                            {{#if ranked}}<li class="game-tag"><a class="game-link map-tag" href="?s=ranked">Ranked</a></li>{{/if}}
-                            {{#if te}}<li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament</a><span class="tag_hidden">Tournament Edition TE TM</span></li>{{/if}}
-                            {{#if throwback}}<li class="game-tag"><a class="game-link map-tag" href="?s=throwback">Throwback</a></li>{{/if}}
-                            {{#if other}}<li class="game-tag"><a class="game-link map-tag" href="?s={{other}}">{{other}}</a></li>{{/if}}
-                            {{#if season}}<li class="game-tag"><a class="game-link map-tag" href="?s={{season}}">{{season}}</a></li>{{/if}}
-                            {{#if tnt}}<li class="game-tag"><a class="game-link map-tag" href="?s=tnt">TNT</a></li>{{/if}}
-                            {{#if default}}<li class="game-tag"><span class="game-link map-tag">Unknown tags</span></li>{{/if}}
-                        {{/tags}}
+                    {{#each tags}}
+                    {{#inArray @root.default-tags this}}
+                    <li class="game-tag"><a class="game-link map-tag tag-{{this}}" href="?s={{this}}"></a></li>
+                    {{else}}
+                    <li class="game-tag"><a class="game-link map-tag" href="?s={{this}}">{{capitalize this}}</a></li>
+                    {{/inArray}}
+                    {{/each}}
                     {{else}}
                     {{#if gamemode}}
                     <li class="game-tag"><span class="game-link map-tag">{{gamemode}}</span></li>
@@ -73,11 +54,11 @@
                 {{#if sourced}}
                 <span class="label label-default map-label">Unlicensed</span>
                 {{else}}
-                    {{#if commercial}}
-                    <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
-                    {{else}}
-                    <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
-                    {{/if}}
+                {{#if commercial}}
+                <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                {{else}}
+                <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                {{/if}}
                 {{/if}}
                 {{/unless}}
                 {{/if}}
