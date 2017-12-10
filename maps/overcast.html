@@ -23422,6 +23422,62 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="pompeii" class="thumbnail map-float   ">
+                <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps-o-to-z/master/maps/pompeii/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=pompeii" data-toggle="tooltip" data-placement="top" title="Pompeii"><strong>Pompeii</strong><span class="tag_hidden">pompeii</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-ffa" href="?s=ffa"></a><span class="tag-hidden">ffa</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=65722be1-29fd-4e7d-a47d-94ed616ed880">Kroest<span class="tag_hidden">65722be1-29fd-4e7d-a47d-94ed616ed880</span></a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=38ab65dd-95f9-406f-917c-6accc995421f">GoldenOre<span class="tag_hidden">38ab65dd-95f9-406f-917c-6accc995421f</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-pompeii" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Pompeii" href="https://github.com/MCResourcePile/overcast-maps-o-to-z/raw/master/maps/pompeii/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Pompeii" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-pompeii" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Pompeii</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/65722be1-29fd-4e7d-a47d-94ed616ed880?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=65722be1-29fd-4e7d-a47d-94ed616ed880">Kroest</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/38ab65dd-95f9-406f-917c-6accc995421f?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=38ab65dd-95f9-406f-917c-6accc995421f">GoldenOre</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Pompeii and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Pompeii that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Pompeii" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps-o-to-z/tree/master/maps/pompeii');$('#download-pompeii').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="pompeii_5x5" class="thumbnail map-float   ">
                 <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps-o-to-z/master/maps/pompeii_5x5/map.png');">
                     <div class="map-banner">
@@ -23472,62 +23528,6 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Pompeii" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps-o-to-z/tree/master/maps/pompeii_5x5');$('#download-pompeii_5x5').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="pompeii" class="thumbnail map-float   ">
-                <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps-o-to-z/master/maps/pompeii/map.png');">
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=pompeii" data-toggle="tooltip" data-placement="top" title="Pompeii"><strong>Pompeii</strong><span class="tag_hidden">pompeii</span></a>
-                        <span style="display:block;margin-top:-8px;">
-                            <li class="game-tag"><a class="game-link map-tag tag-ffa" href="?s=ffa"></a><span class="tag-hidden">ffa</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=65722be1-29fd-4e7d-a47d-94ed616ed880">Kroest<span class="tag_hidden">65722be1-29fd-4e7d-a47d-94ed616ed880</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=38ab65dd-95f9-406f-917c-6accc995421f">GoldenOre<span class="tag_hidden">38ab65dd-95f9-406f-917c-6accc995421f</span></a></li>
-                            </div>
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-pompeii" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
-                    <a id="Pompeii" href="https://github.com/MCResourcePile/overcast-maps-o-to-z/raw/master/maps/pompeii/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Pompeii" class="fa fa-code click-xml"></i></a>
-                </div>
-                <div class="modal fade" id="download-pompeii" tabindex="-1" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Downloading map files for Pompeii</h4>
-                                <div class="map-authors">
-                                    <span class="map-author-name">created by</span>
-                                    <li class="game-tag"><img src="https://crafatar.com/avatars/65722be1-29fd-4e7d-a47d-94ed616ed880?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=65722be1-29fd-4e7d-a47d-94ed616ed880">Kroest</a></li>
-                                    <li class="game-tag"><img src="https://crafatar.com/avatars/38ab65dd-95f9-406f-917c-6accc995421f?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=38ab65dd-95f9-406f-917c-6accc995421f">GoldenOre</a></li>
-                                                            </div>
-                            </div>
-                            <div class="modal-body">
-                                    This download for Pompeii and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
-                                    <br><br>
-                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
-                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
-                                    </a>
-                                    <br>
-                                    You will be downloading the version of Pompeii that has been provided to ResourcePile, not the original.  
-                                    <br><br>
-                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
-                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
-                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
-                                
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="Pompeii" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps-o-to-z/tree/master/maps/pompeii');$('#download-pompeii').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
                             </div>
                         </div>
@@ -30227,6 +30227,63 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Temple" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps-o-to-z/tree/master/maps/temple');$('#download-temple').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="temple_run" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/overcast-maps-o-to-z/master/maps/temple_run/map.png');">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=temple_run" data-toggle="tooltip" data-placement="top" title="Temple Run"><strong>Temple Run</strong><span class="tag_hidden">temple_run</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag" href="?s=[object Object]"></a></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=3881e2f3-b393-4435-80a1-ff4c87fb4236">MrArchy<span class="tag_hidden">3881e2f3-b393-4435-80a1-ff4c87fb4236</span></a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=8f450ecb-184a-4fdd-9f17-bf1da547ab64">Chicago_T3d<span class="tag_hidden">8f450ecb-184a-4fdd-9f17-bf1da547ab64</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-temple_run" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Temple Run" href="https://github.com/MCResourcePile/overcast-maps-o-to-z/raw/master/maps/temple_run/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="Temple Run" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-temple_run" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Temple Run</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/3881e2f3-b393-4435-80a1-ff4c87fb4236?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=3881e2f3-b393-4435-80a1-ff4c87fb4236">MrArchy</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/8f450ecb-184a-4fdd-9f17-bf1da547ab64?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=8f450ecb-184a-4fdd-9f17-bf1da547ab64">Chicago_T3d</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Temple Run and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Temple Run that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Temple Run" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/overcast-maps-o-to-z/tree/master/maps/temple_run');$('#download-temple_run').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
                             </div>
                         </div>
