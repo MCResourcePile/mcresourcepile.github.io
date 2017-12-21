@@ -44,10 +44,10 @@ $(document).ready(function(){
     } else {
         $('.auth-group-2').show();
     }
-    if (selected_theme == 'default') {
-        $("#site-select-theme").val('default');
-    } else {
+    if (selected_theme == 'dark') {
         $("#site-select-theme").val('dark');
+    } else {
+        $("#site-select-theme").val('default');
     }
     if (hide_map_images == 'true') {
         $("#site-select-map-images").val('hide');
