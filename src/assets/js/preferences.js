@@ -49,10 +49,10 @@ $(document).ready(function(){
     } else {
         $("#site-select-theme").val('dark');
     }
-    if (hide_map_images == true) {
-        $("#site-select-map-images").val('true');
+    if (hide_map_images == 'true') {
+        $("#site-select-map-images").val('hide');
     } else {
-        $("#site-select-map-images").val('false');
+        $("#site-select-map-images").val('show');
     }
 })
 
@@ -123,7 +123,7 @@ function savePreferences() {
         $('head').append('<link href="/assets/css/dark.css" rel="stylesheet">');
     }
     // Update preference to load map.png images
-    if (optionMapImages == 'Yes') {
+    if (optionMapImages == 'No') {
         Cookies.set('rp_map_images?', 'true', { expires: 365 });
     } else {
         Cookies.set('rp_map_images?', 'false', { expires: 365 });
