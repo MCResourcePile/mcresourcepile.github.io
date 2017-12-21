@@ -105,10 +105,10 @@
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
                 <script>$("#alert-join-our-str").on("closed.bs.alert",function(){Cookies.set("alert-join-our-str-hidden",!0,{expires:365})}),Cookies.get("alert-join-our-str-hidden")&&$("#alert-join-our-str").alert("close");</script>
             </div>
-            <div id="alert-we-now-have-" class="alert alert-info alert-global" role="alert">
-                We now have a dark theme! To turn it on, go to your <a href="https://mcresourcepile.github.io/admin/preferences">preferences</a>.
+            <div id="alert-slow-connect" class="alert alert-info alert-global" role="alert">
+                Slow connection? You can now turn off map images to increase page loading times! <a href="https://mcresourcepile.github.io/updates#lazy_loading_map_image_toggle">Read more</a>.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
-                <script>$("#alert-we-now-have-").on("closed.bs.alert",function(){Cookies.set("alert-we-now-have--hidden",!0,{expires:365})}),Cookies.get("alert-we-now-have--hidden")&&$("#alert-we-now-have-").alert("close");</script>
+                <script>$("#alert-slow-connect").on("closed.bs.alert",function(){Cookies.set("alert-slow-connect-hidden",!0,{expires:365})}),Cookies.get("alert-slow-connect-hidden")&&$("#alert-slow-connect").alert("close");</script>
             </div>
         </div>
         <div class="content-title">Updates</div>
@@ -117,6 +117,15 @@
         </div>
     </div>
     <div id="post-output">
+            <post id="lazy_loading_map_image_toggle" class="post-thumbnail post-thumbnail-important">
+                <div class="post-header"><i class="fa fa-bookmark" aria-hidden="true"></i> <a href="#lazy_loading_map_image_toggle" class="post-header">Lazy image loading and map images toggle</a></div>
+                <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/mitchiii_?size=12&overlay"> <a href="https://mcresourcepile.github.io/staff">mitchiii_</a> <span class="convert" data-toggle="tooltip" data-placement="top">12-21-2017</span></div>
+                <div class="post-body"><p>With our collection of maps ever expanding in size, the time that it takes to load any of our map pages has been increasing massively. Loading over 500 individual map images only to look at a few is quite silly, which is why we've added lazy image loading to all of our map pages. This means only the maps being viewed currently have their images loaded, saving bandwidth and increasing page load times. Additionally we've added a setting which allows users to completely disable map images from loading, and this can be accessed through our <a href="https://mcresourcepile.github.io/admin/preferences">preferences</a> page.</p>
+</div>
+                <div class="post-links">
+                    <a href="https://mcresourcepile.github.io/admin/preferences" target="_blank" class="btn btn-sm map-link post-button" role="button">Go to your preferences</a>
+                </div>
+            </post>
             <post id="want_to_help_expand_resourcepile" class="post-thumbnail ">
                 <div class="post-header"><a href="#want_to_help_expand_resourcepile" class="post-header">Want to help expand ResourcePile?</a></div>
                 <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/MHF_Exclamation?size=12&overlay"> <span class="position-manager">ResourcePile</span> <span class="convert" data-toggle="tooltip" data-placement="top">08-05-2017</span></div>
@@ -130,16 +139,16 @@
                 <div class="post-body"><p>Recently all of <a href="https://mcresourcepile.github.io/maps/overcast?s=Plastix">Plastix</a>'s maps have been added to our Overcast maps collection, as well as other maps from authors such as <a href="https://mcresourcepile.github.io/maps/overcast?s=LArrowHead">LArrowHead</a>, <a href="https://mcresourcepile.github.io/maps/overcast?s=Claf">Claf</a>, <a href="https://mcresourcepile.github.io/maps/overcast?s=TheNoChillDude">TheNoChillDude</a> (formerly PandaBoy), <a href="https://mcresourcepile.github.io/maps/overcast?s=DiamondAx">DiamondAx</a>, and many more. The license for <a href="https://mcresourcepile.github.io/maps/overcast?s=spaceship_battles">Spaceship Battles</a> has also been updated, meaning that it can now be used commercially. SSB variants and SSB II have also been added with this change. All the new maps can be found <a href="https://mcresourcepile.github.io/maps/overcast?s=new">here</a>.</p>
 </div>
             </post>
-            <post id="increase_map_downloads" class="post-thumbnail post-thumbnail-important">
-                <div class="post-header"><i class="fa fa-bookmark" aria-hidden="true"></i> <a href="#increase_map_downloads" class="post-header">Increase your map downloads!</a></div>
+            <post id="increase_map_downloads" class="post-thumbnail ">
+                <div class="post-header"><a href="#increase_map_downloads" class="post-header">Increase your map downloads!</a></div>
                 <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/MHF_Exclamation?size=12&overlay"> <span class="position-manager">ResourcePile</span> <span class="convert" data-toggle="tooltip" data-placement="top">07-23-2017</span></div>
                 <div class="post-body"><p>You are now able to authenticate your GitHub account with our website allowing you to increase your map download limit from approximately 7 maps an hour all the way up to 700+ maps an hour! While this is much greater than the amount of maps we currently have in our collections, it means that you will no longer have to wait an hour for rate limits to reset or download entire repositories from GitHub to have access to the maps you want. Below are the steps you must take in order to authenticate your downloads.</p>
 <ol>
-<li>Go to our <a href="https://mcresourcepile.github.io/admin/auth">authentication page</a> and click on <code>Generate Access Token</code></li>
+<li>Go to our <a href="https://mcresourcepile.github.io/admin/preferences">preferences page</a> and click on <code>Generate Access Token</code></li>
 <li>Click <code>Authorize MCResourcePile</code></li>
 <li>Open the <code>access_token</code> file which was downloaded with a text editor</li>
 <li>Copy the string of numbers and letters following <code>access_token=</code> (this will be 40 characters long)</li>
-<li>Paste the token into the access token field on our <a href="https://mcresourcepile.github.io/admin/auth">authentication page</a> and click save</li>
+<li>Paste the token into the access token field on our <a href="https://mcresourcepile.github.io/admin/preferences">preferences page</a> and click save</li>
 </ol>
 <p>If you didn't get the <code>access_token</code> file, try clicking <code>Generate Access Token</code> again. Once you've done that you will see an <span class="label label-success map-label">Authenticated</span> badge on any map page.</p>
 </div>
@@ -248,8 +257,8 @@
                     <a href="https://mcresourcepile.github.io/maps/overcast" target="_blank" class="btn btn-sm map-link post-button" role="button">View our collection of maps</a>
                 </div>
             </post>
-            <post id="discord" class="post-thumbnail post-thumbnail-important">
-                <div class="post-header"><i class="fa fa-bookmark" aria-hidden="true"></i> <a href="#discord" class="post-header">We&#x27;ve opened our Discord to the public</a></div>
+            <post id="discord" class="post-thumbnail ">
+                <div class="post-header"><a href="#discord" class="post-header">We&#x27;ve opened our Discord to the public</a></div>
                 <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/MHF_Exclamation?size=12&overlay"> <span class="position-manager">ResourcePile</span> <span class="convert" data-toggle="tooltip" data-placement="top">07-07-2017</span></div>
                 <div class="post-body"><p>We're happy to annouce that we've opened our <a href="https://discord.gg/ygNgxKj">Discord</a> to the public. We want to open a way to communicate with the people who use our services, and we've decided this is a good way to do exactly that.</p>
 <p>Here's a quick breakdown of the channels you're going to be able to see.</p>
