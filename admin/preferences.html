@@ -24,6 +24,7 @@
         
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
         <script src="/assets/js/js.cookie.js"></script>
         <script src="/assets/js/preferences.js"></script>
@@ -159,16 +160,29 @@
         </div>
         <div class="col-md-6 col-sm-12">
             <div id="theme-well" class="well well-custom-blue">
-                <div class="well-header">Site Theme</div>
-                <div id="theme-updated" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Theme successfully updated</div>
+                <div class="well-header">Site Preferences</div>
+                <div id="site-preferences-updated" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Site preferences successfully updated</div>
                 <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <a class="btn btn-default btn-auth" onclick="Cookies.set('rp_user_theme', 'default', { expires: 365 });updateThemeDefault()">Default (light)</a>
+                    <h6 class="col-md-4 control-label"><b>Site Theme</b></h6>
+                    <div class="col-md-4">
+                        <select id="site-select-theme" name="site-select-theme" class="form-control">
+                            <option value="default">Default</option>
+                            <option value="dark">Dark</option>
+                        </select>
                     </div>
-                    <div class="col-md-6 col-sm-12">
-                        <a class="btn btn-default btn-auth" onclick="Cookies.set('rp_user_theme', 'dark', { expires: 365 });updateThemeDark()">Dark</a>
+                    <small class="col-md-4">Use an alternative dark site theme, perfect for night time.</small>
+                </div><br>
+                <div class="row">
+                    <h6 class="col-md-4 control-label"><b>Show Map Images</b></h6>
+                    <div class="col-md-4">
+                        <select id="site-select-map-images" name="site-select-map-images" class="form-control">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
                     </div>
-                </div>
+                    <small class="col-md-4">Remove map images to improve loading times for slower bandwidths.</small>
+                </div><br>
+                <a class="btn btn-success btn-auth" onclick="savePreferences()">Save preferences</a>
             </div>
         </div>
     </div>

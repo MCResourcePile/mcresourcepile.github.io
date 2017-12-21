@@ -24,6 +24,7 @@
         
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
         <script src="/assets/js/js.cookie.js"></script>
         <script src="/assets/js/preferences.js"></script>
@@ -194,7 +195,7 @@
     <div class="row">
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="static" class="thumbnail map-float   ">
-                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/static.png');">
+                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/static.png">
                     <div class="map-banner">
                         <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Static"><strong>Static</strong><span class="tag_hidden">static</span></a>
                         <span style="display:block;margin-top:-4px;">
@@ -209,7 +210,7 @@
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="hold-fast" class="thumbnail map-float   ">
-                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/hold-fast.png');">
+                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/hold-fast.png">
                     <div class="map-banner">
                         <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Hold Fast"><strong>Hold Fast</strong><span class="tag_hidden">hold-fast</span></a>
                         <span style="display:block;margin-top:-4px;">
@@ -224,7 +225,7 @@
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="rendezvous-champions" class="thumbnail map-float   ">
-                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/rendezvous-champions.png');">
+                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/rendezvous-champions.png">
                     <div class="map-banner">
                         <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Rendezvous Champions"><strong>Rendezvous Champions</strong><span class="tag_hidden">rendezvous-champions</span></a>
                         <span style="display:block;margin-top:-4px;">
@@ -239,7 +240,7 @@
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="boolean-ctw" class="thumbnail map-float   ">
-                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/boolean-ctw.png');">
+                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/boolean-ctw.png">
                     <div class="map-banner">
                         <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Boolean CTW"><strong>Boolean CTW</strong><span class="tag_hidden">boolean-ctw</span></a>
                         <span style="display:block;margin-top:-4px;">
@@ -254,7 +255,7 @@
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="outbreak" class="thumbnail map-float   ">
-                <div class="map-image" style="background-image: url('../../assets/img/tournament/shared/maps/outbreak.png');">
+                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/outbreak.png">
                     <div class="map-banner">
                         <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Outbreak"><strong>Outbreak</strong><span class="tag_hidden">outbreak</span></a>
                         <span style="display:block;margin-top:-4px;">
