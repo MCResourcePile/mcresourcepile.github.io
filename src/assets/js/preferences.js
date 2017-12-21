@@ -1,3 +1,9 @@
+/***
+ * JS functions and variables which handle user preferences.
+ * As this is used by all pages, be careful what is put
+ * into this file.
+ */
+
 var current_token = Cookies.get('rp_user_token');
 
 $(document).ready(function(){
@@ -37,6 +43,16 @@ $(document).ready(function(){
         $('#user_rate_approximate').text(Math.round(ratelimit.rate.remaining / 7));
     } else {
         $('.auth-group-2').show();
+    }
+    if (selected_theme == 'default') {
+        $("#site-select-theme").val('default');
+    } else {
+        $("#site-select-theme").val('dark');
+    }
+    if (hide_map_images == true) {
+        $("#site-select-map-images").val('true');
+    } else {
+        $("#site-select-map-images").val('false');
     }
 })
 
@@ -90,18 +106,30 @@ function saveToken() {
 }
 
 var selected_theme = Cookies.get('rp_user_theme');
+var hide_map_images = Cookies.get('rp_map_images?');
+
+function savePreferences() {
+    $("#site-preferences-updated").show().delay(5000).fadeOut();
+    var optionTheme = $('#site-select-theme :selected').text();
+    var optionMapImages = $('#site-select-map-images :selected').text();
+    // Update user's chosen theme
+    if (optionTheme == 'Default') {
+        Cookies.set('rp_user_theme', 'default', { expires: 365 });
+        $('head').find('link').filter(function(){
+            return $(this).attr('href') === '/assets/css/dark.css'
+        }).remove();
+    } else {
+        Cookies.set('rp_user_theme', 'dark', { expires: 365 });
+        $('head').append('<link href="/assets/css/dark.css" rel="stylesheet">');
+    }
+    // Update preference to load map.png images
+    if (optionMapImages == 'Yes') {
+        Cookies.set('rp_map_images?', 'true', { expires: 365 });
+    } else {
+        Cookies.set('rp_map_images?', 'false', { expires: 365 });
+    }
+}
+
 if (selected_theme == 'dark') {
-    $('head').append('<link href="/assets/css/dark.css" rel="stylesheet">');
-}
-
-function updateThemeDefault() {
-    $("#theme-updated").show().delay(5000).fadeOut();
-    $('head').find('link').filter(function(){
-        return $(this).attr('href') === '/assets/css/dark.css'
-    }).remove();
-}
-
-function updateThemeDark() {
-    $("#theme-updated").show().delay(5000).fadeOut();
     $('head').append('<link href="/assets/css/dark.css" rel="stylesheet">');
 }
