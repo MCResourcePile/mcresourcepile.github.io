@@ -23,7 +23,9 @@ $('[data-toggle="tooltip"]').tooltip()
 $('[data-toggle="popover"]').popover()
 
 if (hide_map_images) {
-    $(".lazy").css({"height": "40px"}).addClass("center")
+    $(".lazy").css({"height": "60px"}).addClass("center");
+    $(".map-banner").css({"height": "60px"});
+    $(".map-labels").css({"top": "-21px"});
 } else {
     var myLazyLoad = new LazyLoad({
         elements_selector: ".lazy",
