@@ -2,18 +2,18 @@
 <div class="container">
     <div class="content-header">
         {{> alert}}
-        <div class="content-title">{{#if host}}{{host}}{{else}}Unknown Host{{/if}} {{#if @root.page-category.contest}}Map Contests{{else}}{{#if @root.page-category.league}}Tournaments{{/if}}{{/if}}</div>
+        <div class="content-title">{{#if host}}{{host}}{{else}}Unknown Host{{/if}} {{#inArray page-category 'contest'}}Map Contests{{else}}Tournaments{{/inArray}}</div>
         <div class="content-subtitle">
-            <p>List of {{#if @root.page-category.contest}}map contests{{else}}{{#if @root.page-category.league}}tournaments{{/if}}{{/if}} hosted by the {{#if host}}{{#if host-site}}<a href="{{host-site}}">{{host}}</a>{{else}}{{host}}{{/if}}{{else}}Unknown Host{{/if}}.</p>
+            <p>List of {{#inArray page-category 'contest'}}map contests{{else}}tournaments{{/inArray}} hosted by the {{#if host}}{{#if host-site}}<a href="{{host-site}}">{{host}}</a>{{else}}{{host}}{{/if}}{{else}}Unknown Host{{/if}}.</p>
         </div>
     </div>
     <div class="section leagues center">
     {{#tournaments}}
-        <a href="{{#if disabled}}#{{else}}/{{#if @root.page-category.contest}}contests{{else}}{{#if @root.page-category.league}}leagues{{/if}}{{/if}}/{{@root.host-reference}}/{{id}}{{/if}}">
+        <a href="{{#if disabled}}#{{else}}/{{#inArray page-category 'contest'}}contests{{else}}leagues{{/inArray}}/{{@root.host-reference}}/{{id}}{{/if}}">
             {{#if heading}}
-            <div class="league-banner {{#if disabled}}hide{{/if}}" style="background: url('../../assets/img/{{#if @root.page-category.contest}}contest/{{id}}/banner.jpg{{else}}{{#if @root.page-category.league}}tournament/banners/{{id}}.jpg{{/if}}{{/if}}');background-position:center">{{name}}</div>
+            <div class="league-banner {{#if disabled}}hide{{/if}}" style="background: url('../../assets/img/{{#inArray page-category 'contest'}}contest/{{id}}/banner.jpg{{else}}{{#inArray page-category 'league'}}tournament/banners/{{id}}.jpg{{/inArray}}{{/inArray}}');background-position:center">{{name}}</div>
             {{else}}
-            <img class="league-banner-custom {{#if disabled}}hide{{/if}}" src="../../assets/img/{{#if @root.page-category.contest}}contest/{{id}}/banner.png{{else}}{{#if @root.page-category.league}}tournament/banners/{{id}}.png{{/if}}{{/if}}">
+            <img class="league-banner-custom {{#if disabled}}hide{{/if}}" src="../../assets/img/{{#inArray page-category 'contest'}}contest/{{id}}/banner.png{{else}}{{#inArray page-category 'league'}}tournament/banners/{{id}}.png{{/inArray}}{{/inArray}}">
             {{/if}}
         </a>
     {{/tournaments}}
