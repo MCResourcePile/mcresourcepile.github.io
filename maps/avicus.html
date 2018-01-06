@@ -149,6 +149,7 @@
                     <a class="game-mode-button game-arcade" href="?s=arcade"></a>
                     <a class="game-mode-button game-frenzy" href="?s=frenzy"></a>
                     <a class="game-mode-button game-skywars" href="?s=skywars"></a>
+					<a class="game-mode-button game-walls" href="?s=walls"></a>
                 </div>
                 <div class="col-xs-6 col-md-2">
                     <div class="game-mode-section-header">Competitive</div>
@@ -173,6 +174,61 @@
 	<div class="total-maps center"></div>
 	<div id="maps-output" class="maps-output">
 		<div class="dynamic">
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="a-new-day-ii" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/a-new-day-ii/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=a-new-day-ii" data-toggle="tooltip" data-placement="top" title="A New Day II"><strong>A New Day II</strong><span class="tag_hidden">a-new-day-ii</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-ctw" href="?s=ctw"></a><span class="tag-hidden">ctw</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=b5071a63-bba3-491a-909f-02db314f4319">dcstarwars<span class="tag_hidden">b5071a63-bba3-491a-909f-02db314f4319</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-a-new-day-ii" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="A New Day II" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/a-new-day-ii/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="A New Day II" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-a-new-day-ii" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for A New Day II</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/b5071a63-bba3-491a-909f-02db314f4319?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=b5071a63-bba3-491a-909f-02db314f4319">dcstarwars</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for A New Day II and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of A New Day II that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="A New Day II" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/a-new-day-ii');$('#download-a-new-day-ii').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="aardvark" class="thumbnail map-float  map-glow-popular ">
                 <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/aardvark/map.png">
@@ -221,6 +277,169 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Aardvark" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/aardvark');$('#download-aardvark').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="abandoned-castle-ctf-classic" class="thumbnail map-float   ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/abandoned-castle-ctf-classic/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=abandoned-castle-ctf-classic" data-toggle="tooltip" data-placement="top" title="Abandoned Castle CTF"><strong>Abandoned Castle CTF</strong><span class="tag_hidden">abandoned-castle-ctf-classic</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-ctf" href="?s=ctf"></a><span class="tag-hidden">ctf</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=075b5514-293a-4bd5-bcef-367e687d3556">KojaK<span class="tag_hidden">075b5514-293a-4bd5-bcef-367e687d3556</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-abandoned-castle-ctf-classic" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Abandoned Castle CTF" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/abandoned-castle-ctf-classic/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Abandoned Castle CTF" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-abandoned-castle-ctf-classic" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Abandoned Castle CTF</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/075b5514-293a-4bd5-bcef-367e687d3556?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=075b5514-293a-4bd5-bcef-367e687d3556">KojaK</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Abandoned Castle CTF and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Abandoned Castle CTF that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Abandoned Castle CTF" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/abandoned-castle-ctf-classic');$('#download-abandoned-castle-ctf-classic').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="abandoned-castle-ctf-classic" class="thumbnail map-float   ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/abandoned-castle-ctf-classic/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=abandoned-castle-ctf-classic" data-toggle="tooltip" data-placement="top" title="Abandoned Castle CTF"><strong>Abandoned Castle CTF</strong><span class="tag_hidden">abandoned-castle-ctf-classic</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-ctf" href="?s=ctf"></a><span class="tag-hidden">ctf</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=075b5514-293a-4bd5-bcef-367e687d3556">KojaK<span class="tag_hidden">075b5514-293a-4bd5-bcef-367e687d3556</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-abandoned-castle-ctf-classic" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Abandoned Castle CTF" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/abandoned-castle-ctf-classic/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Abandoned Castle CTF" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-abandoned-castle-ctf-classic" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Abandoned Castle CTF</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/075b5514-293a-4bd5-bcef-367e687d3556?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=075b5514-293a-4bd5-bcef-367e687d3556">KojaK</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Abandoned Castle CTF and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Abandoned Castle CTF that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Abandoned Castle CTF" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/abandoned-castle-ctf-classic');$('#download-abandoned-castle-ctf-classic').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="atlantis" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/atlantis/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=atlantis" data-toggle="tooltip" data-placement="top" title="Atlantis"><strong>Atlantis</strong><span class="tag_hidden">atlantis</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-dtm" href="?s=dtm"></a><span class="tag-hidden">dtm</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=50a34639-abb3-4cf1-b182-204756c49f49">cellish<span class="tag_hidden">50a34639-abb3-4cf1-b182-204756c49f49</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-atlantis" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Atlantis" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/atlantis/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Atlantis" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-atlantis" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Atlantis</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/50a34639-abb3-4cf1-b182-204756c49f49?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=50a34639-abb3-4cf1-b182-204756c49f49">cellish</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Atlantis and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Atlantis that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Atlantis" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/atlantis');$('#download-atlantis').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
                             </div>
                         </div>
@@ -397,6 +616,117 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="claimed-towers" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/claimed-towers/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=claimed-towers" data-toggle="tooltip" data-placement="top" title="Claimed Towers"><strong>Claimed Towers</strong><span class="tag_hidden">claimed-towers</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-ctw" href="?s=ctw"></a><span class="tag-hidden">ctw</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=63b88dff-c6b4-4e08-bd17-aae089b12e95">Riilo<span class="tag_hidden">63b88dff-c6b4-4e08-bd17-aae089b12e95</span></a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=2caee8ce-4b0a-42a4-b7da-10c0d1e1283c">TJ97<span class="tag_hidden">2caee8ce-4b0a-42a4-b7da-10c0d1e1283c</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-claimed-towers" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Claimed Towers" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/claimed-towers/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Claimed Towers" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-claimed-towers" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Claimed Towers</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/63b88dff-c6b4-4e08-bd17-aae089b12e95?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=63b88dff-c6b4-4e08-bd17-aae089b12e95">Riilo</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/2caee8ce-4b0a-42a4-b7da-10c0d1e1283c?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=2caee8ce-4b0a-42a4-b7da-10c0d1e1283c">TJ97</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Claimed Towers and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Claimed Towers that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Claimed Towers" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/claimed-towers');$('#download-claimed-towers').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="clay-wars" class="thumbnail map-float   ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/clay-wars/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=clay-wars" data-toggle="tooltip" data-placement="top" title="Clay Wars"><strong>Clay Wars</strong><span class="tag_hidden">clay-wars</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-dtm" href="?s=dtm"></a><span class="tag-hidden">dtm</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=48924ea3-3aad-4e16-838c-368d8d9e0a25">Matic0B<span class="tag_hidden">48924ea3-3aad-4e16-838c-368d8d9e0a25</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-clay-wars" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Clay Wars" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/clay-wars/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Clay Wars" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-clay-wars" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Clay Wars</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/48924ea3-3aad-4e16-838c-368d8d9e0a25?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=48924ea3-3aad-4e16-838c-368d8d9e0a25">Matic0B</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Clay Wars and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Clay Wars that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Clay Wars" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/clay-wars');$('#download-clay-wars').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="cobweb-hills" class="thumbnail map-float   ">
                 <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/cobweb-hills/map.png">
                     <div class="map-banner">
@@ -445,6 +775,116 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Cobweb Hills" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/cobweb-hills');$('#download-cobweb-hills').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="daisy" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/daisy/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=daisy" data-toggle="tooltip" data-placement="top" title="Daisy"><strong>Daisy</strong><span class="tag_hidden">daisy</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-dtm" href="?s=dtm"></a><span class="tag-hidden">dtm</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=50a34639-abb3-4cf1-b182-204756c49f49">cellish<span class="tag_hidden">50a34639-abb3-4cf1-b182-204756c49f49</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-daisy" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Daisy" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/daisy/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Daisy" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-daisy" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Daisy</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/50a34639-abb3-4cf1-b182-204756c49f49?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=50a34639-abb3-4cf1-b182-204756c49f49">cellish</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Daisy and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Daisy that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Daisy" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/daisy');$('#download-daisy').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="darkwoods" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/darkwoods/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=darkwoods" data-toggle="tooltip" data-placement="top" title="Darkwoods"><strong>Darkwoods</strong><span class="tag_hidden">darkwoods</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-ctw" href="?s=ctw"></a><span class="tag-hidden">ctw</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=50a34639-abb3-4cf1-b182-204756c49f49">cellish<span class="tag_hidden">50a34639-abb3-4cf1-b182-204756c49f49</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-darkwoods" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Darkwoods" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/darkwoods/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Darkwoods" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-darkwoods" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Darkwoods</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/50a34639-abb3-4cf1-b182-204756c49f49?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=50a34639-abb3-4cf1-b182-204756c49f49">cellish</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Darkwoods and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Darkwoods that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Darkwoods" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/darkwoods');$('#download-darkwoods').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
                             </div>
                         </div>
@@ -559,6 +999,63 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Dragonblaze Peaks" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/dragonblaze-peaks');$('#download-dragonblaze-peaks').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="driftwood" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/driftwood/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=driftwood" data-toggle="tooltip" data-placement="top" title="Driftwood"><strong>Driftwood</strong><span class="tag_hidden">driftwood</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-dtm" href="?s=dtm"></a><span class="tag-hidden">dtm</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=63b88dff-c6b4-4e08-bd17-aae089b12e95">Riilo<span class="tag_hidden">63b88dff-c6b4-4e08-bd17-aae089b12e95</span></a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=2fc285de-015e-4173-ac6a-04b388e496a5">KomodoLord1<span class="tag_hidden">2fc285de-015e-4173-ac6a-04b388e496a5</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-driftwood" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Driftwood" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/driftwood/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Driftwood" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-driftwood" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Driftwood</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/63b88dff-c6b4-4e08-bd17-aae089b12e95?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=63b88dff-c6b4-4e08-bd17-aae089b12e95">Riilo</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/2fc285de-015e-4173-ac6a-04b388e496a5?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=2fc285de-015e-4173-ac6a-04b388e496a5">KomodoLord1</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Driftwood and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Driftwood that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Driftwood" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/driftwood');$('#download-driftwood').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
                             </div>
                         </div>
@@ -897,6 +1394,61 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="floe" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/floe/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=floe" data-toggle="tooltip" data-placement="top" title="Floe"><strong>Floe</strong><span class="tag_hidden">floe</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-dtm" href="?s=dtm"></a><span class="tag-hidden">dtm</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=63b88dff-c6b4-4e08-bd17-aae089b12e95">Riilo<span class="tag_hidden">63b88dff-c6b4-4e08-bd17-aae089b12e95</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-floe" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Floe" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/floe/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Floe" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-floe" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Floe</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/63b88dff-c6b4-4e08-bd17-aae089b12e95?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=63b88dff-c6b4-4e08-bd17-aae089b12e95">Riilo</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Floe and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Floe that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Floe" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/floe');$('#download-floe').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="fort-aqua" class="thumbnail map-float   ">
                 <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/fort-aqua/map.png">
                     <div class="map-banner">
@@ -1223,6 +1775,118 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Mudslide" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/mudslide');$('#download-mudslide').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="oasis" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/oasis/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=oasis" data-toggle="tooltip" data-placement="top" title="Oasis"><strong>Oasis</strong><span class="tag_hidden">oasis</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-dtm" href="?s=dtm"></a><span class="tag-hidden">dtm</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=075b5514-293a-4bd5-bcef-367e687d3556">KojaK<span class="tag_hidden">075b5514-293a-4bd5-bcef-367e687d3556</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-oasis" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Oasis" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/oasis/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Oasis" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-oasis" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Oasis</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/075b5514-293a-4bd5-bcef-367e687d3556?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=075b5514-293a-4bd5-bcef-367e687d3556">KojaK</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Oasis and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Oasis that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Oasis" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/oasis');$('#download-oasis').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="overgrown" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/overgrown/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=overgrown" data-toggle="tooltip" data-placement="top" title="Overgrown"><strong>Overgrown</strong><span class="tag_hidden">overgrown</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-koth" href="?s=koth"></a><span class="tag-hidden">koth</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=075b5514-293a-4bd5-bcef-367e687d3556">KojaK<span class="tag_hidden">075b5514-293a-4bd5-bcef-367e687d3556</span></a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=282f4bab-54bb-4e2a-8345-9583c8d533ce">EDJM9<span class="tag_hidden">282f4bab-54bb-4e2a-8345-9583c8d533ce</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-overgrown" onclick="noncommercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Overgrown" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/overgrown/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Overgrown" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-overgrown" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Overgrown</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/075b5514-293a-4bd5-bcef-367e687d3556?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=075b5514-293a-4bd5-bcef-367e687d3556">KojaK</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/282f4bab-54bb-4e2a-8345-9583c8d533ce?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=282f4bab-54bb-4e2a-8345-9583c8d533ce">EDJM9</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Overgrown and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> (CC BY-NC-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Overgrown that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Overgrown" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/overgrown');$('#download-overgrown').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
                             </div>
                         </div>
@@ -1954,6 +2618,69 @@
             </div>
         </div>
         <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="tally-winter" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/tally-winter/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=tally-winter" data-toggle="tooltip" data-placement="top" title="Tally Winter"><strong>Tally Winter</strong><span class="tag_hidden">tally-winter</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag" href="?s=walls">Walls</a></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=fbd4b4d4-6186-4581-b408-666bb8a12df4">Ephesians<span class="tag_hidden">fbd4b4d4-6186-4581-b408-666bb8a12df4</span></a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=18056f66-5514-4dec-9cb8-85d052e1d54c">ChristmasLove<span class="tag_hidden">18056f66-5514-4dec-9cb8-85d052e1d54c</span></a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=63b88dff-c6b4-4e08-bd17-aae089b12e95">Riilo<span class="tag_hidden">63b88dff-c6b4-4e08-bd17-aae089b12e95</span></a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=be49b1a8-600e-4751-9725-a8aead777363">izjust4fun<span class="tag_hidden">be49b1a8-600e-4751-9725-a8aead777363</span></a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=297428a6-b482-4558-99f5-b413067ed48d">CrazyClownz<span class="tag_hidden">297428a6-b482-4558-99f5-b413067ed48d</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-tally-winter" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Tally Winter" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/tally-winter/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Tally Winter" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-tally-winter" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Tally Winter</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/fbd4b4d4-6186-4581-b408-666bb8a12df4?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=fbd4b4d4-6186-4581-b408-666bb8a12df4">Ephesians</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/18056f66-5514-4dec-9cb8-85d052e1d54c?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=18056f66-5514-4dec-9cb8-85d052e1d54c">ChristmasLove</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/63b88dff-c6b4-4e08-bd17-aae089b12e95?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=63b88dff-c6b4-4e08-bd17-aae089b12e95">Riilo</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/be49b1a8-600e-4751-9725-a8aead777363?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=be49b1a8-600e-4751-9725-a8aead777363">izjust4fun</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/297428a6-b482-4558-99f5-b413067ed48d?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=297428a6-b482-4558-99f5-b413067ed48d">CrazyClownz</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Tally Winter and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Tally Winter that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Tally Winter" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/tally-winter');$('#download-tally-winter').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
             <div id="tasty-fight" class="thumbnail map-float   ">
                 <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/tasty-fight/map.png">
                     <div class="map-banner">
@@ -2166,6 +2893,63 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="Volcano Turmoil" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/volcano-turmoil');$('#download-volcano-turmoil').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 map-thumbnail center">
+            <div id="western-port" class="thumbnail map-float map-glow-new  ">
+                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/avicus-maps/master/maps/western-port/map.png">
+                    <div class="map-banner">
+                        <a class="map-header" href="https://mcresourcepile.github.io/maps/avicus?s=western-port" data-toggle="tooltip" data-placement="top" title="Western Port"><strong>Western Port</strong><span class="tag_hidden">western-port</span></a>
+                        <span style="display:block;margin-top:-8px;">
+                            <li class="game-tag"><a class="game-link map-tag tag-ctw" href="?s=ctw"></a><span class="tag-hidden">ctw</span></li>
+                        </span>
+                    </div>
+                    <div class="map-labels">
+                        <a href="?s=new" class="label label-primary map-label">New</a>
+                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    </div>
+                </div>
+                <div class="map-authors">
+                    <span class="map-author-name">by</span>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=63b88dff-c6b4-4e08-bd17-aae089b12e95">Riilo<span class="tag_hidden">63b88dff-c6b4-4e08-bd17-aae089b12e95</span></a></li>
+                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=93d2f617-09da-4354-bc43-d0817c00c347">Vior_<span class="tag_hidden">93d2f617-09da-4354-bc43-d0817c00c347</span></a></li>
+                            </div>
+                <div style="padding-top:2%;" class="center">
+                    <button class="btn map-link-danger map-button" role="button" data-toggle="modal" data-target="#download-western-port" onclick="commercialLicense();"><i class="fa fa-download"></i></button>
+                    <a id="Western Port" href="https://github.com/MCResourcePile/avicus-maps/raw/master/maps/western-port/map.xml" target="_blank" class="btn map-link-danger map-button click-xml" role="button"><i id="Western Port" class="fa fa-code click-xml"></i></a>
+                </div>
+                <div class="modal fade" id="download-western-port" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Downloading map files for Western Port</h4>
+                                <div class="map-authors">
+                                    <span class="map-author-name">created by</span>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/63b88dff-c6b4-4e08-bd17-aae089b12e95?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=63b88dff-c6b4-4e08-bd17-aae089b12e95">Riilo</a></li>
+                                    <li class="game-tag"><img src="https://crafatar.com/avatars/93d2f617-09da-4354-bc43-d0817c00c347?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s=93d2f617-09da-4354-bc43-d0817c00c347">Vior_</a></li>
+                                                            </div>
+                            </div>
+                            <div class="modal-body">
+                                    This download for Western Port and other files included in this download are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0</a> (CC BY-SA) license. The complete legal code for this license can be found <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">here</a>. Please read and understand what this license means before downloading any content from this page.
+                                    <br><br>
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">
+                                        <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png?resize=85%2C30">
+                                    </a>
+                                    <br>
+                                    You will be downloading the version of Western Port that has been provided to ResourcePile, not the original.  
+                                    <br><br>
+                                    <small>By clicking 'Download' you agree to the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br> If you do not agree with these terms, click 'Close' <strong>now</strong>.</small>
+                                <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
+                                <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                                <div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Western Port" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/avicus-maps/tree/master/maps/western-port');$('#download-western-port').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
                             </div>
                         </div>
