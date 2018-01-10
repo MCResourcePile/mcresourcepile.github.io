@@ -55,6 +55,9 @@
             </div>
         </div>
     </div>
+    {{#if data.featured.enabled}}
+    {{> featured-maps}}
+    {{/if}}
     <div class="total-maps center"></div>
     <div id="maps-output">
         <div class="dynamic">
