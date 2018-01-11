@@ -1,4 +1,4 @@
-<div class="{{#page-category}}{{#if home}}index-alerts{{else}}content-alert{{/if}}{{/page-category}}">
+<div class="{{#inArray page-category 'home'}}index-alerts{{else}}content-alert{{/inArray}}">
     <noscript>
         <div class="alert alert-{{alerts.noscript.class}} alert-global" role="alert">{{{alerts.noscript.message}}}</div>
     </noscript>
