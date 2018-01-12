@@ -520,7 +520,8 @@ span.game-mode-button {
     margin-top: 6px;
 }
 
-.map-banner {
+.map-banner,
+.map-banner-collapse-immune {
     height: 40px;
     background-color: rgba(255,255,255,0.7);
     padding-left: 6px;
@@ -531,7 +532,8 @@ span.game-mode-button {
     background-color: rgba(255, 152, 152, 0.7);
 }
 
-.map-labels {
+.map-labels,
+.map-labels-collapse-immune {
     position: relative;
     top: 154px;
     padding-left: 8px;
@@ -1184,4 +1186,75 @@ pre {
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
+}
+
+.collection-thumbnail {
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 18px;
+}
+
+.collection-head {
+    border-bottom: 1px solid #dddddd;
+    padding-left: 12px;
+    padding-top: 2px;
+}
+
+.collection-body {
+    padding-top: 10px;
+    margin-bottom: -13px;
+}
+
+.collection-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.collection-description {
+    font-size: 16px;
+    margin-top: -12px;
+    padding-bottom: 6px;
+}
+
+#collection-buttons {
+    padding-top: 7px;
+    padding-right: 9px;
+}
+
+@media only screen and (max-width: 768px) {
+    #collection-buttons {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 6px;
+    }
+}
+
+.slick-slide {
+    height: auto !important;
+}
+
+.slick-arrow {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 2px 18px;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: 13px;
+    line-height: 1.846;
+    border-radius: 3px;
+    background-color: #7492f7;
+    color: #fff;
+}
+
+.slick-arrow:hover,
+.slick-arrow:focus {
+    background-color: #547afa;
+    color: #fff;
 }
