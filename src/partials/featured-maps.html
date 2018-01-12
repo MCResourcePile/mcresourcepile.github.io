@@ -1,9 +1,20 @@
-<div class="collection-thumbnail">
+<div class="collection-thumbnail map-glow-featured">
     <div class="collection-head">
         <div class="collection-title">Featured Maps</div>
         {{#if data.featured.description}}
         <div class="collection-description">{{featured.description}}</div>
         {{/if}}
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="collection-title">Featured Maps</div>
+                {{#if data.featured.description}}
+                <div class="collection-description">{{featured.description}}</div>
+                {{/if}}
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <span id="collection-buttons" class="center pull-right"></span>
+            </div>
+        </div>
     </div>
     <div class="collection-body">
         <div class="collection-maps">
@@ -77,7 +88,6 @@
             {{/contains}}
             {{/withSort}}
         </div>
-        <div id="collection-buttons" class="center"></div>
     </div>
 </div>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">

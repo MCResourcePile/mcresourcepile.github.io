@@ -1188,12 +1188,22 @@ pre {
     word-wrap: break-word;
 }
 
+.collection-thumbnail {
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 18px;
+}
+
 .collection-head {
-    border-bottom: 1px solid #afafaf;
-    padding: 12px;
+    border-bottom: 1px solid #dddddd;
+    padding-left: 12px;
     padding-top: 2px;
 }
 
+.collection-body {
+    padding-top: 10px;
+    margin-bottom: -13px;
+}
 
 .collection-title {
     font-size: 24px;
@@ -1201,18 +1211,23 @@ pre {
 }
 
 .collection-description {
-    font-size: 18px;
-    
+    font-size: 16px;
+    margin-top: -12px;
+    padding-bottom: 6px;
 }
 
-.collection-thumbnail {
-    border: 1px solid #afafaf;
-    border-radius: 8px;
-    background-color: #f4f4f4;
+#collection-buttons {
+    padding-top: 7px;
+    padding-right: 9px;
 }
 
-.collection-body {
-    padding: 12px;
+@media only screen and (max-width: 768px) {
+    #collection-buttons {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 6px;
+    }
 }
 
 .slick-slide {
