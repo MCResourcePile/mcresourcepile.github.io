@@ -1,8 +1,9 @@
 <div class="col-sm-6 col-lg-3 map-thumbnail center">
-    <div id="{{slug}}" class="thumbnail map-float{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}{{#if @root.page-category.contest}}{{#is position '1'}} map-glow-contest-first{{/is}}{{#is position '2'}} map-glow-contest-second{{/is}}{{#is position '3'}} map-glow-contest-third{{/is}}{{/if}}">
-        <div class="map-image lazy" data-src="{{#if @root.page-category.league}}../../assets/img/{{#if @root.page-category.contest}}contest/{{@root.id}}/maps{{else}}tournament/shared/maps{{/if}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/if}}">
+    <div id="{{slug}}" class="thumbnail map-float{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}{{#inArray @root.page-category 'contest'}}{{#is position '1'}} map-glow-contest-first{{/is}}{{#is position '2'}} map-glow-contest-second{{/is}}{{#is position '3'}} map-glow-contest-third{{/is}}{{/inArray}}">
+        <div class="map-image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{@root.id}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/inArray}}">
+
             <div class="map-banner">
-                <a class="map-header" {{#if @root.page-category.maps}}href="https://mcresourcepile.github.io/maps/{{@root.map-group}}?s={{slug}}"{{/if}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong><span class="tag_hidden">{{slug}}</span></a>
+                <a class="map-header" {{#inArray @root.page-category 'maps'}}href="https://mcresourcepile.github.io/maps/{{@root.map-group}}?s={{slug}}"{{/inArray}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong><span class="tag_hidden">{{slug}}</span></a>
                 {{#if contest}}
                 <a href="/contests/{{#is @root.map-group 'pgm'}}overcast{{else}}{{@root.map-group}}{{/is}}/{{contest}}#{{slug}}" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{#is @root.map-group 'pgm'}}Overcast{{else}}{{sentence @root.map-group}}{{/is}} contest submission"><i class="external-thread fa fa-map"></i></a>
                 {{/if}}
@@ -21,7 +22,7 @@
                 {{#is position '3'}}
                 <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="3rd&nbsp;place"><i class="external-thread fa fa-trophy"></i></a>
                 {{/is}}
-                <span style="display:block;margin-top:-{{#if @root.page-category.league}}4{{else}}8{{/if}}px;">
+                <span style="display:block;margin-top:-{{#inArray @root.page-category 'tournaments'}}4{{else}}8{{/inArray}}px;">
                     {{#if tags}}
                     {{#each tags}}
                     {{#inArray @root.short-tags this}}
@@ -40,11 +41,11 @@
                 </span>
             </div>
             <div class="map-labels">
-                {{#if @root.page-category.maps}}
-                {{#if @root.page-category.contest}}
+                {{#inArray @root.page-category 'maps'}}
+                {{#inArray @root.page-category 'contest'}}
                 <span class="label {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}label-default{{/is}}{{/is}}{{/is}} map-label">{{ordinalize position}} place</span>
-                {{/if}}
-                {{#unless @root.page-category.contest}}
+                {{/inArray}}
+                {{#inArray @root.page-category 'collections'}}
                 {{#inArray @root.data.new slug}}
                 <a href="?s=new" class="label label-primary map-label">New</a>
                 {{/inArray}}
@@ -60,24 +61,24 @@
                 <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                 {{/if}}
                 {{/if}}
-                {{/unless}}
-                {{/if}}
-                {{#if @root.page-category.league}}
+                {{/inArray}}
+                {{/inArray}}
+                {{#inArray @root.page-category 'tournaments'}}
                 <span class="label label-info map-label">{{stage}}</span>
-                {{/if}}
+                {{/inArray}}
             </div>
         </div>
-        {{#if @root.page-category.maps}}
+        {{#inArray @root.page-category 'maps'}}
         <div class="map-authors">
             <span class="map-author-name">by</span>
             {{#if authors}}
             {{#authors}}
-            <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="{{#if @root.page-category.contest}}/maps/{{@root.map-group}}{{/if}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+            <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="{{#inArray @root.page-category 'contest'}}/maps/{{@root.map-group}}{{/inArray}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
             {{/authors}}
             {{else}}<span class="map-author-name">Ghost</span>
             {{/if}}
         </div>
-        {{#if @root.page-category.contest}}
+        {{#inArray @root.page-category 'contest'}}
         <div class="map-scores">
             {{#scores}}
             {{#if score}}
@@ -87,17 +88,17 @@
             {{/if}}
             {{/scores}}
         </div>
-        {{/if}}
-        {{#unless @root.page-category.league}}
+        {{/inArray}}
+        {{#inArray @root.page-category 'tournaments'}}{{else}}
         <div style="padding-top:2%;" class="center">
             {{#if locked}}
             <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="This map has been locked"><i class="fa fa-lock"></i></span>
             {{else}}
-            <button class="btn map-link{{#unless @root.page-category.pgm_server}}-danger{{/unless}} map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}" onclick="{{#if sourced}}noLicense(){{else}}{{#unless commercial}}noncommercialLicense(){{else}}commercialLicense(){{/unless}}{{/if}};"><i class="fa fa-download"></i></button>
+            <button class="btn map-link{{#inArray @root.page-category 'pgm_server'}}{{else}}-danger{{/inArray}} map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}" onclick="{{#if sourced}}noLicense(){{else}}{{#unless commercial}}noncommercialLicense(){{else}}commercialLicense(){{/unless}}{{/if}};"><i class="fa fa-download"></i></button>
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
-            <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link{{#unless @root.page-category.pgm_server}}-danger{{/unless}} map-button click-xml" role="button"><i id="{{name}}" class="fa fa-code click-xml"></i></a>
+            <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link{{#inArray @root.page-category 'pgm_server'}}{{else}}-danger{{/inArray}} map-button click-xml" role="button"><i id="{{name}}" class="fa fa-code click-xml"></i></a>
             {{/unless}}
             {{/if}}
         </div>
@@ -144,12 +145,16 @@
                         {{/if}}
                         <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                         <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
-                        {{#unless @root.page-category.pgm_server}}<div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>{{/unless}}
+                        {{#inArray @root.page-category 'pgm_server'}}{{else}}<div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>{{/inArray}}
                     </div>
                     <div class="modal-footer">
                         {{#if sourced}}
                         {{#is sourced true}}
+                        {{#if discussion}}
+                        <a type="button" id="{{name}}" onclick="$('#download-{{slug}}').modal('hide');$('#download-opened').modal('show')" href="{{discussion}}" target="_blank" class="btn map-link click-download">Original Download</a>
+                        {{else}}
                         <button type="button" class="btn disabled map-link click-download" data-toggle="tooltip" data-placement="top" title="Original download is not available for this map">Original Download</button>
+                        {{/if}}
                         {{else}}
                         <a type="button" id="{{name}}" onclick="$('#download-{{slug}}').modal('hide');$('#download-opened').modal('show')" href="{{sourced}}" target="_blank" class="btn map-link click-download">Original Download</a>
                         {{/is}}
@@ -164,7 +169,7 @@
                 </div>
             </div>
         </div>
-        {{/unless}}
-        {{/if}}
+        {{/inArray}}
+        {{/inArray}}
     </div>
 </div>
