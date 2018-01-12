@@ -1,3 +1,5 @@
+{{#isEmpty @root.data.featured.maps}}
+{{else}}
 <div class="collection-thumbnail map-glow-featured">
     <div class="collection-head">
         <div class="row">
@@ -122,3 +124,4 @@ $(document).ready(function(){
   });
 });
 </script>
+{{/isEmpty}}
