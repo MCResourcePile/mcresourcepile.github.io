@@ -19,5 +19,7 @@
    $("a:contains('EpicnessGitHub')").html("<span class=\"position-addon-project\">Epicness</span>")
    $("td:contains('Christian')").html("<span class=\"position-addon-project\">Epicness</span>")
    $("a:contains('amactus')").html("<span class=\"position-addon-project\">amactus</span>")
+   $("a:contains('BTKing')").html("<span class=\"position-addon-project\">BTKing</span>")
+   $("a:contains('BTKingly')").html("<span class=\"position-addon-project\">BTKing</span>")
    $("tr:contains('INT')").html("")
  };
