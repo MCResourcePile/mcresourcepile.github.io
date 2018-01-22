@@ -5,29 +5,51 @@
  * of being put here.
  */
 
-/* Count maps with no download and send alert to console */
-var total_hidden = $('.dynamic').children('.no-download').length;
-var maps_no_download = $.map($(".no-download"), function(n, i) {
-    return "\n- " + n.id;
+var maps_hidden;
+var maps_no_download;
+var license_file;
+var license_content;
+$(document).ready(function(){
+    /* Count maps with no download and send alert to console */
+    total_hidden = $('.dynamic').children('.no-download').length;
+    maps_no_download = $.map($(".no-download"), function(n, i) {
+        return "\n- " + n.id;
+    });
+    if (total_hidden > 0) {
+        console.log(total_hidden + " maps have no download and have been hidden from this listing.\nPlease contact a page manager to add or enable the downloads for the following maps:" + maps_no_download)
+    }
+    
+    $('.click-download').click(function() {
+        var active_slug = $(this).attr('slug');
+        var active_path = $(this).attr('path');
+        var active_license = $(this).attr('license');
+        var active_license_message;
+        if (active_license == 'none') {
+            active_license_message = "This map has no associated license; be careful when using this map in public servers";
+            license_file = "NOTICE.txt";
+            license_content = "unlicensed content";
+        } else if (active_license == 'commercial') {{
+            active_license_message = "This map is using a Creative Commons BY-SA 4.0 license"
+        } else {
+            active_license_message = "This map is using a Creative Commons BY-NC-SA 4.0 license"
+        }
+        $('#download-' + active_slug).modal('hide');
+        $('#download-starting-message').modal('show');
+        console.log('Downloading: ' + active_slug + '\nFetching files from: ' + active_path);
+        console.log(active_license_message);
+    });
+        
+        
+    $('[data-toggle="tooltip"]').tooltip();
+    updateListing()
+    getApiLimit()
 });
 
-if (total_hidden > 0) {
-    console.log(total_hidden + " maps have no download and have been hidden from this listing.\nPlease contact a page manager to add or enable the downloads for the following maps:" + maps_no_download)
-}
+/* Update map listing in time with search bar interactions */
+$('.record-search-container').click(function() { updateListing() });
+$('.record-search-container').keyup(function() { updateListing() });
 
-/* Enable thumbnail searching */
-$(document).ready(function() {
-    $('[data-toggle="tooltip"]').tooltip()
-    makeSearchable()
-});
-$('.record-search-container').click(function() {
-    makeSearchable()
-});
-$(document).keyup(function() {
-    makeSearchable()
-});
-
-function makeSearchable() {
+function updateListing() {
     $('#maps-output .dynamic').searchable({
         selector: 'div.map-thumbnail',
         childSelector: '.map-float',
@@ -53,29 +75,10 @@ function makeSearchable() {
     }
 }
 
-/* Check which license each map is using */
-var license = true;
-var commercial = true;
-
-function commercialLicense() {
-    license = true;
-    commercial = true;
-    console.log("This map is using a Creative Commons BY-SA 4.0 license");
-    isAuthenticated()
-}
-function noncommercialLicense() {
-    license = true;
-    commercial = false;
-    console.log("This map is using a Creative Commons BY-NC-SA 4.0 license");
-    isAuthenticated()
-}
-function noLicense() {
-    license = false;
-    console.log("This map has no associated license; be careful when using this map in public servers");
-    isAuthenticated()
-}
-
 /* Get GitHub API request limit information */
+var sessionLimit = "0";
+var sessionRemaining = "0";
+var sessionDownloads = "0";
 function getApiLimit() {
     limitResponse = (function () {
             limitResponse = null;
@@ -105,21 +108,17 @@ function getApiLimit() {
         sessionLimit = limitResponse.rate.limit;
         sessionRemaining = limitResponse.rate.remaining;
         sessionDownloads = Math.round(sessionRemaining / 7);
+        /* Update API request information on page */
+        $("#api-request-remaining").html(sessionRemaining).css("font-weight", "bold");
+        $("#api-request-limit").html(sessionLimit).css("font-weight", "bold");
+        $("#api-request-approximate").html(sessionDownloads).css("font-weight", "bold");
 }
-var sessionLimit = 0;
-var sessionRemaining = 0;
-var sessionDownloads = 0;
 
 /* Modal control for download progress and error messages */
 GitZip.registerCallback(function(status, message, percent) {
     if (status === "done") {
         $("#download-complete-message").modal('show');
         $('#download-starting-message').modal('hide');
-        /* Evaluate GitHub API request limit and display response in success modal */
-        getApiLimit();
-        $("#api-request-remaining").html(sessionRemaining).css("font-weight", "bold");
-        $("#api-request-limit").html(sessionLimit).css("font-weight", "bold");
-        $("#api-request-approximate").html(sessionDownloads).css("font-weight", "bold");
     } else if (status === "error") {
         if (message.indexOf("API rate limit exceeded for") === -1) {
             $("#download-error-message").modal('show');

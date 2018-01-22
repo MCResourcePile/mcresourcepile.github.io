@@ -94,7 +94,7 @@
             {{#if locked}}
             <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="This map has been locked"><i class="fa fa-lock"></i></span>
             {{else}}
-            <button class="btn map-link{{#inArray @root.page-category 'pgm_server'}}{{else}}-danger{{/inArray}} map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}" onclick="{{#if sourced}}noLicense(){{else}}{{#unless commercial}}noncommercialLicense(){{else}}commercialLicense(){{/unless}}{{/if}};"><i class="fa fa-download"></i></button>
+            <button class="btn map-link{{#inArray @root.page-category 'pgm_server'}}{{else}}-danger{{/inArray}} map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}"><i class="fa fa-download"></i></button>
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
@@ -160,9 +160,9 @@
                         {{/is}}
                         {{/if}}
                         {{#if download}}
-                        <button type="button" id="{{name}}" onclick="GitZip.zipRepo('https://github.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/tree/master/maps/{{slug}}');$('#download-{{slug}}').modal('hide');$('#download-starting-message').modal('show')" class="btn map-link click-download">Download</button>
+                        <button type="button" id="{{name}}" slug="{{slug}}" path="https://github.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/tree/master/maps/{{slug}}" license="{{#if sourced}}none{{else}}{{#unless commercial}}noncommercial{{else}}commercial{{/unless}}{{/if}}" class="btn map-link click-download">Download</button>
                         {{else}}
-                        <button type="button" class="btn disabled map-link click-download" data-toggle="tooltip" data-placement="top" title="Download is not available for this map">Download</button>
+                        <button type="button" class="btn disabled map-link" data-toggle="tooltip" data-placement="top" title="Download is not available for this map">Download</button>
                         {{/if}}
                         <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
                     </div>
