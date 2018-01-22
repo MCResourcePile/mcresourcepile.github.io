@@ -127,5 +127,10 @@ GitZip.registerCallback(function(status, message, percent) {
             $("#download-rate-limit-message").modal('show');
             $('#download-starting-message').modal('hide');
         }
+        progress = "0";
     }
+    $('#compile-progress').css({
+        'width': (progress * 2) + '%',
+        'background-color': 'rgba(21, 57, 177, ' + progress / 200 + ')'
+    });
 });
