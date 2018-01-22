@@ -29,15 +29,15 @@ $(document).ready(function(){
         if (active_license == 'none') {
             active_license_message = "has no associated license; be careful when using this map in public servers";
             license_file = "NOTICE.txt";
-            license_content = "unlicensed content";
+            license_content = "This work has no associated license attached to it. We recommend getting in contact with authors, which are listed on our site at https://mcresourcepile.github.io/, before using this work for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.\n";
         } else if (active_license == 'commercial') {
             active_license_message = "is using a Creative Commons BY-SA 4.0 license";
             license_file = "LICENSE.txt";
-            license_content = "unlicensed content";
+            license_content = "This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n";
         } else {
             active_license_message = "is using a Creative Commons BY-NC-SA 4.0 license";
             license_file = "LICENSE.txt";
-            license_content = "unlicensed content";
+            license_content = "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n";
         }
         $('#download-' + active_slug).modal('hide');
         $('#download-starting-message').modal('show');
@@ -132,7 +132,7 @@ GitZip.registerCallback(function(status, message, percent) {
     if (status === "done") {
         $("#download-complete-message").modal('show');
         $('#download-starting-message').modal('hide');
-        progress = "0";
+        progress = 0;
         getApiLimit();
     } else if (status === "error") {
         $('#download-starting-message').modal('hide');
@@ -141,7 +141,7 @@ GitZip.registerCallback(function(status, message, percent) {
         } else {
             $("#download-rate-limit-message").modal('show');
         }
-        progress = "0";
+        progress = 0;
         getApiLimit();
     }
     $('#compile-progress').css({
