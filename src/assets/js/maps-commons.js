@@ -5,29 +5,63 @@
  * of being put here.
  */
 
-/* Count maps with no download and send alert to console */
-var total_hidden = $('.dynamic').children('.no-download').length;
-var maps_no_download = $.map($(".no-download"), function(n, i) {
-    return "\n- " + n.id;
+var maps_hidden;
+var maps_no_download;
+var license_file;
+var license_content;
+$(document).ready(function(){
+    /* Count maps with no download and send alert to console */
+    total_hidden = $('.dynamic').children('.no-download').length;
+    maps_no_download = $.map($(".no-download"), function(n, i) {
+        return "\n- " + n.id;
+    });
+    if (total_hidden > 0) {
+        console.log(total_hidden + " maps have no download and have been hidden from this listing.\nPlease contact a page manager to add or enable the downloads for the following maps:" + maps_no_download)
+    }
+
+    /* Handle map download requests then send them to GitZip */
+    $('.click-download').click(function() {
+        var active_name = $(this).attr('id');
+        var active_slug = $(this).attr('slug');
+        var active_path = $(this).attr('path');
+        var active_license = $(this).attr('license');
+        var active_license_message;
+        if (active_license == 'none') {
+            active_license_message = "has no associated license; be careful when using this map in public servers";
+            license_file = "NOTICE.txt";
+            license_content = "This work has no associated license attached to it. We recommend getting in contact with authors, which are listed on our site at https://mcresourcepile.github.io/, before using this work for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.\n";
+        } else if (active_license == 'commercial') {
+            active_license_message = "is using a Creative Commons BY-SA 4.0 license";
+            license_file = "LICENSE.txt";
+            license_content = "This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n";
+        } else {
+            active_license_message = "is using a Creative Commons BY-NC-SA 4.0 license";
+            license_file = "LICENSE.txt";
+            license_content = "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n";
+        }
+        $('#download-' + active_slug).modal('hide');
+        $('#download-starting-message').modal('show');
+        console.info('Downloading: ' + active_slug + '\nFetching files from: ' + active_path + '\n' + active_name + ' ' + active_license_message);
+        file_name = active_slug
+        if (current_token) {
+            GitZip.setAccessToken(current_token);
+            GitZip.zipRepo(active_path);
+            console.info('Using given GitHub API access token.');
+        } else {
+            GitZip.zipRepo(active_path);
+            console.warn('No GitHub API access token provided. Please go to your preferences to generate an access token.')
+        }
+    });
+
+    updateListing()
+    getApiLimit()
 });
 
-if (total_hidden > 0) {
-    console.log(total_hidden + " maps have no download and have been hidden from this listing.\nPlease contact a page manager to add or enable the downloads for the following maps:" + maps_no_download)
-}
+/* Update map listing in time with search bar interactions */
+$('.record-search-container').click(function() { updateListing() });
+$('.record-search-container').keyup(function() { updateListing() });
 
-/* Enable thumbnail searching */
-$(document).ready(function() {
-    $('[data-toggle="tooltip"]').tooltip()
-    makeSearchable()
-});
-$('.record-search-container').click(function() {
-    makeSearchable()
-});
-$(document).keyup(function() {
-    makeSearchable()
-});
-
-function makeSearchable() {
+function updateListing() {
     $('#maps-output .dynamic').searchable({
         selector: 'div.map-thumbnail',
         childSelector: '.map-float',
@@ -53,29 +87,10 @@ function makeSearchable() {
     }
 }
 
-/* Check which license each map is using */
-var license = true;
-var commercial = true;
-
-function commercialLicense() {
-    license = true;
-    commercial = true;
-    console.log("This map is using a Creative Commons BY-SA 4.0 license");
-    isAuthenticated()
-}
-function noncommercialLicense() {
-    license = true;
-    commercial = false;
-    console.log("This map is using a Creative Commons BY-NC-SA 4.0 license");
-    isAuthenticated()
-}
-function noLicense() {
-    license = false;
-    console.log("This map has no associated license; be careful when using this map in public servers");
-    isAuthenticated()
-}
-
 /* Get GitHub API request limit information */
+var sessionLimit = "0";
+var sessionRemaining = "0";
+var sessionDownloads = "0";
 function getApiLimit() {
     limitResponse = (function () {
             limitResponse = null;
@@ -101,32 +116,36 @@ function getApiLimit() {
                 });
             }
         return limitResponse;
-        })(); 
-        sessionLimit = limitResponse.rate.limit;
-        sessionRemaining = limitResponse.rate.remaining;
-        sessionDownloads = Math.round(sessionRemaining / 7);
+    })(); 
+    sessionLimit = limitResponse.rate.limit;
+    sessionRemaining = limitResponse.rate.remaining;
+    sessionDownloads = Math.round(sessionRemaining / 7);
+    /* Update API request information on page */
+    $(".api-request-remaining").html(sessionRemaining).css("font-weight", "bold");
+    $(".api-request-limit").html(sessionLimit).css("font-weight", "bold");
+    $(".api-request-approximate").html(sessionDownloads).css("font-weight", "bold");
 }
-var sessionLimit = 0;
-var sessionRemaining = 0;
-var sessionDownloads = 0;
 
 /* Modal control for download progress and error messages */
 GitZip.registerCallback(function(status, message, percent) {
+    var progress = percent
     if (status === "done") {
         $("#download-complete-message").modal('show');
         $('#download-starting-message').modal('hide');
-        /* Evaluate GitHub API request limit and display response in success modal */
+        progress = 0;
         getApiLimit();
-        $("#api-request-remaining").html(sessionRemaining).css("font-weight", "bold");
-        $("#api-request-limit").html(sessionLimit).css("font-weight", "bold");
-        $("#api-request-approximate").html(sessionDownloads).css("font-weight", "bold");
     } else if (status === "error") {
+        $('#download-starting-message').modal('hide');
         if (message.indexOf("API rate limit exceeded for") === -1) {
             $("#download-error-message").modal('show');
-            $('#download-starting-message').modal('hide');
         } else {
             $("#download-rate-limit-message").modal('show');
-            $('#download-starting-message').modal('hide');
         }
+        progress = 0;
+        getApiLimit();
     }
+    $('#compile-progress').css({
+        'width': (progress * 2) + '%',
+        'background-color': 'rgba(21, 57, 177, ' + progress / 200 + ')'
+    });
 });
