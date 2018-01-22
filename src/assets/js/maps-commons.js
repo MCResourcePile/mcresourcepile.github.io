@@ -18,29 +18,41 @@ $(document).ready(function(){
     if (total_hidden > 0) {
         console.log(total_hidden + " maps have no download and have been hidden from this listing.\nPlease contact a page manager to add or enable the downloads for the following maps:" + maps_no_download)
     }
-    
+
+    /* Handle map download requests then send them to GitZip */
     $('.click-download').click(function() {
+        var active_name = $(this).attr('id');
         var active_slug = $(this).attr('slug');
         var active_path = $(this).attr('path');
         var active_license = $(this).attr('license');
         var active_license_message;
         if (active_license == 'none') {
-            active_license_message = "This map has no associated license; be careful when using this map in public servers";
+            active_license_message = "has no associated license; be careful when using this map in public servers";
             license_file = "NOTICE.txt";
             license_content = "unlicensed content";
-        } else if (active_license == 'commercial') {{
-            active_license_message = "This map is using a Creative Commons BY-SA 4.0 license"
+        } else if (active_license == 'commercial') {
+            active_license_message = "is using a Creative Commons BY-SA 4.0 license";
+            license_file = "LICENSE.txt";
+            license_content = "unlicensed content";
         } else {
-            active_license_message = "This map is using a Creative Commons BY-NC-SA 4.0 license"
+            active_license_message = "is using a Creative Commons BY-NC-SA 4.0 license";
+            license_file = "LICENSE.txt";
+            license_content = "unlicensed content";
         }
         $('#download-' + active_slug).modal('hide');
         $('#download-starting-message').modal('show');
-        console.log('Downloading: ' + active_slug + '\nFetching files from: ' + active_path);
-        console.log(active_license_message);
+        console.info('Downloading: ' + active_slug + '\nFetching files from: ' + active_path + '\n' + active_name + ' ' + active_license_message);
+        file_name = active_slug
+        if (current_token) {
+            GitZip.setAccessToken(current_token);
+            GitZip.zipRepo(active_path);
+            console.info('Using given GitHub API access token.');
+        } else {
+            GitZip.zipRepo(active_path);
+            console.warn('No GitHub API access token provided. Please go to your preferences to generate an access token.')
+        }
     });
-        
-        
-    $('[data-toggle="tooltip"]').tooltip();
+
     updateListing()
     getApiLimit()
 });
