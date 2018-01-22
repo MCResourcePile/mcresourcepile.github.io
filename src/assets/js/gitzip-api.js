@@ -390,11 +390,17 @@ SOFTWARE.
             };
         }
     }
+    
+    function setAccessToken(strToken){
+        token = strToken;
+    }
+
 
     fn.zipRepo = createURL;
     fn.zipFromApiUrl = zipIt;
     fn.downloadFile = downloadZip;
     fn.registerCallback = registerCallback;
+    fn.setAccessToken = setAccessToken;
 
     scope.GitZip = fn;
 
