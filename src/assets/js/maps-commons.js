@@ -104,30 +104,33 @@ function getApiLimit() {
                 });
             }
         return limitResponse;
-        })(); 
-        sessionLimit = limitResponse.rate.limit;
-        sessionRemaining = limitResponse.rate.remaining;
-        sessionDownloads = Math.round(sessionRemaining / 7);
-        /* Update API request information on page */
-        $("#api-request-remaining").html(sessionRemaining).css("font-weight", "bold");
-        $("#api-request-limit").html(sessionLimit).css("font-weight", "bold");
-        $("#api-request-approximate").html(sessionDownloads).css("font-weight", "bold");
+    })(); 
+    sessionLimit = limitResponse.rate.limit;
+    sessionRemaining = limitResponse.rate.remaining;
+    sessionDownloads = Math.round(sessionRemaining / 7);
+    /* Update API request information on page */
+    $(".api-request-remaining").html(sessionRemaining).css("font-weight", "bold");
+    $(".api-request-limit").html(sessionLimit).css("font-weight", "bold");
+    $(".api-request-approximate").html(sessionDownloads).css("font-weight", "bold");
 }
 
 /* Modal control for download progress and error messages */
 GitZip.registerCallback(function(status, message, percent) {
+    var progress = percent
     if (status === "done") {
         $("#download-complete-message").modal('show');
         $('#download-starting-message').modal('hide');
+        progress = "0";
+        getApiLimit();
     } else if (status === "error") {
+        $('#download-starting-message').modal('hide');
         if (message.indexOf("API rate limit exceeded for") === -1) {
             $("#download-error-message").modal('show');
-            $('#download-starting-message').modal('hide');
         } else {
             $("#download-rate-limit-message").modal('show');
-            $('#download-starting-message').modal('hide');
         }
         progress = "0";
+        getApiLimit();
     }
     $('#compile-progress').css({
         'width': (progress * 2) + '%',
