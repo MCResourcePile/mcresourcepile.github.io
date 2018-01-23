@@ -34,9 +34,6 @@ SOFTWARE.
         /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
 
     var token;
-    if (token = null) {
-        token = Cookies.get('rp_user_token');
-    }
 
     var statusHandle = function(status){
         if(status == 'error' || status == 'done') isBusy = false;
