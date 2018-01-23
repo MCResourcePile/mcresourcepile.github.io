@@ -151,12 +151,12 @@
                         {{#if sourced}}
                         {{#is sourced true}}
                         {{#if discussion}}
-                        <a type="button" id="{{name}}" onclick="$('#download-{{slug}}').modal('hide');$('#download-opened').modal('show')" href="{{discussion}}" target="_blank" class="btn map-link click-download">Original Download</a>
+                        <a type="button" id="{{name}}" slug="{{slug}}" href="{{discussion}}" target="_blank" class="btn map-link click-download-external">Original Download</a>
                         {{else}}
-                        <button type="button" class="btn disabled map-link click-download" data-toggle="tooltip" data-placement="top" title="Original download is not available for this map">Original Download</button>
+                        <button type="button" class="btn disabled map-link click-download-external" data-toggle="tooltip" data-placement="top" title="Original download is not available for this map">Original Download</button>
                         {{/if}}
                         {{else}}
-                        <a type="button" id="{{name}}" onclick="$('#download-{{slug}}').modal('hide');$('#download-opened').modal('show')" href="{{sourced}}" target="_blank" class="btn map-link click-download">Original Download</a>
+                        <a type="button" id="{{name}}" slug="{{slug}}" href="{{sourced}}" target="_blank" class="btn map-link click-download-external">Original Download</a>
                         {{/is}}
                         {{/if}}
                         {{#if download}}
