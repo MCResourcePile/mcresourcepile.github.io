@@ -90,9 +90,9 @@ function updateListing() {
         $('.total-maps').html('There are no maps to display.');
     } else if (total_display == '0') {
         if (current_search == 'new') {
-            $('.total-maps').html('There aren't any new map additions to display. Check back later!');
+            $('.total-maps').html('There aren\'t any new map additions to display. Check back later!');
         } else if (current_search == 'popular') {
-            $('.total-maps').html('There aren't any popular maps at the moment. Check back later!');
+            $('.total-maps').html('There aren\'t any popular maps at the moment. Check back later!');
         } else {
             $('.total-maps').html('Your search of <code>' + current_search + '</code> references no maps. Maybe try searching something else.');
         }
