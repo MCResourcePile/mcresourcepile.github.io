@@ -13,6 +13,13 @@ module.exports = function(grunt) {
                 partials: ['src/posts/*.md', 'src/partials/*.html'],
                 templateData: 'src/data/**/*.json',
                 globals: ['src/data/global.json']
+            },
+            jsTest: {
+                files: [{
+                    src: 'src/maps.js',
+                    dest: 'out/assets/js/maps.js'
+                }],
+                templateData: 'src/data/maps/overcast.json'
             }
         },
         copy: {
