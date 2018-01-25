@@ -5,6 +5,12 @@
  */
 
 var current_token = Cookies.get('rp_user_token');
+// Remove &scope=... from access tokens to prevent
+// GitZip from throwing errors (fix existing saves)
+if (current_token.length > 40) {
+    current_token = current_token.split('&')[0];
+    Cookies.set('rp_user_token', current_token, { expires: 365 });
+}
 
 $(document).ready(function(){
     if (current_token) {
@@ -75,6 +81,12 @@ function revokeToken() {
 
 function saveToken() {
     var token_input = $('#access_token').val();
+    // Remove &scope=... from access tokens to prevent
+    // GitZip from throwing errors
+    if (token_input.length > 40) {
+        token_input = token_input.split('&')[0];
+        $('#access_token').val(token_input);
+    }
     response = (function() {
         response = null;
         $.ajax({
