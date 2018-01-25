@@ -123,17 +123,17 @@
                 <noscript>
                     <div class="alert alert-danger alert-sm" role="alert" style="margin-bottom: 12px;">You must have JavaScript enabled to authenticate with the GitHub API</div>
                 </noscript>
-                <div id="token-save-success" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token successfully saved</div>
-                <div id="token-revoked" class="alert alert-info alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token has been revoked</div>
-                <div id="token-bad-credentials" class="alert alert-warning alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token unable to be saved - bad credentials</div>
-                <div id="token-no-input" class="alert alert-warning alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Please enter a valid access token</div>
+                <div id="prf-alert-token-saved" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token successfully saved</div>
+                <div id="prf-alert-token-revoked" class="alert alert-info alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token has been revoked</div>
+                <div id="prf-alert-token-missing" class="alert alert-danger alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Please enter a valid access token</div>
+                <div id="prf-alert-token-invalid" class="alert alert-danger alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token unable to be saved - bad credentials</div>
                 <input type="text" name="access_token" id="access_token" tabindex="1" class="form-control form-text-box" style="width:100%" placeholder="Token" value="">
                 <div class="row" style="margin-top:12px;">
                     <div class="col-md-6">
-                        <div class="auth-group-1" style="display:none">
+                        <div class="prf-token-auth-panel" style="display:none">
                             <a class="btn btn-danger btn-auth" onclick="revokeToken()">Revoke</a>
                         </div>
-                        <div class="auth-group-2" style="display:none">
+                        <div class="prf-token-unauth-panel" style="display:none">
                             <a class="btn btn-success btn-auth" onclick="saveToken()">Save</a>
                             <a class="btn btn-info btn-auth" href="https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216">Generate Access Token</a>
                         </div>
@@ -142,11 +142,11 @@
                         <i>This token only allows us to access your public information.</i>
                     </div>
                     <div class="col-md-6">
-                        <div class="auth-group-1" style="display:none">
-                            Welcome to ResourcePile, <strong id="user_user_name"></strong>.<br><br>
-                            You currently have <code id="user_rate_remaining"></code> requests of <code id="user_rate_limit"></code> remaining to the GitHub API, which means you can download approximately <code id="user_rate_approximate"></code> more maps from our <a href="/maps">collections</a>.
+                        <div class="prf-token-auth-panel" style="display:none">
+                            Welcome to ResourcePile, <strong id="user_user_name">User</strong>.<br><br>
+                            You currently have <code id="user_rate_remaining">0</code> requests of <code id="user_rate_limit">0</code> remaining to the GitHub API, which means you can download approximately <code id="user_rate_approximate">0</code> more maps from our <a href="/maps">collections</a>.
                         </div>
-                        <div class="auth-group-2" style="display:none">
+                        <div class="prf-token-unauth-panel" style="display:none">
                             <h6><strong>How to generate an access token</strong></h6>
                             <ol>
                                 <li>Click <code>Generate Access Token</code></li>
@@ -163,7 +163,10 @@
         <div class="col-md-6 col-sm-12">
             <div id="theme-well" class="well well-custom-blue">
                 <div class="well-header">Site Preferences</div>
-                <div id="site-preferences-updated" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Site preferences successfully updated</div>
+                <noscript>
+                    <div class="alert alert-danger alert-sm" role="alert" style="margin-bottom: 12px;">You must have JavaScript enabled to change your site preferences</div>
+                </noscript>
+                <div id="prf-alert-site-saved" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Site preferences successfully updated</div>
                 <div class="row">
                     <h6 class="col-md-4 control-label"><b>Site Theme</b></h6>
                     <div class="col-md-4">
