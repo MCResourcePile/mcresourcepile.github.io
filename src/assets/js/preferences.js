@@ -16,7 +16,7 @@ $(document).ready(function(){
     if (current_token) {
         $('#access_token').val(current_token);
         $('#auth-well').addClass('well-custom-green');
-        $('.auth-group-1').show();
+        $('.prf-token-auth-panel').show();
         user = (function() {
             user = null;
             $.ajax({
@@ -48,7 +48,7 @@ $(document).ready(function(){
         $('#user_rate_limit').text(ratelimit.rate.limit);
         $('#user_rate_approximate').text(Math.round(ratelimit.rate.remaining / 7));
     } else {
-        $('.auth-group-2').show();
+        $('.prf-token-unauth-panel').show();
     }
     if (selected_theme == 'dark') {
         $("#site-select-theme").val('dark');
@@ -69,8 +69,8 @@ function revokeToken() {
             $("#token-revoked").show().delay(5000).fadeOut();
             $('#access_token').val('');
             $('#auth-well').removeClass('well-custom-green');
-            $('.auth-group-1').hide();
-            $('.auth-group-2').show();
+            $('.prf-token-auth-panel').hide();
+            $('.prf-token-unauth-panel').show();
             $('.auth-enabled').hide();
             $('.auth-disabled').show();
         } else {
@@ -108,8 +108,8 @@ function saveToken() {
         });
         $("#token-save-success").show().delay(5000).fadeOut();
         $('#auth-well').addClass('well-custom-green');
-        $('.auth-group-1').show();
-        $('.auth-group-2').hide();
+        $('.prf-token-auth-panel').show();
+        $('.prf-token-unauth-panel').hide();
         $('.auth-enabled').show();
         $('.auth-disabled').hide();
     } else {
