@@ -152,7 +152,7 @@ GitZip.registerCallback(function(status, message, percent) {
         $('#download-starting-message').modal('hide');
         if (message.indexOf('API rate limit exceeded for') === -1) {
             $('#download-error-message').modal('show');
-            $('#download-error-output').text('An unknown error has occurred.');
+            $('#download-error-output').text('An error occurred while retrieving your download. Check the console for more details.');
         } else {
             $('#download-rate-limit-message').modal('show');
         }
