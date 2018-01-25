@@ -5,16 +5,18 @@
  */
 
 var current_token = Cookies.get('rp_user_token');
-// Remove &scope=... from access tokens to prevent
-// GitZip from throwing errors (fix existing saves)
-if (current_token.length > 40) {
-    current_token = current_token.split('&')[0];
-    Cookies.set('rp_user_token', current_token, { expires: 365 });
 var selected_theme = Cookies.get('rp_user_theme');
 var hide_map_images = Cookies.get('rp_map_images?');
 
 if (selected_theme == 'dark') {
     $('head').append('<link href='/assets/css/dark.css' rel='stylesheet'>');
+}
+
+// Remove &scope=... from access tokens to prevent
+// GitZip from throwing errors (fix existing saves)
+if (current_token.length > 40) {
+    current_token = current_token.split('&')[0];
+    Cookies.set('rp_user_token', current_token, { expires: 365 });
 }
 
 $(document).ready(function(){
