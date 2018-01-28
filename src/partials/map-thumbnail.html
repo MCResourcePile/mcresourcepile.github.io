@@ -94,11 +94,11 @@
             {{#if locked}}
             <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="This map has been locked"><i class="fa fa-lock"></i></span>
             {{else}}
-            <button class="btn map-link{{#inArray @root.page-category 'pgm_server'}}{{else}}-danger{{/inArray}} map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}"><i class="fa fa-download"></i></button>
+            <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}"><i class="fa fa-download"></i></button>
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
-            <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link{{#inArray @root.page-category 'pgm_server'}}{{else}}-danger{{/inArray}} map-button click-xml" role="button"><i id="{{name}}" class="fa fa-code click-xml"></i></a>
+            <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{name}}" class="fa fa-code click-xml"></i></a>
             {{/unless}}
             {{/if}}
         </div>
@@ -145,7 +145,7 @@
                         {{/if}}
                         <small>More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.</small>
                         <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
-                        {{#inArray @root.page-category 'pgm_server'}}{{else}}<div class="alert alert-danger alert-sm" role="alert">Please note that this map's XML will not work on servers running the open source PGM plugin.</div>{{/inArray}}
+                        {{#inArray @root.page-category 'pgm_server'}}{{else}}<div class="alert alert-danger alert-sm" role="alert">Please note that Avicus maps depend on <a href="https://github.com/Avicus/AvicusNetwork" target="_blank">Avcius' open source plugins</a> and will not work on Project Ares based servers.</div>{{/inArray}}
                     </div>
                     <div class="modal-footer">
                         {{#if sourced}}
