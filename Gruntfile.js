@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         'compile-handlebars': {
-            info: {
+            main: {
                 files: [{
                     expand: true,
                     cwd: 'src/',
@@ -14,9 +14,9 @@ module.exports = function(grunt) {
                 templateData: 'src/data/**/*.json',
                 globals: ['src/data/global.json']
             },
-            jsTest: {
+            downloads: {
                 files: [{
-                    src: 'src/maps.js',
+                    src: 'src/partials/maps.js',
                     dest: 'out/assets/js/maps.js'
                 }],
                 templateData: 'src/data/maps/overcast.json'
