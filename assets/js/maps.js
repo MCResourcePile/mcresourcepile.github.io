@@ -254,6 +254,7 @@ var maps = [
     {slug: "leyst", name: "Leyst", path: "https://github.com/MCResourcePile/overcast-maps-g-to-n/tree/master/maps/leyst", license: "noncommercial"},
     {slug: "library_dte", name: "Library DTE", path: "https://github.com/MCResourcePile/overcast-maps-g-to-n/tree/master/maps/library_dte", license: "commercial"},
     {slug: "lights_out", name: "Lights Out", path: "https://github.com/MCResourcePile/overcast-maps-g-to-n/tree/master/maps/lights_out", license: "commercial"},
+    {slug: "isle", name: "Isle", path: "https://github.com/MCResourcePile/overcast-maps-g-to-n/tree/master/maps/isle", license: "commercial"},
     {slug: "lilypad_lagoon", name: "Lilypad Lagoon", path: "https://github.com/MCResourcePile/overcast-maps-g-to-n/tree/master/maps/lilypad_lagoon", license: "commercial"},
     {slug: "long_shot", name: "Long Shot", path: "https://github.com/MCResourcePile/overcast-maps-g-to-n/tree/master/maps/long_shot", license: "commercial"},
     {slug: "lump", name: "Lump", path: "https://github.com/MCResourcePile/overcast-maps-g-to-n/tree/master/maps/lump", license: "commercial"},
