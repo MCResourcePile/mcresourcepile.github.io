@@ -21,6 +21,9 @@ $(document).ready(function(){
 
     /* Handle map download requests then send them to GitZip */
     $('.click-download:not(.disabled)').click(function() {
+        $(this).prop('disabled', true).text('Downloading...');
+        $(this).parent().find('.map-download-pending').hide();
+        $(this).parent().find('.map-download-started').show();
         var active_name = $(this).attr('id');
         var active_slug = $(this).attr('slug');
         var active_path = $(this).attr('path');
@@ -39,8 +42,6 @@ $(document).ready(function(){
             license_file = 'LICENSE.txt';
             license_content = 'This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n';
         }
-        $('#download-' + active_slug).modal('hide');
-        $('#download-starting-message').modal('show');
         console.info('Downloading: ' + active_slug + '\nFetching files from: ' + active_path + '\n' + active_name + ' ' + active_license_message);
         file_name = active_slug
         if (active_path !== undefined) {
@@ -144,12 +145,18 @@ function getApiLimit() {
 GitZip.registerCallback(function(status, message, percent) {
     var progress = percent
     if (status === 'done') {
+        $('.modal').modal('hide');
+        $('.map-download-pending:hidden').show();
+        $('.map-download-started:visible').hide();
+        $('.click-download:disabled').prop('disabled', false).text('Download');
         $('#download-complete-message').modal('show');
-        $('#download-starting-message').modal('hide');
         progress = 0;
         getApiLimit();
     } else if (status === 'error') {
-        $('#download-starting-message').modal('hide');
+        $('.modal').modal('hide');
+        $('.map-download-pending:hidden').show();
+        $('.map-download-started:visible').hide();
+        $('.click-download:disabled').prop('disabled', false).text('Download');;
         if (message.indexOf('API rate limit exceeded for') === -1) {
             $('#download-error-message').modal('show');
             $('#download-error-output').text('An error occurred while retrieving your download. Check the console for more details.');
@@ -159,8 +166,8 @@ GitZip.registerCallback(function(status, message, percent) {
         progress = 0;
         getApiLimit();
     }
-    $('#compile-progress').css({
+    $('.progress-bar').css({
         'width': (progress * 2) + '%',
-        'background-color': 'rgba(21, 57, 177, ' + progress / 200 + ')'
+        'background-color': 'rgb(71, 198, 99)'
     });
 });
