@@ -135,4 +135,6 @@ function updateUserInfo() {
     $('#user_rate_remaining').text(ratelimit.rate.remaining);
     $('#user_rate_limit').text(ratelimit.rate.limit);
     $('#user_rate_approximate').text(Math.round(ratelimit.rate.remaining / 7));
+    limit_reset = moment.unix(ratelimit.rate.reset)
+    $('#user_rate_reset').text(limit_reset._d);
 }

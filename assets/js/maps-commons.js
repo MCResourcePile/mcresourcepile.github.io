@@ -135,10 +135,12 @@ function getApiLimit() {
     sessionLimit = limitResponse.rate.limit;
     sessionRemaining = limitResponse.rate.remaining;
     sessionDownloads = Math.round(sessionRemaining / 7);
+    sessionReset = moment.unix(limitResponse.rate.reset);
     /* Update API request information on page */
     $('.api-request-remaining').html(sessionRemaining).css('font-weight', 'bold');
     $('.api-request-limit').html(sessionLimit).css('font-weight', 'bold');
     $('.api-request-approximate').html(sessionDownloads).css('font-weight', 'bold');
+    $('.api-request-reset').html(sessionReset._d).css('font-weight', 'bold');
 }
 
 /* Modal control for download progress and error messages */
