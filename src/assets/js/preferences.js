@@ -58,11 +58,11 @@ function revokeToken() {
 }
 
 function saveToken() {
-    var token_input = $('#access_token').val();
+    var token_input = $('#access_token').val().replace(/\s/g,'');
     // Remove &scope=... from access tokens to prevent
     // GitZip from throwing errors
     if (token_input.length > 40) {
-        token_input = token_input.split('&')[0];
+        token_input = token_input.split('&')[0].replace('access_token=','').replace(/\s/g,'');
         $('#access_token').val(token_input);
     }
     response = (function() {
