@@ -14,6 +14,9 @@
             <script>$("#alert-avicus-maps").on("closed.bs.alert",function(){Cookies.set("alert-avicus-maps-hidden",!0,{expires:365})}),Cookies.get("alert-avicus-maps-hidden")&&$("#alert-avicus-maps").alert("close");</script>
         </div>
     </div>
+    {{#if data.featured.enabled}}
+    {{> featured-maps}}
+    {{/if}}
     <div class="thumbnail">
         <form name="search_form" class="record-search-container">
             <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
@@ -63,9 +66,6 @@
             </div>
         </div>
     </div>
-    {{#if data.featured.enabled}}
-    {{> featured-maps}}
-    {{/if}}
 	<div class="total-maps center"></div>
 	<div id="maps-output" class="maps-output">
 		<div class="dynamic">

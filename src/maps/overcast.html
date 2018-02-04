@@ -7,6 +7,9 @@
             A collection of publicly downloadable maps from the <a href="http://oc.tc">Overcast Network</a>.
         </div>
     </div>
+    {{#if data.featured.enabled}}
+    {{> featured-maps}}
+    {{/if}}
     <div class="thumbnail">
         <form name="search_form" class="record-search-container">
             <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
@@ -59,9 +62,6 @@
             </div>
         </div>
     </div>
-    {{#if data.featured.enabled}}
-    {{> featured-maps}}
-    {{/if}}
     <div class="total-maps center"></div>
     <div id="maps-output">
         <div class="dynamic">
