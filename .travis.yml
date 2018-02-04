@@ -11,6 +11,10 @@ before_script:
 script: grunt
 after_success:
 - bash ./deploy.sh
+after_failure:
+  - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh failure $WEBHOOK_URL
 env:
     global:
     - ENCRYPTION_LABEL: "2ed699ca3770"
