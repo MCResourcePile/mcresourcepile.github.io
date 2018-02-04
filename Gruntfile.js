@@ -1,6 +1,16 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        jsonlint: {
+
+            jshintStyle: {
+                src: [ 'src/data/**/*.json' ],
+                options: {
+                    formatter: 'msbuild'
+                }
+            }
+
+        },
         'compile-handlebars': {
             main: {
                 files: [{
@@ -42,9 +52,10 @@ module.exports = function(grunt) {
       handlebars: handlebars
     });
     
+    grunt.loadNpmTasks('grunt-jsonlint');
     grunt.loadNpmTasks('grunt-compile-handlebars');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['compile-handlebars', 'copy']);
+    grunt.registerTask('default', ['jsonlint', 'compile-handlebars', 'copy']);
 }
