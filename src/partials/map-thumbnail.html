@@ -101,6 +101,7 @@
             <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{name}}" class="fa fa-code click-xml"></i></a>
             {{/unless}}
             {{/if}}
+            <a id="{{name}}" href="https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="{{name}}" class="fa fa-file-image-o"></i></a>
         </div>
         <div class="modal fade" id="download-{{slug}}" tabindex="-1" role="dialog">
             <div class="modal-dialog">
@@ -133,7 +134,7 @@
                                 {{#if commercial}}
                                 <span class="regulation" data-toggle="tooltip" data-placement="top" title="Allows use in commercialised environments (eg. servers with donations)"><i class="fa fa-check-circle" aria-hidden="true"></i> Commercial Use</span>
                                 {{else}}
-                                <span class="regulation deny" data-toggle="tooltip" data-placement="top" title="Material must not be used in commercialised environments (eg. servers with donations)"><i class="fa fa-times-circle" aria-hidden="true"></i> Noncommercial Use</span>
+                                <span class="regulation deny" data-toggle="tooltip" data-placement="top" title="Material must not be used in commercialised environments (eg. servers with donations)"><i class="fa fa-times-circle" aria-hidden="true"></i> Commercial Use</span>
                                 {{/if}}
                                 <span class="regulation" data-toggle="tooltip" data-placement="top" title="Allows remixing and modification of the original source material"><i class="fa fa-check-circle" aria-hidden="true"></i> Modification</span>
                                 <span class="regulation" data-toggle="tooltip" data-placement="top" title="Allows re-distribution of the original or modified source material"><i class="fa fa-check-circle" aria-hidden="true"></i> Distribution</span>
