@@ -56,7 +56,7 @@ var maps = [
     {slug: "battleship", name: "Battleship", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/battleship", license: "commercial"},
     {slug: "beauty_to_ashes", name: "Beauty to Ashes", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/beauty_to_ashes", license: "commercial"},
     {slug: "biomes", name: "Biomes", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/biomes", license: "commercial"},
-    {slug: "6 Sided", name: "6_sided", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/6 Sided", license: "commercial"},
+    {slug: "6_sided", name: "6 Sided", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/6_sided", license: "commercial"},
     {slug: "bills_town", name: "Bill&#x27;s Town", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/bills_town", license: "commercial"},
     {slug: "bills_town_ii", name: "Bill&#x27;s Town II", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/bills_town_ii", license: "commercial"},
     {slug: "bills_town_blitz", name: "Bill&#x27;s Town Blitz", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/bills_town_blitz", license: "commercial"},
