@@ -6,7 +6,8 @@ module.exports = function(grunt) {
             jshintStyle: {
                 src: [ 'src/data/**/*.json' ],
                 options: {
-                    formatter: 'msbuild'
+                    formatter: 'prose',
+                    reporter: 'jshint'
                 }
             }
 
