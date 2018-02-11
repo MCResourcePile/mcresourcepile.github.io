@@ -39,7 +39,7 @@
             ga('send', 'pageview');
         </script>
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
-        
+        <script src="/assets/js/jquery-validate.js"></script>
     </head>
     <body >
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -107,26 +107,112 @@
             <noscript>
                 <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
             </noscript>
-            <div id="alert-join-our-str" class="alert alert-info alert-global" role="alert">
-                Join our <a href="https://mcresourcepile.github.io/addon-project/wiki">Stratus Wiki project</a> in collaboration with the Stratus Addon Project! Find out how you can contribute <a href="https://mcresourcepile.github.io/addon-project/wiki/tools/contributing">here</a>.
+            <div id="alert-we-are-condu" class="alert alert-info alert-global" role="alert">
+                We are conducting a survey about how you use ResourcePile and we would appericiate it if you were to fill it out so we can further improve our site. <a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
-                <script>$("#alert-join-our-str").on("closed.bs.alert",function(){Cookies.set("alert-join-our-str-hidden",!0,{expires:365})}),Cookies.get("alert-join-our-str-hidden")&&$("#alert-join-our-str").alert("close");</script>
-            </div>
-            <div id="alert-slow-connect" class="alert alert-info alert-global" role="alert">
-                Slow connection? You can now turn off map images to increase page loading times! <a href="https://mcresourcepile.github.io/updates#lazy_loading_map_image_toggle">Read more</a>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
-                <script>$("#alert-slow-connect").on("closed.bs.alert",function(){Cookies.set("alert-slow-connect-hidden",!0,{expires:365})}),Cookies.get("alert-slow-connect-hidden")&&$("#alert-slow-connect").alert("close");</script>
+                <script>$("#alert-we-are-condu").on("closed.bs.alert",function(){Cookies.set("alert-we-are-condu-hidden",!0,{expires:365})}),Cookies.get("alert-we-are-condu-hidden")&&$("#alert-we-are-condu").alert("close");</script>
             </div>
         </div>
         <div class="content-title">General Use Survey</div>
         <div class="content-subtitle">
-            Understanding our users and where we need to improve
+            Understanding our users and how we can improve
         </div>
     </div>
-    <div class="form-body">
-        <div class="alert alert-warning" role="alert">This survey is no longer accepting responses.</div>
+    <div class="form-body" id="form">
+        <p class="form-required-text">* Required</p>
+        <form>
+            <div class="form-group">
+                <div class="form-section control-label form-required">How did you discover ResourcePile?</div>
+                <select name="referral" id="referral" style="width: 195px;" required autofocus="false">
+                    <option value="unknown">Select an option</option>
+                    <option value="forums">Network forums</option>
+                    <option value="social media">Social media</option>
+                    <option value="discord">Discord</option>
+                    <option value="friend">Friend</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <br/>
+
+            <div class="form-group">
+                <div class="form-section control-label form-required">Which network do you primarily use ResourcePile for?</div>
+                <select name="network" id="network" style="width: 195px;" required autofocus="false">
+                    <option value="unknown">Select an option</option>
+                    <option value="overcast">Overcast Network</option>
+                    <option value="stratus">Stratus Network</option>
+                    <option value="avicus">Avicus Network</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <br/>
+
+            <div class="form-group">
+                <div class="form-section control-label form-required">What do you mainly use ResourcePile for?</div>
+                <select name="use" id="use" style="width: 195px;" required autofocus="false">
+                    <option value="unknown">Select an option</option>
+                    <option value="maps-personal-use">Maps for personal, private use</option>
+                    <option value="maps-public-use">Maps for use on a public server</option>
+                    <option value="view-tournament">Viewing past tournament/contest records</option>
+                    <option value="view-stats">Looking at historical statistics</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <br/>
+
+            <div class="form-group">
+                <div class="form-section control-label form-required">What would you change about or add to ResourcePile to improve it?</div>
+                <div class="form-section-hint">This could be anything, big or small, that you think could be changed or added to make your ResourcePile experience that little bit better.</div>
+                <textarea type="text" name="improvement" id="improvement" placeholder="Type here..." style="width: 195px;" required></textarea>
+            </div>
+            <br/>
+
+            <input class="form-submit btn btn-default" type="submit" name="submit" id="submit" value="Submit"/>
+        </form>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('form').validate({
+            rules: {
+                referral: {
+                    required: true
+                },
+                network: {
+                    required: true
+                },
+                use: {
+                    required: true
+                },
+                improvement: {
+                    required: false
+                }
+            },
+            highlight: function(element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function(element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            submitHandler: function(form) {
+                Cookies.set('alert-we-are-condu-hidden', true, { expires: 30 });
+                var referral=$('#referral').val();
+                var network=$('#network').val();
+                var use=$('#use').val();
+                var improvement=$('#improvement').val();
+                $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLScybdePvsz67mmZ7Bs2PAtv5JStuAMFzTN1CsvncbbIGkIKjg/formResponse",
+                    data: {"entry.699181361":referral, "entry.1534520788":network, "entry.359932373":use, "entry.1920685387":improvement},
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                        0:function() { window.location.replace("success");},
+                        200:function(){window.location.replace("success");}
+                    }
+                });
+            }
+        });
+    });
+</script>
 </div>
 <div class="footer">
     <div class="container">
