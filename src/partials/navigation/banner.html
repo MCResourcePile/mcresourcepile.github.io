@@ -1,0 +1,13 @@
+{{> header}}
+<div class="section leagues center">
+    {{#tournaments}}
+    <a href="{{#if disabled}}#{{else}}/{{#inArray @root.page-category 'contest'}}contests{{else}}leagues{{/inArray}}/{{@root.host-reference}}/{{id}}{{/if}}">
+        {{#if heading}}
+        <div class="league-banner {{#if disabled}}hide{{/if}}" style="background: url('../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{id}}/banner.jpg{{else}}{{#inArray @root.page-category 'league'}}tournament/banners/{{id}}.jpg{{/inArray}}{{/inArray}}');background-position:center">{{name}}</div>
+        {{else}}
+        <img class="league-banner-custom {{#if disabled}}hide{{/if}}" src="../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{id}}/banner.png{{else}}{{#inArray @root.page-category 'league'}}tournament/banners/{{id}}.png{{/inArray}}{{/inArray}}">
+        {{/if}}
+    </a>
+    {{/tournaments}}
+</div>
+{{> footer}}
