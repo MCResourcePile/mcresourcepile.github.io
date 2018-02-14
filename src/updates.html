@@ -1,32 +1,23 @@
 {{> header}}
-<div class="container">
-    <div class="content-header">
-        {{> alert}}
-        <div class="content-title">Updates</div>
-        <div class="content-subtitle">
-            Recent updates and announcements from ResourcePile.
+<div id="post-output">
+    {{#with data}}
+    {{#posts}}
+    {{#unless hidden}}
+    <post id="{{id}}" class="post-thumbnail {{#if important}}post-thumbnail-important{{/if}}">
+        <div class="post-header">{{#if important}}<i class="fa fa-bookmark" aria-hidden="true"></i> {{/if}}<a href="#{{id}}" class="post-header">{{#if heading}}{{heading}}{{else}}Untitiled announcement{{/if}}</a></div>
+        <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/{{#if author}}{{author}}{{else}}MHF_Exclamation{{/if}}?size=12&overlay"> {{#if author}}<a href="https://mcresourcepile.github.io/staff">{{author}}</a>{{else}}<span class="position-manager">ResourcePile</span>{{/if}} {{#if date}}<span class="convert" data-toggle="tooltip" data-placement="top">{{date}}</span>{{/if}}</div>
+        <div class="post-body">{{#markdown}}{{> ( lookup . 'id')}}{{/markdown}}</div>
+        {{#if buttons}}
+        <div class="post-links">
+            {{#buttons}}
+            <a href="{{url}}" target="_blank" class="btn btn-sm map-link post-button" role="button">{{#if details}}{{details}}{{else}}Learn more{{/if}}</a>
+            {{/buttons}}
         </div>
-    </div>
-    <div id="post-output">
-        {{#with data}}
-            {{#posts}}
-            {{#unless hidden}}
-            <post id="{{id}}" class="post-thumbnail {{#if important}}post-thumbnail-important{{/if}}">
-                <div class="post-header">{{#if important}}<i class="fa fa-bookmark" aria-hidden="true"></i> {{/if}}<a href="#{{id}}" class="post-header">{{#if heading}}{{heading}}{{else}}Untitiled announcement{{/if}}</a></div>
-                <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/{{#if author}}{{author}}{{else}}MHF_Exclamation{{/if}}?size=12&overlay"> {{#if author}}<a href="https://mcresourcepile.github.io/staff">{{author}}</a>{{else}}<span class="position-manager">ResourcePile</span>{{/if}} {{#if date}}<span class="convert" data-toggle="tooltip" data-placement="top">{{date}}</span>{{/if}}</div>
-                <div class="post-body">{{#markdown}}{{> ( lookup . 'id')}}{{/markdown}}</div>
-                {{#if buttons}}
-                <div class="post-links">
-                    {{#buttons}}
-                    <a href="{{url}}" target="_blank" class="btn btn-sm map-link post-button" role="button">{{#if details}}{{details}}{{else}}Learn more{{/if}}</a>
-                    {{/buttons}}
-                </div>
-                {{/if}}
-            </post>
-            {{/unless}}
-            {{/posts}}
-        {{/with}}
-    </div>
+        {{/if}}
+    </post>
+    {{/unless}}
+    {{/posts}}
+    {{/with}}
 </div>
 <script>
     $(function () {
@@ -39,5 +30,3 @@
     });
 </script>
 {{> footer}}
-</body>
-</html>
