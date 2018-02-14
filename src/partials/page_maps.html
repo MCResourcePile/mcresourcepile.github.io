@@ -1,5 +1,5 @@
-{{> header}}
-{{#if data.featured.enabled}}{{> featured-maps}}{{/if}}
+{{> navigation_header}}
+{{#if data.featured.enabled}}{{> page_maps_featured}}{{/if}}
 <div class="thumbnail">
     <form name="search_form" class="record-search-container">
         <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
@@ -58,13 +58,13 @@
         {{#data}}
         {{#withSort maps "name"}}
         {{#if download}}
-        {{> map-thumbnail}}
+        {{> page_maps_thumbnail}}
         {{else}}
         {{#if sourced}}
         {{#is sourced true}}
         <div id="{{slug}}" class="no-download"></div>
         {{else}}
-        {{> map-thumbnail}}
+        {{> page_maps_thumbnail}}
         {{/is}}
         {{/if}}
         {{/if}}
@@ -169,4 +169,4 @@
         }
     }
 </script>
-{{> footer}}
+{{> navigation_footer}}

@@ -1,4 +1,4 @@
-{{> header}}
+{{> navigation_header}}
 <!-- Page header, splash wash -->
 <div class="background-splash-wash" style="text-align:center">
     <div class="container splash-header-body" id="wrapper-header">
@@ -7,7 +7,7 @@
     </div>
     <!-- Main page content -->
     <div class="page-content" id="wrapper-content">
-        {{> alert}}
+        {{> site_alerts}}
         <div class="content-title">Sections</div>
         <div class="content-subtitle">Just a small selection of our resources</div>
         <div class="container">
@@ -71,4 +71,4 @@
     ]
     $('.splash-subheader').text(splash_quotes[Math.floor(Math.random()*splash_quotes.length)]);
 </script>
-{{> footer}}
+{{> navigation_footer}}

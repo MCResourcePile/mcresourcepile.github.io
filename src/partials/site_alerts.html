@@ -2,8 +2,8 @@
     <noscript>
         <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
     </noscript>
-    {{#if options.alerts.enabled}}
-    {{#each options.alerts.messages}}
+    {{#if settings.alerts.enabled}}
+    {{#each settings.alerts.messages}}
     <div id="alert-{{hyphenate (lowercase (truncate message 12))}}" class="alert alert-{{class}} alert-global" role="alert">
         {{{message}}}
         {{#if dismissible}}

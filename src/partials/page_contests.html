@@ -1,4 +1,4 @@
-{{> header}}
+{{> navigation_header}}
 <!-- Contest banner -->
 <div class="center">
     {{#if heading}}
@@ -175,7 +175,7 @@
 <div class="league-info-section large">Submissions <small>({{length submissions}} maps)</small></div>
 <div class="row">
     {{#withSort submissions "name"}}
-    {{> map-thumbnail}}
+    {{> page_maps_thumbnail}}
     {{/withSort}}
 </div>
 
@@ -263,4 +263,4 @@
         $('#scores-breakdown').tablesorter({sortList: [[0,0]]});
     });
 </script>
-{{> footer}}
+{{> navigation_footer}}

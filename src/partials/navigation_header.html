@@ -1,29 +1,29 @@
 <html>
     <head>
-        <title>{{title}}</title>
+        <title>{{title}} - ResourcePile</title>
         <!-- Page meta data -->
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta content="{{#if description}}{{description}}{{else}}{{subtitle}}{{/if}}" name="description">
-        <meta content="{#title}}" property="og:title">
+        <meta content="{{title}} - ResourcePile" property="og:title">
         <meta content="{{#if description}}{{description}}{{else}}{{subtitle}}{{/if}}" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
-        <meta content="{{title}}" name="twitter:title">
+        <meta content="{{title}} - ResourcePile" name="twitter:title">
         <meta content="{{#if description}}{{description}}{{else}}{{subtitle}}{{/if}}" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
-        {{#each options.include.stylesheets}}
-        <link href="{{path}}" rel="stylesheet">
+        {{#each settings.include.stylesheets}}
+        <link href="{{this}}" rel="stylesheet">
         {{/each}}
         <!-- Page script files -->
-        {{#each options.include.scripts}}
-        <script src="{{path}}"></script>
+        {{#each settings.include.scripts}}
+        <script src="{{this}}"></script>
         {{/each}}
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -36,7 +36,7 @@
         </script>
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
     </head>
-    <body {{#if options.full}}class="background-splash" id="wrapper"{{/if}}>
+    <body {{#if settings.full}}class="background-splash" id="wrapper"{{/if}}>
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -95,15 +95,15 @@
                 </div>
             </div>
         </div>
-        <div {{#if options.full}}class="content-background"{{/if}}>
+        <div {{#if settings.full}}class="content-background"{{/if}}>
             <!-- Start page content -->
-            {{#unless options.full}}
+            {{#unless settings.full}}
             <div class="container">
-                {[#if options.header]}
+                {{#if settings.header}}
                 <div class="content-header">
-                    {{> alert}}
+                    {{> site_alerts}}
                     <div class="content-title">{{title}}</div>
-                    {[#if subtitle]}
+                    {{#if subtitle}}
                     <div class="content-subtitle">{{subtitle}}</div>
                     {{/if}}
                 </div>

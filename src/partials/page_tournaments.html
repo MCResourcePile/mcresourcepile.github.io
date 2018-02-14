@@ -1,0 +1,148 @@
+{{> navigation_header}}
+<!-- League banner -->
+<div class="center">
+    {{#if heading}}
+    <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{id}}.jpg');background-position:center">{{name}}</div>
+    {{else}}
+    <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{id}}.png">
+    {{/if}}
+</div>
+<!-- League winners -->
+<div class="league-results row center">
+    {{#if first_place}}
+    <div class="league-position col-sm-4">
+        <div class="fa fa-star"></div>
+        <div class="league-team">{{second_place}}</div>
+        <div class="league-team-position">2nd place</div>
+    </div>
+    <div class="league-position league-position-first col-sm-4">
+        <span class="fa fa-trophy"></span>
+        <div class="league-team">{{first_place}}</div>
+        <div class="league-team-position">1st place</div>
+    </div>
+    <div class="league-position col-sm-4">
+        <div class="fa fa-star"></div>
+        <div class="league-team">{{third_place}}</div>
+        <div class="league-team-position">3rd place</div>
+    </div>
+    {{else}}
+    <div class="col-md-3"></div>
+    <div class="well well-custom-red  col-md-6 col-sm-12 h3">
+        <span class="fa fa-exclamation-triangle"></span>
+        <div class="h3">This tournament has not concluded!</div>
+        <div class="h5">Information on this page may not be confirmed</div>
+    </div>
+    <div class="col-md-3"></div>
+    {{/if}}
+</div>
+<!-- League information -->
+<div class="league-info-section large">Tournament Information</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Details</div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td>Method</td>
+                        <td>{{method}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gamemodes</td>
+                        <td>{{gamemodes}}</td>
+                    </tr>
+                    <tr>
+                        <td>Teams</td>
+                        <td>{{selection}}</td>
+                    </tr>
+                    {{#if players}}
+                    <tr>
+                        <td>Players</td>
+                        <td>{{players}}</td>
+                    </tr>
+                    {{/if}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Dates and Times</div>
+            <table class="league-info-table">
+                <tbody>
+                    {{#stages}}
+                    <tr>
+                        <td>{{stage}}</td>
+                        <td>{{date}}</td>
+                    </tr>
+                    {{/stages}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{#if panels}}
+    {{#panels}}
+    <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
+        <div class="well well-sm well-custom-blue">
+            <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
+            <table class="league-info-table">
+                <tbody>
+                    {{#if rows}}
+                    {{#rows}}
+                    <tr>
+                        {{#if label}}
+                        <td>{{label}}</td>
+                        <td>{{{content}}}</td>
+                        {{else}}
+                        <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                        {{/if}}
+                    </tr>
+                    {{/rows}}
+                    {{else}}
+                    <tr>
+                        <td>This panel has no information.</td>
+                    </tr>
+                    {{/if}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{/panels}}
+    {{/if}}
+</div>
+<!-- Leage map pool -->
+<div class="league-info-section large">Map Pool</div>
+<div class="row">
+    {{#pool}}
+    {{> page_maps_thumbnail}}
+    {{/pool}}
+</div>
+<!-- League teams -->
+<div class="league-info-section large">Teams</div>
+<div class="row">
+    {{#groups}}
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red">
+            <div class="league-info-section">{{group}}</div>
+            <ul>
+                {{#teams}}
+                <li>{{team}}</li>
+                {{/teams}}
+            </ul>
+        </div>
+    </div>
+    {{/groups}}
+</div>
+{{#if challonge}}
+<!-- League standings -->
+<div class="league-info-section large">Standings</div>
+{{#challonge}}
+<div class="challonge-bracket">
+    {{#if description}}
+    <span>{{description}}</span>
+    {{/if}}
+    <iframe src="{{bracket}}" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+</div>
+{{/challonge}}
+{{/if}}
+{{> navigation_footer}}

@@ -1,4 +1,4 @@
-{{> header}}
+{{> navigation_header}}
 <div class="section leagues center">
     {{#tournaments}}
     <a href="{{#if disabled}}#{{else}}/{{#inArray @root.page-category 'contest'}}contests{{else}}leagues{{/inArray}}/{{@root.host-reference}}/{{id}}{{/if}}">
@@ -10,4 +10,4 @@
     </a>
     {{/tournaments}}
 </div>
-{{> footer}}
+{{> navigation_footer}}
