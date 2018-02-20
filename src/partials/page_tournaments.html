@@ -2,9 +2,9 @@
 <!-- League banner -->
 <div class="center">
     {{#if heading}}
-    <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{id}}.jpg');background-position:center">{{name}}</div>
+    <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{snakecase (lowercase name)}}.jpg');background-position:center">{{name}}</div>
     {{else}}
-    <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{id}}.png">
+    <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{snakecase (lowercase name)}}.png">
     {{/if}}
 </div>
 <!-- League winners -->

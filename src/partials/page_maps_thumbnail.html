@@ -1,11 +1,11 @@
 <div class="col-sm-6 col-lg-3 map-thumbnail center">
     <div id="{{slug}}" class="thumbnail map-float{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}{{#inArray @root.page-category 'contest'}}{{#is position '1'}} map-glow-contest-first{{/is}}{{#is position '2'}} map-glow-contest-second{{/is}}{{#is position '3'}} map-glow-contest-third{{/is}}{{/inArray}}">
-        <div class="map-image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{@root.id}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/inArray}}">
+        <div class="map-image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{@root.id}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/inArray}}">
 
             <div class="map-banner">
-                <a class="map-header" {{#inArray @root.page-category 'maps'}}href="https://mcresourcepile.github.io/maps/{{@root.map-group}}?s={{slug}}"{{/inArray}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong><span class="tag_hidden">{{slug}}</span></a>
+                <a class="map-header" {{#inArray @root.page-category 'maps'}}href="https://mcresourcepile.github.io/maps/{{@root.settings.maps.group}}?s={{slug}}"{{/inArray}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong><span class="tag_hidden">{{slug}}</span></a>
                 {{#if contest}}
-                <a href="/contests/{{#is @root.map-group 'pgm'}}overcast{{else}}{{@root.map-group}}{{/is}}/{{contest}}#{{slug}}" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{#is @root.map-group 'pgm'}}Overcast{{else}}{{sentence @root.map-group}}{{/is}} contest submission"><i class="external-thread fa fa-map"></i></a>
+                <a href="/contests/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}/{{contest}}#{{slug}}" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{#is @root.settings.maps.group 'pgm'}}Overcast{{else}}{{sentence @root.settings.maps.group}}{{/is}} contest submission"><i class="external-thread fa fa-map"></i></a>
                 {{/if}}
                 {{#if discussion}}
                 <a href="{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
@@ -73,7 +73,7 @@
             <span class="map-author-name">by</span>
             {{#if authors}}
             {{#authors}}
-            <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="{{#inArray @root.page-category 'contest'}}/maps/{{@root.map-group}}{{/inArray}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+            <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="{{#inArray @root.page-category 'contest'}}/maps/{{@root.settings.maps.group}}{{/inArray}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
             {{/authors}}
             {{else}}<span class="map-author-name">Ghost</span>
             {{/if}}
@@ -98,10 +98,10 @@
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
-            <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{name}}" class="fa fa-code click-xml"></i></a>
+            <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{name}}" class="fa fa-code click-xml"></i></a>
             {{/unless}}
             {{/if}}
-            <a id="{{name}}" href="https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="{{name}}" class="fa fa-file-image-o"></i></a>
+            <a id="{{name}}" href="https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="{{name}}" class="fa fa-file-image-o"></i></a>
         </div>
         <div class="modal fade" id="download-{{slug}}" tabindex="-1" role="dialog">
             <div class="modal-dialog">
@@ -192,7 +192,7 @@
                         {{/is}}
                         {{/if}}
                         {{#if download}}
-                        <button type="button" id="{{name}}" slug="{{slug}}" path="https://github.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/tree/master/maps/{{slug}}" license="{{#if sourced}}none{{else}}{{#unless commercial}}noncommercial{{else}}commercial{{/unless}}{{/if}}" class="btn map-link click-download">Download</button>
+                        <button type="button" id="{{name}}" slug="{{slug}}" path="https://github.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/tree/master/maps/{{slug}}" license="{{#if sourced}}none{{else}}{{#unless commercial}}noncommercial{{else}}commercial{{/unless}}{{/if}}" class="btn map-link click-download">Download</button>
                         {{else}}
                         <button type="button" class="btn disabled map-link" data-toggle="tooltip" data-placement="top" title="Download is not available for this map">Download</button>
                         {{/if}}
