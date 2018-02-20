@@ -18,14 +18,11 @@
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
-        {{#each settings.include.stylesheets}}
-        <link href="{{this}}" rel="stylesheet">
-        {{/each}}
+        {{#each settings.include.important.stylesheets}}<link href="{{this}}" rel="stylesheet">{{/each}}
+        {{#each settings.include.stylesheets}}<link href="{{this}}" rel="stylesheet">{{/each}}
         <!-- Page script files -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        {{#each settings.include.scripts}}
-        <script src="{{this}}"></script>
-        {{/each}}
+        {{#each settings.include.important.scripts}}<script src="{{this}}"></script>{{/each}}
+        {{#each settings.include.scripts}}<script src="{{this}}"></script>{{/each}}
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -96,8 +93,7 @@
                 </div>
             </div>
         </div>
-        <div {{#if settings.full}}class="content-background"{{/if}}>
-            <!-- Start page content -->
+        <div {{#unless settings.full}}class="content-background"{{/unless}}>
             {{#unless settings.full}}
             <div class="container">
                 {{#if settings.header}}
@@ -110,3 +106,4 @@
                 </div>
                 {{/if}}
             {{/unless}}
+            <!-- Start page content -->
