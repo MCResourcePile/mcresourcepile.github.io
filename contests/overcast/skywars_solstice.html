@@ -5,22 +5,22 @@
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Records for Skywars Solstice, a map making contest hosted by Overcast Network." name="description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="description">
         <meta content="Skywars Solstice - ResourcePile" property="og:title">
-        <meta content="Records for Skywars Solstice, a map making contest hosted by Overcast Network." name="og:description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
         <meta content="Skywars Solstice - ResourcePile" name="twitter:title">
-        <meta content="Records for Skywars Solstice, a map making contest hosted by Overcast Network." name="twitter:description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
+        <link href="/assets/favicon.ico" rel="shortcut icon">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="/assets/favicon.ico">
         <link href="/assets/css/gamemodes.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -29,6 +29,7 @@
         <script src="/assets/js/js.cookie.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="/assets/js/moment.js"></script>
+        <script src="/assets/js/jquery.tablesorter.min.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -39,7 +40,6 @@
             ga('send', 'pageview');
         </script>
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
-        <script src="/assets/js/jquery.tablesorter.min.js"></script>
     </head>
     <body >
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -56,7 +56,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> Maps <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/maps/overcast">Overcast Collection</a></li>
                                 <li><a href="/maps/pgm">PGM Collection</a></li>
@@ -65,14 +65,14 @@
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-map"></i> Contests <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/contests/overcast">Overcast Network</a></li>
                                 <li><a href="/contests/stratus">Stratus Network</a></li>
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> Tournaments <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/leagues/overcast">Overcast Network</a></li>
                                 <li><a href="/leagues/pgm">PGM Community</a></li>
@@ -81,7 +81,7 @@
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-bar-chart"></i> Statistics <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><p class="navbar-menu-title">Overcast</p></li>
                                 <li><a href="/stats/overcast/bow">Bow Records</a></li>
@@ -91,877 +91,836 @@
                                 <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
                             </ul>
                         </li>
-                        <li><a href="/addon-project/wiki"><span class="fa fa-globe"></span> Wiki</a></li>
-                        <li class=""><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
+                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <li class=""><a href="/updates">Updates</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> GitHub: <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
+                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="content-background ">
-<div class="container">
-    <div class="content-header">
-        <div class="content-alert">
-            <noscript>
-                <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
-            </noscript>
-            <div id="alert-we-are-condu" class="alert alert-info alert-global" role="alert">
-                We are conducting a survey about how you use ResourcePile and we would appericiate it if you were to fill it out so we can further improve our site. <a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
-                <script>$("#alert-we-are-condu").on("closed.bs.alert",function(){Cookies.set("alert-we-are-condu-hidden",!0,{expires:365})}),Cookies.get("alert-we-are-condu-hidden")&&$("#alert-we-are-condu").alert("close");</script>
-            </div>
-        </div>
-        <div class="content-title">Skywars Solstice</div>
-        <div class="content-subtitle">Information about Skywars Solstice contest hosted by Overcast Network.</div>
-    </div>
-
-    <!-- Contest banner -->
-    <div class="center">
-        <img class="league-banner-custom" src="../../assets/img/contest/skywars_solstice/banner.png">
-    </div>
-
-    <!-- Contest winners -->
-    <div class="league-results row center">
-        <div class="col-sm-1"></div>
-        <div class="map-thumbnail-small col-sm-2">
-            <div class="thumbnail map-float map-float-small">
-                <div class="map-image map-image-small" style="background-image: url('../../assets/img/contest/skywars_solstice/maps/christmas_morning.png');">
-                    <div class="map-banner-collapse-immune map-banner-small">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=christmas_morning" data-toggle="tooltip" data-placement="top" title="Christmas Morning"><strong>Christmas Morning</strong></a>
+        <div class="content-background">
+            <div class="container">
+                <div class="content-header">
+                    <div class="content-alert">
+                        <noscript>
+                            <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+                        </noscript>
                     </div>
-                    <div class="map-labels-collapse-immune center" style="top:148px;font-size:20px;">
-                        <div class="label map-label-contest-second map-label"><span class="fa fa-star"></span> 2nd</div>
-                    </div>
+                    <div class="content-title">Skywars Solstice</div>
+                    <div class="content-subtitle">Records for Skywars Solstice, a map making contest hosted by Overcast Network</div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=7e7da86e-57a8-4b90-b297-4ef05e71dbdb">whiteveR<span class="tag_hidden">7e7da86e-57a8-4b90-b297-4ef05e71dbdb</span></a></li>
-                                    </div>
-            </div>
-        </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-4">
-            <div class="thumbnail map-float">
-                <div class="map-image" style="background-image: url('../../assets/img/contest/skywars_solstice/maps/prevagen.png');">
-                    <div class="map-banner-collapse-immune map-banner-small">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=prevagen" data-toggle="tooltip" data-placement="top" title="Prevagen"><strong>Prevagen</strong></a>
-                    </div>
-                    <div class="map-labels-collapse-immune center" style="top:155px;">
-                        <div class="label map-label-contest-first map-label map-label-header"><span class="fa fa-trophy"></span> 1st</div>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=38ab65dd-95f9-406f-917c-6accc995421f">GoldenOre<span class="tag_hidden">38ab65dd-95f9-406f-917c-6accc995421f</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=d3814d5a-3d37-42f2-9db8-916846bb70ad">__Bread__<span class="tag_hidden">d3814d5a-3d37-42f2-9db8-916846bb70ad</span></a></li>
-                                    </div>
-            </div>
-        </div>
-        <div class="map-thumbnail-small col-sm-3">
-            <div class="thumbnail map-float map-float-small">
-                <div class="map-image map-image-small" style="background-image: url('../../assets/img/contest/skywars_solstice/maps/atlantis_airbourne.png');">
-                    <div class="map-banner-collapse-immune map-banner-small">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=atlantis_airbourne" data-toggle="tooltip" data-placement="top" title="Atlantis Airbourne"><strong>Atlantis Airbourne</strong></a>
-                    </div>
-                    <div class="map-labels-collapse-immune center" style="top:148px;font-size:20px;">
-                        <div class="label map-label-contest-third map-label"><span class="fa fa-star"></span> 3rd</div>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=5198dc37-537f-4ea5-8ee8-1e0952d4a36b">_3Each<span class="tag_hidden">5198dc37-537f-4ea5-8ee8-1e0952d4a36b</span></a></li>
-                                    </div>
-            </div>
-        </div>
-        <div class="col-sm-1"></div>
-    </div>
-
-    <!-- Contest information -->
-    <div class="league-info-section large">Contest Information</div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="well well-sm well-custom-green">
-                <div class="league-info-section">Dates and Times</div>
-                <table class="league-info-table">
-                    <tbody>
-                        <tr>
-                            <td>Submissions open</td>
-                            <td>November 23rd, 2016</td>
-                        </tr>
-                        <tr>
-                            <td>Submissions close</td>
-                            <td>Unknown</td>
-                        </tr>
-                        <tr>
-                            <td>Public testing</td>
-                            <td>Unknown</td>
-                        </tr>
-                        <tr>
-                            <td>Results announced</td>
-                            <td>January 1st, 2017</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="well well-sm well-custom-green">
-                <div class="league-info-section">Scoring <small>(Total scores are the sum of each criteria)</small></div>
-                <table class="league-info-table">
-                    <tbody>
-                        <tr>
-                            <td style="font-weight:400"><strong>Design</strong> out of <code>5</code> </td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight:400"><strong>Gameplay</strong> out of <code>4</code> </td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight:400"><strong>Aesthetics</strong> out of <code>3</code> </td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight:400"><strong>Judge appreciation</strong> out of <code>3</code> </td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight:400"><strong>Public rating</strong> out of <code>5</code> </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="well well-sm well-custom-blue">
-                <div class="league-info-section">Details and Guidelines</div>
-                <table class="league-info-table">
-                    <tbody>
-                        <tr>
-                            <td colspan="2" style="font-weight:400">Only Skywars maps were allowed, each supporting 8 players</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="font-weight:400">XML documents were to be included with the submission</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="well well-sm well-custom-blue">
-                <div class="league-info-section">Prizes</div>
-                <table class="league-info-table">
-                    <tbody>
-                        <tr>
-                            <td>First</td>
-                            <td>Map residence, winner trophy, and a donor rank</td>
-                        </tr>
-                        <tr>
-                            <td>Second</td>
-                            <td>Map residence, and a donor rank</td>
-                        </tr>
-                        <tr>
-                            <td>Third</td>
-                            <td>Map residence, and a donor rank</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contest submissions -->
-    <div class="league-info-section large">Submissions <small>(13 maps)</small></div>
-    <div class="row">
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="atlantis_airbourne" class="thumbnail map-float map-glow-contest-third">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/atlantis_airbourne.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=atlantis_airbourne" data-toggle="tooltip" data-placement="top" title="Atlantis Airbourne"><strong>Atlantis Airbourne</strong><span class="tag_hidden">atlantis_airbourne</span></a>
-                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="3rd&nbsp;place"><i class="external-thread fa fa-trophy"></i></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label map-label-contest-third map-label">3rd place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=5198dc37-537f-4ea5-8ee8-1e0952d4a36b">_3Each<span class="tag_hidden">5198dc37-537f-4ea5-8ee8-1e0952d4a36b 5198dc37537f4ea58ee81e0952d4a36b</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.96 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.96" aria-valuemin="0" aria-valuemax="5">Design (3.96 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2.86 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.86" aria-valuemin="0" aria-valuemax="4">Gameplay (2.86 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.64 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.64" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.64 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (2.5 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.5" aria-valuemin="0" aria-valuemax="3">Judge appreciation (2.5 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.93 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.93" aria-valuemin="0" aria-valuemax="5">Public rating (3.93 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="chinatown" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/chinatown.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=chinatown" data-toggle="tooltip" data-placement="top" title="Chinatown"><strong>Chinatown</strong><span class="tag_hidden">chinatown</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">8th place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=a37e4da3-1c6c-4dc9-b085-63783406a963">xCand<span class="tag_hidden">a37e4da3-1c6c-4dc9-b085-63783406a963 a37e4da31c6c4dc9b08563783406a963</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2.64 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.64" aria-valuemin="0" aria-valuemax="5">Design (2.64 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="4">Gameplay (2 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (1.96 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.96" aria-valuemin="0" aria-valuemax="3">Aesthetics (1.96 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.57 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.57" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.57 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.66 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.66" aria-valuemin="0" aria-valuemax="5">Public rating (3.66 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="christmas_morning" class="thumbnail map-float map-glow-contest-second">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/christmas_morning.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=christmas_morning" data-toggle="tooltip" data-placement="top" title="Christmas Morning"><strong>Christmas Morning</strong><span class="tag_hidden">christmas_morning</span></a>
-                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="2nd&nbsp;place&nbsp;runner&nbsp;up"><i class="external-thread fa fa-trophy"></i></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label map-label-contest-second map-label">2nd place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=7e7da86e-57a8-4b90-b297-4ef05e71dbdb">whiteveR<span class="tag_hidden">7e7da86e-57a8-4b90-b297-4ef05e71dbdb 7e7da86e57a84b90b2974ef05e71dbdb</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.89 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.89" aria-valuemin="0" aria-valuemax="5">Design (3.89 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.43 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.43" aria-valuemin="0" aria-valuemax="4">Gameplay (3.43 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.61 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.61" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.61 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (2.43 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.43" aria-valuemin="0" aria-valuemax="3">Judge appreciation (2.43 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.8 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.8" aria-valuemin="0" aria-valuemax="5">Public rating (3.8 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="christmas_night" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/christmas_night.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=christmas_night" data-toggle="tooltip" data-placement="top" title="Christmas Night"><strong>Christmas Night</strong><span class="tag_hidden">christmas_night</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">9th place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=0fdf1faa-6a98-4f27-983c-968648e12720">AMSGamingTQ<span class="tag_hidden">0fdf1faa-6a98-4f27-983c-968648e12720 0fdf1faa6a984f27983c968648e12720</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2.36 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.36" aria-valuemin="0" aria-valuemax="5">Design (2.36 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="4">Gameplay (2 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (1.57 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.57" aria-valuemin="0" aria-valuemax="3">Aesthetics (1.57 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.57 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.57" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.57 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (4.2 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.2" aria-valuemin="0" aria-valuemax="5">Public rating (4.2 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="cosmic_assault" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/cosmic_assault.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=cosmic_assault" data-toggle="tooltip" data-placement="top" title="Cosmic Assault"><strong>Cosmic Assault</strong><span class="tag_hidden">cosmic_assault</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">11th place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=715769c5-8c4c-4489-bdf8-f9cee2b2ae8a">amactus<span class="tag_hidden">715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5">Design (2 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (1.71 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.71" aria-valuemin="0" aria-valuemax="4">Gameplay (1.71 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (1.43 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.43" aria-valuemin="0" aria-valuemax="3">Aesthetics (1.43 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.57 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.57" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.57 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.15 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.15" aria-valuemin="0" aria-valuemax="5">Public rating (3.15 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="kaskai" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/kaskai.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=kaskai" data-toggle="tooltip" data-placement="top" title="Kaskai"><strong>Kaskai</strong><span class="tag_hidden">kaskai</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">5th place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.57 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.57" aria-valuemin="0" aria-valuemax="5">Design (3.57 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.18 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.18" aria-valuemin="0" aria-valuemax="4">Gameplay (3.18 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.29 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.29" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.29 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (2.46 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.46" aria-valuemin="0" aria-valuemax="3">Judge appreciation (2.46 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.63 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.63" aria-valuemin="0" aria-valuemax="5">Public rating (3.63 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="palmetto_city" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/palmetto_city.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=palmetto_city" data-toggle="tooltip" data-placement="top" title="Palmetto City"><strong>Palmetto City</strong><span class="tag_hidden">palmetto_city</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">12th place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=96f9aa16-9c93-4b1d-9bce-18b8c212074b">_ArmyFrog<span class="tag_hidden">96f9aa16-9c93-4b1d-9bce-18b8c212074b 96f9aa169c934b1d9bce18b8c212074b</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=e8823186-7338-4eaf-986c-c5c830aefb46">Exsoh<span class="tag_hidden">e8823186-7338-4eaf-986c-c5c830aefb46 e882318673384eaf986cc5c830aefb46</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (1.36 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.36" aria-valuemin="0" aria-valuemax="5">Design (1.36 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (1.68 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.68" aria-valuemin="0" aria-valuemax="4">Gameplay (1.68 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (1.5 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.5" aria-valuemin="0" aria-valuemax="3">Aesthetics (1.5 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.29 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.29" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.29 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (4 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5">Public rating (4 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="prevagen" class="thumbnail map-float map-glow-contest-first">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/prevagen.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=prevagen" data-toggle="tooltip" data-placement="top" title="Prevagen"><strong>Prevagen</strong><span class="tag_hidden">prevagen</span></a>
-                        <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="1st&nbsp;place&nbsp;winner"><i class="external-thread fa fa-trophy"></i></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label map-label-contest-first map-label">1st place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=38ab65dd-95f9-406f-917c-6accc995421f">GoldenOre<span class="tag_hidden">38ab65dd-95f9-406f-917c-6accc995421f 38ab65dd95f9406f917c6accc995421f</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=d3814d5a-3d37-42f2-9db8-916846bb70ad">__Bread__<span class="tag_hidden">d3814d5a-3d37-42f2-9db8-916846bb70ad d3814d5a3d3742f29db8916846bb70ad</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (4.39 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.39" aria-valuemin="0" aria-valuemax="5">Design (4.39 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.39 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.39" aria-valuemin="0" aria-valuemax="4">Gameplay (3.39 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (3 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="3">Aesthetics (3 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (3 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="3">Judge appreciation (3 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (4.26 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.26" aria-valuemin="0" aria-valuemax="5">Public rating (4.26 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="seasons" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/seasons.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=seasons" data-toggle="tooltip" data-placement="top" title="Seasons"><strong>Seasons</strong><span class="tag_hidden">seasons</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">7th place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=c62a6655-2165-4d6b-a68e-ac20fe52a038">AdamChen<span class="tag_hidden">c62a6655-2165-4d6b-a68e-ac20fe52a038 c62a665521654d6ba68eac20fe52a038</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=a43135a4-d7b9-49ab-ac8d-a16bb2513c8d">Ny_<span class="tag_hidden">a43135a4-d7b9-49ab-ac8d-a16bb2513c8d a43135a4d7b949abac8da16bb2513c8d</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=c9932db0-e742-4b91-b678-09bc10b0b9b2">Subir<span class="tag_hidden">c9932db0-e742-4b91-b678-09bc10b0b9b2 c9932db0e7424b91b67809bc10b0b9b2</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2.72 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.72" aria-valuemin="0" aria-valuemax="5">Design (2.72 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2.86 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.86" aria-valuemin="0" aria-valuemax="4">Gameplay (2.86 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="3">Aesthetics (2 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (2.5 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.5" aria-valuemin="0" aria-valuemax="3">Judge appreciation (2.5 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.79 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.79" aria-valuemin="0" aria-valuemax="5">Public rating (3.79 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="snowy_gingerbread" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/snowy_gingerbread.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=snowy_gingerbread" data-toggle="tooltip" data-placement="top" title="Snowy Gingerbread"><strong>Snowy Gingerbread</strong><span class="tag_hidden">snowy_gingerbread</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">10th place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=b1008d06-8594-465e-88a5-de5277b01d5e">AudreyDx<span class="tag_hidden">b1008d06-8594-465e-88a5-de5277b01d5e b1008d068594465e88a5de5277b01d5e</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=3b42b73c-61b5-4783-a853-d354e8272b56">Kenner_<span class="tag_hidden">3b42b73c-61b5-4783-a853-d354e8272b56 3b42b73c61b54783a853d354e8272b56</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2.29 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.29" aria-valuemin="0" aria-valuemax="5">Design (2.29 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2.21 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.21" aria-valuemin="0" aria-valuemax="4">Gameplay (2.21 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.04 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.04" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.04 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.57 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.57" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.57 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.19 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.19" aria-valuemin="0" aria-valuemax="5">Public rating (3.19 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="tagia" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/tagia.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=tagia" data-toggle="tooltip" data-placement="top" title="Tagia"><strong>Tagia</strong><span class="tag_hidden">tagia</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">6th place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=f926e3b1-ce9c-4269-a5e8-e339d5056480">Matilaina<span class="tag_hidden">f926e3b1-ce9c-4269-a5e8-e339d5056480 f926e3b1ce9c4269a5e8e339d5056480</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2.82 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.82" aria-valuemin="0" aria-valuemax="5">Design (2.82 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2.79 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.79" aria-valuemin="0" aria-valuemax="4">Gameplay (2.79 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.11 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.11" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.11 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.93 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.93" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.93 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (4.44 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.44" aria-valuemin="0" aria-valuemax="5">Public rating (4.44 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="temple" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/temple.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=temple" data-toggle="tooltip" data-placement="top" title="Temple"><strong>Temple</strong><span class="tag_hidden">temple</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">13th place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=5f386e2d-6962-45a3-a9b6-adf1b8075e08">Twynics<span class="tag_hidden">5f386e2d-6962-45a3-a9b6-adf1b8075e08 5f386e2d696245a3a9b6adf1b8075e08</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (1.42 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.42" aria-valuemin="0" aria-valuemax="5">Design (1.42 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (1.5 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.5" aria-valuemin="0" aria-valuemax="4">Gameplay (1.5 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (1.79 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.79" aria-valuemin="0" aria-valuemax="3">Aesthetics (1.79 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.43 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.43" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.43 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.31 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.31" aria-valuemin="0" aria-valuemax="5">Public rating (3.31 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="the_tropics" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/contest/skywars_solstice/maps/the_tropics.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=the_tropics" data-toggle="tooltip" data-placement="top" title="The Tropics"><strong>The Tropics</strong><span class="tag_hidden">the_tropics</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">4th place</span>
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=b1521072-6993-4fe4-ae60-dbeeb7dc0cfa">Antnecb<span class="tag_hidden">b1521072-6993-4fe4-ae60-dbeeb7dc0cfa b152107269934fe4ae60dbeeb7dc0cfa</span></a></li>
-                            </div>
-                <div class="map-scores">
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.89 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.89" aria-valuemin="0" aria-valuemax="5">Design (3.89 / 5)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.25 / 4)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.25" aria-valuemin="0" aria-valuemax="4">Gameplay (3.25 / 4)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.21 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.21" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.21 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (2.79 / 3)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.79" aria-valuemin="0" aria-valuemax="3">Judge appreciation (2.79 / 3)</div>
-                    </div>
-                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.31 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.31" aria-valuemin="0" aria-valuemax="5">Public rating (3.31 / 5)</div>
-                    </div>
-                </div>
-                    </div>
-        </div>
-    </div>
-
-    <!-- Contest submissions score breakdown -->
-    <div class="league-info-section large">Score Breakdown</div>
-    <div class="table-responsive">
-        <table id="scores-breakdown" class="league-info-table contest-info-table table table-striped">
-            <thead>
-                <tr>
-                    <td>#</td>
-                    <td>Map</td>
-                    <td>Design <small style="font-size: 12px;">/ 5</small></td>
-                    <td>Gameplay <small style="font-size: 12px;">/ 4</small></td>
-                    <td>Aesthetics <small style="font-size: 12px;">/ 3</small></td>
-                    <td>Judge appreciation <small style="font-size: 12px;">/ 3</small></td>
-                    <td>Public rating <small style="font-size: 12px;">/ 5</small></td>
-                    <td data-toggle="tooltip" data-placement="top" title="Summed&nbsp;score">Total</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="map-score-breakdown contest-table-third">
-                    <td>3rd</td>
-                    <td name="atlantis_airbourne">Atlantis Airbourne</td>
-                    <td class="map-score" max="5">3.96</td>
-                    <td class="map-score" max="4">2.86</td>
-                    <td class="map-score" max="3">2.64</td>
-                    <td class="map-score" max="3">2.5</td>
-                    <td class="map-score" max="5">3.93</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown ">
-                    <td>8th</td>
-                    <td name="chinatown">Chinatown</td>
-                    <td class="map-score" max="5">2.64</td>
-                    <td class="map-score" max="4">2</td>
-                    <td class="map-score" max="3">1.96</td>
-                    <td class="map-score" max="3">1.57</td>
-                    <td class="map-score" max="5">3.66</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown contest-table-second">
-                    <td>2nd</td>
-                    <td name="christmas_morning">Christmas Morning</td>
-                    <td class="map-score" max="5">3.89</td>
-                    <td class="map-score" max="4">3.43</td>
-                    <td class="map-score" max="3">2.61</td>
-                    <td class="map-score" max="3">2.43</td>
-                    <td class="map-score" max="5">3.8</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown ">
-                    <td>9th</td>
-                    <td name="christmas_night">Christmas Night</td>
-                    <td class="map-score" max="5">2.36</td>
-                    <td class="map-score" max="4">2</td>
-                    <td class="map-score" max="3">1.57</td>
-                    <td class="map-score" max="3">1.57</td>
-                    <td class="map-score" max="5">4.2</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown ">
-                    <td>11th</td>
-                    <td name="cosmic_assault">Cosmic Assault</td>
-                    <td class="map-score" max="5">2</td>
-                    <td class="map-score" max="4">1.71</td>
-                    <td class="map-score" max="3">1.43</td>
-                    <td class="map-score" max="3">1.57</td>
-                    <td class="map-score" max="5">3.15</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown ">
-                    <td>5th</td>
-                    <td name="kaskai">Kaskai</td>
-                    <td class="map-score" max="5">3.57</td>
-                    <td class="map-score" max="4">3.18</td>
-                    <td class="map-score" max="3">2.29</td>
-                    <td class="map-score" max="3">2.46</td>
-                    <td class="map-score" max="5">3.63</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown ">
-                    <td>12th</td>
-                    <td name="palmetto_city">Palmetto City</td>
-                    <td class="map-score" max="5">1.36</td>
-                    <td class="map-score" max="4">1.68</td>
-                    <td class="map-score" max="3">1.5</td>
-                    <td class="map-score" max="3">1.29</td>
-                    <td class="map-score" max="5">4</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown contest-table-first">
-                    <td>1st</td>
-                    <td name="prevagen">Prevagen</td>
-                    <td class="map-score" max="5">4.39</td>
-                    <td class="map-score" max="4">3.39</td>
-                    <td class="map-score" max="3">3</td>
-                    <td class="map-score" max="3">3</td>
-                    <td class="map-score" max="5">4.26</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown ">
-                    <td>7th</td>
-                    <td name="seasons">Seasons</td>
-                    <td class="map-score" max="5">2.72</td>
-                    <td class="map-score" max="4">2.86</td>
-                    <td class="map-score" max="3">2</td>
-                    <td class="map-score" max="3">2.5</td>
-                    <td class="map-score" max="5">3.79</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown ">
-                    <td>10th</td>
-                    <td name="snowy_gingerbread">Snowy Gingerbread</td>
-                    <td class="map-score" max="5">2.29</td>
-                    <td class="map-score" max="4">2.21</td>
-                    <td class="map-score" max="3">2.04</td>
-                    <td class="map-score" max="3">1.57</td>
-                    <td class="map-score" max="5">3.19</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown ">
-                    <td>6th</td>
-                    <td name="tagia">Tagia</td>
-                    <td class="map-score" max="5">2.82</td>
-                    <td class="map-score" max="4">2.79</td>
-                    <td class="map-score" max="3">2.11</td>
-                    <td class="map-score" max="3">1.93</td>
-                    <td class="map-score" max="5">4.44</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown ">
-                    <td>13th</td>
-                    <td name="temple">Temple</td>
-                    <td class="map-score" max="5">1.42</td>
-                    <td class="map-score" max="4">1.5</td>
-                    <td class="map-score" max="3">1.79</td>
-                    <td class="map-score" max="3">1.43</td>
-                    <td class="map-score" max="5">3.31</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-                <tr class="map-score-breakdown ">
-                    <td>4th</td>
-                    <td name="the_tropics">The Tropics</td>
-                    <td class="map-score" max="5">3.89</td>
-                    <td class="map-score" max="4">3.25</td>
-                    <td class="map-score" max="3">2.21</td>
-                    <td class="map-score" max="3">2.79</td>
-                    <td class="map-score" max="5">3.31</td>
-                    <td class="map-score-total">0</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+            <!-- Start page content -->
+<!-- Contest banner -->
+<div class="center">
+    <img class="league-banner-custom" src="../../assets/img/contest//banner.png">
 </div>
-</div>
-<div class="footer">
-    <div class="container">
-        <div class="row center" style="width: 70%">
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">About</div>
-                <a class="footer-item" href="/staff">Staff</a>
-                <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
-                <a class="footer-item" href="/admin/forms/apply">Positions</a>
+
+<!-- Contest winners -->
+<div class="league-results row center">
+    <div class="col-sm-1"></div>
+    <div class="map-thumbnail-small col-sm-2">
+        <div class="thumbnail map-float map-float-small">
+            <div class="map-image map-image-small" style="background-image: url('../../assets/img/contest//maps/christmas_morning.png');">
+                <div class="map-banner-collapse-immune map-banner-small">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=christmas_morning" data-toggle="tooltip" data-placement="top" title="Christmas Morning"><strong>Christmas Morning</strong></a>
+                </div>
+                <div class="map-labels-collapse-immune center" style="top:148px;font-size:20px;">
+                    <div class="label map-label-contest-second map-label"><span class="fa fa-star"></span> 2nd</div>
+                </div>
             </div>
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">Development</div>
-                <a class="footer-item" href="/revisions/website">Revisions</a>
-                <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
-                <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
-            </div>
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">Administration</div>
-                <a class="footer-item" href="/policies/terms">Terms of Use</a>
-                <a class="footer-item" href="/policies/maps">Map Policy</a>
-                <a class="footer-item" href="/admin/references/maps">References</a>
-                <a class="footer-item" href="/maps/downloads">Download Stats</a>
-            </div>
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">Site</div>
-                <a class="footer-item" href="/tools">Tools</a>
-                <a class="footer-item" href="/admin/preferences">Preferences</a>
-                <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
-            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=7e7da86e-57a8-4b90-b297-4ef05e71dbdb">whiteveR<span class="tag_hidden">7e7da86e-57a8-4b90-b297-4ef05e71dbdb</span></a></li>
+                            </div>
         </div>
-        <div class="footer-bottom center">
-            <div class="resourcepile-copyright-year"></div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+        <div class="thumbnail map-float">
+            <div class="map-image" style="background-image: url('../../assets/img/contest//maps/prevagen.png');">
+                <div class="map-banner-collapse-immune map-banner-small">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=prevagen" data-toggle="tooltip" data-placement="top" title="Prevagen"><strong>Prevagen</strong></a>
+                </div>
+                <div class="map-labels-collapse-immune center" style="top:155px;">
+                    <div class="label map-label-contest-first map-label map-label-header"><span class="fa fa-trophy"></span> 1st</div>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=38ab65dd-95f9-406f-917c-6accc995421f">GoldenOre<span class="tag_hidden">38ab65dd-95f9-406f-917c-6accc995421f</span></a></li>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=d3814d5a-3d37-42f2-9db8-916846bb70ad">__Bread__<span class="tag_hidden">d3814d5a-3d37-42f2-9db8-916846bb70ad</span></a></li>
+                            </div>
+        </div>
+    </div>
+    <div class="map-thumbnail-small col-sm-3">
+        <div class="thumbnail map-float map-float-small">
+            <div class="map-image map-image-small" style="background-image: url('../../assets/img/contest//maps/atlantis_airbourne.png');">
+                <div class="map-banner-collapse-immune map-banner-small">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=atlantis_airbourne" data-toggle="tooltip" data-placement="top" title="Atlantis Airbourne"><strong>Atlantis Airbourne</strong></a>
+                </div>
+                <div class="map-labels-collapse-immune center" style="top:148px;font-size:20px;">
+                    <div class="label map-label-contest-third map-label"><span class="fa fa-star"></span> 3rd</div>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=5198dc37-537f-4ea5-8ee8-1e0952d4a36b">_3Each<span class="tag_hidden">5198dc37-537f-4ea5-8ee8-1e0952d4a36b</span></a></li>
+                            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+<!-- Contest information -->
+<div class="league-info-section large">Contest Information</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Dates and Times</div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td>Submissions open</td>
+                        <td>November 23rd, 2016</td>
+                    </tr>
+                    <tr>
+                        <td>Submissions close</td>
+                        <td>Unknown</td>
+                    </tr>
+                    <tr>
+                        <td>Public testing</td>
+                        <td>Unknown</td>
+                    </tr>
+                    <tr>
+                        <td>Results announced</td>
+                        <td>January 1st, 2017</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Scoring <small>(Total scores are the sum of each criteria)</small></div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td style="font-weight:400"><strong>Design</strong> out of <code>5</code> </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:400"><strong>Gameplay</strong> out of <code>4</code> </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:400"><strong>Aesthetics</strong> out of <code>3</code> </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:400"><strong>Judge appreciation</strong> out of <code>3</code> </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:400"><strong>Public rating</strong> out of <code>5</code> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-blue">
+            <div class="league-info-section">Details and Guidelines</div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td colspan="2" style="font-weight:400">Only Skywars maps were allowed, each supporting 8 players</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="font-weight:400">XML documents were to be included with the submission</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-blue">
+            <div class="league-info-section">Prizes</div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td>First</td>
+                        <td>Map residence, winner trophy, and a donor rank</td>
+                    </tr>
+                    <tr>
+                        <td>Second</td>
+                        <td>Map residence, and a donor rank</td>
+                    </tr>
+                    <tr>
+                        <td>Third</td>
+                        <td>Map residence, and a donor rank</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
-<script src="/assets/js/commons.js"></script>
+
+<!-- Contest submissions -->
+<div class="league-info-section large">Submissions <small>(13 maps)</small></div>
+<div class="row">
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="atlantis_airbourne" class="thumbnail map-float map-glow-contest-third">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/atlantis_airbourne.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=atlantis_airbourne" data-toggle="tooltip" data-placement="top" title="Atlantis Airbourne"><strong>Atlantis Airbourne</strong><span class="tag_hidden">atlantis_airbourne</span></a>
+                    <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="3rd&nbsp;place"><i class="external-thread fa fa-trophy"></i></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label map-label-contest-third map-label">3rd place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=5198dc37-537f-4ea5-8ee8-1e0952d4a36b">_3Each<span class="tag_hidden">5198dc37-537f-4ea5-8ee8-1e0952d4a36b 5198dc37537f4ea58ee81e0952d4a36b</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.96 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.96" aria-valuemin="0" aria-valuemax="5">Design (3.96 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2.86 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.86" aria-valuemin="0" aria-valuemax="4">Gameplay (2.86 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.64 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.64" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.64 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (2.5 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.5" aria-valuemin="0" aria-valuemax="3">Judge appreciation (2.5 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.93 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.93" aria-valuemin="0" aria-valuemax="5">Public rating (3.93 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="chinatown" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/chinatown.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=chinatown" data-toggle="tooltip" data-placement="top" title="Chinatown"><strong>Chinatown</strong><span class="tag_hidden">chinatown</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-default map-label">8th place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=a37e4da3-1c6c-4dc9-b085-63783406a963">xCand<span class="tag_hidden">a37e4da3-1c6c-4dc9-b085-63783406a963 a37e4da31c6c4dc9b08563783406a963</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2.64 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.64" aria-valuemin="0" aria-valuemax="5">Design (2.64 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="4">Gameplay (2 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (1.96 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.96" aria-valuemin="0" aria-valuemax="3">Aesthetics (1.96 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.57 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.57" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.57 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.66 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.66" aria-valuemin="0" aria-valuemax="5">Public rating (3.66 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="christmas_morning" class="thumbnail map-float map-glow-contest-second">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/christmas_morning.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=christmas_morning" data-toggle="tooltip" data-placement="top" title="Christmas Morning"><strong>Christmas Morning</strong><span class="tag_hidden">christmas_morning</span></a>
+                    <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="2nd&nbsp;place&nbsp;runner&nbsp;up"><i class="external-thread fa fa-trophy"></i></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label map-label-contest-second map-label">2nd place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=7e7da86e-57a8-4b90-b297-4ef05e71dbdb">whiteveR<span class="tag_hidden">7e7da86e-57a8-4b90-b297-4ef05e71dbdb 7e7da86e57a84b90b2974ef05e71dbdb</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.89 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.89" aria-valuemin="0" aria-valuemax="5">Design (3.89 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.43 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.43" aria-valuemin="0" aria-valuemax="4">Gameplay (3.43 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.61 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.61" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.61 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (2.43 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.43" aria-valuemin="0" aria-valuemax="3">Judge appreciation (2.43 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.8 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.8" aria-valuemin="0" aria-valuemax="5">Public rating (3.8 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="christmas_night" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/christmas_night.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=christmas_night" data-toggle="tooltip" data-placement="top" title="Christmas Night"><strong>Christmas Night</strong><span class="tag_hidden">christmas_night</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-default map-label">9th place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=0fdf1faa-6a98-4f27-983c-968648e12720">AMSGamingTQ<span class="tag_hidden">0fdf1faa-6a98-4f27-983c-968648e12720 0fdf1faa6a984f27983c968648e12720</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2.36 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.36" aria-valuemin="0" aria-valuemax="5">Design (2.36 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="4">Gameplay (2 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (1.57 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.57" aria-valuemin="0" aria-valuemax="3">Aesthetics (1.57 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.57 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.57" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.57 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (4.2 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="4.2" aria-valuemin="0" aria-valuemax="5">Public rating (4.2 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="cosmic_assault" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/cosmic_assault.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=cosmic_assault" data-toggle="tooltip" data-placement="top" title="Cosmic Assault"><strong>Cosmic Assault</strong><span class="tag_hidden">cosmic_assault</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-default map-label">11th place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=715769c5-8c4c-4489-bdf8-f9cee2b2ae8a">amactus<span class="tag_hidden">715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5">Design (2 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (1.71 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.71" aria-valuemin="0" aria-valuemax="4">Gameplay (1.71 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (1.43 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.43" aria-valuemin="0" aria-valuemax="3">Aesthetics (1.43 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.57 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.57" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.57 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.15 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.15" aria-valuemin="0" aria-valuemax="5">Public rating (3.15 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="kaskai" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/kaskai.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=kaskai" data-toggle="tooltip" data-placement="top" title="Kaskai"><strong>Kaskai</strong><span class="tag_hidden">kaskai</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-default map-label">5th place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.57 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.57" aria-valuemin="0" aria-valuemax="5">Design (3.57 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.18 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.18" aria-valuemin="0" aria-valuemax="4">Gameplay (3.18 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.29 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.29" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.29 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (2.46 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.46" aria-valuemin="0" aria-valuemax="3">Judge appreciation (2.46 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.63 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.63" aria-valuemin="0" aria-valuemax="5">Public rating (3.63 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="palmetto_city" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/palmetto_city.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=palmetto_city" data-toggle="tooltip" data-placement="top" title="Palmetto City"><strong>Palmetto City</strong><span class="tag_hidden">palmetto_city</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-default map-label">12th place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=96f9aa16-9c93-4b1d-9bce-18b8c212074b">_ArmyFrog<span class="tag_hidden">96f9aa16-9c93-4b1d-9bce-18b8c212074b 96f9aa169c934b1d9bce18b8c212074b</span></a></li>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=e8823186-7338-4eaf-986c-c5c830aefb46">Exsoh<span class="tag_hidden">e8823186-7338-4eaf-986c-c5c830aefb46 e882318673384eaf986cc5c830aefb46</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (1.36 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.36" aria-valuemin="0" aria-valuemax="5">Design (1.36 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (1.68 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.68" aria-valuemin="0" aria-valuemax="4">Gameplay (1.68 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (1.5 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.5" aria-valuemin="0" aria-valuemax="3">Aesthetics (1.5 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.29 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.29" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.29 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (4 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5">Public rating (4 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="prevagen" class="thumbnail map-float map-glow-contest-first">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/prevagen.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=prevagen" data-toggle="tooltip" data-placement="top" title="Prevagen"><strong>Prevagen</strong><span class="tag_hidden">prevagen</span></a>
+                    <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="1st&nbsp;place&nbsp;winner"><i class="external-thread fa fa-trophy"></i></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label map-label-contest-first map-label">1st place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=38ab65dd-95f9-406f-917c-6accc995421f">GoldenOre<span class="tag_hidden">38ab65dd-95f9-406f-917c-6accc995421f 38ab65dd95f9406f917c6accc995421f</span></a></li>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=d3814d5a-3d37-42f2-9db8-916846bb70ad">__Bread__<span class="tag_hidden">d3814d5a-3d37-42f2-9db8-916846bb70ad d3814d5a3d3742f29db8916846bb70ad</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (4.39 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="4.39" aria-valuemin="0" aria-valuemax="5">Design (4.39 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.39 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.39" aria-valuemin="0" aria-valuemax="4">Gameplay (3.39 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (3 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="3">Aesthetics (3 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (3 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="3">Judge appreciation (3 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (4.26 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="4.26" aria-valuemin="0" aria-valuemax="5">Public rating (4.26 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="seasons" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/seasons.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=seasons" data-toggle="tooltip" data-placement="top" title="Seasons"><strong>Seasons</strong><span class="tag_hidden">seasons</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-default map-label">7th place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=c62a6655-2165-4d6b-a68e-ac20fe52a038">AdamChen<span class="tag_hidden">c62a6655-2165-4d6b-a68e-ac20fe52a038 c62a665521654d6ba68eac20fe52a038</span></a></li>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=a43135a4-d7b9-49ab-ac8d-a16bb2513c8d">Ny_<span class="tag_hidden">a43135a4-d7b9-49ab-ac8d-a16bb2513c8d a43135a4d7b949abac8da16bb2513c8d</span></a></li>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=c9932db0-e742-4b91-b678-09bc10b0b9b2">Subir<span class="tag_hidden">c9932db0-e742-4b91-b678-09bc10b0b9b2 c9932db0e7424b91b67809bc10b0b9b2</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2.72 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.72" aria-valuemin="0" aria-valuemax="5">Design (2.72 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2.86 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.86" aria-valuemin="0" aria-valuemax="4">Gameplay (2.86 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="3">Aesthetics (2 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (2.5 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.5" aria-valuemin="0" aria-valuemax="3">Judge appreciation (2.5 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.79 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.79" aria-valuemin="0" aria-valuemax="5">Public rating (3.79 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="snowy_gingerbread" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/snowy_gingerbread.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=snowy_gingerbread" data-toggle="tooltip" data-placement="top" title="Snowy Gingerbread"><strong>Snowy Gingerbread</strong><span class="tag_hidden">snowy_gingerbread</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-default map-label">10th place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=b1008d06-8594-465e-88a5-de5277b01d5e">AudreyDx<span class="tag_hidden">b1008d06-8594-465e-88a5-de5277b01d5e b1008d068594465e88a5de5277b01d5e</span></a></li>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=3b42b73c-61b5-4783-a853-d354e8272b56">Kenner_<span class="tag_hidden">3b42b73c-61b5-4783-a853-d354e8272b56 3b42b73c61b54783a853d354e8272b56</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2.29 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.29" aria-valuemin="0" aria-valuemax="5">Design (2.29 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2.21 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.21" aria-valuemin="0" aria-valuemax="4">Gameplay (2.21 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.04 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.04" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.04 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.57 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.57" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.57 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.19 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.19" aria-valuemin="0" aria-valuemax="5">Public rating (3.19 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="tagia" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/tagia.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=tagia" data-toggle="tooltip" data-placement="top" title="Tagia"><strong>Tagia</strong><span class="tag_hidden">tagia</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-default map-label">6th place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=f926e3b1-ce9c-4269-a5e8-e339d5056480">Matilaina<span class="tag_hidden">f926e3b1-ce9c-4269-a5e8-e339d5056480 f926e3b1ce9c4269a5e8e339d5056480</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (2.82 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.82" aria-valuemin="0" aria-valuemax="5">Design (2.82 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2.79 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.79" aria-valuemin="0" aria-valuemax="4">Gameplay (2.79 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.11 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.11" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.11 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.93 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.93" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.93 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (4.44 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="4.44" aria-valuemin="0" aria-valuemax="5">Public rating (4.44 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="temple" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/temple.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=temple" data-toggle="tooltip" data-placement="top" title="Temple"><strong>Temple</strong><span class="tag_hidden">temple</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-default map-label">13th place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=5f386e2d-6962-45a3-a9b6-adf1b8075e08">Twynics<span class="tag_hidden">5f386e2d-6962-45a3-a9b6-adf1b8075e08 5f386e2d696245a3a9b6adf1b8075e08</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (1.42 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.42" aria-valuemin="0" aria-valuemax="5">Design (1.42 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (1.5 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.5" aria-valuemin="0" aria-valuemax="4">Gameplay (1.5 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (1.79 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.79" aria-valuemin="0" aria-valuemax="3">Aesthetics (1.79 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (1.43 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1.43" aria-valuemin="0" aria-valuemax="3">Judge appreciation (1.43 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.31 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.31" aria-valuemin="0" aria-valuemax="5">Public rating (3.31 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="the_tropics" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/contest//maps/the_tropics.png">
+    
+                <div class="map-banner">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/overcast?s=the_tropics" data-toggle="tooltip" data-placement="top" title="The Tropics"><strong>The Tropics</strong><span class="tag_hidden">the_tropics</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Skywars</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-default map-label">4th place</span>
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                <li class="game-tag author-tag"><a class="map-author-name" href="/maps/overcast?s=b1521072-6993-4fe4-ae60-dbeeb7dc0cfa">Antnecb<span class="tag_hidden">b1521072-6993-4fe4-ae60-dbeeb7dc0cfa b152107269934fe4ae60dbeeb7dc0cfa</span></a></li>
+                        </div>
+            <div class="map-scores">
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.89 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.89" aria-valuemin="0" aria-valuemax="5">Design (3.89 / 5)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.25 / 4)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.25" aria-valuemin="0" aria-valuemax="4">Gameplay (3.25 / 4)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.21 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.21" aria-valuemin="0" aria-valuemax="3">Aesthetics (2.21 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Judge appreciation (2.79 / 3)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="2.79" aria-valuemin="0" aria-valuemax="3">Judge appreciation (2.79 / 3)</div>
+                </div>
+                <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (3.31 / 5)">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3.31" aria-valuemin="0" aria-valuemax="5">Public rating (3.31 / 5)</div>
+                </div>
+            </div>
+                </div>
+    </div>
+</div>
+
+<!-- Contest submissions score breakdown -->
+<div class="league-info-section large">Score Breakdown</div>
+<div class="table-responsive">
+    <table id="scores-breakdown" class="league-info-table contest-info-table table table-striped">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Map</td>
+                <td>Design <small style="font-size: 12px;">/ 5</small></td>
+                <td>Gameplay <small style="font-size: 12px;">/ 4</small></td>
+                <td>Aesthetics <small style="font-size: 12px;">/ 3</small></td>
+                <td>Judge appreciation <small style="font-size: 12px;">/ 3</small></td>
+                <td>Public rating <small style="font-size: 12px;">/ 5</small></td>
+                <td data-toggle="tooltip" data-placement="top" title="Summed&nbsp;score">Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="map-score-breakdown contest-table-third">
+                <td>3rd</td>
+                <td name="atlantis_airbourne">Atlantis Airbourne</td>
+                <td class="map-score" max="5">3.96</td>
+                <td class="map-score" max="4">2.86</td>
+                <td class="map-score" max="3">2.64</td>
+                <td class="map-score" max="3">2.5</td>
+                <td class="map-score" max="5">3.93</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>8th</td>
+                <td name="chinatown">Chinatown</td>
+                <td class="map-score" max="5">2.64</td>
+                <td class="map-score" max="4">2</td>
+                <td class="map-score" max="3">1.96</td>
+                <td class="map-score" max="3">1.57</td>
+                <td class="map-score" max="5">3.66</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown contest-table-second">
+                <td>2nd</td>
+                <td name="christmas_morning">Christmas Morning</td>
+                <td class="map-score" max="5">3.89</td>
+                <td class="map-score" max="4">3.43</td>
+                <td class="map-score" max="3">2.61</td>
+                <td class="map-score" max="3">2.43</td>
+                <td class="map-score" max="5">3.8</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>9th</td>
+                <td name="christmas_night">Christmas Night</td>
+                <td class="map-score" max="5">2.36</td>
+                <td class="map-score" max="4">2</td>
+                <td class="map-score" max="3">1.57</td>
+                <td class="map-score" max="3">1.57</td>
+                <td class="map-score" max="5">4.2</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>11th</td>
+                <td name="cosmic_assault">Cosmic Assault</td>
+                <td class="map-score" max="5">2</td>
+                <td class="map-score" max="4">1.71</td>
+                <td class="map-score" max="3">1.43</td>
+                <td class="map-score" max="3">1.57</td>
+                <td class="map-score" max="5">3.15</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>5th</td>
+                <td name="kaskai">Kaskai</td>
+                <td class="map-score" max="5">3.57</td>
+                <td class="map-score" max="4">3.18</td>
+                <td class="map-score" max="3">2.29</td>
+                <td class="map-score" max="3">2.46</td>
+                <td class="map-score" max="5">3.63</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>12th</td>
+                <td name="palmetto_city">Palmetto City</td>
+                <td class="map-score" max="5">1.36</td>
+                <td class="map-score" max="4">1.68</td>
+                <td class="map-score" max="3">1.5</td>
+                <td class="map-score" max="3">1.29</td>
+                <td class="map-score" max="5">4</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown contest-table-first">
+                <td>1st</td>
+                <td name="prevagen">Prevagen</td>
+                <td class="map-score" max="5">4.39</td>
+                <td class="map-score" max="4">3.39</td>
+                <td class="map-score" max="3">3</td>
+                <td class="map-score" max="3">3</td>
+                <td class="map-score" max="5">4.26</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>7th</td>
+                <td name="seasons">Seasons</td>
+                <td class="map-score" max="5">2.72</td>
+                <td class="map-score" max="4">2.86</td>
+                <td class="map-score" max="3">2</td>
+                <td class="map-score" max="3">2.5</td>
+                <td class="map-score" max="5">3.79</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>10th</td>
+                <td name="snowy_gingerbread">Snowy Gingerbread</td>
+                <td class="map-score" max="5">2.29</td>
+                <td class="map-score" max="4">2.21</td>
+                <td class="map-score" max="3">2.04</td>
+                <td class="map-score" max="3">1.57</td>
+                <td class="map-score" max="5">3.19</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>6th</td>
+                <td name="tagia">Tagia</td>
+                <td class="map-score" max="5">2.82</td>
+                <td class="map-score" max="4">2.79</td>
+                <td class="map-score" max="3">2.11</td>
+                <td class="map-score" max="3">1.93</td>
+                <td class="map-score" max="5">4.44</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>13th</td>
+                <td name="temple">Temple</td>
+                <td class="map-score" max="5">1.42</td>
+                <td class="map-score" max="4">1.5</td>
+                <td class="map-score" max="3">1.79</td>
+                <td class="map-score" max="3">1.43</td>
+                <td class="map-score" max="5">3.31</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>4th</td>
+                <td name="the_tropics">The Tropics</td>
+                <td class="map-score" max="5">3.89</td>
+                <td class="map-score" max="4">3.25</td>
+                <td class="map-score" max="3">2.21</td>
+                <td class="map-score" max="3">2.79</td>
+                <td class="map-score" max="5">3.31</td>
+                <td class="map-score-total">0</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 <script>
     $('.progress-bar').each(function(i, obj) {
         var points_current = $(this).attr('aria-valuenow');
@@ -1012,5 +971,43 @@
         $('#scores-breakdown').tablesorter({sortList: [[0,0]]});
     });
 </script>
-</body>
+            <!-- End page content -->
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row center" style="width: 70%">
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">About</div>
+                        <a class="footer-item" href="/staff">Staff</a>
+                        <a class="footer-item" href="/updates">Updates</a>
+                        <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Development</div>
+                        <a class="footer-item" href="/revisions/website">Revisions</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Administration</div>
+                        <a class="footer-item" href="/policies/terms">Terms of Use</a>
+                        <a class="footer-item" href="/policies/maps">Map Policy</a>
+                        <a class="footer-item" href="/admin/references/maps">References</a>
+                        <a class="footer-item" href="/maps/downloads">Download Stats</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Site</div>
+                        <a class="footer-item" href="/tools">Tools</a>
+                        <a class="footer-item" href="/admin/preferences">Preferences</a>
+                        <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
+                    </div>
+                </div>
+                <div class="footer-bottom center">
+                    <div class="resourcepile-copyright-year"></div>
+                </div>
+            </div>
+        </div>
+        <script src="/assets/js/commons.js"></script>
+    </body>
 </html>

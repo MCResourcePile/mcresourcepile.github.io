@@ -5,22 +5,22 @@
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="A collection of various website stats from the Avicus Network" name="description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="description">
         <meta content="Avicus Miscellaneous Stats - ResourcePile" property="og:title">
-        <meta content="A collection of various website stats from the Avicus Network" name="og:description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
         <meta content="Avicus Miscellaneous Stats - ResourcePile" name="twitter:title">
-        <meta content="A collection of various website stats from the Avicus Network" name="twitter:description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
+        <link href="/assets/favicon.ico" rel="shortcut icon">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="/assets/favicon.ico">
         <link href="/assets/css/gamemodes.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -39,7 +39,6 @@
             ga('send', 'pageview');
         </script>
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
-        
     </head>
     <body >
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -56,7 +55,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> Maps <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/maps/overcast">Overcast Collection</a></li>
                                 <li><a href="/maps/pgm">PGM Collection</a></li>
@@ -65,14 +64,14 @@
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-map"></i> Contests <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/contests/overcast">Overcast Network</a></li>
                                 <li><a href="/contests/stratus">Stratus Network</a></li>
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> Tournaments <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/leagues/overcast">Overcast Network</a></li>
                                 <li><a href="/leagues/pgm">PGM Community</a></li>
@@ -80,8 +79,8 @@
                                 <li><a href="/leagues/avicus">Avcius Network</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-bar-chart"></i> Statistics <span class="caret"></span></a>
+                        <li class="dropdown active">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><p class="navbar-menu-title">Overcast</p></li>
                                 <li><a href="/stats/overcast/bow">Bow Records</a></li>
@@ -91,193 +90,201 @@
                                 <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
                             </ul>
                         </li>
-                        <li><a href="/addon-project/wiki"><span class="fa fa-globe"></span> Wiki</a></li>
-                        <li class=""><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
+                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <li class=""><a href="/updates">Updates</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> GitHub: <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
+                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="content-background ">
-<div class="container">
-	<div class="content-header">
-        <div class="content-alert">
-            <noscript>
-                <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
-            </noscript>
-            <div id="alert-we-are-condu" class="alert alert-info alert-global" role="alert">
-                We are conducting a survey about how you use ResourcePile and we would appericiate it if you were to fill it out so we can further improve our site. <a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
-                <script>$("#alert-we-are-condu").on("closed.bs.alert",function(){Cookies.set("alert-we-are-condu-hidden",!0,{expires:365})}),Cookies.get("alert-we-are-condu-hidden")&&$("#alert-we-are-condu").alert("close");</script>
+        <div class="content-background">
+            <div class="container">
+                <div class="content-header">
+                    <div class="content-alert">
+                        <noscript>
+                            <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+                        </noscript>
+                    </div>
+                    <div class="content-title">Avicus Miscellaneous Stats</div>
+                    <div class="content-subtitle">A collection of various website stats from the Avicus Network</div>
+                </div>
+            <!-- Start page content -->
+<div class="section">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="well well-sm well-custom-blue">
+                <center>
+                    <h3><i class="fa fa-sign-in"></i> Servers Joined</h3>
+                </center>
+                <ol>
+                    <li><b> <img src="https://crafatar.com/avatars/63b88dffc6b44e08bd17aae089b12e95?size=16"> Riilo </b><i>(7,011)</i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/6394bcb32508481d9851e8787af81e7f?size=16"> Hivu </b><i>(7,000)</i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/fb57ed989f4140c78e61dee46d34d427?size=16"> AtditC </b><i>(6,666)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/c647530a7ef04fef912f76883376b575?size=16"> Absolab <i>(6,620)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/54964b606ce749229a4c2b981d8c2ed7?size=16"> Spoookeh<i>(6,609)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/c2a4c847653e482ab62ed7f8b64330cb?size=16"> ALM <i>(5,654)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/58d037b7dccc4f2eadd4011c6f484555?size=16"> Lokigh <i>(5,520)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/b5c1ef1ef41a4124b6dbe72a84d9495f?size=16"> Murphh <i>(5,262)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/14c22263a1b741439c12941b586e3a50?size=16"> GrapeSmoothie <i>(5,083)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/38cc237d92724e01ad24f5b0110130c1?size=16"> Acceqted <i>(4,361)</i></li>
+                </ol>
             </div>
         </div>
-		<div class="content-title">Miscellaneous Stats</div>
-		<div class="content-subtitle">
-			A collection of various stats from the <a href="http://avicus.net">Avicus Network</a> website.
-		</div>
-	</div>
-	<!-- Game mode navigation menu -->
-	<div class="section">
-		<div class="row">
-			<div class="col-md-4">
-				<div class="well well-sm well-custom-blue">
-					<center><h3><i class="fa fa-sign-in"></i> Servers Joined</h3></center>
-					<ol>
-						<li><b> <img src="https://crafatar.com/avatars/63b88dffc6b44e08bd17aae089b12e95?size=16"> Riilo </b><i>(7,011)</i></li>
-						<li><b> <img src="https://crafatar.com/avatars/6394bcb32508481d9851e8787af81e7f?size=16"> Hivu </b><i>(7,000)</i></li>
-						<li><b> <img src="https://crafatar.com/avatars/fb57ed989f4140c78e61dee46d34d427?size=16"> AtditC </b><i>(6,666)</i></li>
-			            <li> <img src="https://crafatar.com/avatars/c647530a7ef04fef912f76883376b575?size=16"> Absolab <i>(6,620)</i></li>
-						<li> <img src="https://crafatar.com/avatars/54964b606ce749229a4c2b981d8c2ed7?size=16"> Spoookeh<i>(6,609)</i></li>
-						<li> <img src="https://crafatar.com/avatars/c2a4c847653e482ab62ed7f8b64330cb?size=16"> ALM <i>(5,654)</i></li>
-						<li> <img src="https://crafatar.com/avatars/58d037b7dccc4f2eadd4011c6f484555?size=16"> Lokigh <i>(5,520)</i></li>
-						<li> <img src="https://crafatar.com/avatars/b5c1ef1ef41a4124b6dbe72a84d9495f?size=16"> Murphh <i>(5,262)</i></li>
-						<li> <img src="https://crafatar.com/avatars/14c22263a1b741439c12941b586e3a50?size=16"> GrapeSmoothie <i>(5,083)</i></li>
-				        <li> <img src="https://crafatar.com/avatars/38cc237d92724e01ad24f5b0110130c1?size=16"> Acceqted <i>(4,361)</i></li>
-                    </ol>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="well well-sm well-custom-blue">
-					<center><h3><i class="fa fa-clock-o"></i> Time Online</h3></center>
-					<ol>
-						<li><b> <img src="https://crafatar.com/avatars/b5c1ef1ef41a4124b6dbe72a84d9495f?size=16"> Murphh </b><i>(7 months)</b></i></li>
-						<li><b> <img src="https://crafatar.com/avatars/14c22263a1b741439c12941b586e3a50?size=16"> GrapeSmoothie </b><i>(3 months)</i></li>
-						<li><b> <img src="https://crafatar.com/avatars/c647530a7ef04fef912f76883376b575?size=16"> Absolab </b><i>(3 months)</i></li>
-						<li> <img src="https://crafatar.com/avatars/fb57ed989f4140c78e61dee46d34d427?size=16"> AtditC <i>(3 months)</i></li>
-						<li> <img src="https://crafatar.com/avatars/e16d067223c74a02bd22965e38521c35?size=16"> Numberz_ <i>(3 months)</i></li>
-						<li> <img src="https://crafatar.com/avatars/eb6f1b7188f1475ba31d05775e26e7d4?size=16"> FrostedCupcakez <i>(3 months)</i></li>
-						<li> <img src="https://crafatar.com/avatars/38cc237d92724e01ad24f5b0110130c1?size=16"> Acceqted <i>(2 months)</i></li>
-						<li> <img src="https://crafatar.com/avatars/58d037b7dccc4f2eadd4011c6f484555?size=16"> Lokigh <i>(2 months)</i></li>
-						<li> <img src="https://crafatar.com/avatars/6394bcb32508481d9851e8787af81e7f?size=16"> Hivu <i>(2 months)</i></li>
-						<li> <img src="https://crafatar.com/avatars/54964b606ce749229a4c2b981d8c2ed7?size=16"> Spoookeh <i>(2 months)</i></li>
-					</ol>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="well well-sm well-custom-green">
-					<center><h3><i class="fa fa-certificate"></i> Credits</h3></center>
-					<ol>
-						<li><b> <img src="https://crafatar.com/avatars/58d037b7dccc4f2eadd4011c6f484555?size=16"> Lokigh </b><i>(383,914)</i></li>
-						<li><b> <img src="https://crafatar.com/avatars/c647530a7ef04fef912f76883376b575?size=16"> Absolab </b><i>(361,158)</i></li>
-						<li><b> <img src="https://crafatar.com/avatars/54964b606ce749229a4c2b981d8c2ed7?size=16"> Spoookeh </b><i>(135,268)</i></li>
-						<li> <img src="https://crafatar.com/avatars/89f514e1f0f549778ddc77ef030a8b46?size=16"> Posighdun <i>(116,268)</i></li>
-						<li> <img src="https://crafatar.com/avatars/b8377bcb8d4f4170bc7bc332d0e8585f?size=16"> kycrafft <i>(99,294)</i></li>
-						<li> <img src="https://crafatar.com/avatars/14c22263a1b741439c12941b586e3a50?size=16"> GrapeSmoothie <i>(97,299)</i></li>
-						<li> <img src="https://crafatar.com/avatars/6394bcb32508481d9851e8787af81e7f?size=16"> Hivu <i>(90,041)</i></li>
-						<li> <img src="https://crafatar.com/avatars/99b8a2a4cb224ba1a6837cd90a02aac5?size=16"> Junr <i>(87,245)</i></li>
-						<li> <img src="https://crafatar.com/avatars/b5c1ef1ef41a4124b6dbe72a84d9495f?size=16"> Murphh <i>(80,530)</i></li>
-						<li> <img src="https://crafatar.com/avatars/63b88dffc6b44e08bd17aae089b12e95?size=16"> Riilo <i>(51,825)</i></li>
-					</ol>
-				</div>
-			</div>
-		</div>
-		<br>
-		<div class="row">
-			<div class="col-md-4">
-				<div class="well well-sm well-custom-green">
-					<center><h3><i class="fa fa-users"></i> Friends Added</h3></center>
-					<ol>
-					    <li><b> <img src="https://crafatar.com/avatars/99b8a2a4cb224ba1a6837cd90a02aac5?size=16"> Junr </b><i>(279)</i></li>
-						<li><b> <img src="https://crafatar.com/avatars/a9f11454beac4cc3a1381780802c8794?size=16"> Crazy_ </b><i>(225)</i></li>
-						<li><b> <img src="https://crafatar.com/avatars/89f514e1f0f549778ddc77ef030a8b46?size=16"> Posighdun </b><i>(196)</i></li>
-						<li> <img src="https://crafatar.com/avatars/b5c1ef1ef41a4124b6dbe72a84d9495f?size=16"> Murphh <i>(188)</i></li>
-						<li> <img src="https://crafatar.com/avatars/58d037b7dccc4f2eadd4011c6f484555?size=16"> Lokigh <i>(167)</i></li>
-						<li> <img src="https://crafatar.com/avatars/38cc237d92724e01ad24f5b0110130c1?size=16"> Acceqted <i>(156)</i></li>
-						<li> <img src="https://crafatar.com/avatars/b8377bcb8d4f4170bc7bc332d0e8585f?size=16"> kycrafft <i>(144)</i></li>
-						<li> <img src="https://crafatar.com/avatars/14c22263a1b741439c12941b586e3a50?size=16"> GrapeSmoothie <i>(141)</i></li>
-						<li> <img src="https://crafatar.com/avatars/c4a072b2abe647a396bbc8ce07c90b60?size=16"> Pelpelajax <i>(87)</i></li>
-						<li> <img src="https://crafatar.com/avatars/63b88dffc6b44e08bd17aae089b12e95?size=16"> Riilo <i>(49)</i></li>
-					</ol>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="well well-sm well-custom-red">
-					<center><h3><i class="fa fa-comments"></i> Forum Posts</h3></center>
-					<ol>
-						<li><b> <img src="https://crafatar.com/avatars/6fb20a2427f9448d8a77e460c5717481?size=16"> DaFrozenBlaze </b><i>(1,809 pages)</i></li>
-						<li><b> <img src="https://crafatar.com/avatars/b8377bcb8d4f4170bc7bc332d0e8585f?size=16"> kycrafft </b><i>(1,105 pages)</i></li>
-						<li><b> <img src="https://crafatar.com/avatars/fb57ed989f4140c78e61dee46d34d427?size=16"> AtditC </b><i>(614 pages)</i></li>
-						<li> <img src="https://crafatar.com/avatars/c4a072b2abe647a396bbc8ce07c90b60?size=16"> Pelpelajax <i>(447 pages)</i></li>
-						<li> <img src="https://crafatar.com/avatars/89f514e1f0f549778ddc77ef030a8b46?size=16"> Posighdun <i>(435 pages)</i></li>
-						<li> <img src="https://crafatar.com/avatars/38cc237d92724e01ad24f5b0110130c1?size=16"> Acceqted <i>(285 pages)</i></li>
-						<li> <img src="https://crafatar.com/avatars/63b88dffc6b44e08bd17aae089b12e95?size=16"> Riilo <i>(230 pages)</i></li>
-						<li> <img src="https://crafatar.com/avatars/a9f11454beac4cc3a1381780802c8794?size=16"> Crazy_ <i>(195 pages)</i></li>
-						<li> <img src="https://crafatar.com/avatars/5b700f637ff4400689b73fc21f61239c?size=16"> LFT <i>(190 pages)</i></li>
-						<li> <img src="https://crafatar.com/avatars/027387b0fe0c47198b162efff7489b6e?size=16"> TheTNTPotato <i>(170 pages)</i></li>
-					</ol>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="well well-sm well-custom-purple">
-					<center><h3><i class="fa fa-gavel"></i> Punishments Given</h3></center>
-					<ol>
-						<li><b> <img src="https://crafatar.com/avatars/0f1831312c2245768cbc0bd0f0da9729?size=16"> Emmaye </b><i>(5,137)</i></li>
-						<li><b> <img src="https://crafatar.com/avatars/e094471b4c13471584f402f7d88cfe5a?size=16"> Zeusy </b><i>(3,806)</i></li>
-						<li><b> <img src="https://crafatar.com/avatars/f74f77495dc9429c880e13305eb493bb?size=16"> Sunaye </b><i>(3,194)</i></li>
-						<li> <img src="https://crafatar.com/avatars/bef7da1eda9a4092ac5a2ee30d12a65c?size=16"> hpux <i>(3,161)</i></li>
-						<li> <img src="https://crafatar.com/avatars/e09336c5020d4ee29306cbdfe51bda60?size=16"> PublixEmployee <i>(3,094)</i></li>
-						<li> <img src="https://crafatar.com/avatars/5a0b55defddb448caf5070856cbf39ee?size=16"> BoldandBrash <i>(2,852)</i></li>
-						<li> <img src="https://crafatar.com/avatars/f1bd18d4994642c4a0a14e64e0d8961d?size=16"> Phobiaxx <i>(2,653)</i></li>
-						<li> <img src="https://crafatar.com/avatars/694e5571da924e0eaa0b888b341ceb3c?size=16"> Riskayyy <i>(2,652)</i></li>
-						<li> <img src="https://crafatar.com/avatars/c4a072b2abe647a396bbc8ce07c90b60?size=16"> Pelpelajax <i>(2,565)</i></li>
-						<li> <img src="https://crafatar.com/avatars/bf3319534f9243ee8abc7544b8234936?size=16"> ViceWaterColour <i>(2,517)</i></li>
-					</ol>
-				</div>
-			</div>
-		</div>
-		</div>
-		<br>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="well well-sm well-custom-orange">
-					<center><h3><i class="fa fa-bookmark"></i> Interesting Facts</h3></center>
-					<ul>
-						<li><b> <img src="https://crafatar.com/avatars/f876b8631ccd4ae2acad8a09e2209e81?size=16"> _DISTRACTION_ </b>has the most badges on the website (6)!</li>
-						<li><b> <img src="https://crafatar.com/avatars/c7fddb9aadfd4be3b326d700df252e88?size=16"> Avi Claus</b>, while technically not a user, has the most credits (2,016,000) and the most friends (1,503)!</li>
-						<li><b> <img src="https://crafatar.com/avatars/f78a4d8dd51b4b3998a3230f2de0c670?size=16"> Console</b> gave out a total of 3,445 punishments.</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-<div class="footer">
-    <div class="container">
-        <div class="row center" style="width: 70%">
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">About</div>
-                <a class="footer-item" href="/staff">Staff</a>
-                <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
-                <a class="footer-item" href="/admin/forms/apply">Positions</a>
-            </div>
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">Development</div>
-                <a class="footer-item" href="/revisions/website">Revisions</a>
-                <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
-                <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
-            </div>
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">Administration</div>
-                <a class="footer-item" href="/policies/terms">Terms of Use</a>
-                <a class="footer-item" href="/policies/maps">Map Policy</a>
-                <a class="footer-item" href="/admin/references/maps">References</a>
-                <a class="footer-item" href="/maps/downloads">Download Stats</a>
-            </div>
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">Site</div>
-                <a class="footer-item" href="/tools">Tools</a>
-                <a class="footer-item" href="/admin/preferences">Preferences</a>
-                <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
+        <div class="col-md-4">
+            <div class="well well-sm well-custom-blue">
+                <center>
+                    <h3><i class="fa fa-clock-o"></i> Time Online</h3>
+                </center>
+                <ol>
+                    <li><b> <img src="https://crafatar.com/avatars/b5c1ef1ef41a4124b6dbe72a84d9495f?size=16"> Murphh </b><i>(7 months)</b></i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/14c22263a1b741439c12941b586e3a50?size=16"> GrapeSmoothie </b><i>(3 months)</i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/c647530a7ef04fef912f76883376b575?size=16"> Absolab </b><i>(3 months)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/fb57ed989f4140c78e61dee46d34d427?size=16"> AtditC <i>(3 months)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/e16d067223c74a02bd22965e38521c35?size=16"> Numberz_ <i>(3 months)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/eb6f1b7188f1475ba31d05775e26e7d4?size=16"> FrostedCupcakez <i>(3 months)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/38cc237d92724e01ad24f5b0110130c1?size=16"> Acceqted <i>(2 months)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/58d037b7dccc4f2eadd4011c6f484555?size=16"> Lokigh <i>(2 months)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/6394bcb32508481d9851e8787af81e7f?size=16"> Hivu <i>(2 months)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/54964b606ce749229a4c2b981d8c2ed7?size=16"> Spoookeh <i>(2 months)</i></li>
+                </ol>
             </div>
         </div>
-        <div class="footer-bottom center">
-            <div class="resourcepile-copyright-year"></div>
+        <div class="col-md-4">
+            <div class="well well-sm well-custom-green">
+                <center>
+                    <h3><i class="fa fa-certificate"></i> Credits</h3>
+                </center>
+                <ol>
+                    <li><b> <img src="https://crafatar.com/avatars/58d037b7dccc4f2eadd4011c6f484555?size=16"> Lokigh </b><i>(383,914)</i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/c647530a7ef04fef912f76883376b575?size=16"> Absolab </b><i>(361,158)</i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/54964b606ce749229a4c2b981d8c2ed7?size=16"> Spoookeh </b><i>(135,268)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/89f514e1f0f549778ddc77ef030a8b46?size=16"> Posighdun <i>(116,268)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/b8377bcb8d4f4170bc7bc332d0e8585f?size=16"> kycrafft <i>(99,294)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/14c22263a1b741439c12941b586e3a50?size=16"> GrapeSmoothie <i>(97,299)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/6394bcb32508481d9851e8787af81e7f?size=16"> Hivu <i>(90,041)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/99b8a2a4cb224ba1a6837cd90a02aac5?size=16"> Junr <i>(87,245)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/b5c1ef1ef41a4124b6dbe72a84d9495f?size=16"> Murphh <i>(80,530)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/63b88dffc6b44e08bd17aae089b12e95?size=16"> Riilo <i>(51,825)</i></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="well well-sm well-custom-green">
+                <center>
+                    <h3><i class="fa fa-users"></i> Friends Added</h3>
+                </center>
+                <ol>
+                    <li><b> <img src="https://crafatar.com/avatars/99b8a2a4cb224ba1a6837cd90a02aac5?size=16"> Junr </b><i>(279)</i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/a9f11454beac4cc3a1381780802c8794?size=16"> Crazy_ </b><i>(225)</i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/89f514e1f0f549778ddc77ef030a8b46?size=16"> Posighdun </b><i>(196)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/b5c1ef1ef41a4124b6dbe72a84d9495f?size=16"> Murphh <i>(188)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/58d037b7dccc4f2eadd4011c6f484555?size=16"> Lokigh <i>(167)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/38cc237d92724e01ad24f5b0110130c1?size=16"> Acceqted <i>(156)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/b8377bcb8d4f4170bc7bc332d0e8585f?size=16"> kycrafft <i>(144)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/14c22263a1b741439c12941b586e3a50?size=16"> GrapeSmoothie <i>(141)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/c4a072b2abe647a396bbc8ce07c90b60?size=16"> Pelpelajax <i>(87)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/63b88dffc6b44e08bd17aae089b12e95?size=16"> Riilo <i>(49)</i></li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well well-sm well-custom-red">
+                <center>
+                    <h3><i class="fa fa-comments"></i> Forum Posts</h3>
+                </center>
+                <ol>
+                    <li><b> <img src="https://crafatar.com/avatars/6fb20a2427f9448d8a77e460c5717481?size=16"> DaFrozenBlaze </b><i>(1,809 pages)</i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/b8377bcb8d4f4170bc7bc332d0e8585f?size=16"> kycrafft </b><i>(1,105 pages)</i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/fb57ed989f4140c78e61dee46d34d427?size=16"> AtditC </b><i>(614 pages)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/c4a072b2abe647a396bbc8ce07c90b60?size=16"> Pelpelajax <i>(447 pages)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/89f514e1f0f549778ddc77ef030a8b46?size=16"> Posighdun <i>(435 pages)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/38cc237d92724e01ad24f5b0110130c1?size=16"> Acceqted <i>(285 pages)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/63b88dffc6b44e08bd17aae089b12e95?size=16"> Riilo <i>(230 pages)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/a9f11454beac4cc3a1381780802c8794?size=16"> Crazy_ <i>(195 pages)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/5b700f637ff4400689b73fc21f61239c?size=16"> LFT <i>(190 pages)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/027387b0fe0c47198b162efff7489b6e?size=16"> TheTNTPotato <i>(170 pages)</i></li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well well-sm well-custom-purple">
+                <center>
+                    <h3><i class="fa fa-gavel"></i> Punishments Given</h3>
+                </center>
+                <ol>
+                    <li><b> <img src="https://crafatar.com/avatars/0f1831312c2245768cbc0bd0f0da9729?size=16"> Emmaye </b><i>(5,137)</i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/e094471b4c13471584f402f7d88cfe5a?size=16"> Zeusy </b><i>(3,806)</i></li>
+                    <li><b> <img src="https://crafatar.com/avatars/f74f77495dc9429c880e13305eb493bb?size=16"> Sunaye </b><i>(3,194)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/bef7da1eda9a4092ac5a2ee30d12a65c?size=16"> hpux <i>(3,161)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/e09336c5020d4ee29306cbdfe51bda60?size=16"> PublixEmployee <i>(3,094)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/5a0b55defddb448caf5070856cbf39ee?size=16"> BoldandBrash <i>(2,852)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/f1bd18d4994642c4a0a14e64e0d8961d?size=16"> Phobiaxx <i>(2,653)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/694e5571da924e0eaa0b888b341ceb3c?size=16"> Riskayyy <i>(2,652)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/c4a072b2abe647a396bbc8ce07c90b60?size=16"> Pelpelajax <i>(2,565)</i></li>
+                    <li> <img src="https://crafatar.com/avatars/bf3319534f9243ee8abc7544b8234936?size=16"> ViceWaterColour <i>(2,517)</i></li>
+                </ol>
+            </div>
         </div>
     </div>
 </div>
-<script src="/assets/js/commons.js"></script>
-</body>
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <div class="well well-sm well-custom-orange">
+            <center>
+                <h3><i class="fa fa-bookmark"></i> Interesting Facts</h3>
+            </center>
+            <ul>
+                <li><b> <img src="https://crafatar.com/avatars/f876b8631ccd4ae2acad8a09e2209e81?size=16"> _DISTRACTION_ </b>has the most badges on the website (6)!</li>
+                <li><b> <img src="https://crafatar.com/avatars/c7fddb9aadfd4be3b326d700df252e88?size=16"> Avi Claus</b>, while technically not a user, has the most credits (2,016,000) and the most friends (1,503)!</li>
+                <li><b> <img src="https://crafatar.com/avatars/f78a4d8dd51b4b3998a3230f2de0c670?size=16"> Console</b> gave out a total of 3,445 punishments.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+            <!-- End page content -->
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row center" style="width: 70%">
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">About</div>
+                        <a class="footer-item" href="/staff">Staff</a>
+                        <a class="footer-item" href="/updates">Updates</a>
+                        <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Development</div>
+                        <a class="footer-item" href="/revisions/website">Revisions</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Administration</div>
+                        <a class="footer-item" href="/policies/terms">Terms of Use</a>
+                        <a class="footer-item" href="/policies/maps">Map Policy</a>
+                        <a class="footer-item" href="/admin/references/maps">References</a>
+                        <a class="footer-item" href="/maps/downloads">Download Stats</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Site</div>
+                        <a class="footer-item" href="/tools">Tools</a>
+                        <a class="footer-item" href="/admin/preferences">Preferences</a>
+                        <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
+                    </div>
+                </div>
+                <div class="footer-bottom center">
+                    <div class="resourcepile-copyright-year"></div>
+                </div>
+            </div>
+        </div>
+        <script src="/assets/js/commons.js"></script>
+    </body>
 </html>

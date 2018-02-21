@@ -5,23 +5,22 @@
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Records for Civil Modes: War of the Teams, a tournament hosted by Campeh." name="description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="description">
         <meta content="Civil Modes: War of the Teams - ResourcePile" property="og:title">
-        <meta content="Records for Civil Modes: War of the Teams, a tournament hosted by Campeh." name="og:description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
         <meta content="Civil Modes: War of the Teams - ResourcePile" name="twitter:title">
-        <meta content="Records for Civil Modes: War of the Teams, a tournament hosted by Campeh." name="twitter:description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
+        <link href="/assets/favicon.ico" rel="shortcut icon">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="/assets/favicon.ico">
-        
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
@@ -39,7 +38,6 @@
             ga('send', 'pageview');
         </script>
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
-        
     </head>
     <body >
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -56,7 +54,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> Maps <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/maps/overcast">Overcast Collection</a></li>
                                 <li><a href="/maps/pgm">PGM Collection</a></li>
@@ -65,14 +63,14 @@
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-map"></i> Contests <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/contests/overcast">Overcast Network</a></li>
                                 <li><a href="/contests/stratus">Stratus Network</a></li>
                             </ul>
                         </li>
                         <li class="dropdown active">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> Tournaments <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/leagues/overcast">Overcast Network</a></li>
                                 <li><a href="/leagues/pgm">PGM Community</a></li>
@@ -81,7 +79,7 @@
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-bar-chart"></i> Statistics <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><p class="navbar-menu-title">Overcast</p></li>
                                 <li><a href="/stats/overcast/bow">Bow Records</a></li>
@@ -91,394 +89,385 @@
                                 <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
                             </ul>
                         </li>
-                        <li><a href="/addon-project/wiki"><span class="fa fa-globe"></span> Wiki</a></li>
-                        <li class=""><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
+                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <li class=""><a href="/updates">Updates</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> GitHub: <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
+                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="content-background ">
-<div class="container">
-    <div class="content-header">
-        <div class="content-alert">
-            <noscript>
-                <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
-            </noscript>
-            <div id="alert-we-are-condu" class="alert alert-info alert-global" role="alert">
-                We are conducting a survey about how you use ResourcePile and we would appericiate it if you were to fill it out so we can further improve our site. <a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
-                <script>$("#alert-we-are-condu").on("closed.bs.alert",function(){Cookies.set("alert-we-are-condu-hidden",!0,{expires:365})}),Cookies.get("alert-we-are-condu-hidden")&&$("#alert-we-are-condu").alert("close");</script>
-            </div>
-        </div>
-        <div class="content-title">Civil Modes: War of the Teams</div>
-        <div class="content-subtitle">Information about Civil Modes: War of the Teams tournament hosted by Campeh.</div>
-    </div>
-
-    <!-- League banner -->
-    <div class="center">
-        <div class="league-banner" style="background: url('../../assets/img/tournament/banners/civil_modes_war_of_the_teams.jpg');background-position:center">Civil Modes: War of the Teams</div>
-    </div>
-
-    <!-- League winners -->
-    <div class="league-results row center">
-        <div class="league-position col-sm-4">
-            <div class="fa fa-star"></div>
-            <div class="league-team">UbeR</div>
-            <div class="league-team-position">2nd place</div>
-        </div>
-        <div class="league-position league-position-first col-sm-4">
-            <span class="fa fa-trophy"></span>
-            <div class="league-team">HUGE wall</div>
-            <div class="league-team-position">1st place</div>
-        </div>
-        <div class="league-position col-sm-4">
-            <div class="fa fa-star"></div>
-            <div class="league-team">Sigma Omega</div>
-            <div class="league-team-position">3rd place</div>
-        </div>
-    </div>
-
-    <!-- League information -->
-    <div class="league-info-section large">Tournament Information</div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="well well-sm well-custom-green">
-                <div class="league-info-section">Details</div>
-                <table class="league-info-table">
-                    <tbody>
-                        <tr>
-                            <td>Method</td>
-                            <td>Groups and Double Elimination</td>
-                        </tr>
-                        <tr>
-                            <td>Gamemodes</td>
-                            <td>Mixed</td>
-                        </tr>
-                        <tr>
-                            <td>Teams</td>
-                            <td>40 teams</td>
-                        </tr>
-                        <tr>
-                            <td>Players</td>
-                            <td>5v5</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="well well-sm well-custom-green">
-                <div class="league-info-section">Dates and Times</div>
-                <table class="league-info-table">
-                    <tbody>
-                        <tr>
-                            <td>Group Stage</td>
-                            <td>April 9th / 10th / 16th / 17th, 2016</td>
-                        </tr>
-                        <tr>
-                            <td>Invitationals</td>
-                            <td>April 23rd / 24th, 2016</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Leage map pool -->
-    <div class="league-info-section large">Map Pool</div>
-    <div class="row">
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="nartica" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/nartica.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Nartica"><strong>Nartica</strong><span class="tag_hidden">nartica</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Capture the Flag</span></li>
-                        </span>
+        <div class="content-background">
+            <div class="container">
+                <div class="content-header">
+                    <div class="content-alert">
+                        <noscript>
+                            <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+                        </noscript>
                     </div>
-                    <div class="map-labels">
-                        <span class="label label-info map-label"></span>
-                    </div>
+                    <div class="content-title">Civil Modes: War of the Teams</div>
+                    <div class="content-subtitle">Records for Civil Modes: War of the Teams, a tournament hosted by Campeh</div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="holo" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/holo.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Holo"><strong>Holo</strong><span class="tag_hidden">holo</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Capture the Flag</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="gemini" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/gemini.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Gemini"><strong>Gemini</strong><span class="tag_hidden">gemini</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Capture the Flag</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="limbo_iii" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/limbo_iii.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Limbo III"><strong>Limbo III</strong><span class="tag_hidden">limbo_iii</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">King of the Hill</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="facility" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/facility.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Facility"><strong>Facility</strong><span class="tag_hidden">facility</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Team Deathmatch</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="desert_sanctuary" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/desert_sanctuary.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Desert Sanctuary"><strong>Desert Sanctuary</strong><span class="tag_hidden">desert_sanctuary</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Capture the Flag</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="terricreus" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/terricreus.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Terricreus"><strong>Terricreus</strong><span class="tag_hidden">terricreus</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Capture the Wool</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="horseshoe_ranch" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/horseshoe_ranch.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Horseshoe Ranch"><strong>Horseshoe Ranch</strong><span class="tag_hidden">horseshoe_ranch</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Capture the Wool</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="abstract" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/abstract.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Abstract"><strong>Abstract</strong><span class="tag_hidden">abstract</span></a>
-                        <span style="display:block;margin-top:-4px;">
-                            <li class="game-tag"><span class="game-link map-tag">Capture the Wool</span></li>
-                        </span>
-                    </div>
-                    <div class="map-labels">
-                        <span class="label label-info map-label"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- League teams -->
-    <div class="league-info-section large">Teams</div>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="well well-sm well-custom-red">
-                <div class="league-info-section">Group A</div>
-                <ul>
-                    <li>HUGE wall</li>
-                    <li>PureBlox</li>
-                    <li>Fatal Fury</li>
-                    <li>HazeFNS</li>
-                    <li>ConnectionLost</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="well well-sm well-custom-red">
-                <div class="league-info-section">Group B</div>
-                <ul>
-                    <li>Wrap</li>
-                    <li>Anubis</li>
-                    <li>BigStomp (Orion)</li>
-                    <li>Colossus</li>
-                    <li>GameRule</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="well well-sm well-custom-red">
-                <div class="league-info-section">Group C</div>
-                <ul>
-                    <li>BraveHearts</li>
-                    <li>Cryptosys</li>
-                    <li>Nice</li>
-                    <li>Unity!</li>
-                    <li>NameNotYet</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="well well-sm well-custom-red">
-                <div class="league-info-section">Group D</div>
-                <ul>
-                    <li>UbeR</li>
-                    <li>Zona Ganjah</li>
-                    <li>Night Vision</li>
-                    <li>Grim</li>
-                    <li>BlackHole</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="well well-sm well-custom-red">
-                <div class="league-info-section">Group E</div>
-                <ul>
-                    <li>Caos</li>
-                    <li>Varsity</li>
-                    <li>Scorpia</li>
-                    <li>Creixell</li>
-                    <li>Bleup</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="well well-sm well-custom-red">
-                <div class="league-info-section">Group F</div>
-                <ul>
-                    <li>Polo&#x27;s Team</li>
-                    <li>Out</li>
-                    <li>RedBull</li>
-                    <li>Arkham</li>
-                    <li>TRILLUMINATI</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="well well-sm well-custom-red">
-                <div class="league-info-section">Group G</div>
-                <ul>
-                    <li>Sigma Omega</li>
-                    <li>Amnesia</li>
-                    <li>Focus</li>
-                    <li>Hypetic</li>
-                    <li>Furyus</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="well well-sm well-custom-red">
-                <div class="league-info-section">Group H</div>
-                <ul>
-                    <li>YGang</li>
-                    <li>Ethernal Cross</li>
-                    <li>Sigma Alfa</li>
-                    <li>FrostFire</li>
-                    <li>PvPsTaRs</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- League standings -->
-    <div class="league-info-section large">Standings</div>
-        <div class="challonge-bracket">
-            <iframe src="https://challonge.com/CMWotT/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-        </div>
+            <!-- Start page content -->
+<!-- League banner -->
+<div class="center">
+    <div class="league-banner" style="background: url('../../assets/img/tournament/banners/.jpg');background-position:center"></div>
 </div>
+<!-- League winners -->
+<div class="league-results row center">
+    <div class="league-position col-sm-4">
+        <div class="fa fa-star"></div>
+        <div class="league-team">UbeR</div>
+        <div class="league-team-position">2nd place</div>
+    </div>
+    <div class="league-position league-position-first col-sm-4">
+        <span class="fa fa-trophy"></span>
+        <div class="league-team">HUGE wall</div>
+        <div class="league-team-position">1st place</div>
+    </div>
+    <div class="league-position col-sm-4">
+        <div class="fa fa-star"></div>
+        <div class="league-team">Sigma Omega</div>
+        <div class="league-team-position">3rd place</div>
+    </div>
 </div>
-<div class="footer">
-    <div class="container">
-        <div class="row center" style="width: 70%">
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">About</div>
-                <a class="footer-item" href="/staff">Staff</a>
-                <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
-                <a class="footer-item" href="/admin/forms/apply">Positions</a>
-            </div>
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">Development</div>
-                <a class="footer-item" href="/revisions/website">Revisions</a>
-                <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
-                <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
-            </div>
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">Administration</div>
-                <a class="footer-item" href="/policies/terms">Terms of Use</a>
-                <a class="footer-item" href="/policies/maps">Map Policy</a>
-                <a class="footer-item" href="/admin/references/maps">References</a>
-                <a class="footer-item" href="/maps/downloads">Download Stats</a>
-            </div>
-            <div class="footer-section col-md-3">
-                <div class="footer-section-head">Site</div>
-                <a class="footer-item" href="/tools">Tools</a>
-                <a class="footer-item" href="/admin/preferences">Preferences</a>
-                <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
-            </div>
+<!-- League information -->
+<div class="league-info-section large">Tournament Information</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Details</div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td>Method</td>
+                        <td>Groups and Double Elimination</td>
+                    </tr>
+                    <tr>
+                        <td>Gamemodes</td>
+                        <td>Mixed</td>
+                    </tr>
+                    <tr>
+                        <td>Teams</td>
+                        <td>40 teams</td>
+                    </tr>
+                    <tr>
+                        <td>Players</td>
+                        <td>5v5</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="footer-bottom center">
-            <div class="resourcepile-copyright-year"></div>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Dates and Times</div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td>Group Stage</td>
+                        <td>April 9th / 10th / 16th / 17th, 2016</td>
+                    </tr>
+                    <tr>
+                        <td>Invitationals</td>
+                        <td>April 23rd / 24th, 2016</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
-<script src="/assets/js/commons.js"></script>
-</body>
+<!-- Leage map pool -->
+<div class="league-info-section large">Map Pool</div>
+<div class="row">
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="nartica" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/nartica.png">
+    
+                <div class="map-banner">
+                    <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Nartica"><strong>Nartica</strong><span class="tag_hidden">nartica</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Capture the Flag</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="holo" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/holo.png">
+    
+                <div class="map-banner">
+                    <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Holo"><strong>Holo</strong><span class="tag_hidden">holo</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Capture the Flag</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="gemini" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/gemini.png">
+    
+                <div class="map-banner">
+                    <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Gemini"><strong>Gemini</strong><span class="tag_hidden">gemini</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Capture the Flag</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="limbo_iii" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/limbo_iii.png">
+    
+                <div class="map-banner">
+                    <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Limbo III"><strong>Limbo III</strong><span class="tag_hidden">limbo_iii</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">King of the Hill</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="facility" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/facility.png">
+    
+                <div class="map-banner">
+                    <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Facility"><strong>Facility</strong><span class="tag_hidden">facility</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Team Deathmatch</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="desert_sanctuary" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/desert_sanctuary.png">
+    
+                <div class="map-banner">
+                    <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Desert Sanctuary"><strong>Desert Sanctuary</strong><span class="tag_hidden">desert_sanctuary</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Capture the Flag</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="terricreus" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/terricreus.png">
+    
+                <div class="map-banner">
+                    <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Terricreus"><strong>Terricreus</strong><span class="tag_hidden">terricreus</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Capture the Wool</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="horseshoe_ranch" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/horseshoe_ranch.png">
+    
+                <div class="map-banner">
+                    <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Horseshoe Ranch"><strong>Horseshoe Ranch</strong><span class="tag_hidden">horseshoe_ranch</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Capture the Wool</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 map-thumbnail center">
+        <div id="abstract" class="thumbnail map-float">
+            <div class="map-image lazy" data-src="../../assets/img/tournament/shared/maps/abstract.png">
+    
+                <div class="map-banner">
+                    <a class="map-header"  data-toggle="tooltip" data-placement="top" title="Abstract"><strong>Abstract</strong><span class="tag_hidden">abstract</span></a>
+                    <span style="display:block;margin-top:-4px;">
+                        <li class="game-tag"><span class="game-link map-tag">Capture the Wool</span></li>
+                    </span>
+                </div>
+                <div class="map-labels">
+                    <span class="label label-info map-label"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- League teams -->
+<div class="league-info-section large">Teams</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red">
+            <div class="league-info-section">Group A</div>
+            <ul>
+                <li>HUGE wall</li>
+                <li>PureBlox</li>
+                <li>Fatal Fury</li>
+                <li>HazeFNS</li>
+                <li>ConnectionLost</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red">
+            <div class="league-info-section">Group B</div>
+            <ul>
+                <li>Wrap</li>
+                <li>Anubis</li>
+                <li>BigStomp (Orion)</li>
+                <li>Colossus</li>
+                <li>GameRule</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red">
+            <div class="league-info-section">Group C</div>
+            <ul>
+                <li>BraveHearts</li>
+                <li>Cryptosys</li>
+                <li>Nice</li>
+                <li>Unity!</li>
+                <li>NameNotYet</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red">
+            <div class="league-info-section">Group D</div>
+            <ul>
+                <li>UbeR</li>
+                <li>Zona Ganjah</li>
+                <li>Night Vision</li>
+                <li>Grim</li>
+                <li>BlackHole</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red">
+            <div class="league-info-section">Group E</div>
+            <ul>
+                <li>Caos</li>
+                <li>Varsity</li>
+                <li>Scorpia</li>
+                <li>Creixell</li>
+                <li>Bleup</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red">
+            <div class="league-info-section">Group F</div>
+            <ul>
+                <li>Polo&#x27;s Team</li>
+                <li>Out</li>
+                <li>RedBull</li>
+                <li>Arkham</li>
+                <li>TRILLUMINATI</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red">
+            <div class="league-info-section">Group G</div>
+            <ul>
+                <li>Sigma Omega</li>
+                <li>Amnesia</li>
+                <li>Focus</li>
+                <li>Hypetic</li>
+                <li>Furyus</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red">
+            <div class="league-info-section">Group H</div>
+            <ul>
+                <li>YGang</li>
+                <li>Ethernal Cross</li>
+                <li>Sigma Alfa</li>
+                <li>FrostFire</li>
+                <li>PvPsTaRs</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- League standings -->
+<div class="league-info-section large">Standings</div>
+<div class="challonge-bracket">
+    <iframe src="https://challonge.com/CMWotT/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+</div>
+            <!-- End page content -->
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row center" style="width: 70%">
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">About</div>
+                        <a class="footer-item" href="/staff">Staff</a>
+                        <a class="footer-item" href="/updates">Updates</a>
+                        <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Development</div>
+                        <a class="footer-item" href="/revisions/website">Revisions</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Administration</div>
+                        <a class="footer-item" href="/policies/terms">Terms of Use</a>
+                        <a class="footer-item" href="/policies/maps">Map Policy</a>
+                        <a class="footer-item" href="/admin/references/maps">References</a>
+                        <a class="footer-item" href="/maps/downloads">Download Stats</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Site</div>
+                        <a class="footer-item" href="/tools">Tools</a>
+                        <a class="footer-item" href="/admin/preferences">Preferences</a>
+                        <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
+                    </div>
+                </div>
+                <div class="footer-bottom center">
+                    <div class="resourcepile-copyright-year"></div>
+                </div>
+            </div>
+        </div>
+        <script src="/assets/js/commons.js"></script>
+    </body>
 </html>

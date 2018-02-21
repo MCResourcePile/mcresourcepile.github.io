@@ -5,22 +5,22 @@
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="A collection of resources for various competitive Minecraft networks." name="description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="description">
         <meta content="Home - ResourcePile" property="og:title">
-        <meta content="A collection of resources for various competitive Minecraft networks." name="og:description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
         <meta content="Home - ResourcePile" name="twitter:title">
-        <meta content="A collection of resources for various competitive Minecraft networks." name="twitter:description">
+        <meta content="A collection of resources for various competitive Minecraft networks" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
+        <link href="/assets/favicon.ico" rel="shortcut icon">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="/assets/favicon.ico">
         <link href="/assets/css/index.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -39,7 +39,6 @@
             ga('send', 'pageview');
         </script>
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
-        
     </head>
     <body class="background-splash" id="wrapper">
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -56,7 +55,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> Maps <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/maps/overcast">Overcast Collection</a></li>
                                 <li><a href="/maps/pgm">PGM Collection</a></li>
@@ -65,14 +64,14 @@
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-map"></i> Contests <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/contests/overcast">Overcast Network</a></li>
                                 <li><a href="/contests/stratus">Stratus Network</a></li>
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> Tournaments <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/leagues/overcast">Overcast Network</a></li>
                                 <li><a href="/leagues/pgm">PGM Community</a></li>
@@ -81,7 +80,7 @@
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-bar-chart"></i> Statistics <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><p class="navbar-menu-title">Overcast</p></li>
                                 <li><a href="/stats/overcast/bow">Bow Records</a></li>
@@ -91,77 +90,69 @@
                                 <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
                             </ul>
                         </li>
-                        <li><a href="/addon-project/wiki"><span class="fa fa-globe"></span> Wiki</a></li>
-                        <li class=""><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
+                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <li class=""><a href="/updates">Updates</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> GitHub: <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
+                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div >
-<!-- Page header, splash wash -->
+            <!-- Start page content -->
 <div class="background-splash-wash" style="text-align:center">
-    <div class="container splash-header-body" id="wrapper-header">
+    <div class="container splash-header-body">
         <div class="splash-header">ResourcePile</div>
         <div class="splash-subheader"></div>
     </div>
-    <!-- Main page content -->
-    <div class="page-content" id="wrapper-content">
-        <div class="index-alerts">
-            <noscript>
-                <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
-            </noscript>
-            <div id="alert-we-are-condu" class="alert alert-info alert-global" role="alert">
-                We are conducting a survey about how you use ResourcePile and we would appericiate it if you were to fill it out so we can further improve our site. <a href="https://mcresourcepile.github.io/admin/forms/surveys/general" target="_blank">Go to survey</a>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
-                <script>$("#alert-we-are-condu").on("closed.bs.alert",function(){Cookies.set("alert-we-are-condu-hidden",!0,{expires:365})}),Cookies.get("alert-we-are-condu-hidden")&&$("#alert-we-are-condu").alert("close");</script>
-            </div>
+</div>
+<div class="index-content">
+    <div class="container">
+        <div class="row center">
+            <a class="col-md-3 col-sm-6 col-xs-12 card" href="maps">
+                <div class="icon"><i class="fa fa-cubes" aria-hidden="true"></i></div>
+                <div class="header">Map Collections</div>
+                <div class="description">An extensive collection of team based PvP oriended maps from various competitive Minecraft networks</div>
+            </a>
+            <a class="col-md-3 col-sm-6 col-xs-12 card" href="competitive">
+                <div class="icon"><i class="fa fa-trophy" aria-hidden="true"></i></div>
+                <div class="header">Competitive Records</div>
+                <div class="description">Records for past tournaments and contests hosted by various competitive Minecraft networks</div>
+            </a>
+            <a class="col-md-3 col-sm-6 col-xs-12 card" href="stats">
+                <div class="icon"><i class="fa fa-bar-chart" aria-hidden="true"></i></div>
+                <div class="header">Historical Statistics</div>
+                <div class="description">An archive of historical statistic records and documents from various past competitive Minecraft networks</div>
+            </a>
+            <a class="col-md-3 col-sm-6 col-xs-12 card" href="addon-project/wiki">
+                <div class="icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></div>
+                <div class="header">Addon Project</div>
+                <div class="description">A project in collaboration with the Stratus Addon Team as a place for tools and information related to Stratus</div>
+            </a>
         </div>
-        <div class="content-title">Sections</div>
-        <div class="content-subtitle">Just a small selection of our resources</div>
-        <div class="container">
-            <div class="row" style="margin-top:18px;">
-                <div class="col-sm-6 col-md-3">
-                    <a href="/maps" class="object-card-link">
-                        <div class="object-card card-background-default center">
-                            <span class="object-card-display fa fa-cubes"></span>
-                        </div>
-                        <span class="object-card-title card-title-default"><strong>Map Collections</strong></span>
-                        <div class="object-card-description">Our selection of maps from various competitive Minecraft networks</div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <a href="/leagues" class="object-card-link">
-                        <div class="object-card card-background-default center">
-                            <span class="object-card-display fa fa-shield"></span>
-                        </div>
-                        <span class="object-card-title card-title-default"><strong>Competitive</strong></span>
-                        <div class="object-card-description">Records for tournaments hosted by various competitive Minecraft networks</div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <a href="/contests" class="object-card-link">
-                        <div class="object-card card-background-default center">
-                            <span class="object-card-display fa fa-map"></span>
-                        </div>
-                        <span class="object-card-title card-title-default"><strong>Map Contests</strong></span>
-                        <div class="object-card-description">Records for map contests hosted by various competitive Minecraft networks</div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <a href="/stats" class="object-card-link">
-                        <div class="object-card card-background-default center">
-                            <span class="object-card-display fa fa-trophy"></span>
-                        </div>
-                        <span class="object-card-title card-title-default"><strong>Statistics</strong></span>
-                        <div class="object-card-description">Statistic records from various competitive Minecraft networks</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <br>
+    </div>
+</div>
+<script type="text/javascript">
+    var images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg'];
+    $('.background-splash').css({'background': 'url(assets/img/splash/' + [Math.floor(Math.random() * images.length) + 1] + '.jpg) no-repeat center fixed'});
+    var splash_quotes = [
+        'The best collection of resources for the Overcast and Stratus Network',
+        'Mostly known for our Overcast Network map collection',
+        'The place you go when you ask "where do I download ocn maps?"',
+        'Hosting a large collection of competitive Minecraft PVP maps',
+        'New Overcast Network maps? Soon™',
+        'We also have pages for Stratus Network!',
+        '<objective> Download all of the maps! </objective>',
+        '<objective> Get the longest kill distance with a bow! </objective>',
+        'Loading Overcast Network maps repository... 49% complete',
+        'Check out the Stratus Addon Project!',
+        'Now with 100% more Rift!',
+		'Loading Avicus Network maps repository... 46% complete'
+    ]
+    $('.splash-subheader').text(splash_quotes[Math.floor(Math.random()*splash_quotes.length)]);
+</script>
+            <!-- End page content -->
         </div>
         <div class="footer">
             <div class="container">
@@ -169,8 +160,8 @@
                     <div class="footer-section col-md-3">
                         <div class="footer-section-head">About</div>
                         <a class="footer-item" href="/staff">Staff</a>
+                        <a class="footer-item" href="/updates">Updates</a>
                         <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
-                        <a class="footer-item" href="/admin/forms/apply">Positions</a>
                     </div>
                     <div class="footer-section col-md-3">
                         <div class="footer-section-head">Development</div>
@@ -198,26 +189,5 @@
             </div>
         </div>
         <script src="/assets/js/commons.js"></script>
-    </div>
-</div>
-<script type="text/javascript">
-    var images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg'];
-    $('.background-splash').css({'background': 'url(assets/img/splash/' + [Math.floor(Math.random() * images.length) + 1] + '.jpg) no-repeat center fixed'});
-    var splash_quotes = [
-        'The best collection of resources for the Overcast and Stratus Network',
-        'Mostly known for our Overcast Network map collection',
-        'The place you go when you ask "where do I download ocn maps?"',
-        'Hosting a large collection of competitive Minecraft PVP maps',
-        'New Overcast Network maps? Soon™',
-        'We also have pages for Stratus Network!',
-        '<objective> Download all of the maps! </objective>',
-        '<objective> Get the longest kill distance with a bow! </objective>',
-        'Loading Overcast Network maps repository... 49% complete',
-        'Check out the Stratus Addon Project!',
-        'Now with 100% more Rift!',
-		'Loading Avicus Network maps repository... 46% complete'
-    ]
-    $('.splash-subheader').text(splash_quotes[Math.floor(Math.random()*splash_quotes.length)]);
-</script>
-</body>
+    </body>
 </html>
