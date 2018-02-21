@@ -20,11 +20,11 @@
             {{#contains @root.data.featured.maps slug}}
             <div class="col-sm-6 col-lg-3 map-thumbnail center" style="padding-top:2px;">
                 <div id="featured-{{slug}}" class="thumbnail map-float{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}">
-                    <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.map-group}}-maps{{#is @root.map-group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png');">
+                    <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png');">
                         <div class="map-banner-collapse-immune">
                             <a class="map-header" href="#{{slug}}" data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong><span class="tag_hidden">{{slug}}</span></a>
                             {{#if contest}}
-                            <a href="/contests/{{#is @root.map-group 'pgm'}}overcast{{else}}{{@root.map-group}}{{/is}}/{{contest}}#{{slug}}" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{#is @root.map-group 'pgm'}}Overcast{{else}}{{sentence @root.map-group}}{{/is}} contest submission"><i class="external-thread fa fa-map"></i></a>
+                            <a href="/contests/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}/{{contest}}#{{slug}}" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{#is @root.settings.maps.group 'pgm'}}Overcast{{else}}{{sentence @root.settings.maps.group}}{{/is}} contest submission"><i class="external-thread fa fa-map"></i></a>
                             {{/if}}
                             {{#if discussion}}
                             <a href="{{discussion}}" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
@@ -36,7 +36,7 @@
                                 {{#if tags}}
                                 {{#each tags}}
                                 {{#inArray @root.short-tags this}}
-                                <li class="game-tag"><a class="game-link map-tag tag-{{this}}" href="?s={{this}}"></a><span class="tag-hidden">{{this}}</span></li>
+                                <li class="game-tag"><a class="game-link map-tag tag-{{this}}" href="?s={{this}}"></a></li>
                                 {{else}}
                                 <li class="game-tag"><a class="game-link map-tag" href="?s={{this}}">{{capitalize this}}</a></li>
                                 {{/inArray}}
@@ -68,7 +68,7 @@
                         <span class="map-author-name">by</span>
                         {{#if authors}}
                         {{#authors}}
-                        <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="{{#if @root.page-category.contest}}/maps/{{@root.map-group}}{{/if}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+                        <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="{{#if @root.page-category.contest}}/maps/{{@root.settings.maps.group}}{{/if}}?s={{uuid}}">{{username}}</a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
                         {{/authors}}
                         {{else}}
                         <span class="map-author-name">Ghost</span>
