@@ -1,64 +1,51 @@
-{{> header}}
-<div class="container">
-    <div class="content-header">
-        {{> alert}}
-        <div class="content-title">General Use Survey</div>
-        <div class="content-subtitle">
-            Understanding our users and how we can improve
+{{> navigation_header}}
+<div class="form-body" id="form">
+    <p class="form-required-text">* Required</p>
+    <form>
+        <div class="form-group">
+            <div class="form-section control-label form-required">How did you discover ResourcePile?</div>
+            <select name="referral" id="referral" style="width: 195px;color:black!important" required autofocus="false">
+                <option value="unknown">Select an option</option>
+                <option value="forums">Network forums</option>
+                <option value="social media">Social media</option>
+                <option value="discord">Discord</option>
+                <option value="friend">Friend</option>
+                <option value="other">Other</option>
+            </select>
         </div>
-    </div>
-    <div class="form-body" id="form">
-        <p class="form-required-text">* Required</p>
-        <form>
-            <div class="form-group">
-                <div class="form-section control-label form-required">How did you discover ResourcePile?</div>
-                <select name="referral" id="referral" style="width: 195px;color:black!important" required autofocus="false">
-                    <option value="unknown">Select an option</option>
-                    <option value="forums">Network forums</option>
-                    <option value="social media">Social media</option>
-                    <option value="discord">Discord</option>
-                    <option value="friend">Friend</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <br/>
-
-            <div class="form-group">
-                <div class="form-section control-label form-required">Which network do you primarily use ResourcePile for?</div>
-                <select name="network" id="network" style="width: 195px;color:black!important" required autofocus="false">
-                    <option value="unknown">Select an option</option>
-                    <option value="overcast">Overcast Network</option>
-                    <option value="stratus">Stratus Network</option>
-                    <option value="avicus">Avicus Network</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <br/>
-
-            <div class="form-group">
-                <div class="form-section control-label form-required">What do you mainly use ResourcePile for?</div>
-                <select name="use" id="use" style="width: 195px;color:black!important" required autofocus="false">
-                    <option value="unknown">Select an option</option>
-                    <option value="maps-personal-use">Maps for personal, private use</option>
-                    <option value="maps-public-use">Maps for use on a public server</option>
-                    <option value="view-tournament">Viewing past tournament/contest records</option>
-                    <option value="view-stats">Looking at historical statistics</option>
-                    <option value="view-wiki">Stratus Addon Project wiki</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <br/>
-
-            <div class="form-group">
-                <div class="form-section control-label form-required">What would you change about or add to ResourcePile to improve it?</div>
-                <div class="form-section-hint">This could be anything, big or small, that you think could be changed or added to make your ResourcePile experience that little bit better.</div>
-                <textarea type="text" name="improvement" id="improvement" placeholder="Type here..." style="width: 195px;color:black!important" required></textarea>
-            </div>
-            <br/>
-
-            <input class="form-submit btn btn-default" type="submit" name="submit" id="submit" value="Submit"/>
-        </form>
-    </div>
+        <br/>
+        <div class="form-group">
+            <div class="form-section control-label form-required">Which network do you primarily use ResourcePile for?</div>
+            <select name="network" id="network" style="width: 195px;color:black!important" required autofocus="false">
+                <option value="unknown">Select an option</option>
+                <option value="overcast">Overcast Network</option>
+                <option value="stratus">Stratus Network</option>
+                <option value="avicus">Avicus Network</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <br/>
+        <div class="form-group">
+            <div class="form-section control-label form-required">What do you mainly use ResourcePile for?</div>
+            <select name="use" id="use" style="width: 195px;color:black!important" required autofocus="false">
+                <option value="unknown">Select an option</option>
+                <option value="maps-personal-use">Maps for personal, private use</option>
+                <option value="maps-public-use">Maps for use on a public server</option>
+                <option value="view-tournament">Viewing past tournament/contest records</option>
+                <option value="view-stats">Looking at historical statistics</option>
+                <option value="view-wiki">Stratus Addon Project wiki</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <br/>
+        <div class="form-group">
+            <div class="form-section control-label form-required">What would you change about or add to ResourcePile to improve it?</div>
+            <div class="form-section-hint">This could be anything, big or small, that you think could be changed or added to make your ResourcePile experience that little bit better.</div>
+            <textarea type="text" name="improvement" id="improvement" placeholder="Type here..." style="width: 195px;color:black!important" required></textarea>
+        </div>
+        <br/>
+        <input class="form-submit btn btn-default" type="submit" name="submit" id="submit" value="Submit" />
+    </form>
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -103,6 +90,4 @@
         });
     });
 </script>
-{{> footer}}
-</body>
-</html>
+{{> navigation_footer}}

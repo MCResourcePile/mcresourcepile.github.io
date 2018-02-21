@@ -1,0 +1,266 @@
+{{> navigation_header}}
+<!-- Contest banner -->
+<div class="center">
+    {{#if heading}}
+    <div class="league-banner" style="background: url('../../assets/img/contest/{{snakecase (lowercase name)}}/banner.jpg');background-position:center">{{name}}</div>
+    {{else}}
+    <img class="league-banner-custom" src="../../assets/img/contest/{{snakecase (lowercase name)}}/banner.png">
+    {{/if}}
+</div>
+
+<!-- Contest winners -->
+<div class="league-results row center">
+    {{#if submissions}}
+    <div class="col-sm-1"></div>
+    {{#submissions}}
+    {{#is position '2'}}
+    <div class="map-thumbnail-small col-sm-2">
+        <div class="thumbnail map-float map-float-small">
+            <div class="map-image map-image-small" style="background-image: url('../../assets/img/contest/{{@root.id}}/maps/{{slug}}.png');">
+                <div class="map-banner-collapse-immune map-banner-small">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{#if name}}{{name}}{{else}}Untitled Map{{/if}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
+                </div>
+                <div class="map-labels-collapse-immune center" style="top:148px;font-size:20px;">
+                    <div class="label map-label-contest-second map-label"><span class="fa fa-star"></span> 2nd</div>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                {{#if authors}}
+                {{#authors}}
+                <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="/maps/{{@root.settings.maps.group}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+                {{/authors}}
+                {{else}}<span class="map-author-name">Ghost</span>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{/is}}
+    {{/submissions}}
+    <div class="col-sm-1"></div>
+    {{#submissions}}
+    {{#is position '1'}}
+    <div class="col-sm-4">
+        <div class="thumbnail map-float">
+            <div class="map-image" style="background-image: url('../../assets/img/contest/{{@root.id}}/maps/{{slug}}.png');">
+                <div class="map-banner-collapse-immune map-banner-small">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{#if name}}{{name}}{{else}}Untitled Map{{/if}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
+                </div>
+                <div class="map-labels-collapse-immune center" style="top:155px;">
+                    <div class="label map-label-contest-first map-label map-label-header"><span class="fa fa-trophy"></span> 1st</div>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                {{#if authors}}
+                {{#authors}}
+                <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="/maps/{{@root.settings.maps.group}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+                {{/authors}}
+                {{else}}<span class="map-author-name">Ghost</span>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{/is}}
+    {{/submissions}}
+    {{#submissions}}
+    {{#is position '3'}}
+    <div class="map-thumbnail-small col-sm-3">
+        <div class="thumbnail map-float map-float-small">
+            <div class="map-image map-image-small" style="background-image: url('../../assets/img/contest/{{@root.id}}/maps/{{slug}}.png');">
+                <div class="map-banner-collapse-immune map-banner-small">
+                    <a class="map-header" href="https://mcresourcepile.github.io/maps/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{#if name}}{{name}}{{else}}Untitled Map{{/if}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
+                </div>
+                <div class="map-labels-collapse-immune center" style="top:148px;font-size:20px;">
+                    <div class="label map-label-contest-third map-label"><span class="fa fa-star"></span> 3rd</div>
+                </div>
+            </div>
+            <div class="map-authors">
+                <span class="map-author-name">by</span>
+                {{#if authors}}
+                {{#authors}}
+                <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="/maps/{{@root.settings.maps.group}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+                {{/authors}}
+                {{else}}<span class="map-author-name">Ghost</span>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{/is}}
+    {{/submissions}}
+    <div class="col-sm-1"></div>
+    {{else}}
+    <div class="col-md-3"></div>
+    <div class="well well-custom-red col-md-6 col-sm-12 h3">
+        <span class="fa fa-exclamation-triangle"></span>
+        <div class="h3">This contest has not concluded!</div>
+        <div class="h5">Information on this page may not be confirmed</div>
+    </div>
+    <div class="col-md-3"></div>
+    {{/if}}
+</div>
+
+<!-- Contest information -->
+<div class="league-info-section large">Contest Information</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Dates and Times</div>
+            <table class="league-info-table">
+                <tbody>
+                    {{#stages}}
+                    <tr>
+                        <td>{{stage}}</td>
+                        <td>{{date}}</td>
+                    </tr>
+                    {{/stages}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Scoring <small>(Total scores are {{#is score_method 'percent'}}a percentage out of 100{{else}}the sum of each criteria{{/is}})</small></div>
+            <table class="league-info-table">
+                <tbody>
+                    {{#each criteria}}
+                    {{#if max}}
+                    <tr>
+                        <td style="font-weight:400"><strong>{{this.label}}</strong> out of <code>{{this.max}}</code> {{#if this.weight}}(weighted {{this.weight}}%){{/if}}</td>
+                    </tr>
+                    {{/if}}
+                    {{#if amount}}
+                    <tr>
+                        <td style="font-weight:400"><strong>Additional {{this.label}}</strong> of <code>{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}</code> for {{this.reason}}</td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{#if panels}}
+    {{#panels}}
+    <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
+        <div class="well well-sm well-custom-blue">
+            <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
+            <table class="league-info-table">
+                <tbody>
+                    {{#if rows}}
+                    {{#rows}}
+                    <tr>
+                        {{#if label}}
+                        <td>{{label}}</td>
+                        <td>{{{content}}}</td>
+                        {{else}}
+                        <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                        {{/if}}
+                    </tr>
+                    {{/rows}}
+                    {{else}}
+                    <tr>
+                        <td>This panel has no information.</td>
+                    </tr>
+                    {{/if}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{/panels}}
+    {{/if}}
+</div>
+
+{{#if submissions}}
+<!-- Contest submissions -->
+<div class="league-info-section large">Submissions <small>({{length submissions}} maps)</small></div>
+<div class="row">
+    {{#withSort submissions "name"}}
+    {{> page_maps_thumbnail}}
+    {{/withSort}}
+</div>
+
+<!-- Contest submissions score breakdown -->
+<div class="league-info-section large">Score Breakdown</div>
+<div class="table-responsive">
+    <table id="scores-breakdown" class="league-info-table contest-info-table table table-striped">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Map</td>
+                {{#each criteria}}
+                <td>{{this.label}} <small style="font-size: 12px;">{{#if max}}/ {{this.max}}{{else}}{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}{{/if}}</small></td>
+                {{/each}}
+                <td data-toggle="tooltip" data-placement="top" title="{{#is @root.score_method 'percent'}}Weighted&nbsp;score{{else}}Summed&nbsp;score{{/is}}">Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{#submissions}}
+            <tr class="map-score-breakdown {{#is position '1'}}contest-table-first{{else}}{{#is position '2'}}contest-table-second{{else}}{{#is position '3'}}contest-table-third{{/is}}{{/is}}{{/is}}">
+                <td>{{ordinalize position}}</td>
+                <td name="{{slug}}">{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</td>
+                {{#scores}}
+                {{#if (properties @root.criteria this.criteria 'max')}}
+                <td class="map-score" max="{{properties @root.criteria this.criteria 'max'}}"{{#is @root.score_method 'percent'}} weight="{{#if (properties @root.criteria this.criteria 'weight')}}{{properties @root.criteria this.criteria 'weight'}}{{else}}0{{/if}}"{{/is}}>{{score}}</td>
+                {{else}}
+                <td class="map-bonus" operation="{{#if (properties @root.criteria this.criteria 'operation')}}{{properties @root.criteria this.criteria 'operation'}}{{else}}add{{/if}}" amount="{{#if (properties @root.criteria this.criteria 'amount')}}{{properties @root.criteria this.criteria 'amount'}}{{else}}1{{/if}}">{{#if eligible}}Yes{{else}}No{{/if}}</td>
+                {{/if}}
+                {{/scores}}
+                <td class="map-score-total">0</td>
+            </tr>
+            {{/submissions}}
+        </tbody>
+    </table>
+</div>
+{{/if}}
+
+<script>
+    $('.progress-bar').each(function(i, obj) {
+        var points_current = $(this).attr('aria-valuenow');
+        var points_max = $(this).attr('aria-valuemax');
+        var points_percentage = Math.floor((points_current / points_max) * 100);
+        $(this).css({
+            'width': points_percentage + '%',
+            'background-color': 'rgba(21, 57, 177, ' + points_percentage / 100 + ')'
+        });
+    });
+    $('.map-score-breakdown').each(function(i, obj) {
+        var map = $(this).find(':first-child').attr('name');
+        var points_given = [];
+        var points_total = 0;
+        var points_bonus = false;
+        var points_method = '{{#is score_method 'percent'}}percent{{else}}sum{{/is}}'
+        // calculate total score for map
+        $(this).find('.map-score').each(function(){
+            var points = $(this).text();
+            var max = $(this).attr('max');
+            var points_percentage = points / max
+            var weight = $(this).attr('weight');
+            if ( points_method == 'percent' ) {
+                points = points_percentage * weight
+            }
+            points_given.push(points);
+        });
+        $.each(points_given, function() { points_total += parseFloat(this) || 0;});
+        $(this).find('.map-bonus').each(function(){
+            var bonus = $(this).text();
+            if (bonus == 'Yes') {
+                points_bonus = true
+            }
+            var operation = $(this).attr('operation');
+            var amount = parseFloat($(this).attr('amount'));
+            if (points_bonus == true) {
+                if (operation == 'percent') {
+                    points_total = points_total + ((amount / 100) * points_total)
+                } else if (operation == 'multiply') {
+                    points_total = points_total * amount
+                } else {
+                    points_total = points_total + amount
+                }
+            }
+        });
+        $(this).find(':last-child').text(points_total.toFixed(2));
+    }).promise().done( function() {
+        $('#scores-breakdown').tablesorter({sortList: [[0,0]]});
+    });
+</script>
+{{> navigation_footer}}

@@ -1,34 +1,36 @@
 <html>
     <head>
-        <title>{{#title}}{{./title}}{{/title}}</title>
+        <title>{{title}} - ResourcePile</title>
         <!-- Page meta data -->
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="{{description}}" name="description">
-        <meta content="{{#title}}{{./title}}{{/title}}" property="og:title">
-        <meta content="{{description}}" name="og:description">
+        <meta content="{{#if description}}{{description}}{{else}}{{subtitle}}{{/if}}" name="description">
+        <meta content="{{title}} - ResourcePile" property="og:title">
+        <meta content="{{#if description}}{{description}}{{else}}{{subtitle}}{{/if}}" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
-        <meta content="{{#title}}{{./title}}{{/title}}" name="twitter:title">
-        <meta content="{{description}}" name="twitter:description">
+        <meta content="{{title}} - ResourcePile" name="twitter:title">
+        <meta content="{{#if description}}{{description}}{{else}}{{subtitle}}{{/if}}" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
-        <link href="/assets/css/main.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="/assets/favicon.ico">
-        {{{css_includes}}}
+        <link href="/assets/favicon.ico" rel="shortcut icon">
+        {{#each settings.include.important.stylesheets}}
+        <link href="{{this}}" rel="stylesheet">
+        {{/each}}
+        {{#each settings.include.stylesheets}}
+        <link href="{{this}}" rel="stylesheet">
+        {{/each}}
         <!-- Page script files -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
-        <script src="/assets/js/bootstrap.min.js"></script>
-        <script src="/assets/js/js.cookie.js"></script>
-        <script src="/assets/js/preferences.js"></script>
-        <script src="/assets/js/moment.js"></script>
+        {{#each settings.include.important.scripts}}
+        <script src="{{this}}"></script>
+        {{/each}}
+        {{#each settings.include.scripts}}
+        <script src="{{this}}"></script>
+        {{/each}}
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -39,9 +41,8 @@
             ga('send', 'pageview');
         </script>
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
-        {{{scripts}}}
     </head>
-    <body {{{body-attrs}}}>
+    <body {{#if settings.full}}class="background-splash" id="wrapper"{{/if}}>
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -56,7 +57,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown {{#inArray page-category 'collections'}}active{{/inArray}}">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-cubes"></i> Maps <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/maps/overcast">Overcast Collection</a></li>
                                 <li><a href="/maps/pgm">PGM Collection</a></li>
@@ -65,14 +66,14 @@
                             </ul>
                         </li>
                         <li class="dropdown {{#inArray page-category 'contests'}}active{{/inArray}}">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-map"></i> Contests <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/contests/overcast">Overcast Network</a></li>
                                 <li><a href="/contests/stratus">Stratus Network</a></li>
                             </ul>
                         </li>
                         <li class="dropdown {{#inArray page-category 'league'}}active{{/inArray}}">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-trophy"></i> Tournaments <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/leagues/overcast">Overcast Network</a></li>
                                 <li><a href="/leagues/pgm">PGM Community</a></li>
@@ -81,7 +82,7 @@
                             </ul>
                         </li>
                         <li class="dropdown {{#inArray page-category 'stats'}}active{{/inArray}}">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-bar-chart"></i> Statistics <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><p class="navbar-menu-title">Overcast</p></li>
                                 <li><a href="/stats/overcast/bow">Bow Records</a></li>
@@ -91,13 +92,26 @@
                                 <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
                             </ul>
                         </li>
-                        <li><a href="/addon-project/wiki"><span class="fa fa-globe"></span> Wiki</a></li>
-                        <li class="{{#inArray page-category 'updates'}}active{{/inArray}}"><a href="/updates"><span class="fa fa-newspaper-o"></span> Updates</a></li>
+                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <li class="{{#inArray page-category 'updates'}}active{{/inArray}}"><a href="/updates">Updates</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> GitHub: <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
+                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div {{#inArray page-category 'home'}}{{else}}class="content-background {{#inArray page-category 'full'}}content-background-full{{/inArray}}"{{/inArray}}>
+        <div {{#unless settings.full}}class="content-background"{{/unless}}>
+            {{#unless settings.full}}
+            <div class="container">
+                {{#if settings.header}}
+                <div class="content-header">
+                    {{> site_alerts}}
+                    <div class="content-title">{{title}}</div>
+                    {{#if subtitle}}
+                    <div class="content-subtitle">{{subtitle}}</div>
+                    {{/if}}
+                </div>
+                {{/if}}
+            {{/unless}}
+            <!-- Start page content -->

@@ -1,21 +1,37 @@
 {
     "title": "ResourcePile",
+    "description": "A collection of resources for various competitive Minecraft networks",
     "page-category": ["global"],
-    "description": "A collection of resources for various competitive Minecraft networks.",
-    "alerts": {
-        "noscript": {
-            "class": "danger",
-            "message": "Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it."
+    "settings": {
+        "header": true,
+        "full": false,
+        "alerts": {
+            "enabled": false,
+            "messages": [
+                {
+                    "class": "info",
+                    "message": "",
+                    "dismissible": true
+                }
+            ]
         },
-        "enabled": true,
-        "globals": [
-            {
-                "class": "info",
-                "message": "We are conducting a survey about how you use ResourcePile and we would appericiate it if you were to fill it out so we can further improve our site. <a href=\"https://mcresourcepile.github.io/admin/forms/surveys/general\" target=\"_blank\">Go to survey</a>.",
-                "dismissible": true,
-                "exclude": []
+        "include": {
+            "important": {
+                "stylesheets": [
+                    "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
+                    "/assets/css/bootstrap.css",
+                    "/assets/css/main.css"
+                ],
+                "scripts": [
+                    "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
+                    "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js",
+                    "/assets/js/bootstrap.min.js",
+                    "/assets/js/js.cookie.js",
+                    "/assets/js/preferences.js",
+                    "/assets/js/moment.js"
+                ]
             }
-        ]
+        }
     },
     "short-tags": ["cp", "ctf", "ctw", "dtc", "dtm", "ffa", "gs", "koth", "rfw", "sg", "survival", "tdm", "te", "tm", "tnt", "tournament"]
 }

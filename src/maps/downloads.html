@@ -1,34 +1,25 @@
-{{> header}}
-<div class="container">
-    <div class="content-header">
-        {{> alert}}
-        <div class="content-title">Map Download Stats</div>
-        <div class="content-subtitle">Total download count for all our maps</div>
-    </div>
-    {{#data}}
-    <div class="table-responsive">
-        <table class="league-info-table contest-info-table table table-striped">
-            <thead>
-                <tr>
-                    <td width="60%">Map</td>
-                    <td width="20%">Total Downloads</td>
-                    <td width="20%">Unique Downloads</td>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each maps}}
-                <tr>
-                    <td>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</td>
-                    <td>{{total}}</td>
-                    <td>{{unique}}</td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-        Download data last updated: {{last_updated}}
-    </div>
-    {{/data}}
+{{> navigation_header}}
+{{#data}}
+<div class="table-responsive">
+    <table class="league-info-table contest-info-table table table-striped">
+        <thead>
+            <tr>
+                <td width="60%">Map</td>
+                <td width="20%">Total Downloads</td>
+                <td width="20%">Unique Downloads</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each maps}}
+            <tr>
+                <td>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</td>
+                <td>{{total}}</td>
+                <td>{{unique}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    Download data last updated: {{last_updated}}
 </div>
-{{> footer}}
-</body>
-</html>
+{{/data}}
+{{> navigation_footer}}

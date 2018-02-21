@@ -1,163 +1,152 @@
-{{> header}}
-<div class="container">
-    <div class="content-header">
-        {{> alert}}
-        <div class="content-title">Tags</div>
-        <div class="content-subtitle">
-            All the different tags which can be used for map references
-        </div>
+{{> navigation_header}}
+<div class="row">
+    <div class="col-sm-3">
+        <h5>Sections</h5>
+        <div class="section-head">Maps</div>
+        <a href="maps" class="section-item">PvP Maps</a>
+        <div class="section-head">Competitions</div>
+        <a href="league" class="section-item">PvP Tournaments</a>
+        <a href="league" class="section-item">Map Contests</a>
+        <div class="section-head">Statistics</div>
+        <a href="bow" class="section-item">Bow Records</a>
+        <div class="section-head">ResourcePile</div>
+        <a href="updates" class="section-item">Updates</a>
+        <a href="tags" class="section-item active">Tags</a>
     </div>
-    <div class="row">
-        <div class="col-sm-3">
-            <h5>Sections</h5>
-            <div class="section-head">Maps</div>
-            <a href="maps" class="section-item">PvP Maps</a>
-            <div class="section-head">Competitions</div>
-            <a href="league" class="section-item">PvP Tournaments</a>
-            <a href="league" class="section-item">Map Contests</a>
-            <div class="section-head">Statistics</div>
-            <a href="bow" class="section-item">Bow Records</a>
-            <div class="section-head">ResourcePile</div>
-            <a href="updates" class="section-item">Updates</a>
-            <a href="tags" class="section-item active">Tags</a>
-        </div>
-        <div class="col-sm-9">
-            <h5>Tags</h5>
-            These are the default tags which can be used, however basically anything can be a tag.
-            <table class="table doc-table">
-                <thead>
-                    <tr>
-                        <td width="20%">Tag</td>
-                        <td width="20%">Reference</td>
-                        <td width="50%">Notes</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Arcade</td>
-                        <td><code>"arcade"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Blitz</td>
-                        <td><code>"blitz"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Capture Points</td>
-                        <td><code>"cp"</code></td>
-                        <td>Hills that need to be captured to win - don't award points.</td>
-                    </tr>
-                    <tr>
-                        <td>Capture the Flag</td>
-                        <td><code>"ctf"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Capture the Wool</td>
-                        <td><code>"ctw"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Christmas</td>
-                        <td><code>"christmas"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Destroy the Core</td>
-                        <td><code>"dtc"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Destroy the Monument</td>
-                        <td><code>"dtm"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Free-for-all</td>
-                        <td><code>"ffa"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Frenzy</td>
-                        <td><code>"frenzy"</code></td>
-                        <td>Avicus alternative to Blitz.</td>
-                    </tr>
-                    <tr>
-                        <td>Ghost Squadron</td>
-                        <td><code>"gs"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Halloween</td>
-                        <td><code>"halloween"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>King of the Hill</td>
-                        <td><code>"koth"</code></td>
-                        <td>Hills that award points that contribute to a total score.</td>
-                    </tr>
-                    <tr>
-                        <td>Micro</td>
-                        <td><code>"micro"</code></td>
-                        <td>Also known as '5x5'.</td>
-                    </tr>
-                    <tr>
-                        <td>Newstalgia</td>
-                        <td><code>"newstalgia"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>RAGE</td>
-                        <td><code>"rage"</code></td>
-                        <td>Any map that uses the RAGE concept - blitz rage maps must also have <code>"blitz"</code> as a tag.</td>
-                    </tr>
-                    <tr>
-                        <td>Ranked Edition</td>
-                        <td><code>"ranked"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Race for Wool</td>
-                        <td><code>"rfw"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Skywars</td>
-                        <td><code>"skywars"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Survival Games</td>
-                        <td><code>"sg"</code>, <code>"survival"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Team Deathmatch</td>
-                        <td><code>"tdm"</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>TNT</td>
-                        <td><code>"tnt"</code></td>
-                        <td>Maps that are heavily focused around TNT and cannoning.</td>
-                    </tr>
-                    <tr>
-                        <td>Tournament Edition</td>
-                        <td><code>tournament</code>, <code>"te"</code>, <code>tm</code></td>
-                        <td></td>
-                    </tr>
-					<tr>
-                        <td>Walls</td>
-                        <td><code>"walls"</code>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="col-sm-9">
+        <h5>Tags</h5>
+        These are the default tags which can be used, however basically anything can be a tag.
+        <table class="table doc-table">
+            <thead>
+                <tr>
+                    <td width="20%">Tag</td>
+                    <td width="20%">Reference</td>
+                    <td width="50%">Notes</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Arcade</td>
+                    <td><code>"arcade"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Blitz</td>
+                    <td><code>"blitz"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Capture Points</td>
+                    <td><code>"cp"</code></td>
+                    <td>Hills that need to be captured to win - don't award points.</td>
+                </tr>
+                <tr>
+                    <td>Capture the Flag</td>
+                    <td><code>"ctf"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Capture the Wool</td>
+                    <td><code>"ctw"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Christmas</td>
+                    <td><code>"christmas"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Destroy the Core</td>
+                    <td><code>"dtc"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Destroy the Monument</td>
+                    <td><code>"dtm"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Free-for-all</td>
+                    <td><code>"ffa"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Frenzy</td>
+                    <td><code>"frenzy"</code></td>
+                    <td>Avicus alternative to Blitz.</td>
+                </tr>
+                <tr>
+                    <td>Ghost Squadron</td>
+                    <td><code>"gs"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Halloween</td>
+                    <td><code>"halloween"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>King of the Hill</td>
+                    <td><code>"koth"</code></td>
+                    <td>Hills that award points that contribute to a total score.</td>
+                </tr>
+                <tr>
+                    <td>Micro</td>
+                    <td><code>"micro"</code></td>
+                    <td>Also known as '5x5'.</td>
+                </tr>
+                <tr>
+                    <td>Newstalgia</td>
+                    <td><code>"newstalgia"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>RAGE</td>
+                    <td><code>"rage"</code></td>
+                    <td>Any map that uses the RAGE concept - blitz rage maps must also have <code>"blitz"</code> as a tag.</td>
+                </tr>
+                <tr>
+                    <td>Ranked Edition</td>
+                    <td><code>"ranked"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Race for Wool</td>
+                    <td><code>"rfw"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Skywars</td>
+                    <td><code>"skywars"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Survival Games</td>
+                    <td><code>"sg"</code>, <code>"survival"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Team Deathmatch</td>
+                    <td><code>"tdm"</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TNT</td>
+                    <td><code>"tnt"</code></td>
+                    <td>Maps that are heavily focused around TNT and cannoning.</td>
+                </tr>
+                <tr>
+                    <td>Tournament Edition</td>
+                    <td><code>tournament</code>, <code>"te"</code>, <code>tm</code></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Walls</td>
+                    <td><code>"walls"</code>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
-{{> footer}}
-</body>
-</html>
+{{> navigation_footer}}
