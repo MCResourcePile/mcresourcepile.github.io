@@ -13,11 +13,11 @@
     <li role="presentation" {{#inArray page-category 'rev_addon'}}class="active" style="font-weight: bold"{{/inArray}}><a href="/revisions/addonproject">Addon Project</a></li>
 </ul>
 {{#each settings.revisions.repositories}}
-<h4><strong>Viewing:</strong> <a href="https://github.com/{{user}}/{{repo}}" target="_blank">{{repo}}</a></h4>
-<div id="commits-{{repo}}"></div>
+<h5><strong>Viewing:</strong> <a href="https://github.com/{{user}}/{{repo}}" target="_blank">{{repo}}</a></h5>
+<div id="commits-{{replace repo "." "-"}}"></div>
 <script type="text/javascript">
     $(function() {
-        $('#commits-{{repo}}').githubInfoWidget({
+        $('#commits-{{replace repo "." "-"}}').githubInfoWidget({
             user: '{{user}}',
             repo: '{{repo}}',
             branch: '{{branch}}',
