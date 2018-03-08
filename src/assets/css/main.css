@@ -759,13 +759,54 @@ li.game-tag {
     list-style-type: none;
 }
 
+.map-regulations {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+}
+
+.map-regulations > .allow {
+    color: #2d8911 !important;
+}
+
+.map-regulations > .conditions {
+    color: #337ab7 !important;
+}
+
+.map-regulations > .conditions > .regulation > a {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.map-regulations > a > img {
+    padding-top: 12px;
+}
+
+.regulation-group > h6 {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.regulation {
+    display: block;
+}
+
+.regulation.deny {
+    color: #a51a1a !important;
+}
+
+.regulation.none {
+    color: #646464 !important;
+}
+
 .well-custom-red,
 .well-custom-purple,
 .well-custom-orange,
 .well-custom-blue,
 .well-custom-green {
     border-width: 1px;
-    border-top-width: 4px;
+    border-top-width: 4px !important;
     background-color: #f4f4f4;
 }
 
@@ -959,7 +1000,17 @@ li.game-tag {
     text-decoration: none;
 }
 
-.doc-table > tbody {
+.references > h4,
+.references > h5 {
+    margin-top: 28px;
+}
+
+.doc-table {
+    margin-bottom: 0px;
+}
+
+.doc-table > tbody,
+.doc-table > thead > tr > th {
     font-size: 14px;
 }
 
@@ -1193,6 +1244,15 @@ pre {
     word-wrap: break-word;
 }
 
+code {
+    background-color: #f5f5f5 !important;
+    border: 1px solid #cccccc;
+}
+
+pre > code {
+    border: none;
+}
+
 .collection-thumbnail {
     border: 1px solid #dddddd;
     border-radius: 3px;
@@ -1264,43 +1324,26 @@ pre {
     color: #fff;
 }
 
-.map-regulations {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 12px;
+.sidenav > li > a,
+.sidenav > li > span {
+    padding: 0px 15px;
 }
 
-.map-regulations > .allow {
-    color: #2d8911 !important;
+.sidenav > li {
+    padding-left: 12px;
 }
 
-.map-regulations > .conditions {
-    color: #337ab7 !important;
+.sidenav > li.active > a {
+    background-color: rgba(255, 255, 255, 0);
+    color: #337ab7;
+    font-weight: 600;
+    margin-bottom: 2px;
 }
 
-.map-regulations > .conditions > .regulation > a {
-    font-weight: 700;
-    text-decoration: underline;
-}
-
-.map-regulations > a > img {
-    padding-top: 12px;
-}
-
-.regulation-group > h6 {
-    font-weight: 700;
-    margin-bottom: 4px;
-}
-
-.regulation {
-    display: block;
-}
-
-.regulation.deny {
-    color: #a51a1a !important;
-}
-
-.regulation.none {
-    color: #646464 !important;
+.sidenav > li > a:hover,
+.sidenav > li > a:focus,
+.sidenav > li.active > a:hover,
+.sidenav > li.active > a:focus {
+    background-color: #f0f0f0;
+    color: #337ab7;
 }

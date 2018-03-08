@@ -4,7 +4,7 @@
     </noscript>
     {{#if settings.alerts.enabled}}
     {{#each settings.alerts.messages}}
-    <div id="alert-{{hyphenate (lowercase (truncate message 12))}}" class="alert alert-{{class}} alert-global" role="alert">
+    <div id="alert-{{hyphenate (lowercase (truncate message 12))}}" class="alert alert-{{#if class}}{{class}}{{else}}info{{/if}} alert-global" role="alert">
         {{{message}}}
         {{#if dismissible}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
