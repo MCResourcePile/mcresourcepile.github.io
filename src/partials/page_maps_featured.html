@@ -35,11 +35,7 @@
                             <span style="display:block;margin-top:-8px;">
                                 {{#if tags}}
                                 {{#each tags}}
-                                {{#inArray @root.short-tags this}}
-                                <li class="game-tag"><a class="game-link map-tag tag-{{this}}" href="?s={{this}}"></a></li>
-                                {{else}}
-                                <li class="game-tag"><a class="game-link map-tag" href="?s={{this}}">{{capitalize this}}</a></li>
-                                {{/inArray}}
+                                <li class="game-tag"><a class="game-link map-tag" href="?s={{this}}">{{#inArray @root.short-tags this}}{{itemAt @root.long-tags (getIndex @root.short-tags this)}}{{else}}{{capitalize this}}{{/inArray}}</a></li>
                                 {{/each}}
                                 {{else}}
                                 <li class="game-tag"><span class="game-link map-tag">Unknown tags</span></li>
