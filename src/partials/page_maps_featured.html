@@ -35,11 +35,7 @@
                             <span style="display:block;margin-top:-8px;">
                                 {{#if tags}}
                                 {{#each tags}}
-                                {{#inArray @root.short-tags this}}
-                                <li class="game-tag"><a class="game-link map-tag tag-{{this}}" href="?s={{this}}"></a></li>
-                                {{else}}
-                                <li class="game-tag"><a class="game-link map-tag" href="?s={{this}}">{{capitalize this}}</a></li>
-                                {{/inArray}}
+                                <li class="game-tag"><a class="game-link map-tag" href="?s={{this}}">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}</a><span class="tag-hidden">{{lookup (lookup @root.settings.maps.tags this) 'keywords'}}</span>{{else}}{{capitalize this}}</a>{{/if}}</li>
                                 {{/each}}
                                 {{else}}
                                 <li class="game-tag"><span class="game-link map-tag">Unknown tags</span></li>

@@ -70,11 +70,11 @@ $(document).ready(function(){
 
     updateListing()
     getApiLimit()
-});
 
-/* Update map listing in time with search bar interactions */
-$('.record-search-container').click(function() { updateListing() });
-$('.record-search-container').keyup(function() { updateListing() });
+    /* Update map listing in time with search bar interactions */
+    $('.record-search-container').click(function() { updateListing() });
+    $('.record-search-container').keyup(function() { updateListing() });
+});
 
 function updateListing() {
     $('#maps-output .dynamic').searchable({
