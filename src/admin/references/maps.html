@@ -1,137 +1,353 @@
 {{> navigation_header}}
 <div class="row">
-    <div class="col-sm-3">
-        <h5>Sections</h5>
-        <div class="section-head">Maps</div>
-        <a href="maps" class="section-item active">PvP Maps</a>
-        <div class="section-head">Competitions</div>
-        <a href="league" class="section-item">PvP Tournaments</a>
-        <a href="league" class="section-item">Map Contests</a>
-        <div class="section-head">Statistics</div>
-        <a href="bow" class="section-item">Bow Records</a>
-        <div class="section-head">ResourcePile</div>
-        <a href="updates" class="section-item">Updates</a>
-        <a href="tags" class="section-item">Tags</a>
+    <div class="col-sm-12 col-md-10">
+        <!--
+        ##
+        ## Data
+        ##
+        -->
+        <h4 id="data">Data</h4>
+        <p>Controls the maps being shown and how they are displayed to the browser. When adding new maps ensure that they are placed into the correct GitHub repository and that the folder name matches the slug entered into the data file. This reference is for map pages located in the <code>src/maps/...</code> directory of the website.</p>
+        
+        <p>Please note that the last property of any root, object, or array property <strong>must not</strong> be followed by a comma. This will cause our JSON validator to throw red flags and will cause the automatic builds to fail.</p>
+        <div class="table-responsive">
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Name</th>
+                        <th width="50%">Description</th>
+                        <th width="10%">Value</th>
+                        <th width="10%">Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"data": {}</code></td>
+                        <td>Holds different sets of data to control the maps pages</td>
+                        <td><span class="label label-default">Object</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h5>Data Sub-properties</h5>
+        <div class="table-responsive">
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Name</th>
+                        <th width="50%">Description</th>
+                        <th width="10%">Value</th>
+                        <th width="10%">Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"new": []</code></td>
+                        <td>An array of new maps, giving each a blue glow and badge - references the map's slug</td>
+                        <td><span class="label label-default">Array</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"popular": []</code></td>
+                        <td>An array of popular maps, giving each a red glow and badge - references the map's slug</td>
+                        <td><span class="label label-default">Array</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"featured": {}</code></td>
+                        <td>Defines settings for the featured maps panel <a href="#featured" class="fa fa-chevron-down"></a></td>
+                        <td><span class="label label-default">Object</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"maps": []</code></td>
+                        <td>Defines each of the maps to display <a href="#maps" class="fa fa-chevron-down"></a></td>
+                        <td><span class="label label-default">Array</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h6>Example</h6>
+        <pre>{
+    "data": {
+        "new": [
+            "new_map_slug",
+            "spaceship_battles"
+        ],
+        "popular": [
+            "a_popular_map"
+        ],
+        "featured": { ... },
+        "maps": [ ... ]
+    }
+}</pre>
+        <!--
+        ##
+        ## Featured
+        ##
+        -->
+        <h4 id="featured">Featured</h4>
+        <p>Creates a green glowing panel above the search selection panel with a rotating carousel with the defined maps. Generally used to increase exposure to the selected maps during events such as a tournament or seasonal celebration. The amount of maps included in each panel should be limited to 12.</p>
+        <h5>Featured sub-properties</h5>
+        <div class="table-responsive">
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Name</th>
+                        <th width="50%">Description</th>
+                        <th width="10%">Value</th>
+                        <th width="10%">Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"enabled":</code></td>
+                        <td>Enables the featured panel</td>
+                        <td><span class="label label-primary">Boolean</span></td>
+                        <td><code>"false"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"title":</code></td>
+                        <td>Custom title for the featured collection of maps</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td>Featured Maps</td>
+                    </tr>
+                    <tr>
+                        <td><code>"description":</code></td>
+                        <td>Custom description to further describe the collection of featured maps</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"maps": []</code></td>
+                        <td>An array of maps to display in the featured panel - references the map's slug</td>
+                        <td><span class="label label-default">Array</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h6>Example</h6>
+        <pre>{
+    "data": {
+        "featured": {
+            "enabled": true,
+            "title": "Nostalgic Collection",
+            "description": "A collection of nostalgic maps",
+            "maps": [
+                "race_for_victory",
+                "total_war",
+                "dynamo"
+            ]
+        }
+    }
+}</pre>
+        <!--
+        ##
+        ## Includes
+        ##
+        -->
+        <h4 id="maps">Map Objects</h4>
+        <p>The individual maps being displayed on the page. When adding new maps ensure that they are placed into the correct GitHub repository and that the folder name matches the slug entered into the data file.</p>
+        <div class="table-responsive">
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Name</th>
+                        <th width="50%">Description</th>
+                        <th width="10%">Value</th>
+                        <th width="10%">Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"name":</code></td>
+                        <td>The name of the map</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"slug":</code></td>
+                        <td>The unique ID of the map which typically is a lowercase version of the map name with underscores in place of spaces and other punctuation</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"authors": []</code></td>
+                        <td>The main authors of the map as listed in the XML document <a href="#authors" class="fa fa-chevron-down"></a></td>
+                        <td><span class="label label-default">Array</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"tags": []</code></td>
+                        <td>Keywords to describe the map gamemode and play style <a href="index" class="fa fa-chevron-right"></a></td>
+                        <td><span class="label label-default">Array</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"locked":</code></td>
+                        <td>Disable all buttons and links for the map</td>
+                        <td><span class="label label-primary">Boolean</span></td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"discussion":</code></td>
+                        <td>The URL to the discussion/release thread or post</td>
+                        <td><span class="label label-primary">URL</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"contest":</code></td>
+                        <td>The contest ID to link to the record page if the map was part of a map making contest</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"sourced":</code></td>
+                        <td>If the map has a public download published by a documented author but hasn't provided ResourcePile with explicit permission to host the map<br><span class="label label-info">Note:</span> If the map was published with a license, ignore this</td>
+                        <td><span class="label label-primary">Boolean</span></td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"commercial":</code></td>
+                        <td>If the map can be used for commercialised purposes</td>
+                        <td><span class="label label-primary">Boolean</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"download":</code></td>
+                        <td>If the map has a published download in the appropriate repository</td>
+                        <td><span class="label label-primary">Boolean</span></td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"xml":</code></td>
+                        <td>If the map has a published XML document in the appropriate repository</td>
+                        <td><span class="label label-primary">Boolean</span></td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"cardinal":</code></td>
+                        <td>If the map has been tested and works with the Cardinal plugin<br><span class="label label-info">Note:</span> While this is still used, it has become obselete after the open-sourcing of the Project Ares plugins</td>
+                        <td><span class="label label-primary">Boolean</span></td>
+                        <td><code>false</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h6>Examples</h6>
+        <pre>{
+    "name": "Hydrolock II",
+    "slug": "hydrolock_ii",
+    "authors": [ ... ],
+    "tags": [ ... ],
+    "commercial": true,
+    "download": true,
+    "xml": true
+}</pre>
+        <!--
+        ##
+        ## Authors
+        ##
+        -->
+        <h4 id="authors">Authors Objects</h4>
+        <p></p>
+        <div class="table-responsive">
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Name</th>
+                        <th width="50%">Description</th>
+                        <th width="10%">Value</th>
+                        <th width="10%">Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"username":</code></td>
+                        <td>Most current username of the author</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"uuid":</code></td>
+                        <td>The UUID of the author</td>
+                        <td><span class="label label-primary">UUID</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h6>Examples</h6>
+        <pre>{
+    "authors": [
+        {"username": "Lyzak", "uuid": "5986da63-a546-49c5-812d-d5c41a42510a"},
+        {"username": "Plastix", "uuid": "ef4ea031-998f-4ec9-b7b6-1bdd428bcef8"},
+        {"username": "StealthMedia", "uuid": "2a289d2a-d970-49c5-9a6c-01fc0264e317"}
+    ]
+}</pre>
+        <!--
+        ##
+        ## Maps Settings
+        ##
+        -->
+        <h4 id="settings">Settings Maps Sub-properties</h4>
+        <h5>Maps Sub-properties</h5>
+        <div class="table-responsive">
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Name</th>
+                        <th width="50%">Description</th>
+                        <th width="10%">Value</th>
+                        <th width="10%">Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"group":</code></td>
+                        <td>The group of maps, or network, that the page belongs to<br>This must match the first part of the maps repository, for example <code>pgm</code> for <code>pgm-maps</code></td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"plugin":</code></td>
+                        <td><span class="label label-warning">Not currently used</span> The plugin the maps are designed to be used for - can be either <code>pgm</code> or <code>atlas</code></td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h6>Example</h6>
+        <pre>{
+    "settings": {
+        "maps": {
+            "group": "overcast",
+            "plugin": "pgm"
+        }
+    }
+}</pre>
     </div>
-    <div class="col-sm-9">
-        <h6>
-            Every map must be defined through the following data attributes in order to be displayed on the maps section of the website. The following table gives you an understanding on how to format the data for each map and what is required from each attribute. Maps do not have to in alphabetical order within the data file. Whilst it's nice, maps will be ordered alphabetically when the page is built.<br><br>
-            Overcast collection: <a target="_blank" href="https://github.com/MCResourcePile/MCResourcePile.github.io/blob/source/src/data/maps/overcast.json"><code>src/data/maps/overcast.json</code></a><br>
-            Stratus collection: <a target="_blank" href="https://github.com/MCResourcePile/MCResourcePile.github.io/blob/source/src/data/maps/stratus.json"><code>src/data/maps/stratus.json</code></a><br>
-            PGM collection: <a target="_blank" href="https://github.com/MCResourcePile/MCResourcePile.github.io/blob/source/src/data/maps/pgm.json"><code>src/data/maps/pgm.json</code></a><br>
-            Avicus collection: <a target="_blank" href="https://github.com/MCResourcePile/MCResourcePile.github.io/blob/source/src/data/maps/avicus.json"><code>src/data/maps/avicus.json</code></a><br>
-        </h6>
-        <h5>Main map attributes</h5>
-        <table class="table doc-table">
-            <thead>
-                <tr>
-                    <td width="20%">Attribute</td>
-                    <td width="50%">Description</td>
-                    <td width="10%">Value</td>
-                    <td width="10%">Default</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>"map":</code></td>
-                    <td>The name of the map.</td>
-                    <td><span class="label label-info">String</span></td>
-                    <td><code></code></td>
-                </tr>
-                <tr>
-                    <td><code>"slug":</code></td>
-                    <td>The map's unique slug ID, which is generally auto-generated by the associated network and is used to reference external map pages, downloads and XML documents.</td>
-                    <td><span class="label label-info">String</span></td>
-                    <td><code></code></td>
-                </tr>
-                <tr>
-                    <td><code>"authors": []</code></td>
-                    <td>The author(s) of the map. <a href="#authors" class="fa fa-chevron-down"></a></td>
-                    <td><span class="label label-default">User Data</span></td>
-                    <td><code></code></td>
-                </tr>
-                <tr>
-                    <td><code>"tags": []</code></td>
-                    <td>The tags which describe the map's game mode and other features. <a href="tags" class="fa fa-chevron-down"></a></td>
-                    <td><span class="label label-default">Tag Data</span></td>
-                    <td><code></code></td>
-                </tr>
-                <tr>
-                    <td><code>"locked":</code></td>
-                    <td>Disables all map links and prevents downloading from the site.</td>
-                    <td><span class="label label-info">Boolean</span></td>
-                    <td><code>false</code></td>
-                </tr>
-                <tr>
-                    <td><code>"discussion":</code></td>
-                    <td>The map's discussion thread.</td>
-                    <td><span class="label label-info">URL</span></td>
-                    <td><code>false</code></td>
-                </tr>
-                <tr>
-                    <td><code>"sourced":</code></td>
-                    <td>If the map was retrieved from the map's discussion thread or an alternate location which the map author(s) published.</td>
-                    <td><span class="label label-info">Boolean</span></td>
-                    <td><code>false</code></td>
-                </tr>
-                <tr>
-                    <td><code>"commercial":</code></td>
-                    <td>Allows for commercial use of the map</td>
-                    <td><span class="label label-info">Boolean</span></td>
-                    <td><code>true</code></td>
-                </tr>
-                <tr>
-                    <td><code>"download":</code></td>
-                    <td>If the map has a download located in a ResourcePile map repository</td>
-                    <td><span class="label label-info">Boolean</span></td>
-                    <td><code>true</code></td>
-                </tr>
-                <tr>
-                    <td><code>"xml":</code></td>
-                    <td>If the map has a XML located in a ResourcePile map repository</td>
-                    <td><span class="label label-info">Boolean</span></td>
-                    <td><code>true</code></td>
-                </tr>
-                <tr>
-                    <td><code>"cardinal":</code></td>
-                    <td>If the map works with the latest version of Cardinal. Working maps must be placed in the cardinal ResourcePile repository.</td>
-                    <td><span class="label label-info">Boolean</span></td>
-                    <td><code>false</code></td>
-                </tr>
-                <tr>
-                    <td><code>"contest":</code></td>
-                    <td>If the map was submitted to a contest which is in our records.</td>
-                    <td><span class="label label-info">Contest ID</span></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="authors">Map authors</h5>
-        <h6>Provides information about who created the map and is displayed on map thumbnails and in the pre-download messages. Only the author name is required, however to reduce the amount of work required to keep names up-to-date, it is recommended to also provide the player UUID in addition to the player's display name.</h6>
-        <table class="table doc-table">
-            <thead>
-                <tr>
-                    <td width="20%">Attribute</td>
-                    <td width="50%">Description</td>
-                    <td width="10%">Value</td>
-                    <td width="10%">Default</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>"username":</code></td>
-                    <td>The player's current display name.</td>
-                    <td><span class="label label-info">String</span></td>
-                    <td><code></code></td>
-                </tr>
-                <tr>
-                    <td><code>"uuid":</code></td>
-                    <td>The player's UUID, which can be found at <a href="https://mcuuid.net/">mcuuid.net</a></td>
-                    <td><span class="label label-info">String</span></td>
-                    <td><code></code></td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="col-sm-12 col-md-2">
+        <ul id="drilldown" class="nav nav-pills nav-stacked sidenav">
+            <li>General</li>
+            <li><a href="index">Main Structure</a></li>
+            <li><a href="tags">Tags</a></li>
+            <li>Sections</li>
+            <li class="active"><a href="maps">Maps</a></li>
+            <li><a href="contests">Contests</a></li>
+            <li><a href="tournaments">Tournaments</a></li>
+            <li><span href="statistics">Statistics</span></li>
+            <li><a href="bow">Bow Records</a></li>
+            <li>Pages</li>
+            <li><span href="cards">Cards (portal pages)</span></li>
+            <li><a href="updates">Updates</a></li>
+            <li><span href="staff">Staff</span></li>
+            <li><span href="revisions">Revisions</aspan</li>
+        </ul>
     </div>
 </div>
 {{> navigation_footer}}

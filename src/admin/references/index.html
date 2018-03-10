@@ -75,7 +75,7 @@
                 <tbody>
                     <tr>
                         <td><code>"settings": {}</code></td>
-                        <td></td>
+                        <td>Holds different settings to define page behaviour and displays</td>
                         <td><span class="label label-default">Object</span></td>
                         <td></td>
                     </tr>
@@ -119,6 +119,18 @@
                         <td><span class="label label-default">Object</span></td>
                         <td></td>
                     </tr>
+                    <tr>
+                        <td><code>"maps": {}</code></td>
+                        <td>Defines settings for map specific pages <a href="maps#settings" class="fa fa-chevron-right"></a></td>
+                        <td><span class="label label-default">Object</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"revisions": {}</code></td>
+                        <td>Defines revision modules being loaded onto the page <a href="revisions#settings" class="fa fa-chevron-right"></a></td>
+                        <td><span class="label label-default">Object</span></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -136,9 +148,9 @@
         ## Alerts
         ##
         -->
-        <h4 id="settings">Alerts</h4>
+        <h4 id="alerts">Alerts</h4>
         <p>Alerts allow globalised messages to be displayed on every page of the site, excluding those part of the Stratus Addon Project, in styled banners. Alerts should only ever be defined in the <code>global.json</code> file. Having alerts in individual data files will cause the global ones to be overwritten.</p>
-        <h5 id="alerts">Alert sub-properties</h5>
+        <h5>Alert sub-properties</h5>
         <div class="table-responsive">
             <table class="table doc-table">
                 <thead>
