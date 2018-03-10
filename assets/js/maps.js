@@ -658,6 +658,8 @@ var maps = [
     {slug: "overgrown_rage", name: "Overgrown Rage", path: "https://github.com/MCResourcePile/overcast-maps-o-to-z/tree/master/maps/overgrown_rage", license: "commercial"},
     {slug: "state_of_decay", name: "State of Decay", path: "https://github.com/MCResourcePile/overcast-maps-o-to-z/tree/master/maps/state_of_decay", license: "commercial"},
     {slug: "state_of_decay_ii", name: "State of Decay II", path: "https://github.com/MCResourcePile/overcast-maps-o-to-z/tree/master/maps/state_of_decay_ii", license: "commercial"},
+    {slug: "into_the_jackolantern", name: "Into The Jackolantern", path: "https://github.com/MCResourcePile/overcast-maps-g-to-n/tree/master/maps/into_the_jackolantern", license: "commercial"},
+    {slug: "into_the_jungle", name: "Into The Jungle", path: "https://github.com/MCResourcePile/overcast-maps-g-to-n/tree/master/maps/into_the_jungle", license: "commercial"},
 ];
 
 function getUrlVars() {
