@@ -103,9 +103,9 @@ SOFTWARE.
         contents.forEach(function(item){
             progressCallback.call(callbackScope, 'processing', 'Compressing ' + item.path,
                 ++progressCallback._idx / (progressCallback._len * 2) * 100);
-            zip.file(license_file, license_content);
             zipContent.file(item.path, item.content, {createFolders:true,base64:true});
         });
+        zip.file(filename + '/' + license_file, license_content);
         if(isSafari){
             zip.generateAsync({type:"base64"})
             .then(function (content) {
