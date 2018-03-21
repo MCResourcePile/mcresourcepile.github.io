@@ -2,6 +2,7 @@ var maps = [
     {slug: "a_journey_through_history", name: "A Journey Through History", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/a_journey_through_history", license: "commercial"},
     {slug: "a_spooky_sunset", name: "A SpOOky Sunset", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/a_spooky_sunset", license: "commercial"},
     {slug: "abudor", name: "Abudor", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/abudor", license: "commercial"},
+    {slug: "stampede", name: "Stampede", path: "https://github.com/MCResourcePile/overcast-maps-o-to-z/tree/master/maps/stampede", license: "commercial"},
     {slug: "abudor_christmas", name: "Abudor Christmas", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/abudor_christmas", license: "commercial"},
     {slug: "abudor_2", name: "Abudor 2", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/abudor_2", license: "commercial"},
     {slug: "abstract", name: "Abstract", path: "https://github.com/MCResourcePile/overcast-maps-a-to-f/tree/master/maps/abstract", license: "commercial"},
