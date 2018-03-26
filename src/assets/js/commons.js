@@ -4,15 +4,11 @@
  * into this file.
  */
 
-isAuthenticated()
-function isAuthenticated() {
-    if (current_token) {
-        $( ".auth-enabled" ).show();
-        $( ".auth-disabled" ).hide();
-    } else {
-        $( ".auth-enabled" ).hide();
-        $( ".auth-disabled" ).show();
-    }
+applySettings();
+isAuthenticated();
+
+if (!user_settings || !user_settings.synced) {
+    // prompt user to sync their settings with new preference handling
 }
 
 var window_offset = function() { scrollBy(0, -70) };
@@ -21,16 +17,3 @@ window.addEventListener("hashchange", window_offset);
 
 $('[data-toggle="tooltip"]').tooltip()
 $('[data-toggle="popover"]').popover()
-
-if (hide_map_images == 'true') {
-    $(".lazy").css({"height": "60px"});
-    $(".map-banner").css({"height": "60px"});
-    $(".map-labels").css({"top": "-21px", "padding-left": "4px"});
-    $(".map-button").addClass('map-button-sm');
-    $(".click-image").show();
-} else {
-    var myLazyLoad = new LazyLoad({
-        elements_selector: ".lazy",
-        threshold: 50
-    });
-}
