@@ -28,6 +28,14 @@
         {{#each settings.include.important.scripts}}
         <script src="{{this}}"></script>
         {{/each}}
+        {{#if settings.include.requirejs}}
+        <script>
+            require.config({
+                baseUrl: "{{settings.include.requirejs.baseurl}}",
+                waitSeconds: {{settings.include.requirejs.wait}}
+            });
+        </script>
+        {{/if}}
         {{#each settings.include.scripts}}
         <script src="{{this}}"></script>
         {{/each}}
