@@ -17,3 +17,13 @@ window.addEventListener("hashchange", window_offset);
 
 $('[data-toggle="tooltip"]').tooltip()
 $('[data-toggle="popover"]').popover()
+
+function output(message, level) {
+    if (level == 2) {
+        console.error(message);
+    } else if (level == 1) {
+        console.warn(message);
+    } else {
+        console.log(message);
+    }
+}
