@@ -53,24 +53,28 @@ function loadSettings() {
 }
 
 function applySettings() {
-    // apply dark theme
-    if (user_settings.theme == 'dark') {
-        $('head').append('<link href=\'/assets/css/dark.css\' rel=\'stylesheet\'>');
-    }
-    // collapse map thumbnails, otherwise lazy load images
-    if (user_settings.hide_images == true) {
-        $('.lazy').css({'height': '60px'});
-        $('.map-banner').css({'height': '60px'});
-        $('.map-labels').css({'top': '-21px', 'padding-left': '4px'});
-        $('.map-button').addClass('map-button-sm');
-        $('.click-image').show();
+    if (user_settings) {
+        // apply dark theme
+        if (user_settings.theme == 'dark') {
+            $('head').append('<link href=\'/assets/css/dark.css\' rel=\'stylesheet\'>');
+        }
+        // collapse map thumbnails, otherwise lazy load images
+        if (user_settings.hide_images == true) {
+            $('.lazy').css({'height': '60px'});
+            $('.map-banner').css({'height': '60px'});
+            $('.map-labels').css({'top': '-21px', 'padding-left': '4px'});
+            $('.map-button').addClass('map-button-sm');
+            $('.click-image').show();
+        } else {
+            var myLazyLoad = new LazyLoad({
+                elements_selector: '.lazy',
+                threshold: 50
+            });
+        }
+        console.log('Applied user settings to this page.');
     } else {
-        var myLazyLoad = new LazyLoad({
-            elements_selector: '.lazy',
-            threshold: 50
-        });
+        console.log('Cannot load settings as they do not exist.');
     }
-    output('Applied user settings to this page.');
 }
 
 function saveSettings() {
