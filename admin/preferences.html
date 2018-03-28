@@ -92,7 +92,8 @@
                         <li><a href="/addon-project/wiki">Wiki</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
+                        <li class="navbar-right auth-disabled"><a href="../admin/preferences"><span class="fa fa-github-alt"></span> <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
+                        <li class="navbar-right auth-enabled" style="display: none;"><a href="../admin/preferences"><img src="/assets/img/logo.png" class="user-avatar"> <span class="user-name">ResourcePile</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -104,6 +105,7 @@
                         <noscript>
                             <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
                         </noscript>
+                        <div id="sync-settings-alert" class="alert alert-danger alert-global" role="alert" style="display:none">We've changed the way we handle site preferences, so we are syncing your settings to the new format. <strong>Please do not leave this page until this is done.</strong></div>
                     </div>
                     <div class="content-title">Preferences</div>
                     <div class="content-subtitle">Customize your ResourcePile experience</div>
@@ -126,8 +128,8 @@
                     <div class="prf-token-auth-panel" style="display:none">
                         <a class="btn btn-danger btn-auth" onclick="revokeToken()">Revoke</a>
                     </div>
-                    <div class="prf-token-unauth-panel" style="display:none">
-                        <a class="btn btn-success btn-auth" onclick="saveToken()">Save</a>
+                    <div class="prf-token-unauth-panel">
+                        <a class="btn btn-success btn-auth" onclick="saveToken()" id="token-save-button">Save</a>
                         <a class="btn btn-info btn-auth" href="https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216">Generate Access Token</a>
                     </div>
                     <br>
@@ -137,9 +139,9 @@
                 <div class="col-md-6">
                     <div class="prf-token-auth-panel" style="display:none">
                         Welcome to ResourcePile, <strong id="user_user_name">User</strong>.<br><br>
-                        You currently have <code id="user_rate_remaining">0</code> requests of <code id="user_rate_limit">0</code> remaining to the GitHub API, which means you can download approximately <code id="user_rate_approximate">0</code> more maps from our <a href="/maps">collections</a>. This limit will reset at <span id="user_rate_reset"></span>.
+                        You currently have <code id="user_rate_remaining">0</code> requests of <code id="user_rate_limit">0</code> remaining to the GitHub API, which means you can download approximately <code id="user_rate_approximate">0</code> more maps from our <a href="/maps">collections</a>. This limit will reset <span id="user_rate_reset"></span>.
                     </div>
-                    <div class="prf-token-unauth-panel" style="display:none">
+                    <div class="prf-token-unauth-panel">
                         <h6><strong>How to generate an access token</strong></h6>
                         <ol>
                             <li>Click <code>Generate Access Token</code></li>
@@ -172,14 +174,25 @@
             </div>
             <br>
             <div class="row">
-                <h6 class="col-md-4 control-label"><b>Show Map Images</b></h6>
+                <h6 class="col-md-4 control-label"><b>Map Images</b></h6>
                 <div class="col-md-4">
                     <select id="site-select-map-images" name="site-select-map-images" class="form-control">
-                        <option value="show">Yes</option>
-                        <option value="hide">No</option>
+                        <option value="true">Visible</option>
+                        <option value="false">Hidden</option>
                     </select>
                 </div>
-                <small class="col-md-4">Remove map images to improve loading times for slower bandwidths.</small>
+                <small class="col-md-4">Remove map images to improve loading times for slower connections.</small>
+            </div>
+            <br>
+            <div class="row">
+                <h6 class="col-md-4 control-label"><b>Automatic Direct Downloads</b></h6>
+                <div class="col-md-4">
+                    <select id="site-select-auto-dl" name="site-select-map-images" class="form-control">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <small class="col-md-4">Automatically download maps from direct links.</small>
             </div>
             <br>
             <a class="btn btn-success btn-auth" onclick="savePreferences()">Save preferences</a>
@@ -224,5 +237,8 @@
             </div>
         </div>
         <script src="/assets/js/commons.js"></script>
+        <script>
+            loadSettings();
+        </script>
     </body>
 </html>

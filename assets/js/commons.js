@@ -4,15 +4,18 @@
  * into this file.
  */
 
-isAuthenticated()
-function isAuthenticated() {
-    if (current_token) {
-        $( ".auth-enabled" ).show();
-        $( ".auth-disabled" ).hide();
-    } else {
-        $( ".auth-enabled" ).hide();
-        $( ".auth-disabled" ).show();
-    }
+loadSettings();
+applySettings();
+
+if (user_settings.synced == false) {
+    $('#sync-settings-alert').show();
+    setTimeout(
+        function () {
+            syncSettings(function () {
+                $('#sync-settings-alert').text('Sync has been completed. Thank you.').addClass('alert-info').removeClass('alert-danger').delay(5000).fadeOut();
+            })
+        }, 6000
+    );
 }
 
 var window_offset = function() { scrollBy(0, -70) };
@@ -22,15 +25,12 @@ window.addEventListener("hashchange", window_offset);
 $('[data-toggle="tooltip"]').tooltip()
 $('[data-toggle="popover"]').popover()
 
-if (hide_map_images == 'true') {
-    $(".lazy").css({"height": "60px"});
-    $(".map-banner").css({"height": "60px"});
-    $(".map-labels").css({"top": "-21px", "padding-left": "4px"});
-    $(".map-button").addClass('map-button-sm');
-    $(".click-image").show();
-} else {
-    var myLazyLoad = new LazyLoad({
-        elements_selector: ".lazy",
-        threshold: 50
-    });
+function output(message, level) {
+    if (level == 2) {
+        console.error(message);
+    } else if (level == 1) {
+        console.warn(message);
+    } else {
+        console.log(message);
+    }
 }
