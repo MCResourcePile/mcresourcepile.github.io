@@ -44,8 +44,8 @@ function loadSettings() {
                 $('.prf-token-unauth-panel').hide();
                 $('.prf-token-auth-panel').show();
                 // auth notifier in navigation
-                $('#auth-enabled').show();
-                $('#auth-disabled').hide();
+                $('.auth-enabled').show();
+                $('.auth-disabled').hide();
                 output('Successfully loaded user information.');
             } else {
                 user_info = default_info;
@@ -178,8 +178,8 @@ function saveToken() {
                 $('.prf-token-auth-panel').show();
                 $('.prf-token-unauth-panel').hide();
                 // auth notifier in navigation
-                $('#auth-enabled').show();
-                $('#auth-disabled').hide();
+                $('.auth-enabled').show();
+                $('.auth-disabled').hide();
                 $('#token-save-button').text('Save').removeClass('disabled');
             });
         });
@@ -201,8 +201,8 @@ function revokeToken() {
         $('.prf-token-auth-panel').hide();
         $('.prf-token-unauth-panel').show();
         // auth notifier in navigation
-        $('#auth-enabled').hide();
-        $('#auth-disabled').show();
+        $('.auth-enabled').hide();
+        $('.auth-disabled').show();
         user_settings.token = '';
         saveSettings();
     }
