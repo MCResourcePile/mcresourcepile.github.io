@@ -4,11 +4,13 @@
  * into this file.
  */
 
+loadSettings();
 applySettings();
-isAuthenticated();
 
-if (!user_settings || !user_settings.synced) {
-    // prompt user to sync their settings with new preference handling
+if (!user_settings.synced) {
+    $('#sync-settings-alert').show();
+    syncSettings();
+    $('#sync-settings-alert').text('Sync has been completed. Thank you.').addClass('alert-info').removeClass('alert-danger').delay(5000).fadeOut();
 }
 
 var window_offset = function() { scrollBy(0, -70) };

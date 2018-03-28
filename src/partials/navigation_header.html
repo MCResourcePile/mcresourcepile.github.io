@@ -28,14 +28,6 @@
         {{#each settings.include.important.scripts}}
         <script src="{{this}}"></script>
         {{/each}}
-        {{#if settings.include.requirejs}}
-        <script>
-            require.config({
-                baseUrl: "{{settings.include.requirejs.baseurl}}",
-                waitSeconds: {{settings.include.requirejs.wait}}
-            });
-        </script>
-        {{/if}}
         {{#each settings.include.scripts}}
         <script src="{{this}}"></script>
         {{/each}}
@@ -103,7 +95,8 @@
                         <li><a href="/addon-project/wiki">Wiki</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar-right"><a href="/admin/preferences"><span class="fa fa-github-alt"></span> <span class="auth-enabled label label-success" style="display: none;">Authenticated</span><span class="auth-disabled label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
+                        <li id="auth-disabled" class="navbar-right"><a href="../admin/preferences"><span class="fa fa-github-alt"></span> <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
+                        <li id="auth-enabled" class="navbar-right" style="display: none;"><a href="../admin/preferences"><img src="/assets/img/logo.png" class="user-avatar"> <span class="user-name">ResourcePile</span></a></li>
                     </ul>
                 </div>
             </div>
