@@ -106,7 +106,7 @@ function getApiLimit() {
         $('.api-request-remaining').text(user_info.rate.remaining).css('font-weight', 'bold');
         $('.api-request-limit').text(user_info.rate.limit).css('font-weight', 'bold');
         $('.api-request-approximate').text(Math.round(user_info.rate.remaining / 7)).css('font-weight', 'bold');
-        $('.api-request-reset').text(moment.unix(user_info.rate.reset).fromNow()).css('font-weight', 'bold');
+        $('.api-request-reset').text(moment.unix(user_info.rate.reset).fromNow(true)).css('font-weight', 'bold');
     });
 }
 
