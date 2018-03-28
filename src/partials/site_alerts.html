@@ -2,6 +2,7 @@
     <noscript>
         <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
     </noscript>
+    <div id="sync-settings-alert" class="alert alert-danger alert-global" role="alert" style="display:none">We've changed the way we handle site preferences, so we are syncing your settings to the new format. <strong>Please do not leave this page until this is done.</strong></div>
     {{#if settings.alerts.enabled}}
     {{#each settings.alerts.messages}}
     <div id="alert-{{hyphenate (lowercase (truncate message 12))}}" class="alert alert-{{#if class}}{{class}}{{else}}info{{/if}} alert-global" role="alert">

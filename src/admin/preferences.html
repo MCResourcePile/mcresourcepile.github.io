@@ -16,8 +16,8 @@
                     <div class="prf-token-auth-panel" style="display:none">
                         <a class="btn btn-danger btn-auth" onclick="revokeToken()">Revoke</a>
                     </div>
-                    <div class="prf-token-unauth-panel" style="display:none">
-                        <a class="btn btn-success btn-auth" onclick="saveToken()">Save</a>
+                    <div class="prf-token-unauth-panel">
+                        <a class="btn btn-success btn-auth" onclick="saveToken()" id="token-save-button">Save</a>
                         <a class="btn btn-info btn-auth" href="https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216">Generate Access Token</a>
                     </div>
                     <br>
@@ -27,9 +27,9 @@
                 <div class="col-md-6">
                     <div class="prf-token-auth-panel" style="display:none">
                         Welcome to ResourcePile, <strong id="user_user_name">User</strong>.<br><br>
-                        You currently have <code id="user_rate_remaining">0</code> requests of <code id="user_rate_limit">0</code> remaining to the GitHub API, which means you can download approximately <code id="user_rate_approximate">0</code> more maps from our <a href="/maps">collections</a>. This limit will reset at <span id="user_rate_reset"></span>.
+                        You currently have <code id="user_rate_remaining">0</code> requests of <code id="user_rate_limit">0</code> remaining to the GitHub API, which means you can download approximately <code id="user_rate_approximate">0</code> more maps from our <a href="/maps">collections</a>. This limit will reset <span id="user_rate_reset"></span>.
                     </div>
-                    <div class="prf-token-unauth-panel" style="display:none">
+                    <div class="prf-token-unauth-panel">
                         <h6><strong>How to generate an access token</strong></h6>
                         <ol>
                             <li>Click <code>Generate Access Token</code></li>
@@ -62,14 +62,25 @@
             </div>
             <br>
             <div class="row">
-                <h6 class="col-md-4 control-label"><b>Show Map Images</b></h6>
+                <h6 class="col-md-4 control-label"><b>Map Images</b></h6>
                 <div class="col-md-4">
                     <select id="site-select-map-images" name="site-select-map-images" class="form-control">
-                        <option value="show">Yes</option>
-                        <option value="hide">No</option>
+                        <option value="true">Visible</option>
+                        <option value="false">Hidden</option>
                     </select>
                 </div>
-                <small class="col-md-4">Remove map images to improve loading times for slower bandwidths.</small>
+                <small class="col-md-4">Remove map images to improve loading times for slower connections.</small>
+            </div>
+            <br>
+            <div class="row">
+                <h6 class="col-md-4 control-label"><b>Automatic Direct Downloads</b></h6>
+                <div class="col-md-4">
+                    <select id="site-select-auto-dl" name="site-select-map-images" class="form-control">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <small class="col-md-4">Automatically download maps from direct links.</small>
             </div>
             <br>
             <a class="btn btn-success btn-auth" onclick="savePreferences()">Save preferences</a>
