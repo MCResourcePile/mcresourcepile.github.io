@@ -34,7 +34,7 @@ function applySettings() {
 }
 
 function loadSettings() {
-    if (user_settings) {
+    if (user_settings && user_info != "undefined") {
         if (user_settings.token) {
             $('#access_token').val(user_settings.token);
             $('#auth-well').addClass('well-custom-green');
@@ -48,7 +48,7 @@ function loadSettings() {
         output('Applying default settings to "user_settings" as it does not exist.');
         saveSettings();
     }
-    if (user_info) {
+    if (user_info && user_info != "undefined") {
         if (user_settings.token) {
             displayUserInfo();
             // auth panels in preferences
