@@ -38,20 +38,6 @@ function loadSettings() {
         if (user_settings.token) {
             $('#access_token').val(user_settings.token);
             $('#auth-well').addClass('well-custom-green');
-            if (user_info) {
-                displayUserInfo();
-                // auth panels in preferences
-                $('.prf-token-unauth-panel').hide();
-                $('.prf-token-auth-panel').show();
-                // auth notifier in navigation
-                $('.auth-enabled').show();
-                $('.auth-disabled').hide();
-                output('Successfully loaded user information.');
-            } else {
-                user_info = default_info;
-                output('Applying default information to "user_info" as it does not exist.');
-                saveSettings();
-            }
         }
         $('#site-select-theme').val(user_settings.theme);
         $('#site-select-map-images').val(user_settings.hide_images);
@@ -60,6 +46,22 @@ function loadSettings() {
     } else {
         user_settings = default_settings;
         output('Applying default settings to "user_settings" as it does not exist.');
+        saveSettings();
+    }
+    if (user_info) {
+        if (user_settings.token) {
+            displayUserInfo();
+            // auth panels in preferences
+            $('.prf-token-unauth-panel').hide();
+            $('.prf-token-auth-panel').show();
+            // auth notifier in navigation
+            $('.auth-enabled').show();
+            $('.auth-disabled').hide();
+            output('Successfully loaded user information.');
+        }
+    } else {
+        user_info = default_info;
+        output('Applying default information to "user_info" as it does not exist.');
         saveSettings();
     }
 }
