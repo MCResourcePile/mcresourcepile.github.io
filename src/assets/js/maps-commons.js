@@ -5,10 +5,8 @@
  * of being put here.
  */
 
-var maps_hidden;
-var maps_no_download;
-var license_file;
-var license_content;
+var maps_hidden, maps_no_download, license_file, license_content;
+
 $(document).ready(function(){
     /* Count maps with no download and send alert to console */
     total_hidden = $('.dynamic').children('.no-download').length;
@@ -16,7 +14,7 @@ $(document).ready(function(){
         return '\n- ' + n.id;
     });
     if (total_hidden > 0) {
-        console.log(total_hidden + ' maps have no download and have been hidden from this listing.\nPlease contact a page manager to add or enable the downloads for the following maps:' + maps_no_download)
+        output(total_hidden + ' maps have no download and have been hidden from this listing.\nPlease contact a page manager to add or enable the downloads for the following maps:' + maps_no_download)
     }
 
     /* Handle map download requests then send them to GitZip */
@@ -42,11 +40,11 @@ $(document).ready(function(){
             license_file = 'LICENSE.txt';
             license_content = 'This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n';
         }
-        console.info('Downloading: ' + active_slug + '\nFetching files from: ' + active_path + '\n' + active_name + ' ' + active_license_message);
+        output('Downloading: ' + active_slug + '\nFetching files from: ' + active_path + '\n' + active_name + ' ' + active_license_message);
         file_name = active_slug
         if (active_path !== undefined) {
-            if (current_token) {
-                GitZip.setAccessToken(current_token);
+            if (user_settings.token) {
+                GitZip.setAccessToken(user_settings.token);
                 GitZip.zipRepo(active_path);
                 console.info('Using given GitHub API access token.');
             } else {
@@ -68,8 +66,8 @@ $(document).ready(function(){
         $('#download-opened').modal('show');
     });
 
-    updateListing()
-    getApiLimit()
+    updateListing();
+    getApiLimit();
 
     /* Update map listing in time with search bar interactions */
     $('.record-search-container').click(function() { updateListing() });
@@ -103,44 +101,13 @@ function updateListing() {
 }
 
 /* Get GitHub API request limit information */
-var sessionLimit = '0';
-var sessionRemaining = '0';
-var sessionDownloads = '0';
 function getApiLimit() {
-    limitResponse = (function () {
-            limitResponse = null;
-            if (current_token != null) {
-                $.ajax({
-                    'async': false,
-                    'global': false,
-                    'url': 'https://api.github.com/rate_limit?access_token=' + current_token,
-                    'dataType': 'json',
-                    'success': function (data) {
-                        limitResponse = data;
-                    }
-                });
-            } else {
-                $.ajax({
-                    'async': false,
-                    'global': false,
-                    'url': 'https://api.github.com/rate_limit',
-                    'dataType': 'json',
-                    'success': function (data) {
-                        limitResponse = data;
-                    }
-                });
-            }
-        return limitResponse;
-    })(); 
-    sessionLimit = limitResponse.rate.limit;
-    sessionRemaining = limitResponse.rate.remaining;
-    sessionDownloads = Math.round(sessionRemaining / 7);
-    sessionReset = moment.unix(limitResponse.rate.reset);
-    /* Update API request information on page */
-    $('.api-request-remaining').html(sessionRemaining).css('font-weight', 'bold');
-    $('.api-request-limit').html(sessionLimit).css('font-weight', 'bold');
-    $('.api-request-approximate').html(sessionDownloads).css('font-weight', 'bold');
-    $('.api-request-reset').html(sessionReset._d).css('font-weight', 'bold');
+    updateRateLimit(function () {
+        $('.api-request-remaining').text(user_info.rate.remaining).css('font-weight', 'bold');
+        $('.api-request-limit').text(user_info.rate.limit).css('font-weight', 'bold');
+        $('.api-request-approximate').text(Math.round(user_info.rate.remaining / 7)).css('font-weight', 'bold');
+        $('.api-request-reset').text(moment.unix(user_info.rate.reset).fromNow()).css('font-weight', 'bold');
+    });
 }
 
 /* Modal control for download progress and error messages */
