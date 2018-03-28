@@ -74,12 +74,12 @@ function saveSettings() {
 
 function syncSettings(callback) {
     if (user_settings.synced == false) {
-        user_settings.token = Cookies.get('user_token');
-        user_settings.theme = Cookies.get('user_theme');
+        user_settings.token = Cookies.get('rp_user_token');
+        user_settings.theme = Cookies.get('rp_user_theme');
         user_settings.hide_images = Cookies.get('rp_map_images?');
         user_settings.automatic_downloads = false;
-        Cookies.remove('user_token');
-        Cookies.remove('user_theme');
+        Cookies.remove('rp_user_token');
+        Cookies.remove('rp_user_theme');
         Cookies.remove('rp_map_images?');
         updateUserInfo(function () {
             updateRateLimit(function () {
