@@ -44,8 +44,8 @@ function loadSettings() {
                 $('.prf-token-unauth-panel').hide();
                 $('.prf-token-auth-panel').show();
                 // auth notifier in navigation
-                $('.auth-enabled').show();
-                $('.auth-disabled').hide();
+                $('#auth-enabled').show();
+                $('#auth-disabled').hide();
                 output('Successfully loaded user information.');
             } else {
                 user_info = default_info;
@@ -70,8 +70,8 @@ function saveSettings() {
     output('Saved user settings and user information.');
 }
 
-function syncSettings() {
-    if (user_settings.synced == true) {
+function syncSettings(callback) {
+    if (user_settings.synced == false) {
         user_settings.token = Cookies.get('user_token');
         user_settings.theme = Cookies.get('user_theme');
         user_settings.hide_images = Cookies.get('rp_map_images?');
@@ -79,43 +79,43 @@ function syncSettings() {
         Cookies.remove('user_token');
         Cookies.remove('user_theme');
         Cookies.remove('rp_map_images?');
-        updateUserInfo();
-        updateRateLimit();
-        user_settings.synced = true;
-        saveSettings();
-        output('Old settings have been synced with new format -- old information has been deleted.');
+        updateUserInfo(function () {
+            updateRateLimit(function () {
+                user_settings.synced = true;
+                saveSettings();
+                output('Old settings have been synced with new format -- old information has been deleted.');
+                callback();
+            });
+        });
     } else {
         output('Settings already saved in new format.', 1);
     }
 }
 
-function isAuthenticated() {
+function updateUserInfo(callback) {
     if (user_settings.token) {
-        $('.auth-enabled').show();
-        $('.auth-disabled').hide();
+        user = $.getJSON('https://api.github.com/user?access_token=' + user_settings.token, function(data){return data});
+        user.done(function() {
+            user_info.username = user.responseJSON.login;
+            user_info.avatar = user.responseJSON.avatar_url;
+            output('Updated user information.');
+            if (callback) {
+                callback();
+            }
+        });
+        user.fail(function() {
+            output('Failed to retrieve user information.', 2);
+            return;
+        });
     } else {
-        $('.auth-enabled').hide();
-        $('.auth-disabled').show();
+        output('No access token -- skipping user information request', 1);
+        if (callback) {
+            callback();
+        }
     }
 }
 
-function updateUserInfo() {
-    var r = $.Deferred();
-    user = $.getJSON('https://api.github.com/user?access_token=' + user_settings.token, function(data){return data});
-    user.done(function() {
-        user_info.username = user.responseJSON.login;
-        user_info.avatar = user.responseJSON.avatar_url;
-        output('Updated user information.');
-        return r.resolve();
-    });
-    user.fail(function() {
-        output('Failed to retrieve user information.', 2);
-        return r.promise();
-    });
-}
-
-function updateRateLimit() {
-    var r = $.Deferred();
+function updateRateLimit(callback) {
     if (user_settings.token) {
         ratelimit = $.getJSON('https://api.github.com/rate_limit?access_token=' + user_settings.token, function(data){return data});
     } else {
@@ -126,11 +126,13 @@ function updateRateLimit() {
         user_info.rate.remaining = ratelimit.responseJSON.rate.remaining;
         user_info.rate.reset = ratelimit.responseJSON.rate.reset;
         output('Update user rate limit information.');
-        return r.resolve();
+        if (callback) {
+            callback();
+        }
     });
     ratelimit.fail(function() {
         output('Failed to retrieve user rate limit information.', 2);
-        return r.promise();
+        return;
     });
 }
 
@@ -143,12 +145,12 @@ function displayUserInfo() {
     $('#user_rate_remaining').text(user_info.rate.remaining);
     $('#user_rate_limit').text(user_info.rate.limit);
     $('#user_rate_approximate').text(Math.round(user_info.rate.remaining / 7));
-    limit_reset = moment.unix(user_info.rate.reset)
-    $('#user_rate_reset').text(limit_reset._d);
+    $('#user_rate_reset').text(moment.unix(user_info.rate.reset).fromNow());
     output('Updated display with user information.');
 }
 
 function saveToken() {
+    $('#token-save-button').text('Saving...').addClass('disabled');
     var token_input = $('#access_token').val().replace(/\s/g,'');
     if (token_input.length > 40) {
         token_input = token_input.split('&')[0].replace('access_token=','').replace(/\s/g,'');
@@ -158,6 +160,7 @@ function saveToken() {
     if (token_input.length < 40) {
         $('#prf-alert-token-missing').show().delay(5000).fadeOut();
         output('Invalid or no token provided.', 2);
+        $('#token-save-button').text('Save').removeClass('disabled');
         return;
     }
     output('Checking if token is valid: ' + token_input);
@@ -165,20 +168,26 @@ function saveToken() {
     response.done(function() {
         output('Token valid! Updating user information.');
         user_settings.token = token_input;
-        updateUserInfo().then(updateRateLimit).then(displayUserInfo);
-        saveSettings();
-        $('#prf-alert-token-saved').show().delay(5000).fadeOut();
-        $('#auth-well').addClass('well-custom-green');
-        // auth panels in preferences
-        $('.prf-token-auth-panel').show();
-        $('.prf-token-unauth-panel').hide();
-        // auth notifier in navigation
-        $('.auth-enabled').show();
-        $('.auth-disabled').hide();
+        updateUserInfo(function () {
+            updateRateLimit(function () {
+                displayUserInfo();
+                saveSettings();
+                $('#prf-alert-token-saved').show().delay(5000).fadeOut();
+                $('#auth-well').addClass('well-custom-green');
+                // auth panels in preferences
+                $('.prf-token-auth-panel').show();
+                $('.prf-token-unauth-panel').hide();
+                // auth notifier in navigation
+                $('#auth-enabled').show();
+                $('#auth-disabled').hide();
+                $('#token-save-button').text('Save').removeClass('disabled');
+            });
+        });
     });
     response.fail(function() {
         output('Token is not valid and saving has been aborted.', 2);
         $('#prf-alert-token-invalid').show().delay(5000).fadeOut();
+        $('#token-save-button').text('Save').removeClass('disabled');
     });
 }
 
@@ -192,8 +201,8 @@ function revokeToken() {
         $('.prf-token-auth-panel').hide();
         $('.prf-token-unauth-panel').show();
         // auth notifier in navigation
-        $('.auth-enabled').hide();
-        $('.auth-disabled').show();
+        $('#auth-enabled').hide();
+        $('#auth-disabled').show();
         user_settings.token = '';
         saveSettings();
     }

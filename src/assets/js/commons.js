@@ -7,10 +7,15 @@
 loadSettings();
 applySettings();
 
-if (!user_settings.synced) {
+if (user_settings.synced == false) {
     $('#sync-settings-alert').show();
-    syncSettings();
-    $('#sync-settings-alert').text('Sync has been completed. Thank you.').addClass('alert-info').removeClass('alert-danger').delay(5000).fadeOut();
+    setTimeout(
+        function () {
+            syncSettings(function () {
+                $('#sync-settings-alert').text('Sync has been completed. Thank you.').addClass('alert-info').removeClass('alert-danger').delay(5000).fadeOut();
+            })
+        }, 6000
+    );
 }
 
 var window_offset = function() { scrollBy(0, -70) };
