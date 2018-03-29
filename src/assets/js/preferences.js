@@ -17,7 +17,7 @@ function applySettings() {
             $('head').append('<link href=\'/assets/css/dark.css\' rel=\'stylesheet\'>');
         }
         // collapse map thumbnails, otherwise lazy load images
-        if (user_settings.hide_images == true) {
+        if (user_settings.hide_images == 'true') {
             $('.lazy').css({'height': '60px'});
             $('.map-banner').css({'height': '60px'});
             $('.map-labels').css({'top': '-21px', 'padding-left': '4px'});
