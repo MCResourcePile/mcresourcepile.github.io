@@ -87,4 +87,12 @@
         </div>
     </div>
 </div>
+<script>
+updateUserInfo(function () {
+    updateRateLimit(function () {
+        displayUserInfo();
+        saveSettings();
+    });
+});
+</script>
 {{> navigation_footer}}
