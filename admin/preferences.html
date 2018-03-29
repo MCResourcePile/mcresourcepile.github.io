@@ -199,6 +199,14 @@
         </div>
     </div>
 </div>
+<script>
+updateUserInfo(function () {
+    updateRateLimit(function () {
+        displayUserInfo();
+        saveSettings();
+    });
+});
+</script>
             <!-- End page content -->
             </div>
         </div>
