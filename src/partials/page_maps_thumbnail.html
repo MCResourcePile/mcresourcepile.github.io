@@ -57,6 +57,7 @@
                 <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                 {{/if}}
                 {{/if}}
+                <span class="label label-info map-label map-download-stats" data-toggle="tooltip" data-placement="top" title="Download stats - Total:Unique (Recent)" style="display:none"><i class="fa fa-download"></i> <span class="downloads-total" data-map="{{replace name "'" "-"}}">0</span>:<span class="downloads-unique" data-map="{{name}}">0</span> (<span class="downloads-recent" data-map="{{name}}">0</span>)</span>
                 {{/inArray}}
                 {{/inArray}}
                 {{#inArray @root.page-category 'tournaments'}}

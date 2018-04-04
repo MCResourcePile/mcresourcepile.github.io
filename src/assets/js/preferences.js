@@ -7,7 +7,7 @@
 var user_settings = Cookies.getJSON('user_settings');
 var user_info = Cookies.getJSON('user_info');
 
-const default_settings = {token: "", theme: "default", hide_images: true, automatic_downloads: false, synced: false};
+const default_settings = {token: "", theme: "default", hide_images: "false", map_stats: "false", automatic_downloads: "false", synced: false};
 const default_info = {username: "User", avatar: "https://avatars0.githubusercontent.com/u/24795789?v=4", rate: {limit: 0, remaining: 0, reset: 0}};
 
 function applySettings() {
@@ -28,6 +28,13 @@ function applySettings() {
                 elements_selector: '.lazy',
                 threshold: 50
             });
+        }
+        // show google analytic download stats on map collections
+        if (user_settings.map_stats == 'true' && is_maps_collection) {
+            $('.map-download-stats').show();
+            fetchGlobalDownloads();
+            fetchUniqueDownloads();
+            fetchRecentDownloads();
         }
         output('Applied user settings to this page.');
     }
