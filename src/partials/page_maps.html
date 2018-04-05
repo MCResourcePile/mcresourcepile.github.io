@@ -59,12 +59,6 @@
         {{#each (sortBy maps "name")}}
         {{#if download}}
         {{> page_maps_thumbnail}}
-        {{#every @index 1 2}}
-        <div class="clearfix visible-sm visible-md"></div>
-        {{/every}}
-        {{#every @index 1 4}}
-        <div class="clearfix visible-lg"></div>
-        {{/every}}
         {{else}}
         {{#if sourced}}
         {{#is sourced true}}
