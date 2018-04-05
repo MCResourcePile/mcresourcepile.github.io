@@ -7,6 +7,8 @@
 
 var maps_hidden, maps_no_download, license_file, license_content;
 
+const is_maps_collection = true;
+
 $(document).ready(function(){
     /* Count maps with no download and send alert to console */
     total_hidden = $('.dynamic').children('.no-download').length;

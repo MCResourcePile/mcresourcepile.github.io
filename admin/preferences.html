@@ -185,16 +185,27 @@
             </div>
             <br>
             <div class="row">
+                <h6 class="col-md-4 control-label"><b>Download Statistics</b></h6>
+                <div class="col-md-4">
+                    <select id="site-select-download-stats" name="site-select-download-stats" class="form-control">
+                        <option value="false">Disabled</option>
+                        <option value="true">Enabled</option>
+                    </select>
+                </div>
+                <small class="col-md-4">Display additional map download statistics on collection thumbnails.</small>
+            </div>
+            <br><!--
+            <div class="row">
                 <h6 class="col-md-4 control-label"><b>Automatic Direct Downloads</b></h6>
                 <div class="col-md-4">
-                    <select id="site-select-auto-dl" name="site-select-map-images" class="form-control">
+                    <select id="site-select-auto-dl" name="site-select-auto-dl" class="form-control">
                         <option value="false">No</option>
                         <option value="true">Yes</option>
                     </select>
                 </div>
                 <small class="col-md-4">Automatically download maps from direct links.</small>
             </div>
-            <br>
+            <br>-->
             <a class="btn btn-success btn-auth" onclick="savePreferences()">Save preferences</a>
         </div>
     </div>
@@ -231,7 +242,6 @@ updateUserInfo(function () {
                         <a class="footer-item" href="/policies/terms">Terms of Use</a>
                         <a class="footer-item" href="/policies/maps">Map Policy</a>
                         <a class="footer-item" href="/admin/references">References</a>
-                        <a class="footer-item" href="/maps/downloads">Download Stats</a>
                     </div>
                     <div class="footer-section col-md-3">
                         <div class="footer-section-head">Site</div>
