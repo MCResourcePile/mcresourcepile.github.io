@@ -46,15 +46,28 @@ function fetchRecentDownloads() {
 }
 
 $(document).ready(function() {
+    // hover stats display
+    $('.map-float').hover(function() {
+        if (user_settings.map_stats == 'true' && user_settings.hide_images == 'false') {
+            $(this).find('.map-overlay').fadeIn();
+        }
+    }, function(){
+        if (user_settings.map_stats == 'true' && user_settings.hide_images == 'false') {
+            $(this).find('.map-overlay').fadeOut();
+        }
+    });
+    // dropdown stats display -- only active if map images are disabled
     $('.map-dropdown').click(function() {
-        open = $(this).find('.collapse').hasClass('in');
-        output(open);
-        target = $(this).find('.toggle').attr('data-toggle');
-        $('#' + target).collapse('toggle');
-        if (open) {
-            $(this).find('i').removeClass('fa-caret-up').addClass('fa-caret-down')
-        } else (
-            $(this).find('i').removeClass('fa-caret-down').addClass('fa-caret-up')
-        )
+        if (user_settings.map_stats == 'true' && user_settings.hide_images == 'true') {
+            open = $(this).find('.collapse').hasClass('in');
+            output(open);
+            target = $(this).find('.toggle').attr('data-toggle');
+            $('#' + target).collapse('toggle');
+            if (open) {
+                $(this).find('i').removeClass('fa-caret-up').addClass('fa-caret-down')
+            } else (
+                $(this).find('i').removeClass('fa-caret-down').addClass('fa-caret-up')
+            )
+        }
     });
 });
