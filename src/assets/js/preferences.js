@@ -7,7 +7,7 @@
 var user_settings = Cookies.getJSON('user_settings');
 var user_info = Cookies.getJSON('user_info');
 
-const default_settings = {token: "", theme: "default", hide_images: true, automatic_downloads: false, synced: false};
+const default_settings = {token: "", theme: "default", hide_images: "false", map_stats: "false", automatic_downloads: "false", synced: false};
 const default_info = {username: "User", avatar: "https://avatars0.githubusercontent.com/u/24795789?v=4", rate: {limit: 0, remaining: 0, reset: 0}};
 
 function applySettings() {
@@ -29,6 +29,16 @@ function applySettings() {
                 threshold: 50
             });
         }
+        // show google analytic download stats on map collections
+        if (user_settings.map_stats == 'true' && is_maps_collection) {
+            if (user_settings.hide_images == 'true') {
+                $('.map-dropdown').show();
+                $('.map-download-stats').addClass('disabled');
+            }
+            fetchGlobalDownloads();
+            fetchUniqueDownloads();
+            fetchRecentDownloads();
+        }
         output('Applied user settings to this page.');
     }
 }
@@ -41,6 +51,7 @@ function loadSettings() {
         }
         $('#site-select-theme').val(user_settings.theme);
         $('#site-select-map-images').val(user_settings.hide_images);
+        $('#site-select-download-stats').val(user_settings.map_stats);
         $('#site-select-auto-dl').val(user_settings.automatic_downloads);
         output('Successfully loaded user preferences.');
     } else {
@@ -77,6 +88,7 @@ function syncSettings(callback) {
         user_settings.token = Cookies.get('rp_user_token');
         user_settings.theme = Cookies.get('rp_user_theme');
         user_settings.hide_images = Cookies.get('rp_map_images?');
+        user_settings.map_stats = false;
         user_settings.automatic_downloads = false;
         Cookies.remove('rp_user_token');
         Cookies.remove('rp_user_theme');
@@ -213,6 +225,7 @@ function revokeToken() {
 function savePreferences() {
     user_settings.theme = $('#site-select-theme :selected').val();
     user_settings.hide_images = $('#site-select-map-images :selected').val();
+    user_settings.map_stats = $('#site-select-download-stats :selected').val();
     user_settings.automatic_downloads = $('#site-select-auto-dl :selected').val();
     if (user_settings.theme == 'dark') {
         $('head').append('<link href=\'/assets/css/dark.css\' rel=\'stylesheet\'>');

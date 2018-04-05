@@ -56,7 +56,7 @@
 <div id="maps-output">
     <div class="dynamic">
         {{#data}}
-        {{#withSort maps "name"}}
+        {{#each (sortBy maps "name")}}
         {{#if download}}
         {{> page_maps_thumbnail}}
         {{else}}
@@ -68,7 +68,7 @@
         {{/is}}
         {{/if}}
         {{/if}}
-        {{/withSort}}
+        {{/each}}
         {{/data}}
     </div>
 </div>

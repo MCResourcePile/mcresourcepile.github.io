@@ -36,6 +36,15 @@
                     {{/if}}
                 </span>
             </div>
+            {{#inArray @root.page-category 'collections'}}
+            <div class="map-overlay" style="display:none">
+                <div class="stats">
+                    <div class="stat main"><span class="stat-downloads-unique" data-map="{{clean name}}">0</span> unique downloads</div>
+                    <div class="stat"><span class="stat-downloads-total" data-map="{{clean name}}">0</span> total downloads</div>
+                    <div class="stat"><span class="stat-downloads-recent" data-map="{{clean name}}">0</span> recent</div>
+                </div>
+            </div>
+            {{/inArray}}
             <div class="map-labels">
                 {{#inArray @root.page-category 'maps'}}
                 {{#inArray @root.page-category 'contest'}}
@@ -99,6 +108,18 @@
             {{/if}}
             <a id="{{name}}" href="https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="{{name}}" class="fa fa-file-image-o"></i></a>
         </div>
+        {{#inArray @root.page-category 'collections'}}
+        <div class="map-dropdown center" style="display:none">
+            <div class="collapse" id="map-dropdown-{{slug}}">
+                <div class="stats">
+                    <div class="stat main"><span class="stat-downloads-unique" data-map="{{clean name}}">0</span> unique downloads</div>
+                    <div class="stat"><span class="stat-downloads-total" data-map="{{clean name}}">0</span> total downloads</div>
+                    <div class="stat"><span class="stat-downloads-recent" data-map="{{clean name}}">0</span> recent</div>
+                </div>
+            </div>
+            <a class="toggle" data-toggle="map-dropdown-{{slug}}"><i class="fa fa-caret-down"></i></a>
+        </div>
+        {{/inArray}}
         <div class="modal fade" id="download-{{slug}}" tabindex="-1" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
