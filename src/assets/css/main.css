@@ -715,7 +715,7 @@ span.game-mode-button {
     background-color: #e5d0bb !important;
 }
 
-.map-favourite {
+.map-overlay {
     background-color: rgba(0, 0, 0, 0.56);
     position: absolute;
     width: 260px;
@@ -723,13 +723,60 @@ span.game-mode-button {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    padding-top: 70px;
-    color: rgba(255, 255, 255, 0.69);
-    font-size: 36px;
 }
 
-.map-favourite-icon {
-    cursor: pointer;
+.map-overlay > .stats {
+    padding-top: 28px;
+}
+
+.map-overlay > .stats > .stat {
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: -12px;
+}
+
+.map-overlay > .stats > .stat.main {
+	font-size: 18px;
+    color: rgba(255, 255, 255, 0.83);
+    margin-bottom: 0px;
+}
+
+.map-overlay > .stats > .stat > span {
+	font-weight: 600;
+    font-size: 18px;
+}
+
+.map-overlay > .stats > .stat.main > span {
+	font-size: 26px;
+}
+
+.map-dropdown {
+    margin-top: 16px;
+    padding: 8px;
+    padding-bottom: 0px;
+    border-top: 1px solid #dddddd;
+}
+
+.map-dropdown > .toggle {
+    font-size: 18px;
+}
+
+.map-dropdown .stats {
+    padding-bottom: 10px;
+}
+
+.map-dropdown .stats > .stat {
+    color: #585858;
+    margin-bottom: -8px;
+}
+
+.map-dropdown .stats > .stat.main {
+	font-size: 16px;
+    color: #1f1f1f;
+    margin-bottom: 0px;
+}
+
+.map-dropdown .stats > .stat > span {
+	font-weight: 600;
 }
 
 .map-thumbnail-small {

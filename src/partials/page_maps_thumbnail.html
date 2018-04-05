@@ -36,6 +36,13 @@
                     {{/if}}
                 </span>
             </div>
+            <div class="map-overlay">
+                <div class="stats">
+                    <div class="stat main"><span class="stat-downloads-unique" data-map="{{clean name}}">0</span> unique downloads</div>
+                    <div class="stat"><span class="stat-downloads-total" data-map="{{clean name}}">0</span> total downloads</div>
+                    <div class="stat"><span class="stat-downloads-recent" data-map="{{clean name}}">0</span> recent</div>
+                </div>
+            </div>
             <div class="map-labels">
                 {{#inArray @root.page-category 'maps'}}
                 {{#inArray @root.page-category 'contest'}}
@@ -57,7 +64,6 @@
                 <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                 {{/if}}
                 {{/if}}
-                <span class="label label-info map-label map-download-stats" data-toggle="tooltip" data-placement="top" title="Download stats - Total:Unique (Recent)" style="display:none"><i class="fa fa-download"></i> <span class="downloads-total" data-map="{{replace name "'" "-"}}">0</span>:<span class="downloads-unique" data-map="{{name}}">0</span> (<span class="downloads-recent" data-map="{{name}}">0</span>)</span>
                 {{/inArray}}
                 {{/inArray}}
                 {{#inArray @root.page-category 'tournaments'}}
@@ -99,6 +105,16 @@
             {{/unless}}
             {{/if}}
             <a id="{{name}}" href="https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="{{name}}" class="fa fa-file-image-o"></i></a>
+        </div>
+        <div class="map-dropdown center">
+            <div class="collapse" id="map-dropdown-{{slug}}">
+                <div class="stats">
+                    <div class="stat main"><span class="stat-downloads-unique" data-map="{{clean name}}">0</span> unique downloads</div>
+                    <div class="stat"><span class="stat-downloads-total" data-map="{{clean name}}">0</span> total downloads</div>
+                    <div class="stat"><span class="stat-downloads-recent" data-map="{{clean name}}">0</span> recent</div>
+                </div>
+            </div>
+            <a class="toggle" data-toggle="map-dropdown-{{slug}}"><i class="fa fa-caret-down"></i></a>
         </div>
         <div class="modal fade" id="download-{{slug}}" tabindex="-1" role="dialog">
             <div class="modal-dialog">
