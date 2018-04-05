@@ -51,6 +51,7 @@ function loadSettings() {
         }
         $('#site-select-theme').val(user_settings.theme);
         $('#site-select-map-images').val(user_settings.hide_images);
+        $('#site-select-download-stats').val(user_settings.map_stats);
         $('#site-select-auto-dl').val(user_settings.automatic_downloads);
         output('Successfully loaded user preferences.');
     } else {
@@ -87,6 +88,7 @@ function syncSettings(callback) {
         user_settings.token = Cookies.get('rp_user_token');
         user_settings.theme = Cookies.get('rp_user_theme');
         user_settings.hide_images = Cookies.get('rp_map_images?');
+        user_settings.map_stats = false;
         user_settings.automatic_downloads = false;
         Cookies.remove('rp_user_token');
         Cookies.remove('rp_user_theme');
@@ -223,6 +225,7 @@ function revokeToken() {
 function savePreferences() {
     user_settings.theme = $('#site-select-theme :selected').val();
     user_settings.hide_images = $('#site-select-map-images :selected').val();
+    user_settings.map_stats = $('#site-select-download-stats :selected').val();
     user_settings.automatic_downloads = $('#site-select-auto-dl :selected').val();
     if (user_settings.theme == 'dark') {
         $('head').append('<link href=\'/assets/css/dark.css\' rel=\'stylesheet\'>');
