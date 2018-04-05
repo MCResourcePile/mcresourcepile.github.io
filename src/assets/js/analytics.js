@@ -60,7 +60,6 @@ $(document).ready(function() {
     $('.map-dropdown').click(function() {
         if (user_settings.map_stats == 'true' && user_settings.hide_images == 'true') {
             open = $(this).find('.collapse').hasClass('in');
-            output(open);
             target = $(this).find('.toggle').attr('data-toggle');
             $('#' + target).collapse('toggle');
             if (open) {
