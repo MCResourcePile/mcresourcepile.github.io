@@ -38,14 +38,19 @@ $(document).ready(function(){
     // handle direct downloads
     if (getUrlVars()['dl']) {
         var requested_map = getUrlVars()['dl'];
-        if (user_settings.automatic_downloads == 'true') {
-            model = $('#download-' + requested_map).find('.click-download');
-            active_name = $(model).attr('id');
-            active_path = $(model).attr('path');
-            active_license = $(model).attr('license');
-            startDownload(active_name, requested_map, active_path, active_license);
+        if ($('#download-' + requested_map).length == 1) {
+            if (user_settings.automatic_downloads == 'true') {
+                model = $('#download-' + requested_map).find('.click-download');
+                active_name = $(model).attr('id');
+                active_path = $(model).attr('path');
+                active_license = $(model).attr('license');
+                startDownload(active_name, requested_map, active_path, active_license);
+            } else {
+                $('#download-' + requested_map).modal('show');
+            }
         } else {
-            $('#download-' + requested_map).modal('show');
+            $('#download-error-message').modal('show');
+            $('#download-error-output').text('The requested map does not exist in this collection.');
         }
     }
 
