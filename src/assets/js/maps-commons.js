@@ -53,6 +53,12 @@ $(document).ready(function(){
             $('#download-error-output').text('The requested map does not exist in this collection.');
         }
     }
+    
+    // handle direct search queries
+    if (getUrlVars()['s']) {
+        query = getUrlVars()['s'].replace('+', ' ').replace('%20', ' ');
+        $('#search').val(query);
+    }
 
     updateListing();
     getApiLimit();
@@ -80,10 +86,10 @@ function startDownload(active_name, active_slug, active_path, active_license) {
         if (user_settings.token) {
             GitZip.setAccessToken(user_settings.token);
             GitZip.zipRepo(active_path);
-            console.info('Using given GitHub API access token.');
+            output('Using given GitHub API access token.');
         } else {
             GitZip.zipRepo(active_path);
-            console.warn('No GitHub API access token provided. Please go to your preferences to generate an access token.')
+            output('No GitHub API access token provided. Please go to your preferences to generate an access token.')
         }
     } else {
         $('#download-starting-message').modal('hide');
