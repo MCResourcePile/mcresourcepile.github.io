@@ -41,8 +41,7 @@ $(document).ready(function(){
         if ($('#download-' + requested_map).length == 1) {
             $('#download-' + requested_map).modal('show');
         } else {
-            $('#download-error-message').modal('show');
-            $('#download-error-output').text('The requested map does not exist in this collection.');
+            onError('The requested map does not exist in this collection.');
         }
     }
     
@@ -84,9 +83,7 @@ function startDownload(active_name, active_slug, active_path, active_license) {
             output('No GitHub API access token provided. Please go to your preferences to generate an access token.')
         }
     } else {
-        $('#download-starting-message').modal('hide');
-        $('#download-error-message').modal('show');
-        $('#download-error-output').text('No download path identified; skipping download request.');
+        onError('No download path identified; skipping download request.');
         progress = 0;
         getApiLimit();
     }
@@ -129,6 +126,13 @@ function getApiLimit() {
     });
 };
 
+// handle errors from maps
+function onError(message) {
+    $('.modal.in').modal('hide');
+    $('#download-error-message').modal('show');
+    $('#download-error-output').text(message);
+}
+
 // modal control for download progress and error messages
 GitZip.registerCallback(function(status, message, percent) {
     var progress = percent
@@ -146,8 +150,7 @@ GitZip.registerCallback(function(status, message, percent) {
         $('.map-download-started:visible').hide();
         $('.click-download:disabled').prop('disabled', false).text('Download');;
         if (message.indexOf('API rate limit exceeded for') === -1) {
-            $('#download-error-message').modal('show');
-            $('#download-error-output').text('An error occurred while retrieving your download. Check the console for more details.');
+            onError('An error occurred while retrieving your download. Check the console for more details.');
         } else {
             $('#download-rate-limit-message').modal('show');
         }
