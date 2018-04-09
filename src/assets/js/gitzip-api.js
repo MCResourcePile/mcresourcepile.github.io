@@ -105,7 +105,7 @@ SOFTWARE.
                 ++progressCallback._idx / (progressCallback._len * 2) * 100);
             zipContent.file(item.path, item.content, {createFolders:true,base64:true});
         });
-        zip.file(filename + '/' + license_file, license_content);
+        zip.file(filename + '/' + imported_license.file, imported_license.contents);
         if(isSafari){
             zip.generateAsync({type:"base64"})
             .then(function (content) {
