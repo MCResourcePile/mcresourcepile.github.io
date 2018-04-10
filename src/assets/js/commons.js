@@ -7,6 +7,8 @@
 loadSettings();
 applySettings();
 
+var is_maps_collection = false;
+
 if (user_settings.synced == false) {
     $('#sync-settings-alert').show();
     setTimeout(
