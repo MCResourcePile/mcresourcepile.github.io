@@ -4,6 +4,13 @@
 
             <div class="map-banner">
                 <a class="map-header" {{#inArray @root.page-category 'maps'}}href="https://mcresourcepile.github.io/maps/{{@root.settings.maps.group}}?s={{slug}}"{{/inArray}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong><span class="tag_hidden">{{slug}}</span></a>
+                {{#if (lookup @root.settings.maps.environments environment)}}
+                {{#with (lookup @root.settings.maps.environments environment)}}
+                {{#if this.prompt}}
+                <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{this.prompt}}"><i class="external-thread fa fa-exclamation-circle"></i></a>
+                {{/if}}
+                {{/with}}
+                {{/if}}
                 {{#if contest}}
                 <a href="/contests/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}/{{contest}}#{{slug}}" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{#is @root.settings.maps.group 'pgm'}}Overcast{{else}}{{sentence @root.settings.maps.group}}{{/is}} contest submission"><i class="external-thread fa fa-map"></i></a>
                 {{/if}}
@@ -80,7 +87,8 @@
             {{#authors}}
             <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="{{#inArray @root.page-category 'contest'}}/maps/{{@root.settings.maps.group}}{{/inArray}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{formatUUID uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
             {{/authors}}
-            {{else}}<span class="map-author-name">Ghost</span>
+            {{else}}
+            <span class="map-author-name">Ghost</span>
             {{/if}}
         </div>
         {{#inArray @root.page-category 'contest'}}
@@ -103,7 +111,7 @@
             {{#unless xml}}
             <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
             {{else}}
-            <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button"><i id="{{name}}" class="fa fa-code click-xml"></i></a>
+            <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" {{#if (lookup @root.settings.maps.environments environment)}}{{#with (lookup @root.settings.maps.environments environment)}}{{#if this.prompt}}data-toggle="tooltip" data-placement="top" title="{{this.prompt}}">{{/if}}{{/with}}{{/if}}<i id="{{name}}" class="fa fa-code click-xml"></i></a>
             {{/unless}}
             {{/if}}
             <a id="{{name}}" href="https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="{{name}}" class="fa fa-file-image-o"></i></a>
@@ -176,13 +184,17 @@
                         </div>
                         You will be downloading the version of {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if cardinal}}This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i>{{/if}} {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
                         <div class="alert alert-info alert-sm map-download-tip" role="alert">
-                            {{#inArray @root.page-category 'pgm_server'}}
-                            This map has been designed and tested to be used with <a href="https://github.com/OvercastNetwork/ProjectAres" target="_blank">Overcast's open source plugins</a> and we recommend using those to have the best experience with this map.
+                            {{#if (lookup @root.settings.maps.environments environment)}}
+                                {{#with (lookup @root.settings.maps.environments environment)}}
+                                    {{{this.message}}}
+                                {{/with}}
                             {{else}}
-                            This map has been designed and tested to be used with <a href="https://github.com/Avicus/AvicusNetwork" target="_blank">Avcius' open source plugins</a> and we recommend using those to have the best experience with this map.
-                            {{/inArray}}
+                                {{#with (lookup @root.settings.maps.environments @root.settings.maps.default_environment)}}
+                                    {{{this.message}}}
+                                {{/with}}
+                            {{/if}}
                         </div>
-                        <div class="auth-disabled alert alert-danger alert-sm" role="alert">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                        <div class="auth-disabled alert alert-danger alert-sm" role="alert" style="margin-top: 24px;">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
                     </div>
                     <div class="modal-footer">
                         <div class="map-download-pending">
