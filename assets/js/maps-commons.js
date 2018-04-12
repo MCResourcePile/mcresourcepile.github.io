@@ -5,9 +5,9 @@
  * of being put here.
  */
 
-const is_maps_collection = true;
-
 $(document).ready(function(){
+    is_maps_collection = true;
+
     // count maps with no download and send alert to console
     total_hidden = $('.dynamic').children('.no-download').length;
     maps_no_download = $.map($('.no-download'), function(n, i) {
@@ -34,7 +34,7 @@ $(document).ready(function(){
         $('#download-' + active_slug).modal('hide');
         $('#download-opened').modal('show');
     });
-    
+
     // handle direct downloads
     if (getUrlVars()['dl']) {
         var requested_map = getUrlVars()['dl'];
@@ -44,7 +44,7 @@ $(document).ready(function(){
             onError('The requested map does not exist in this collection.');
         }
     }
-    
+
     // handle direct search queries
     if (getUrlVars()['s']) {
         query = getUrlVars()['s'].replace('+', ' ').replace('%20', ' ');

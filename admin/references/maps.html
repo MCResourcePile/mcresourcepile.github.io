@@ -341,6 +341,12 @@
                         <td><code>false</code></td>
                     </tr>
                     <tr>
+                        <td><code>"environment":</code></td>
+                        <td>The plugins that the map, more specifically the XML, is designed to be used for. Environments are arbitrary and are defined in the global data file.</td>
+                        <td><span class="label label-default">Environment Key</span></td>
+                        <td><a href="#settings">Default Environment</a></td>
+                    </tr>
+                    <tr>
                         <td><code>"cardinal":</code></td>
                         <td>If the map has been tested and works with the Cardinal plugin<br><span class="label label-info">Note:</span> While this is still used, it has become obselete after the open-sourcing of the Project Ares plugins</td>
                         <td><span class="label label-primary">Boolean</span></td>
@@ -425,9 +431,9 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td><code>"plugin":</code></td>
-                        <td><span class="label label-warning">Not currently used</span> The plugin the maps are designed to be used for - can be either <code>pgm</code> or <code>atlas</code></td>
-                        <td><span class="label label-primary">String</span></td>
+                        <td><code>"default_environment":</code></td>
+                        <td>The plugins that the maps in the collection are designed to be used for. This will be the default environment and can be overriden per-map with <code>"environment"</code>. Environments are arbitrary and are defined in the global data file.</td>
+                        <td><span class="label label-default">Environment Key</span></td>
                         <td></td>
                     </tr>
                 </tbody>
@@ -438,7 +444,7 @@
     "settings": {
         "maps": {
             "group": "overcast",
-            "plugin": "pgm"
+            "default_environment": "pgm"
         }
     }
 }</pre>
