@@ -5,9 +5,9 @@
  * of being put here.
  */
 
-$(document).ready(function(){
-    is_maps_collection = true;
+is_maps_collection = true;
 
+$(document).ready(function(){
     // count maps with no download and send alert to console
     total_hidden = $('.dynamic').children('.no-download').length;
     maps_no_download = $.map($('.no-download'), function(n, i) {
