@@ -725,30 +725,6 @@ span.game-mode-button {
     text-align: center;
 }
 
-.map-overlay > .stats {
-    padding-top: 28px;
-}
-
-.map-overlay > .stats > .stat {
-    color: rgba(255, 255, 255, 0.72);
-    margin-bottom: -12px;
-}
-
-.map-overlay > .stats > .stat.main {
-	font-size: 18px;
-    color: rgba(255, 255, 255, 0.83);
-    margin-bottom: 0px;
-}
-
-.map-overlay > .stats > .stat > span {
-	font-weight: 600;
-    font-size: 18px;
-}
-
-.map-overlay > .stats > .stat.main > span {
-	font-size: 26px;
-}
-
 .map-dropdown {
     margin-top: 8px;
     padding: 4px;
@@ -760,23 +736,10 @@ span.game-mode-button {
     font-size: 18px;
 }
 
-.map-dropdown .stats {
-    padding-bottom: 10px;
-}
-
-.map-dropdown .stats > .stat {
-    color: #585858;
-    margin-bottom: -8px;
-}
-
-.map-dropdown .stats > .stat.main {
-	font-size: 16px;
-    color: #1f1f1f;
-    margin-bottom: 0px;
-}
-
-.map-dropdown .stats > .stat > span {
-	font-weight: 600;
+.stat > span {
+    font-weight: 600;
+    font-size: 16px;
+    padding-right: 2px;
 }
 
 .map-thumbnail-small {
@@ -835,6 +798,10 @@ li.game-tag {
     margin-bottom: 4px;
 }
 
+.regulation-group > .modal-section-head {
+	color: #666666;
+}
+
 .regulation {
     display: block;
 }
@@ -845,6 +812,28 @@ li.game-tag {
 
 .regulation.none {
     color: #646464 !important;
+}
+
+.modal-section-head {
+    border-bottom: 1px solid #eeeeee;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.modal-section-body {
+    margin-bottom: 16px;
+}
+
+.modal-section-body > .label {
+    display: inline-block;
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+.map-download-pending,
+.map-download-started {
+    margin-bottom: 8px;
 }
 
 .well-custom-red,

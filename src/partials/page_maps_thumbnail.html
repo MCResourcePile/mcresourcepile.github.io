@@ -43,15 +43,6 @@
                     {{/if}}
                 </span>
             </div>
-            {{#inArray @root.page-category 'collections'}}
-            <div class="map-overlay" style="display:none">
-                <div class="stats">
-                    <div class="stat main"><span class="stat-downloads-unique" data-map="{{clean name}}">0</span> unique downloads</div>
-                    <div class="stat"><span class="stat-downloads-total" data-map="{{clean name}}">0</span> total downloads</div>
-                    <div class="stat"><span class="stat-downloads-recent" data-map="{{clean name}}">0</span> recent</div>
-                </div>
-            </div>
-            {{/inArray}}
             <div class="map-labels">
                 {{#inArray @root.page-category 'maps'}}
                 {{#inArray @root.page-category 'contest'}}
@@ -116,85 +107,92 @@
             {{/if}}
             <a id="{{name}}" href="https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="{{name}}" class="fa fa-file-image-o"></i></a>
         </div>
-        {{#inArray @root.page-category 'collections'}}
-        <div class="map-dropdown center" style="display:none">
-            <div class="collapse" id="map-dropdown-{{slug}}">
-                <div class="stats">
-                    <div class="stat main"><span class="stat-downloads-unique" data-map="{{clean name}}">0</span> unique downloads</div>
-                    <div class="stat"><span class="stat-downloads-total" data-map="{{clean name}}">0</span> total downloads</div>
-                    <div class="stat"><span class="stat-downloads-recent" data-map="{{clean name}}">0</span> recent</div>
-                </div>
-            </div>
-            <a class="toggle" data-toggle="map-dropdown-{{slug}}"><i class="fa fa-caret-down"></i></a>
-        </div>
-        {{/inArray}}
         <div class="modal fade" id="download-{{slug}}" tabindex="-1" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Downloading files for {{#if name}}{{name}}{{else}}Untitiled Map{{/if}}</h4>
+                    <div class="modal-header center">
+                        <h4 class="modal-title">Downloading files for <strong>{{#if name}}{{name}}{{else}}Untitiled Map{{/if}}</strong></h4>
                         <div class="map-authors">
                             <span class="map-author-name">created by</span>
                             {{#if authors}}
                             {{#authors}}
                             <li class="game-tag">{{#if username}}<img src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s={{uuid}}">{{username}}</a>{{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/if}}</li>
                             {{/authors}}
-                            {{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay"> <span class="map-author-name">Ghost</span>
+                            {{else}}
+                            <img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay"> <span class="map-author-name">Ghost</span>
                             {{/if}}
                         </div>
                     </div>
                     <div class="modal-body">
-                        {{#if sourced}}
-                        {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} has no associated license attached to it. We strongly recommend getting in contact with its authors ({{#authors}}<li class="game-tag">{{#if username}}{{username}}{{else}}Ghost{{/if}}</li>{{/authors}}) before using {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
-                        {{else}}
-                        {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} has been licensed under the <a href="https://creativecommons.org/licenses/by{{#unless commercial}}-nc{{/unless}}-sa/4.0/" target="_blank">Creative Commons Attribution{{#unless commercial}}-NonCommercial{{/unless}}-ShareAlike 4.0</a> (CC BY{{#unless commercial}}-NC{{/unless}}-SA) license.
-                        This includes all files and documents in the following download.
-                        {{/if}}
-                        <div class="row map-regulations">
-                            <div class="col-xs-12 col-md-6 regulation-group allow">
-                                <h6>Permissions</h6>
+                        <div class="auth-disabled alert alert-danger alert-sm" role="alert" style="margin-bottom: 16px;">Your download is not authenticated. Consider <a href="../admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
+                        <div class="row">
+                            <div class="col-md-8">
                                 {{#if sourced}}
-                                <span class="regulation none" data-toggle="tooltip" data-placement="top" title="This material has no associated licenses"><i class="fa fa-question-circle" aria-hidden="true"></i> Unlicensed</span>
+                                {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors ({{#authors}}<li class="game-tag">{{#if username}}{{username}}{{else}}Ghost{{/if}}</li>{{/authors}}) before using {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
                                 {{else}}
-                                {{#if commercial}}
-                                <span class="regulation" data-toggle="tooltip" data-placement="top" title="Allows use in commercialised environments (eg. servers with donations)"><i class="fa fa-check-circle" aria-hidden="true"></i> Commercial Use</span>
-                                {{else}}
-                                <span class="regulation deny" data-toggle="tooltip" data-placement="top" title="Material must not be used in commercialised environments (eg. servers with donations)"><i class="fa fa-times-circle" aria-hidden="true"></i> Commercial Use</span>
+                                {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} has been provided to ResourcePile under the <a href="https://creativecommons.org/licenses/by{{#unless commercial}}-nc{{/unless}}-sa/4.0/" target="_blank">Creative Commons Attribution{{#unless commercial}}-NonCommercial{{/unless}}-ShareAlike 4.0</a> (CC BY{{#unless commercial}}-NC{{/unless}}-SA) license. This license is applicable to all files and documents in the download, and can be summarized as the following:
                                 {{/if}}
-                                <span class="regulation" data-toggle="tooltip" data-placement="top" title="Allows remixing and modification of the original source material"><i class="fa fa-check-circle" aria-hidden="true"></i> Modification</span>
-                                <span class="regulation" data-toggle="tooltip" data-placement="top" title="Allows re-distribution of the original or modified source material"><i class="fa fa-check-circle" aria-hidden="true"></i> Distribution</span>
-                                {{/if}}
+                                <div class="row map-regulations">
+                                    <div class="col-xs-12 col-md-6 regulation-group allow">
+                                        <h6>Permissions</h6>
+                                        {{#if sourced}}
+                                        <span class="regulation none" data-toggle="tooltip" data-placement="top" title="This material has no associated licenses"><i class="fa fa-question-circle" aria-hidden="true"></i> Unlicensed</span>
+                                        {{else}}
+                                        {{#if commercial}}
+                                        <span class="regulation" data-toggle="tooltip" data-placement="top" title="Allows use in commercialised environments (eg. servers with donations)"><i class="fa fa-check-circle" aria-hidden="true"></i> Commercial Use</span>
+                                        {{else}}
+                                        <span class="regulation deny" data-toggle="tooltip" data-placement="top" title="Material must not be used in commercialised environments (eg. servers with donations)"><i class="fa fa-times-circle" aria-hidden="true"></i> Commercial Use</span>
+                                        {{/if}}
+                                        <span class="regulation" data-toggle="tooltip" data-placement="top" title="Allows remixing and modification of the original source material"><i class="fa fa-check-circle" aria-hidden="true"></i> Modification</span>
+                                        <span class="regulation" data-toggle="tooltip" data-placement="top" title="Allows re-distribution of the original or modified source material"><i class="fa fa-check-circle" aria-hidden="true"></i> Distribution</span>
+                                        {{/if}}
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 regulation-group conditions">
+                                        <h6>Conditions</h6>
+                                        {{#if sourced}}
+                                        <span class="regulation none" data-toggle="tooltip" data-placement="top" title="This material has no associated licenses"><i class="fa fa-question-circle" aria-hidden="true"></i> Unlicensed</span>
+                                        {{else}}
+                                        {{#unless commercial}}
+                                        <span class="regulation" data-toggle="tooltip" data-placement="top" title="Material must not be used in commercialised environments (eg. servers with donations)"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Noncommercial Use</span>
+                                        {{/unless}}
+                                        <span class="regulation" data-toggle="tooltip" data-placement="top" title="Material must have appropriate and clear credit to the original creators"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Attribution</span>
+                                        <span class="regulation" data-toggle="tooltip" data-placement="top" title="Material must be distributed under the same license (CC BY{{#unless commercial}}-NC{{/unless}}-SA)"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Share-Alike</span>
+                                        <span class="regulation" data-toggle="tooltip" data-placement="top" title="Click here for full license details"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by{{#unless commercial}}-nc{{/unless}}-sa/4.0/legalcode" target="_blank">Full license notice</a></span>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                                <div class="modal-section-head">Details</div>
+                                You will be downloading the version of {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}} {{#if (lookup @root.settings.maps.environments environment)}}{{#with (lookup @root.settings.maps.environments environment)}}{{{this.message}}}{{/with}}{{else}}{{#with (lookup @root.settings.maps.environments @root.settings.maps.default_environment)}}{{{this.message}}}{{/with}}{{/if}} {{#if cardinal}}Additionally, this map is also compatible with a Cardinal server environment.{{/if}}
                             </div>
-                            <div class="col-xs-12 col-md-6 regulation-group conditions">
-                                <h6>Conditions</h6>
-                                {{#if sourced}}
-                                <span class="regulation none" data-toggle="tooltip" data-placement="top" title="This material has no associated licenses"><i class="fa fa-question-circle" aria-hidden="true"></i> Unlicensed</span>
-                                {{else}}
-                                {{#unless commercial}}
-                                <span class="regulation" data-toggle="tooltip" data-placement="top" title="Material must not be used in commercialised environments (eg. servers with donations)"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Noncommercial Use</span>
-                                {{/unless}}
-                                <span class="regulation" data-toggle="tooltip" data-placement="top" title="Material must have appropriate and clear credit to the original creators"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Attribution</span>
-                                <span class="regulation" data-toggle="tooltip" data-placement="top" title="Material must be distributed under the same license (CC BY{{#unless commercial}}-NC{{/unless}}-SA)"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Share-Alike</span>
-                                <span class="regulation" data-toggle="tooltip" data-placement="top" title="Click here for full license details"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by{{#unless commercial}}-nc{{/unless}}-sa/4.0/legalcode" target="_blank">License notice</a></span>
-                                {{/if}}
+                            <div class="col-md-4">
+                                <div class="modal-section-head">Tags</div>
+                                <div class="modal-section-body">
+                                    {{#each tags}}
+                                    <span class="label label-info">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>
+                                    {{/each}}
+                                    {{#if contest}}<span class="label label-info">Contest Submission</span>{{/if}}
+                                    {{#inArray @root.data.new slug}}<span class="label label-primary">New</span>{{/inArray}}
+                                    {{#inArray @root.data.popular slug}}<span class="label label-danger">Popular</span>{{/inArray}}
+                                    {{#if sourced}}
+                                    <span class="label label-default">Unlicensed</span>
+                                    {{else}}
+                                    {{#if commercial}}
+                                    <span class="label label-success">Commercial</span>
+                                    {{else}}
+                                    <span class="label label-warning">Noncommercial</span>
+                                    {{/if}}
+                                    {{/if}}
+                                    <span class="label label-primary">{{#if (lookup @root.settings.maps.environments environment)}}{{#with (lookup @root.settings.maps.environments environment)}}{{{this.label}}}{{/with}}{{else}}{{#with (lookup @root.settings.maps.environments @root.settings.maps.default_environment)}}{{{this.label}}}{{/with}}{{/if}}</span>
+                                    {{#if cardinal}}<span class="label label-primary">Cardinal</span>{{/if}}
+                                </div>
+                                <div class="modal-section-head">Downloads</div>
+                                <div class="modal-section-body">
+                                    <div class="stat"><span class="stat-downloads-total" data-map="{{name}}">0</span> total</div>
+                                    <div class="stat"><span class="stat-downloads-unique" data-map="{{name}}">0</span> unique</div>
+                                    <div class="stat"><span class="stat-downloads-recent" data-map="{{name}}">0</span> last 30 days</div>
+                                </div>
                             </div>
-                            <a href="https://creativecommons.org/licenses/by{{#unless commercial}}-nc{{/unless}}-sa/4.0/legalcode" target="_blank">
-                                <img src="https://i1.wp.com/mirrors.creativecommons.org/presskit/buttons/88x31/png/by{{#unless commercial}}-nc{{/unless}}-sa.png?resize=85%2C30">
-                            </a>
                         </div>
-                        You will be downloading the version of {{#if name}}{{name}}{{else}}Untitiled Map{{/if}} that has been provided to ResourcePile, not the original. {{#if cardinal}}This map has been tested and works on a Cardinal server. <i>Edits may have been made to the map for it to work as expected.</i>{{/if}} {{#if discussion}}If you would prefer to download this map from the original location, please visit the map's <a href="{{discussion}}" target="_blank">discussion thread</a>.{{/if}}
-                        <div class="alert alert-info alert-sm map-download-tip" role="alert">
-                            {{#if (lookup @root.settings.maps.environments environment)}}
-                                {{#with (lookup @root.settings.maps.environments environment)}}
-                                    {{{this.message}}}
-                                {{/with}}
-                            {{else}}
-                                {{#with (lookup @root.settings.maps.environments @root.settings.maps.default_environment)}}
-                                    {{{this.message}}}
-                                {{/with}}
-                            {{/if}}
-                        </div>
-                        <div class="auth-disabled alert alert-danger alert-sm" role="alert" style="margin-top: 24px;">Your download is not authenticated. Consider <a href="/admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
                     </div>
                     <div class="modal-footer">
                         <div class="map-download-pending">
@@ -212,21 +210,16 @@
                                 <div id="compile-progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
-                        {{#if sourced}}
-                        {{#is sourced true}}
+                        <button type="button" id="{{name}}" slug="{{slug}}" path="https://github.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/tree/master/maps/{{slug}}" license="{{#if sourced}}none{{else}}{{#unless commercial}}noncommercial{{else}}commercial{{/unless}}{{/if}}" class="btn map-link click-download">Download</button>
                         {{#if discussion}}
                         <a type="button" id="{{name}}" slug="{{slug}}" href="{{discussion}}" target="_blank" class="btn map-link click-download-external">Original Download</a>
                         {{else}}
-                        <button type="button" class="btn disabled map-link click-download-external" data-toggle="tooltip" data-placement="top" title="Original download is not available for this map">Original Download</button>
-                        {{/if}}
+                        {{#if sourced}}
+                        {{#is sourced true}}
                         {{else}}
                         <a type="button" id="{{name}}" slug="{{slug}}" href="{{sourced}}" target="_blank" class="btn map-link click-download-external">Original Download</a>
                         {{/is}}
                         {{/if}}
-                        {{#if download}}
-                        <button type="button" id="{{name}}" slug="{{slug}}" path="https://github.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/tree/master/maps/{{slug}}" license="{{#if sourced}}none{{else}}{{#unless commercial}}noncommercial{{else}}commercial{{/unless}}{{/if}}" class="btn map-link click-download">Download</button>
-                        {{else}}
-                        <button type="button" class="btn disabled map-link" data-toggle="tooltip" data-placement="top" title="Download is not available for this map">Download</button>
                         {{/if}}
                         <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
                     </div>
