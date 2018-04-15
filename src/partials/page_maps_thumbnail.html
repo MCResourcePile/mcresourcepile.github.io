@@ -185,11 +185,13 @@
                                     <span class="label label-primary">{{#if (lookup @root.settings.maps.environments environment)}}{{#with (lookup @root.settings.maps.environments environment)}}{{{this.label}}}{{/with}}{{else}}{{#with (lookup @root.settings.maps.environments @root.settings.maps.default_environment)}}{{{this.label}}}{{/with}}{{/if}}</span>
                                     {{#if cardinal}}<span class="label label-primary">Cardinal</span>{{/if}}
                                 </div>
-                                <div class="modal-section-head">Downloads</div>
-                                <div class="modal-section-body">
-                                    <div class="stat"><span class="stat-downloads-total" data-map="{{name}}">0</span> total</div>
-                                    <div class="stat"><span class="stat-downloads-unique" data-map="{{name}}">0</span> unique</div>
-                                    <div class="stat"><span class="stat-downloads-recent" data-map="{{name}}">0</span> last 30 days</div>
+                                <div class="map-download-stats" style="display:none">
+                                    <div class="modal-section-head">Downloads</div>
+                                    <div class="modal-section-body">
+                                        <div class="stat"><span class="stat-downloads-total" data-map="{{name}}">0</span> total</div>
+                                        <div class="stat"><span class="stat-downloads-unique" data-map="{{name}}">0</span> unique</div>
+                                        <div class="stat"><span class="stat-downloads-recent" data-map="{{name}}">0</span> last 30 days</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
