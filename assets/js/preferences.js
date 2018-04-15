@@ -31,10 +31,7 @@ function applySettings() {
         }
         // show google analytic download stats on map collections
         if (user_settings.map_stats == 'true' && is_maps_collection) {
-            if (user_settings.hide_images == 'true') {
-                $('.map-dropdown').show();
-                $('.map-download-stats').addClass('disabled');
-            }
+            $('.map-download-stats').show();
             fetchGlobalDownloads();
             fetchUniqueDownloads();
             fetchRecentDownloads();

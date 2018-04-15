@@ -45,6 +45,7 @@ function fetchRecentDownloads() {
     });
 }
 
+/*
 $(document).ready(function() {
     // hover stats display
     $('.map-float').hover(function() {
@@ -69,4 +70,4 @@ $(document).ready(function() {
             )
         }
     });
-});
+});*/
