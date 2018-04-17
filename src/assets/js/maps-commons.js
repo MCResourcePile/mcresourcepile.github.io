@@ -29,6 +29,7 @@ $(document).ready(function(){
         startDownload(active_name, active_slug, active_path, active_license);
     });
 
+    // open external download modal when original download button clicked
     $('.click-download-external:not(.disabled)').click(function() {
         var active_slug = $(this).attr('slug');
         $('#download-' + active_slug).modal('hide');
@@ -57,6 +58,15 @@ $(document).ready(function(){
     // update map listing in time with search bar interactions
     $('.record-search-container').click(function() { updateListing() });
     $('.record-search-container').keyup(function() { updateListing() });
+    
+    // load author avatars when download modal is first opened
+    $('.modal.download').on('show.bs.modal', function (e) {
+        avatars = $(this).children().find('.map-author-avatar');
+        for (i = 0; i < avatars.length; i++) {
+            source = $(avatars[i]).data('src');
+            $(avatars[i]).attr('src', source);
+        }
+    });
 });
 
 // license definitions

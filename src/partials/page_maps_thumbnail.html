@@ -107,7 +107,7 @@
             {{/if}}
             <a id="{{name}}" href="https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="{{name}}" class="fa fa-file-image-o"></i></a>
         </div>
-        <div class="modal fade" id="download-{{slug}}" tabindex="-1" role="dialog">
+        <div class="modal fade download" id="download-{{slug}}" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header center">
@@ -116,10 +116,10 @@
                             <span class="map-author-name">created by</span>
                             {{#if authors}}
                             {{#authors}}
-                            <li class="game-tag">{{#if username}}<img src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&overlay" style="border-radius:3px"> <a class="map-author-name" href="?s={{uuid}}">{{username}}</a>{{else}}<img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/if}}</li>
+                            <li class="game-tag">{{#if username}}<img class="map-author-avatar" data-src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&overlay"> <a class="map-author-name" href="?s={{uuid}}">{{username}}</a>{{else}}<img class="map-author-avatar" data-src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/if}}</li>
                             {{/authors}}
                             {{else}}
-                            <img class="map-author-avatar" src="https://crafatar.com/avatars/MHF_Question?size=16&overlay"> <span class="map-author-name">Ghost</span>
+                            <img class="map-author-avatar" data-src="https://crafatar.com/avatars/MHF_Question?size=16&overlay"> <span class="map-author-name">Ghost</span>
                             {{/if}}
                         </div>
                     </div>
