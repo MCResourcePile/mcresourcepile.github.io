@@ -1,8 +1,8 @@
 {{> navigation_header}}
-<div style="text-align:center">
-    <div class="container splash-header-body" id="wrapper-header">
-        <div class="splash-header"></div>
-        <img src="https://crafatar.com/avatars/3b20136c-93ac-4edb-aa64-0412a61a7dcc?size=130">
+<div class="background-splash-wash" style="text-align:center">
+    <div class="container splash-header-body">
+        <div class="splash-header">ReinTeder says:</div>
+        <div class="splash-subheader"></div>
     </div>
 </div>
 <script type="text/javascript">
@@ -223,7 +223,6 @@
           "A gossip betrays a confidence, but a trustworthy person keeps a secret.",
           "You will never be younger then you are today."
     ]
-    $('.splash-header').text(splash_quotes[Math.floor(Math.random()*splash_quotes.length)]);
+    $('.splash-subheader').text(splash_quotes[Math.floor(Math.random()*splash_quotes.length)]);
 </script>
-</body>
-</html>
+{{> navigation_footer}}
