@@ -1,7 +1,6 @@
 <div class="col-sm-6 col-lg-3 map-thumbnail center">
     <div id="{{slug}}" class="thumbnail map-float{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}{{#inArray @root.page-category 'contest'}}{{#is position '1'}} map-glow-contest-first{{/is}}{{#is position '2'}} map-glow-contest-second{{/is}}{{#is position '3'}} map-glow-contest-third{{/is}}{{/inArray}}">
         <div class="map-image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{snakecase (lowercase @root.title)}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/inArray}}">
-
             <div class="map-banner">
                 <a class="map-header" {{#inArray @root.page-category 'maps'}}href="https://mcresourcepile.github.io/maps/{{@root.settings.maps.group}}?s={{slug}}"{{/inArray}} data-toggle="tooltip" data-placement="top" title="{{name}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong><span class="tag_hidden">{{slug}}</span></a>
                 {{#if (lookup @root.settings.maps.environments environment)}}

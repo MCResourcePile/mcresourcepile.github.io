@@ -467,27 +467,58 @@ span.game-mode-button {
     color: #898989;
 }
 
-.map-float {
+.map-thumbnail {
     float: none;
     display: inline-block;
     width: 270px;
+	height: 300px;
     text-align: left;
     margin-left: -6px;
 }
 
-.map-game-mode {
-    font-size: 12px;
-    color: #898989;
-    display: inline;
-    padding: 0px;
-}
-
-.map-image {
+.map-thumbnail-header .image {
     width: 260px;
     height: 218px;
     margin: 0;
     background-color: #525252;
-    background-size: 260px 218px;
+}
+
+.map-thumbnail-header .banner {
+    position: absolute;
+    top: 0px;
+    width: 260px;
+    height: 40px;
+    padding: 4px;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.map-thumbnail-header .banner .title {
+	color: #1c1c1c;
+}
+
+.map-thumbnail-header .banner .sub-title {
+    margin-top: -4px;
+	font-size: 9px;
+}
+
+.map-thumbnail-header .banner .icon-alerts {
+	position: absolute;
+    top: 14px;
+    right: 4px;
+    font-size: 10px;
+}
+
+.map-thumbnail-header .banner .icon-alerts a {
+    padding-right: 4px;
+    color: #767676;
+}
+
+.map-thumbnail-header .labels {
+    display: inline-block;
+}
+
+.map-image-error {
+    background-image: url(../assets/img/404.png);
 }
 
 .map-header,
@@ -522,6 +553,8 @@ span.game-mode-button {
 
 .map-banner,
 .map-banner-collapse-immune {
+    position: absolute;
+    width: 260px;
     height: 40px;
     background-color: rgba(255,255,255,0.7);
     padding-left: 6px;
