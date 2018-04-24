@@ -1,0 +1,114 @@
+{{> navigation_header}}
+<div class="row">
+    <div class="col-sm-12 col-md-10">
+        <p>Cards are used for portal index pages that link to other pages in a category or collection. These pages have no other content or purpose to them. Pages using cards <strong>must</strong> include the <code>/assets/css/index.css</code> stylesheet.</p>
+        
+        <p>Please note that the last property of any root, object, or array property <strong>must not</strong> be followed by a comma. This will cause our JSON validator to throw red flags and will cause the automatic builds to fail.</p>
+        <div class="table-responsive">
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Name</th>
+                        <th width="50%">Description</th>
+                        <th width="10%">Value</th>
+                        <th width="10%">Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"cards": []</code></td>
+                        <td>Defines each of the cards to display <a href="#cards" class="fa fa-chevron-down"></a></td>
+                        <td><span class="label label-default">Array</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--
+        ##
+        ## Cards
+        ##
+        -->
+        <h4 id="cards">Cards Objects</h4>
+        <p></p>
+        <div class="table-responsive">
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Name</th>
+                        <th width="50%">Description</th>
+                        <th width="10%">Value</th>
+                        <th width="10%">Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"header":</code></td>
+                        <td>The title to display on the card</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"description":</code></td>
+                        <td>A description of the card and its location</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"url":</code></td>
+                        <td>The url or page name which the card will link to</td>
+                        <td><span class="label label-primary">URL</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"icon":</code></td>
+                        <td>The FontAwsome icon to display -- the icon <code>fa-cubes</code> would be entered as <code>cubes</code> for example</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td><code>asterisk</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>"color":</code></td>
+                        <td>The color of the card -- can be <code>red</code>, <code>blue</code>, or left blank for the default</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td><code>"light":</code></td>
+                        <td>Use a lightened variant of the selected color (does not work if no color specified)</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td><code>false</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h6>Example</h6>
+        <pre>"cards": [
+    {
+        "header": "Overcast Collection",
+        "description": "Publicly downloadable maps from the former Overcast Network map repository",
+        "url": "overcast",
+        "icon": "cube",
+        "color": "red"
+    }
+]</pre>
+    </div>
+    <div class="col-sm-12 col-md-2">
+        <ul id="drilldown" class="nav nav-pills nav-stacked sidenav">
+            <li>General</li>
+            <li><a href="index">Main Structure</a></li>
+            <li><a href="tags">Tags</a></li>
+            <li>Sections</li>
+            <li><a href="maps">Maps</a></li>
+            <li><a href="contests">Contests</a></li>
+            <li><a href="tournaments">Tournaments</a></li>
+            <li><span href="statistics">Statistics</span></li>
+            <li><a href="bow">Bow Records</a></li>
+            <li>Pages</li>
+            <li class="active"><a href="cards">Cards (portal pages)</a></li>
+            <li><a href="updates">Updates</a></li>
+            <li><span href="staff">Staff</span></li>
+            <li><a href="revisions">Revisions</a></li>
+        </ul>
+    </div>
+</div>
+{{> navigation_footer}}

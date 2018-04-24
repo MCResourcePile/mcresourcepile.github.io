@@ -1,0 +1,141 @@
+{{> navigation_header}}
+<div class="row">
+    <div class="col-sm-12 col-md-10">
+        <!--
+        ##
+        ## Settings
+        ##
+        -->
+        <h4 id="data">Settings</h4>
+        <p>Revision displays are defined in the page settings. All revision pages <strong>must</strong> include the <code>/assets/js/github.commits.widget.js</code> and <code>/assets/js/names.js</code> scripts in order to be functional. Revisions display the lastest commits made to a specific branch in a specified repository. Pages can also display multiple repositories and branches at once.</p>
+        
+        <p>Please note that the last property of any root, object, or array property <strong>must not</strong> be followed by a comma. This will cause our JSON validator to throw red flags and will cause the automatic builds to fail.</p>
+        <div class="table-responsive">
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Name</th>
+                        <th width="50%">Description</th>
+                        <th width="10%">Value</th>
+                        <th width="10%">Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"revisions": {}</code></td>
+                        <td>Holds different sets of data to control revision displays</td>
+                        <td><span class="label label-default">Object</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h5>Revisions Sub-properties</h5>
+        <div class="table-responsive">
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Name</th>
+                        <th width="50%">Description</th>
+                        <th width="10%">Value</th>
+                        <th width="10%">Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"last":</code></td>
+                        <td>The amount of most recent commits to display</td>
+                        <td><span class="label label-primary">Integer</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"characters":</code></td>
+                        <td>The amount of characters to display in the primary commit message before it gets truncated</td>
+                        <td><span class="label label-primary">Integer</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"repositories": []</code></td>
+                        <td>Defines each of the repositories to display <a href="#repositories" class="fa fa-chevron-down"></a></td>
+                        <td><span class="label label-default">Array</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h6>Example</h6>
+        <pre>"settings": {
+    "revisions": {
+        "last": 20,
+        "characters": 1000,
+        "repositories": [ ... ]
+    }
+}</pre>
+        <!--
+        ##
+        ## Repositories
+        ##
+        -->
+        <h4 id="repositories">Repositories Objects</h4>
+        <p></p>
+        <div class="table-responsive">
+            <table class="table doc-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Name</th>
+                        <th width="50%">Description</th>
+                        <th width="10%">Value</th>
+                        <th width="10%">Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>"user":</code></td>
+                        <td>The repository owner's GitHub username</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"repo":</code></td>
+                        <td>The repository name to display</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>"branch":</code></td>
+                        <td>The specific branch of the repository to display</td>
+                        <td><span class="label label-primary">String</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h6>Example</h6>
+        <pre>{
+    "repositories": [
+        {"user": "MCResourcePile", "repo": "overcast-maps-a-to-f", "branch": "master"},
+        {"user": "MCResourcePile", "repo": "overcast-maps-g-to-n", "branch": "master"},
+        {"user": "MCResourcePile", "repo": "overcast-maps-o-to-z", "branch": "master"}
+    ]
+}</pre>
+    </div>
+    <div class="col-sm-12 col-md-2">
+        <ul id="drilldown" class="nav nav-pills nav-stacked sidenav">
+            <li>General</li>
+            <li><a href="index">Main Structure</a></li>
+            <li><a href="tags">Tags</a></li>
+            <li>Sections</li>
+            <li><a href="maps">Maps</a></li>
+            <li><a href="contests">Contests</a></li>
+            <li><a href="tournaments">Tournaments</a></li>
+            <li><span href="statistics">Statistics</span></li>
+            <li><a href="bow">Bow Records</a></li>
+            <li>Pages</li>
+            <li><a href="cards">Cards (portal pages)</a></li>
+            <li><a href="updates">Updates</a></li>
+            <li><span href="staff">Staff</span></li>
+            <li class="active"><a href="revisions">Revisions</a></li>
+        </ul>
+    </div>
+</div>
+{{> navigation_footer}}
