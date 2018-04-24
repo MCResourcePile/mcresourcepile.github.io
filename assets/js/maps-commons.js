@@ -41,6 +41,11 @@ $(document).ready(function(){
         var requested_map = getUrlVars()['dl'];
         if ($('#download-' + requested_map).length == 1) {
             $('#download-' + requested_map).modal('show');
+            avatars = $('#download-' + requested_map).children().find('.map-author-avatar');
+            for (i = 0; i < avatars.length; i++) {
+                source = $(avatars[i]).data('src');
+                $(avatars[i]).attr('src', source);
+            }
         } else {
             onError('The requested map does not exist in this collection.');
         }
