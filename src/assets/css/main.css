@@ -491,6 +491,13 @@ span.game-mode-button {
     background-color: rgba(255,255,255,0.7);
 }
 
+.map-thumbnail-header .banner .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 195px;
+}
+
 .map-thumbnail-header .banner .title a {
 	color: #1c1c1c !important;
     font-weight: 600;
@@ -534,6 +541,48 @@ span.game-mode-button {
 
 .map-thumbnail-body .buttons {
 	margin-top: 2px;
+}
+
+.contest-winners .map-thumbnail {
+    margin-left: 64px;
+    margin-right: 64px;
+}
+
+.contest-winners .map-thumbnail.small {
+    width: 230px;
+}
+
+.contest-winners .map-thumbnail.small .map-thumbnail-header .image {
+    width: 220px;
+    height: 184px;
+    margin: 0;
+    background-color: #525252;
+}
+
+.contest-winners .map-thumbnail .map-thumbnail-header .title {
+    max-width: 270px;
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.contest-winners .map-thumbnail .map-thumbnail-header .labels {
+    font-size: 16px;
+}
+
+.contest-winners .map-thumbnail .map-thumbnail-header .labels {
+    top: 198px;
+}
+
+.contest-winners .map-thumbnail.small .map-thumbnail-header .labels {
+    top: 164px;
+}
+
+
+@media screen and (max-width: 400px) {
+    .contest-winners .map-thumbnail {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }
 
 .map-image-error {

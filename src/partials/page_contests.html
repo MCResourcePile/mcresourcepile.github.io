@@ -9,54 +9,56 @@
 </div>
 
 <!-- Contest winners -->
-<div class="league-results row center">
+<div class="contest-winners center">
     {{#if submissions}}
-    <div class="col-sm-1"></div>
     {{#submissions}}
     {{#is position '2'}}
-    <div class="map-thumbnail-small col-sm-2">
-        <div class="thumbnail map-float map-float-small">
-            <div class="map-image map-image-small" style="background-image: url('../../assets/img/contest/{{@root.id}}/maps/{{slug}}.png');">
-                <div class="map-banner-collapse-immune map-banner-small">
-                    <a class="map-header" href="https://mcresourcepile.github.io/maps/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{#if name}}{{name}}{{else}}Untitled Map{{/if}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
-                </div>
-                <div class="map-labels-collapse-immune center" style="top:148px;font-size:20px;">
-                    <div class="label map-label-contest-second map-label"><span class="fa fa-star"></span> 2nd</div>
-                </div>
+    <div class="col-sm-4 thumbnail map-thumbnail small">
+        <div class="map-thumbnail-header">
+            <img class="image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{snakecase (lowercase @root.title)}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/inArray}}">
+            <div class="banner" data-toggle="tooltip" data-placement="top" title="{{name}}">
+                <div class="title"><a{{#inArray @root.page-category 'maps'}} href="https://mcresourcepile.github.io/maps/{{@root.settings.maps.group}}?s={{slug}}"{{/inArray}}>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</a></div>
             </div>
-            <div class="map-authors">
-                <span class="map-author-name">by</span>
+            <div class="labels">
+                <div class="label map-label-contest-second"><span class="fa fa-star"></span> 2nd</div>
+            </div>
+        </div>
+        <div class="map-thumbnail-body">
+            <div class="authors">
+                by
                 {{#if authors}}
                 {{#authors}}
-                <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="/maps/{{@root.settings.maps.group}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+                <li class="game-tag author-tag">{{#if username}}<a href="{{#inArray @root.page-category 'contest'}}/maps/{{@root.settings.maps.group}}{{/inArray}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{formatUUID uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
                 {{/authors}}
-                {{else}}<span class="map-author-name">Ghost</span>
+                {{else}}
+                <span class="map-author-name">Ghost</span>
                 {{/if}}
             </div>
         </div>
     </div>
     {{/is}}
     {{/submissions}}
-    <div class="col-sm-1"></div>
     {{#submissions}}
     {{#is position '1'}}
-    <div class="col-sm-4">
-        <div class="thumbnail map-float">
-            <div class="map-image" style="background-image: url('../../assets/img/contest/{{@root.id}}/maps/{{slug}}.png');">
-                <div class="map-banner-collapse-immune map-banner-small">
-                    <a class="map-header" href="https://mcresourcepile.github.io/maps/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{#if name}}{{name}}{{else}}Untitled Map{{/if}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
-                </div>
-                <div class="map-labels-collapse-immune center" style="top:155px;">
-                    <div class="label map-label-contest-first map-label map-label-header"><span class="fa fa-trophy"></span> 1st</div>
-                </div>
+    <div class="col-sm-4 thumbnail map-thumbnail">
+        <div class="map-thumbnail-header">
+            <img class="image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{snakecase (lowercase @root.title)}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/inArray}}">
+            <div class="banner" data-toggle="tooltip" data-placement="top" title="{{name}}">
+                <div class="title"><a{{#inArray @root.page-category 'maps'}} href="https://mcresourcepile.github.io/maps/{{@root.settings.maps.group}}?s={{slug}}"{{/inArray}}>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</a></div>
             </div>
-            <div class="map-authors">
-                <span class="map-author-name">by</span>
+            <div class="labels">
+                <div class="label map-label-contest-first"><span class="fa fa-trophy"></span> 1st</div>
+            </div>
+        </div>
+        <div class="map-thumbnail-body">
+            <div class="authors">
+                by
                 {{#if authors}}
                 {{#authors}}
-                <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="/maps/{{@root.settings.maps.group}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+                <li class="game-tag author-tag">{{#if username}}<a href="{{#inArray @root.page-category 'contest'}}/maps/{{@root.settings.maps.group}}{{/inArray}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{formatUUID uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
                 {{/authors}}
-                {{else}}<span class="map-author-name">Ghost</span>
+                {{else}}
+                <span class="map-author-name">Ghost</span>
                 {{/if}}
             </div>
         </div>
@@ -65,30 +67,31 @@
     {{/submissions}}
     {{#submissions}}
     {{#is position '3'}}
-    <div class="map-thumbnail-small col-sm-3">
-        <div class="thumbnail map-float map-float-small">
-            <div class="map-image map-image-small" style="background-image: url('../../assets/img/contest/{{@root.id}}/maps/{{slug}}.png');">
-                <div class="map-banner-collapse-immune map-banner-small">
-                    <a class="map-header" href="https://mcresourcepile.github.io/maps/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}?s={{slug}}" data-toggle="tooltip" data-placement="top" title="{{#if name}}{{name}}{{else}}Untitled Map{{/if}}"><strong>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</strong></a>
-                </div>
-                <div class="map-labels-collapse-immune center" style="top:148px;font-size:20px;">
-                    <div class="label map-label-contest-third map-label"><span class="fa fa-star"></span> 3rd</div>
-                </div>
+    <div class="col-sm-4 thumbnail map-thumbnail small">
+        <div class="map-thumbnail-header">
+            <img class="image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{snakecase (lowercase @root.title)}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/inArray}}">
+            <div class="banner" data-toggle="tooltip" data-placement="top" title="{{name}}">
+                <div class="title"><a{{#inArray @root.page-category 'maps'}} href="https://mcresourcepile.github.io/maps/{{@root.settings.maps.group}}?s={{slug}}"{{/inArray}}>{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</a></div>
             </div>
-            <div class="map-authors">
-                <span class="map-author-name">by</span>
+            <div class="labels">
+                <div class="label map-label-contest-third"><span class="fa fa-star"></span> 3rd</div>
+            </div>
+        </div>
+        <div class="map-thumbnail-body">
+            <div class="authors">
+                by
                 {{#if authors}}
                 {{#authors}}
-                <li class="game-tag author-tag">{{#if username}}<a class="map-author-name" href="/maps/{{@root.settings.maps.group}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+                <li class="game-tag author-tag">{{#if username}}<a href="{{#inArray @root.page-category 'contest'}}/maps/{{@root.settings.maps.group}}{{/inArray}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{formatUUID uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
                 {{/authors}}
-                {{else}}<span class="map-author-name">Ghost</span>
+                {{else}}
+                <span class="map-author-name">Ghost</span>
                 {{/if}}
             </div>
         </div>
     </div>
     {{/is}}
     {{/submissions}}
-    <div class="col-sm-1"></div>
     {{else}}
     <div class="col-md-3"></div>
     <div class="well well-custom-red col-md-6 col-sm-12 h3">
