@@ -1,0 +1,9 @@
+{{#scores}}
+{{#if score}}
+<div class="map-scores">
+    <div class="progress" data-toggle="tooltip" data-placement="top" title="{{properties @root.criteria this.criteria 'label'}} ({{score}} / {{properties @root.criteria this.criteria 'max'}})">
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{score}}" aria-valuemin="0" aria-valuemax="{{properties @root.criteria this.criteria 'max'}}">{{properties @root.criteria this.criteria 'label'}} ({{score}} / {{properties @root.criteria this.criteria 'max'}})</div>
+    </div>
+</div>
+{{/if}}
+{{/scores}}

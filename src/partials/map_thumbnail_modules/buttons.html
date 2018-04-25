@@ -1,0 +1,13 @@
+<div class="buttons">
+    {{#if locked}}
+    <span class="btn map-link-private map-button-span" role="button" data-toggle="tooltip" data-placement="top" title="This map has been locked"><i class="fa fa-lock"></i></span>
+    {{else}}
+    <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-{{slug}}"><i class="fa fa-download"></i></a>
+    {{#unless xml}}
+    <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
+    {{else}}
+    <a id="{{name}}" href="https://github.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/raw/master/maps/{{slug}}/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" {{#if (lookup @root.settings.maps.environments environment)}}{{#with (lookup @root.settings.maps.environments environment)}}{{#if this.prompt}}data-toggle="tooltip" data-placement="top" title="{{this.prompt}}"{{/if}}{{/with}}{{/if}}><i id="{{name}}" class="fa fa-code click-xml"></i></a>
+    {{/unless}}
+    {{/if}}
+    <a id="{{name}}" href="https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="{{name}}" class="fa fa-file-image-o"></i></a>
+</div>
