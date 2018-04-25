@@ -27,10 +27,9 @@ function applySettings() {
             var myLazyLoad = new LazyLoad({
                 elements_selector: '.lazy',
                 threshold: 50,
-                class_error: '.map-image-error',
-                callback_loaded: function(element) {
-                    output('Loaded!')
-                }
+                callback_error: function(element) {
+                    $(element).attr('src', '../assets/img/404.png');
+                },
             });
         }
         // show google analytic download stats on map collections
