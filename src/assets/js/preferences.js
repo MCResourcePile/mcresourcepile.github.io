@@ -28,10 +28,6 @@ function applySettings() {
                 elements_selector: '.lazy',
                 threshold: 50,
                 class_error: '.map-image-error',
-                callback_error: function(element) {
-                    output('Missing map image');
-                    $(element).css({'background-image': 'url(../assets/img/404.png)'});
-                },
                 callback_loaded: function(element) {
                     output('Loaded!')
                 }
