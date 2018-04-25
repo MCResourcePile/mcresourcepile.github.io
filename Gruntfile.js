@@ -21,7 +21,7 @@ module.exports = function(grunt) {
                     dest: 'out/'
                 }],
                 helpers: ['handlebars-helpers', 'src/helpers/*.js'],
-                partials: ['src/posts/*.md', 'src/partials/*.html'],
+                partials: ['src/posts/*.md', 'src/partials/**/*.html'],
                 templateData: 'src/data/**/*.json',
                 globals: ['src/data/global.json']
             },

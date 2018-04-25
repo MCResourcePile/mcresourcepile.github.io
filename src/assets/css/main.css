@@ -471,9 +471,8 @@ span.game-mode-button {
     float: none;
     display: inline-block;
     width: 270px;
-	height: 300px;
+	/*height: 300px*/;
     text-align: left;
-    margin-left: -6px;
 }
 
 .map-thumbnail-header .image {
@@ -492,8 +491,9 @@ span.game-mode-button {
     background-color: rgba(255,255,255,0.7);
 }
 
-.map-thumbnail-header .banner .title {
-	color: #1c1c1c;
+.map-thumbnail-header .banner .title a {
+	color: #1c1c1c !important;
+    font-weight: 600;
 }
 
 .map-thumbnail-header .banner .sub-title {
@@ -514,7 +514,26 @@ span.game-mode-button {
 }
 
 .map-thumbnail-header .labels {
-    display: inline-block;
+    display: inline-flex;
+    position: absolute;
+    top: 202px;
+    left: 10px;
+}
+
+.map-thumbnail-header .labels a {
+    margin-right: 4px;
+}
+
+.map-thumbnail-body {
+	margin-top: 2px;
+}
+
+.map-thumbnail-body .authors {
+	text-align: center;
+}
+
+.map-thumbnail-body .buttons {
+	margin-top: 2px;
 }
 
 .map-image-error {
@@ -575,6 +594,7 @@ span.game-mode-button {
 .map-button {
     padding-left: 57px;
     padding-right: 57px;
+    box-shadow: none !important;
 }
 
 .map-button-sm {

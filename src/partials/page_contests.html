@@ -173,7 +173,7 @@
 {{#if submissions}}
 <!-- Contest submissions -->
 <div class="league-info-section large">Submissions <small>({{length submissions}} maps)</small></div>
-<div class="row">
+<div class="dynamic">
     {{#withSort submissions "name"}}
     {{> page_maps_thumbnail}}
     {{/withSort}}

@@ -101,8 +101,8 @@ function startDownload(active_name, active_slug, active_path, active_license) {
 
 function updateListing() {
     $('#maps-output .dynamic').searchable({
-        selector: 'div.map-thumbnail',
-        childSelector: '.map-float',
+        selector: '.map-thumbnail',
+        childSelector: '.map-thumbnail-selector',
         searchField: '#search'
     })
     var total_maps = $('.map-thumbnail').length
