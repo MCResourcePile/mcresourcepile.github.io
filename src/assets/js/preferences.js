@@ -26,7 +26,10 @@ function applySettings() {
         } else {
             var myLazyLoad = new LazyLoad({
                 elements_selector: '.lazy',
-                threshold: 50
+                threshold: 50,
+                callback_error: function(element) {
+                    $(element).attr('src', '../assets/img/404.png');
+                },
             });
         }
         // show google analytic download stats on map collections

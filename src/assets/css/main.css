@@ -467,39 +467,122 @@ span.game-mode-button {
     color: #898989;
 }
 
-.map-float {
+.map-thumbnail {
     float: none;
     display: inline-block;
     width: 270px;
+	/*height: 300px*/;
     text-align: left;
-    margin-left: -6px;
 }
 
-.map-game-mode {
-    font-size: 12px;
-    color: #898989;
-    display: inline;
-    padding: 0px;
-}
-
-.map-image {
+.map-thumbnail-header .image {
     width: 260px;
     height: 218px;
     margin: 0;
     background-color: #525252;
-    background-size: 260px 218px;
 }
 
-.map-header,
-.map-header:hover,
-.map-header:focus {
-    font-size: 14px;
-    color: #000;
-    display: inline-block;
+.map-thumbnail-header .banner {
+    position: absolute;
+    top: 0px;
+    width: 260px;
+    height: 40px;
+    padding: 4px;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.map-thumbnail-header .banner .title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 195px;
+}
+
+.map-thumbnail-header .banner .title a {
+	color: #1c1c1c !important;
+    font-weight: 600;
+}
+
+.map-thumbnail-header .banner .sub-title {
+    margin-top: -4px;
+	font-size: 9px;
+}
+
+.map-thumbnail-header .banner .icon-alerts {
+	position: absolute;
+    top: 14px;
+    right: 4px;
+    font-size: 10px;
+}
+
+.map-thumbnail-header .banner .icon-alerts a {
+    padding-right: 4px;
+    color: #767676;
+}
+
+.map-thumbnail-header .labels {
+    display: inline-flex;
+    position: absolute;
+    top: 202px;
+    left: 10px;
+}
+
+.map-thumbnail-header .labels a {
+    margin-right: 4px;
+}
+
+.map-thumbnail-body {
+	margin-top: 2px;
+}
+
+.map-thumbnail-body .authors {
+	text-align: center;
+}
+
+.map-thumbnail-body .buttons {
+	margin-top: 2px;
+}
+
+.contest-winners .map-thumbnail {
+    margin-left: 64px;
+    margin-right: 64px;
+}
+
+.contest-winners .map-thumbnail.small {
+    width: 230px;
+}
+
+.contest-winners .map-thumbnail.small .map-thumbnail-header .image {
+    width: 220px;
+    height: 184px;
+    margin: 0;
+    background-color: #525252;
+}
+
+.contest-winners .map-thumbnail .map-thumbnail-header .title {
+    max-width: 270px;
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.contest-winners .map-thumbnail .map-thumbnail-header .labels {
+    font-size: 16px;
+}
+
+.contest-winners .map-thumbnail .map-thumbnail-header .labels {
+    top: 198px;
+}
+
+.contest-winners .map-thumbnail.small .map-thumbnail-header .labels {
+    top: 164px;
+}
+
+
+@media screen and (max-width: 400px) {
+    .contest-winners .map-thumbnail {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }
 
 .map-tag,
@@ -509,39 +592,14 @@ span.game-mode-button {
     color: #393939;
 }
 
-.map-authors {
-    text-align: center;
-    padding-top: 4px;
-    color: #606060;
-    font-size: 13px;
-}
-
-.map-scores {
-    margin-top: 6px;
-}
-
-.map-banner,
-.map-banner-collapse-immune {
-    height: 40px;
-    background-color: rgba(255,255,255,0.7);
-    padding-left: 6px;
-    overflow: hidden;
-}
-
-.map-banner-unofficial {
-    background-color: rgba(255, 152, 152, 0.7);
-}
-
-.map-labels,
-.map-labels-collapse-immune {
-    position: relative;
-    top: 154px;
-    padding-left: 8px;
+.map-label-locked {
+    background-color: #8F1515;
 }
 
 .map-button {
     padding-left: 57px;
     padding-right: 57px;
+    box-shadow: none !important;
 }
 
 .map-button-sm {
@@ -552,10 +610,6 @@ span.game-mode-button {
 .map-button-span {
     padding-left: 126px;
     padding-right: 126px;
-}
-
-.map-label-locked {
-    background-color: #8F1515;
 }
 
 .map-link-private {
@@ -624,30 +678,6 @@ span.game-mode-button {
 .map-link-danger:active:hover {
     color: #ffffff;
     background-color: #913a3d
-}
-
-.map-author-name {
-    vertical-align: -1px;
-}
-
-.external-thread {
-    color: rgba(0, 0, 0, 0.55);
-    margin-top: 15px;
-    margin-right: 6px;
-}
-
-.external-thread-size {
-    font-size: 12px;
-}
-
-.map-label {
-    display: inline-block;
-    margin-top: 2px;
-    padding-bottom: 3px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 244px;
 }
 
 .total-maps {
@@ -740,28 +770,6 @@ span.game-mode-button {
     font-weight: 600;
     font-size: 16px;
     padding-right: 2px;
-}
-
-.map-thumbnail-small {
-    margin-top: 16px;
-}
-
-.map-float-small {
-    width: 250px;
-}
-
-.map-image-small {
-    width: 240px;
-    height: 203px;
-    background-size: 240px 203px;
-}
-
-.map-banner-small {
-    height: 24px;
-}
-
-.map-label-header {
-    font-size: 20px;
 }
 
 li.game-tag {
