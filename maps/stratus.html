@@ -174,30 +174,33 @@
 <div class="total-maps center">Loading maps collection...</div>
 <div id="maps-output">
     <div class="dynamic">
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="boat_blitz" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/boat_blitz/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=boat_blitz" data-toggle="tooltip" data-placement="top" title="Boat Blitz"><strong>Boat Blitz</strong><span class="tag_hidden">boat_blitz</span></a>
-                        <a href="/contests/stratus/mini_map_making_competition#boat_blitz" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="external-thread fa fa-map"></i></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/boat_blitz/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Boat Blitz">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=boat_blitz">Boat Blitz</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                            <a href="/contests/stratus/mini_map_making_competition#boat_blitz" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                    <div class="labels">
+                        <a href="?s=by-nc-sa" class="label label-warning" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=b3bf822a-4218-4f96-9110-278cad1ab848">Ensix<span class="tag_hidden">b3bf822a-4218-4f96-9110-278cad1ab848 b3bf822a42184f969110278cad1ab848</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-boat_blitz"><i class="fa fa-download"></i></button>
-                    <a id="Boat Blitz" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/boat_blitz/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Boat Blitz" class="fa fa-code click-xml"></i></a>
-                    <a id="Boat Blitz" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/boat_blitz/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Boat Blitz" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=b3bf822a-4218-4f96-9110-278cad1ab848">Ensix<span class="tag_hidden">b3bf822a-4218-4f96-9110-278cad1ab848 b3bf822a42184f969110278cad1ab848</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-boat_blitz"><i class="fa fa-download"></i></a>
+                        <a id="Boat Blitz" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/boat_blitz/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Boat Blitz" class="fa fa-code click-xml"></i></a>
+                        <a id="Boat Blitz" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/boat_blitz/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Boat Blitz" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-boat_blitz" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -239,9 +242,12 @@
                                             <span class="label label-info">Contest Submission</span>
                                             
                                             
+                                            
+                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">boat_blitz</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -257,9 +263,9 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br>
-                                        If you do not agree with these terms, click 'Close' <strong>now</strong>. 
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br>
+                                    If you do not agree with these terms, click 'Close' <strong>now</strong>. 
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -276,32 +282,35 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="christmasquad_te" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/christmasquad_te/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=christmasquad_te" data-toggle="tooltip" data-placement="top" title="ChristmasQuad: TE"><strong>ChristmasQuad: TE</strong><span class="tag_hidden">christmasquad_te</span></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/christmasquad_te/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="ChristmasQuad: TE">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=christmasquad_te">ChristmasQuad: TE</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
                             <li class="game-tag"><a class="game-link map-tag" href="?s=christmas">Christmas</a></li>
                             <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    <div class="labels">
+                        <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=9bfbc560-244a-4e28-ab70-185f39740ec1">Zan<span class="tag_hidden">9bfbc560-244a-4e28-ab70-185f39740ec1 9bfbc560244a4e28ab70185f39740ec1</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=205d1aad-c619-499b-9885-b91c372b1c13">Equus<span class="tag_hidden">205d1aad-c619-499b-9885-b91c372b1c13 205d1aadc619499b9885b91c372b1c13</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-christmasquad_te"><i class="fa fa-download"></i></button>
-                    <a id="ChristmasQuad: TE" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/christmasquad_te/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="ChristmasQuad: TE" class="fa fa-code click-xml"></i></a>
-                    <a id="ChristmasQuad: TE" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/christmasquad_te/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="ChristmasQuad: TE" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=9bfbc560-244a-4e28-ab70-185f39740ec1">Zan<span class="tag_hidden">9bfbc560-244a-4e28-ab70-185f39740ec1 9bfbc560244a4e28ab70185f39740ec1</span></a></li>
+                        <li class="game-tag author-tag"><a href="?s=205d1aad-c619-499b-9885-b91c372b1c13">Equus<span class="tag_hidden">205d1aad-c619-499b-9885-b91c372b1c13 205d1aadc619499b9885b91c372b1c13</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-christmasquad_te"><i class="fa fa-download"></i></a>
+                        <a id="ChristmasQuad: TE" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/christmasquad_te/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="ChristmasQuad: TE" class="fa fa-code click-xml"></i></a>
+                        <a id="ChristmasQuad: TE" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/christmasquad_te/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="ChristmasQuad: TE" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-christmasquad_te" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -345,9 +354,11 @@
                                             
                                             
                                             
+                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">christmasquad_te</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -363,9 +374,9 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
-                                        If you do not agree with these terms, click 'Close' <strong>now</strong>. 
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
+                                    If you do not agree with these terms, click 'Close' <strong>now</strong>. 
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -382,30 +393,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="dorreak" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/dorreak/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=dorreak" data-toggle="tooltip" data-placement="top" title="Dorreak"><strong>Dorreak</strong><span class="tag_hidden">dorreak</span></a>
-                        <a href="/contests/stratus/mini_map_making_competition#dorreak" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="external-thread fa fa-map"></i></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/dorreak/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Dorreak">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=dorreak">Dorreak</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                            <a href="/contests/stratus/mini_map_making_competition#dorreak" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">Unlicensed</span>
+                    <div class="labels">
+                        <span class="label label-default">Unlicensed</span>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-dorreak"><i class="fa fa-download"></i></button>
-                    <a id="Dorreak" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/dorreak/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Dorreak" class="fa fa-code click-xml"></i></a>
-                    <a id="Dorreak" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/dorreak/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Dorreak" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-dorreak"><i class="fa fa-download"></i></a>
+                        <a id="Dorreak" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/dorreak/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Dorreak" class="fa fa-code click-xml"></i></a>
+                        <a id="Dorreak" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/dorreak/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Dorreak" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-dorreak" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -421,7 +435,9 @@
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert" style="margin-bottom: 16px;">Your download is not authenticated. Consider <a href="../admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
                                 <div class="row">
                                     <div class="col-md-8">
-                                        Dorreak has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (<li class="game-tag">Obelistics</li>) before using Dorreak for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
+                                        Dorreak has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (
+                                        <li class="game-tag">Obelistics</li>
+                                        ) before using Dorreak for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
                                         <div class="row map-regulations">
                                             <div class="col-xs-12 col-md-6 regulation-group allow">
                                                 <h6>Permissions</h6>
@@ -445,6 +461,7 @@
                                             <span class="label label-default">Unlicensed</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">dorreak</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -460,7 +477,7 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -477,30 +494,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="ender_fortress" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/ender_fortress/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=ender_fortress" data-toggle="tooltip" data-placement="top" title="Ender-Fortress"><strong>Ender-Fortress</strong><span class="tag_hidden">ender_fortress</span></a>
-                        <a href="/contests/stratus/mini_map_making_competition#ender_fortress" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="external-thread fa fa-map"></i></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/ender_fortress/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Ender-Fortress">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=ender_fortress">Ender-Fortress</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                            <a href="/contests/stratus/mini_map_making_competition#ender_fortress" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">Unlicensed</span>
+                    <div class="labels">
+                        <span class="label label-default">Unlicensed</span>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=cef67055-9c27-4b58-a16f-278d793ff6bc">mrcookie_13<span class="tag_hidden">cef67055-9c27-4b58-a16f-278d793ff6bc cef670559c274b58a16f278d793ff6bc</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-ender_fortress"><i class="fa fa-download"></i></button>
-                    <a id="Ender-Fortress" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/ender_fortress/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Ender-Fortress" class="fa fa-code click-xml"></i></a>
-                    <a id="Ender-Fortress" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/ender_fortress/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Ender-Fortress" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=cef67055-9c27-4b58-a16f-278d793ff6bc">mrcookie_13<span class="tag_hidden">cef67055-9c27-4b58-a16f-278d793ff6bc cef670559c274b58a16f278d793ff6bc</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-ender_fortress"><i class="fa fa-download"></i></a>
+                        <a id="Ender-Fortress" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/ender_fortress/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Ender-Fortress" class="fa fa-code click-xml"></i></a>
+                        <a id="Ender-Fortress" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/ender_fortress/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Ender-Fortress" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-ender_fortress" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -516,7 +536,9 @@
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert" style="margin-bottom: 16px;">Your download is not authenticated. Consider <a href="../admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
                                 <div class="row">
                                     <div class="col-md-8">
-                                        Ender-Fortress has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (<li class="game-tag">mrcookie_13</li>) before using Ender-Fortress for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
+                                        Ender-Fortress has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (
+                                        <li class="game-tag">mrcookie_13</li>
+                                        ) before using Ender-Fortress for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
                                         <div class="row map-regulations">
                                             <div class="col-xs-12 col-md-6 regulation-group allow">
                                                 <h6>Permissions</h6>
@@ -540,6 +562,7 @@
                                             <span class="label label-default">Unlicensed</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">ender_fortress</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -555,7 +578,7 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -572,30 +595,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="grenouille_de_larmee" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/grenouille_de_larmee/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=grenouille_de_larmee" data-toggle="tooltip" data-placement="top" title="Grenouille de l&#x27;armee"><strong>Grenouille de l&#x27;armee</strong><span class="tag_hidden">grenouille_de_larmee</span></a>
-                        <a href="/contests/stratus/mini_map_making_competition#grenouille_de_larmee" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="external-thread fa fa-map"></i></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/grenouille_de_larmee/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Grenouille de l&#x27;armee">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=grenouille_de_larmee">Grenouille de l&#x27;armee</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                            <a href="/contests/stratus/mini_map_making_competition#grenouille_de_larmee" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">Unlicensed</span>
+                    <div class="labels">
+                        <span class="label label-default">Unlicensed</span>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=96f9aa16-9c93-4b1d-9bce-18b8c212074b">_ArmyFrog<span class="tag_hidden">96f9aa16-9c93-4b1d-9bce-18b8c212074b 96f9aa169c934b1d9bce18b8c212074b</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-grenouille_de_larmee"><i class="fa fa-download"></i></button>
-                    <a id="Grenouille de l&#x27;armee" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/grenouille_de_larmee/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Grenouille de l&#x27;armee" class="fa fa-code click-xml"></i></a>
-                    <a id="Grenouille de l&#x27;armee" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/grenouille_de_larmee/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Grenouille de l&#x27;armee" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=96f9aa16-9c93-4b1d-9bce-18b8c212074b">_ArmyFrog<span class="tag_hidden">96f9aa16-9c93-4b1d-9bce-18b8c212074b 96f9aa169c934b1d9bce18b8c212074b</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-grenouille_de_larmee"><i class="fa fa-download"></i></a>
+                        <a id="Grenouille de l&#x27;armee" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/grenouille_de_larmee/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Grenouille de l&#x27;armee" class="fa fa-code click-xml"></i></a>
+                        <a id="Grenouille de l&#x27;armee" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/grenouille_de_larmee/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Grenouille de l&#x27;armee" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-grenouille_de_larmee" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -611,7 +637,9 @@
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert" style="margin-bottom: 16px;">Your download is not authenticated. Consider <a href="../admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
                                 <div class="row">
                                     <div class="col-md-8">
-                                        Grenouille de l&#x27;armee has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (<li class="game-tag">_ArmyFrog</li>) before using Grenouille de l&#x27;armee for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
+                                        Grenouille de l&#x27;armee has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (
+                                        <li class="game-tag">_ArmyFrog</li>
+                                        ) before using Grenouille de l&#x27;armee for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
                                         <div class="row map-regulations">
                                             <div class="col-xs-12 col-md-6 regulation-group allow">
                                                 <h6>Permissions</h6>
@@ -635,6 +663,7 @@
                                             <span class="label label-default">Unlicensed</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">grenouille_de_larmee</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -650,7 +679,7 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -667,29 +696,32 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="harvest" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/harvest/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=harvest" data-toggle="tooltip" data-placement="top" title="Harvest"><strong>Harvest</strong><span class="tag_hidden">harvest</span></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/harvest/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Harvest">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=harvest">Harvest</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag-hidden">koth</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                    <div class="labels">
+                        <a href="?s=by-nc-sa" class="label label-warning" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=53af1e46-7424-485b-97de-7bf8d854a2aa">BTKing<span class="tag_hidden">53af1e46-7424-485b-97de-7bf8d854a2aa 53af1e467424485b97de7bf8d854a2aa</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-harvest"><i class="fa fa-download"></i></button>
-                    <a id="Harvest" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/harvest/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Harvest" class="fa fa-code click-xml"></i></a>
-                    <a id="Harvest" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/harvest/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Harvest" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=53af1e46-7424-485b-97de-7bf8d854a2aa">BTKing<span class="tag_hidden">53af1e46-7424-485b-97de-7bf8d854a2aa 53af1e467424485b97de7bf8d854a2aa</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-harvest"><i class="fa fa-download"></i></a>
+                        <a id="Harvest" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/harvest/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Harvest" class="fa fa-code click-xml"></i></a>
+                        <a id="Harvest" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/harvest/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Harvest" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-harvest" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -731,9 +763,12 @@
                                             
                                             
                                             
+                                            
+                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">harvest</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -749,9 +784,9 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br>
-                                        If you do not agree with these terms, click 'Close' <strong>now</strong>. 
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br>
+                                    If you do not agree with these terms, click 'Close' <strong>now</strong>. 
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -768,30 +803,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="iris_dtc_te" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/iris_dtc_te/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=iris_dtc_te" data-toggle="tooltip" data-placement="top" title="Iris DTC TE"><strong>Iris DTC TE</strong><span class="tag_hidden">iris_dtc_te</span></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/iris_dtc_te/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Iris DTC TE">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=iris_dtc_te">Iris DTC TE</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a><span class="tag-hidden">dtc</span></li>
                             <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    <div class="labels">
+                        <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=3a549b18-08ed-4756-a78c-b34d29a4fd87">Torn_Ares<span class="tag_hidden">3a549b18-08ed-4756-a78c-b34d29a4fd87 3a549b1808ed4756a78cb34d29a4fd87</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-iris_dtc_te"><i class="fa fa-download"></i></button>
-                    <a id="Iris DTC TE" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/iris_dtc_te/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Iris DTC TE" class="fa fa-code click-xml"></i></a>
-                    <a id="Iris DTC TE" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/iris_dtc_te/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Iris DTC TE" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=3a549b18-08ed-4756-a78c-b34d29a4fd87">Torn_Ares<span class="tag_hidden">3a549b18-08ed-4756-a78c-b34d29a4fd87 3a549b1808ed4756a78cb34d29a4fd87</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-iris_dtc_te"><i class="fa fa-download"></i></a>
+                        <a id="Iris DTC TE" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/iris_dtc_te/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Iris DTC TE" class="fa fa-code click-xml"></i></a>
+                        <a id="Iris DTC TE" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/iris_dtc_te/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Iris DTC TE" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-iris_dtc_te" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -833,9 +871,11 @@
                                             
                                             
                                             
+                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">iris_dtc_te</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -851,9 +891,9 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
-                                        If you do not agree with these terms, click 'Close' <strong>now</strong>. 
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
+                                    If you do not agree with these terms, click 'Close' <strong>now</strong>. 
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -870,32 +910,35 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="jactus" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/jactus/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=jactus" data-toggle="tooltip" data-placement="top" title="Jactus"><strong>Jactus</strong><span class="tag_hidden">jactus</span></a>
-                        <a href="/contests/stratus/mini_map_making_competition#jactus" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="external-thread fa fa-map"></i></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/jactus/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Jactus">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=jactus">Jactus</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                            <a href="/contests/stratus/mini_map_making_competition#jactus" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">Unlicensed</span>
+                    <div class="labels">
+                        <span class="label label-default">Unlicensed</span>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=8a3f4bb0-308f-4f06-a07c-087f3f77575c">Stoudyi<span class="tag_hidden">8a3f4bb0-308f-4f06-a07c-087f3f77575c 8a3f4bb0308f4f06a07c087f3f77575c</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=4a643ce8-9ae7-4440-95c7-b7371fcad43c">Spalgra<span class="tag_hidden">4a643ce8-9ae7-4440-95c7-b7371fcad43c 4a643ce89ae7444095c7b7371fcad43c</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=42534d9b-b687-42f1-aaf4-baa697548311">iBreezly<span class="tag_hidden">42534d9b-b687-42f1-aaf4-baa697548311 42534d9bb68742f1aaf4baa697548311</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-jactus"><i class="fa fa-download"></i></button>
-                    <a id="Jactus" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/jactus/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Jactus" class="fa fa-code click-xml"></i></a>
-                    <a id="Jactus" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/jactus/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Jactus" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=8a3f4bb0-308f-4f06-a07c-087f3f77575c">Stoudyi<span class="tag_hidden">8a3f4bb0-308f-4f06-a07c-087f3f77575c 8a3f4bb0308f4f06a07c087f3f77575c</span></a></li>
+                        <li class="game-tag author-tag"><a href="?s=4a643ce8-9ae7-4440-95c7-b7371fcad43c">Spalgra<span class="tag_hidden">4a643ce8-9ae7-4440-95c7-b7371fcad43c 4a643ce89ae7444095c7b7371fcad43c</span></a></li>
+                        <li class="game-tag author-tag"><a href="?s=42534d9b-b687-42f1-aaf4-baa697548311">iBreezly<span class="tag_hidden">42534d9b-b687-42f1-aaf4-baa697548311 42534d9bb68742f1aaf4baa697548311</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-jactus"><i class="fa fa-download"></i></a>
+                        <a id="Jactus" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/jactus/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Jactus" class="fa fa-code click-xml"></i></a>
+                        <a id="Jactus" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/jactus/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Jactus" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-jactus" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -913,7 +956,13 @@
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert" style="margin-bottom: 16px;">Your download is not authenticated. Consider <a href="../admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
                                 <div class="row">
                                     <div class="col-md-8">
-                                        Jactus has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (<li class="game-tag">Stoudyi</li><li class="game-tag">Spalgra</li><li class="game-tag">iBreezly</li>) before using Jactus for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
+                                        Jactus has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (
+                                        <li class="game-tag">Stoudyi</li>
+                                        
+                                        <li class="game-tag">Spalgra</li>
+                                        
+                                        <li class="game-tag">iBreezly</li>
+                                        ) before using Jactus for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
                                         <div class="row map-regulations">
                                             <div class="col-xs-12 col-md-6 regulation-group allow">
                                                 <h6>Permissions</h6>
@@ -937,6 +986,7 @@
                                             <span class="label label-default">Unlicensed</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">jactus</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -952,7 +1002,7 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -969,32 +1019,35 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="mars_odyssey" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/mars_odyssey/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=mars_odyssey" data-toggle="tooltip" data-placement="top" title="Mars Odyssey"><strong>Mars Odyssey</strong><span class="tag_hidden">mars_odyssey</span></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/mars_odyssey/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Mars Odyssey">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=mars_odyssey">Mars Odyssey</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=dtcm">Destroy the Core and Monument</a><span class="tag-hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
                             <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    <div class="labels">
+                        <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=3143b9d9-cea7-465f-97fc-8de59fbbb3a4">DiamondAx<span class="tag_hidden">3143b9d9-cea7-465f-97fc-8de59fbbb3a4 3143b9d9cea7465f97fc8de59fbbb3a4</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06">Strangey<span class="tag_hidden">621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06 621b2aa84e5f4ed8bd360ae2f8952a06</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=6bec5c3a-4934-4b19-9aa8-c7c569820f7d">Claf<span class="tag_hidden">6bec5c3a-4934-4b19-9aa8-c7c569820f7d 6bec5c3a49344b199aa8c7c569820f7d</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-mars_odyssey"><i class="fa fa-download"></i></button>
-                    <a id="Mars Odyssey" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/mars_odyssey/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Mars Odyssey" class="fa fa-code click-xml"></i></a>
-                    <a id="Mars Odyssey" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/mars_odyssey/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Mars Odyssey" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=3143b9d9-cea7-465f-97fc-8de59fbbb3a4">DiamondAx<span class="tag_hidden">3143b9d9-cea7-465f-97fc-8de59fbbb3a4 3143b9d9cea7465f97fc8de59fbbb3a4</span></a></li>
+                        <li class="game-tag author-tag"><a href="?s=621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06">Strangey<span class="tag_hidden">621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06 621b2aa84e5f4ed8bd360ae2f8952a06</span></a></li>
+                        <li class="game-tag author-tag"><a href="?s=6bec5c3a-4934-4b19-9aa8-c7c569820f7d">Claf<span class="tag_hidden">6bec5c3a-4934-4b19-9aa8-c7c569820f7d 6bec5c3a49344b199aa8c7c569820f7d</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-mars_odyssey"><i class="fa fa-download"></i></a>
+                        <a id="Mars Odyssey" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/mars_odyssey/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Mars Odyssey" class="fa fa-code click-xml"></i></a>
+                        <a id="Mars Odyssey" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/mars_odyssey/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Mars Odyssey" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-mars_odyssey" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -1038,9 +1091,11 @@
                                             
                                             
                                             
+                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">mars_odyssey</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -1056,9 +1111,9 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
-                                        If you do not agree with these terms, click 'Close' <strong>now</strong>. 
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
+                                    If you do not agree with these terms, click 'Close' <strong>now</strong>. 
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -1075,30 +1130,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="puyt" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/puyt/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=puyt" data-toggle="tooltip" data-placement="top" title="Puyt"><strong>Puyt</strong><span class="tag_hidden">puyt</span></a>
-                        <a href="/contests/stratus/mini_map_making_competition#puyt" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="external-thread fa fa-map"></i></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/puyt/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Puyt">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=puyt">Puyt</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                            <a href="/contests/stratus/mini_map_making_competition#puyt" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">Unlicensed</span>
+                    <div class="labels">
+                        <span class="label label-default">Unlicensed</span>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-puyt"><i class="fa fa-download"></i></button>
-                    <a id="Puyt" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/puyt/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Puyt" class="fa fa-code click-xml"></i></a>
-                    <a id="Puyt" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/puyt/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Puyt" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-puyt"><i class="fa fa-download"></i></a>
+                        <a id="Puyt" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/puyt/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Puyt" class="fa fa-code click-xml"></i></a>
+                        <a id="Puyt" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/puyt/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Puyt" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-puyt" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -1114,7 +1172,9 @@
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert" style="margin-bottom: 16px;">Your download is not authenticated. Consider <a href="../admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
                                 <div class="row">
                                     <div class="col-md-8">
-                                        Puyt has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (<li class="game-tag">Obelistics</li>) before using Puyt for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
+                                        Puyt has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (
+                                        <li class="game-tag">Obelistics</li>
+                                        ) before using Puyt for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
                                         <div class="row map-regulations">
                                             <div class="col-xs-12 col-md-6 regulation-group allow">
                                                 <h6>Permissions</h6>
@@ -1138,6 +1198,7 @@
                                             <span class="label label-default">Unlicensed</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">puyt</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -1153,7 +1214,7 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -1170,30 +1231,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="riots_te" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/riots_te/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=riots_te" data-toggle="tooltip" data-placement="top" title="Riots TE"><strong>Riots TE</strong><span class="tag_hidden">riots_te</span></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/riots_te/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Riots TE">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=riots_te">Riots TE</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
                             <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    <div class="labels">
+                        <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=f926e3b1-ce9c-4269-a5e8-e339d5056480">Matilaina<span class="tag_hidden">f926e3b1-ce9c-4269-a5e8-e339d5056480 f926e3b1ce9c4269a5e8e339d5056480</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-riots_te"><i class="fa fa-download"></i></button>
-                    <a id="Riots TE" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/riots_te/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Riots TE" class="fa fa-code click-xml"></i></a>
-                    <a id="Riots TE" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/riots_te/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Riots TE" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=f926e3b1-ce9c-4269-a5e8-e339d5056480">Matilaina<span class="tag_hidden">f926e3b1-ce9c-4269-a5e8-e339d5056480 f926e3b1ce9c4269a5e8e339d5056480</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-riots_te"><i class="fa fa-download"></i></a>
+                        <a id="Riots TE" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/riots_te/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Riots TE" class="fa fa-code click-xml"></i></a>
+                        <a id="Riots TE" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/riots_te/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Riots TE" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-riots_te" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -1235,9 +1299,11 @@
                                             
                                             
                                             
+                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">riots_te</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -1253,9 +1319,9 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
-                                        If you do not agree with these terms, click 'Close' <strong>now</strong>. 
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
+                                    If you do not agree with these terms, click 'Close' <strong>now</strong>. 
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -1272,30 +1338,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="spaceship_battles_te" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/spaceship_battles_te/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=spaceship_battles_te" data-toggle="tooltip" data-placement="top" title="Spaceship Battles TE"><strong>Spaceship Battles TE</strong><span class="tag_hidden">spaceship_battles_te</span></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/spaceship_battles_te/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Spaceship Battles TE">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=spaceship_battles_te">Spaceship Battles TE</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=dtcm">Destroy the Core and Monument</a><span class="tag-hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
                             <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    <div class="labels">
+                        <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=73711d58-d786-4007-8c95-c93b1311de1a">Oversoul96<span class="tag_hidden">73711d58-d786-4007-8c95-c93b1311de1a 73711d58d78640078c95c93b1311de1a</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-spaceship_battles_te"><i class="fa fa-download"></i></button>
-                    <a id="Spaceship Battles TE" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/spaceship_battles_te/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Spaceship Battles TE" class="fa fa-code click-xml"></i></a>
-                    <a id="Spaceship Battles TE" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/spaceship_battles_te/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Spaceship Battles TE" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=73711d58-d786-4007-8c95-c93b1311de1a">Oversoul96<span class="tag_hidden">73711d58-d786-4007-8c95-c93b1311de1a 73711d58d78640078c95c93b1311de1a</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-spaceship_battles_te"><i class="fa fa-download"></i></a>
+                        <a id="Spaceship Battles TE" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/spaceship_battles_te/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Spaceship Battles TE" class="fa fa-code click-xml"></i></a>
+                        <a id="Spaceship Battles TE" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/spaceship_battles_te/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Spaceship Battles TE" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-spaceship_battles_te" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -1337,9 +1406,11 @@
                                             
                                             
                                             
+                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">spaceship_battles_te</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -1355,9 +1426,9 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
-                                        If you do not agree with these terms, click 'Close' <strong>now</strong>. 
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
+                                    If you do not agree with these terms, click 'Close' <strong>now</strong>. 
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -1374,30 +1445,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="the_hills" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/the_hills/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=the_hills" data-toggle="tooltip" data-placement="top" title="The Hills"><strong>The Hills</strong><span class="tag_hidden">the_hills</span></a>
-                        <a href="/contests/stratus/mini_map_making_competition#the_hills" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="external-thread fa fa-map"></i></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/the_hills/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="The Hills">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=the_hills">The Hills</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                            <a href="/contests/stratus/mini_map_making_competition#the_hills" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">Unlicensed</span>
+                    <div class="labels">
+                        <span class="label label-default">Unlicensed</span>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=105b02c7-9004-45ed-a668-971359021f82">Kezugo<span class="tag_hidden">105b02c7-9004-45ed-a668-971359021f82 105b02c7900445eda668971359021f82</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-the_hills"><i class="fa fa-download"></i></button>
-                    <a id="The Hills" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/the_hills/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="The Hills" class="fa fa-code click-xml"></i></a>
-                    <a id="The Hills" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/the_hills/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="The Hills" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=105b02c7-9004-45ed-a668-971359021f82">Kezugo<span class="tag_hidden">105b02c7-9004-45ed-a668-971359021f82 105b02c7900445eda668971359021f82</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-the_hills"><i class="fa fa-download"></i></a>
+                        <a id="The Hills" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/the_hills/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="The Hills" class="fa fa-code click-xml"></i></a>
+                        <a id="The Hills" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/the_hills/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="The Hills" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-the_hills" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -1413,7 +1487,9 @@
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert" style="margin-bottom: 16px;">Your download is not authenticated. Consider <a href="../admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
                                 <div class="row">
                                     <div class="col-md-8">
-                                        The Hills has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (<li class="game-tag">Kezugo</li>) before using The Hills for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
+                                        The Hills has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (
+                                        <li class="game-tag">Kezugo</li>
+                                        ) before using The Hills for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
                                         <div class="row map-regulations">
                                             <div class="col-xs-12 col-md-6 regulation-group allow">
                                                 <h6>Permissions</h6>
@@ -1437,6 +1513,7 @@
                                             <span class="label label-default">Unlicensed</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">the_hills</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -1452,7 +1529,7 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -1469,30 +1546,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="three_choices" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/three_choices/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=three_choices" data-toggle="tooltip" data-placement="top" title="Three Choices"><strong>Three Choices</strong><span class="tag_hidden">three_choices</span></a>
-                        <a href="/contests/stratus/mini_map_making_competition#three_choices" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="external-thread fa fa-map"></i></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/three_choices/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Three Choices">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=three_choices">Three Choices</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                            <a href="/contests/stratus/mini_map_making_competition#three_choices" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">Unlicensed</span>
+                    <div class="labels">
+                        <span class="label label-default">Unlicensed</span>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=0875279f-d502-457a-a89c-36bbed32ae47">sammyboo<span class="tag_hidden">0875279f-d502-457a-a89c-36bbed32ae47 0875279fd502457aa89c36bbed32ae47</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-three_choices"><i class="fa fa-download"></i></button>
-                    <a id="Three Choices" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/three_choices/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Three Choices" class="fa fa-code click-xml"></i></a>
-                    <a id="Three Choices" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/three_choices/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Three Choices" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=0875279f-d502-457a-a89c-36bbed32ae47">sammyboo<span class="tag_hidden">0875279f-d502-457a-a89c-36bbed32ae47 0875279fd502457aa89c36bbed32ae47</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-three_choices"><i class="fa fa-download"></i></a>
+                        <a id="Three Choices" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/three_choices/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Three Choices" class="fa fa-code click-xml"></i></a>
+                        <a id="Three Choices" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/three_choices/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Three Choices" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-three_choices" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -1508,7 +1588,9 @@
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert" style="margin-bottom: 16px;">Your download is not authenticated. Consider <a href="../admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
                                 <div class="row">
                                     <div class="col-md-8">
-                                        Three Choices has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (<li class="game-tag">sammyboo</li>) before using Three Choices for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
+                                        Three Choices has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (
+                                        <li class="game-tag">sammyboo</li>
+                                        ) before using Three Choices for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
                                         <div class="row map-regulations">
                                             <div class="col-xs-12 col-md-6 regulation-group allow">
                                                 <h6>Permissions</h6>
@@ -1532,6 +1614,7 @@
                                             <span class="label label-default">Unlicensed</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">three_choices</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -1547,7 +1630,7 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -1564,30 +1647,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="tower_blast" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/tower_blast/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=tower_blast" data-toggle="tooltip" data-placement="top" title="Tower Blast"><strong>Tower Blast</strong><span class="tag_hidden">tower_blast</span></a>
-                        <a href="/contests/stratus/mini_map_making_competition#tower_blast" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="external-thread fa fa-map"></i></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/tower_blast/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Tower Blast">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=tower_blast">Tower Blast</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                            <a href="/contests/stratus/mini_map_making_competition#tower_blast" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <a href="?s=by-nc-sa" class="label label-warning map-label" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                    <div class="labels">
+                        <a href="?s=by-nc-sa" class="label label-warning" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=b3bf822a-4218-4f96-9110-278cad1ab848">Ensix<span class="tag_hidden">b3bf822a-4218-4f96-9110-278cad1ab848 b3bf822a42184f969110278cad1ab848</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-tower_blast"><i class="fa fa-download"></i></button>
-                    <a id="Tower Blast" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/tower_blast/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Tower Blast" class="fa fa-code click-xml"></i></a>
-                    <a id="Tower Blast" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/tower_blast/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Tower Blast" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=b3bf822a-4218-4f96-9110-278cad1ab848">Ensix<span class="tag_hidden">b3bf822a-4218-4f96-9110-278cad1ab848 b3bf822a42184f969110278cad1ab848</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-tower_blast"><i class="fa fa-download"></i></a>
+                        <a id="Tower Blast" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/tower_blast/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Tower Blast" class="fa fa-code click-xml"></i></a>
+                        <a id="Tower Blast" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/tower_blast/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Tower Blast" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-tower_blast" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -1629,9 +1715,12 @@
                                             <span class="label label-info">Contest Submission</span>
                                             
                                             
+                                            
+                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">tower_blast</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -1647,9 +1736,9 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br>
-                                        If you do not agree with these terms, click 'Close' <strong>now</strong>. 
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode" target="_blank">CC BY-NC-SA</a> license.<br>
+                                    If you do not agree with these terms, click 'Close' <strong>now</strong>. 
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -1666,31 +1755,34 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="tribe" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/tribe/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=tribe" data-toggle="tooltip" data-placement="top" title="Tribe"><strong>Tribe</strong><span class="tag_hidden">tribe</span></a>
-                        <a href="/contests/stratus/mini_map_making_competition#tribe" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="external-thread fa fa-map"></i></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/tribe/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Tribe">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=tribe">Tribe</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                            <a href="/contests/stratus/mini_map_making_competition#tribe" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    <div class="labels">
+                        <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=a63de09d-6fa9-436f-9070-26f5e9a4d27b">dragonrider455<span class="tag_hidden">a63de09d-6fa9-436f-9070-26f5e9a4d27b a63de09d6fa9436f907026f5e9a4d27b</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=4ed106c2-12b9-43d2-83c7-2e963440444f">ItsCal<span class="tag_hidden">4ed106c2-12b9-43d2-83c7-2e963440444f 4ed106c212b943d283c72e963440444f</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-tribe"><i class="fa fa-download"></i></button>
-                    <a id="Tribe" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/tribe/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Tribe" class="fa fa-code click-xml"></i></a>
-                    <a id="Tribe" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/tribe/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Tribe" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=a63de09d-6fa9-436f-9070-26f5e9a4d27b">dragonrider455<span class="tag_hidden">a63de09d-6fa9-436f-9070-26f5e9a4d27b a63de09d6fa9436f907026f5e9a4d27b</span></a></li>
+                        <li class="game-tag author-tag"><a href="?s=4ed106c2-12b9-43d2-83c7-2e963440444f">ItsCal<span class="tag_hidden">4ed106c2-12b9-43d2-83c7-2e963440444f 4ed106c212b943d283c72e963440444f</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-tribe"><i class="fa fa-download"></i></a>
+                        <a id="Tribe" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/tribe/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Tribe" class="fa fa-code click-xml"></i></a>
+                        <a id="Tribe" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/tribe/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Tribe" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-tribe" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -1732,9 +1824,11 @@
                                             <span class="label label-info">Contest Submission</span>
                                             
                                             
+                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">tribe</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -1750,9 +1844,9 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
-                                        If you do not agree with these terms, click 'Close' <strong>now</strong>. 
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
+                                    If you do not agree with these terms, click 'Close' <strong>now</strong>. 
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -1769,31 +1863,34 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="verlate" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/verlate/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=verlate" data-toggle="tooltip" data-placement="top" title="Verlate"><strong>Verlate</strong><span class="tag_hidden">verlate</span></a>
-                        <a href="/contests/stratus/mini_map_making_competition#verlate" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="external-thread fa fa-map"></i></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/verlate/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Verlate">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=verlate">Verlate</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag-hidden">koth</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                            <a href="/contests/stratus/mini_map_making_competition#verlate" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <span class="label label-default map-label">Unlicensed</span>
+                    <div class="labels">
+                        <span class="label label-default">Unlicensed</span>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=5c6751aa-96b0-478b-b46d-c55a7d8b6ed1">Ceroh<span class="tag_hidden">5c6751aa-96b0-478b-b46d-c55a7d8b6ed1 5c6751aa96b0478bb46dc55a7d8b6ed1</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-verlate"><i class="fa fa-download"></i></button>
-                    <a id="Verlate" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/verlate/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Verlate" class="fa fa-code click-xml"></i></a>
-                    <a id="Verlate" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/verlate/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Verlate" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
+                        <li class="game-tag author-tag"><a href="?s=5c6751aa-96b0-478b-b46d-c55a7d8b6ed1">Ceroh<span class="tag_hidden">5c6751aa-96b0-478b-b46d-c55a7d8b6ed1 5c6751aa96b0478bb46dc55a7d8b6ed1</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-verlate"><i class="fa fa-download"></i></a>
+                        <a id="Verlate" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/verlate/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Verlate" class="fa fa-code click-xml"></i></a>
+                        <a id="Verlate" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/verlate/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Verlate" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-verlate" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -1810,7 +1907,11 @@
                                 <div class="auth-disabled alert alert-danger alert-sm" role="alert" style="margin-bottom: 16px;">Your download is not authenticated. Consider <a href="../admin/preferences">authenticating your download</a> so you can download more maps without a limit.</div>
                                 <div class="row">
                                     <div class="col-md-8">
-                                        Verlate has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (<li class="game-tag">Obelistics</li><li class="game-tag">Ceroh</li>) before using Verlate for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
+                                        Verlate has no associated license attached to it and has been sourced by ResourcePile from an original download provided by the authors. We strongly recommend getting in contact with the map authors (
+                                        <li class="game-tag">Obelistics</li>
+                                        
+                                        <li class="game-tag">Ceroh</li>
+                                        ) before using Verlate for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.
                                         <div class="row map-regulations">
                                             <div class="col-xs-12 col-md-6 regulation-group allow">
                                                 <h6>Permissions</h6>
@@ -1834,6 +1935,7 @@
                                             <span class="label label-default">Unlicensed</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">verlate</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -1849,7 +1951,7 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
@@ -1866,31 +1968,34 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 map-thumbnail center">
-            <div id="wallop_9000" class="thumbnail map-float">
-                <div class="map-image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/wallop_9000/map.png">
-        
-                    <div class="map-banner">
-                        <a class="map-header" href="https://mcresourcepile.github.io/maps/stratus?s=wallop_9000" data-toggle="tooltip" data-placement="top" title="Wallop 9000"><strong>Wallop 9000</strong><span class="tag_hidden">wallop_9000</span></a>
-                        <span style="display:block;margin-top:-8px;">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/wallop_9000/map.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="Wallop 9000">
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=wallop_9000">Wallop 9000</a></div>
+                        <div class="sub-title">
                             <li class="game-tag"><a class="game-link map-tag" href="?s=dtcm">Destroy the Core and Monument</a><span class="tag-hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
                             <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
-                        </span>
+                        </div>
+                        <div class="icon-alerts">
+                        </div>
                     </div>
-                    <div class="map-labels">
-                        <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                    <div class="labels">
+                        <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                     </div>
                 </div>
-                <div class="map-authors">
-                    <span class="map-author-name">by</span>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=9929437a-9b7d-4d7a-b05d-e22fe93ac042">triplezko<span class="tag_hidden">9929437a-9b7d-4d7a-b05d-e22fe93ac042 9929437a9b7d4d7ab05de22fe93ac042</span></a></li>
-                    <li class="game-tag author-tag"><a class="map-author-name" href="?s=6bec5c3a-4934-4b19-9aa8-c7c569820f7d">Claf<span class="tag_hidden">6bec5c3a-4934-4b19-9aa8-c7c569820f7d 6bec5c3a49344b199aa8c7c569820f7d</span></a></li>
-                </div>
-                
-                <div style="padding-top:2%;" class="center">
-                    <button class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-wallop_9000"><i class="fa fa-download"></i></button>
-                    <a id="Wallop 9000" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/wallop_9000/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Wallop 9000" class="fa fa-code click-xml"></i></a>
-                    <a id="Wallop 9000" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/wallop_9000/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Wallop 9000" class="fa fa-file-image-o"></i></a>
+                <div class="map-thumbnail-body">
+                    <div class="authors">
+                        by
+                        <li class="game-tag author-tag"><a href="?s=9929437a-9b7d-4d7a-b05d-e22fe93ac042">triplezko<span class="tag_hidden">9929437a-9b7d-4d7a-b05d-e22fe93ac042 9929437a9b7d4d7ab05de22fe93ac042</span></a></li>
+                        <li class="game-tag author-tag"><a href="?s=6bec5c3a-4934-4b19-9aa8-c7c569820f7d">Claf<span class="tag_hidden">6bec5c3a-4934-4b19-9aa8-c7c569820f7d 6bec5c3a49344b199aa8c7c569820f7d</span></a></li>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-wallop_9000"><i class="fa fa-download"></i></a>
+                        <a id="Wallop 9000" href="https://github.com/MCResourcePile/stratus-maps/raw/master/maps/wallop_9000/map.xml" target="_blank" class="btn map-link map-button click-xml" role="button" ><i id="Wallop 9000" class="fa fa-code click-xml"></i></a>
+                        <a id="Wallop 9000" href="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/wallop_9000/map.png" target="_blank" class="btn map-link map-button-sm click-image" role="button" style="display:none"><i id="Wallop 9000" class="fa fa-file-image-o"></i></a>
+                    </div>
                 </div>
                 <div class="modal fade download" id="download-wallop_9000" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -1933,9 +2038,11 @@
                                             
                                             
                                             
+                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
+                                            <span class="label label-default">wallop_9000</span>
                                         </div>
                                         <div class="map-download-stats" style="display:none">
                                             <div class="modal-section-head">Downloads</div>
@@ -1951,9 +2058,9 @@
                             <div class="modal-footer">
                                 <div class="map-download-pending">
                                     <small>
-                                        By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
-                                        If you do not agree with these terms, click 'Close' <strong>now</strong>. 
-                                        More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
+                                    By clicking 'Download' you agree to follow the conditions of the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">CC BY-SA</a> license.<br>
+                                    If you do not agree with these terms, click 'Close' <strong>now</strong>. 
+                                    More information about map downloads can be found <a href="https://mcresourcepile.github.io/policies/maps" target="_blank">here</a>.
                                     </small>
                                 </div>
                                 <div class="map-download-started" style="display:none;">
