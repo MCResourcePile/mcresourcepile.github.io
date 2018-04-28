@@ -18,17 +18,17 @@ function applySettings() {
         }
         // collapse map thumbnails, otherwise lazy load images
         if (user_settings.hide_images == 'true') {
-            $('.lazy').css({'height': '60px'});
-            $('.map-banner').css({'height': '60px'});
-            $('.map-labels').css({'top': '-21px', 'padding-left': '4px'});
-            $('.map-button').addClass('map-button-sm');
+            $('.map-thumbnail:not(.collapse-immune) .map-thumbnail-header .image').css({'visbility': 'hidden'});
+            $('.map-thumbnail:not(.collapse-immune) .map-thumbnail-header .nabber').css({'height': '60px'});
+            $('.map-thumbnail:not(.collapse-immune) .map-thumbnail-header .labels').css({'top': '45', 'left': '8'});
+            $('.map-thumbnail:not(.collapse-immune) .map-thumbnail-body .buttons .map-button').addClass('map-button-sm');
             $('.click-image').show();
         } else {
             var myLazyLoad = new LazyLoad({
                 elements_selector: '.lazy',
                 threshold: 50,
                 callback_error: function(element) {
-                    $(element).attr('src', '../assets/img/404.png');
+                    $(element).attr('src', '/assets/img/404.png');
                 },
             });
         }
