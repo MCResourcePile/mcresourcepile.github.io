@@ -18,7 +18,7 @@
         <div class="collection-maps">
             {{#withSort data.maps 'name'}}
             {{#contains @root.data.featured.maps slug}}
-            <div class="col-sm-6 col-lg-3 map-thumbnail center" style="padding-top:2px;">
+            <div class="col-sm-6 col-lg-3 map-thumbnail center collapse-immune" style="padding-top:2px;">
                 <div id="featured-{{slug}}" class="thumbnail map-float{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}">
                     <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png');">
                         <div class="map-banner-collapse-immune">
