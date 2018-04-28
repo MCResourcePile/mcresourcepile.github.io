@@ -28,7 +28,7 @@ function applySettings() {
                 elements_selector: '.lazy',
                 threshold: 50,
                 callback_error: function(element) {
-                    $(element).attr('src', '../assets/img/404.png');
+                    $(element).attr('src', '/assets/img/404.png');
                 },
             });
         }
