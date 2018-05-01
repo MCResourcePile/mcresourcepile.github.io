@@ -1,0 +1,34 @@
+{{> navigation_header}}
+{{#each lists}}
+<div class="list-section" id="{{snakecase (lowercase title)}}">
+    <div class="list-heading">
+        <div class="list-title">{{#if title}}{{title}}{{else}}File list{{/if}}</div>
+        {{#if description}}
+        <div class="list-subtitle">{{{description}}}</div>
+        {{/if}}
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th width="20%">File</th>
+                <th width="75%">Description</th>
+                <th width="5%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each files}}
+            <tr>
+                <td><i class="fa fa-file-code-o"></i></td>
+                <td>{{#if title}}<code>{{title}}</code>{{else}}Unknown file{{/if}}</td>
+                <td>{{{description}}}</td>
+                <td>
+                    <a href="{{url}}" class="btn btn-info" target="_blank"><i class="fa fa-download"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+{{/each}}
+{{> navigation_footer}}
