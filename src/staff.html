@@ -42,18 +42,18 @@
     </div>
 </div>
 {{/if}}
-{{#if addonproject}}
+{{#if collaborators}}
 <div class="contact-position-section">
-    <div class="contact-position-title position-addon-project">Addon Project Managers <small>{{length addonproject}}</small></div>
+    <div class="contact-position-title position-collaborator">Collaborators <small>{{length collaborators}}</small></div>
     <div class="row">
-        {{#each addonproject}}
+        {{#each collaborators}}
         <div class="col-md-2 col-sm-4 col-xs-6 center">
             <span class="contact-user-thumbnail thumbnail">
             <img class="contact-user-avatar" src="https://crafatar.com/avatars/{{properties ../this this.username 'uuid'}}?overlay">
             </span>
             <div class="contact-user-details">
-                <div class="contact-user-name position-addon-project">{{username}}</div>
-                <div class="contact-user-description">{{#if role}}{{role}}{{else}}Addon Project Manager{{/if}}</div>
+                <div class="contact-user-name position-collaborator">{{username}}</div>
+                <div class="contact-user-description">{{#if role}}{{role}}{{else}}Collaborator{{/if}}</div>
                 {{#if (properties ../this this.username 'github')}}<a class="contact-user-outlet" href="https://github.com/{{properties ../this this.username 'github'}}"><i class="fa fa-github"></i></a>{{/if}}
                 {{#if (properties ../this this.username 'twitter')}}<a class="contact-user-outlet" href="https://twitter.com/{{properties ../this this.username 'twitter'}}"><i class="fa fa-twitter"></i></a>{{/if}}
                 {{#if (properties ../this this.username 'discord')}}<a class="contact-user-outlet" title="{{properties ../this this.username 'discord'}}" data-toggle="tooltip" data-placement="top"><i class="fa fa-microphone"></i></a>{{/if}}
@@ -63,39 +63,18 @@
     </div>
 </div>
 {{/if}}
-{{#if wiki}}
+{{#if associates}}
 <div class="contact-position-section">
-    <div class="contact-position-title position-wiki-manager">Wiki Managers <small>{{length wiki}}</small></div>
+    <div class="contact-position-title position-associate">Associates <small>{{length associates}}</small></div>
     <div class="row">
-        {{#each wiki}}
+        {{#each associates}}
         <div class="col-md-2 col-sm-4 col-xs-6 center">
             <span class="contact-user-thumbnail thumbnail">
             <img class="contact-user-avatar" src="https://crafatar.com/avatars/{{properties ../this this.username 'uuid'}}?overlay">
             </span>
             <div class="contact-user-details">
-                <div class="contact-user-name position-wiki-manager">{{username}}</div>
-                <div class="contact-user-description">{{#if role}}{{role}}{{else}}Wiki Manager{{/if}}</div>
-                {{#if (properties ../this this.username 'github')}}<a class="contact-user-outlet" href="https://github.com/{{properties ../this this.username 'github'}}"><i class="fa fa-github"></i></a>{{/if}}
-                {{#if (properties ../this this.username 'twitter')}}<a class="contact-user-outlet" href="https://twitter.com/{{properties ../this this.username 'twitter'}}"><i class="fa fa-twitter"></i></a>{{/if}}
-                {{#if (properties ../this this.username 'discord')}}<a class="contact-user-outlet" title="{{properties ../this this.username 'discord'}}" data-toggle="tooltip" data-placement="top"><i class="fa fa-microphone"></i></a>{{/if}}
-            </div>
-        </div>
-        {{/each}}
-    </div>
-</div>
-{{/if}}    
-{{#if helpers}}
-<div class="contact-position-section">
-    <div class="contact-position-title position-helper">Helpers <small>{{length helpers}}</small></div>
-    <div class="row">
-        {{#each helpers}}
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/{{properties ../this this.username 'uuid'}}?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-helper">{{username}}</div>
-                <div class="contact-user-description">{{#if role}}{{role}}{{else}}Helper{{/if}}</div>
+                <div class="contact-user-name position-associate">{{username}}</div>
+                <div class="contact-user-description">{{#if role}}{{role}}{{else}}Associate{{/if}}</div>
                 {{#if (properties ../this this.username 'github')}}<a class="contact-user-outlet" href="https://github.com/{{properties ../this this.username 'github'}}"><i class="fa fa-github"></i></a>{{/if}}
                 {{#if (properties ../this this.username 'twitter')}}<a class="contact-user-outlet" href="https://twitter.com/{{properties ../this this.username 'twitter'}}"><i class="fa fa-twitter"></i></a>{{/if}}
                 {{#if (properties ../this this.username 'discord')}}<a class="contact-user-outlet" title="{{properties ../this this.username 'discord'}}" data-toggle="tooltip" data-placement="top"><i class="fa fa-microphone"></i></a>{{/if}}
