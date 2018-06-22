@@ -71,8 +71,6 @@
         <div class="alert alert-warning alert-global alert-sm" role="alert">Please note that things may appear slightly different on the Stratus forums</div>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.2/showdown.min.js"></script>
 <script id="output-template" type="text/x-handlebars-template">### **‹‹input-name››**  
     ###### Created by ‹‹#ifObject input-author››‹‹#each input-author as |author|››‹‹author››‹‹#unless @last››, ‹‹/unless››‹‹/each››‹‹else››‹‹input-author››‹‹/ifObject››
         
@@ -87,14 +85,6 @@
     *Created with ResourcePile's [map submission thread builder](https://mcresourcepile.github.io/tools/thread/markdown)*
 </script>
 <script>
-    Handlebars.registerHelper('ifObject', function(item, options) {
-        if(typeof item === "object") {
-            return options.fn(this);
-        } else {
-            return options.inverse(this);
-        }
-    });
-    
     var markdown = new showdown.Converter();
     var data = {};
     

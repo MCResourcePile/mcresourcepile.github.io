@@ -89,8 +89,6 @@
         <div class="alert alert-warning alert-global alert-sm" role="alert">Please note that things may appear slightly different on the Stratus forums</div>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.2/showdown.min.js"></script>
 <script id="output-template" type="text/x-handlebars-template"><div class="jumbotron" style="‹‹#if input-splash››background-image:url(‹‹input-splash››);background-size:100%;‹‹else››background-color:#343436;‹‹/if››">
     <div class="page-header" style="text-align:center;color:white;">
         <h2>
@@ -119,14 +117,6 @@
 </div>
 </script>
 <script>
-    Handlebars.registerHelper('ifObject', function(item, options) {
-        if(typeof item === "object") {
-            return options.fn(this);
-        } else {
-            return options.inverse(this);
-        }
-    });
-    
     var markdown = new showdown.Converter();
     var data = {};
     
