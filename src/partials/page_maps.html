@@ -5,7 +5,7 @@
         <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
     </form>
     {{#if settings.maps.menu}}
-    <div class="game-mode-navigation row">
+    <div class="game-mode-navigation row" data-source="{{settings.maps.group}}">
         {{#every 2 settings.maps.menu}}
         <div class="col-xs-12 col-md-4">
             {{#each this}}
@@ -57,7 +57,7 @@
                 </div>
                 <div class="modal-section-head">Suggested Maps</div>
                 <div class="modal-section-body">
-                    <div class="map-suggestions"></div>
+                    <div class="map-suggestions row"></div>
                 </div>
             </div>
             <div class="modal-footer">

@@ -60,6 +60,11 @@ $(document).ready(function(){
     updateListing();
     getApiLimit();
 
+    var source = $('.game-mode-navigation').data('source');
+    $.getJSON("https://rawgit.com/MCResourcePile/mcresourcepile.github.io/source/src/data/maps/" + source + ".json", function(r) {
+        maps_data = r.data.maps;
+    });
+
     // update map listing in time with search bar interactions
     $('.record-search-container').click(function() { updateListing() });
     $('.record-search-container').keyup(function() { updateListing() });
@@ -180,13 +185,6 @@ GitZip.registerCallback(function(status, message, percent) {
     });
 });
 
-// temp for testing
-// need to make this get the json data for the page being viewed currently
-var maps_data;
-$.getJSON("https://rawgit.com/MCResourcePile/mcresourcepile.github.io/source/src/data/maps/overcast.json", function(r) {
-    maps_data = r.data.maps;
-});
-
 function suggestMaps(slug) {
     // get json data for target map via slug
     var target = maps_data.filter(function(val, index, array) {
@@ -215,7 +213,7 @@ function suggestMaps(slug) {
                 }
                 // if the map has a weight score good enough
                 // add it to the list of similar maps
-                if (weight > 3) {
+                if (weight > 0) {
                     var temp = maps_data[i];
                     temp.weight = weight;
                     similar.push(temp);
@@ -227,8 +225,30 @@ function suggestMaps(slug) {
             return b.weight - a.weight;
         });
         similar.sort();
+        // display suggested maps in download success menu
         for (var i = 1; i < 4; i++) {
-            $('.map-suggestions').append('<p>' + similar[i].name + '</p>');
+            var authors = "Created by ";
+            for (var j = 0; j < similar[i].authors.length; j++) {
+                authors += similar[i].authors[j].username;
+                if (j != similar[i].authors.length - 1) {
+                    authors += ", ";
+                    if (j == similar[i].authors.length - 2) authors += "and ";
+                }
+            }
+            var tags = "";
+            for (var j = 0; j < similar[i].tags.length; j++) {
+                tags += similar[i].tags[j];
+                if (j != similar[i].tags.length - 1) tags += ", ";
+            }
+            $('.map-suggestions').append(
+                "<div class='col-md-4 col-sm-12'>\
+                    <div class='suggested-map-thumbnail'>\
+                        <div class='suggested-map-header'><a href='?dl=" + similar[i].slug + "'>" + similar[i].name + "</a></div>\
+                        <div class='suggested-map-authors'>" + authors + "</div>\
+                        <div class='suggested-map-tags'>" + tags + "</div>\
+                    </div>\
+                </div>"
+            );
         }
     } else {
         onError('Could not load suggested maps as the given map slug could not be found.');
