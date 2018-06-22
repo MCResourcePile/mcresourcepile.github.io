@@ -177,3 +177,56 @@ GitZip.registerCallback(function(status, message, percent) {
         'background-color': 'rgb(71, 198, 99)'
     });
 });
+
+// temp for testing
+// need to make this get the json data for the page being viewed currently
+var maps_data;
+$.getJSON("https://rawgit.com/MCResourcePile/mcresourcepile.github.io/source/src/data/maps/overcast.json", function(r) {
+    maps_data = r.data.maps;
+});
+
+function suggestMaps(slug) {
+    // get json data for target map via slug
+    var target = maps_data.filter(function(val, index, array) {
+        return val.slug === slug;
+    });
+    // check if target map exists in data
+    if (target.length > 0) {
+        target = target[0];
+        // array for similar maps
+        var similar = [];
+        // loop through the json array to compare and find similar maps to suggest
+        for (var i = 0; i < maps_data.length; i++) {
+            if (maps_data[i].slug != target.slug) {
+                // reset weight
+                var weight = 0;
+                // compare authors
+                for (var j = 0; j < target.authors.length; j++) {
+                    for (var k = 0; k < maps_data[i].authors.length; k++) {
+                        if (target.authors[j].uuid === maps_data[i].authors[k].uuid) weight += 3;
+                    }
+                }
+                // compare tags
+                for (var l = 0; l < target.tags.length; l++) {
+                    for (var m = 0; m < maps_data[i].tags.length; m++) {
+                        if (target.tags[l] === maps_data[i].tags[m]) weight += 1;
+                    }
+                }
+                // if the map has a weight score good enough
+                // add it to the list of similar maps
+                if (weight > 3) {
+                    var temp = maps_data[i];
+                    temp.weight = weight;
+                    similar.push(temp);
+                }
+            }
+        }
+        // sort the list by weight
+        similar.sort(function(a, b) {
+            return b.weight - a.weight;
+        });
+        console.log(similar.sort());
+    } else {
+        onError('Could not load suggested maps as the given map slug could not be found.');
+    }
+}
