@@ -97,6 +97,8 @@ function startDownload(active_name, active_slug, active_path, active_license) {
             GitZip.zipRepo(active_path);
             output('No GitHub API access token provided. Please go to your preferences to generate an access token.')
         }
+        $('.map-suggestions').text('');
+        suggestMaps(active_slug);
     } else {
         onError('No download path identified; skipping download request.');
         progress = 0;
@@ -198,18 +200,17 @@ function suggestMaps(slug) {
         // loop through the json array to compare and find similar maps to suggest
         for (var i = 0; i < maps_data.length; i++) {
             if (maps_data[i].slug != target.slug) {
-                // reset weight
                 var weight = 0;
                 // compare authors
                 for (var j = 0; j < target.authors.length; j++) {
                     for (var k = 0; k < maps_data[i].authors.length; k++) {
-                        if (target.authors[j].uuid === maps_data[i].authors[k].uuid) weight += 3;
+                        if (target.authors[j].uuid === maps_data[i].authors[k].uuid) weight += 5;
                     }
                 }
                 // compare tags
-                for (var l = 0; l < target.tags.length; l++) {
-                    for (var m = 0; m < maps_data[i].tags.length; m++) {
-                        if (target.tags[l] === maps_data[i].tags[m]) weight += 1;
+                for (var j = 0; j < target.tags.length; j++) {
+                    for (var k = 0; k < maps_data[i].tags.length; k++) {
+                        if (target.tags[j] === maps_data[i].tags[k]) weight += 2;
                     }
                 }
                 // if the map has a weight score good enough
@@ -225,7 +226,10 @@ function suggestMaps(slug) {
         similar.sort(function(a, b) {
             return b.weight - a.weight;
         });
-        console.log(similar.sort());
+        similar.sort();
+        for (var i = 1; i < 4; i++) {
+            $('.map-suggestions').append('<p>' + similar[i].name + '</p>');
+        }
     } else {
         onError('Could not load suggested maps as the given map slug could not be found.');
     }
