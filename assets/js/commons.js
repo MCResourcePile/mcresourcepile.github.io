@@ -9,17 +9,6 @@ applySettings();
 
 var is_maps_collection = false;
 
-if (user_settings.synced == false) {
-    $('#sync-settings-alert').show();
-    setTimeout(
-        function () {
-            syncSettings(function () {
-                $('#sync-settings-alert').text('Sync has been completed. Thank you.').addClass('alert-info').removeClass('alert-danger').delay(5000).fadeOut();
-            })
-        }, 6000
-    );
-}
-
 var window_offset = function() { scrollBy(0, -70) };
 if (location.hash) window_offset();
 window.addEventListener("hashchange", window_offset);

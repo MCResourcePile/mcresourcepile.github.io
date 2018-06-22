@@ -7,7 +7,7 @@
 var user_settings = Cookies.getJSON('user_settings');
 var user_info = Cookies.getJSON('user_info');
 
-const default_settings = {token: "", theme: "default", hide_images: "false", map_stats: "false", synced: false};
+const default_settings = {token: "", theme: "default", hide_images: "false", map_stats: "false"};
 const default_info = {username: "User", avatar: "https://avatars0.githubusercontent.com/u/24795789?v=4", rate: {limit: 0, remaining: 0, reset: 0}};
 
 function applySettings() {
@@ -80,28 +80,6 @@ function saveSettings() {
     Cookies.set('user_settings', user_settings, {expires: 365});
     Cookies.set('user_info', user_info, {expires: 365});
     output('Saved user settings and user information.');
-}
-
-function syncSettings(callback) {
-    if (user_settings.synced == false) {
-        user_settings.token = Cookies.get('rp_user_token');
-        user_settings.theme = Cookies.get('rp_user_theme');
-        user_settings.hide_images = Cookies.get('rp_map_images?');
-        user_settings.map_stats = 'false';
-        Cookies.remove('rp_user_token');
-        Cookies.remove('rp_user_theme');
-        Cookies.remove('rp_map_images?');
-        updateUserInfo(function () {
-            updateRateLimit(function () {
-                user_settings.synced = true;
-                saveSettings();
-                output('Old settings have been synced with new format -- old information has been deleted.');
-                callback();
-            });
-        });
-    } else {
-        output('Settings already saved in new format.', 1);
-    }
 }
 
 function updateUserInfo(callback) {
