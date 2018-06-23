@@ -103,7 +103,9 @@ function startDownload(active_name, active_slug, active_path, active_license) {
             output('No GitHub API access token provided. Please go to your preferences to generate an access token.')
         }
         $('.map-suggestions').text('');
-        if (user_settings.map_suggestions == 'true') suggestMaps(active_slug);
+        if (user_settings.map_suggestions != 'false') {
+            suggestMaps(active_slug);
+        }
     } else {
         onError('No download path identified; skipping download request.');
         progress = 0;
@@ -240,12 +242,15 @@ function suggestMaps(slug) {
             } else {
                 repo = repo + "-maps";
             }
-            var authors = "Created by ";
+            var authors = "by ";
             for (var j = 0; j < similar[i].authors.length; j++) {
                 authors += similar[i].authors[j].username;
                 if (j != similar[i].authors.length - 1) {
                     authors += ", ";
-                    if (j == similar[i].authors.length - 2) authors += "and ";
+                }
+                if (j == 2) {
+                    authors += "and more";
+                    break;
                 }
             }
             var tags = "";
@@ -255,7 +260,6 @@ function suggestMaps(slug) {
             }
             $('.map-suggestions-wrapper').show();
             $('.map-suggestions').append(
-                "<div class='col-sm-4 thumbnail map-thumbnail small'>\
                     <div class='map-thumbnail-header'>\
                         <img class='image' src='https://raw.githubusercontent.com/MCResourcePile/" + repo + "/master/maps/" + similar[i].slug + "/map.png'>\
                         <div class='banner'>\
