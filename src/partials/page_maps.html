@@ -55,9 +55,11 @@
                     You currently have <span class="api-request-remaining"></span> out of <span class="api-request-limit"></span> requests left to the GitHub API.<br>
                     This means that you can download approximately <span class="api-request-approximate"></span> more maps before you must wait <span class="api-request-reset"></span> for the limit to reset.
                 </div>
-                <div class="modal-section-head">Suggested Maps</div>
-                <div class="modal-section-body">
-                    <div class="map-suggestions row"></div>
+                <div class="map-suggestions-wrapper" style="display:hidden">
+                    <div class="modal-section-head">Suggested Maps</div>
+                    <div class="modal-section-body">
+                        <div class="map-suggestions row"></div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -78,9 +80,15 @@
                     You currently have <span class="api-request-remaining"></span> out of <span class="api-request-limit"></span> requests left to the GitHub API.<br>
                     This means that you can download approximately <span class="api-request-approximate"></span> more maps before you must wait <span class="api-request-reset"></span> for the limit to reset.
                 </div>
+                <div class="map-suggestions-wrapper" style="display:hidden">
+                    <div class="modal-section-head">Suggested Maps</div>
+                    <div class="modal-section-body">
+                        <div class="map-suggestions row"></div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
             </div>
         </div>
     </div>

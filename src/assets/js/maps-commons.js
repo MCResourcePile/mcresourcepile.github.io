@@ -103,7 +103,7 @@ function startDownload(active_name, active_slug, active_path, active_license) {
             output('No GitHub API access token provided. Please go to your preferences to generate an access token.')
         }
         $('.map-suggestions').text('');
-        suggestMaps(active_slug);
+        if (user_settings.map_suggestions == 'true') suggestMaps(active_slug);
     } else {
         onError('No download path identified; skipping download request.');
         progress = 0;
@@ -240,6 +240,7 @@ function suggestMaps(slug) {
                 tags += similar[i].tags[j];
                 if (j != similar[i].tags.length - 1) tags += ", ";
             }
+            $('.map-suggestions-wrapper').show();
             $('.map-suggestions').append(
                 "<div class='col-md-4 col-sm-12'>\
                     <div class='suggested-map-thumbnail'>\
