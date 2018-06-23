@@ -60,7 +60,7 @@ $(document).ready(function(){
     updateListing();
     getApiLimit();
 
-    var source = $('.game-mode-navigation').data('source');
+    source = $('.game-mode-navigation').data('source');
     $.getJSON("https://rawgit.com/MCResourcePile/mcresourcepile.github.io/source/src/data/maps/" + source + ".json", function(r) {
         maps_data = r.data.maps;
     });
@@ -227,6 +227,19 @@ function suggestMaps(slug) {
         similar.sort();
         // display suggested maps in download success menu
         for (var i = 1; i < 4; i++) {
+            var repo = $('.game-mode-navigation').data('source');
+            if (repo == "overcast") {
+                var snip = similar[i].slug.substring(0, 1);
+                if (snip < "g") {
+                    repo = "overcast-maps-a-to-f"
+                } else if (snip < "o") {
+                    repo = "overcast-maps-g-to-n"
+                } else {
+                    repo = "overcast-maps-o-to-z"
+                }
+            } else {
+                repo = repo + "-maps";
+            }
             var authors = "Created by ";
             for (var j = 0; j < similar[i].authors.length; j++) {
                 authors += similar[i].authors[j].username;
@@ -242,11 +255,15 @@ function suggestMaps(slug) {
             }
             $('.map-suggestions-wrapper').show();
             $('.map-suggestions').append(
-                "<div class='col-md-4 col-sm-12'>\
-                    <div class='suggested-map-thumbnail'>\
-                        <div class='suggested-map-header'><a href='?dl=" + similar[i].slug + "'>" + similar[i].name + "</a></div>\
-                        <div class='suggested-map-authors'>" + authors + "</div>\
-                        <div class='suggested-map-tags'>" + tags + "</div>\
+                "<div class='col-sm-4 thumbnail map-thumbnail small'>\
+                    <div class='map-thumbnail-header'>\
+                        <img class='image' src='https://raw.githubusercontent.com/MCResourcePile/" + repo + "/master/maps/" + similar[i].slug + "/map.png'>\
+                        <div class='banner'>\
+                            <div class='title'><a href='?dl=" + similar[i].slug + "'>" + similar[i].name + "</a></div>\
+                        </div>\
+                    </div>\
+                    <div class='map-thumbnail-body'>\
+                        <div class='authors'>" + authors + "</div>\
                     </div>\
                 </div>"
             );
