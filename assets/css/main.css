@@ -540,21 +540,22 @@ span.game-mode-button {
     margin-right: 64px;
 }
 
-.contest-winners .map-thumbnail.small {
+.map-thumbnail.small {
     width: 230px;
 }
 
-.contest-winners .map-thumbnail.small .map-thumbnail-header .image {
+.map-thumbnail.small .map-thumbnail-header .image {
     width: 220px;
     height: 184px;
     margin: 0;
     background-color: #525252;
 }
 
-.contest-winners .map-thumbnail .map-thumbnail-header .title {
+.contest-winners .map-thumbnail .map-thumbnail-header .title,
+.map-suggestions .map-thumbnail .map-thumbnail-header .title {
     max-width: 270px;
     font-size: 16px;
-    margin-top: 3px;
+    margin-top: 0px;
 }
 
 .contest-winners .map-thumbnail .map-thumbnail-header .labels {
@@ -565,11 +566,11 @@ span.game-mode-button {
     top: 198px;
 }
 
-.contest-winners .map-thumbnail.small .map-thumbnail-header .labels {
+.map-thumbnail.small .map-thumbnail-header .labels {
     top: 164px;
 }
 
-.contest-winners .map-thumbnail.small .map-thumbnail-header .banner {
+.map-thumbnail.small .map-thumbnail-header .banner {
 	width: 220px;
 }
 
@@ -578,6 +579,20 @@ span.game-mode-button {
         margin-left: 0px;
         margin-right: 0px;
     }
+}
+
+.map-suggestions {
+	align-content: center;
+}
+
+.map-suggestions .map-thumbnail {
+    margin: 34px;
+    margin-top: 8px;
+    margin-bottom: -14px;
+}
+
+.map-suggestions .map-thumbnail.small .map-thumbnail-body .authors {
+	margin-bottom: -3px;
 }
 
 .map-tag,
