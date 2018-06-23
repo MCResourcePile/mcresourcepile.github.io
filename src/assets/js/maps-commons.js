@@ -60,6 +60,13 @@ $(document).ready(function(){
     updateListing();
     getApiLimit();
 
+    source = $('.game-mode-navigation').data('source');
+    if (user_settings.map_suggestions != 'false') {
+        $.getJSON("https://rawgit.com/MCResourcePile/mcresourcepile.github.io/source/src/data/maps/" + source + ".json", function(r) {
+            maps_data = r.data.maps;
+        });
+    }
+
     // update map listing in time with search bar interactions
     $('.record-search-container').click(function() { updateListing() });
     $('.record-search-container').keyup(function() { updateListing() });
@@ -96,6 +103,10 @@ function startDownload(active_name, active_slug, active_path, active_license) {
         } else {
             GitZip.zipRepo(active_path);
             output('No GitHub API access token provided. Please go to your preferences to generate an access token.')
+        }
+        $('.map-suggestions').text('');
+        if (user_settings.map_suggestions != 'false') {
+            suggestMaps(active_slug);
         }
     } else {
         onError('No download path identified; skipping download request.');
@@ -177,3 +188,94 @@ GitZip.registerCallback(function(status, message, percent) {
         'background-color': 'rgb(71, 198, 99)'
     });
 });
+
+function suggestMaps(slug) {
+    // get json data for target map via slug
+    var target = maps_data.filter(function(val, index, array) {
+        return val.slug === slug;
+    });
+    // check if target map exists in data
+    if (target.length > 0) {
+        target = target[0];
+        // array for similar maps
+        var similar = [];
+        // loop through the json array to compare and find similar maps to suggest
+        for (var i = 0; i < maps_data.length; i++) {
+            if (maps_data[i].slug != target.slug) {
+                var weight = 0;
+                // compare authors
+                for (var j = 0; j < target.authors.length; j++) {
+                    for (var k = 0; k < maps_data[i].authors.length; k++) {
+                        if (target.authors[j].uuid === maps_data[i].authors[k].uuid) weight += 5;
+                    }
+                }
+                // compare tags
+                for (var j = 0; j < target.tags.length; j++) {
+                    for (var k = 0; k < maps_data[i].tags.length; k++) {
+                        if (target.tags[j] === maps_data[i].tags[k]) weight += 2;
+                    }
+                }
+                // if the map has a weight score good enough
+                // add it to the list of similar maps
+                if (weight > 0) {
+                    var temp = maps_data[i];
+                    temp.weight = weight;
+                    similar.push(temp);
+                }
+            }
+        }
+        // sort the list by weight
+        similar.sort(function(a, b) {
+            return b.weight - a.weight;
+        });
+        similar.sort();
+        // display suggested maps in download success menu
+        for (var i = 1; i < 4; i++) {
+            var repo = $('.game-mode-navigation').data('source');
+            if (repo == "overcast") {
+                var snip = similar[i].slug.substring(0, 1);
+                if (snip < "g") {
+                    repo = "overcast-maps-a-to-f"
+                } else if (snip < "o") {
+                    repo = "overcast-maps-g-to-n"
+                } else {
+                    repo = "overcast-maps-o-to-z"
+                }
+            } else {
+                repo = repo + "-maps";
+            }
+            var authors = "by ";
+            for (var j = 0; j < similar[i].authors.length; j++) {
+                authors += similar[i].authors[j].username;
+                if (j != similar[i].authors.length - 1) {
+                    authors += ", ";
+                }
+                if (j == 2) {
+                    authors += "and more";
+                    break;
+                }
+            }
+            var tags = "";
+            for (var j = 0; j < similar[i].tags.length; j++) {
+                tags += similar[i].tags[j];
+                if (j != similar[i].tags.length - 1) tags += ", ";
+            }
+            $('.map-suggestions-wrapper').show();
+            $('.map-suggestions').append(
+                "<div class='col-sm-4 thumbnail map-thumbnail small collapse-immune'>\
+                    <div class='map-thumbnail-header'>\
+                        <img class='image' src='https://raw.githubusercontent.com/MCResourcePile/" + repo + "/master/maps/" + similar[i].slug + "/map.png'>\
+                        <div class='banner'>\
+                            <div class='title'><a href='?dl=" + similar[i].slug + "'>" + similar[i].name + "</a></div>\
+                        </div>\
+                    </div>\
+                    <div class='map-thumbnail-body'>\
+                        <div class='authors'>" + authors + "</div>\
+                    </div>\
+                </div>"
+            );
+        }
+    } else {
+        onError('Could not load suggested maps as the given map slug could not be found.');
+    }
+}

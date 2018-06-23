@@ -58,7 +58,7 @@
                         <option value="dark">Dark</option>
                     </select>
                 </div>
-                <small class="col-md-4">Use an alternative dark site theme, perfect for night time.</small>
+                <small class="col-md-4">Use an alternative dark site theme.</small>
             </div>
             <br>
             <div class="row">
@@ -80,7 +80,18 @@
                         <option value="true">Enabled</option>
                     </select>
                 </div>
-                <small class="col-md-4">Display additional map download statistics on collection thumbnails.</small>
+                <small class="col-md-4">Display additional map download statistics for collection maps.</small>
+            </div>
+            <br>
+            <div class="row">
+                <h6 class="col-md-4 control-label"><b>Map Suggestions</b></h6>
+                <div class="col-md-4">
+                    <select id="site-select-map-suggestions" name="site-select-map-suggestions" class="form-control">
+                        <option value="true">Enabled</option>
+                        <option value="false">Disabled</option>
+                    </select>
+                </div>
+                <small class="col-md-4">Suggest similar maps to the ones just downloaded.</small>
             </div>
             <br>
             <a class="btn btn-success btn-auth" onclick="savePreferences()">Save preferences</a>
