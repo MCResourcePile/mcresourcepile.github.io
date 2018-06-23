@@ -61,9 +61,11 @@ $(document).ready(function(){
     getApiLimit();
 
     source = $('.game-mode-navigation').data('source');
-    $.getJSON("https://rawgit.com/MCResourcePile/mcresourcepile.github.io/source/src/data/maps/" + source + ".json", function(r) {
-        maps_data = r.data.maps;
-    });
+    if (user_settings.map_suggestions != 'false') {
+        $.getJSON("https://rawgit.com/MCResourcePile/mcresourcepile.github.io/source/src/data/maps/" + source + ".json", function(r) {
+            maps_data = r.data.maps;
+        });
+    }
 
     // update map listing in time with search bar interactions
     $('.record-search-container').click(function() { updateListing() });
@@ -260,6 +262,7 @@ function suggestMaps(slug) {
             }
             $('.map-suggestions-wrapper').show();
             $('.map-suggestions').append(
+                "<div class='col-sm-4 thumbnail map-thumbnail small collapse-immune'>\
                     <div class='map-thumbnail-header'>\
                         <img class='image' src='https://raw.githubusercontent.com/MCResourcePile/" + repo + "/master/maps/" + similar[i].slug + "/map.png'>\
                         <div class='banner'>\
