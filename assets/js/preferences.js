@@ -203,7 +203,7 @@ function savePreferences() {
     user_settings.theme = $('#site-select-theme :selected').val();
     user_settings.hide_images = $('#site-select-map-images :selected').val();
     user_settings.map_stats = $('#site-select-download-stats :selected').val();
-    user_settings.map_suggestions = $('#site-select-map-sugestions :selected').val();
+    user_settings.map_suggestions = $('#site-select-map-suggestions :selected').val();
     if (user_settings.theme == 'dark') {
         $('head').append('<link href=\'/assets/css/dark.css\' rel=\'stylesheet\'>');
     } else {

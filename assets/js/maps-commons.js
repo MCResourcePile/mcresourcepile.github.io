@@ -251,7 +251,7 @@ function suggestMaps(slug) {
                     authors += ", ";
                 }
                 if (j == 2) {
-                    authors += "and more";
+                    authors += ", and more";
                     break;
                 }
             }
