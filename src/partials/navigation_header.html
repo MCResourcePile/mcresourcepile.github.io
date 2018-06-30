@@ -5,16 +5,16 @@
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="{{#if description}}{{description}}{{else}}{{subtitle}}{{/if}}" name="description">
+        <meta content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}" name="description">
         <meta content="{{title}} - ResourcePile" property="og:title">
-        <meta content="{{#if description}}{{description}}{{else}}{{subtitle}}{{/if}}" name="og:description">
+        <meta content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
         <meta content="{{title}} - ResourcePile" name="twitter:title">
-        <meta content="{{#if description}}{{description}}{{else}}{{subtitle}}{{/if}}" name="twitter:description">
+        <meta content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
