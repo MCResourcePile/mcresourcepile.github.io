@@ -7,8 +7,8 @@
 var user_settings = Cookies.getJSON('user_settings');
 var user_info = Cookies.getJSON('user_info');
 
-const default_settings = {token: "", theme: "default", hide_images: "false", map_stats: "false", map_suggestions: "true"};
-const default_info = {username: "User", avatar: "https://avatars0.githubusercontent.com/u/24795789?v=4", rate: {limit: 0, remaining: 0, reset: 0}};
+var default_settings = {token: "", theme: "default", hide_images: "false", map_stats: "false", map_suggestions: "true"};
+var default_info = {username: "User", avatar: "https://avatars0.githubusercontent.com/u/24795789?v=4", rate: {limit: 0, remaining: 0, reset: 0}};
 
 function applySettings() {
     if (user_settings) {
