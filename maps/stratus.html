@@ -33,7 +33,7 @@
         <script src="/assets/js/FileSaver.js"></script>
         <script src="/assets/js/jszip.js"></script>
         <script src="/assets/js/jquery.searchable-1.1.0.min.js"></script>
-        <script src="/assets/js/maps-commons.js"></script>
+        <script src="/assets/js/maps.js"></script>
         <script src="/assets/js/analytics.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -121,7 +121,8 @@
     <div class="collection-head">
         <div class="row">
             <div class="col-xs-12 col-sm-8">
-                <div class="collection-title">CTW Tournament Maps</div>
+                <div class="collection-title">Incrediwools Maps</div>
+                <div class="collection-description">Maps from the upcoming Capture the Wool tournament on Stratus!</div>
             </div>
             <div class="col-xs-12 col-sm-4">
                 <span id="collection-buttons" class="center pull-right"></span>
@@ -130,75 +131,118 @@
     </div>
     <div class="collection-body">
         <div class="collection-maps">
-            <div class="col-sm-6 col-lg-3 map-thumbnail center collapse-immune" style="padding-top:2px;">
-                <div id="featured-dead_heat" class="thumbnail map-float">
-                    <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/dead_heat/map.png');">
-                        <div class="map-banner-collapse-immune">
-                            <a class="map-header" href="#dead_heat" data-toggle="tooltip" data-placement="top" title="Dead Heat"><strong>Dead Heat</strong><span class="tag_hidden">dead_heat</span></a>
-                            <a href="https://oc.tc/forums/topics/51222d79ba6087f491000295" target="_blank" class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="external-thread fa fa-comments-o"></i></a>
-                            <span style="display:block;margin-top:-8px;">
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center collapse-immune" style="margin:5px 10px 26px;">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/bamboo_valley_v/map.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Bamboo Valley V">
+                            <div class="title"><a href="?s=bamboo_valley_v">Bamboo Valley V</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                                <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                        </div>
+                    </div>
+                    <div class="map-thumbnail-body">
+                        <div class="authors">
+                            by
+                            <li class="game-tag author-tag"><a href="?s=621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06">Strangey<span class="tag_hidden">621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06 621b2aa84e5f4ed8bd360ae2f8952a06</span></a></li>
+                        </div>
+                        <div class="buttons">
+                            <a class="btn map-link map-button map-button-span" role="button" href="?dl=bamboo_valley_v" data-toggle="tooltip" data-placement="top" title="View map details"><i class="fa fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center collapse-immune" style="margin:5px 10px 26px;">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/dead_heat/map.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Dead Heat">
+                            <div class="title"><a href="?s=dead_heat">Dead Heat</a></div>
+                            <div class="sub-title">
                                 <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
                                 <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
                                 <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
-                            </span>
+                            </div>
+                            <div class="icon-alerts">
+                                <a href="https://oc.tc/forums/topics/51222d79ba6087f491000295" target="_blank" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="fa fa-comments-o"></i></a>
+                            </div>
                         </div>
-                        <div class="map-labels-collapse-immune">
-                            <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                        <div class="labels">
+                            <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                         </div>
                     </div>
-                    <div class="map-authors">
-                        <span class="map-author-name">by</span>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=a6a99e23-34c4-4957-8974-b78b4da9ce7c">AMo</a></li>
-                    </div>
-                    <div style="padding-top:2%;" class="center">
-                        <a class="btn map-link map-button-span" role="button" href="?dl=dead_heat" data-toggle="tooltip" data-placement="top" title="View map details"><i class="fa fa-download"></i></a>
+                    <div class="map-thumbnail-body">
+                        <div class="authors">
+                            by
+                            <li class="game-tag author-tag"><a href="?s=a6a99e23-34c4-4957-8974-b78b4da9ce7c">AMo<span class="tag_hidden">a6a99e23-34c4-4957-8974-b78b4da9ce7c a6a99e2334c449578974b78b4da9ce7c</span></a></li>
+                        </div>
+                        <div class="buttons">
+                            <a class="btn map-link map-button map-button-span" role="button" href="?dl=dead_heat" data-toggle="tooltip" data-placement="top" title="View map details"><i class="fa fa-download"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3 map-thumbnail center collapse-immune" style="padding-top:2px;">
-                <div id="featured-gobi" class="thumbnail map-float">
-                    <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/gobi/map.png');">
-                        <div class="map-banner-collapse-immune">
-                            <a class="map-header" href="#gobi" data-toggle="tooltip" data-placement="top" title="Gobi"><strong>Gobi</strong><span class="tag_hidden">gobi</span></a>
-                            <span style="display:block;margin-top:-8px;">
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center collapse-immune" style="margin:5px 10px 26px;">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/gobi/map.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Gobi">
+                            <div class="title"><a href="?s=gobi">Gobi</a></div>
+                            <div class="sub-title">
                                 <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
                                 <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
-                            </span>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
                         </div>
-                        <div class="map-labels-collapse-immune">
-                            <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                        <div class="labels">
+                            <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                         </div>
                     </div>
-                    <div class="map-authors">
-                        <span class="map-author-name">by</span>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=dff980ed-9f69-491e-b79c-30c21350baf2">DoomyBoy</a></li>
-                    </div>
-                    <div style="padding-top:2%;" class="center">
-                        <a class="btn map-link map-button-span" role="button" href="?dl=gobi" data-toggle="tooltip" data-placement="top" title="View map details"><i class="fa fa-download"></i></a>
+                    <div class="map-thumbnail-body">
+                        <div class="authors">
+                            by
+                            <li class="game-tag author-tag"><a href="?s=dff980ed-9f69-491e-b79c-30c21350baf2">DoomyBoy<span class="tag_hidden">dff980ed-9f69-491e-b79c-30c21350baf2 dff980ed9f69491eb79c30c21350baf2</span></a></li>
+                        </div>
+                        <div class="buttons">
+                            <a class="btn map-link map-button map-button-span" role="button" href="?dl=gobi" data-toggle="tooltip" data-placement="top" title="View map details"><i class="fa fa-download"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3 map-thumbnail center collapse-immune" style="padding-top:2px;">
-                <div id="featured-wallop_too" class="thumbnail map-float">
-                    <div class="map-image" style="background-image: url('https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/wallop_too/map.png');">
-                        <div class="map-banner-collapse-immune">
-                            <a class="map-header" href="#wallop_too" data-toggle="tooltip" data-placement="top" title="Wallop Too"><strong>Wallop Too</strong><span class="tag_hidden">wallop_too</span></a>
-                            <span style="display:block;margin-top:-8px;">
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center collapse-immune" style="margin:5px 10px 26px;">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/wallop_too/map.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Wallop Too">
+                            <div class="title"><a href="?s=wallop_too">Wallop Too</a></div>
+                            <div class="sub-title">
                                 <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
                                 <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
-                            </span>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
                         </div>
-                        <div class="map-labels-collapse-immune">
-                            <a href="?s=by-sa" class="label label-success map-label" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                        <div class="labels">
+                            <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                         </div>
                     </div>
-                    <div class="map-authors">
-                        <span class="map-author-name">by</span>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=6bec5c3a-4934-4b19-9aa8-c7c569820f7d">Claf</a></li>
-                        <li class="game-tag author-tag"><a class="map-author-name" href="?s=9929437a-9b7d-4d7a-b05d-e22fe93ac042">triplezko</a></li>
-                    </div>
-                    <div style="padding-top:2%;" class="center">
-                        <a class="btn map-link map-button-span" role="button" href="?dl=wallop_too" data-toggle="tooltip" data-placement="top" title="View map details"><i class="fa fa-download"></i></a>
+                    <div class="map-thumbnail-body">
+                        <div class="authors">
+                            by
+                            <li class="game-tag author-tag"><a href="?s=6bec5c3a-4934-4b19-9aa8-c7c569820f7d">Claf<span class="tag_hidden">6bec5c3a-4934-4b19-9aa8-c7c569820f7d 6bec5c3a49344b199aa8c7c569820f7d</span></a></li>
+                            <li class="game-tag author-tag"><a href="?s=9929437a-9b7d-4d7a-b05d-e22fe93ac042">triplezko<span class="tag_hidden">9929437a-9b7d-4d7a-b05d-e22fe93ac042 9929437a9b7d4d7ab05de22fe93ac042</span></a></li>
+                        </div>
+                        <div class="buttons">
+                            <a class="btn map-link map-button map-button-span" role="button" href="?dl=wallop_too" data-toggle="tooltip" data-placement="top" title="View map details"><i class="fa fa-download"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
