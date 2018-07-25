@@ -12,17 +12,18 @@ var default_info = {username: "User", avatar: "https://avatars0.githubuserconten
 
 function applySettings() {
     if (user_settings) {
-        // apply dark theme
+        // site theme preference application
         if (user_settings.theme == 'dark') {
             $('head').append('<link href=\'/assets/css/dark.css\' rel=\'stylesheet\'>');
         }
-        // collapse map thumbnails, otherwise lazy load images
+        // map image preference application
         if (user_settings.hide_images == 'true') {
-            $('.map-thumbnail:not(.collapse-immune) .map-thumbnail-header .image').css({'visbility': 'hidden'});
-            $('.map-thumbnail:not(.collapse-immune) .map-thumbnail-header .nabber').css({'height': '60px'});
-            $('.map-thumbnail:not(.collapse-immune) .map-thumbnail-header .labels').css({'top': '45', 'left': '8'});
-            $('.map-thumbnail:not(.collapse-immune) .map-thumbnail-body .buttons .map-button').addClass('map-button-sm');
-            $('.click-image').show();
+            $('.map-thumbnail:not(.collapse-immune)').css({'height': 'auto'});
+            $('.map-thumbnail:not(.collapse-immune) .image').css({'visbility': 'hidden', 'height': '60px'});
+            $('.map-thumbnail:not(.collapse-immune) .banner').css({'height': '60px'});
+            $('.map-thumbnail:not(.collapse-immune) .labels').css({'top': '45', 'left': '8'});
+            $('.map-thumbnail:not(.collapse-immune) .map-button').addClass('map-button-sm');
+            $('.map-thumbnail:not(.collapse-immune) .click-image').show();
         } else {
             var myLazyLoad = new LazyLoad({
                 elements_selector: '.lazy',
@@ -32,12 +33,18 @@ function applySettings() {
                 },
             });
         }
-        // show google analytic download stats on map collections
+        // download stats preference application
         if (user_settings.map_stats == 'true' && is_maps_collection) {
             $('.map-download-stats').show();
             fetchGlobalDownloads();
             fetchUniqueDownloads();
             fetchRecentDownloads();
+        }
+        // suggested maps preference application
+        if (user_settings.map_suggestions != 'false' && is_map_collection) {
+            $('.map-suggestions-wrapper').show();
+        } else {
+            $('.map-suggestions-wrapper').hide();
         }
         output('Applied user settings to this page.');
     }
