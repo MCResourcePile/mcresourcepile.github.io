@@ -12,11 +12,11 @@ var default_info = {username: "User", avatar: "https://avatars0.githubuserconten
 
 function applySettings() {
     if (user_settings) {
-        // apply dark theme
+        // site theme preference application
         if (user_settings.theme == 'dark') {
             $('head').append('<link href=\'/assets/css/dark.css\' rel=\'stylesheet\'>');
         }
-        // collapse map thumbnails, otherwise lazy load images
+        // map image preference application
         if (user_settings.hide_images == 'true') {
             $('.map-thumbnail:not(.collapse-immune) .map-thumbnail-header .image').css({'visbility': 'hidden'});
             $('.map-thumbnail:not(.collapse-immune) .map-thumbnail-header .nabber').css({'height': '60px'});
@@ -32,12 +32,18 @@ function applySettings() {
                 },
             });
         }
-        // show google analytic download stats on map collections
+        // download stats preference application
         if (user_settings.map_stats == 'true' && is_maps_collection) {
             $('.map-download-stats').show();
             fetchGlobalDownloads();
             fetchUniqueDownloads();
             fetchRecentDownloads();
+        }
+        // suggested maps preference application
+        if (user_settings.map_suggestions != 'false' && is_map_collection) {
+            $('.map-suggestions-wrapper').show();
+        } else {
+            $('.map-suggestions-wrapper').hide();
         }
         output('Applied user settings to this page.');
     }

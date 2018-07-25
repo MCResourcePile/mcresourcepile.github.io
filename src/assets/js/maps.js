@@ -260,7 +260,6 @@ function suggestMaps(slug) {
                 tags += similar[i].tags[j];
                 if (j != similar[i].tags.length - 1) tags += ", ";
             }
-            $('.map-suggestions-wrapper').show();
             $('.map-suggestions').append(
                 "<div class='col-sm-4 thumbnail map-thumbnail small collapse-immune'>\
                     <div class='map-thumbnail-header'>\
