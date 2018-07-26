@@ -58,6 +58,15 @@ $(document).ready(function(){
         $('#search').val(query);
     }
 
+    // handle map image requests
+    $('.click-image').click(function() {
+        active_name = $(this).attr('id');
+        active_thumbnail = $(this).attr('thumbnail');
+        $('#map-image-display .map-title').text(active_name);
+        $('#map-image-display .map-image').attr('src', active_thumbnail);
+        $('#map-image-display').modal('show');
+    });
+
     updateListing();
     getApiLimit();
 
