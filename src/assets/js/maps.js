@@ -47,7 +47,8 @@ $(document).ready(function(){
                 $(avatars[i]).attr('src', source);
             }
         } else {
-            onError('The requested map does not exist in this collection.');
+            msg = "The requested map does not exist in this collection.\nProvided map slug: " + requested_map
+            onError(msg);
         }
     }
 
@@ -60,6 +61,8 @@ $(document).ready(function(){
     updateListing();
     getApiLimit();
 
+    // fetch json version of loaded maps
+    // used for map suggestions when enabled
     source = $('.game-mode-navigation').data('source');
     if (user_settings.map_suggestions != 'false') {
         $.getJSON("https://rawgit.com/MCResourcePile/mcresourcepile.github.io/source/src/data/maps/" + source + ".json", function(r) {
@@ -109,7 +112,8 @@ function startDownload(active_name, active_slug, active_path, active_license) {
             suggestMaps(active_slug);
         }
     } else {
-        onError('No download path identified; skipping download request.');
+        msg = "No download path identified for " + active_slug + "."
+        onError(msg);
         progress = 0;
         getApiLimit();
     }
@@ -275,6 +279,7 @@ function suggestMaps(slug) {
             );
         }
     } else {
-        onError('Could not load suggested maps as the given map slug could not be found.');
+        msg = "Could not load suggested maps as the given map slug could not be found.\nProvided slug: " + slug
+        onError(msg);
     }
 }
