@@ -41,7 +41,7 @@ function applySettings() {
             fetchRecentDownloads();
         }
         // suggested maps preference application
-        if (user_settings.map_suggestions != 'false' && is_map_collection) {
+        if (user_settings.map_suggestions != 'false' && is_maps_collection) {
             $('.map-suggestions-wrapper').show();
         } else {
             $('.map-suggestions-wrapper').hide();
