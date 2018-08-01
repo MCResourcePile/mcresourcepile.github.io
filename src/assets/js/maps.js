@@ -32,6 +32,9 @@ $(document).ready(function(){
     // open external download modal when original download button clicked
     $('.click-download-external:not(.disabled)').click(function() {
         var active_slug = $(this).attr('slug');
+        if (user_settings.map_suggestions != 'false') {
+            suggestMaps(active_slug);
+        }
         $('#download-' + active_slug).modal('hide');
         $('#download-opened').modal('show');
     });
@@ -74,7 +77,7 @@ $(document).ready(function(){
     // used for map suggestions when enabled
     source = $('.game-mode-navigation').data('source');
     if (user_settings.map_suggestions != 'false') {
-        $.getJSON("https://rawgit.com/MCResourcePile/mcresourcepile.github.io/source/src/data/maps/" + source + ".json", function(r) {
+        $.getJSON("https://cdn.rawgit.com/MCResourcePile/mcresourcepile.github.io/source/src/data/maps/" + source + ".json", function(r) {
             maps_data = r.data.maps;
         });
     }
@@ -116,7 +119,6 @@ function startDownload(active_name, active_slug, active_path, active_license) {
             GitZip.zipRepo(active_path);
             output('No GitHub API access token provided. Please go to your preferences to generate an access token.')
         }
-        $('.map-suggestions').text('');
         if (user_settings.map_suggestions != 'false') {
             suggestMaps(active_slug);
         }
@@ -273,6 +275,7 @@ function suggestMaps(slug) {
                 tags += similar[i].tags[j];
                 if (j != similar[i].tags.length - 1) tags += ", ";
             }
+            $('.map-suggestions').text('');
             $('.map-suggestions').append(
                 "<div class='col-sm-4 thumbnail map-thumbnail small collapse-immune'>\
                     <div class='map-thumbnail-header'>\
