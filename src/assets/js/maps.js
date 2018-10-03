@@ -136,10 +136,8 @@ function updateListing() {
         childSelector: '.map-thumbnail-selector',
         searchField: '#search'
     })
-    var total_maps = $('.map-thumbnail').length
-    var total_display = $('.map-thumbnail:visible').length
-    var total_official = $('.official-map:visible').length
-    var total_unofficial = $('.unofficial-map:visible').length
+    var total_maps = $('.map-thumbnail:not(.collapse-immune)').length
+    var total_display = $('.map-thumbnail:not(.collapse-immune):visible').length
     var current_search = $('#search').val()
     if (total_maps == '0') {
         $('.total-maps').html('There are no maps to display.');
