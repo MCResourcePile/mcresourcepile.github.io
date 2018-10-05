@@ -1,0 +1,101 @@
+{{> navigation_header}}
+{{> page_maps_search_menu}}
+<div class="bow-output">
+    <div class="bow-dynamic">
+        {{#each (sortBy maps "name")}}
+        {{#gte (length records) 1}}
+        <div class="bow-record">
+            <div class="bow-record-content row">
+                <div class="col-md-3">
+                    <div class="bow-map">{{name}}</div>
+                    <div class="bow-tags">
+                        {{#each tags}}
+                        <li class="game-tag"><a class="game-link map-tag" href="?s={{this}}">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}</a><span class="tag-hidden">{{lookup (lookup @root.settings.maps.tags this) 'keywords'}}</span>{{else}}{{capitalize this}}</a>{{/if}}</li>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="col-md-8 row">
+                    <div class="col-md-8 bow-first">
+                        {{#each (sortBy records "distance")}}
+                        {{#is @index (subtract (length ../records) 1)}}
+                        <i class="fa fa-trophy"></i>
+                        <img class="bow-player-avatar" src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=30&default=MHF_Steve&overlay">
+                        <a class="bow-player" href="?s={{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}">{{username}}</a>
+                        with a distance of <b>{{distance}}</b> blocks
+                        {{#if screenshot}}
+                        <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fa fa-check-circle"></i></a>
+                        {{/if}}
+                        {{/is}}
+                        {{/each}}
+                    </div>
+                    <div class="col-md-4">
+                        {{#gte (length records) 2}}
+                        {{#each (sortBy records "distance")}}
+                        {{#is @index (subtract (length ../records) 2)}}
+                        <div>
+                            <img class="bow-player-avatar" src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&default=MHF_Steve&overlay">
+                            <a class="bow-player" href="?s={{uuid}}">{{username}}</a>
+                            ({{distance}} blocks)
+                            {{#if screenshot}}
+                            <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fa fa-check-circle"></i></a>
+                            {{/if}}
+                        </div>
+                        {{/is}}
+                        {{/each}}
+                        {{/gte}}
+                        {{#gte (length records) 3}}
+                        {{#each (sortBy records "distance")}}
+                        {{#is @index (subtract (length ../records) 3)}}
+                        <div>
+                            <img class="bow-player-avatar" src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&default=MHF_Steve&overlay">
+                            <a class="bow-player" href="?s={{uuid}}">{{username}}</a>
+                            ({{distance}} blocks)
+                            {{#if screenshot}}
+                            <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fa fa-check-circle"></i></a>
+                            {{/if}}
+                        </div>
+                        {{/is}}
+                        {{/each}}
+                        {{/gte}}
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    {{#gt (length records) 3}}
+                    <a class="bow-more" data-toggle="modal" data-target="#more-stats-{{@index}}" style="margin-top:15px;"><span class="badge" data-toggle="tooltip" data-placement="top" title="Click to load {{subtract (length records) 3}} more records for this map">{{subtract (length records) 3}}</span><i class="fa fa-chevron-right"></i></a>
+                    <div class="modal fade download" id="more-stats-{{@index}}" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header center">
+                                    <h4 class="modal-title">All records for <strong>{{#if name}}{{name}}{{else}}Untitiled Map{{/if}}</strong></h4>
+                                </div>
+                                <div class="modal-body" style="font-size:15px;">
+                                    <ol>
+                                        {{#withSort records "distance" reverse="true"}}
+                                        <li>
+                                            <img class="bow-player-avatar" src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=20&default=MHF_Steve&overlay">
+                                            <a class="bow-player" href="?s={{uuid}}">{{username}}</a>
+                                            with a distance of {{distance}} blocks
+                                            {{#if screenshot}}
+                                            <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fa fa-check-circle"></i></a>
+                                            {{/if}}
+                                        </li>
+                                        {{/withSort}}
+                                    </ol>
+                                </div>
+                                <div class="modal-footer">
+                                    <a type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{else}}
+                    <span class="bow-more disabled"><i class="fa fa-chevron-right"></i></span>
+                    {{/gt}}
+                </div>
+            </div>
+        </div>
+        {{/gte}}
+        {{/each}}
+    </div>
+</div>
+{{> navigation_footer}}
