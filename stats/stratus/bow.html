@@ -5,23 +5,22 @@
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Tracking the longest bow kill distances recorded on Stratus Network across all maps and gamemodes" name="description">
+        <meta content="Tracking the longest bow kill distances recorded on Stratus Network" name="description">
         <meta content="Stratus Bow Records - ResourcePile" property="og:title">
-        <meta content="Tracking the longest bow kill distances recorded on Stratus Network across all maps and gamemodes" name="og:description">
+        <meta content="Tracking the longest bow kill distances recorded on Stratus Network" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
         <meta content="Stratus Bow Records - ResourcePile" name="twitter:title">
-        <meta content="Tracking the longest bow kill distances recorded on Stratus Network across all maps and gamemodes" name="twitter:description">
+        <meta content="Tracking the longest bow kill distances recorded on Stratus Network" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
-        <link href="/assets/css/gamemodes.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
@@ -30,6 +29,7 @@
         <script src="/assets/js/preferences.js"></script>
         <script src="/assets/js/moment.js"></script>
         <script src="/assets/js/jquery.searchable-1.1.0.min.js"></script>
+        <script src="/assets/js/stats.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -112,257 +112,183 @@
                         </noscript>
                     </div>
                     <div class="content-title">Stratus Bow Records</div>
-                    <div class="content-subtitle">Tracking the longest bow kill distances recorded on Stratus Network across all maps and gamemodes</div>
+                    <div class="content-subtitle">Tracking the longest bow kill distances recorded on Stratus Network</div>
                 </div>
             <!-- Start page content -->
-<!-- Game mode navigation menu -->
-<form name="search_form" class="record-search-container">
-    <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search records">
-</form>
-<div class="game-mode-navigation row">
-    <div class="col-xs-12 col-md-6">
-        <div class="col-xs-6">
-            <div class="game-mode-section-header">Objectives</div>
-            <a class="game-mode-button game-ctf" href="?s=ctf"></a>
-            <a class="game-mode-button game-ctw" href="?s=ctw"></a>
-            <a class="game-mode-button game-dtc" href="?s=dtc"></a>
-            <a class="game-mode-button game-dtm" href="?s=dtm"></a>
-            <a class="game-mode-button game-koth" href="?s=koth"></a>
-            <a class="game-mode-button game-cp" href="?s=cp"></a>
+<div class="thumbnail">
+    <form name="search_form" class="record-search-container">
+        <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
+    </form>
+    <div class="game-mode-navigation row" data-source="stratus">
+        <div class="col-xs-12 col-md-4">
+            <div class="col-xs-6 col-md-6">
+                <div class="game-mode-selection-header">Objectives</div>
+                <a class="game-mode-button" href="?s=cp">Capture Points</a>
+                <a class="game-mode-button" href="?s=ctf">Capture the Flag</a>
+                <a class="game-mode-button" href="?s=ctw">Capture the Wool</a>
+                <a class="game-mode-button" href="?s=dtc">Destroy the Core</a>
+                <a class="game-mode-button" href="?s=dtm">Destroy the Monument</a>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <div class="game-mode-selection-header">Deathmatch</div>
+                <a class="game-mode-button" href="?s=ffa">Free-for-all</a>
+                <a class="game-mode-button" href="?s=koth">King of the Hill</a>
+                <a class="game-mode-button" href="?s=payload">Payload</a>
+                <a class="game-mode-button" href="?s=tdm">Team Deathmatch</a>
+            </div>
         </div>
-        <div class="col-xs-6">
-            <div class="game-mode-section-header">Deathmatch</div>
-            <a class="game-mode-button game-blitz" href="?s=blitz"></a>
-            <a class="game-mode-button game-rage" href="?s=rage"></a>
-            <a class="game-mode-button game-ffa" href="?s=ffa"></a>
-            <a class="game-mode-button game-skywars" href="?s=skywars"></a>
-            <a class="game-mode-button game-tdm" href="?s=tdm"></a>
+        <div class="col-xs-12 col-md-4">
+            <div class="col-xs-6 col-md-6">
+                <div class="game-mode-selection-header">Blitz</div>
+                <a class="game-mode-button" href="?s=arcade">Arcade</a>
+                <a class="game-mode-button" href="?s=blitz">Blitz</a>
+                <a class="game-mode-button" href="?s=gs">Ghost Squadron</a>
+                <a class="game-mode-button" href="?s=rage">Rage</a>
+                <a class="game-mode-button" href="?s=skywars">Skywars</a>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <div class="game-mode-selection-header">Competitve</div>
+                <a class="game-mode-button" href="?s=ranked">Ranked</a>
+                <a class="game-mode-button" href="?s=tournament">Tournament Edition</a>
+            </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-md-6">
-        <div class="col-xs-6">
-            <div class="game-mode-section-header">Competitive</div>
-            <a class="game-mode-button game-ranked" href="?s=ranked"></a>
-            <a class="game-mode-button game-tournament" href="?s=tournament"></a>
-        </div>
-        <div class="col-xs-6">
-            <div class="game-mode-section-header">Other</div>
-            <a class="game-mode-button game-arcade" href="?s=arcade"></a>
-            <a class="game-mode-button game-gs" href="?s=gs"></a>
+        <div class="col-xs-12 col-md-4">
+            <div class="col-xs-6 col-md-6">
+                <div class="game-mode-selection-header">Seasons</div>
+                <a class="game-mode-button" href="?s=christmas">Christmas</a>
+                <a class="game-mode-button" href="?s=halloween">Halloween</a>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <div class="game-mode-selection-header">Other</div>
+                <a class="game-mode-button" href="?s=new">New Maps</a>
+                <a class="game-mode-button" href="?s=popular">Popular Maps</a>
+                <a class="game-mode-button" href="?s=by-nc-sa">Noncommercial Maps</a>
+                <a class="game-mode-button" href="?s=by-sa">Commercial Maps</a>
+            </div>
         </div>
     </div>
 </div>
-<br>
-<div id="records-output">
-    <!-- Map searching table -->
-    <table class="table tablesorter" id="table">
-        <thead>
-            <tr>
-                <th width="1%" class="table-counted">#</th>
-                <th width="99%">Records</th>
-            </tr>
-        </thead>
-        <tbody class="counted-rows">
-            <tr class="record-table">
-                <td class="table-counted"></td>
-                <td>
-                    <div class="col-md-2 col-xs-3" style="margin-left:-12px;">
-                        <span class="record-map">
-                        BalloonsDTM                        </span>
-                        <br>
-                        <ul class="map-game-mode">
-                            <li class="game-tag"><a class="game-link" href="?s=dtm">DTM</a><span class="tag_hidden">Destroy the Monuments</span></li>
-                                                    </ul>
+<div class="bow-output">
+    <div class="bow-dynamic">
+        <div class="bow-record">
+            <div class="bow-record-content row">
+                <div class="col-md-3">
+                    <div class="bow-map">BalloonsDTM</div>
+                    <div class="bow-tags">
+                        <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
                     </div>
-                    <div class="col-xs-9">
-                        <div class="col-md-6 record-first">
-                            <i class="fa fa-trophy record-trophy" aria-hidden="true"></i>
-                            <span class="distance-record">
-                            <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/129d8993-7073-4cfd-95cd-4ac0e331a26a"><img class="record-player-avatar" src="https://crafatar.com/avatars/129d8993-7073-4cfd-95cd-4ac0e331a26a?size=24&overlay"></a>
-                            <span class="record-description ">
-                            <a class="record-player " href="?s=dartheric1">dartheric1</a>
-                            <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
-                            22 blocks
-                            </span>
-                            </span>
-                        </div>
-                        <div class="col-md-6">
-                            <span class="distance-record">
-                            </span><br>
-                            <span class="distance-record">
-                            </span>
-                        </div>
+                </div>
+                <div class="col-md-8 row">
+                    <div class="col-md-8 bow-first">
+                        <i class="fa fa-trophy"></i>
+                        <img class="bow-player-avatar" src="https://crafatar.com/avatars/129d8993-7073-4cfd-95cd-4ac0e331a26a?size=30&default=MHF_Steve&overlay">
+                        <a class="bow-player" href="?s=129d8993-7073-4cfd-95cd-4ac0e331a26a">dartheric1</a>
+                        with a distance of <b>22</b> blocks
                     </div>
-                </td>
-            </tr>
-            <tr class="record-table">
-                <td class="table-counted"></td>
-                <td>
-                    <div class="col-md-2 col-xs-3" style="margin-left:-12px;">
-                        <span class="record-map">
-                        Golden Drought III.V                        </span>
-                        <br>
-                        <ul class="map-game-mode">
-                            <li class="game-tag"><a class="game-link" href="?s=ctw">CTW</a><span class="tag_hidden">Capture the Wools</span></li>
-                                                    </ul>
+                    <div class="col-md-4">
                     </div>
-                    <div class="col-xs-9">
-                        <div class="col-md-6 record-first">
-                            <i class="fa fa-trophy record-trophy" aria-hidden="true"></i>
-                            <span class="distance-record">
-                            <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/aaa4a18d-5b8c-4f7b-9b29-b46242852fa5"><img class="record-player-avatar" src="https://crafatar.com/avatars/aaa4a18d-5b8c-4f7b-9b29-b46242852fa5?size=24&overlay"></a>
-                            <span class="record-description ">
-                            <a class="record-player " href="?s=NocturnalBoy">NocturnalBoy</a>
-                            <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
-                            28 blocks
-                            </span>
-                            </span>
+                </div>
+                <div class="col-md-1">
+                    <span class="bow-more disabled"><i class="fa fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="bow-record">
+            <div class="bow-record-content row">
+                <div class="col-md-3">
+                    <div class="bow-map">Golden Drought III.V</div>
+                    <div class="bow-tags">
+                        <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
+                    </div>
+                </div>
+                <div class="col-md-8 row">
+                    <div class="col-md-8 bow-first">
+                        <i class="fa fa-trophy"></i>
+                        <img class="bow-player-avatar" src="https://crafatar.com/avatars/aaa4a18d-5b8c-4f7b-9b29-b46242852fa5?size=30&default=MHF_Steve&overlay">
+                        <a class="bow-player" href="?s=aaa4a18d-5b8c-4f7b-9b29-b46242852fa5">NocturnalBoy</a>
+                        with a distance of <b>28</b> blocks
+                    </div>
+                    <div class="col-md-4">
+                        <div>
+                            <img class="bow-player-avatar" src="https://crafatar.com/avatars/2bdb6f44-86e1-4f1d-8d87-518d0888ed5a?size=16&default=MHF_Steve&overlay">
+                            <a class="bow-player" href="?s=2bdb6f44-86e1-4f1d-8d87-518d0888ed5a">MoonlightBae45</a>
+                            (25 blocks)
                         </div>
-                        <div class="col-md-6">
-                            <span class="distance-record">
-                            <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/2bdb6f44-86e1-4f1d-8d87-518d0888ed5a"><img class="record-player-avatar" src="https://crafatar.com/avatars/2bdb6f44-86e1-4f1d-8d87-518d0888ed5a?size=16&overlay"></a>
-                            <span class="record-description ">
-                            <a class="record-player " href="?s=MoonlightBae45">MoonlightBae45</a>
-                            <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
-                            25 blocks
-                            </span>
-                            </span><br>
-                            <span class="distance-record">
-                            <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/a476fac6-7651-4340-ac4b-3e3a0168b43e"><img class="record-player-avatar" src="https://crafatar.com/avatars/a476fac6-7651-4340-ac4b-3e3a0168b43e?size=16&overlay"></a>
-                            <span class="record-description ">
-                            <a class="record-player " href="?s=Synesis">Synesis</a>
-                            <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
-                            17 blocks
-                            </span>
-                            </span>
+                        <div>
+                            <img class="bow-player-avatar" src="https://crafatar.com/avatars/a476fac6-7651-4340-ac4b-3e3a0168b43e?size=16&default=MHF_Steve&overlay">
+                            <a class="bow-player" href="?s=a476fac6-7651-4340-ac4b-3e3a0168b43e">Synesis</a>
+                            (17 blocks)
                         </div>
                     </div>
-                </td>
-            </tr>
-            <tr class="record-table">
-                <td class="table-counted"></td>
-                <td>
-                    <div class="col-md-2 col-xs-3" style="margin-left:-12px;">
-                        <span class="record-map">
-                        Quench                        </span>
-                        <br>
-                        <ul class="map-game-mode">
-                            <li class="game-tag"><a class="game-link" href="?s=ctw">CTW</a><span class="tag_hidden">Capture the Wools</span></li>
-                                                    </ul>
+                </div>
+                <div class="col-md-1">
+                    <span class="bow-more disabled"><i class="fa fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="bow-record">
+            <div class="bow-record-content row">
+                <div class="col-md-3">
+                    <div class="bow-map">Quench</div>
+                    <div class="bow-tags">
+                        <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
                     </div>
-                    <div class="col-xs-9">
-                        <div class="col-md-6 record-first">
-                            <i class="fa fa-trophy record-trophy" aria-hidden="true"></i>
-                            <span class="distance-record">
-                            <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/87dc2b06-2271-48cd-be94-86528b1f9d2c"><img class="record-player-avatar" src="https://crafatar.com/avatars/87dc2b06-2271-48cd-be94-86528b1f9d2c?size=24&overlay"></a>
-                            <span class="record-description ">
-                            <a class="record-player " href="?s=Evice">Evice</a>
-                            <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
-                            48 blocks
-                            </span>
-                            </span>
+                </div>
+                <div class="col-md-8 row">
+                    <div class="col-md-8 bow-first">
+                        <i class="fa fa-trophy"></i>
+                        <img class="bow-player-avatar" src="https://crafatar.com/avatars/87dc2b06-2271-48cd-be94-86528b1f9d2c?size=30&default=MHF_Steve&overlay">
+                        <a class="bow-player" href="?s=87dc2b06-2271-48cd-be94-86528b1f9d2c">Evice</a>
+                        with a distance of <b>48</b> blocks
+                    </div>
+                    <div class="col-md-4">
+                        <div>
+                            <img class="bow-player-avatar" src="https://crafatar.com/avatars/3496a5ac-9870-492e-b49a-0266ebb44e8d?size=16&default=MHF_Steve&overlay">
+                            <a class="bow-player" href="?s=3496a5ac-9870-492e-b49a-0266ebb44e8d">Compatriot</a>
+                            (33 blocks)
                         </div>
-                        <div class="col-md-6">
-                            <span class="distance-record">
-                            <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/3496a5ac-9870-492e-b49a-0266ebb44e8d"><img class="record-player-avatar" src="https://crafatar.com/avatars/3496a5ac-9870-492e-b49a-0266ebb44e8d?size=16&overlay"></a>
-                            <span class="record-description ">
-                            <a class="record-player " href="?s=Compatriot">Compatriot</a>
-                            <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
-                            33 blocks
-                            </span>
-                            </span><br>
-                            <span class="distance-record">
-                            <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/cb139fd7-20bd-4653-a018-e389bc207491"><img class="record-player-avatar" src="https://crafatar.com/avatars/cb139fd7-20bd-4653-a018-e389bc207491?size=16&overlay"></a>
-                            <span class="record-description ">
-                            <a class="record-player " href="?s=iSnoopyO">iSnoopyO</a>
-                            <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
-                            16 blocks
-                            </span>
-                            </span>
+                        <div>
+                            <img class="bow-player-avatar" src="https://crafatar.com/avatars/cb139fd7-20bd-4653-a018-e389bc207491?size=16&default=MHF_Steve&overlay">
+                            <a class="bow-player" href="?s=cb139fd7-20bd-4653-a018-e389bc207491">iSnoopyO</a>
+                            (16 blocks)
                         </div>
                     </div>
-                </td>
-            </tr>
-            <tr class="record-table">
-                <td class="table-counted"></td>
-                <td>
-                    <div class="col-md-2 col-xs-3" style="margin-left:-12px;">
-                        <span class="record-map">
-                        Warlock                        </span>
-                        <br>
-                        <ul class="map-game-mode">
-                            <li class="game-tag"><a class="game-link" href="?s=dtm">DTM</a><span class="tag_hidden">Destroy the Monuments</span></li>
-                                                    </ul>
+                </div>
+                <div class="col-md-1">
+                    <span class="bow-more disabled"><i class="fa fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="bow-record">
+            <div class="bow-record-content row">
+                <div class="col-md-3">
+                    <div class="bow-map">Warlock</div>
+                    <div class="bow-tags">
+                        <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
                     </div>
-                    <div class="col-xs-9">
-                        <div class="col-md-6 record-first">
-                            <i class="fa fa-trophy record-trophy" aria-hidden="true"></i>
-                            <span class="distance-record">
-                            <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/746e780a-3f7f-4225-aa87-37203ef210fb"><img class="record-player-avatar" src="https://crafatar.com/avatars/746e780a-3f7f-4225-aa87-37203ef210fb?size=24&overlay"></a>
-                            <span class="record-description ">
-                            <a class="record-player " href="?s=awesomemangoes">awesomemangoes</a>
-                            <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
-                            26 blocks
-                            </span>
-                            </span>
-                        </div>
-                        <div class="col-md-6">
-                            <span class="distance-record">
-                            <a href="http://webcache.googleusercontent.com/search?q=cache:https://oc.tc/users/c3c67476-5704-4505-a830-2e754686cd56"><img class="record-player-avatar" src="https://crafatar.com/avatars/c3c67476-5704-4505-a830-2e754686cd56?size=16&overlay"></a>
-                            <span class="record-description ">
-                            <a class="record-player " href="?s=HappY_Tchimon">HappY_Tchimon</a>
-                            <span class="record-description-long">with a distance of </span><span class="record-description-div"></span>
-                            25 blocks
-                            </span>
-                            </span><br>
-                            <span class="distance-record">
-                            </span>
+                </div>
+                <div class="col-md-8 row">
+                    <div class="col-md-8 bow-first">
+                        <i class="fa fa-trophy"></i>
+                        <img class="bow-player-avatar" src="https://crafatar.com/avatars/746e780a-3f7f-4225-aa87-37203ef210fb?size=30&default=MHF_Steve&overlay">
+                        <a class="bow-player" href="?s=746e780a-3f7f-4225-aa87-37203ef210fb">awesomemangoes</a>
+                        with a distance of <b>26</b> blocks
+                    </div>
+                    <div class="col-md-4">
+                        <div>
+                            <img class="bow-player-avatar" src="https://crafatar.com/avatars/c3c67476-5704-4505-a830-2e754686cd56?size=16&default=MHF_Steve&overlay">
+                            <a class="bow-player" href="?s=c3c67476-5704-4505-a830-2e754686cd56">HappY_Tchimon</a>
+                            (25 blocks)
                         </div>
                     </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                </div>
+                <div class="col-md-1">
+                    <span class="bow-more disabled"><i class="fa fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<script type="text/javascript">
-    setTimeout(function () {
-        makeSearchable()
-    }, 1000);
-    
-    $(document).on('ready', function(){
-        makeSearchable()
-    })
-    
-    $('.record-search-container').on('click', function(){
-        makeSearchable()
-    })
-    
-    function makeSearchable(){
-        $('#records-output .table').searchable({
-            striped: true,
-            oddRow: { 'background-color': '#fff' },
-            evenRow: { 'background-color': '#f0f0f0' },
-            searchType: 'default',
-            searchField: '#search'
-        })
-    }
-</script>
-<script type="text/javascript">
-    var data=location.search;
-    if(data) {
-        data=location.search.substring(1);
-        data=data.split('&');
-        var pairs={};
-        for(var i=0; i<data.length; i++){
-            var tmp=data[i].split('=');
-            pairs[tmp[0]]=tmp[1];
-        }
-        var f = document.search_form;
-        for (var i in pairs) {
-            if(f.elements[i]) {f.elements[i].value = pairs[i];}
-        }
-    }
-</script>
             <!-- End page content -->
             </div>
         </div>
