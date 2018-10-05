@@ -1,26 +1,6 @@
 {{> navigation_header}}
 {{#if data.featured.enabled}}{{> page_maps_featured}}{{/if}}
-<div class="thumbnail">
-    <form name="search_form" class="record-search-container">
-        <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
-    </form>
-    {{#if settings.maps.menu}}
-    <div class="game-mode-navigation row" data-source="{{settings.maps.group}}">
-        {{#every 2 settings.maps.menu}}
-        <div class="col-xs-12 col-md-4">
-            {{#each this}}
-            <div class="col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">{{#if column}}{{column}}{{else}}Game Types{{/if}}</div>
-                {{#each tags}}
-                <a class="game-mode-button" href="?s={{this}}">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</a>
-                {{/each}}
-            </div>
-            {{/each}}
-        </div>
-        {{/every}}
-    </div>
-    {{/if}}
-</div>
+{{> page_maps_search_menu}}
 <div class="total-maps center">Loading maps collection...</div>
 <div id="maps-output">
     <div class="dynamic">
