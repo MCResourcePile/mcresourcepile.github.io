@@ -8,10 +8,12 @@
         <div class="col-xs-12 col-md-4">
             {{#each this}}
             <div class="col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">{{#if column}}{{column}}{{else}}Game Types{{/if}}</div>
+                {{#if column}}
+                <div class="game-mode-selection-header">{{column}}</div>
                 {{#each tags}}
                 <a class="game-mode-button" href="?s={{this}}">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</a>
                 {{/each}}
+                {{/if}}
             </div>
             {{/each}}
         </div>
