@@ -74,6 +74,7 @@
                                         <li>
                                             <img class="bow-player-avatar" src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=20&default=MHF_Steve&overlay">
                                             <a class="bow-player" href="?s={{uuid}}">{{username}}</a>
+                                            <span class="tag_hidden">{{formatUUID uuid}}</span>
                                             with a distance of {{distance}} blocks
                                             {{#if screenshot}}
                                             <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fa fa-check-circle"></i></a>
