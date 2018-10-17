@@ -111,7 +111,7 @@ THE SOFTWARE.
                         commitDescription = commitDescription.replace(/(\r\n|\n|\r)/gm," ");
                         
                         var link = $('<td>')
-                            .html(commitSummary + '<br><small style="color:#6a6a6a;padding-left:5px;padding-top:2px;padding-bottom:2px;border-left:1px solid #989898;">' + commitDescription + '</small>');
+                            .html(commitSummary + '<br><small style="color:#6a6a6a;padding-left:5px;padding-top:2px;padding-bottom:2px;border-left:1px solid #989898;display:inline-block">' + commitDescription + '</small>');
                     } else {
                         var commitSummary = commitMessage;
                         var commitDescription = null;
