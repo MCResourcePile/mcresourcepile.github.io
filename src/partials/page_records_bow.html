@@ -6,7 +6,7 @@
         {{#gte (length records) 1}}
         <div class="bow-record">
             <div class="bow-record-content row">
-                <div class="col-md-3">
+                <div class="col-md-3 col-sm-12">
                     <div class="bow-map">{{name}}</div>
                     <div class="bow-tags">
                         {{#each tags}}
@@ -14,8 +14,8 @@
                         {{/each}}
                     </div>
                 </div>
-                <div class="col-md-8 row">
-                    <div class="col-md-8 bow-first">
+                <div class="col-md-8 col-sm-12 row">
+                    <div class="col-md-8 col-sm-12 bow-first">
                         {{#each (sortBy records "distance")}}
                         {{#is @index (subtract (length ../records) 1)}}
                         <i class="fa fa-trophy"></i>
@@ -28,7 +28,7 @@
                         {{/is}}
                         {{/each}}
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-12">
                         {{#gte (length records) 2}}
                         {{#each (sortBy records "distance")}}
                         {{#is @index (subtract (length ../records) 2)}}
@@ -59,7 +59,7 @@
                         {{/gte}}
                     </div>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-1 col-sm-12">
                     {{#gt (length records) 3}}
                     <a class="bow-more" data-toggle="modal" data-target="#more-stats-{{@index}}" style="margin-top:15px;"><span class="badge" data-toggle="tooltip" data-placement="top" title="Click to load {{subtract (length records) 3}} more records for this map">{{subtract (length records) 3}}</span><i class="fa fa-chevron-right"></i></a>
                     <div class="modal fade download" id="more-stats-{{@index}}" tabindex="-1" role="dialog">
@@ -88,8 +88,6 @@
                             </div>
                         </div>
                     </div>
-                    {{else}}
-                    <span class="bow-more disabled"><i class="fa fa-chevron-right"></i></span>
                     {{/gt}}
                 </div>
             </div>

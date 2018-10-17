@@ -5,9 +5,9 @@
     {{#if settings.maps.menu}}
     <div class="game-mode-navigation row" data-source="{{settings.maps.group}}">
         {{#every 2 settings.maps.menu}}
-        <div class="col-xs-12 col-md-4">
+        <div class="game-mode-group col-xs-12 col-md-4">
             {{#each this}}
-            <div class="col-xs-6 col-md-6">
+            <div class="game-mode-column col-xs-6 col-md-6">
                 {{#if column}}
                 <div class="game-mode-selection-header">{{column}}</div>
                 {{#each tags}}

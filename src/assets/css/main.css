@@ -202,6 +202,10 @@ tbody.counted-rows tr td:first-child::before {
     padding-bottom: 6px;
 }
 
+.game-mode-column:blank {
+    display: none;
+}
+
 .game-mode-button {
     display: block;
     margin-bottom: 3px;
@@ -1510,6 +1514,55 @@ pre > code {
 .bow-first .bow-reference > .fa {
     font-size: 20px;
 }
+
 .bow-reference > .fa {
     font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .bow-record {
+        height: auto;
+        padding-bottom: 8px;
+        text-align: center;
+    }
+
+    .bow-map {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .bow-tags {
+        text-align: center;
+        margin-top: -4px;
+    }
+
+    .bow-first {
+        font-size: 14px;
+        margin-top: 3px;
+        margin-bottom: 8px;
+    }
+
+    .bow-first .fa {
+        font-size: 18px;
+        vertical-align: -3px;
+        padding-right: 2px;
+    }
+
+    .bow-first .bow-player-avatar {
+        height: 18px;
+    }
+    
+    .bow-more {
+        text-align: center;
+        color: #a8a8a8;
+    }
+
+    .bow-more .badge,
+    .bow-more .fa {
+        display: none;
+    }
+
+    .bow-more::after {
+        content: "Show all records";
+    }
 }
