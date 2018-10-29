@@ -242,6 +242,7 @@ function suggestMaps(slug) {
             return b.weight - a.weight;
         });
         similar.sort();
+        $('.map-suggestions').text('');
         // display suggested maps in download success menu
         for (var i = 1; i < 4; i++) {
             var repo = $('.game-mode-navigation').data('source');
@@ -260,12 +261,12 @@ function suggestMaps(slug) {
             var authors = "by ";
             for (var j = 0; j < similar[i].authors.length; j++) {
                 authors += similar[i].authors[j].username;
-                if (j != similar[i].authors.length - 1) {
-                    authors += ", ";
-                }
-                if (j == 2) {
+                if (j == 1) {
                     authors += ", and more";
                     break;
+                }
+                if (similar[i].authors.length > 1) {
+                    authors += ", ";
                 }
             }
             var tags = "";
@@ -273,7 +274,6 @@ function suggestMaps(slug) {
                 tags += similar[i].tags[j];
                 if (j != similar[i].tags.length - 1) tags += ", ";
             }
-            $('.map-suggestions').text('');
             $('.map-suggestions').append(
                 "<div class='col-sm-4 thumbnail map-thumbnail small collapse-immune'>\
                     <div class='map-thumbnail-header'>\
