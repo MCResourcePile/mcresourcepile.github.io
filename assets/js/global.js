@@ -9,6 +9,8 @@ applySettings();
 
 var is_maps_collection = false;
 
+var is_development = /\/(out|src)\//i.test(window.location.href);
+
 var window_offset = function() { scrollBy(0, -70) };
 if (location.hash) window_offset();
 window.addEventListener("hashchange", window_offset);
