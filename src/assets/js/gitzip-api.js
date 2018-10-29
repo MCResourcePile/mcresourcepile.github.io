@@ -115,7 +115,7 @@ SOFTWARE.
         }else{
             zip.generateAsync({type:"blob"})
             .then(function (content) {
-                saveAs(content, filename + ".zip");
+                if (!is_development) saveAs(content, filename + ".zip");
             }, function(error){
                 console.log(error);
             });
