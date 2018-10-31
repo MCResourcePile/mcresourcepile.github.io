@@ -1,0 +1,15 @@
+<div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="map-thumbnail-header">
+        <div class="banner">
+            <div class="title">{{name}}</div>
+            <div class="sub-title">
+                {{#each tags}}
+                <li class="game-tag">
+                    <a class="game-link map-tag tag" href="?s={{this}}">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}</a><span class="tag-hidden">{{lookup (lookup @root.settings.maps.tags this) 'keywords'}}</span>{{else}}{{capitalize this}}</a>{{/if}}
+                </li>
+                {{/each}}
+                <div class="hidden tags">{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
+            </div>
+        </div>
+    </div>
+</div>
