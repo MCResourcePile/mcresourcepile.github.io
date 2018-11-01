@@ -1,0 +1,82 @@
+<div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}{{#inArray @root.page-category 'contest'}}{{#is position '1'}} map-glow-contest-first{{/is}}{{#is position '2'}} map-glow-contest-second{{/is}}{{#is position '3'}} map-glow-contest-third{{/is}}{{/inArray}}">
+    <div class="map-thumbnail-selector">
+        <div class="map-thumbnail-header">
+            <img class="image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{snakecase (lowercase @root.title)}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/master/maps/{{slug}}/map.png{{/inArray}}">
+            <div class="banner" data-toggle="tooltip" data-placement="top" title="{{name}}">
+                <div class="title"><a{{#inArray @root.page-category 'maps'}} href="https://mcresourcepile.github.io/maps/{{@root.settings.maps.group}}?s={{slug}}"{{/inArray}} class="s-title">{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</a></div>
+                <div class="sub-title">
+                    {{#if tags}}
+                    {{#each tags}}
+                    <li class="game-tag map-tag s-tag">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}<span class="hidden">{{lookup (lookup @root.settings.maps.tags this) 'keywords'}}</span>{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}</li>
+                    {{/each}}
+                    {{else}}
+                    {{#if gamemode}}
+                    <li class="game-tag map-tag">{{gamemode}}</li>
+                    {{else}}
+                    <li class="game-tag map-tag">Unknown tags</li>
+                    {{/if}}
+                    {{/if}}
+                    {{#inArray @root.page-category 'collections'}}
+                    <div class="hidden tags">{{slug}},{{#inArray @root.data.new slug}}New,{{/inArray}}{{#inArray @root.data.popular slug}}Popular,{{/inArray}}{{#if sourced}}Unlicensed,{{else}}{{#if commercial}}Commercial,{{else}}Noncommercial,{{/if}}{{/if}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
+                    {{/inArray}}
+                </div>
+                <div class="icon-alerts">
+                    {{#if (lookup @root.settings.maps.environments environment)}}
+                    {{#with (lookup @root.settings.maps.environments environment)}}
+                    {{#if this.prompt}}
+                    <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{this.prompt}}"><i class="fa fa-exclamation-circle"></i></a>
+                    {{/if}}
+                    {{/with}}
+                    {{/if}}
+                    {{#if contest}}
+                    <a href="/contests/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}/{{contest}}#{{slug}}" data-toggle="tooltip" data-placement="top" title="{{#is @root.settings.maps.group 'pgm'}}Overcast{{else}}{{sentence @root.settings.maps.group}}{{/is}} contest submission"><i class="fa fa-map"></i></a>
+                    {{/if}}
+                    {{#if discussion}}
+                    <a href="{{discussion}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="fa fa-comments-o"></i></a>
+                    {{/if}}
+                    {{#if cardinal}}
+                    <a data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="fa fa-certificate"></i></a>
+                    {{/if}}
+                    {{#is position '1'}}
+                    <a data-toggle="tooltip" data-placement="top" title="1st&nbsp;place&nbsp;winner"><i class="fa fa-trophy"></i></a>
+                    {{/is}}
+                    {{#is position '2'}}
+                    <a data-toggle="tooltip" data-placement="top" title="2nd&nbsp;place&nbsp;runner&nbsp;up"><i class="fa fa-trophy"></i></a>
+                    {{/is}}
+                    {{#is position '3'}}
+                    <a data-toggle="tooltip" data-placement="top" title="3rd&nbsp;place"><i class="fa fa-trophy"></i></a>
+                    {{/is}}
+                </div>
+            </div>
+            <div class="labels">
+                {{#inArray @root.page-category 'collections'}}
+                {{#inArray @root.data.new slug}}
+                <a href="?s=new" class="label label-primary">New</a>
+                {{/inArray}}
+                {{#inArray @root.data.popular slug}}
+                <a href="?s=popular" class="label label-danger">Popular</a>
+                {{/inArray}}
+                {{#if sourced}}
+                <span class="label label-default">Unlicensed</span>
+                {{else}}
+                {{#if commercial}}
+                <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                {{else}}
+                <a href="?s=by-nc-sa" class="label label-warning" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                {{/if}}
+                {{/if}}
+                {{/inArray}}
+                {{#inArray @root.page-category 'contest'}}
+                <span class="label {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}label-default{{/is}}{{/is}}{{/is}}">{{ordinalize position}} place</span>
+                {{/inArray}}
+                {{#inArray @root.page-category 'tournaments'}}
+                <span class="label label-info">{{stage}}</span>
+                {{/inArray}}
+            </div>
+        </div>
+        {{#inArray @root.page-category 'maps'}}
+        {{> map_thumbnail_body}}
+        {{/inArray}}
+    </div>
+</div>
+
