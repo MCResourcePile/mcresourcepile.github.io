@@ -33,7 +33,8 @@
         <script src="/assets/js/FileSaver.js"></script>
         <script src="/assets/js/jszip.js"></script>
         <script src="/assets/js/jquery.searchable-1.1.0.min.js"></script>
-        <script src="/assets/js/maps.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+        <script src="/assets/js/maps-advanced.js"></script>
         <script src="/assets/js/analytics.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -120,71 +121,63 @@
                     <div class="content-subtitle">A collection of publicly downloadable Minecraft maps from Stratus Network</div>
                 </div>
             <!-- Start page content -->
-
-<div class="thumbnail">
-    <form name="search_form" class="record-search-container">
-        <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
-    </form>
-    <div class="game-mode-navigation row" data-source="stratus">
-        <div class="game-mode-group col-xs-12 col-md-4">
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Objectives</div>
-                <a class="game-mode-button" href="?s=cp">Capture Points</a>
-                <a class="game-mode-button" href="?s=ctf">Capture the Flag</a>
-                <a class="game-mode-button" href="?s=ctw">Capture the Wool</a>
-                <a class="game-mode-button" href="?s=dtc">Destroy the Core</a>
-                <a class="game-mode-button" href="?s=dtm">Destroy the Monument</a>
-            </div>
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Deathmatch</div>
-                <a class="game-mode-button" href="?s=ffa">Free-for-all</a>
-                <a class="game-mode-button" href="?s=koth">King of the Hill</a>
-                <a class="game-mode-button" href="?s=payload">Payload</a>
-                <a class="game-mode-button" href="?s=tdm">Team Deathmatch</a>
-            </div>
-        </div>
-        <div class="game-mode-group col-xs-12 col-md-4">
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Blitz</div>
-                <a class="game-mode-button" href="?s=arcade">Arcade</a>
-                <a class="game-mode-button" href="?s=blitz">Blitz</a>
-                <a class="game-mode-button" href="?s=gs">Ghost Squadron</a>
-                <a class="game-mode-button" href="?s=rage">Rage</a>
-                <a class="game-mode-button" href="?s=skywars">Skywars</a>
-            </div>
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Competitve</div>
-                <a class="game-mode-button" href="?s=ranked">Ranked</a>
-                <a class="game-mode-button" href="?s=tournament">Tournament Edition</a>
-            </div>
-        </div>
-        <div class="game-mode-group col-xs-12 col-md-4">
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Seasons</div>
-                <a class="game-mode-button" href="?s=christmas">Christmas</a>
-                <a class="game-mode-button" href="?s=halloween">Halloween</a>
-            </div>
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Other</div>
-                <a class="game-mode-button" href="?s=new">New Maps</a>
-                <a class="game-mode-button" href="?s=popular">Popular Maps</a>
-                <a class="game-mode-button" href="?s=by-nc-sa">Noncommercial Maps</a>
-                <a class="game-mode-button" href="?s=by-sa">Commercial Maps</a>
+<div id="maps-collection" class="maps-output row center" data-source="stratus">
+    <div class="col-md-3 col-md-push-9">
+        <div class="thumbnail map-search">
+            <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search maps">
+            <div class="filters">
+                <b>Filters</b>
+                <small>Use filters to narrow your query when searching for specific maps.</small>
+                <div class="group">
+                    <span class="filter">New</span>
+                    <span class="filter">Popular</span>
+                    <span class="filter">Commercial</span>
+                    <span class="filter">Noncommercial</span>
+                </div>
+                <div class="group">
+                    <b>Games</b>
+                    <span class="filter">Arcade</span>
+                    <span class="filter">Capture Points</span>
+                    <span class="filter">Capture the Wool</span>
+                    <span class="filter">Capture the Flag</span>
+                    <span class="filter">Destroy the Core</span>
+                    <span class="filter">Destroy the Monument</span>
+                    <span class="filter">Free-for-all</span>
+                    <span class="filter">Ghost Squadron</span>
+                    <span class="filter">King of the Flag</span>
+                    <span class="filter">King of the Hill</span>
+                    <span class="filter">Race for Wool</span>
+                    <span class="filter">Team Deathmatch</span>
+                    <span class="filter">Skywars</span>
+                </div>
+                <div class="group">
+                    <b>Addons</b>
+                    <span class="filter">Attack/Defend</span>
+                    <span class="filter">Blitz</span>
+                    <span class="filter">Micro</span>
+                    <span class="filter">Rage</span>
+                    <span class="filter">TNT</span>
+                </div>
+                <div class="group">
+                    <b>Editions</b>
+                    <span class="filter">Christmas</span>
+                    <span class="filter">Halloween</span>
+                    <span class="filter">Ranked</span>
+                    <span class="filter">Tournament</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="total-maps center">Loading maps collection...</div>
-<div id="maps-output">
-    <div class="dynamic">
+    <div class="col-md-9 col-md-pull-3 dynamic list">
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/azure/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Azure">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=azure">Azure</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=azure" class="s-title">Azure</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
+                            <div class="hidden tags">azure,Noncommercial,Destroy the Monument</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -198,6 +191,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=5198dc37-537f-4ea5-8ee8-1e0952d4a36b">_3Each<span class="tag_hidden">5198dc37-537f-4ea5-8ee8-1e0952d4a36b 5198dc37537f4ea58ee81e0952d4a36b</span></a></li>
+                        <div class="hidden s-author">Obelistics,b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9,_3Each,5198dc37-537f-4ea5-8ee8-1e0952d4a36b 5198dc37537f4ea58ee81e0952d4a36b,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-azure"><i class="fa fa-download"></i></a>
@@ -246,8 +240,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -286,15 +278,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/bamboo_valley_v/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Bamboo Valley V">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=bamboo_valley_v">Bamboo Valley V</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=bamboo_valley_v" class="s-title">Bamboo Valley V</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span>,</li>
+                            <li class="game-tag map-tag s-tag">Tournament<span class="hidden">!te !tm</span></li>
+                            <div class="hidden tags">bamboo_valley_v,Commercial,Capture the Wool,Tournament</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -307,6 +301,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06">Strangey<span class="tag_hidden">621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06 621b2aa84e5f4ed8bd360ae2f8952a06</span></a></li>
+                        <div class="hidden s-author">Strangey,621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06 621b2aa84e5f4ed8bd360ae2f8952a06,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-bamboo_valley_v"><i class="fa fa-download"></i></a>
@@ -350,8 +345,7 @@
                                         <div class="modal-section-head">Tags</div>
                                         <div class="modal-section-body">
                                             <span class="label label-info">Capture the Wool</span>
-                                            <span class="label label-info">Tournament Edition</span>
-                                            
+                                            <span class="label label-info">Tournament</span>
                                             
                                             
                                             
@@ -393,15 +387,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/bill_s_town_oitc/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Bill&#x27;s Town OiTC">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=bill_s_town_oitc">Bill&#x27;s Town OiTC</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=bill_s_town_oitc" class="s-title">Bill&#x27;s Town OiTC</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ffa">Free-for-all</a><span class="tag-hidden">ffa Free for All</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                            <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span>,</li>
+                            <li class="game-tag map-tag s-tag">Rage</li>
+                            <div class="hidden tags">bill_s_town_oitc,New,Commercial,Free-for-all,Rage</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -418,6 +414,7 @@
                         <li class="game-tag author-tag"><a href="?s=f70b7a8f-93b2-480f-9d54-88e21485a042">Diamyx<span class="tag_hidden">f70b7a8f-93b2-480f-9d54-88e21485a042 f70b7a8f93b2480f9d5488e21485a042</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=e79fbdc9-627e-4dac-97a6-81a3046220d7">AtlasGames<span class="tag_hidden">e79fbdc9-627e-4dac-97a6-81a3046220d7 e79fbdc9627e4dac97a681a3046220d7</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=715769c5-8c4c-4489-bdf8-f9cee2b2ae8a">amactus<span class="tag_hidden">715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a</span></a></li>
+                        <div class="hidden s-author">Yoyo_,07fa10c6-f564-4630-861e-fe134ae27527 07fa10c6f5644630861efe134ae27527,Diamyx,f70b7a8f-93b2-480f-9d54-88e21485a042 f70b7a8f93b2480f9d5488e21485a042,AtlasGames,e79fbdc9-627e-4dac-97a6-81a3046220d7 e79fbdc9627e4dac97a681a3046220d7,amactus,715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-bill_s_town_oitc"><i class="fa fa-download"></i></a>
@@ -468,7 +465,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -507,14 +503,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/boat_blitz/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Boat Blitz">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=boat_blitz">Boat Blitz</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=boat_blitz" class="s-title">Boat Blitz</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                            <li class="game-tag map-tag s-tag">Blitz</li>
+                            <div class="hidden tags">boat_blitz,Noncommercial,Blitz</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/stratus/mini_map_making_competition#boat_blitz" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
@@ -528,6 +526,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=b3bf822a-4218-4f96-9110-278cad1ab848">Ensix<span class="tag_hidden">b3bf822a-4218-4f96-9110-278cad1ab848 b3bf822a42184f969110278cad1ab848</span></a></li>
+                        <div class="hidden s-author">Ensix,b3bf822a-4218-4f96-9110-278cad1ab848 b3bf822a42184f969110278cad1ab848,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-boat_blitz"><i class="fa fa-download"></i></a>
@@ -575,8 +574,6 @@
                                             <span class="label label-info">Contest Submission</span>
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -615,16 +612,18 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/christmasquad_te/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="ChristmasQuad: TE">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=christmasquad_te">ChristmasQuad: TE</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=christmasquad_te" class="s-title">ChristmasQuad: TE</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=christmas">Christmas</a></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
+                            <li class="game-tag map-tag s-tag">Blitz,</li>
+                            <li class="game-tag map-tag s-tag">Christmas,</li>
+                            <li class="game-tag map-tag s-tag">Tournament<span class="hidden">!te !tm</span></li>
+                            <div class="hidden tags">christmasquad_te,Commercial,Blitz,Christmas,Tournament</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -638,6 +637,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=9bfbc560-244a-4e28-ab70-185f39740ec1">Zan<span class="tag_hidden">9bfbc560-244a-4e28-ab70-185f39740ec1 9bfbc560244a4e28ab70185f39740ec1</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=205d1aad-c619-499b-9885-b91c372b1c13">Equus<span class="tag_hidden">205d1aad-c619-499b-9885-b91c372b1c13 205d1aadc619499b9885b91c372b1c13</span></a></li>
+                        <div class="hidden s-author">Zan,9bfbc560-244a-4e28-ab70-185f39740ec1 9bfbc560244a4e28ab70185f39740ec1,Equus,205d1aad-c619-499b-9885-b91c372b1c13 205d1aadc619499b9885b91c372b1c13,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-christmasquad_te"><i class="fa fa-download"></i></a>
@@ -683,8 +683,7 @@
                                         <div class="modal-section-body">
                                             <span class="label label-info">Blitz</span>
                                             <span class="label label-info">Christmas</span>
-                                            <span class="label label-info">Tournament Edition</span>
-                                            
+                                            <span class="label label-info">Tournament</span>
                                             
                                             
                                             
@@ -726,15 +725,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/clay_clay_wars/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Clay Clay Wars">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=clay_clay_wars">Clay Clay Wars</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=clay_clay_wars" class="s-title">Clay Clay Wars</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a><span class="tag-hidden">dtc</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span>,</li>
+                            <li class="game-tag map-tag s-tag">Blitz</li>
+                            <div class="hidden tags">clay_clay_wars,New,Commercial,Blitz,Destroy the Core</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -748,6 +749,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=cc2292de-fcb3-412d-9319-f3177f73b605">cs_<span class="tag_hidden">cc2292de-fcb3-412d-9319-f3177f73b605 cc2292defcb3412d9319f3177f73b605</span></a></li>
+                        <div class="hidden s-author">cs_,cc2292de-fcb3-412d-9319-f3177f73b605 cc2292defcb3412d9319f3177f73b605,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-clay_clay_wars"><i class="fa fa-download"></i></a>
@@ -790,11 +792,10 @@
                                     <div class="col-md-4">
                                         <div class="modal-section-head">Tags</div>
                                         <div class="modal-section-body">
-                                            <span class="label label-info">Destroy the Core</span>
                                             <span class="label label-info">Blitz</span>
+                                            <span class="label label-info">Destroy the Core</span>
                                             
                                             <span class="label label-primary">New</span>
-                                            
                                             
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
@@ -834,14 +835,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/dandelion_ii/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Dandelion II">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=dandelion_ii">Dandelion II</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=dandelion_ii" class="s-title">Dandelion II</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag-hidden">ctf</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
+                            <div class="hidden tags">dandelion_ii,Noncommercial,Capture the Flag</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -854,6 +857,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=5198dc37-537f-4ea5-8ee8-1e0952d4a36b">_3Each<span class="tag_hidden">5198dc37-537f-4ea5-8ee8-1e0952d4a36b 5198dc37537f4ea58ee81e0952d4a36b</span></a></li>
+                        <div class="hidden s-author">_3Each,5198dc37-537f-4ea5-8ee8-1e0952d4a36b 5198dc37537f4ea58ee81e0952d4a36b,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-dandelion_ii"><i class="fa fa-download"></i></a>
@@ -901,8 +905,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -941,16 +943,18 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/dead_heat/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Dead Heat">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=dead_heat">Dead Heat</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=dead_heat" class="s-title">Dead Heat</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span>,</li>
+                            <li class="game-tag map-tag s-tag">Blitz,</li>
+                            <li class="game-tag map-tag s-tag">Tournament<span class="hidden">!te !tm</span></li>
+                            <div class="hidden tags">dead_heat,Commercial,Blitz,Capture the Wool,Tournament</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="https://oc.tc/forums/topics/51222d79ba6087f491000295" target="_blank" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="fa fa-comments-o"></i></a>
@@ -964,6 +968,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=a6a99e23-34c4-4957-8974-b78b4da9ce7c">AMo<span class="tag_hidden">a6a99e23-34c4-4957-8974-b78b4da9ce7c a6a99e2334c449578974b78b4da9ce7c</span></a></li>
+                        <div class="hidden s-author">AMo,a6a99e23-34c4-4957-8974-b78b4da9ce7c a6a99e2334c449578974b78b4da9ce7c,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-dead_heat"><i class="fa fa-download"></i></a>
@@ -1006,10 +1011,9 @@
                                     <div class="col-md-4">
                                         <div class="modal-section-head">Tags</div>
                                         <div class="modal-section-body">
-                                            <span class="label label-info">Capture the Wool</span>
                                             <span class="label label-info">Blitz</span>
-                                            <span class="label label-info">Tournament Edition</span>
-                                            
+                                            <span class="label label-info">Capture the Wool</span>
+                                            <span class="label label-info">Tournament</span>
                                             
                                             
                                             
@@ -1052,14 +1056,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/desert_country_dtm/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Desert Country DTM">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=desert_country_dtm">Desert Country DTM</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=desert_country_dtm" class="s-title">Desert Country DTM</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
+                            <div class="hidden tags">desert_country_dtm,New,Commercial,Destroy the Monument</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1074,6 +1080,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=b5967591-14fc-421f-a5e2-931498e10fb8">OCNs_OMEN<span class="tag_hidden">b5967591-14fc-421f-a5e2-931498e10fb8 b596759114fc421fa5e2931498e10fb8</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=d1e3251c-def5-4328-a7e9-09335934d316">byRobo<span class="tag_hidden">d1e3251c-def5-4328-a7e9-09335934d316 d1e3251cdef54328a7e909335934d316</span></a></li>
+                        <div class="hidden s-author">OCNs_OMEN,b5967591-14fc-421f-a5e2-931498e10fb8 b596759114fc421fa5e2931498e10fb8,byRobo,d1e3251c-def5-4328-a7e9-09335934d316 d1e3251cdef54328a7e909335934d316,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-desert_country_dtm"><i class="fa fa-download"></i></a>
@@ -1121,7 +1128,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -1160,14 +1166,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/dorreak/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Dorreak">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=dorreak">Dorreak</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=dorreak" class="s-title">Dorreak</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">dorreak,Noncommercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/stratus/mini_map_making_competition#dorreak" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
@@ -1181,6 +1189,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
+                        <div class="hidden s-author">Obelistics,b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-dorreak"><i class="fa fa-download"></i></a>
@@ -1228,8 +1237,6 @@
                                             <span class="label label-info">Contest Submission</span>
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -1268,14 +1275,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/ender_fortress/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Ender-Fortress">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=ender_fortress">Ender-Fortress</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=ender_fortress" class="s-title">Ender-Fortress</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">ender_fortress,Unlicensed,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/stratus/mini_map_making_competition#ender_fortress" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
@@ -1289,6 +1298,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=cef67055-9c27-4b58-a16f-278d793ff6bc">mrcookie_13<span class="tag_hidden">cef67055-9c27-4b58-a16f-278d793ff6bc cef670559c274b58a16f278d793ff6bc</span></a></li>
+                        <div class="hidden s-author">mrcookie_13,cef67055-9c27-4b58-a16f-278d793ff6bc cef670559c274b58a16f278d793ff6bc,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-ender_fortress"><i class="fa fa-download"></i></a>
@@ -1369,14 +1379,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/glina/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Glina">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=glina">Glina</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=glina" class="s-title">Glina</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a><span class="tag-hidden">dtc</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            <div class="hidden tags">glina,Noncommercial,Destroy the Core</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1390,6 +1402,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=205d1aad-c619-499b-9885-b91c372b1c13">Equus<span class="tag_hidden">205d1aad-c619-499b-9885-b91c372b1c13 205d1aadc619499b9885b91c372b1c13</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=48924ea3-3aad-4e16-838c-368d8d9e0a25">Matic0B<span class="tag_hidden">48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25</span></a></li>
+                        <div class="hidden s-author">Equus,205d1aad-c619-499b-9885-b91c372b1c13 205d1aadc619499b9885b91c372b1c13,Matic0B,48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-glina"><i class="fa fa-download"></i></a>
@@ -1438,8 +1451,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -1478,15 +1489,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/gobi/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Gobi">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=gobi">Gobi</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=gobi" class="s-title">Gobi</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span>,</li>
+                            <li class="game-tag map-tag s-tag">Tournament<span class="hidden">!te !tm</span></li>
+                            <div class="hidden tags">gobi,Commercial,Capture the Wool,Tournament</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1499,6 +1512,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=dff980ed-9f69-491e-b79c-30c21350baf2">DoomyBoy<span class="tag_hidden">dff980ed-9f69-491e-b79c-30c21350baf2 dff980ed9f69491eb79c30c21350baf2</span></a></li>
+                        <div class="hidden s-author">DoomyBoy,dff980ed-9f69-491e-b79c-30c21350baf2 dff980ed9f69491eb79c30c21350baf2,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-gobi"><i class="fa fa-download"></i></a>
@@ -1542,8 +1556,7 @@
                                         <div class="modal-section-head">Tags</div>
                                         <div class="modal-section-body">
                                             <span class="label label-info">Capture the Wool</span>
-                                            <span class="label label-info">Tournament Edition</span>
-                                            
+                                            <span class="label label-info">Tournament</span>
                                             
                                             
                                             
@@ -1585,14 +1598,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/gralien/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Gralien">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=gralien">Gralien</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=gralien" class="s-title">Gralien</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">gralien,New,Noncommercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1606,6 +1621,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=57f5535d-6b9e-4013-ad71-e2cc63ec8d7c">ItzaMeLuigi<span class="tag_hidden">57f5535d-6b9e-4013-ad71-e2cc63ec8d7c 57f5535d6b9e4013ad71e2cc63ec8d7c</span></a></li>
+                        <div class="hidden s-author">ItzaMeLuigi,57f5535d-6b9e-4013-ad71-e2cc63ec8d7c 57f5535d6b9e4013ad71e2cc63ec8d7c,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-gralien"><i class="fa fa-download"></i></a>
@@ -1653,8 +1669,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -1693,14 +1707,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/grenouille_de_larmee/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Grenouille de l&#x27;armee">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=grenouille_de_larmee">Grenouille de l&#x27;armee</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=grenouille_de_larmee" class="s-title">Grenouille de l&#x27;armee</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">grenouille_de_larmee,Unlicensed,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/stratus/mini_map_making_competition#grenouille_de_larmee" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
@@ -1714,6 +1730,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=96f9aa16-9c93-4b1d-9bce-18b8c212074b">_ArmyFrog<span class="tag_hidden">96f9aa16-9c93-4b1d-9bce-18b8c212074b 96f9aa169c934b1d9bce18b8c212074b</span></a></li>
+                        <div class="hidden s-author">_ArmyFrog,96f9aa16-9c93-4b1d-9bce-18b8c212074b 96f9aa169c934b1d9bce18b8c212074b,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-grenouille_de_larmee"><i class="fa fa-download"></i></a>
@@ -1794,14 +1811,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/hallows/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Hallows">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=hallows">Hallows</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=hallows" class="s-title">Hallows</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">hallows,New,Commercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1816,6 +1835,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=be49b1a8-600e-4751-9725-a8aead777363">izjust4fun<span class="tag_hidden">be49b1a8-600e-4751-9725-a8aead777363 be49b1a8600e47519725a8aead777363</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=297428a6-b482-4558-99f5-b413067ed48d">CrazyClownz<span class="tag_hidden">297428a6-b482-4558-99f5-b413067ed48d 297428a6b482455899f5b413067ed48d</span></a></li>
+                        <div class="hidden s-author">izjust4fun,be49b1a8-600e-4751-9725-a8aead777363 be49b1a8600e47519725a8aead777363,CrazyClownz,297428a6-b482-4558-99f5-b413067ed48d 297428a6b482455899f5b413067ed48d,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-hallows"><i class="fa fa-download"></i></a>
@@ -1863,7 +1883,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -1902,14 +1921,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/harvest/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Harvest">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=harvest">Harvest</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=harvest" class="s-title">Harvest</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag-hidden">koth</span></li>
+                            <li class="game-tag map-tag s-tag">King of the Hill<span class="hidden">koth</span></li>
+                            <div class="hidden tags">harvest,Noncommercial,King of the Hill</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1922,6 +1943,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=53af1e46-7424-485b-97de-7bf8d854a2aa">BTKing<span class="tag_hidden">53af1e46-7424-485b-97de-7bf8d854a2aa 53af1e467424485b97de7bf8d854a2aa</span></a></li>
+                        <div class="hidden s-author">BTKing,53af1e46-7424-485b-97de-7bf8d854a2aa 53af1e467424485b97de7bf8d854a2aa,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-harvest"><i class="fa fa-download"></i></a>
@@ -1969,8 +1991,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -2009,15 +2029,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/iris_dtc_te/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Iris DTC TE">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=iris_dtc_te">Iris DTC TE</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=iris_dtc_te" class="s-title">Iris DTC TE</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a><span class="tag-hidden">dtc</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span>,</li>
+                            <li class="game-tag map-tag s-tag">Tournament<span class="hidden">!te !tm</span></li>
+                            <div class="hidden tags">iris_dtc_te,Commercial,Destroy the Core,Tournament</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2030,6 +2052,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=3a549b18-08ed-4756-a78c-b34d29a4fd87">Torn_Ares<span class="tag_hidden">3a549b18-08ed-4756-a78c-b34d29a4fd87 3a549b1808ed4756a78cb34d29a4fd87</span></a></li>
+                        <div class="hidden s-author">Torn_Ares,3a549b18-08ed-4756-a78c-b34d29a4fd87 3a549b1808ed4756a78cb34d29a4fd87,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-iris_dtc_te"><i class="fa fa-download"></i></a>
@@ -2073,8 +2096,7 @@
                                         <div class="modal-section-head">Tags</div>
                                         <div class="modal-section-body">
                                             <span class="label label-info">Destroy the Core</span>
-                                            <span class="label label-info">Tournament Edition</span>
-                                            
+                                            <span class="label label-info">Tournament</span>
                                             
                                             
                                             
@@ -2116,14 +2138,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/jactus/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Jactus">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=jactus">Jactus</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=jactus" class="s-title">Jactus</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">jactus,Unlicensed,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/stratus/mini_map_making_competition#jactus" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
@@ -2139,6 +2163,7 @@
                         <li class="game-tag author-tag"><a href="?s=8a3f4bb0-308f-4f06-a07c-087f3f77575c">Stoudyi<span class="tag_hidden">8a3f4bb0-308f-4f06-a07c-087f3f77575c 8a3f4bb0308f4f06a07c087f3f77575c</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=4a643ce8-9ae7-4440-95c7-b7371fcad43c">Spalgra<span class="tag_hidden">4a643ce8-9ae7-4440-95c7-b7371fcad43c 4a643ce89ae7444095c7b7371fcad43c</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=42534d9b-b687-42f1-aaf4-baa697548311">iBreezly<span class="tag_hidden">42534d9b-b687-42f1-aaf4-baa697548311 42534d9bb68742f1aaf4baa697548311</span></a></li>
+                        <div class="hidden s-author">Stoudyi,8a3f4bb0-308f-4f06-a07c-087f3f77575c 8a3f4bb0308f4f06a07c087f3f77575c,Spalgra,4a643ce8-9ae7-4440-95c7-b7371fcad43c 4a643ce89ae7444095c7b7371fcad43c,iBreezly,42534d9b-b687-42f1-aaf4-baa697548311 42534d9bb68742f1aaf4baa697548311,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-jactus"><i class="fa fa-download"></i></a>
@@ -2225,14 +2250,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/kamena/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Kamena">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=kamena">Kamena</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=kamena" class="s-title">Kamena</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">kamena,Noncommercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2245,6 +2272,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=48924ea3-3aad-4e16-838c-368d8d9e0a25">Matic0B<span class="tag_hidden">48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25</span></a></li>
+                        <div class="hidden s-author">Matic0B,48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-kamena"><i class="fa fa-download"></i></a>
@@ -2292,8 +2320,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -2332,14 +2358,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/kora/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Kora">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=kora">Kora</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=kora" class="s-title">Kora</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a><span class="tag-hidden">dtc</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            <div class="hidden tags">kora,Noncommercial,Destroy the Core</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2352,6 +2380,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=48924ea3-3aad-4e16-838c-368d8d9e0a25">Matic0B<span class="tag_hidden">48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25</span></a></li>
+                        <div class="hidden s-author">Matic0B,48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-kora"><i class="fa fa-download"></i></a>
@@ -2399,8 +2428,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -2439,15 +2466,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/lt_facility_oitc/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="LT Facility OiTC">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=lt_facility_oitc">LT Facility OiTC</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=lt_facility_oitc" class="s-title">LT Facility OiTC</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ffa">Free-for-all</a><span class="tag-hidden">ffa Free for All</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                            <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span>,</li>
+                            <li class="game-tag map-tag s-tag">Rage</li>
+                            <div class="hidden tags">lt_facility_oitc,New,Commercial,Free-for-all,Rage</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2464,6 +2493,7 @@
                         <li class="game-tag author-tag"><a href="?s=a43135a4-d7b9-49ab-ac8d-a16bb2513c8d">Ny_<span class="tag_hidden">a43135a4-d7b9-49ab-ac8d-a16bb2513c8d a43135a4d7b949abac8da16bb2513c8d</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=e8d1ad63-bd9e-4d0e-9a6c-27f2b047d924">Mikeg542<span class="tag_hidden">e8d1ad63-bd9e-4d0e-9a6c-27f2b047d924 e8d1ad63bd9e4d0e9a6c27f2b047d924</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=715769c5-8c4c-4489-bdf8-f9cee2b2ae8a">amactus<span class="tag_hidden">715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a</span></a></li>
+                        <div class="hidden s-author">samthecat43,7ab24d14-0801-48ba-8fea-147ddf400067 7ab24d14080148ba8fea147ddf400067,Ny_,a43135a4-d7b9-49ab-ac8d-a16bb2513c8d a43135a4d7b949abac8da16bb2513c8d,Mikeg542,e8d1ad63-bd9e-4d0e-9a6c-27f2b047d924 e8d1ad63bd9e4d0e9a6c27f2b047d924,amactus,715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-lt_facility_oitc"><i class="fa fa-download"></i></a>
@@ -2514,7 +2544,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -2553,15 +2582,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/mars_odyssey/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Mars Odyssey">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=mars_odyssey">Mars Odyssey</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=mars_odyssey" class="s-title">Mars Odyssey</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtcm">Destroy the Core and Monument</a><span class="tag-hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Core and Monument<span class="hidden">dtcm dtmc dtc dtm Destroy the Monument</span>,</li>
+                            <li class="game-tag map-tag s-tag">Tournament<span class="hidden">!te !tm</span></li>
+                            <div class="hidden tags">mars_odyssey,Commercial,Destroy the Core and Monument,Tournament</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2576,6 +2607,7 @@
                         <li class="game-tag author-tag"><a href="?s=3143b9d9-cea7-465f-97fc-8de59fbbb3a4">DiamondAx<span class="tag_hidden">3143b9d9-cea7-465f-97fc-8de59fbbb3a4 3143b9d9cea7465f97fc8de59fbbb3a4</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06">Strangey<span class="tag_hidden">621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06 621b2aa84e5f4ed8bd360ae2f8952a06</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=6bec5c3a-4934-4b19-9aa8-c7c569820f7d">Claf<span class="tag_hidden">6bec5c3a-4934-4b19-9aa8-c7c569820f7d 6bec5c3a49344b199aa8c7c569820f7d</span></a></li>
+                        <div class="hidden s-author">DiamondAx,3143b9d9-cea7-465f-97fc-8de59fbbb3a4 3143b9d9cea7465f97fc8de59fbbb3a4,Strangey,621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06 621b2aa84e5f4ed8bd360ae2f8952a06,Claf,6bec5c3a-4934-4b19-9aa8-c7c569820f7d 6bec5c3a49344b199aa8c7c569820f7d,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-mars_odyssey"><i class="fa fa-download"></i></a>
@@ -2621,8 +2653,7 @@
                                         <div class="modal-section-head">Tags</div>
                                         <div class="modal-section-body">
                                             <span class="label label-info">Destroy the Core and Monument</span>
-                                            <span class="label label-info">Tournament Edition</span>
-                                            
+                                            <span class="label label-info">Tournament</span>
                                             
                                             
                                             
@@ -2664,14 +2695,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/monday/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Monday">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=monday">Monday</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=monday" class="s-title">Monday</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">monday,New,Noncommercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2685,6 +2718,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=715769c5-8c4c-4489-bdf8-f9cee2b2ae8a">amactus<span class="tag_hidden">715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a</span></a></li>
+                        <div class="hidden s-author">amactus,715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-monday"><i class="fa fa-download"></i></a>
@@ -2732,8 +2766,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -2772,14 +2804,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/muddy_paths/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Muddy Paths">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=muddy_paths">Muddy Paths</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=muddy_paths" class="s-title">Muddy Paths</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a><span class="tag-hidden">dtc</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            <div class="hidden tags">muddy_paths,Noncommercial,Destroy the Core</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2793,6 +2827,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=9225421c-3c09-4d97-bb80-f6a77c1f360b">Jexel<span class="tag_hidden">9225421c-3c09-4d97-bb80-f6a77c1f360b 9225421c3c094d97bb80f6a77c1f360b</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=5198dc37-537f-4ea5-8ee8-1e0952d4a36b">_3Each<span class="tag_hidden">5198dc37-537f-4ea5-8ee8-1e0952d4a36b 5198dc37537f4ea58ee81e0952d4a36b</span></a></li>
+                        <div class="hidden s-author">Jexel,9225421c-3c09-4d97-bb80-f6a77c1f360b 9225421c3c094d97bb80f6a77c1f360b,_3Each,5198dc37-537f-4ea5-8ee8-1e0952d4a36b 5198dc37537f4ea58ee81e0952d4a36b,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-muddy_paths"><i class="fa fa-download"></i></a>
@@ -2841,8 +2876,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -2881,14 +2914,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/nar/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Nar">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=nar">Nar</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=nar" class="s-title">Nar</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">nar,Noncommercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2901,6 +2936,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=48924ea3-3aad-4e16-838c-368d8d9e0a25">Matic0B<span class="tag_hidden">48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25</span></a></li>
+                        <div class="hidden s-author">Matic0B,48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-nar"><i class="fa fa-download"></i></a>
@@ -2948,8 +2984,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -2988,14 +3022,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/pinnacle/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Pinnacle">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=pinnacle">Pinnacle</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=pinnacle" class="s-title">Pinnacle</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">pinnacle,Noncommercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -3009,6 +3045,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=9225421c-3c09-4d97-bb80-f6a77c1f360b">Jexel<span class="tag_hidden">9225421c-3c09-4d97-bb80-f6a77c1f360b 9225421c3c094d97bb80f6a77c1f360b</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=5198dc37-537f-4ea5-8ee8-1e0952d4a36b">_3Each<span class="tag_hidden">5198dc37-537f-4ea5-8ee8-1e0952d4a36b 5198dc37537f4ea58ee81e0952d4a36b</span></a></li>
+                        <div class="hidden s-author">Jexel,9225421c-3c09-4d97-bb80-f6a77c1f360b 9225421c3c094d97bb80f6a77c1f360b,_3Each,5198dc37-537f-4ea5-8ee8-1e0952d4a36b 5198dc37537f4ea58ee81e0952d4a36b,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-pinnacle"><i class="fa fa-download"></i></a>
@@ -3057,8 +3094,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -3097,14 +3132,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/puyt/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Puyt">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=puyt">Puyt</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=puyt" class="s-title">Puyt</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">puyt,Noncommercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/stratus/mini_map_making_competition#puyt" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
@@ -3118,6 +3155,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
+                        <div class="hidden s-author">Obelistics,b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-puyt"><i class="fa fa-download"></i></a>
@@ -3165,8 +3203,6 @@
                                             <span class="label label-info">Contest Submission</span>
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -3205,15 +3241,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/riots_te/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Riots TE">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=riots_te">Riots TE</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=riots_te" class="s-title">Riots TE</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span>,</li>
+                            <li class="game-tag map-tag s-tag">Tournament<span class="hidden">!te !tm</span></li>
+                            <div class="hidden tags">riots_te,Commercial,Destroy the Monument,Tournament</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -3226,6 +3264,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=f926e3b1-ce9c-4269-a5e8-e339d5056480">Matilaina<span class="tag_hidden">f926e3b1-ce9c-4269-a5e8-e339d5056480 f926e3b1ce9c4269a5e8e339d5056480</span></a></li>
+                        <div class="hidden s-author">Matilaina,f926e3b1-ce9c-4269-a5e8-e339d5056480 f926e3b1ce9c4269a5e8e339d5056480,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-riots_te"><i class="fa fa-download"></i></a>
@@ -3269,8 +3308,7 @@
                                         <div class="modal-section-head">Tags</div>
                                         <div class="modal-section-body">
                                             <span class="label label-info">Destroy the Monument</span>
-                                            <span class="label label-info">Tournament Edition</span>
-                                            
+                                            <span class="label label-info">Tournament</span>
                                             
                                             
                                             
@@ -3312,15 +3350,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/spaceship_battles_te/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Spaceship Battles TE">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=spaceship_battles_te">Spaceship Battles TE</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=spaceship_battles_te" class="s-title">Spaceship Battles TE</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtcm">Destroy the Core and Monument</a><span class="tag-hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Core and Monument<span class="hidden">dtcm dtmc dtc dtm Destroy the Monument</span>,</li>
+                            <li class="game-tag map-tag s-tag">Tournament<span class="hidden">!te !tm</span></li>
+                            <div class="hidden tags">spaceship_battles_te,Popular,Commercial,Destroy the Core and Monument,Tournament</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -3334,6 +3374,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=73711d58-d786-4007-8c95-c93b1311de1a">Oversoul96<span class="tag_hidden">73711d58-d786-4007-8c95-c93b1311de1a 73711d58d78640078c95c93b1311de1a</span></a></li>
+                        <div class="hidden s-author">Oversoul96,73711d58-d786-4007-8c95-c93b1311de1a 73711d58d78640078c95c93b1311de1a,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-spaceship_battles_te"><i class="fa fa-download"></i></a>
@@ -3377,11 +3418,10 @@
                                         <div class="modal-section-head">Tags</div>
                                         <div class="modal-section-body">
                                             <span class="label label-info">Destroy the Core and Monument</span>
-                                            <span class="label label-info">Tournament Edition</span>
+                                            <span class="label label-info">Tournament</span>
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -3420,14 +3460,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/split/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Split">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=split">Split</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=split" class="s-title">Split</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">split,New,Noncommercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -3441,6 +3483,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=57f5535d-6b9e-4013-ad71-e2cc63ec8d7c">ItzaMeLuigi<span class="tag_hidden">57f5535d-6b9e-4013-ad71-e2cc63ec8d7c 57f5535d6b9e4013ad71e2cc63ec8d7c</span></a></li>
+                        <div class="hidden s-author">ItzaMeLuigi,57f5535d-6b9e-4013-ad71-e2cc63ec8d7c 57f5535d6b9e4013ad71e2cc63ec8d7c,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-split"><i class="fa fa-download"></i></a>
@@ -3488,8 +3531,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -3528,14 +3569,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/the_hills/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="The Hills">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=the_hills">The Hills</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=the_hills" class="s-title">The Hills</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">the_hills,Unlicensed,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/stratus/mini_map_making_competition#the_hills" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
@@ -3549,6 +3592,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=105b02c7-9004-45ed-a668-971359021f82">Kezugo<span class="tag_hidden">105b02c7-9004-45ed-a668-971359021f82 105b02c7900445eda668971359021f82</span></a></li>
+                        <div class="hidden s-author">Kezugo,105b02c7-9004-45ed-a668-971359021f82 105b02c7900445eda668971359021f82,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-the_hills"><i class="fa fa-download"></i></a>
@@ -3629,14 +3673,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/three_choices/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Three Choices">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=three_choices">Three Choices</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=three_choices" class="s-title">Three Choices</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">three_choices,Unlicensed,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/stratus/mini_map_making_competition#three_choices" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
@@ -3650,6 +3696,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=0875279f-d502-457a-a89c-36bbed32ae47">sammyboo<span class="tag_hidden">0875279f-d502-457a-a89c-36bbed32ae47 0875279fd502457aa89c36bbed32ae47</span></a></li>
+                        <div class="hidden s-author">sammyboo,0875279f-d502-457a-a89c-36bbed32ae47 0875279fd502457aa89c36bbed32ae47,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-three_choices"><i class="fa fa-download"></i></a>
@@ -3730,15 +3777,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/tint_sploof/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="TiNT Sploof">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=tint_sploof">TiNT Sploof</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=tint_sploof" class="s-title">TiNT Sploof</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ffa">Free-for-all</a><span class="tag-hidden">ffa Free for All</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                            <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span>,</li>
+                            <li class="game-tag map-tag s-tag">Blitz</li>
+                            <div class="hidden tags">tint_sploof,New,Commercial,Blitz,Free-for-all</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -3752,6 +3801,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=cc2292de-fcb3-412d-9319-f3177f73b605">cs_<span class="tag_hidden">cc2292de-fcb3-412d-9319-f3177f73b605 cc2292defcb3412d9319f3177f73b605</span></a></li>
+                        <div class="hidden s-author">cs_,cc2292de-fcb3-412d-9319-f3177f73b605 cc2292defcb3412d9319f3177f73b605,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-tint_sploof"><i class="fa fa-download"></i></a>
@@ -3794,11 +3844,10 @@
                                     <div class="col-md-4">
                                         <div class="modal-section-head">Tags</div>
                                         <div class="modal-section-body">
-                                            <span class="label label-info">Free-for-all</span>
                                             <span class="label label-info">Blitz</span>
+                                            <span class="label label-info">Free-for-all</span>
                                             
                                             <span class="label label-primary">New</span>
-                                            
                                             
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
@@ -3838,14 +3887,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/tower_blast/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Tower Blast">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=tower_blast">Tower Blast</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=tower_blast" class="s-title">Tower Blast</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
+                            <li class="game-tag map-tag s-tag">Arcade</li>
+                            <div class="hidden tags">tower_blast,Noncommercial,Arcade</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/stratus/mini_map_making_competition#tower_blast" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
@@ -3859,6 +3910,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=b3bf822a-4218-4f96-9110-278cad1ab848">Ensix<span class="tag_hidden">b3bf822a-4218-4f96-9110-278cad1ab848 b3bf822a42184f969110278cad1ab848</span></a></li>
+                        <div class="hidden s-author">Ensix,b3bf822a-4218-4f96-9110-278cad1ab848 b3bf822a42184f969110278cad1ab848,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-tower_blast"><i class="fa fa-download"></i></a>
@@ -3906,8 +3958,6 @@
                                             <span class="label label-info">Contest Submission</span>
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -3946,14 +3996,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/tribe/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Tribe">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=tribe">Tribe</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=tribe" class="s-title">Tribe</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">tribe,Noncommercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/stratus/mini_map_making_competition#tribe" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
@@ -3968,6 +4020,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=a63de09d-6fa9-436f-9070-26f5e9a4d27b">dragonrider455<span class="tag_hidden">a63de09d-6fa9-436f-9070-26f5e9a4d27b a63de09d6fa9436f907026f5e9a4d27b</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=4ed106c2-12b9-43d2-83c7-2e963440444f">ItsCal<span class="tag_hidden">4ed106c2-12b9-43d2-83c7-2e963440444f 4ed106c212b943d283c72e963440444f</span></a></li>
+                        <div class="hidden s-author">dragonrider455,a63de09d-6fa9-436f-9070-26f5e9a4d27b a63de09d6fa9436f907026f5e9a4d27b,ItsCal,4ed106c2-12b9-43d2-83c7-2e963440444f 4ed106c212b943d283c72e963440444f,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-tribe"><i class="fa fa-download"></i></a>
@@ -4016,8 +4069,6 @@
                                             <span class="label label-info">Contest Submission</span>
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -4056,15 +4107,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/trirectra/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Trirectra">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=trirectra">Trirectra</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=trirectra" class="s-title">Trirectra</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag-hidden">ctf</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                            <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span>,</li>
+                            <li class="game-tag map-tag s-tag">Rage</li>
+                            <div class="hidden tags">trirectra,New,Noncommercial,Capture the Flag,Rage</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -4078,6 +4131,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=715769c5-8c4c-4489-bdf8-f9cee2b2ae8a">amactus<span class="tag_hidden">715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a</span></a></li>
+                        <div class="hidden s-author">amactus,715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-trirectra"><i class="fa fa-download"></i></a>
@@ -4126,8 +4180,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -4166,14 +4218,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/verlate/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Verlate">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=verlate">Verlate</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=verlate" class="s-title">Verlate</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag-hidden">koth</span></li>
+                            <li class="game-tag map-tag s-tag">King of the Hill<span class="hidden">koth</span></li>
+                            <div class="hidden tags">verlate,Noncommercial,King of the Hill</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/stratus/mini_map_making_competition#verlate" data-toggle="tooltip" data-placement="top" title="Stratus contest submission"><i class="fa fa-map"></i></a>
@@ -4188,6 +4242,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=b03360db-b8cd-49de-8ba1-b7920c2238a9">Obelistics<span class="tag_hidden">b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=5c6751aa-96b0-478b-b46d-c55a7d8b6ed1">Ceroh<span class="tag_hidden">5c6751aa-96b0-478b-b46d-c55a7d8b6ed1 5c6751aa96b0478bb46dc55a7d8b6ed1</span></a></li>
+                        <div class="hidden s-author">Obelistics,b03360db-b8cd-49de-8ba1-b7920c2238a9 b03360dbb8cd49de8ba1b7920c2238a9,Ceroh,5c6751aa-96b0-478b-b46d-c55a7d8b6ed1 5c6751aa96b0478bb46dc55a7d8b6ed1,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-verlate"><i class="fa fa-download"></i></a>
@@ -4236,8 +4291,6 @@
                                             <span class="label label-info">Contest Submission</span>
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -4276,15 +4329,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/wallop_9000/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Wallop 9000">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=wallop_9000">Wallop 9000</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=wallop_9000" class="s-title">Wallop 9000</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtcm">Destroy the Core and Monument</a><span class="tag-hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Core and Monument<span class="hidden">dtcm dtmc dtc dtm Destroy the Monument</span>,</li>
+                            <li class="game-tag map-tag s-tag">Tournament<span class="hidden">!te !tm</span></li>
+                            <div class="hidden tags">wallop_9000,Commercial,Destroy the Core and Monument,Tournament</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -4298,6 +4353,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=9929437a-9b7d-4d7a-b05d-e22fe93ac042">triplezko<span class="tag_hidden">9929437a-9b7d-4d7a-b05d-e22fe93ac042 9929437a9b7d4d7ab05de22fe93ac042</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=6bec5c3a-4934-4b19-9aa8-c7c569820f7d">Claf<span class="tag_hidden">6bec5c3a-4934-4b19-9aa8-c7c569820f7d 6bec5c3a49344b199aa8c7c569820f7d</span></a></li>
+                        <div class="hidden s-author">triplezko,9929437a-9b7d-4d7a-b05d-e22fe93ac042 9929437a9b7d4d7ab05de22fe93ac042,Claf,6bec5c3a-4934-4b19-9aa8-c7c569820f7d 6bec5c3a49344b199aa8c7c569820f7d,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-wallop_9000"><i class="fa fa-download"></i></a>
@@ -4342,8 +4398,7 @@
                                         <div class="modal-section-head">Tags</div>
                                         <div class="modal-section-body">
                                             <span class="label label-info">Destroy the Core and Monument</span>
-                                            <span class="label label-info">Tournament Edition</span>
-                                            
+                                            <span class="label label-info">Tournament</span>
                                             
                                             
                                             
@@ -4385,15 +4440,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/wallop_too/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Wallop Too">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=wallop_too">Wallop Too</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=wallop_too" class="s-title">Wallop Too</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tournament">Tournament Edition</a><span class="tag-hidden">!te !tm</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span>,</li>
+                            <li class="game-tag map-tag s-tag">Tournament<span class="hidden">!te !tm</span></li>
+                            <div class="hidden tags">wallop_too,Commercial,Capture the Wool,Tournament</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -4407,6 +4464,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=6bec5c3a-4934-4b19-9aa8-c7c569820f7d">Claf<span class="tag_hidden">6bec5c3a-4934-4b19-9aa8-c7c569820f7d 6bec5c3a49344b199aa8c7c569820f7d</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=9929437a-9b7d-4d7a-b05d-e22fe93ac042">triplezko<span class="tag_hidden">9929437a-9b7d-4d7a-b05d-e22fe93ac042 9929437a9b7d4d7ab05de22fe93ac042</span></a></li>
+                        <div class="hidden s-author">Claf,6bec5c3a-4934-4b19-9aa8-c7c569820f7d 6bec5c3a49344b199aa8c7c569820f7d,triplezko,9929437a-9b7d-4d7a-b05d-e22fe93ac042 9929437a9b7d4d7ab05de22fe93ac042,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-wallop_too"><i class="fa fa-download"></i></a>
@@ -4451,8 +4509,7 @@
                                         <div class="modal-section-head">Tags</div>
                                         <div class="modal-section-body">
                                             <span class="label label-info">Capture the Wool</span>
-                                            <span class="label label-info">Tournament Edition</span>
-                                            
+                                            <span class="label label-info">Tournament</span>
                                             
                                             
                                             
@@ -4494,14 +4551,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/stratus-maps/master/maps/wrap/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Wrap">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=wrap">Wrap</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=wrap" class="s-title">Wrap</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">wrap,New,Noncommercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -4515,6 +4574,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=57f5535d-6b9e-4013-ad71-e2cc63ec8d7c">ItzaMeLuigi<span class="tag_hidden">57f5535d-6b9e-4013-ad71-e2cc63ec8d7c 57f5535d6b9e4013ad71e2cc63ec8d7c</span></a></li>
+                        <div class="hidden s-author">ItzaMeLuigi,57f5535d-6b9e-4013-ad71-e2cc63ec8d7c 57f5535d6b9e4013ad71e2cc63ec8d7c,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-wrap"><i class="fa fa-download"></i></a>
@@ -4562,8 +4622,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM (Stratus Fork)</span>
                                             
@@ -4602,6 +4660,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
 <div class="modal fade" id="download-complete-message" tabindex="-1" role="dialog">

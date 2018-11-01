@@ -33,7 +33,8 @@
         <script src="/assets/js/FileSaver.js"></script>
         <script src="/assets/js/jszip.js"></script>
         <script src="/assets/js/jquery.searchable-1.1.0.min.js"></script>
-        <script src="/assets/js/maps.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+        <script src="/assets/js/maps-advanced.js"></script>
         <script src="/assets/js/analytics.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -120,45 +121,44 @@
                     <div class="content-subtitle">A collection of publicly downloadable Minecraft maps made for Race For Wool</div>
                 </div>
             <!-- Start page content -->
-
-<div class="thumbnail">
-    <form name="search_form" class="record-search-container">
-        <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
-    </form>
-    <div class="game-mode-navigation row" data-source="rfw">
-        <div class="game-mode-group col-xs-12 col-md-4">
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Objectives</div>
-                <a class="game-mode-button" href="?s=rfw">Race for Wool</a>
-            </div>
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Seasons</div>
-                <a class="game-mode-button" href="?s=christmas">Christmas</a>
-                <a class="game-mode-button" href="?s=halloween">Halloween</a>
-            </div>
-        </div>
-        <div class="game-mode-group col-xs-12 col-md-4">
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Other</div>
-                <a class="game-mode-button" href="?s=new">New Maps</a>
-                <a class="game-mode-button" href="?s=popular">Popular Maps</a>
-                <a class="game-mode-button" href="?s=by-nc-sa">Noncommercial Maps</a>
-                <a class="game-mode-button" href="?s=by-sa">Commercial Maps</a>
+<div id="maps-collection" class="maps-output row center" data-source="rfw">
+    <div class="col-md-3 col-md-push-9">
+        <div class="thumbnail map-search">
+            <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search maps">
+            <div class="filters">
+                <b>Filters</b>
+                <small>Use filters to narrow your query when searching for specific maps.</small>
+                <div class="group">
+                    <span class="filter">New</span>
+                    <span class="filter">Popular</span>
+                    <span class="filter">Commercial</span>
+                    <span class="filter">Noncommercial</span>
+                </div>
+                <div class="group">
+                    <b>Games</b>
+                    <span class="filter">Capture the Wool</span>
+                    <span class="filter">Race for Wool</span>
+                </div>
+                <div class="group">
+                    <b>Editions</b>
+                    <span class="filter">Christmas</span>
+                    <span class="filter">Halloween</span>
+                    <span class="filter">Ranked</span>
+                    <span class="filter">Tournament</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="total-maps center">Loading maps collection...</div>
-<div id="maps-output">
-    <div class="dynamic">
+    <div class="col-md-9 col-md-pull-3 dynamic list">
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/arcane_realms/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Arcane Realms">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=arcane_realms">Arcane Realms</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=arcane_realms" class="s-title">Arcane Realms</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">arcane_realms,Commercial,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="http://web.archive.org/web/20160407224541/http://rmct.tv/discussion/573/arcane-realms-v-1-12-3-update" target="_blank" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="fa fa-comments-o"></i></a>
@@ -172,6 +172,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=5ca79703-1be6-4dca-9073-59d024eb8bb0">koipen<span class="tag_hidden">5ca79703-1be6-4dca-9073-59d024eb8bb0 5ca797031be64dca907359d024eb8bb0</span></a></li>
+                        <div class="hidden s-author">koipen,5ca79703-1be6-4dca-9073-59d024eb8bb0 5ca797031be64dca907359d024eb8bb0,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-arcane_realms"><i class="fa fa-download"></i></a>
@@ -218,7 +219,6 @@
                                             
                                             
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">RFW</span>
                                             
@@ -258,14 +258,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/ascension/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Ascension">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=ascension">Ascension</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=ascension" class="s-title">Ascension</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">ascension,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -280,6 +282,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=606e2ff0-ed77-4842-9d6c-e1d3321c7838">RMCT_Community<span class="tag_hidden">606e2ff0-ed77-4842-9d6c-e1d3321c7838 606e2ff0ed7748429d6ce1d3321c7838</span></a></li>
+                        <div class="hidden s-author">RMCT_Community,606e2ff0-ed77-4842-9d6c-e1d3321c7838 606e2ff0ed7748429d6ce1d3321c7838,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-ascension"><i class="fa fa-download"></i></a>
@@ -361,14 +364,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/back_to_basics/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Back to Basics">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=back_to_basics">Back to Basics</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=back_to_basics" class="s-title">Back to Basics</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">back_to_basics,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -383,6 +388,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=e5be9ba5-41eb-43b6-bd0f-a2e2c48538e6">wca<span class="tag_hidden">e5be9ba5-41eb-43b6-bd0f-a2e2c48538e6 e5be9ba541eb43b6bd0fa2e2c48538e6</span></a></li>
+                        <div class="hidden s-author">wca,e5be9ba5-41eb-43b6-bd0f-a2e2c48538e6 e5be9ba541eb43b6bd0fa2e2c48538e6,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-back_to_basics"><i class="fa fa-download"></i></a>
@@ -464,14 +470,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/badlands_boogaloo/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Badlands Boogaloo">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=badlands_boogaloo">Badlands Boogaloo</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=badlands_boogaloo" class="s-title">Badlands Boogaloo</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">badlands_boogaloo,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -487,6 +495,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=cc18a447-3dfa-4ccb-b44c-0167ba6f0723">Phorxy<span class="tag_hidden">cc18a447-3dfa-4ccb-b44c-0167ba6f0723 cc18a4473dfa4ccbb44c0167ba6f0723</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=2665a295-2f3b-41fe-85d3-220b214d49f2">iTruthful<span class="tag_hidden">2665a295-2f3b-41fe-85d3-220b214d49f2 2665a2952f3b41fe85d3220b214d49f2</span></a></li>
+                        <div class="hidden s-author">Phorxy,cc18a447-3dfa-4ccb-b44c-0167ba6f0723 cc18a4473dfa4ccbb44c0167ba6f0723,iTruthful,2665a295-2f3b-41fe-85d3-220b214d49f2 2665a2952f3b41fe85d3220b214d49f2,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-badlands_boogaloo"><i class="fa fa-download"></i></a>
@@ -571,14 +580,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/basher_s_domain/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Basher’s Domain">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=basher_s_domain">Basher’s Domain</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=basher_s_domain" class="s-title">Basher’s Domain</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">basher_s_domain,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -594,6 +605,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=4ac9b634-9b7a-4711-aabc-9be24254cbb4">PsychoticSandwich504<span class="tag_hidden">4ac9b634-9b7a-4711-aabc-9be24254cbb4 4ac9b6349b7a4711aabc9be24254cbb4</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=54231f85-f8e0-49c7-bd8a-c0aba3d1caf7">TomShar<span class="tag_hidden">54231f85-f8e0-49c7-bd8a-c0aba3d1caf7 54231f85f8e049c7bd8ac0aba3d1caf7</span></a></li>
+                        <div class="hidden s-author">PsychoticSandwich504,4ac9b634-9b7a-4711-aabc-9be24254cbb4 4ac9b6349b7a4711aabc9be24254cbb4,TomShar,54231f85-f8e0-49c7-bd8a-c0aba3d1caf7 54231f85f8e049c7bd8ac0aba3d1caf7,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-basher_s_domain"><i class="fa fa-download"></i></a>
@@ -678,14 +690,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/beginner_s_touch/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Beginner’s Touch">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=beginner_s_touch">Beginner’s Touch</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=beginner_s_touch" class="s-title">Beginner’s Touch</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">beginner_s_touch,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -701,6 +715,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=9edd56f7-eee6-4e96-b9d1-cf64ddb73e8b">Foldesi<span class="tag_hidden">9edd56f7-eee6-4e96-b9d1-cf64ddb73e8b 9edd56f7eee64e96b9d1cf64ddb73e8b</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=d8e42e19-b956-42a8-bf5f-c12cc8e18a27">zzrules21<span class="tag_hidden">d8e42e19-b956-42a8-bf5f-c12cc8e18a27 d8e42e19b95642a8bf5fc12cc8e18a27</span></a></li>
+                        <div class="hidden s-author">Foldesi,9edd56f7-eee6-4e96-b9d1-cf64ddb73e8b 9edd56f7eee64e96b9d1cf64ddb73e8b,zzrules21,d8e42e19-b956-42a8-bf5f-c12cc8e18a27 d8e42e19b95642a8bf5fc12cc8e18a27,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-beginner_s_touch"><i class="fa fa-download"></i></a>
@@ -785,14 +800,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/blazing_sun/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Blazing Sun">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=blazing_sun">Blazing Sun</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=blazing_sun" class="s-title">Blazing Sun</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">blazing_sun,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -807,6 +824,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=2d4f4e28-5b76-4c82-96a0-de7192c37b3f">Gramps223<span class="tag_hidden">2d4f4e28-5b76-4c82-96a0-de7192c37b3f 2d4f4e285b764c8296a0de7192c37b3f</span></a></li>
+                        <div class="hidden s-author">Gramps223,2d4f4e28-5b76-4c82-96a0-de7192c37b3f 2d4f4e285b764c8296a0de7192c37b3f,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-blazing_sun"><i class="fa fa-download"></i></a>
@@ -888,14 +906,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/blocked__n__loaded/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Blocked ‘n’ Loaded">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=blocked__n__loaded">Blocked ‘n’ Loaded</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=blocked__n__loaded" class="s-title">Blocked ‘n’ Loaded</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">blocked__n__loaded,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -910,6 +930,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=1c158bdf-232a-4732-8bec-45ab0a7940d0">Jorcooly<span class="tag_hidden">1c158bdf-232a-4732-8bec-45ab0a7940d0 1c158bdf232a47328bec45ab0a7940d0</span></a></li>
+                        <div class="hidden s-author">Jorcooly,1c158bdf-232a-4732-8bec-45ab0a7940d0 1c158bdf232a47328bec45ab0a7940d0,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-blocked__n__loaded"><i class="fa fa-download"></i></a>
@@ -991,14 +1012,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/bord_de_falaise/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Bord de Falaise">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=bord_de_falaise">Bord de Falaise</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=bord_de_falaise" class="s-title">Bord de Falaise</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">bord_de_falaise,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -1012,6 +1035,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=a794a6d0-adf9-41b5-acf4-c886025d6cdb">TheNeidhartHart<span class="tag_hidden">a794a6d0-adf9-41b5-acf4-c886025d6cdb a794a6d0adf941b5acf4c886025d6cdb</span></a></li>
+                        <div class="hidden s-author">TheNeidhartHart,a794a6d0-adf9-41b5-acf4-c886025d6cdb a794a6d0adf941b5acf4c886025d6cdb,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-bord_de_falaise"><i class="fa fa-download"></i></a>
@@ -1092,14 +1116,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/bord_de_mer/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Bord de Mer">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=bord_de_mer">Bord de Mer</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=bord_de_mer" class="s-title">Bord de Mer</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">bord_de_mer,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -1115,6 +1141,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=c7f71f78-922c-4082-b302-61512e1eaccc">Pacifica<span class="tag_hidden">c7f71f78-922c-4082-b302-61512e1eaccc c7f71f78922c4082b30261512e1eaccc</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=1fcebd13-3d45-4d58-8157-4117410f72e8">Sumilux<span class="tag_hidden">1fcebd13-3d45-4d58-8157-4117410f72e8 1fcebd133d454d5881574117410f72e8</span></a></li>
+                        <div class="hidden s-author">Pacifica,c7f71f78-922c-4082-b302-61512e1eaccc c7f71f78922c4082b30261512e1eaccc,Sumilux,1fcebd13-3d45-4d58-8157-4117410f72e8 1fcebd133d454d5881574117410f72e8,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-bord_de_mer"><i class="fa fa-download"></i></a>
@@ -1199,14 +1226,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/buzzard/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Buzzard">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=buzzard">Buzzard</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=buzzard" class="s-title">Buzzard</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">buzzard,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -1220,6 +1249,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=33e7bebb-ae8a-47a7-9845-83d5301b80f2">Arahpthos<span class="tag_hidden">33e7bebb-ae8a-47a7-9845-83d5301b80f2 33e7bebbae8a47a7984583d5301b80f2</span></a></li>
+                        <div class="hidden s-author">Arahpthos,33e7bebb-ae8a-47a7-9845-83d5301b80f2 33e7bebbae8a47a7984583d5301b80f2,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-buzzard"><i class="fa fa-download"></i></a>
@@ -1300,14 +1330,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/cancerous_cancer/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Cancerous Cancer">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=cancerous_cancer">Cancerous Cancer</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=cancerous_cancer" class="s-title">Cancerous Cancer</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">cancerous_cancer,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -1321,6 +1353,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=37979ae8-5c76-4fec-a8e3-85f50c95d40c">charburg<span class="tag_hidden">37979ae8-5c76-4fec-a8e3-85f50c95d40c 37979ae85c764feca8e385f50c95d40c</span></a></li>
+                        <div class="hidden s-author">charburg,37979ae8-5c76-4fec-a8e3-85f50c95d40c 37979ae85c764feca8e385f50c95d40c,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-cancerous_cancer"><i class="fa fa-download"></i></a>
@@ -1401,14 +1434,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/candyland/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Candyland">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=candyland">Candyland</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=candyland" class="s-title">Candyland</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">candyland,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -1423,6 +1458,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=b2edf2c5-1f17-4df5-9238-5d152e30169e">Ch4nM4n<span class="tag_hidden">b2edf2c5-1f17-4df5-9238-5d152e30169e b2edf2c51f174df592385d152e30169e</span></a></li>
+                        <div class="hidden s-author">Ch4nM4n,b2edf2c5-1f17-4df5-9238-5d152e30169e b2edf2c51f174df592385d152e30169e,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-candyland"><i class="fa fa-download"></i></a>
@@ -1504,14 +1540,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/close_encounters_2/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Close Encounters 2">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=close_encounters_2">Close Encounters 2</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=close_encounters_2" class="s-title">Close Encounters 2</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">close_encounters_2,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -1526,6 +1564,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=a1177da8-afd8-4a2d-b59c-6a9a03931e6b">FellLock<span class="tag_hidden">a1177da8-afd8-4a2d-b59c-6a9a03931e6b a1177da8afd84a2db59c6a9a03931e6b</span></a></li>
+                        <div class="hidden s-author">FellLock,a1177da8-afd8-4a2d-b59c-6a9a03931e6b a1177da8afd84a2db59c6a9a03931e6b,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-close_encounters_2"><i class="fa fa-download"></i></a>
@@ -1607,14 +1646,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/closing_darkness/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Closing Darkness">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=closing_darkness">Closing Darkness</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=closing_darkness" class="s-title">Closing Darkness</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">closing_darkness,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -1629,6 +1670,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=98a4a81e-4393-4041-8d43-40a0196b5832">Thungon<span class="tag_hidden">98a4a81e-4393-4041-8d43-40a0196b5832 98a4a81e439340418d4340a0196b5832</span></a></li>
+                        <div class="hidden s-author">Thungon,98a4a81e-4393-4041-8d43-40a0196b5832 98a4a81e439340418d4340a0196b5832,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-closing_darkness"><i class="fa fa-download"></i></a>
@@ -1710,14 +1752,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/closing_heat/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Closing Heat">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=closing_heat">Closing Heat</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=closing_heat" class="s-title">Closing Heat</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">closing_heat,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -1732,6 +1776,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=5ca79703-1be6-4dca-9073-59d024eb8bb0">koipen<span class="tag_hidden">5ca79703-1be6-4dca-9073-59d024eb8bb0 5ca797031be64dca907359d024eb8bb0</span></a></li>
+                        <div class="hidden s-author">koipen,5ca79703-1be6-4dca-9073-59d024eb8bb0 5ca797031be64dca907359d024eb8bb0,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-closing_heat"><i class="fa fa-download"></i></a>
@@ -1813,14 +1858,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/construction_chaos/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Construction Chaos">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=construction_chaos">Construction Chaos</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=construction_chaos" class="s-title">Construction Chaos</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">construction_chaos,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -1835,6 +1882,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=86870068-461a-4498-83e7-1a2e2de1dd4a">Ellie_X<span class="tag_hidden">86870068-461a-4498-83e7-1a2e2de1dd4a 86870068461a449883e71a2e2de1dd4a</span></a></li>
+                        <div class="hidden s-author">Ellie_X,86870068-461a-4498-83e7-1a2e2de1dd4a 86870068461a449883e71a2e2de1dd4a,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-construction_chaos"><i class="fa fa-download"></i></a>
@@ -1916,14 +1964,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/corrupt_lands/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Corrupt Lands">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=corrupt_lands">Corrupt Lands</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=corrupt_lands" class="s-title">Corrupt Lands</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">corrupt_lands,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -1938,6 +1988,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=ff67c405-26e0-4ace-a8f2-9a4ad83bd81e">xerothomas<span class="tag_hidden">ff67c405-26e0-4ace-a8f2-9a4ad83bd81e ff67c40526e04acea8f29a4ad83bd81e</span></a></li>
+                        <div class="hidden s-author">xerothomas,ff67c405-26e0-4ace-a8f2-9a4ad83bd81e ff67c40526e04acea8f29a4ad83bd81e,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-corrupt_lands"><i class="fa fa-download"></i></a>
@@ -2019,14 +2070,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/corsair_crossfire/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Corsair Crossfire">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=corsair_crossfire">Corsair Crossfire</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=corsair_crossfire" class="s-title">Corsair Crossfire</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">corsair_crossfire,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -2042,6 +2095,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=d7a67866-73b2-49b6-9795-d04124cf1c58">SongOfStorms11<span class="tag_hidden">d7a67866-73b2-49b6-9795-d04124cf1c58 d7a6786673b249b69795d04124cf1c58</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=43b59b5d-f75c-4a5c-9146-f9d5e6cbdac4">Gone52<span class="tag_hidden">43b59b5d-f75c-4a5c-9146-f9d5e6cbdac4 43b59b5df75c4a5c9146f9d5e6cbdac4</span></a></li>
+                        <div class="hidden s-author">SongOfStorms11,d7a67866-73b2-49b6-9795-d04124cf1c58 d7a6786673b249b69795d04124cf1c58,Gone52,43b59b5d-f75c-4a5c-9146-f9d5e6cbdac4 43b59b5df75c4a5c9146f9d5e6cbdac4,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-corsair_crossfire"><i class="fa fa-download"></i></a>
@@ -2126,14 +2180,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/direct_fire/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Direct Fire">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=direct_fire">Direct Fire</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=direct_fire" class="s-title">Direct Fire</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">direct_fire,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -2148,6 +2204,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=5c4acec1-a612-4217-9a89-0d3fcd32e5f4">Vechs<span class="tag_hidden">5c4acec1-a612-4217-9a89-0d3fcd32e5f4 5c4acec1a61242179a890d3fcd32e5f4</span></a></li>
+                        <div class="hidden s-author">Vechs,5c4acec1-a612-4217-9a89-0d3fcd32e5f4 5c4acec1a61242179a890d3fcd32e5f4,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-direct_fire"><i class="fa fa-download"></i></a>
@@ -2229,14 +2286,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/direct_fire_classic/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Direct Fire Classic">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=direct_fire_classic">Direct Fire Classic</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=direct_fire_classic" class="s-title">Direct Fire Classic</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">direct_fire_classic,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -2251,6 +2310,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=5c4acec1-a612-4217-9a89-0d3fcd32e5f4">Vechs<span class="tag_hidden">5c4acec1-a612-4217-9a89-0d3fcd32e5f4 5c4acec1a61242179a890d3fcd32e5f4</span></a></li>
+                        <div class="hidden s-author">Vechs,5c4acec1-a612-4217-9a89-0d3fcd32e5f4 5c4acec1a61242179a890d3fcd32e5f4,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-direct_fire_classic"><i class="fa fa-download"></i></a>
@@ -2332,14 +2392,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/direct_fire_mini/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Direct Fire Mini">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=direct_fire_mini">Direct Fire Mini</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=direct_fire_mini" class="s-title">Direct Fire Mini</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">direct_fire_mini,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -2357,6 +2419,7 @@
                         <li class="game-tag author-tag"><a href="?s=a0db0004-7df9-4069-a15c-0fef1c6929e3">Contranaut<span class="tag_hidden">a0db0004-7df9-4069-a15c-0fef1c6929e3 a0db00047df94069a15c0fef1c6929e3</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=cccdefe9-13fd-4550-b986-e7f5e3d8b8a6">csarpaul<span class="tag_hidden">cccdefe9-13fd-4550-b986-e7f5e3d8b8a6 cccdefe913fd4550b986e7f5e3d8b8a6</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=33e7bebb-ae8a-47a7-9845-83d5301b80f2">Arahpthos<span class="tag_hidden">33e7bebb-ae8a-47a7-9845-83d5301b80f2 33e7bebbae8a47a7984583d5301b80f2</span></a></li>
+                        <div class="hidden s-author">zzrules21,d8e42e19-b956-42a8-bf5f-c12cc8e18a27 d8e42e19b95642a8bf5fc12cc8e18a27,Contranaut,a0db0004-7df9-4069-a15c-0fef1c6929e3 a0db00047df94069a15c0fef1c6929e3,csarpaul,cccdefe9-13fd-4550-b986-e7f5e3d8b8a6 cccdefe913fd4550b986e7f5e3d8b8a6,Arahpthos,33e7bebb-ae8a-47a7-9845-83d5301b80f2 33e7bebbae8a47a7984583d5301b80f2,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-direct_fire_mini"><i class="fa fa-download"></i></a>
@@ -2447,14 +2510,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/divided_together/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Divided Together">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=divided_together">Divided Together</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=divided_together" class="s-title">Divided Together</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">divided_together,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -2469,6 +2534,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=98a4a81e-4393-4041-8d43-40a0196b5832">Thungon<span class="tag_hidden">98a4a81e-4393-4041-8d43-40a0196b5832 98a4a81e439340418d4340a0196b5832</span></a></li>
+                        <div class="hidden s-author">Thungon,98a4a81e-4393-4041-8d43-40a0196b5832 98a4a81e439340418d4340a0196b5832,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-divided_together"><i class="fa fa-download"></i></a>
@@ -2550,14 +2616,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/elemental/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Elemental">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=elemental">Elemental</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=elemental" class="s-title">Elemental</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">elemental,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -2572,6 +2640,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=9edd56f7-eee6-4e96-b9d1-cf64ddb73e8b">Foldesi<span class="tag_hidden">9edd56f7-eee6-4e96-b9d1-cf64ddb73e8b 9edd56f7eee64e96b9d1cf64ddb73e8b</span></a></li>
+                        <div class="hidden s-author">Foldesi,9edd56f7-eee6-4e96-b9d1-cf64ddb73e8b 9edd56f7eee64e96b9d1cf64ddb73e8b,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-elemental"><i class="fa fa-download"></i></a>
@@ -2653,14 +2722,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/erosion/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Erosion">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=erosion">Erosion</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=erosion" class="s-title">Erosion</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">erosion,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -2676,6 +2747,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=33e7bebb-ae8a-47a7-9845-83d5301b80f2">Arahpthos<span class="tag_hidden">33e7bebb-ae8a-47a7-9845-83d5301b80f2 33e7bebbae8a47a7984583d5301b80f2</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=cccdefe9-13fd-4550-b986-e7f5e3d8b8a6">csarpaul<span class="tag_hidden">cccdefe9-13fd-4550-b986-e7f5e3d8b8a6 cccdefe913fd4550b986e7f5e3d8b8a6</span></a></li>
+                        <div class="hidden s-author">Arahpthos,33e7bebb-ae8a-47a7-9845-83d5301b80f2 33e7bebbae8a47a7984583d5301b80f2,csarpaul,cccdefe9-13fd-4550-b986-e7f5e3d8b8a6 cccdefe913fd4550b986e7f5e3d8b8a6,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-erosion"><i class="fa fa-download"></i></a>
@@ -2760,14 +2832,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/falling_ruins/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Falling Ruins">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=falling_ruins">Falling Ruins</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=falling_ruins" class="s-title">Falling Ruins</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">falling_ruins,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -2783,6 +2857,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=a023ebd7-2c1d-4378-a085-8d036fa58bb0">HonneyPlay<span class="tag_hidden">a023ebd7-2c1d-4378-a085-8d036fa58bb0 a023ebd72c1d4378a0858d036fa58bb0</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=54231f85-f8e0-49c7-bd8a-c0aba3d1caf7">TomShar<span class="tag_hidden">54231f85-f8e0-49c7-bd8a-c0aba3d1caf7 54231f85f8e049c7bd8ac0aba3d1caf7</span></a></li>
+                        <div class="hidden s-author">HonneyPlay,a023ebd7-2c1d-4378-a085-8d036fa58bb0 a023ebd72c1d4378a0858d036fa58bb0,TomShar,54231f85-f8e0-49c7-bd8a-c0aba3d1caf7 54231f85f8e049c7bd8ac0aba3d1caf7,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-falling_ruins"><i class="fa fa-download"></i></a>
@@ -2867,14 +2942,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/false_respite/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="False Respite">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=false_respite">False Respite</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=false_respite" class="s-title">False Respite</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">false_respite,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -2888,6 +2965,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=33e7bebb-ae8a-47a7-9845-83d5301b80f2">Arahpthos<span class="tag_hidden">33e7bebb-ae8a-47a7-9845-83d5301b80f2 33e7bebbae8a47a7984583d5301b80f2</span></a></li>
+                        <div class="hidden s-author">Arahpthos,33e7bebb-ae8a-47a7-9845-83d5301b80f2 33e7bebbae8a47a7984583d5301b80f2,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-false_respite"><i class="fa fa-download"></i></a>
@@ -2968,14 +3046,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/final_s_destination/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Final’s Destination">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=final_s_destination">Final’s Destination</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=final_s_destination" class="s-title">Final’s Destination</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">final_s_destination,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -2989,6 +3069,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=81292033-20b0-449e-b90a-ee3bce83b454">FinaltimeRFW<span class="tag_hidden">81292033-20b0-449e-b90a-ee3bce83b454 8129203320b0449eb90aee3bce83b454</span></a></li>
+                        <div class="hidden s-author">FinaltimeRFW,81292033-20b0-449e-b90a-ee3bce83b454 8129203320b0449eb90aee3bce83b454,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-final_s_destination"><i class="fa fa-download"></i></a>
@@ -3069,14 +3150,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/forgotten_realms_02/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Forgotten Realms 02">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=forgotten_realms_02">Forgotten Realms 02</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=forgotten_realms_02" class="s-title">Forgotten Realms 02</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">forgotten_realms_02,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -3091,6 +3174,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=557ba623-628c-4f28-8bb7-feadbd206102">spaceagent66<span class="tag_hidden">557ba623-628c-4f28-8bb7-feadbd206102 557ba623628c4f288bb7feadbd206102</span></a></li>
+                        <div class="hidden s-author">spaceagent66,557ba623-628c-4f28-8bb7-feadbd206102 557ba623628c4f288bb7feadbd206102,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-forgotten_realms_02"><i class="fa fa-download"></i></a>
@@ -3172,14 +3256,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/hostilities_begin/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Hostilities Begin">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=hostilities_begin">Hostilities Begin</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=hostilities_begin" class="s-title">Hostilities Begin</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">hostilities_begin,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -3194,6 +3280,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=5c4acec1-a612-4217-9a89-0d3fcd32e5f4">Vechs<span class="tag_hidden">5c4acec1-a612-4217-9a89-0d3fcd32e5f4 5c4acec1a61242179a890d3fcd32e5f4</span></a></li>
+                        <div class="hidden s-author">Vechs,5c4acec1-a612-4217-9a89-0d3fcd32e5f4 5c4acec1a61242179a890d3fcd32e5f4,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-hostilities_begin"><i class="fa fa-download"></i></a>
@@ -3275,14 +3362,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/Inferno/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Inferno">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=Inferno">Inferno</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=Inferno" class="s-title">Inferno</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">Inferno,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -3296,6 +3385,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=178a424a-0814-412b-b823-6d21d6730893">Spr0k<span class="tag_hidden">178a424a-0814-412b-b823-6d21d6730893 178a424a0814412bb8236d21d6730893</span></a></li>
+                        <div class="hidden s-author">Spr0k,178a424a-0814-412b-b823-6d21d6730893 178a424a0814412bb8236d21d6730893,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-Inferno"><i class="fa fa-download"></i></a>
@@ -3376,14 +3466,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/insomnia/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Insomnia">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=insomnia">Insomnia</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=insomnia" class="s-title">Insomnia</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">insomnia,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -3398,6 +3490,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=86870068-461a-4498-83e7-1a2e2de1dd4a">Ellie_X<span class="tag_hidden">86870068-461a-4498-83e7-1a2e2de1dd4a 86870068461a449883e71a2e2de1dd4a</span></a></li>
+                        <div class="hidden s-author">Ellie_X,86870068-461a-4498-83e7-1a2e2de1dd4a 86870068461a449883e71a2e2de1dd4a,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-insomnia"><i class="fa fa-download"></i></a>
@@ -3479,14 +3572,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/iron_horse_impact/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Iron Horse Impact">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=iron_horse_impact">Iron Horse Impact</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=iron_horse_impact" class="s-title">Iron Horse Impact</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">iron_horse_impact,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -3502,6 +3597,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=d7a67866-73b2-49b6-9795-d04124cf1c58">SongOfStorms11<span class="tag_hidden">d7a67866-73b2-49b6-9795-d04124cf1c58 d7a6786673b249b69795d04124cf1c58</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=86870068-461a-4498-83e7-1a2e2de1dd4a">Ellie_X<span class="tag_hidden">86870068-461a-4498-83e7-1a2e2de1dd4a 86870068461a449883e71a2e2de1dd4a</span></a></li>
+                        <div class="hidden s-author">SongOfStorms11,d7a67866-73b2-49b6-9795-d04124cf1c58 d7a6786673b249b69795d04124cf1c58,Ellie_X,86870068-461a-4498-83e7-1a2e2de1dd4a 86870068461a449883e71a2e2de1dd4a,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-iron_horse_impact"><i class="fa fa-download"></i></a>
@@ -3586,14 +3682,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/lane_wars/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Lane Wars">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=lane_wars">Lane Wars</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=lane_wars" class="s-title">Lane Wars</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">lane_wars,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -3609,6 +3707,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=4cdc642e-36a9-4208-8ca2-81a9461b497d">raid3r<span class="tag_hidden">4cdc642e-36a9-4208-8ca2-81a9461b497d 4cdc642e36a942088ca281a9461b497d</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=cb2cad39-0d06-480f-a12a-4c98f2cfd369">CR0SBO<span class="tag_hidden">cb2cad39-0d06-480f-a12a-4c98f2cfd369 cb2cad390d06480fa12a4c98f2cfd369</span></a></li>
+                        <div class="hidden s-author">raid3r,4cdc642e-36a9-4208-8ca2-81a9461b497d 4cdc642e36a942088ca281a9461b497d,CR0SBO,cb2cad39-0d06-480f-a12a-4c98f2cfd369 cb2cad390d06480fa12a4c98f2cfd369,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-lane_wars"><i class="fa fa-download"></i></a>
@@ -3693,14 +3792,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/manifold_mania/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Manifold Mania">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=manifold_mania">Manifold Mania</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=manifold_mania" class="s-title">Manifold Mania</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">manifold_mania,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -3715,6 +3816,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=ca251063-ac8f-4b14-ae33-eae92746cb01">SubAtomicPanda<span class="tag_hidden">ca251063-ac8f-4b14-ae33-eae92746cb01 ca251063ac8f4b14ae33eae92746cb01</span></a></li>
+                        <div class="hidden s-author">SubAtomicPanda,ca251063-ac8f-4b14-ae33-eae92746cb01 ca251063ac8f4b14ae33eae92746cb01,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-manifold_mania"><i class="fa fa-download"></i></a>
@@ -3796,14 +3898,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/manifold_mania_2/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Manifold Mania 2">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=manifold_mania_2">Manifold Mania 2</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=manifold_mania_2" class="s-title">Manifold Mania 2</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">manifold_mania_2,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -3817,6 +3921,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=ca251063-ac8f-4b14-ae33-eae92746cb01">SubAtomicPanda<span class="tag_hidden">ca251063-ac8f-4b14-ae33-eae92746cb01 ca251063ac8f4b14ae33eae92746cb01</span></a></li>
+                        <div class="hidden s-author">SubAtomicPanda,ca251063-ac8f-4b14-ae33-eae92746cb01 ca251063ac8f4b14ae33eae92746cb01,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-manifold_mania_2"><i class="fa fa-download"></i></a>
@@ -3897,14 +4002,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/modern_woolfare/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Modern Woolfare">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=modern_woolfare">Modern Woolfare</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=modern_woolfare" class="s-title">Modern Woolfare</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">modern_woolfare,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -3920,6 +4027,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=d845e0b4-6ec3-4409-916a-4fc4e3b8ce05">CilantroGamer<span class="tag_hidden">d845e0b4-6ec3-4409-916a-4fc4e3b8ce05 d845e0b46ec34409916a4fc4e3b8ce05</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=2665a295-2f3b-41fe-85d3-220b214d49f2">iTruthful<span class="tag_hidden">2665a295-2f3b-41fe-85d3-220b214d49f2 2665a2952f3b41fe85d3220b214d49f2</span></a></li>
+                        <div class="hidden s-author">CilantroGamer,d845e0b4-6ec3-4409-916a-4fc4e3b8ce05 d845e0b46ec34409916a4fc4e3b8ce05,iTruthful,2665a295-2f3b-41fe-85d3-220b214d49f2 2665a2952f3b41fe85d3220b214d49f2,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-modern_woolfare"><i class="fa fa-download"></i></a>
@@ -4004,14 +4112,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/moonrise_mountains/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Moonrise Mountains">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=moonrise_mountains">Moonrise Mountains</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=moonrise_mountains" class="s-title">Moonrise Mountains</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">moonrise_mountains,Commercial,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="https://www.reddit.com/r/mctourney/comments/1qtjuh/moonrise_mountains_v20_by_koipen_and_robin/" target="_blank" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="fa fa-comments-o"></i></a>
@@ -4025,6 +4135,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=5ca79703-1be6-4dca-9073-59d024eb8bb0">koipen<span class="tag_hidden">5ca79703-1be6-4dca-9073-59d024eb8bb0 5ca797031be64dca907359d024eb8bb0</span></a></li>
+                        <div class="hidden s-author">koipen,5ca79703-1be6-4dca-9073-59d024eb8bb0 5ca797031be64dca907359d024eb8bb0,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-moonrise_mountains"><i class="fa fa-download"></i></a>
@@ -4071,7 +4182,6 @@
                                             
                                             
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">RFW</span>
                                             
@@ -4111,14 +4221,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/mountain_mayhem/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Mountain Mayhem">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=mountain_mayhem">Mountain Mayhem</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=mountain_mayhem" class="s-title">Mountain Mayhem</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">mountain_mayhem,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -4133,6 +4245,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=2d4f4e28-5b76-4c82-96a0-de7192c37b3f">Gramps223<span class="tag_hidden">2d4f4e28-5b76-4c82-96a0-de7192c37b3f 2d4f4e285b764c8296a0de7192c37b3f</span></a></li>
+                        <div class="hidden s-author">Gramps223,2d4f4e28-5b76-4c82-96a0-de7192c37b3f 2d4f4e285b764c8296a0de7192c37b3f,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-mountain_mayhem"><i class="fa fa-download"></i></a>
@@ -4214,14 +4327,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/norway/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Norway">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=norway">Norway</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=norway" class="s-title">Norway</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">norway,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -4236,6 +4351,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=5ca79703-1be6-4dca-9073-59d024eb8bb0">koipen<span class="tag_hidden">5ca79703-1be6-4dca-9073-59d024eb8bb0 5ca797031be64dca907359d024eb8bb0</span></a></li>
+                        <div class="hidden s-author">koipen,5ca79703-1be6-4dca-9073-59d024eb8bb0 5ca797031be64dca907359d024eb8bb0,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-norway"><i class="fa fa-download"></i></a>
@@ -4317,14 +4433,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/owbox/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="OWBOX">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=owbox">OWBOX</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=owbox" class="s-title">OWBOX</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">owbox,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -4339,6 +4457,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=65ef835a-34a5-4a8d-a857-cdd1d9924051">Coestar<span class="tag_hidden">65ef835a-34a5-4a8d-a857-cdd1d9924051 65ef835a34a54a8da857cdd1d9924051</span></a></li>
+                        <div class="hidden s-author">Coestar,65ef835a-34a5-4a8d-a857-cdd1d9924051 65ef835a34a54a8da857cdd1d9924051,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-owbox"><i class="fa fa-download"></i></a>
@@ -4420,14 +4539,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/painloop/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Painloop">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=painloop">Painloop</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=painloop" class="s-title">Painloop</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">painloop,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -4441,6 +4562,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=314aa230-d3de-4c49-9ff5-a78b35b73391">BZ_STEVE<span class="tag_hidden">314aa230-d3de-4c49-9ff5-a78b35b73391 314aa230d3de4c499ff5a78b35b73391</span></a></li>
+                        <div class="hidden s-author">BZ_STEVE,314aa230-d3de-4c49-9ff5-a78b35b73391 314aa230d3de4c499ff5a78b35b73391,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-painloop"><i class="fa fa-download"></i></a>
@@ -4521,14 +4643,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/parched_peril/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Parched Peril">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=parched_peril">Parched Peril</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=parched_peril" class="s-title">Parched Peril</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">parched_peril,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -4542,6 +4666,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=a0db0004-7df9-4069-a15c-0fef1c6929e3">Contranaut<span class="tag_hidden">a0db0004-7df9-4069-a15c-0fef1c6929e3 a0db00047df94069a15c0fef1c6929e3</span></a></li>
+                        <div class="hidden s-author">Contranaut,a0db0004-7df9-4069-a15c-0fef1c6929e3 a0db00047df94069a15c0fef1c6929e3,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-parched_peril"><i class="fa fa-download"></i></a>
@@ -4622,14 +4747,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/peaceful_paradise/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Peaceful Paradise">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=peaceful_paradise">Peaceful Paradise</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=peaceful_paradise" class="s-title">Peaceful Paradise</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">peaceful_paradise,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -4645,6 +4772,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=8d8235b3-cfe7-40bb-86d5-c4008ea579c1">SlimeTheKing<span class="tag_hidden">8d8235b3-cfe7-40bb-86d5-c4008ea579c1 8d8235b3cfe740bb86d5c4008ea579c1</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=991ef209-4647-4fe1-9006-48f31e9697e7">king601<span class="tag_hidden">991ef209-4647-4fe1-9006-48f31e9697e7 991ef20946474fe1900648f31e9697e7</span></a></li>
+                        <div class="hidden s-author">SlimeTheKing,8d8235b3-cfe7-40bb-86d5-c4008ea579c1 8d8235b3cfe740bb86d5c4008ea579c1,king601,991ef209-4647-4fe1-9006-48f31e9697e7 991ef20946474fe1900648f31e9697e7,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-peaceful_paradise"><i class="fa fa-download"></i></a>
@@ -4729,14 +4857,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/precession/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Precession">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=precession">Precession</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=precession" class="s-title">Precession</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">precession,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -4750,6 +4880,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=33e7bebb-ae8a-47a7-9845-83d5301b80f2">Arahpthos<span class="tag_hidden">33e7bebb-ae8a-47a7-9845-83d5301b80f2 33e7bebbae8a47a7984583d5301b80f2</span></a></li>
+                        <div class="hidden s-author">Arahpthos,33e7bebb-ae8a-47a7-9845-83d5301b80f2 33e7bebbae8a47a7984583d5301b80f2,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-precession"><i class="fa fa-download"></i></a>
@@ -4830,14 +4961,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/psychotic_wrath/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Psychotic Wrath">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=psychotic_wrath">Psychotic Wrath</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=psychotic_wrath" class="s-title">Psychotic Wrath</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">psychotic_wrath,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -4852,6 +4985,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=4ac9b634-9b7a-4711-aabc-9be24254cbb4">PsychoticSandwich504<span class="tag_hidden">4ac9b634-9b7a-4711-aabc-9be24254cbb4 4ac9b6349b7a4711aabc9be24254cbb4</span></a></li>
+                        <div class="hidden s-author">PsychoticSandwich504,4ac9b634-9b7a-4711-aabc-9be24254cbb4 4ac9b6349b7a4711aabc9be24254cbb4,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-psychotic_wrath"><i class="fa fa-download"></i></a>
@@ -4933,14 +5067,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/quagmire/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Quagmire">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=quagmire">Quagmire</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=quagmire" class="s-title">Quagmire</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">quagmire,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -4955,6 +5091,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=606e2ff0-ed77-4842-9d6c-e1d3321c7838">RMCT_Community<span class="tag_hidden">606e2ff0-ed77-4842-9d6c-e1d3321c7838 606e2ff0ed7748429d6ce1d3321c7838</span></a></li>
+                        <div class="hidden s-author">RMCT_Community,606e2ff0-ed77-4842-9d6c-e1d3321c7838 606e2ff0ed7748429d6ce1d3321c7838,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-quagmire"><i class="fa fa-download"></i></a>
@@ -5036,14 +5173,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/quant/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Quant">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=quant">Quant</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=quant" class="s-title">Quant</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">quant,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -5058,6 +5197,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=7197c9cf-1f84-4127-8311-59701ae27b4e">BruntForce<span class="tag_hidden">7197c9cf-1f84-4127-8311-59701ae27b4e 7197c9cf1f844127831159701ae27b4e</span></a></li>
+                        <div class="hidden s-author">BruntForce,7197c9cf-1f84-4127-8311-59701ae27b4e 7197c9cf1f844127831159701ae27b4e,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-quant"><i class="fa fa-download"></i></a>
@@ -5139,14 +5279,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/raineater/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="RainEater">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=raineater">RainEater</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=raineater" class="s-title">RainEater</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">raineater,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -5161,6 +5303,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=cccdefe9-13fd-4550-b986-e7f5e3d8b8a6">csarpaul<span class="tag_hidden">cccdefe9-13fd-4550-b986-e7f5e3d8b8a6 cccdefe913fd4550b986e7f5e3d8b8a6</span></a></li>
+                        <div class="hidden s-author">csarpaul,cccdefe9-13fd-4550-b986-e7f5e3d8b8a6 cccdefe913fd4550b986e7f5e3d8b8a6,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-raineater"><i class="fa fa-download"></i></a>
@@ -5242,14 +5385,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/remote_lands/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Remote Lands">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=remote_lands">Remote Lands</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=remote_lands" class="s-title">Remote Lands</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">remote_lands,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -5264,6 +5409,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=d8e42e19-b956-42a8-bf5f-c12cc8e18a27">zzrules21<span class="tag_hidden">d8e42e19-b956-42a8-bf5f-c12cc8e18a27 d8e42e19b95642a8bf5fc12cc8e18a27</span></a></li>
+                        <div class="hidden s-author">zzrules21,d8e42e19-b956-42a8-bf5f-c12cc8e18a27 d8e42e19b95642a8bf5fc12cc8e18a27,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-remote_lands"><i class="fa fa-download"></i></a>
@@ -5345,14 +5491,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/rock_s_edge/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Rock&#x27;s Edge">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=rock_s_edge">Rock&#x27;s Edge</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=rock_s_edge" class="s-title">Rock&#x27;s Edge</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">rock_s_edge,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -5367,6 +5515,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=606e2ff0-ed77-4842-9d6c-e1d3321c7838">RMCT_Community<span class="tag_hidden">606e2ff0-ed77-4842-9d6c-e1d3321c7838 606e2ff0ed7748429d6ce1d3321c7838</span></a></li>
+                        <div class="hidden s-author">RMCT_Community,606e2ff0-ed77-4842-9d6c-e1d3321c7838 606e2ff0ed7748429d6ce1d3321c7838,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-rock_s_edge"><i class="fa fa-download"></i></a>
@@ -5448,14 +5597,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/shafted/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Shafted">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=shafted">Shafted</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=shafted" class="s-title">Shafted</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">shafted,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -5470,6 +5621,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=8db67119-7f9a-4b16-b289-8ad2e93b2520">Rayman86<span class="tag_hidden">8db67119-7f9a-4b16-b289-8ad2e93b2520 8db671197f9a4b16b2898ad2e93b2520</span></a></li>
+                        <div class="hidden s-author">Rayman86,8db67119-7f9a-4b16-b289-8ad2e93b2520 8db671197f9a4b16b2898ad2e93b2520,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-shafted"><i class="fa fa-download"></i></a>
@@ -5551,14 +5703,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/shipwrecked/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Shipwrecked">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=shipwrecked">Shipwrecked</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=shipwrecked" class="s-title">Shipwrecked</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">shipwrecked,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -5573,6 +5727,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=1bacc866-0eaa-491e-905d-896f85ca7cf9">NickZili<span class="tag_hidden">1bacc866-0eaa-491e-905d-896f85ca7cf9 1bacc8660eaa491e905d896f85ca7cf9</span></a></li>
+                        <div class="hidden s-author">NickZili,1bacc866-0eaa-491e-905d-896f85ca7cf9 1bacc8660eaa491e905d896f85ca7cf9,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-shipwrecked"><i class="fa fa-download"></i></a>
@@ -5654,14 +5809,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/slippery_slope/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Slippery Slope">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=slippery_slope">Slippery Slope</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=slippery_slope" class="s-title">Slippery Slope</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">slippery_slope,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -5676,6 +5833,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=98a4a81e-4393-4041-8d43-40a0196b5832">Thungon<span class="tag_hidden">98a4a81e-4393-4041-8d43-40a0196b5832 98a4a81e439340418d4340a0196b5832</span></a></li>
+                        <div class="hidden s-author">Thungon,98a4a81e-4393-4041-8d43-40a0196b5832 98a4a81e439340418d4340a0196b5832,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-slippery_slope"><i class="fa fa-download"></i></a>
@@ -5757,14 +5915,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/song_of_the_south/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Song of the South">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=song_of_the_south">Song of the South</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=song_of_the_south" class="s-title">Song of the South</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">song_of_the_south,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -5779,6 +5939,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=d8e42e19-b956-42a8-bf5f-c12cc8e18a27">zzrules21<span class="tag_hidden">d8e42e19-b956-42a8-bf5f-c12cc8e18a27 d8e42e19b95642a8bf5fc12cc8e18a27</span></a></li>
+                        <div class="hidden s-author">zzrules21,d8e42e19-b956-42a8-bf5f-c12cc8e18a27 d8e42e19b95642a8bf5fc12cc8e18a27,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-song_of_the_south"><i class="fa fa-download"></i></a>
@@ -5860,14 +6021,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/spheric_ruins/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Spheric Ruins">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=spheric_ruins">Spheric Ruins</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=spheric_ruins" class="s-title">Spheric Ruins</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">spheric_ruins,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -5883,6 +6046,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=e5929393-3e6d-41cf-989a-e8cce264a884">Thomaszs<span class="tag_hidden">e5929393-3e6d-41cf-989a-e8cce264a884 e59293933e6d41cf989ae8cce264a884</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=fd041331-239e-4077-a6ac-7a1e3d0342fc">Jobble<span class="tag_hidden">fd041331-239e-4077-a6ac-7a1e3d0342fc fd041331239e4077a6ac7a1e3d0342fc</span></a></li>
+                        <div class="hidden s-author">Thomaszs,e5929393-3e6d-41cf-989a-e8cce264a884 e59293933e6d41cf989ae8cce264a884,Jobble,fd041331-239e-4077-a6ac-7a1e3d0342fc fd041331239e4077a6ac7a1e3d0342fc,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-spheric_ruins"><i class="fa fa-download"></i></a>
@@ -5967,14 +6131,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/split_decision/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Split Decision">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=split_decision">Split Decision</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=split_decision" class="s-title">Split Decision</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">split_decision,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -5989,6 +6155,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=98a4a81e-4393-4041-8d43-40a0196b5832">Thungon<span class="tag_hidden">98a4a81e-4393-4041-8d43-40a0196b5832 98a4a81e439340418d4340a0196b5832</span></a></li>
+                        <div class="hidden s-author">Thungon,98a4a81e-4393-4041-8d43-40a0196b5832 98a4a81e439340418d4340a0196b5832,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-split_decision"><i class="fa fa-download"></i></a>
@@ -6070,14 +6237,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/sun_dance/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Sun Dance">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=sun_dance">Sun Dance</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=sun_dance" class="s-title">Sun Dance</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">sun_dance,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -6092,6 +6261,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=7197c9cf-1f84-4127-8311-59701ae27b4e">BruntForce<span class="tag_hidden">7197c9cf-1f84-4127-8311-59701ae27b4e 7197c9cf1f844127831159701ae27b4e</span></a></li>
+                        <div class="hidden s-author">BruntForce,7197c9cf-1f84-4127-8311-59701ae27b4e 7197c9cf1f844127831159701ae27b4e,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-sun_dance"><i class="fa fa-download"></i></a>
@@ -6173,14 +6343,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/sylvan_cliffs/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Sylvan Cliffs">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=sylvan_cliffs">Sylvan Cliffs</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=sylvan_cliffs" class="s-title">Sylvan Cliffs</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">sylvan_cliffs,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -6195,6 +6367,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=ca251063-ac8f-4b14-ae33-eae92746cb01">SubAtomicPanda<span class="tag_hidden">ca251063-ac8f-4b14-ae33-eae92746cb01 ca251063ac8f4b14ae33eae92746cb01</span></a></li>
+                        <div class="hidden s-author">SubAtomicPanda,ca251063-ac8f-4b14-ae33-eae92746cb01 ca251063ac8f4b14ae33eae92746cb01,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-sylvan_cliffs"><i class="fa fa-download"></i></a>
@@ -6276,14 +6449,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/tense_temple/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Tense Temple">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=tense_temple">Tense Temple</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=tense_temple" class="s-title">Tense Temple</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">tense_temple,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -6298,6 +6473,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=606e2ff0-ed77-4842-9d6c-e1d3321c7838">Cosalich<span class="tag_hidden">606e2ff0-ed77-4842-9d6c-e1d3321c7838 606e2ff0ed7748429d6ce1d3321c7838</span></a></li>
+                        <div class="hidden s-author">Cosalich,606e2ff0-ed77-4842-9d6c-e1d3321c7838 606e2ff0ed7748429d6ce1d3321c7838,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-tense_temple"><i class="fa fa-download"></i></a>
@@ -6379,14 +6555,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/the_abandoned_kingdom/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="The Abandoned Kingdom">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=the_abandoned_kingdom">The Abandoned Kingdom</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=the_abandoned_kingdom" class="s-title">The Abandoned Kingdom</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">the_abandoned_kingdom,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -6401,6 +6579,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=5ca79703-1be6-4dca-9073-59d024eb8bb0">koipen<span class="tag_hidden">5ca79703-1be6-4dca-9073-59d024eb8bb0 5ca797031be64dca907359d024eb8bb0</span></a></li>
+                        <div class="hidden s-author">koipen,5ca79703-1be6-4dca-9073-59d024eb8bb0 5ca797031be64dca907359d024eb8bb0,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-the_abandoned_kingdom"><i class="fa fa-download"></i></a>
@@ -6482,14 +6661,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/The_fourth_dawn/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="The Fourth Dawn">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=The_fourth_dawn">The Fourth Dawn</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=The_fourth_dawn" class="s-title">The Fourth Dawn</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">The_fourth_dawn,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -6504,6 +6685,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=d8e42e19-b956-42a8-bf5f-c12cc8e18a27">zzrules21<span class="tag_hidden">d8e42e19-b956-42a8-bf5f-c12cc8e18a27 d8e42e19b95642a8bf5fc12cc8e18a27</span></a></li>
+                        <div class="hidden s-author">zzrules21,d8e42e19-b956-42a8-bf5f-c12cc8e18a27 d8e42e19b95642a8bf5fc12cc8e18a27,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-The_fourth_dawn"><i class="fa fa-download"></i></a>
@@ -6585,14 +6767,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/toybox/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Toybox">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=toybox">Toybox</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=toybox" class="s-title">Toybox</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">toybox,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -6607,6 +6791,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=b2edf2c5-1f17-4df5-9238-5d152e30169e">Ch4nM4n<span class="tag_hidden">b2edf2c5-1f17-4df5-9238-5d152e30169e b2edf2c51f174df592385d152e30169e</span></a></li>
+                        <div class="hidden s-author">Ch4nM4n,b2edf2c5-1f17-4df5-9238-5d152e30169e b2edf2c51f174df592385d152e30169e,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-toybox"><i class="fa fa-download"></i></a>
@@ -6688,14 +6873,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/toybox/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Toybox">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=toybox">Toybox</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=toybox" class="s-title">Toybox</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">toybox,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -6713,6 +6900,7 @@
                         <li class="game-tag author-tag"><a href="?s=4dcee509-a03c-43fa-a2de-a8a779f7404e">FifthWhammy<span class="tag_hidden">4dcee509-a03c-43fa-a2de-a8a779f7404e 4dcee509a03c43faa2dea8a779f7404e</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=cfb77b3f-5ab9-4fe7-b90c-a8586ee272bf">FreckleEars<span class="tag_hidden">cfb77b3f-5ab9-4fe7-b90c-a8586ee272bf cfb77b3f5ab94fe7b90ca8586ee272bf</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=3fbec7dd-0a5f-40bf-9d11-885a54507112">Cubist<span class="tag_hidden">3fbec7dd-0a5f-40bf-9d11-885a54507112 3fbec7dd0a5f40bf9d11885a54507112</span></a></li>
+                        <div class="hidden s-author">iTruthful,2665a295-2f3b-41fe-85d3-220b214d49f2 2665a2952f3b41fe85d3220b214d49f2,FifthWhammy,4dcee509-a03c-43fa-a2de-a8a779f7404e 4dcee509a03c43faa2dea8a779f7404e,FreckleEars,cfb77b3f-5ab9-4fe7-b90c-a8586ee272bf cfb77b3f5ab94fe7b90ca8586ee272bf,Cubist,3fbec7dd-0a5f-40bf-9d11-885a54507112 3fbec7dd0a5f40bf9d11885a54507112,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-toybox"><i class="fa fa-download"></i></a>
@@ -6803,14 +6991,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/twisted_desert/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Twisted Desert">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=twisted_desert">Twisted Desert</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=twisted_desert" class="s-title">Twisted Desert</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">twisted_desert,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -6825,6 +7015,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=a1177da8-afd8-4a2d-b59c-6a9a03931e6b">FellLock<span class="tag_hidden">a1177da8-afd8-4a2d-b59c-6a9a03931e6b a1177da8afd84a2db59c6a9a03931e6b</span></a></li>
+                        <div class="hidden s-author">FellLock,a1177da8-afd8-4a2d-b59c-6a9a03931e6b a1177da8afd84a2db59c6a9a03931e6b,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-twisted_desert"><i class="fa fa-download"></i></a>
@@ -6906,14 +7097,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/twisted_ruins/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Twisted Ruins">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=twisted_ruins">Twisted Ruins</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=twisted_ruins" class="s-title">Twisted Ruins</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">twisted_ruins,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -6928,6 +7121,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=d8e42e19-b956-42a8-bf5f-c12cc8e18a27">zzrules21<span class="tag_hidden">d8e42e19-b956-42a8-bf5f-c12cc8e18a27 d8e42e19b95642a8bf5fc12cc8e18a27</span></a></li>
+                        <div class="hidden s-author">zzrules21,d8e42e19-b956-42a8-bf5f-c12cc8e18a27 d8e42e19b95642a8bf5fc12cc8e18a27,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-twisted_ruins"><i class="fa fa-download"></i></a>
@@ -7009,14 +7203,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/uncivil_engineering/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Uncivil Engineering">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=uncivil_engineering">Uncivil Engineering</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=uncivil_engineering" class="s-title">Uncivil Engineering</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">uncivil_engineering,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -7031,6 +7227,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=4dcee509-a03c-43fa-a2de-a8a779f7404e">FifthWhammy<span class="tag_hidden">4dcee509-a03c-43fa-a2de-a8a779f7404e 4dcee509a03c43faa2dea8a779f7404e</span></a></li>
+                        <div class="hidden s-author">FifthWhammy,4dcee509-a03c-43fa-a2de-a8a779f7404e 4dcee509a03c43faa2dea8a779f7404e,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-uncivil_engineering"><i class="fa fa-download"></i></a>
@@ -7112,14 +7309,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/urban_unrest/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Urban Unrest">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=urban_unrest">Urban Unrest</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=urban_unrest" class="s-title">Urban Unrest</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">urban_unrest,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -7133,6 +7332,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=178a424a-0814-412b-b823-6d21d6730893">Spr0k<span class="tag_hidden">178a424a-0814-412b-b823-6d21d6730893 178a424a0814412bb8236d21d6730893</span></a></li>
+                        <div class="hidden s-author">Spr0k,178a424a-0814-412b-b823-6d21d6730893 178a424a0814412bb8236d21d6730893,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-urban_unrest"><i class="fa fa-download"></i></a>
@@ -7213,14 +7413,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/x1_resurrection/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="X1 - Resurrection">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=x1_resurrection">X1 - Resurrection</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=x1_resurrection" class="s-title">X1 - Resurrection</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">x1_resurrection,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -7234,6 +7436,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=86870068-461a-4498-83e7-1a2e2de1dd4a">Ellie_X<span class="tag_hidden">86870068-461a-4498-83e7-1a2e2de1dd4a 86870068461a449883e71a2e2de1dd4a</span></a></li>
+                        <div class="hidden s-author">Ellie_X,86870068-461a-4498-83e7-1a2e2de1dd4a 86870068461a449883e71a2e2de1dd4a,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-x1_resurrection"><i class="fa fa-download"></i></a>
@@ -7314,14 +7517,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/rfw-maps/master/maps/xerothermic/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Xerothermic">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=xerothermic">Xerothermic</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/rfw?s=xerothermic" class="s-title">Xerothermic</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rfw">Race for Wool</a><span class="tag-hidden">rfw</span></li>
+                            <li class="game-tag map-tag s-tag">Race for Wool<span class="hidden">rfw</span></li>
+                            <div class="hidden tags">xerothermic,Unlicensed,Race for Wool</div>
                         </div>
                         <div class="icon-alerts">
                             <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="This map lacks a needed XML file for PGM."><i class="fa fa-exclamation-circle"></i></a>
@@ -7336,6 +7541,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=606e2ff0-ed77-4842-9d6c-e1d3321c7838">RMCT_Community<span class="tag_hidden">606e2ff0-ed77-4842-9d6c-e1d3321c7838 606e2ff0ed7748429d6ce1d3321c7838</span></a></li>
+                        <div class="hidden s-author">RMCT_Community,606e2ff0-ed77-4842-9d6c-e1d3321c7838 606e2ff0ed7748429d6ce1d3321c7838,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-xerothermic"><i class="fa fa-download"></i></a>
@@ -7417,6 +7623,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
 <div class="modal fade" id="download-complete-message" tabindex="-1" role="dialog">

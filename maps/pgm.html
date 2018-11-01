@@ -33,7 +33,8 @@
         <script src="/assets/js/FileSaver.js"></script>
         <script src="/assets/js/jszip.js"></script>
         <script src="/assets/js/jquery.searchable-1.1.0.min.js"></script>
-        <script src="/assets/js/maps.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+        <script src="/assets/js/maps-advanced.js"></script>
         <script src="/assets/js/analytics.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -120,72 +121,63 @@
                     <div class="content-subtitle">A collection of publicly downloadable Minecraft maps made for PGM</div>
                 </div>
             <!-- Start page content -->
-
-<div class="thumbnail">
-    <form name="search_form" class="record-search-container">
-        <input type="search" id="search" name="s" value="" class="form-control record-search-box" placeholder="Search maps">
-    </form>
-    <div class="game-mode-navigation row" data-source="pgm">
-        <div class="game-mode-group col-xs-12 col-md-4">
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Objectives</div>
-                <a class="game-mode-button" href="?s=cp">Capture Points</a>
-                <a class="game-mode-button" href="?s=ctf">Capture the Flag</a>
-                <a class="game-mode-button" href="?s=ctw">Capture the Wool</a>
-                <a class="game-mode-button" href="?s=dtc">Destroy the Core</a>
-                <a class="game-mode-button" href="?s=dtm">Destroy the Monument</a>
-            </div>
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Deathmatch</div>
-                <a class="game-mode-button" href="?s=ffa">Free-for-all</a>
-                <a class="game-mode-button" href="?s=koth">King of the Hill</a>
-                <a class="game-mode-button" href="?s=payload">Payload</a>
-                <a class="game-mode-button" href="?s=tdm">Team Deathmatch</a>
-            </div>
-        </div>
-        <div class="game-mode-group col-xs-12 col-md-4">
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Blitz</div>
-                <a class="game-mode-button" href="?s=arcade">Arcade</a>
-                <a class="game-mode-button" href="?s=blitz">Blitz</a>
-                <a class="game-mode-button" href="?s=gs">Ghost Squadron</a>
-                <a class="game-mode-button" href="?s=race">Race</a>
-                <a class="game-mode-button" href="?s=rage">Rage</a>
-                <a class="game-mode-button" href="?s=skywars">Skywars</a>
-            </div>
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Competitve</div>
-                <a class="game-mode-button" href="?s=ranked">Ranked</a>
-                <a class="game-mode-button" href="?s=tournament">Tournament Edition</a>
-            </div>
-        </div>
-        <div class="game-mode-group col-xs-12 col-md-4">
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Seasons</div>
-                <a class="game-mode-button" href="?s=christmas">Christmas</a>
-                <a class="game-mode-button" href="?s=halloween">Halloween</a>
-            </div>
-            <div class="game-mode-column col-xs-6 col-md-6">
-                <div class="game-mode-selection-header">Other</div>
-                <a class="game-mode-button" href="?s=new">New Maps</a>
-                <a class="game-mode-button" href="?s=popular">Popular Maps</a>
-                <a class="game-mode-button" href="?s=by-nc-sa">Noncommercial Maps</a>
-                <a class="game-mode-button" href="?s=by-sa">Commercial Maps</a>
+<div id="maps-collection" class="maps-output row center" data-source="pgm">
+    <div class="col-md-3 col-md-push-9">
+        <div class="thumbnail map-search">
+            <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search maps">
+            <div class="filters">
+                <b>Filters</b>
+                <small>Use filters to narrow your query when searching for specific maps.</small>
+                <div class="group">
+                    <span class="filter">New</span>
+                    <span class="filter">Popular</span>
+                    <span class="filter">Commercial</span>
+                    <span class="filter">Noncommercial</span>
+                </div>
+                <div class="group">
+                    <b>Games</b>
+                    <span class="filter">Arcade</span>
+                    <span class="filter">Capture Points</span>
+                    <span class="filter">Capture the Wool</span>
+                    <span class="filter">Capture the Flag</span>
+                    <span class="filter">Destroy the Core</span>
+                    <span class="filter">Destroy the Monument</span>
+                    <span class="filter">Free-for-all</span>
+                    <span class="filter">Ghost Squadron</span>
+                    <span class="filter">King of the Flag</span>
+                    <span class="filter">King of the Hill</span>
+                    <span class="filter">Race for Wool</span>
+                    <span class="filter">Team Deathmatch</span>
+                    <span class="filter">Skywars</span>
+                </div>
+                <div class="group">
+                    <b>Addons</b>
+                    <span class="filter">Attack/Defend</span>
+                    <span class="filter">Blitz</span>
+                    <span class="filter">Micro</span>
+                    <span class="filter">Rage</span>
+                    <span class="filter">TNT</span>
+                </div>
+                <div class="group">
+                    <b>Editions</b>
+                    <span class="filter">Christmas</span>
+                    <span class="filter">Halloween</span>
+                    <span class="filter">Ranked</span>
+                    <span class="filter">Tournament</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="total-maps center">Loading maps collection...</div>
-<div id="maps-output">
-    <div class="dynamic">
+    <div class="col-md-9 col-md-pull-3 dynamic list">
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/a_watery_grave_2/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="A Watery Grave 2">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=a_watery_grave_2">A Watery Grave 2</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=a_watery_grave_2" class="s-title">A Watery Grave 2</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
+                            <div class="hidden tags">a_watery_grave_2,Popular,Commercial,Destroy the Monument</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -199,6 +191,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=9a96b43e-e5d7-47e4-9679-ccbfe3fffc10">Skirmisher47 <span class="tag_hidden">9a96b43e-e5d7-47e4-9679-ccbfe3fffc10 9a96b43ee5d747e49679ccbfe3fffc10</span></a></li>
+                        <div class="hidden s-author">Skirmisher47 ,9a96b43e-e5d7-47e4-9679-ccbfe3fffc10 9a96b43ee5d747e49679ccbfe3fffc10,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-a_watery_grave_2"><i class="fa fa-download"></i></a>
@@ -245,7 +238,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -284,15 +276,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/aetheril/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Aetheril">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=aetheril">Aetheril</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=aetheril" class="s-title">Aetheril</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=rage">Rage</a></li>
+                            <li class="game-tag map-tag s-tag">Blitz,</li>
+                            <li class="game-tag map-tag s-tag">Rage</li>
+                            <div class="hidden tags">aetheril,Popular,Noncommercial,Blitz,Rage</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -311,6 +305,7 @@
                         <li class="game-tag author-tag"><a href="?s=f5465612-c4e4-4e97-a9f1-f942aec82b53">4bash<span class="tag_hidden">f5465612-c4e4-4e97-a9f1-f942aec82b53 f5465612c4e44e97a9f1f942aec82b53</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=97307a17-8869-4138-b573-5ce4cc050974">GreatWallOfTrump<span class="tag_hidden">97307a17-8869-4138-b573-5ce4cc050974 97307a1788694138b5735ce4cc050974</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=9d903e52-8b1b-4bc5-8c18-905a71a25af0">weaboo511<span class="tag_hidden">9d903e52-8b1b-4bc5-8c18-905a71a25af0 9d903e528b1b4bc58c18905a71a25af0</span></a></li>
+                        <div class="hidden s-author">Jexel,9225421c-3c09-4d97-bb80-f6a77c1f360b 9225421c3c094d97bb80f6a77c1f360b,iMasky,e9a74abb-c807-47e9-993a-2f6c990ec8ea e9a74abbc80747e9993a2f6c990ec8ea,Royston22,9463f0f0-0437-49a1-9237-ccd8826b61a6 9463f0f0043749a19237ccd8826b61a6,4bash,f5465612-c4e4-4e97-a9f1-f942aec82b53 f5465612c4e44e97a9f1f942aec82b53,GreatWallOfTrump,97307a17-8869-4138-b573-5ce4cc050974 97307a1788694138b5735ce4cc050974,weaboo511,9d903e52-8b1b-4bc5-8c18-905a71a25af0 9d903e528b1b4bc58c18905a71a25af0,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-aetheril"><i class="fa fa-download"></i></a>
@@ -364,8 +359,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -404,14 +397,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/airship_battle_2/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Airship Battle 2">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=airship_battle_2">Airship Battle 2</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=airship_battle_2" class="s-title">Airship Battle 2</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a><span class="tag-hidden">dtc</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            <div class="hidden tags">airship_battle_2,Popular,Commercial,Destroy the Core</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -425,6 +420,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=30e27366-0b14-4076-8f55-0819ece49ce3">dewtroid<span class="tag_hidden">30e27366-0b14-4076-8f55-0819ece49ce3 30e273660b1440768f550819ece49ce3</span></a></li>
+                        <div class="hidden s-author">dewtroid,30e27366-0b14-4076-8f55-0819ece49ce3 30e273660b1440768f550819ece49ce3,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-airship_battle_2"><i class="fa fa-download"></i></a>
@@ -471,7 +467,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -510,14 +505,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/assembly/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Assembly">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=assembly">Assembly</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=assembly" class="s-title">Assembly</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag-hidden">ctf</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
+                            <div class="hidden tags">assembly,Popular,Commercial,Capture the Flag</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -534,6 +531,7 @@
                         <li class="game-tag author-tag"><a href="?s=621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06">Strangey<span class="tag_hidden">621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06 621b2aa84e5f4ed8bd360ae2f8952a06</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=cbdc7b1d-7a07-465b-bebb-4f20bfb8ebd8">Cratain<span class="tag_hidden">cbdc7b1d-7a07-465b-bebb-4f20bfb8ebd8 cbdc7b1d7a07465bbebb4f20bfb8ebd8</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=2958ea4c-3501-404e-88cc-12e8632f68cc">NixaniaXi<span class="tag_hidden">2958ea4c-3501-404e-88cc-12e8632f68cc 2958ea4c3501404e88cc12e8632f68cc</span></a></li>
+                        <div class="hidden s-author">Reshif,459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab,Strangey,621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06 621b2aa84e5f4ed8bd360ae2f8952a06,Cratain,cbdc7b1d-7a07-465b-bebb-4f20bfb8ebd8 cbdc7b1d7a07465bbebb4f20bfb8ebd8,NixaniaXi,2958ea4c-3501-404e-88cc-12e8632f68cc 2958ea4c3501404e88cc12e8632f68cc,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-assembly"><i class="fa fa-download"></i></a>
@@ -583,7 +581,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -622,15 +619,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/bn_oil_rig/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="BN: Oil Rig">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=bn_oil_rig">BN: Oil Rig</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=bn_oil_rig" class="s-title">BN: Oil Rig</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=blasternauts">Blasternauts</a></li>
+                            <li class="game-tag map-tag s-tag">Arcade,</li>
+                            <li class="game-tag map-tag s-tag">Blasternauts</li>
+                            <div class="hidden tags">bn_oil_rig,Popular,Noncommercial,Arcade,Blasternauts</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -644,6 +643,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=48924ea3-3aad-4e16-838c-368d8d9e0a25">Matic0B<span class="tag_hidden">48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25</span></a></li>
+                        <div class="hidden s-author">Matic0B,48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-bn_oil_rig"><i class="fa fa-download"></i></a>
@@ -692,8 +692,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -732,14 +730,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/cake_wars_2/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Cake Wars 2">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=cake_wars_2">Cake Wars 2</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=cake_wars_2" class="s-title">Cake Wars 2</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtc">Destroy the Core</a><span class="tag-hidden">dtc</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            <div class="hidden tags">cake_wars_2,Commercial,Destroy the Core</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -752,6 +752,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=0ae466ff-d3a1-4307-a323-89043643ace5">GammaRay89<span class="tag_hidden">0ae466ff-d3a1-4307-a323-89043643ace5 0ae466ffd3a14307a32389043643ace5</span></a></li>
+                        <div class="hidden s-author">GammaRay89,0ae466ff-d3a1-4307-a323-89043643ace5 0ae466ffd3a14307a32389043643ace5,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-cake_wars_2"><i class="fa fa-download"></i></a>
@@ -798,7 +799,6 @@
                                             
                                             
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -837,14 +837,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/cosmic_assault/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Cosmic Assault">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=cosmic_assault">Cosmic Assault</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=cosmic_assault" class="s-title">Cosmic Assault</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=skywars">Skywars</a></li>
+                            <li class="game-tag map-tag s-tag">Skywars</li>
+                            <div class="hidden tags">cosmic_assault,Noncommercial,Skywars</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/overcast/skywars_solstice#cosmic_assault" data-toggle="tooltip" data-placement="top" title="Overcast contest submission"><i class="fa fa-map"></i></a>
@@ -858,6 +860,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=715769c5-8c4c-4489-bdf8-f9cee2b2ae8a">amactus<span class="tag_hidden">715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a</span></a></li>
+                        <div class="hidden s-author">amactus,715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-cosmic_assault"><i class="fa fa-download"></i></a>
@@ -905,8 +908,6 @@
                                             <span class="label label-info">Contest Submission</span>
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -945,14 +946,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/creep_slap_vier/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Creep Slap: Vier">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=creep_slap_vier">Creep Slap: Vier</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=creep_slap_vier" class="s-title">Creep Slap: Vier</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
+                            <li class="game-tag map-tag s-tag">Arcade</li>
+                            <div class="hidden tags">creep_slap_vier,Noncommercial,Arcade</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -965,6 +968,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=48924ea3-3aad-4e16-838c-368d8d9e0a25">Matic0B<span class="tag_hidden">48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25</span></a></li>
+                        <div class="hidden s-author">Matic0B,48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-creep_slap_vier"><i class="fa fa-download"></i></a>
@@ -1012,8 +1016,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -1052,14 +1054,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/easter_egg_hunt/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Easter Egg Hunt">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=easter_egg_hunt">Easter Egg Hunt</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=easter_egg_hunt" class="s-title">Easter Egg Hunt</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">easter_egg_hunt,New,Commercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1073,6 +1077,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=459fd919-0d58-401a-9601-6cab1eb721ab">Reshif<span class="tag_hidden">459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab</span></a></li>
+                        <div class="hidden s-author">Reshif,459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-easter_egg_hunt"><i class="fa fa-download"></i></a>
@@ -1119,7 +1124,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -1158,14 +1162,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/electri_city/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Electri City">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=electri_city">Electri City</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=electri_city" class="s-title">Electri City</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctw">Capture the Wool</a><span class="tag-hidden">ctw</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            <div class="hidden tags">electri_city,Noncommercial,Capture the Wool</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1179,6 +1185,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=75d87bcf-3921-4871-9330-e83736580a95">KyotoSquid<span class="tag_hidden">75d87bcf-3921-4871-9330-e83736580a95 75d87bcf392148719330e83736580a95</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=f1352a57-4fe3-4f0c-b867-56b771fc1a0f">teagod<span class="tag_hidden">f1352a57-4fe3-4f0c-b867-56b771fc1a0f f1352a574fe34f0cb86756b771fc1a0f</span></a></li>
+                        <div class="hidden s-author">KyotoSquid,75d87bcf-3921-4871-9330-e83736580a95 75d87bcf392148719330e83736580a95,teagod,f1352a57-4fe3-4f0c-b867-56b771fc1a0f f1352a574fe34f0cb86756b771fc1a0f,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-electri_city"><i class="fa fa-download"></i></a>
@@ -1227,8 +1234,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -1267,14 +1272,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/erth/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Erth">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=erth">Erth</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=erth" class="s-title">Erth</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=koth">King of the Hill</a><span class="tag-hidden">koth</span></li>
+                            <li class="game-tag map-tag s-tag">King of the Hill<span class="hidden">koth</span></li>
+                            <div class="hidden tags">erth,Popular,Noncommercial,King of the Hill</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="https://oc.tc/forums/topics/57fa8f575f35b93245000013" target="_blank" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="fa fa-comments-o"></i></a>
@@ -1289,6 +1296,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=48924ea3-3aad-4e16-838c-368d8d9e0a25">Matic0B<span class="tag_hidden">48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25</span></a></li>
+                        <div class="hidden s-author">Matic0B,48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-erth"><i class="fa fa-download"></i></a>
@@ -1336,8 +1344,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -1377,14 +1383,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/hype_train/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Hype Train">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=hype_train">Hype Train</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=hype_train" class="s-title">Hype Train</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
+                            <li class="game-tag map-tag s-tag">Arcade</li>
+                            <div class="hidden tags">hype_train,Popular,Commercial,Arcade</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1398,6 +1406,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=e5eea785-51c1-40fe-a2d0-f83d4c035cd9">pikpikmerchant<span class="tag_hidden">e5eea785-51c1-40fe-a2d0-f83d4c035cd9 e5eea78551c140fea2d0f83d4c035cd9</span></a></li>
+                        <div class="hidden s-author">pikpikmerchant,e5eea785-51c1-40fe-a2d0-f83d4c035cd9 e5eea78551c140fea2d0f83d4c035cd9,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-hype_train"><i class="fa fa-download"></i></a>
@@ -1444,7 +1453,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -1483,14 +1491,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/indursti/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Indursti">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=indursti">Indursti</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=indursti" class="s-title">Indursti</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                            <li class="game-tag map-tag s-tag">Blitz</li>
+                            <div class="hidden tags">indursti,Noncommercial,Blitz</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1503,6 +1513,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=48924ea3-3aad-4e16-838c-368d8d9e0a25">Matic0B<span class="tag_hidden">48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25</span></a></li>
+                        <div class="hidden s-author">Matic0B,48924ea3-3aad-4e16-838c-368d8d9e0a25 48924ea33aad4e16838c368d8d9e0a25,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-indursti"><i class="fa fa-download"></i></a>
@@ -1550,8 +1561,6 @@
                                             
                                             
                                             
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -1590,14 +1599,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/kyoto/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Kyoto">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=kyoto">Kyoto</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=kyoto" class="s-title">Kyoto</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
+                            <div class="hidden tags">kyoto,Popular,Noncommercial,Destroy the Monument</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1611,6 +1622,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=75d87bcf-3921-4871-9330-e83736580a95">KyotoSquid<span class="tag_hidden">75d87bcf-3921-4871-9330-e83736580a95 75d87bcf392148719330e83736580a95</span></a></li>
+                        <div class="hidden s-author">KyotoSquid,75d87bcf-3921-4871-9330-e83736580a95 75d87bcf392148719330e83736580a95,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-kyoto"><i class="fa fa-download"></i></a>
@@ -1658,8 +1670,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -1698,14 +1708,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/ladderp/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Ladderp">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=ladderp">Ladderp</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=ladderp" class="s-title">Ladderp</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
+                            <li class="game-tag map-tag s-tag">Arcade</li>
+                            <div class="hidden tags">ladderp,Commercial,Arcade</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1718,6 +1730,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=459fd919-0d58-401a-9601-6cab1eb721ab">Reshif<span class="tag_hidden">459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab</span></a></li>
+                        <div class="hidden s-author">Reshif,459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-ladderp"><i class="fa fa-download"></i></a>
@@ -1764,7 +1777,6 @@
                                             
                                             
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -1803,14 +1815,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/ladderp_2/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Ladderp 2">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=ladderp_2">Ladderp 2</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=ladderp_2" class="s-title">Ladderp 2</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
+                            <li class="game-tag map-tag s-tag">Arcade</li>
+                            <div class="hidden tags">ladderp_2,Commercial,Arcade</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1831,6 +1845,7 @@
                         <li class="game-tag author-tag"><a href="?s=2a289d2a-d970-49c5-9a6c-01fc0264e317">StealthMedia<span class="tag_hidden">2a289d2a-d970-49c5-9a6c-01fc0264e317 2a289d2ad97049c59a6c01fc0264e317</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=61699b2e-d327-4a01-9f1e-0ea8c3f06bc6">Dinnerbone<span class="tag_hidden">61699b2e-d327-4a01-9f1e-0ea8c3f06bc6 61699b2ed3274a019f1e0ea8c3f06bc6</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=52bcb4dd-a1a0-4d9b-94e0-49e145e318e4">Haxaraptor<span class="tag_hidden">52bcb4dd-a1a0-4d9b-94e0-49e145e318e4 52bcb4dda1a04d9b94e049e145e318e4</span></a></li>
+                        <div class="hidden s-author">Reshif,459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab,Onsole,177803b2-797c-4089-aae1-5702ca259e2c 177803b2797c4089aae15702ca259e2c,Notch,069a79f4-44e9-4726-a5be-fca90e38aaf5 069a79f444e94726a5befca90e38aaf5,ElectroidFilms,dad8b95c-cf6a-44df-982e-8c8dd70201e0 dad8b95ccf6a44df982e8c8dd70201e0,i2,a348a860-8c8b-475f-b793-d556d45252a7 a348a8608c8b475fb793d556d45252a7,cenation1369,1e17bf00-029c-4886-92e5-44710d283e9d 1e17bf00029c488692e544710d283e9d,StealthMedia,2a289d2a-d970-49c5-9a6c-01fc0264e317 2a289d2ad97049c59a6c01fc0264e317,Dinnerbone,61699b2e-d327-4a01-9f1e-0ea8c3f06bc6 61699b2ed3274a019f1e0ea8c3f06bc6,Haxaraptor,52bcb4dd-a1a0-4d9b-94e0-49e145e318e4 52bcb4dda1a04d9b94e049e145e318e4,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-ladderp_2"><i class="fa fa-download"></i></a>
@@ -1885,7 +1900,6 @@
                                             
                                             
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -1924,14 +1938,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/monochrome/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Monochrome">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=monochrome">Monochrome</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=monochrome" class="s-title">Monochrome</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tdm">Team Deathmatch</a><span class="tag-hidden">tdm</span></li>
+                            <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
+                            <div class="hidden tags">monochrome,Popular,Noncommercial,Team Deathmatch</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -1946,6 +1962,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=a63de09d-6fa9-436f-9070-26f5e9a4d27b">dragonrider455<span class="tag_hidden">a63de09d-6fa9-436f-9070-26f5e9a4d27b a63de09d6fa9436f907026f5e9a4d27b</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=b6a25001-d380-41d6-9b35-60d6b82aa125">BigMike2252<span class="tag_hidden">b6a25001-d380-41d6-9b35-60d6b82aa125 b6a25001d38041d69b3560d6b82aa125</span></a></li>
+                        <div class="hidden s-author">dragonrider455,a63de09d-6fa9-436f-9070-26f5e9a4d27b a63de09d6fa9436f907026f5e9a4d27b,BigMike2252,b6a25001-d380-41d6-9b35-60d6b82aa125 b6a25001d38041d69b3560d6b82aa125,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-monochrome"><i class="fa fa-download"></i></a>
@@ -1994,8 +2011,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -2034,14 +2049,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/nail/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Nail">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=nail">Nail</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=nail" class="s-title">Nail</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
+                            <div class="hidden tags">nail,Popular,Commercial,Destroy the Monument</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2055,6 +2072,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=75d87bcf-3921-4871-9330-e83736580a95">Rixiot<span class="tag_hidden">75d87bcf-3921-4871-9330-e83736580a95 75d87bcf392148719330e83736580a95</span></a></li>
+                        <div class="hidden s-author">Rixiot,75d87bcf-3921-4871-9330-e83736580a95 75d87bcf392148719330e83736580a95,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-nail"><i class="fa fa-download"></i></a>
@@ -2101,7 +2119,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -2140,14 +2157,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/palmetto_city/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Palmetto City">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=palmetto_city">Palmetto City</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=palmetto_city" class="s-title">Palmetto City</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=skywars">Skywars</a></li>
+                            <li class="game-tag map-tag s-tag">Skywars</li>
+                            <div class="hidden tags">palmetto_city,Popular,Commercial,Skywars</div>
                         </div>
                         <div class="icon-alerts">
                             <a href="/contests/overcast/skywars_solstice#palmetto_city" data-toggle="tooltip" data-placement="top" title="Overcast contest submission"><i class="fa fa-map"></i></a>
@@ -2163,6 +2182,7 @@
                         by
                         <li class="game-tag author-tag"><a href="?s=96f9aa16-9c93-4b1d-9bce-18b8c212074b">_ArmyFrog<span class="tag_hidden">96f9aa16-9c93-4b1d-9bce-18b8c212074b 96f9aa169c934b1d9bce18b8c212074b</span></a></li>
                         <li class="game-tag author-tag"><a href="?s=e8823186-7338-4eaf-986c-c5c830aefb46">Exsoh<span class="tag_hidden">e8823186-7338-4eaf-986c-c5c830aefb46 e882318673384eaf986cc5c830aefb46</span></a></li>
+                        <div class="hidden s-author">_ArmyFrog,96f9aa16-9c93-4b1d-9bce-18b8c212074b 96f9aa169c934b1d9bce18b8c212074b,Exsoh,e8823186-7338-4eaf-986c-c5c830aefb46 e882318673384eaf986cc5c830aefb46,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-palmetto_city"><i class="fa fa-download"></i></a>
@@ -2210,7 +2230,6 @@
                                             <span class="label label-info">Contest Submission</span>
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -2249,14 +2268,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/pharaohs_palace/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Pharaohs Palace">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=pharaohs_palace">Pharaohs Palace</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=pharaohs_palace" class="s-title">Pharaohs Palace</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=ctf">Capture the Flag</a><span class="tag-hidden">ctf</span></li>
+                            <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
+                            <div class="hidden tags">pharaohs_palace,Commercial,Capture the Flag</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2269,6 +2290,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=459fd919-0d58-401a-9601-6cab1eb721ab">Reshif<span class="tag_hidden">459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab</span></a></li>
+                        <div class="hidden s-author">Reshif,459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-pharaohs_palace"><i class="fa fa-download"></i></a>
@@ -2315,7 +2337,6 @@
                                             
                                             
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -2354,15 +2375,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/race_drought/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Race: Drought">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=race_drought">Race: Drought</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=race_drought" class="s-title">Race: Drought</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=race">Race</a></li>
+                            <li class="game-tag map-tag s-tag">Arcade,</li>
+                            <li class="game-tag map-tag s-tag">Race</li>
+                            <div class="hidden tags">race_drought,New,Commercial,Arcade,Race</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2376,6 +2399,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=459fd919-0d58-401a-9601-6cab1eb721ab">Reshif<span class="tag_hidden">459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab</span></a></li>
+                        <div class="hidden s-author">Reshif,459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-race_drought"><i class="fa fa-download"></i></a>
@@ -2423,7 +2447,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -2462,14 +2485,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-new">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/salvo/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Salvo">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=salvo">Salvo</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=salvo" class="s-title">Salvo</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
+                            <div class="hidden tags">salvo,New,Commercial,Destroy the Monument</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2483,6 +2508,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=8242e55e-cc6a-458a-b272-a2b34918045f">keenanjt<span class="tag_hidden">8242e55e-cc6a-458a-b272-a2b34918045f 8242e55ecc6a458ab272a2b34918045f</span></a></li>
+                        <div class="hidden s-author">keenanjt,8242e55e-cc6a-458a-b272-a2b34918045f 8242e55ecc6a458ab272a2b34918045f,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-salvo"><i class="fa fa-download"></i></a>
@@ -2529,7 +2555,6 @@
                                             
                                             <span class="label label-primary">New</span>
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -2568,14 +2593,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/shave_harambe/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Shave Harambe">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=shave_harambe">Shave Harambe</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=shave_harambe" class="s-title">Shave Harambe</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=dtm">Destroy the Monument</a><span class="tag-hidden">dtm</span></li>
+                            <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
+                            <div class="hidden tags">shave_harambe,Popular,Noncommercial,Destroy the Monument</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2589,6 +2616,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=715769c5-8c4c-4489-bdf8-f9cee2b2ae8a">amactus<span class="tag_hidden">715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a</span></a></li>
+                        <div class="hidden s-author">amactus,715769c5-8c4c-4489-bdf8-f9cee2b2ae8a 715769c58c4c4489bdf8f9cee2b2ae8a,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-shave_harambe"><i class="fa fa-download"></i></a>
@@ -2636,8 +2664,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
-                                            
                                             <span class="label label-warning">Noncommercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -2676,14 +2702,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/skyfall/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Skyfall">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=skyfall">Skyfall</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=skyfall" class="s-title">Skyfall</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
+                            <li class="game-tag map-tag s-tag">Arcade</li>
+                            <div class="hidden tags">skyfall,Commercial,Arcade</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2696,6 +2724,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=459fd919-0d58-401a-9601-6cab1eb721ab">Reshif<span class="tag_hidden">459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab</span></a></li>
+                        <div class="hidden s-author">Reshif,459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-skyfall"><i class="fa fa-download"></i></a>
@@ -2742,7 +2771,6 @@
                                             
                                             
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -2781,15 +2809,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/sumo/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="Sumo">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=sumo">Sumo</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=sumo" class="s-title">Sumo</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=arcade">Arcade</a></li>
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=blitz">Blitz</a></li>
+                            <li class="game-tag map-tag s-tag">Arcade,</li>
+                            <li class="game-tag map-tag s-tag">Blitz</li>
+                            <div class="hidden tags">sumo,Commercial,Arcade,Blitz</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2802,6 +2832,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=6e347123-c684-4d7e-996c-44d4924ff172">SheriffSoco<span class="tag_hidden">6e347123-c684-4d7e-996c-44d4924ff172 6e347123c6844d7e996c44d4924ff172</span></a></li>
+                        <div class="hidden s-author">SheriffSoco,6e347123-c684-4d7e-996c-44d4924ff172 6e347123c6844d7e996c44d4924ff172,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-sumo"><i class="fa fa-download"></i></a>
@@ -2849,7 +2880,6 @@
                                             
                                             
                                             
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -2888,14 +2918,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-popular">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="https://raw.githubusercontent.com/MCResourcePile/pgm-maps/master/maps/gold_drught/map.png">
                     <div class="banner" data-toggle="tooltip" data-placement="top" title="gold drught 5">
-                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=gold_drught">gold drught 5</a></div>
+                        <div class="title"><a href="https://mcresourcepile.github.io/maps/pgm?s=gold_drught" class="s-title">gold drught 5</a></div>
                         <div class="sub-title">
-                            <li class="game-tag"><a class="game-link map-tag" href="?s=tdm">Team Deathmatch</a><span class="tag-hidden">tdm</span></li>
+                            <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
+                            <div class="hidden tags">gold_drught,Popular,Commercial,Team Deathmatch</div>
                         </div>
                         <div class="icon-alerts">
                         </div>
@@ -2909,6 +2941,7 @@
                     <div class="authors">
                         by
                         <li class="game-tag author-tag"><a href="?s=459fd919-0d58-401a-9601-6cab1eb721ab">Reshif<span class="tag_hidden">459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab</span></a></li>
+                        <div class="hidden s-author">Reshif,459fd919-0d58-401a-9601-6cab1eb721ab 459fd9190d58401a96016cab1eb721ab,</div>
                     </div>
                     <div class="buttons">
                         <a class="btn map-link map-button" role="button" data-toggle="modal" data-target="#download-gold_drught"><i class="fa fa-download"></i></a>
@@ -2955,7 +2988,6 @@
                                             
                                             
                                             <span class="label label-danger">Popular</span>
-                                            
                                             <span class="label label-success">Commercial</span>
                                             <span class="label label-primary">PGM</span>
                                             
@@ -2994,6 +3026,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
 <div class="modal fade" id="download-complete-message" tabindex="-1" role="dialog">
