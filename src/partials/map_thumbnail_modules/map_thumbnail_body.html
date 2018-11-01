@@ -3,11 +3,12 @@
         by
         {{#if authors}}
         {{#authors}}
-        <li class="game-tag author-tag">{{#if username}}<a href="{{#inArray @root.page-category 'contest'}}/maps/{{@root.settings.maps.group}}{{/inArray}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{formatUUID uuid}}</span></a>{{else}}<span class="map-author-name">Ghost</span>{{/if}}</li>
+        <li class="game-tag author-tag">{{#if username}}<a href="{{#inArray @root.page-category 'contest'}}/maps/{{@root.settings.maps.group}}{{/inArray}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{formatUUID uuid}}</span></a>{{else}}Ghost{{/if}}</li>
         {{/authors}}
         {{else}}
-        <span class="map-author-name">Ghost</span>
+        Ghost
         {{/if}}
+        <div class="hidden s-author">{{#authors}}{{username}},{{formatUUID uuid}},{{/authors}}</div>
     </div>
     {{#inArray @root.page-category 'collections'}}
     {{> map_buttons}}

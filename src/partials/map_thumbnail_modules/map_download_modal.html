@@ -66,9 +66,15 @@
                             {{#if contest}}<span class="label label-info">Contest Submission</span>{{/if}}
                             {{#inArray @root.data.new slug}}<span class="label label-primary">New</span>{{/inArray}}
                             {{#inArray @root.data.popular slug}}<span class="label label-danger">Popular</span>{{/inArray}}
-                            {{#if sourced}}<span class="label label-default">Unlicensed</span>{{else}}
-                            {{#if commercial}}<span class="label label-success">Commercial</span>{{else}}
-                            <span class="label label-warning">Noncommercial</span>{{/if}}{{/if}}
+                            {{#if sourced}}
+                            <span class="label label-default">Unlicensed</span>
+                            {{else}}
+                            {{#if commercial}}
+                            <span class="label label-success">Commercial</span>
+                            {{else}}
+                            <span class="label label-warning">Noncommercial</span>
+                            {{/if}}
+                            {{/if}}
                             <span class="label label-primary">{{#if (lookup @root.settings.maps.environments environment)}}{{#with (lookup @root.settings.maps.environments environment)}}{{{this.label}}}{{/with}}{{else}}{{#with (lookup @root.settings.maps.environments @root.settings.maps.default_environment)}}{{{this.label}}}{{/with}}{{/if}}</span>
                             {{#if cardinal}}<span class="label label-primary">Cardinal</span>{{/if}}
                             <span class="label label-default">{{slug}}</span>
