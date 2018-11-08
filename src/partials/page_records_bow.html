@@ -21,6 +21,7 @@
                         <i class="fa fa-trophy"></i>
                         <img class="bow-player-avatar" src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=30&default=MHF_Steve&overlay">
                         <a class="bow-player" href="?s={{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}">{{username}}</a>
+                        <span class="tag_hidden">{{formatUUID uuid}}</span>
                         with a distance of <b>{{distance}}</b> blocks
                         {{#if screenshot}}
                         <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fa fa-check-circle"></i></a>
@@ -35,6 +36,7 @@
                         <div>
                             <img class="bow-player-avatar" src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&default=MHF_Steve&overlay">
                             <a class="bow-player" href="?s={{uuid}}">{{username}}</a>
+                            <span class="tag_hidden">{{formatUUID uuid}}</span>
                             ({{distance}} blocks)
                             {{#if screenshot}}
                             <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fa fa-check-circle"></i></a>
@@ -49,6 +51,7 @@
                         <div>
                             <img class="bow-player-avatar" src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&default=MHF_Steve&overlay">
                             <a class="bow-player" href="?s={{uuid}}">{{username}}</a>
+                            <span class="tag_hidden">{{formatUUID uuid}}</span>
                             ({{distance}} blocks)
                             {{#if screenshot}}
                             <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fa fa-check-circle"></i></a>
