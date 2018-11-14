@@ -15,7 +15,7 @@ var window_offset = function() { scrollBy(0, -70) };
 if (location.hash) window_offset();
 window.addEventListener("hashchange", window_offset);
 
-$('[data-toggle="tooltip"]').tooltip()
+$('[data-toggle="tooltip"]').tooltip({container: 'body'})
 $('[data-toggle="popover"]').popover()
 
 function output(message, level) {
