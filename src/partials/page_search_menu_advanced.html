@@ -1,0 +1,17 @@
+<div class="thumbnail map-search{{#if settings.maps.advanced_menu.dynamic}} map-search-dynamic{{/if}}">
+    <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="{{#if placeholder}}{{placeholder}}{{else}}Search maps{{/if}}">
+    <div class="filters">
+        <b>Filters</b>
+        <small>Use filters to narrow your query when searching for specific maps.</small>
+        {{#each settings.maps.advanced_menu.groups}}
+        <div class="group">
+            {{#if title}}
+            <b>{{title}}</b>
+            {{/if}}
+            {{#each tags}}
+            <span class="filter">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+</div>
