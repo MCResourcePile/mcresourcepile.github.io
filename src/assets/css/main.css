@@ -1446,122 +1446,6 @@ pre > code {
     font-size: 12px;
 }
 
-.bow-record {
-    height: 49px;
-    border-bottom: 1px solid #dddddd;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding-bottom: 60px;
-}
-
-.bow-map {
-    font-size: 18px;
-    font-weight: 600;
-    text-align: right;
-}
-
-.bow-tags {
-    margin-top: -8px;
-    text-align: right;
-}
-
-.bow-first {
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.bow-first .fa {
-    font-size: 30px;
-    vertical-align: -8px;
-    padding-right: 8px;
-}
-
-.bow-first .bow-player-avatar {
-    height: 30px;
-}
-
-.bow-first .bow-player {
-    font-weight: 600;
-}
-
-.bow-more {
-    display: block;
-    margin-top: 15px;
-    text-align: right;
-    width: 50px;
-}
-
-.bow-more > .badge {
-    vertical-align: 1px;
-    margin-right: 3px;
-    background-color: #337ab7;
-}
-
-.bow-more.disabled {
-    color: #d0d0d0;
-}
-
-.bow-first .bow-reference {
-    vertical-align: 8px;
-}
-
-.bow-first .bow-reference > .fa {
-    font-size: 18px;
-}
-
-.bow-reference > .fa {
-    font-size: 16px;
-}
-
-@media (max-width: 768px) {
-    .bow-record {
-        height: auto;
-        padding-bottom: 8px;
-        text-align: center;
-    }
-
-    .bow-map {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .bow-tags {
-        text-align: center;
-        margin-top: -4px;
-    }
-
-    .bow-first {
-        font-size: 14px;
-        margin-top: 3px;
-        margin-bottom: 8px;
-    }
-
-    .bow-first .fa {
-        font-size: 18px;
-        vertical-align: -3px;
-        padding-right: 2px;
-    }
-
-    .bow-first .bow-player-avatar {
-        height: 18px;
-    }
-    
-    .bow-more {
-        text-align: center;
-        color: #a8a8a8;
-    }
-
-    .bow-more .badge,
-    .bow-more .fa {
-        display: none;
-    }
-
-    .bow-more::after {
-        content: "Show all records";
-    }
-}
-
 .map-search {
     padding: 12px;
 }
@@ -1610,4 +1494,67 @@ pre > code {
 .group > .filter.active {
     background-color: #5f6fc7;
     color: #fff;
+}
+
+.bow-record {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 0px 15px 10px 15px;
+}
+
+.bow-record-header {
+    padding: 0px;
+}
+
+.bow-record > .bow-record-header > img {
+	width: 88px;
+    height: 75.3px;
+    border-radius: 4px;
+}
+
+.bow-titles {
+    display: inline-block;
+    vertical-align: -12px;
+    padding-left: 8px;
+}
+
+.bow-map {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.bow-tags {
+    margin-top: -8px
+}
+
+.bow-user-record:first-child {
+    font-size: 15px;
+}
+
+.bow-user-record:first-child > .fa {
+    font-size: 24px;
+    vertical-align: -4px;
+}
+
+.bow-user-record:first-child > img {
+    width: 24px;
+}
+
+.bow-user-record:not(:first-child) {
+    margin-left: 12px;
+}
+
+.bow-user-record:nth-child(n+10) {
+    margin-left: 4px;
+}
+
+.bow-user-record > img {
+    width: 12px;
+}
+
+.bow-records-more {
+    display: block;
+    text-align: center;
+    color: #ababab !important;
 }

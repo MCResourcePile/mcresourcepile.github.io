@@ -20,4 +20,19 @@ $(document).ready(function(){
         query = getUrlVars()['s'].replace('+', ' ').replace('%20', ' ');
         $('#search').val(query);
     }
+    
+    // load more
+    $('.bow-records-more').click(function() {
+        expanded = $(this).data('expanded');
+        count = $(this).parent().children().length - 4;
+        if (expanded == false) {
+            $(this).data('expanded', true);
+            $(this).text('Show less');
+            $(this).parent().find('.extended-record').removeClass('hidden');
+        } else {
+            $(this).data('expanded', false);
+            $(this).text('Show ' + count + ' more');
+            $(this).parent().find('.extended-record').addClass('hidden');
+        }
+    });
 });
