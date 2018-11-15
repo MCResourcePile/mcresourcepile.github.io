@@ -8,9 +8,18 @@
             {{#if title}}
             <b>{{title}}</b>
             {{/if}}
+            {{#if tags}}
             {{#each tags}}
             <span class="filter">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>
             {{/each}}
+            {{/if}}
+            {{#if slider}}
+            {{#slider}}
+            <b>{{min}}</b>
+            <input id="slider" type="text" value="" data-slider-min="{{min}}" data-slider-max="{{max}}" data-slider-step="{{step}}" data-slider-value="{{#if range}}[{{min}},{{max}}]{{else}}{{max}}{{/if}}">
+            <b>{{max}}</b>
+            {{/slider}}
+            {{/if}}
         </div>
         {{/each}}
     </div>

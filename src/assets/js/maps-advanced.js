@@ -2,7 +2,7 @@ is_maps_collection = true;
 
 $(function(){
     // create new searchable list
-    maps = new List('maps-collection', {
+    maps = new List('searchable-collection', {
         valueNames: ['tags', 's-title', 's-author']
     });
     

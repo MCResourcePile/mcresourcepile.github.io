@@ -1,7 +1,7 @@
 {{> navigation_header}}
-{{> page_maps_search_menu}}
-<div class="bow-output">
-    <div class="bow-dynamic">
+<div id="searchable-collection" class="bow-output">
+    {{> page_search_menu_advanced}}
+    <div class="dynamic list" style="display:block">
         {{#each (sortBy maps "name")}}
         {{#gte (length records) 1}}
         <div class="bow-record">
@@ -96,6 +96,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="hidden">
+                <div class="tags">{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
+                <div class="users">{{#each records}}{{username}},{{formatUUID uuid}}{{#unless @last}},{{/unless}}{{/each}}</div>
+                <div class="distances">{{#each records}}{{distance}}{{#unless @last}},{{/unless}}{{/each}}</div>
             </div>
         </div>
         {{/gte}}

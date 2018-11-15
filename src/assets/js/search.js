@@ -1,4 +1,5 @@
 var maps;
+var slider;
 var filters = [];
 
 function searchRequests() {
@@ -15,7 +16,7 @@ function searchRequests() {
             filters.push(filter);
         }
         $("body, html").animate({
-            scrollTop: $('#maps-collection').position().top - 90
+            scrollTop: $('#searchable-collection').position().top - 90
         });
         filterMaps();
     });

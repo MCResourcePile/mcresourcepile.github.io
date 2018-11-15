@@ -6,23 +6,18 @@
  */
 
 $(document).ready(function(){
+    // create new searchable list
+    maps = new List('searchable-collection', {
+        valueNames: ['bow-map', 'tags', 'users', 'distances']
+    });
+    
+    slider = $('#sider').slider({});
+    
+    searchRequests();
+    
     // handle direct search queries
     if (getUrlVars()['s']) {
         query = getUrlVars()['s'].replace('+', ' ').replace('%20', ' ');
         $('#search').val(query);
     }
-    
-    updateListing();
-
-    // update stat listing in time with search bar interactions
-    $('.record-search-container').click(function() { updateListing() });
-    $('.record-search-container').keyup(function() { updateListing() });
 });
-
-function updateListing() {
-    $('.bow-output .bow-dynamic').searchable({
-        selector: '.bow-record',
-        childSelector: '.bow-record-content',
-        searchField: '#search'
-    });
-};
