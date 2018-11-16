@@ -1,4 +1,7 @@
 <div class="thumbnail map-search{{#if settings.maps.advanced_menu.dynamic}} map-search-dynamic{{/if}}">
+    <div class="center">
+        <span id="records-count"></span>
+    </div>
     <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="{{#if placeholder}}{{placeholder}}{{else}}Search maps{{/if}}">
     <div class="filters">
         <b>Filters</b>
@@ -15,9 +18,9 @@
             {{/if}}
             {{#if slider}}
             {{#slider}}
-            <b>{{min}}</b>
+            {{min}}
             <input id="slider" type="text" value="" data-slider-min="{{min}}" data-slider-max="{{max}}" data-slider-step="{{step}}" data-slider-value="{{#if range}}[{{min}},{{max}}]{{else}}{{max}}{{/if}}">
-            <b>{{max}}</b>
+            {{max}}
             {{/slider}}
             {{/if}}
         </div>

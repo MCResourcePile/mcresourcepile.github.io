@@ -11,7 +11,25 @@ $(document).ready(function(){
         valueNames: ['bow-map', 'tags', 'users', 'distances']
     });
     
-    slider = $('#sider').slider({});
+    // update position of side toolbar as user scrolls
+    var $sidebar   = $(".map-search"), 
+        $window    = $(window),
+        offset     = $sidebar.offset(),
+        topPadding = 100;
+    $window.scroll(function() {
+        var container  = $('#searchable-collection').position().top + $('#searchable-collection').outerHeight(true) - 356;
+        if ($window.scrollTop() - offset.top + $sidebar.height() < container && $window.width() >= 992) {
+            if ($window.scrollTop() > offset.top) {
+                $sidebar.stop().animate({
+                    marginTop: $window.scrollTop() - offset.top + topPadding
+                });
+            } else {
+                $sidebar.stop().animate({
+                    marginTop: 0
+                });
+            }
+        }
+    });
     
     searchRequests();
     
@@ -19,7 +37,7 @@ $(document).ready(function(){
     if (getUrlVars()['s']) {
         query = getUrlVars()['s'].replace('+', ' ').replace('%20', ' ');
         $('#search').val(query);
-    }
+    };
     
     // load more
     $('.bow-records-more').click(function() {

@@ -5,8 +5,11 @@
     "page-category": ["stats"],
     "settings": {
         "include": {
+            "stylesheets": [
+                "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.3/css/bootstrap-slider.min.css"
+            ],
             "scripts": [
-                "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.3/bootstrap-slider.js",
+                "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.3/bootstrap-slider.min.js",
                 "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js",
                 "/assets/js/stats.js",
                 "/assets/js/search.js"
@@ -19,9 +22,9 @@
                     {"title": "Games",    "tags": ["arcade", "cp", "ctw", "ctf", "dtc", "dtm", "ffa", "gs", "kotf", "koth", "rfw", "tdm", "skywars"]},
                     {"title": "Addons",   "tags": ["ad", "blitz", "micro", "rage", "tnt"]},
                     {"title": "Editions", "tags": ["christmas", "halloween", "ranked", "tournament"]},
-                    {"title": "Distance", "slider": {"for": "distance", "min": 0, "max": 1000, "range": true, "step": 5}}
+                    {"title": "Distance", "slider": {"for": "distance", "min": 0, "max": 350, "range": true, "step": 5}}
                 ],
-                "dynamic": false
+                "dynamic": true
             },
             "images": {
                 "repo": "stratus-maps",

@@ -1,8 +1,19 @@
 var maps;
-var slider;
 var filters = [];
 
+$(document).ready(function(){
+    if ($('#slider').length != 0)
+        $('#slider').slider({tooltip_split: true});
+    countResults();
+});
+    
 function searchRequests() {
+    // update search when user typs
+    $('#search').on('input',function(e){
+        countResults();
+        maps.search($('#search').val());
+    });
+    
     // handle user filters
     $('.filter').click(function() {
         filter = $(this).text();
@@ -21,16 +32,25 @@ function searchRequests() {
         filterMaps();
     });
     
-    // update search when user typs
-    $("#search").change(function() {
-        maps.search($('#search').val())
-    });
+    // handle slider
+    if ($('#slider').length != 0) {
+        $('#slider').slider().change(function() {
+            filterMaps();
+        });
+    }
 }
 
 function filterMaps() {
-    if (filters.length > 0) {
+    var range;
+    if ($('#slider').length != 0) {
+        range = $('#slider').slider().context.value;
+        range = range.split(',');
+        range[0] = parseInt(range[0]);
+        range[1] = parseInt(range[1]);
+    }
+    if (filters.length > 0 || range) {
         maps.filter(function(item) {
-            string = item.values().tags;
+            tags = item.values().tags;
             tags = string.split(',');
             if ($.inArray('Destroy the Core and Monument', tags) != -1) {
                 tags.push('Destroy the Core');
@@ -45,7 +65,21 @@ function filterMaps() {
                 }
             }
             if (count == filters.length) {
-                return true;
+                if ($('#slider').length != 0) {
+                    distances = item.values().distances;
+                    distances = distances.split(',');
+                    for (i = 0; i < distances.length; i++) {
+                        console.log(range[0] <= distances[i]);
+                        console.log(range[1] >= distances[i]);
+                        if (range[0] <= distances[i] && range[1] >= distances[i]) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                } else {
+                    return true;
+                }
             } else {
                 return false;
             }
@@ -54,4 +88,18 @@ function filterMaps() {
         maps.filter();
         maps.update();
     }
+    countResults();
+}
+
+function countResults() {
+    total = maps.items.length;
+    visible = maps.matchingItems.length;
+    if (visible > 0) {
+        string = "Showing " + visible + " matching maps out of " + total;
+    } else if (visible == 0) {
+        string = "No maps match your query or filter";
+    } else {
+        string = "There are no maps to display";
+    }
+    $('#records-count').text(string);
 }

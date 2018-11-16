@@ -14,7 +14,7 @@ $(function(){
         offset     = $sidebar.offset(),
         topPadding = 100;
     $window.scroll(function() {
-        var container  = $('#maps-collection').position().top + $('#maps-collection').outerHeight(true) - 356;
+        var container  = $('#searchable-collection').position().top + $('#searchable-collection').outerHeight(true) - 356;
         if ($window.scrollTop() - offset.top + $sidebar.height() < container && $window.width() >= 992) {
             if ($window.scrollTop() > offset.top) {
                 $sidebar.stop().animate({
