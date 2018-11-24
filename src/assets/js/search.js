@@ -9,8 +9,7 @@ $(document).ready(function(){
     
 function searchRequests() {
     // update search when user typs
-    $('#search').on('input',function(e){
-        countResults();
+    $('#search').on('input', function(e){
         maps.search($('#search').val());
     });
     
@@ -38,6 +37,11 @@ function searchRequests() {
             filterMaps();
         });
     }
+    
+    // update stats counter
+    maps.on('updated', function() {
+        countResults();
+    });
 }
 
 function filterMaps() {
@@ -51,8 +55,7 @@ function filterMaps() {
     if (filters.length > 0 || range) {
         maps.filter(function(item) {
             tags = item.values().tags;
-            tags = string.split(',');
-            console.log(tags);
+            tags = tags.split(',');
             if ($.inArray('Destroy the Core and Monument', tags) != -1) {
                 tags.push('Destroy the Core');
                 tags.push('Destroy the Monument');
@@ -69,7 +72,6 @@ function filterMaps() {
                 if ($('#slider').length != 0) {
                     distances = item.values().distances;
                     distances = distances.split(',');
-                    console.log(distances);
                     for (i = 0; i < distances.length; i++) {
                         console.log(range[0] <= distances[i]);
                         console.log(range[1] >= distances[i]);
@@ -90,7 +92,6 @@ function filterMaps() {
         maps.filter();
         maps.update();
     }
-    countResults();
 }
 
 function countResults() {
