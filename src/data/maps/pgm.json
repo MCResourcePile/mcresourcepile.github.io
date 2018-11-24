@@ -14,18 +14,22 @@
                 "/assets/js/jquery.searchable-1.1.0.min.js",
                 "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js",
                 "/assets/js/maps-advanced.js",
+                "/assets/js/search.js",
                 "/assets/js/analytics.js"
             ]
         },
         "maps": {
             "group": "pgm",
             "default_environment": "pgm",
-            "advanced_menu": [
-                {"group": "",         "tags": ["new", "popular", "by-sa", "by-nc-sa"]},
-                {"group": "Games",    "tags": ["arcade", "cp", "ctw", "ctf", "dtc", "dtm", "ffa", "gs", "kotf", "koth", "rfw", "tdm", "skywars"]},
-                {"group": "Addons",   "tags": ["ad", "blitz", "micro", "rage", "tnt"]},
-                {"group": "Editions", "tags": ["christmas", "halloween", "ranked", "tournament"]}
-            ]
+            "advanced_menu": {
+                "groups": [
+                    {"title": "",         "tags": ["new", "popular", "by-sa", "by-nc-sa"]},
+                    {"title": "Games",    "tags": ["arcade", "cp", "ctw", "ctf", "dtc", "dtm", "ffa", "gs", "kotf", "koth", "rfw", "tdm", "skywars"]},
+                    {"title": "Addons",   "tags": ["ad", "blitz", "micro", "rage", "tnt"]},
+                    {"title": "Editions", "tags": ["christmas", "halloween", "ranked", "tournament"]}
+                ],
+                "dynamic": true
+            }
         }
     },
     "data": {

@@ -6,23 +6,51 @@
  */
 
 $(document).ready(function(){
+    // create new searchable list
+    maps = new List('searchable-collection', {
+        valueNames: ['bow-map', 'tags', 'users', 'distances']
+    });
+    
+    // update position of side toolbar as user scrolls
+    var $sidebar   = $(".map-search"), 
+        $window    = $(window),
+        offset     = $sidebar.offset(),
+        topPadding = 100;
+    $window.scroll(function() {
+        var container  = $('#searchable-collection').position().top + $('#searchable-collection').outerHeight(true) - 356;
+        if ($window.scrollTop() - offset.top + $sidebar.height() < container && $window.width() >= 992) {
+            if ($window.scrollTop() > offset.top) {
+                $sidebar.stop().animate({
+                    marginTop: $window.scrollTop() - offset.top + topPadding
+                });
+            } else {
+                $sidebar.stop().animate({
+                    marginTop: 0
+                });
+            }
+        }
+    });
+    
+    searchRequests();
+    
     // handle direct search queries
     if (getUrlVars()['s']) {
         query = getUrlVars()['s'].replace('+', ' ').replace('%20', ' ');
         $('#search').val(query);
-    }
+    };
     
-    updateListing();
-
-    // update stat listing in time with search bar interactions
-    $('.record-search-container').click(function() { updateListing() });
-    $('.record-search-container').keyup(function() { updateListing() });
-});
-
-function updateListing() {
-    $('.bow-output .bow-dynamic').searchable({
-        selector: '.bow-record',
-        childSelector: '.bow-record-content',
-        searchField: '#search'
+    // load more
+    $('.bow-records-more').click(function() {
+        expanded = $(this).data('expanded');
+        count = $(this).parent().children().length - 4;
+        if (expanded == false) {
+            $(this).data('expanded', true);
+            $(this).text('Show less');
+            $(this).parent().find('.extended-record').removeClass('hidden');
+        } else {
+            $(this).data('expanded', false);
+            $(this).text('Show ' + count + ' more');
+            $(this).parent().find('.extended-record').addClass('hidden');
+        }
     });
-};
+});

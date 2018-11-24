@@ -14,17 +14,21 @@
                 "/assets/js/jquery.searchable-1.1.0.min.js",
                 "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js",
                 "/assets/js/maps-advanced.js",
+                "/assets/js/search.js",
                 "/assets/js/analytics.js"
             ]
         },
         "maps": {
             "group": "rfw",
             "default_environment": "rfw",
-            "advanced_menu": [
-                {"group": "",         "tags": ["new", "popular", "by-sa", "by-nc-sa"]},
-                {"group": "Games",    "tags": ["ctw", "rfw"]},
-                {"group": "Editions", "tags": ["christmas", "halloween", "ranked", "tournament"]}
-            ]
+            "advanced_menu": {
+                "groups": [
+                    {"title": "",         "tags": ["new", "popular", "by-sa", "by-nc-sa"]},
+                    {"title": "Games",    "tags": ["ctw", "rfw"]},
+                    {"title": "Editions", "tags": ["christmas", "halloween", "ranked", "tournament"]}
+                ],
+                "dynamic": true
+            }
         }
     },
     "data": {

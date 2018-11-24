@@ -1,24 +1,8 @@
 {{> navigation_header}}
 {{#if data.featured.enabled}}{{> page_maps_featured}}{{/if}}
-<div id="maps-collection" class="maps-output row center" data-source="{{settings.maps.group}}">
+<div id="searchable-collection" class="maps-output row center" data-source="{{settings.maps.group}}">
     <div class="col-md-3 col-md-push-9">
-        <div class="thumbnail map-search">
-            <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search maps">
-            <div class="filters">
-                <b>Filters</b>
-                <small>Use filters to narrow your query when searching for specific maps.</small>
-                {{#each settings.maps.advanced_menu}}
-                <div class="group">
-                    {{#if group}}
-                    <b>{{group}}</b>
-                    {{/if}}
-                    {{#each tags}}
-                    <span class="filter">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>
-                    {{/each}}
-                </div>
-                {{/each}}
-            </div>
-        </div>
+        {{> page_search_menu_advanced}}
     </div>
     <div class="col-md-9 col-md-pull-3 dynamic list">
         {{#each (sortBy data.maps "name")}}
