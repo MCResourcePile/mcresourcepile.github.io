@@ -2,39 +2,55 @@
     "title": "Stratus Map Repository",
     "subtitle": "List of maps loaded on the Stratus Network public servers (with images!)",
     "body": "This is a list of maps loaded on the Stratus Network servers as of the 13th of November, 2018. As the Stratus site doesn't display all map images, this can be used to browse the maps repo with map images. Maps that do not have images are not included in this list.",
-    "page-category": [
-        "collections",
-        "maps"
-    ],
+    "page-category": ["collections", "maps"],
     "settings": {
         "include": {
             "stylesheets": [
                 "/assets/css/gamemodes.css"
             ],
             "scripts": [
-                "/assets/js/gitzip-api.js",
-                "/assets/js/FileSaver.js",
-                "/assets/js/jszip.js",
-                "/assets/js/jquery.searchable-1.1.0.min.js",
                 "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js",
                 "/assets/js/maps-advanced.js",
-                "/assets/js/analytics.js"
+                "/assets/js/analytics.js",
+                "/assets/js/search.js"
             ]
         },
         "maps": {
             "group": "stratus",
             "repo": true,
-            "advanced_menu": [
-                {"group": "Rotation", "tags": ["micro", "mini", "medium", "mega", "mammoth"]},
-                {"group": "Games",    "tags": ["arcade", "cp", "ctw", "ctf", "dtc", "dtm", "ffa", "gs", "kotf", "koth", "rfw", "tdm", "skywars"]},
-                {"group": "Addons",   "tags": ["ad", "blitz", "micro", "rage", "tnt"]},
-                {"group": "Editions", "tags": ["christmas", "halloween", "ranked", "tournament"]}
-            ]
+            "advanced_menu": {
+                "groups": [
+                    {"group": "Rotation", "tags": ["micro", "mini", "medium", "mega", "mammoth"]},
+                    {"group": "Games",    "tags": ["arcade", "cp", "ctw", "ctf", "dtc", "dtm", "ffa", "gs", "kotf", "koth", "rfw", "tdm", "skywars"]},
+                    {"group": "Addons",   "tags": ["ad", "blitz", "micro", "rage", "tnt"]},
+                    {"group": "Editions", "tags": ["christmas", "halloween", "ranked", "tournament"]}
+                ],
+                "dynamic": true
+            }
         }
     },
     "data": {
         "rotations": {
-            "micro": [],
+            "micro": [
+                "warlock",
+                "divided",
+                "agrostid",
+                "limbo_ii",
+                "ruediger_s_oasis",
+                "kaldr",
+                "desolated_frontier",
+                "snowy_wars",
+                "justice",
+                "gralien",
+                "grassy_mound",
+                "wrath_tor_rage",
+                "placid_spring",
+                "desolate_gully",
+                "supercube",
+                "balloonsdtm",
+                "flow",
+                "outcast"
+            ],
             "mini": [],
             "medium": [],
             "mega": [],
