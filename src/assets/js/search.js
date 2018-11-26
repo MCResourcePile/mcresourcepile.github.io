@@ -1,16 +1,20 @@
 var maps;
 var filters = [];
+var url;
 
 $(document).ready(function(){
     if ($('#slider').length != 0)
         $('#slider').slider({tooltip_split: true});
     countResults();
+    url = new Url;
+    parseUrl();
 });
     
 function searchRequests() {
     // update search when user typs
     $('#search').on('input', function(e){
         maps.search($('#search').val());
+        updateUrl();
     });
     
     // handle user filters
@@ -29,6 +33,7 @@ function searchRequests() {
             scrollTop: $('#searchable-collection').position().top - 90
         });
         filterMaps();
+        updateUrl();
     });
     
     // handle slider
@@ -73,8 +78,6 @@ function filterMaps() {
                     distances = item.values().distances;
                     distances = distances.split(',');
                     for (i = 0; i < distances.length; i++) {
-                        console.log(range[0] <= distances[i]);
-                        console.log(range[1] >= distances[i]);
                         if (range[0] <= distances[i] && range[1] >= distances[i]) {
                             return true;
                         } else {
@@ -105,4 +108,33 @@ function countResults() {
         string = "There are no maps to display";
     }
     $('#records-count').text(string);
+}
+
+function updateUrl() {
+    var string = "?";
+    var search = $('#search').val()
+    var filterArr = encodeURIComponent(filters);
+    if (search || filters.length > 0) {
+        if (search) {
+            string += "s=" + search;
+        }
+        if (filters.length > 0) {
+            if (search) string += "&";
+            string += "f=" + filterArr;
+        }
+    }
+    window.history.pushState( {} , document.title, string);
+}
+
+function parseUrl() {
+    $('#search').val(url.query.s);
+    var urlFilters = url.query.f;
+    if (urlFilters) urlFilters = urlFilters.split(',');
+    for (i = 0; i < urlFilters.length; i++) {
+        $('.filter:contains("' + urlFilters[i] + '")').filter(function() {
+            return $(this).text() == urlFilters[i];
+        }).addClass('active');
+        filters.push(urlFilters[i]);
+    }
+    filterMaps();
 }
