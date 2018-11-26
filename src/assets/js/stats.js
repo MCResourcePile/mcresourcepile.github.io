@@ -33,12 +33,6 @@ $(document).ready(function(){
     
     searchRequests();
     
-    // handle direct search queries
-    if (getUrlVars()['s']) {
-        query = getUrlVars()['s'].replace('+', ' ').replace('%20', ' ');
-        $('#search').val(query);
-    };
-    
     // load more
     $('.bow-records-more').click(function() {
         expanded = $(this).data('expanded');
