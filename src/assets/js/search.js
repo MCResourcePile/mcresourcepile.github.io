@@ -137,4 +137,5 @@ function parseUrl() {
         filters.push(urlFilters[i]);
     }
     filterMaps();
+    maps.search(url.query.s);
 }
