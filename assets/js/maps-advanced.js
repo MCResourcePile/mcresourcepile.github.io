@@ -66,13 +66,6 @@ $(function(){
         }
     }
 
-    // handle direct search queries
-    if (getUrlVars()['s']) {
-        query = getUrlVars()['s'].replace('+', ' ').replace('%20', ' ');
-        $('#search').val(query);
-        maps.search(query);
-    }
-
     // handle map image requests
     $('.click-image').click(function() {
         active_name = $(this).attr('id');
