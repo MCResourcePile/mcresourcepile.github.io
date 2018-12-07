@@ -29,9 +29,6 @@ function searchRequests() {
             $(this).addClass('active');
             filters.push(filter);
         }
-        $("body, html").animate({
-            scrollTop: $('#searchable-collection').position().top - 90
-        });
         filterMaps();
         updateUrl();
     });
@@ -46,6 +43,14 @@ function searchRequests() {
     // update stats counter
     maps.on('updated', function() {
         countResults();
+        scrollToTop();
+    });
+    
+    // search on clickable item
+    $('.click-search').click(function() {
+        query = $(this).data('query');
+        $('#search').val(query);
+        forceUpdateSearch();
     });
 }
 
@@ -77,12 +82,10 @@ function filterMaps() {
                 if ($('#slider').length != 0) {
                     distances = item.values().distances;
                     distances = distances.split(',');
-                    for (i = 0; i < distances.length; i++) {
-                        if (range[0] <= distances[i] && range[1] >= distances[i]) {
-                            return true;
-                        } else {
-                            return false;
-                        }
+                    if (range[0] <= distances[distances.length-1] && range[1] >= distances[distances.length-1]) {
+                        return true;
+                    } else {
+                        return false;
                     }
                 } else {
                     return true;
@@ -129,13 +132,27 @@ function updateUrl() {
 function parseUrl() {
     $('#search').val(url.query.s);
     var urlFilters = url.query.f;
-    if (urlFilters) urlFilters = urlFilters.split(',');
-    for (i = 0; i < urlFilters.length; i++) {
-        $('.filter:contains("' + urlFilters[i] + '")').filter(function() {
-            return $(this).text() == urlFilters[i];
-        }).addClass('active');
-        filters.push(urlFilters[i]);
+    if (urlFilters) {
+        urlFilters = urlFilters.split(',');
+        for (i = 0; i < urlFilters.length; i++) {
+            $('.filter:contains("' + urlFilters[i] + '")').filter(function() {
+                return $(this).text() == urlFilters[i];
+            }).addClass('active');
+            filters.push(urlFilters[i]);
+        }
+        filterMaps();
+        forceUpdateSearch();
     }
-    filterMaps();
-    maps.search(url.query.s);
+}
+
+function forceUpdateSearch() {
+    maps.search($('#search').val());
+    updateUrl();
+    countResults();
+}
+
+function scrollToTop() {
+    $("body, html").animate({
+        scrollTop: $('#searchable-collection').position().top - 90
+    });
 }

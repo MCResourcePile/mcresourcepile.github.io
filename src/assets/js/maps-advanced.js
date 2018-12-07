@@ -3,7 +3,7 @@ is_maps_collection = true;
 $(function(){
     // create new searchable list
     maps = new List('searchable-collection', {
-        valueNames: ['tags', 's-title', 's-author']
+        valueNames: ['tags', 's-title', 'users', 'uuids']
     });
     
     searchRequests();
@@ -108,7 +108,7 @@ function startDownload(active_name, active_slug, active_path, active_license) {
     if (active_license == 'noncommercial') imported_license = licenses.noncommercial;
     if (active_license == 'none') imported_license = licenses.none;
     output('Downloading: ' + active_slug + '\nFetching files from: ' + active_path + '\n' + active_name + ' ' + imported_license.message);
-    file_name = active_slug
+    file_name = active_slug;
     if (active_path !== undefined) {
         if (user_settings.token) {
             GitZip.setAccessToken(user_settings.token);
@@ -122,7 +122,7 @@ function startDownload(active_name, active_slug, active_path, active_license) {
             suggestMaps(active_slug);
         }
     } else {
-        msg = "No download path identified for " + active_slug + "."
+        msg = "No download path identified for " + active_slug + ".";
         onError(msg);
         progress = 0;
         getApiLimit();

@@ -2,13 +2,21 @@
     <div class="authors">
         by
         {{#if authors}}
-        {{#authors}}
-        <li class="game-tag author-tag">{{#if username}}<a href="{{#inArray @root.page-category 'contest'}}/maps/{{@root.settings.maps.group}}{{/inArray}}?s={{uuid}}">{{username}}<span class="tag_hidden">{{formatUUID uuid}}</span></a>{{else}}Ghost{{/if}}</li>
-        {{/authors}}
+        {{#each authors}}
+        {{#lt @index 3}}
+        <li class="game-tag">{{#if username}}<a class="click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}" {{#inArray @root.page-category 'contest'}}href="/maps/{{@root.settings.maps.group}}?s={{formatUUID uuid 'strip'}}"{{/inArray}}>{{username}}</a>{{else}}Ghost{{/if}}</li>{{#unless @last}},{{/unless}}
+        {{/lt}}
+        {{/each}}
+        {{#gt (length authors) 3}}
+        and {{subtract (length authors) 3}} more
+        {{/gt}}
         {{else}}
         Ghost
         {{/if}}
-        <div class="hidden s-author">{{#authors}}{{username}},{{formatUUID uuid}},{{/authors}}</div>
+        <div class="hidden">
+            <div class="users">{{#authors}}{{username}}{{#unless @last}},{{/unless}}{{/authors}}</div>
+            <div class="uuids">{{#authors}}{{formatUUID uuid 'strip'}}{{#unless @last}},{{/unless}}{{/authors}}</div>
+        </div>
     </div>
     {{#inArray @root.page-category 'collections'}}
     {{> map_buttons}}

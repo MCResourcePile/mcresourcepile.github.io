@@ -13,22 +13,21 @@
                     <div class="bow-map">{{name}}</div>
                     <div class="bow-tags">
                         {{#each tags}}
-                        <a class="map-tag" href="?s={{this}}">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</a>{{#unless @last}},{{/unless}}
+                        <span class="map-tag">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>{{#unless @last}},{{/unless}}
                         {{/each}}
                     </div>
                 </div>
             </div>
             <div class="bow-record-content col-md-7">
                 {{#each (arrReverse (sortBy records "distance"))}}
-                <div class="bow-user-record{{#gt @index 2}} extended-record hidden{{/gt}}">
+                <div class="bow-user-record{{#gt @index 2}} extended-record hidden{{/gt}}" data-user-uuid="{{formatUUID uuid 'strip'}}">
                     {{#eq @index 0}}
                     <i class="fa fa-trophy"></i>
                     {{else}}
                     {{add @index 1}}.
                     {{/eq}}
                     <img class="bow-player-avatar" src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=30&default=MHF_Steve&overlay">
-                    <a class="bow-player" href="?s={{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}">{{username}}</a>
-                    <span class="tag_hidden">{{formatUUID uuid}}</span>
+                    <a class="bow-player click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}">{{username}}</a>
                     with a distance of <b>{{distance}}</b> blocks
                     {{#if screenshot}}
                     <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fa fa-check-circle"></i></a>
@@ -41,7 +40,8 @@
             </div>
             <div class="hidden">
                 <div class="tags">{{#if slug}}{{slug}}{{else}}{{snakecase name}}{{/if}},{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
-                <div class="users">{{#each records}}{{username}},{{formatUUID uuid}}{{#unless @last}},{{/unless}}{{/each}}</div>
+                <div class="users">{{#each records}}{{username}}{{#unless @last}},{{/unless}}{{/each}}</div>
+                <div class="uuids">{{#each records}}{{formatUUID uuid 'strip'}}{{#unless @last}},{{/unless}}{{/each}}</div>
                 <div class="distances">{{#each records}}{{distance}}{{#unless @last}},{{/unless}}{{/each}}</div>
             </div>
         </div>
