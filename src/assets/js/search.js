@@ -82,7 +82,7 @@ function filterMaps() {
                 if ($('#slider').length != 0) {
                     distances = item.values().distances;
                     distances = distances.split(',');
-                    if (range[0] <= distances[distances.length-1] && range[1] >= distances[distances.length-1]) {
+                    if (range[0] <= distances[distances.length-1] && range[1] >= distances[0]) {
                         return true;
                     } else {
                         return false;
