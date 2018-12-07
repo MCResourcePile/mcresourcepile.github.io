@@ -8,7 +8,7 @@
 $(document).ready(function(){
     // create new searchable list
     maps = new List('searchable-collection', {
-        valueNames: ['bow-map', 'tags', 'users', 'distances']
+        valueNames: ['bow-map', 'tags', 'users', 'uuids', 'distances']
     });
     
     // update position of side toolbar as user scrolls
@@ -30,9 +30,9 @@ $(document).ready(function(){
             }
         }
     });
-    
+
     searchRequests();
-    
+
     // load more
     $('.bow-records-more').click(function() {
         expanded = $(this).data('expanded');
@@ -46,5 +46,16 @@ $(document).ready(function(){
             $(this).text('Show ' + count + ' more');
             $(this).parent().find('.extended-record').addClass('hidden');
         }
+    });
+    
+    // unmute records whenever the search is run
+    maps.on('searchStart', function() {
+        $('.bow-user-record.bow-record-mute').removeClass('bow-record-mute');
+    });
+
+    // mute other player records on click search
+    $('.bow-player').click(function() {
+        var uuid = $(this).data('query');
+        $('.bow-user-record').not('[data-user-uuid="' + uuid + '"]').addClass('bow-record-mute');
     });
 });
