@@ -83,7 +83,7 @@ function filterMaps() {
                     distances = item.values().distances;
                     distances = distances.split(',');
                     matched = false;
-                    for (int i = 0; i < distances.length; i++) {
+                    for (var i = 0; i < distances.length; i++) {
                         if (range[0] <= distances[i] && range[1] >= distances[i]) {
                             matched = true;
                             return true;
