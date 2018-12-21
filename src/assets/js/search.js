@@ -82,11 +82,14 @@ function filterMaps() {
                 if ($('#slider').length != 0) {
                     distances = item.values().distances;
                     distances = distances.split(',');
-                    if (range[0] <= distances[distances.length-1] && range[1] >= distances[0]) {
-                        return true;
-                    } else {
-                        return false;
+                    matched = false;
+                    for (int i = 0; i < distances.length; i++) {
+                        if (range[0] <= distances[i] && range[1] >= distances[i]) {
+                            matched = true;
+                            return true;
+                        }
                     }
+                    if (matched != true) return false;
                 } else {
                     return true;
                 }
