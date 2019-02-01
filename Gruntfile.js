@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                 helpers: ['handlebars-helpers', 'src/helpers/*.js'],
                 partials: ['src/posts/*.md', 'src/partials/**/*.html'],
                 templateData: 'src/data/**/*.json',
-                globals: ['src/data/global.json']
+                globals: ['src/data/global.json', 'src/data/uuids.json']
             }
         },
         copy: {
