@@ -4,7 +4,7 @@
         {{#if authors}}
         {{#each authors}}
         {{#lt @index 3}}
-        <li class="game-tag">{{#if username}}<a class="click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}" {{#inArray @root.page-category 'contest'}}href="/maps/{{@root.settings.maps.group}}?s={{formatUUID uuid 'strip'}}"{{/inArray}}>{{#if (properties @root.uuids uuid)}}{{properties @root.uuids uuid}}{{else}}{{username}}{{/if}}</a>{{else}}Ghost{{/if}}</li>{{#unless @last}},{{/unless}}
+        <li class="game-tag">{{#or username uuid}}<a class="click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}" {{#inArray @root.page-category 'contest'}}href="/maps/{{@root.settings.maps.group}}?s={{formatUUID uuid 'strip'}}"{{/inArray}}>{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</a>{{else}}Ghost{{/or}}</li>{{#unless @last}},{{/unless}}
         {{/lt}}
         {{/each}}
         {{#gt (length authors) 3}}
@@ -14,7 +14,7 @@
         Ghost
         {{/if}}
         <div class="hidden">
-            <div class="users">{{#authors}}{{#if (properties @root.uuids uuid)}}{{properties @root.uuids uuid}}{{else}}{{username}}{{/if}}{{#unless @last}},{{/unless}}{{/authors}}</div>
+            <div class="users">{{#authors}}{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}{{#unless @last}},{{/unless}}{{/authors}}</div>
             <div class="uuids">{{#authors}}{{formatUUID uuid 'strip'}}{{#unless @last}},{{/unless}}{{/authors}}</div>
         </div>
     </div>

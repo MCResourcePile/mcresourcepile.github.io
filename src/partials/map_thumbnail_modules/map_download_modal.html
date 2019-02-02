@@ -7,7 +7,7 @@
                     <span class="map-author-name">created by</span>
                     {{#if authors}}
                     {{#authors}}
-                    <li class="game-tag">{{#if username}}<img class="map-author-avatar" data-src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&default=MHF_Steve&overlay"> <a class="map-author-name" href="?s={{uuid}}">{{#if (properties @root.uuids uuid)}}{{properties @root.uuids uuid}}{{else}}{{username}}{{/if}}</a>{{else}}<img class="map-author-avatar" data-src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/if}}</li>
+                    <li class="game-tag">{{#or username uuid}}<img class="map-author-avatar" data-src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&default=MHF_Steve&overlay"> <a class="map-author-name" href="?s={{uuid}}">{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</a>{{else}}<img class="map-author-avatar" data-src="https://crafatar.com/avatars/MHF_Question?size=16"> <span class="map-author-name">Ghost</span>{{/or}}</li>
                     {{/authors}}
                     {{else}}
                     <img class="map-author-avatar" data-src="https://crafatar.com/avatars/MHF_Question?size=16&overlay"> <span class="map-author-name">Ghost</span>

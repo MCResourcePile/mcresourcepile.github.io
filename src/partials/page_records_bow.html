@@ -27,7 +27,7 @@
                     {{add @index 1}}.
                     {{/eq}}
                     <img class="bow-player-avatar" src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=30&default=MHF_Steve&overlay">
-                    <a class="bow-player click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}">{{#if (properties @root.uuids uuid)}}{{properties @root.uuids uuid}}{{else}}{{username}}{{/if}}</a>
+                    <a class="bow-player click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}">{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</a>
                     with a distance of <b>{{distance}}{{#if void}}<span title="Out-of-world kill" data-toggle="tooltip" data-placement="top">*</span>{{/if}}</b> blocks
                     {{#if screenshot}}
                     <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fa fa-check-circle"></i></a>
