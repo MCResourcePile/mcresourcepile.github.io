@@ -1,7 +1,7 @@
 <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}{{#inArray @root.page-category 'contest'}}{{#is position '1'}} map-glow-contest-first{{/is}}{{#is position '2'}} map-glow-contest-second{{/is}}{{#is position '3'}} map-glow-contest-third{{/is}}{{/inArray}}">
     <div class="map-thumbnail-selector">
         <div class="map-thumbnail-header">
-            <img class="image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{snakecase (lowercase @root.title)}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/{{#if @root.settings.maps.repo}}images/maps/{{slug}}.png{{else}}master/maps/{{slug}}/map.png{{/if}}{{/inArray}}">
+            <img class="image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{snakecase (lowercase @root.title)}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/{{#unless @root.settings.maps.downloads}}images/maps/{{slug}}.png{{else}}master/maps/{{slug}}/map.png{{/unless}}{{/inArray}}">
             <div class="banner" data-toggle="tooltip" data-placement="top" title="{{name}}">
                 <div class="title"><a{{#inArray @root.page-category 'maps'}} href="https://mcresourcepile.github.io/maps/{{@root.settings.maps.group}}?s={{slug}}"{{/inArray}} class="s-title">{{#if name}}{{name}}{{else}}{{slug}}{{/if}}</a></div>
                 <div class="sub-title">
@@ -71,7 +71,7 @@
                 {{#inArray @root.data.rotations.mammoth slug}}
                 <a href="?s=popular" class="label label-default">Mammoth</a>
                 {{/inArray}}
-                {{#unless @root.settings.maps.repo}}
+                {{#if @root.settings.maps.downloads}}
                 {{#if sourced}}
                 <span class="label label-default">Unlicensed</span>
                 {{else}}
@@ -81,7 +81,7 @@
                 <a href="?s=by-nc-sa" class="label label-warning" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                 {{/if}}
                 {{/if}}
-                {{/unless}}
+                {{/if}}
                 {{/inArray}}
                 {{#inArray @root.page-category 'contest'}}
                 <span class="label {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}label-default{{/is}}{{/is}}{{/is}}">{{ordinalize position}} place</span>
