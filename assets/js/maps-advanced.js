@@ -79,9 +79,9 @@ $(function(){
 
     // fetch json version of loaded maps
     // used for map suggestions when enabled
-    source = $('#maps-collection').data('source');
+    source = $('#maps-data').data('source');
     if (user_settings.map_suggestions != 'false') {
-        $.getJSON("https://cdn.rawgit.com/MCResourcePile/mcresourcepile.github.io/source/src/data/maps/" + source + ".json", function(r) {
+        $.getJSON("https://cdn.jsdelivr.net/gh/MCResourcePile/mcresourcepile.github.io@source/src/data/maps/" + source + ".json", function(r) {
             maps_data = r.data.maps;
         });
     }
@@ -212,56 +212,62 @@ function suggestMaps(slug) {
                 }
             }
         }
-        // sort the list by weight
-        similar.sort(function(a, b) {
-            return b.weight - a.weight;
-        });
-        similar.sort();
-        $('.map-suggestions').text('');
-        // display suggested maps in download success menu
-        for (var i = 1; i < 4; i++) {
-            var repo = $('.game-mode-navigation').data('source');
-            if (repo == "overcast") {
-                var snip = similar[i].slug.substring(0, 1);
-                if (snip < "g") {
-                    repo = "overcast-maps-a-to-f"
-                } else if (snip < "o") {
-                    repo = "overcast-maps-g-to-n"
+        if (similar.length >= 4) {
+            console.log(similar)
+            // sort the list by weight
+            similar.sort(function(a, b) {
+                return b.weight - a.weight;
+            });
+            similar.sort();
+            $('.map-suggestions-wrapper').show();
+            $('.map-suggestions').text('');
+            // display suggested maps in download success menu
+            for (var i = 1; i < 4; i++) {
+                var repo = $('#maps-data').data('source');
+                if (repo == "overcast") {
+                    var snip = similar[i].slug.substring(0, 1);
+                    if (snip < "g") {
+                        repo = "overcast-maps-a-to-f"
+                    } else if (snip < "o") {
+                        repo = "overcast-maps-g-to-n"
+                    } else {
+                        repo = "overcast-maps-o-to-z"
+                    }
                 } else {
-                    repo = "overcast-maps-o-to-z"
+                    repo = repo + "-maps";
                 }
-            } else {
-                repo = repo + "-maps";
-            }
-            var authors = "by ";
-            for (var j = 0; j < similar[i].authors.length; j++) {
-                authors += similar[i].authors[j].username;
-                if (j == 1) {
-                    authors += ", and more";
-                    break;
+                var authors = "by ";
+                for (var j = 0; j < similar[i].authors.length; j++) {
+                    authors += similar[i].authors[j].username;
+                    if (j == 1) {
+                        authors += ", and more";
+                        break;
+                    }
+                    if (similar[i].authors.length > 1) {
+                        authors += ", ";
+                    }
                 }
-                if (similar[i].authors.length > 1) {
-                    authors += ", ";
+                var tags = "";
+                for (var j = 0; j < similar[i].tags.length; j++) {
+                    tags += similar[i].tags[j];
+                    if (j != similar[i].tags.length - 1) tags += ", ";
                 }
-            }
-            var tags = "";
-            for (var j = 0; j < similar[i].tags.length; j++) {
-                tags += similar[i].tags[j];
-                if (j != similar[i].tags.length - 1) tags += ", ";
-            }
-            $('.map-suggestions').append(
-                "<div class='col-sm-4 thumbnail map-thumbnail small collapse-immune'>\
-                    <div class='map-thumbnail-header'>\
-                        <img class='image' src='https://raw.githubusercontent.com/MCResourcePile/" + repo + "/master/maps/" + similar[i].slug + "/map.png'>\
-                        <div class='banner'>\
-                            <div class='title'><a href='?dl=" + similar[i].slug + "'>" + similar[i].name + "</a></div>\
+                $('.map-suggestions').append(
+                    "<div class='col-sm-4 thumbnail map-thumbnail small collapse-immune'>\
+                        <div class='map-thumbnail-header'>\
+                            <img class='image' src='https://raw.githubusercontent.com/MCResourcePile/" + repo + "/master/maps/" + similar[i].slug + "/map.png'>\
+                            <div class='banner'>\
+                                <div class='title'><a href='?dl=" + similar[i].slug + "'>" + similar[i].name + "</a></div>\
+                            </div>\
                         </div>\
-                    </div>\
-                    <div class='map-thumbnail-body'>\
-                        <div class='authors'>" + authors + "</div>\
-                    </div>\
-                </div>"
-            );
+                        <div class='map-thumbnail-body'>\
+                            <div class='authors'>" + authors + "</div>\
+                        </div>\
+                    </div>"
+                );
+            }
+        } else {
+            $('.map-suggestions-wrapper').hide();
         }
     } else {
         msg = "Could not load suggested maps as the given map slug could not be found.\nProvided slug: " + slug
