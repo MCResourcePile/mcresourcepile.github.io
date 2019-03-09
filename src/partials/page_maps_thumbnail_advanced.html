@@ -92,9 +92,9 @@
             </div>
         </div>
         {{#inArray @root.page-category 'maps'}}
-        {{#unless @root.settings.maps.repo}}
+        {{#if @root.settings.maps.downloads}}
         {{> map_thumbnail_body}}
-        {{/unless}}
+        {{/if}}
         {{/inArray}}
     </div>
 </div>
