@@ -3,6 +3,7 @@
     <div class="container splash-header-body">
         <div class="splash-header">ReinTeder says:</div>
         <div class="splash-subheader"></div>
+        <button class="btn btn-sm btn-success" style="margin-top:20px;" onclick="generateQuote(false);">New Quote</button>
     </div>
 </div>
 <script type="text/javascript">
@@ -223,6 +224,18 @@
           "A gossip betrays a confidence, but a trustworthy person keeps a secret.",
           "You will never be younger then you are today."
     ]
-    $('.splash-subheader').text(splash_quotes[Math.floor(Math.random()*splash_quotes.length)]);
+    function generateQuote(force) {
+        var i = Math.floor(Math.random()*splash_quotes.length);
+        if (getUrlVars()['quote'] && force) i = getUrlVars()['quote'];
+        $('.splash-subheader').text(splash_quotes[i]);
+        window.history.pushState( {} , document.title, "?quote=" + i);
+        $("meta[name='description']").attr("content", splash_quotes[i]);
+        $("meta[name='og\\:description']").attr("content", splash_quotes[i]);
+        $("meta[name='twitter\\:description']").attr("content", splash_quotes[i]);
+    }
+    $(document).ready(function(){
+        generateQuote(true);
+    });
+}
 </script>
 {{> navigation_footer}}
