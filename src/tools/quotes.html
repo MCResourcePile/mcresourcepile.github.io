@@ -228,7 +228,7 @@
         var i = Math.floor(Math.random()*splash_quotes.length);
         if (getUrlVars()['quote'] && force) i = getUrlVars()['quote'];
         $('.splash-subheader').text(splash_quotes[i]);
-        window.history.pushState( {} , document.title, "?quote=" + i);
+        window.history.replaceState( {} , document.title, "?quote=" + i);
         $("meta[name='description']").attr("content", splash_quotes[i]);
         $("meta[name='og\\:description']").attr("content", splash_quotes[i]);
         $("meta[name='twitter\\:description']").attr("content", splash_quotes[i]);

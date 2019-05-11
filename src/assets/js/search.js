@@ -129,7 +129,7 @@ function updateUrl() {
             string += "f=" + filterArr;
         }
     }
-    window.history.pushState( {} , document.title, string);
+    window.history.replaceState( {} , document.title, string);
 }
 
 function parseUrl() {
