@@ -2,56 +2,68 @@
     "title": "Just Deserts",
     "subtitle": "Records for Just Deserts, a tournament hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
-    "announcement": "https://stratus.network/forums/topics/59b37100a2e3a90001000003",
-    "challonge": [
-        {"bracket": "http://stratus.challonge.com/jd/module"}
-    ],
+    "results": {
+        "first_place": "Pochinki",
+        "second_place": "Praetorians",
+        "third_place": "Red October",
+        "challonge": [
+            {"url": "http://stratus.challonge.com/jd", "description": "Bracket"}
+        ]
+    },
     "method": "Double Elimination",
-    "gamemodes": "Capture the Flag",
-    "selection": "16 teams",
-    "players": "7v7",
+    "gamemodes": ["kotf"],
+    "teams": "16 teams",
+    "teamsize": "7v7",
     "stages": [
-        {"stage": "Tournament", "date": "October 14th"}
+        {"stage": "Tournament", "date": "October 14, 2017"}
     ],
-    "pool": [
-        {"name": "Desert Sanctuary", "slug": "desert_sanctuary", "gamemode": "King of the Flag"}
+    "maps": [
+        {
+            "name": "Desert Sanctuary",
+            "slug": "desert_sanctuary",
+            "tags": ["kotf"]
+        }
     ],
     "panels": [
         {
             "label": "The winner of the tournament: Pochinki",
             "size": "full",
             "rows": [
-                {"content": "<p>Congratulations to team Pochinki for winning the first Stratus Network mini event!</p><br><ul><li>Subir</li><li>weaboo511</li><li>CincoDeMayo</li><li>Rau1</li><li>ButIDK</li><li>ShreyaBista</li><li>WikiStark</li><li>LittleSwagger</li><li>xHeimskr</li><li>mcboyfriend</li></ul>"}
+                {"content": "<p>Roster of the team:</p><br><ul><li>Subir</li><li>weaboo511</li><li>CincoDeMayo</li><li>Rau1</li><li>ButIDK</li><li>ShreyaBista</li><li>WikiStark</li><li>LittleSwagger</li><li>xHeimskr</li><li>mcboyfriend</li></ul>"}
             ]
         }
     ],
-    "first_place": "Pochinki",
-    "second_place": "Praetorians",
-    "third_place": "Red October",
     "groups": [
         {
-            "group": "Teams",
             "teams": [
-                {"team": "Branca"},
-                {"team": "Artemis"},
-                {"team": "Furyus"},
-                {"team": "Lyon"},
-                {"team": "Red October"},
-                {"team": "Cihuri"},
-                {"team": "HeartClaw"},
-                {"team": "Pochinki"}
+                {"name": "Branca"},
+                {"name": "Artemis"},
+                {"name": "Furyus"},
+                {"name": "Lyon"}
             ]
-        }, {
-            "group": "Teams",
+        },
+        {
             "teams": [
-                {"team": "PureBlox"},
-                {"team": "Celestial"},
-                {"team": "Drops"},
-                {"team": "Team Rocket"},
-                {"team": "Night Vision"},
-                {"team": "SquadCat"},
-                {"team": "Praetorians"},
-                {"team": "Discordia"}
+                {"name": "Red October"},
+                {"name": "Cihuri"},
+                {"name": "HeartClaw"},
+                {"name": "Pochinki"}
+            ]
+        }, 
+        {
+            "teams": [
+                {"name": "PureBlox"},
+                {"name": "Celestial"},
+                {"name": "Drops"},
+                {"name": "Team Rocket"}
+            ]
+        },
+        {
+            "teams": [
+                {"name": "Night Vision"},
+                {"name": "SquadCat"},
+                {"name": "Praetorians"},
+                {"name": "Discordia"}
             ]
         }
     ]

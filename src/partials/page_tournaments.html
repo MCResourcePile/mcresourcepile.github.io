@@ -26,7 +26,13 @@
             <div class="league-team-position">3<sup>rd</sup> place</div>
         </div>
     </div>
+    {{#if challonge}}
     <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
+    {{else}}
+    {{#if panels}}
+    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
+    {{/if}}
+    {{/if}}
 </div>
 <div class="collapse" id="resultsCollapse">
     <div class="league-results">

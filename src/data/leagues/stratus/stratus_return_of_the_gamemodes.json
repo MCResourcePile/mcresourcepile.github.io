@@ -2,85 +2,162 @@
     "title": "Stratus: Return of the Gamemodes",
     "subtitle": "Records for Stratus: Return of the Gamemodes, a tournament hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
-    "announcement": "http://stratus.network/rotg-information",
-    "challonge": [
-        {"bracket": "https://stratus.challonge.com/RotG/module"}
-    ],
-    "method": "Round-Robin during group stages, then Single Elimination",
-    "gamemodes": "Destroy, Capture, and Conquest",
-    "selection": "17 teams",
-    "players": "8v8",
+    "results": {
+        "first_place": "DARN",
+        "second_place": "Night Vision",
+        "third_place": "Obey & OKTG",
+        "challonge": [
+            {"url": "https://stratus.challonge.com/RotG", "description": "Bracket"}
+        ]
+    },
+    "method": "Round-Robin group stages, then Single Elimination Invitational",
+    "gamemodes": ["dtc", "dtm", "ctw", "tdm", "koth", "cp", "ctf"],
+    "teams": "17 teams",
+    "teamsize": "8v8",
     "stages": [
-        {"stage": "Group Stage",           "date": "June 24th to June 25th"},
-        {"stage": "Quarterfinals",         "date": "July 1st"},
-        {"stage": "Semifinals and Finals", "date": "July 2nd"}
+        {"stage": "Group Stage", "date": "June 24-25, 2017"},
+        {"stage": "QuarterFinals", "date": "July 1, 2017"},
+        {"stage": "SemiFinals and Finals", "date": "July 2, 2017"}
     ],
-    "pool": [
-        {"name": "Highlands",         "slug": "highlands",         "gamemode": "Destroy the Core"},
-        {"name": "Spaceship Battles", "slug": "spaceship_battles", "gamemode": "Destroy the Core, Destroy the Monument"},
-        {"name": "Retaliation II",    "slug": "retaliation_ii",    "gamemode": "Destroy the Core, Destroy the Monument"},
-        {"name": "Organic",           "slug": "organic",           "gamemode": "Destroy the Core"},
-        {"name": "Murta",             "slug": "murta",             "gamemode": "Destroy the Monument"},
-        {"name": "Gobi",              "slug": "gobi",              "gamemode": "Capture the Wool"},
-        {"name": "NextGen",           "slug": "nextgen",           "gamemode": "Capture the Wool"},
-        {"name": "Wallop Too",        "slug": "wallop_too",        "gamemode": "Capture the Wool"},
-        {"name": "Bamboo Valley V",   "slug": "bamboo_valley_v",   "gamemode": "Capture the Wool"},
-        {"name": "Clearcut",          "slug": "clearcut",          "gamemode": "Capture the Wool"},
-        {"name": "Limbo II",          "slug": "limbo_ii",          "gamemode": "King of the Hill"},
-        {"name": "Desert Sanctuary",  "slug": "desert_sanctuary",  "gamemode": "King of the Flag"},
-        {"name": "Smoke",             "slug": "smoke",             "gamemode": "Capture Points"},
-        {"name": "Ascendance 2",      "slug": "ascendance_2",      "gamemode": "Capture Points"},
-        {"name": "Storm",             "slug": "storm",             "gamemode": "King of the Hill"},
-        {"name": "Factory",           "slug": "factory",           "gamemode": "King of the Hill"},
-        {"name": "Siege",             "slug": "siege",             "gamemode": "Capture Points"},
-        {"name": "Bliss",             "slug": "bliss",             "gamemode": "Team Deathmatch"},
-        {"name": "Artext TE",         "slug": "artext_te",         "gamemode": "Capture the Flag, King of the Hill"}
+    "maps": [
+        {
+            "name": "Highlands",
+            "slug": "highlands",
+            "tags": ["dtcm"]
+        },
+        {
+            "name": "Spaceship Battles",
+            "slug": "spaceship_battles",
+            "tags": ["dtcm"]
+        },
+        {
+            "name": "Retaliation II",
+            "slug": "retaliation_ii",
+            "tags": ["dtcm"]
+        },
+        {
+            "name": "Organic",
+            "slug": "organic",
+            "tags": ["dtcm"]
+        },
+        {
+            "name": "Murta",
+            "slug": "murta",
+            "tags": ["dtm"]
+        },
+        {
+            "name": "Gobi",
+            "slug": "gobi",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "NextGen",
+            "slug": "nextgen",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Wallop Too",
+            "slug": "wallop_too",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Bamboo Valley V",
+            "slug": "bamboo_valley_v",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Clearcut",
+            "slug": "clearcut",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Limbo II",
+            "slug": "limbo_ii",
+            "tags": ["koth"]
+        },
+        {
+            "name": "Desert Sanctuary",
+            "slug": "desert_sanctuary",
+            "tags": ["kotf"]
+        },
+        {
+            "name": "Smoke",
+            "slug": "smoke",
+            "tags": ["cp"]
+        },
+        {
+            "name": "Ascendance 2",
+            "slug": "ascendance_2",
+            "tags": ["cp"]
+        },
+        {
+            "name": "Storm",
+            "slug": "storm",
+            "tags": ["koth"]
+        },
+        {
+            "name": "Factory",
+            "slug": "factory",
+            "tags": ["koth"]
+        },
+        {
+            "name": "Siege",
+            "slug": "siege",
+            "tags": ["cp"]
+        },
+        {
+            "name": "Bliss",
+            "slug": "bliss",
+            "tags": ["tdm"]
+        },
+        {
+            "name": "Artext TE",
+            "slug": "artext_te",
+            "tags": ["ctf", "koth"]
+        }
     ],
     "panels": [
         {
             "label": "The winner of the tournament: DARN",
             "size": "full",
             "rows": [
-                {"content": "<p>Congratulations to team DARN for winning the first Stratus Network hosted tournament!</p><br><ul><li>Igmatias</li><li>Zegita</li><li>Brandoff</li><li>Spooks_9900</li><li>Pedrah</li><li>Hivlik</li><li>anbu_</li><li>Tomqss</li><li>Jyesuhn</li><li>INSIPID</li><li>Rau1</li><li>xNemoll</li><li>JaidenSmih</li><li>noTwp</li></ul>"}
+                {"content": "<p>Roster of the team:</p><br><ul><li>Igmatias</li><li>Zegita</li><li>Brandoff</li><li>Spooks_9900</li><li>Pedrah</li><li>Hivlik</li><li>anbu_</li><li>Tomqss</li><li>Jyesuhn</li><li>INSIPID</li><li>Rau1</li><li>xNemoll</li><li>JaidenSmih</li><li>noTwp</li></ul>"}
             ]
         }
     ],
-    "first_place": "DARN",
-    "second_place": "Night Vision",
-    "third_place": "Obey & OKTG",
     "groups": [
         {
-            "group": "Group A",
+            "name": "Group A",
             "teams": [
-                {"team": "Lucid"},
-                {"team": "Obey"},
-                {"team": "HeartClaw"},
-                {"team": "Amnesia"}
+                {"name": "Lucid"},
+                {"name": "Obey"},
+                {"name": "HeartClaw"},
+                {"name": "Amnesia"}
             ]
         }, {
-            "group": "Group B",
+            "name": "Group B",
             "teams": [
-                {"team": "Team Rocket"},
-                {"team": "Night Vision"},
-                {"team": "United Doutei"},
-                {"team": "Fussion"}
+                {"name": "Team Rocket"},
+                {"name": "Night Vision"},
+                {"name": "United Doutei"},
+                {"name": "Fussion"}
             ]
         }, {
-            "group": "Group C",
+            "name": "Group C",
             "teams": [
-                {"team": "OKTG"},
-                {"team": "Macht"},
-                {"team": "After Light"},
-                {"team": "SpanishGibraltar"},
-                {"team": "OldParr"}
+                {"name": "OKTG"},
+                {"name": "Macht"},
+                {"name": "After Light"},
+                {"name": "SpanishGibraltar"},
+                {"name": "OldParr"}
             ]
         }, {
-            "group": "Group D",
+            "name": "Group D",
             "teams": [
-                {"team": "DARN"},
-                {"team": "Drops"},
-                {"team": "PureBlox"},
-                {"team": "FatalFury"}
+                {"name": "DARN"},
+                {"name": "Drops"},
+                {"name": "PureBlox"},
+                {"name": "FatalFury"}
             ]
         }
     ]
