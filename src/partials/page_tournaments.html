@@ -1,7 +1,7 @@
 {{> navigation_header}}
 <div class="center">
-    {{#if heading}}
-    <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{snakecase (lowercase title)}}.jpg');background-position:center">{{name}}</div>
+    {{#if no_custom_banner}}
+    <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{snakecase (lowercase title)}}.jpg');background-position:center">{{title}}</div>
     {{else}}
     <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{snakecase (lowercase title)}}.png">
     {{/if}}
@@ -142,7 +142,7 @@
     {{#if panels}}
     {{#panels}}
     <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
-        <div class="well well-sm well-custom-blue">
+        <div class="well well-sm well-custom-purple">
             <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
             <table class="league-info-table">
                 <tbody>
