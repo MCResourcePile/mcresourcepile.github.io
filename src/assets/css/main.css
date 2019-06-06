@@ -1145,18 +1145,22 @@ li.game-tag {
 }
 
 .league-info-section.large {
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 18px;
 }
 
 .league-info-section {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     padding-bottom: 2px;
     padding-left: 3px;
     padding-right: 12px;
     margin-bottom: 12px;
     border-bottom: 1px solid #cbcaca;
+}
+.league-info-section > small {
+    font-size: 70%;
+    color: #9b9b9b;
 }
 
 .league-info-table > tbody > tr > td {
@@ -1183,15 +1187,16 @@ li.game-tag {
 
 .league-position {
     font-size: 28px;
-    padding-top: 90px;
-    margin-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 10px;
 }
 
 .league-position-first {
     padding-top: 30px;
+    padding-bottom: 5px;
 }
 
-.league-position-first > .fa {
+.league-position-first > .fas {
     font-size: 40px;
     font-weight: 600;
 }
@@ -1226,11 +1231,47 @@ li.game-tag {
     background-color: #272A33;
 }
 
-.challonge-bracket span{
+.challonge-bracket > span {
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin-left: 5px;
+}
+
+.challonge-bracket > a {
+    color: #ababab !important;
+    display: block;
+    float: right;
+    font-size: 15px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.tournament-expand-results.collapsed:before {
+    content: "Show Full Results";
+    font-size: 18px;
+    padding-bottom: 10px;
+    display: block;
+    text-align: center;
+    color: #9b9b9b !important;
+    cursor: pointer;
+}
+
+.tournament-expand-results:before {
+    content: "Hide Full Results";
+    font-size: 18px;
+    padding-bottom: 10px;
+    display: block;
+    text-align: center;
+    color: #9b9b9b !important;
+    cursor: pointer;
+}
+
+.league-results {
+    border: 1px solid #ababab;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
 }
 
 .alert-global {
