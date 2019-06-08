@@ -188,12 +188,12 @@
         <div class="well well-sm well-custom-red tournament-teams-table">
             <div class="league-info-section">{{#if name}}{{name}}{{/if}} <small>{{length teams}} teams</small></div>
             <table class="table table-striped">
+                {{#if seeded}}
                 <thead>
-                    {{#if seeded}}
                     <th>Seed</th>
-                    {{/if}}
                     <th>Team Name</th>
                 </thead>
+                {{/if}}
                 <tbody>
                     {{#teams}}
                     <tr>
