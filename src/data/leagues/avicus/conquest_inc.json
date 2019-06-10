@@ -1,44 +1,82 @@
 {
     "title": "Conquest Inc.",
-    "subtitle": "Records for Conquest Inc., a tournament hosted by the Avicus Network",
+    "subtitle": "Records for Conquest Inc., a tournament hosted by Avicus Network",
     "page-category": ["tournaments", "league", "avicus"],
-    "announcement": "https://avicus.net/tournaments/conquest-inc",
-    "challonge": [
-        {"bracket": "https://avicus.challonge.com/conquestinc/module", "description": "Qualifiers"},
-        {"bracket": "https://avicus.challonge.com/ConquestInv/module", "description": "Invitationals"}
-    ],
-    "method": "Single Elimination, Bo3",
-    "gamemodes": "Capture the Wool",
-    "selection": "16 teams, first-come / first-serve basis",
-    "players": "12-18",
+    "results": {
+        "first_place": "PureDogs",
+        "second_place": "Team Allah",
+        "third_place": "Horizon",
+        "challonge": [
+            {"url": "https://avicus.challonge.com/conquestinc", "description": "Qualifiers"},
+            {"url": "https://avicus.challonge.com/ConquestInv", "description": "Invitationals"}
+        ]
+    },
+    "method": "Swiss Qualifiers, then Single Elimination Invitational",
+    "gamemodes": ["ctw", "cp", "koth"],
+    "teams": "16 teams",
+    "teamsize": "8v8",
     "stages": [
-        {"stage": "Rounds 1 & 2",           "date": "November 7th, 2015"},
-        {"stage": "Round 3 & Bronze Match", "date": "November 8th, 2015"}
+        {"stage": "Group Stages", "date": "April 29-30, 2017"},
+        {"stage": "Invitational", "date": "May 6-7, 2017"}
     ],
-    "pool": [
-        {"name": "Rendezvous New CTW", "slug": "rendezvous-new-ctw", "gamemode": "Capture the Wool"},
-        {"name": "Wahiz",              "slug": "wahiz",              "gamemode": "Capture the Wool"},
-        {"name": "Senex CTW",          "slug": "senex-ctw",          "gamemode": "Capture the Wool"},
-        {"name": "Sand Ocean",         "slug": "sand-ocean",         "gamemode": "Capture the Wool"},
-        {"name": "Sunbeam CTW",        "slug": "sunbeam-ctw",        "gamemode": "Capture the Wool"},
-        {"name": "Hyrodrin",           "slug": "hyrodrin",           "gamemode": "Capture the Wool"},
-        {"name": "Winters Day",        "slug": "winters-day",        "gamemode": "Capture the Wool"}
+    "maps": [
+        {
+            "name": "Powerhouse",
+            "slug": "powerhouse",
+            "tags": ["cp"]
+        },
+        {
+            "name": "Foundry",
+            "slug": "foundry",
+            "tags": ["cp"]
+        },
+        {
+            "name": "Draxel",
+            "slug": "draxel",
+            "tags": ["koth"]
+        },
+        {
+            "name": "Heat",
+            "slug": "heat",
+            "tags": ["koth"]
+        },
+        {
+            "name": "Alpine",
+            "slug": "alpine",
+            "tags": ["ctf"]
+        }
     ],
-    "first_place": "Powerpuff Boys",
-    "second_place": "Bad Company",
-    "third_place": "Apollo",
     "groups": [
         {
-            "group": "Participants",
             "teams": [
-                {"team": "Powerpuff Boys"},
-                {"team": "Bad Company"},
-                {"team": "Apollo"},
-                {"team": "Fortissimus"},
-                {"team": "Cacalmarin"},
-                {"team": "Cronus"},
-                {"team": "Eternal Cross"},
-                {"team": "Kaldorei"}
+                {"name": "Apollo"},
+                {"name": "Criptos"},
+                {"name": "Fade"},
+                {"name": "Fussion"}
+            ]
+        },
+        {
+            "teams": [
+                {"name": "HeartClaw"},
+                {"name": "HOME"},
+                {"name": "Horizon"},
+                {"name": "NewDawn"}
+            ]
+        },
+        {
+            "teams": [
+                {"name": "LosPutosAmos"},
+                {"name": "PureDogs"},
+                {"name": "Sagrevyum"},
+                {"name": "SquadCatt"}
+            ]
+        },
+        {
+            "teams": [
+                {"name": "Team Allah"},
+                {"name": "Team Liquid"},
+                {"name": "Team Rocket"},
+                {"name": "Xenarch"}
             ]
         }
     ]

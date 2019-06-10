@@ -1,65 +1,101 @@
 {
     "title": "The Omega Championship",
-    "subtitle": "Records for The Omega Champtionship, a tournament hosted by the Avicus Network",
+    "subtitle": "Records for The Omega Champtionship, a tournament hosted by Avicus Network",
     "page-category": ["tournaments", "league", "avicus"],
-    "announcement": "https://avicus.net/tournaments/the-omega-championship",
-    "challonge": [
-        {"bracket": "https://avicus.challonge.com/toc/module"}
-    ],
-    "method": "Points and Single Elimination",
-    "gamemodes": "Destroy the Monument",
-    "selection": "16 teams, first-come / first-serve basis",
-    "players": "12-20",
+    "results": {
+        "first_place": "BerzerkV2",
+        "second_place": "Apollo",
+        "third_place": "Insidia",
+        "challonge": [
+            {"url": "https://avicus.challonge.com/toc", "description": "Group Stages & Invitational"}
+        ]
+    },
+    "method": "Group Stages, the Single Elimination Invitational",
+    "gamemodes": ["dtm"],
+    "teams": "16 teams",
+    "teamsize": "10v10",
     "stages": [
-        {"stage": "First games",    "date": "June 6th, 2015"},
-        {"stage": "Second games",   "date": "June 13th, 2015"},
-        {"stage": "Third games",    "date": "June 20th, 2015"},
-        {"stage": "Scoring stages", "date": "June 22nd, 2015"}
+        {"stage": "First games",    "date": "June 6, 2015"},
+        {"stage": "Second games",   "date": "June 13, 2015"},
+        {"stage": "Third games",    "date": "June 20, 2015"},
+        {"stage": "Scoring stages", "date": "June 22, 2015"}
     ],
-    "pool": [
-        {"name": "Sunbeam Temple",      "slug": "sunbeam-temple",      "gamemode": "Destroy the Monument", "stage": "Round 1"},
-        {"name": "Rendezvous III TM",   "slug": "rendexvous-iii-tm",   "gamemode": "Destroy the Monument", "stage": "Round 2"},
-        {"name": "Castle Adventure TM", "slug": "castle-adventure-tm", "gamemode": "Destroy the Monument", "stage": "Round 3"},
-        {"name": "Boundaries TM",       "slug": "boundaries-tm",       "gamemode": "Destroy the Monument", "stage": "Quarter Finals"},
-        {"name": "Rendezvous III TM",   "slug": "rendezvous-iii-tm",   "gamemode": "Destroy the Monument", "stage": "Semi Finals"},
-        {"name": "EnokiTM",             "slug": "enokitm",             "gamemode": "Destroy the Monument", "stage": "Finals"},
-        {"name": "Dreamtime",           "slug": "dreamtime",           "gamemode": "Destroy the Monument", "stage": "Tiebreaker"}
+    "maps": [
+        {
+            "name": "Dreamtime",
+            "slug": "dreamtime",
+            "tags": ["dtm"],
+            "stage": "Tiebreaker"
+        },
+        {
+            "name": "Sunbeam Temple",
+            "slug": "sunbeam-temple",
+            "tags": ["dtm"],
+            "stage": "Round 1"
+        },
+        {
+            "name": "Rendezvous III TM",
+            "slug": "rendexvous-iii-tm",
+            "tags": ["dtm"],
+            "stage": "Round 2"
+        },
+        {
+            "name": "Castle Adventure TM",
+            "slug": "castle-adventure-tm",
+            "tags": ["dtm"],
+            "stage": "Round 3"
+        },
+        {
+            "name": "Boundaries TM",
+            "slug": "boundaries-tm",
+            "tags": ["dtm"],
+            "stage": "QuarterFinals"
+        },
+        {
+            "name": "Rendezvous III TM",
+            "slug": "rendezvous-iii-tm",
+            "tags": ["dtm"],
+            "stage": "SemiFinals"
+        },
+        {
+            "name": "Enoki TM",
+            "slug": "enokitm",
+            "tags": ["dtm"],
+            "stage": "Finals"
+        }
     ],
-    "first_place": "BerzerkV2",
-    "second_place": "Apollo",
-    "third_place": "Insidia",
     "groups": [
         {
-            "group": "Group A",
+            "name": "Group A",
             "teams": [
-                {"team": "Insidia"},
-                {"team": "Impact"},
-                {"team": "Emancipators"},
-                {"team": "Peruan Combo"}
+                {"name": "Insidia"},
+                {"name": "Impact"},
+                {"name": "Emancipators"},
+                {"name": "Peruan Combo"}
             ]
         }, {
-            "group": "Group B",
+            "name": "Group B",
             "teams": [
-                {"team": "Cacalmarin"},
-                {"team": "Apollo"},
-                {"team": "Fortissimus"},
-                {"team": "Coffee"}
+                {"name": "Cacalmarin"},
+                {"name": "Apollo"},
+                {"name": "Fortissimus"},
+                {"name": "Coffee"}
             ]
         }, {
-            "group": "Group C",
+            "name": "Group C",
             "teams": [
-                {"team": "Bad Company"},
-                {"team": "Citsitua"},
-                {"team": "PureBlox"},
-                {"team": "FaZe"}
+                {"name": "Bad Company"},
+                {"name": "Citsitua"},
+                {"name": "PureBlox"},
+                {"name": "FaZe"}
             ]
         }, {
-            "group": "Group D",
+            "name": "Group D",
             "teams": [
-                {"team": "TheCrazyBeaners"},
-                {"team": "Berzerk"},
-                {"team": "Kyudo"},
-                {"team": "Team Allah"}
+                {"name": "TheCrazyBeaners"},
+                {"name": "Berzerk"},
+                {"name": "Kyudo"},
+                {"name": "Team Allah"}
             ]
         }
     ]
