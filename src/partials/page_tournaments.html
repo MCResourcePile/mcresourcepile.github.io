@@ -87,6 +87,7 @@
     <div class="league-position league-position-first">
             <i class="fas fa-exclamation-triangle"></i>
             <h3>This tournament has not concluded!</h3>
+            <h5>Information on this page may not be final.</h5>
         </div>
 </div>
 {{/if}}
@@ -104,10 +105,13 @@
                         <td><a href="{{announcement}}">{{announcement}}</a></td>
                     </tr>
                     {{/if}}
+                    {{#if method}}
                     <tr>
                         <td>Method</td>
                         <td>{{method}}</td>
                     </tr>
+                    {{/if}}
+                    {{#if gamemodes}}
                     <tr>
                         <td>Gamemodes</td>
                         <td>
@@ -116,20 +120,26 @@
                             {{/each}}
                         </td>
                     </tr>
+                    {{/if}}
+                    {{#if teams}}
                     <tr>
                         <td>Teams</td>
                         <td>
                             <a href="#teams">{{teams}} <i class="fas fa-chevron-down"></i></a>
                         </td>
                     </tr>
+                    {{/if}}
+                    {{#if teamsize}}
                     <tr>
                         <td>Team Size</td>
                         <td>{{teamsize}}</td>
                     </tr>
+                    {{/if}}
                 </tbody>
             </table>
         </div>
     </div>
+    {{#if stages}}
     <div class="col-md-6">
         <div class="well well-sm well-custom-green">
             <div class="league-info-section">Dates and Times</div>
@@ -145,6 +155,7 @@
             </table>
         </div>
     </div>
+    {{/if}}
     {{#if panels}}
     {{#panels}}
     <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
@@ -175,12 +186,15 @@
     {{/panels}}
     {{/if}}
 </div>
+{{#if maps}}
 <div class="league-info-section large">Map Pool <small>{{length maps}}</small></div>
 <div class="dynamic">
     {{#maps}}
     {{> page_maps_thumbnail_advanced}}
     {{/maps}}
 </div>
+{{/if}}
+{{#if groups}}
 <div class="league-info-section large" id="teams">Teams</div>
 <div class="row">
     {{#groups}}
@@ -209,4 +223,5 @@
     </div>
     {{/groups}}
 </div>
+{{/if}}
 {{> navigation_footer}}
