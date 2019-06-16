@@ -1,9 +1,9 @@
 {{> navigation_header}}
 <div class="center">
-    {{#if no_custom_banner}}
-    <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{snakecase (lowercase title)}}.jpg');background-position:center">{{title}}</div>
+    {{#if @root.settings.no_custom_banner}}
+    <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{@root.settings.host}}/{{snakecase (lowercase title)}}.jpg');background-position:center">{{title}}</div>
     {{else}}
-    <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{snakecase (lowercase title)}}.png">
+    <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{@root.settings.host}}/{{snakecase (lowercase title)}}.png">
     {{/if}}
 </div>
 {{#results}}
