@@ -1,9 +1,9 @@
 {{> navigation_header}}
 <div class="center">
-    {{#if @root.settings.no_custom_banner}}
-    <div class="league-banner" style="background: url('../../assets/img/tournament/banners/{{@root.settings.host}}/{{snakecase (lowercase title)}}.jpg');background-position:center">{{title}}</div>
+    {{#if @root.settings.tournaments.default_banner}}
+    <div class="league-banner" style="background: url('../../assets/img/tournament/banners/default/{{@root.settings.tournaments.default_banner}}.jpg'); background-position: center;">{{title}}</div>
     {{else}}
-    <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{@root.settings.host}}/{{snakecase (lowercase title)}}.png">
+    <img class="league-banner-custom" src="../../assets/img/tournament/banners/{{@root.settings.tournaments.host}}/{{snakecase (lowercase title)}}.png">
     {{/if}}
 </div>
 {{#results}}
@@ -85,10 +85,10 @@
 {{else}}
 <div class="center">
     <div class="league-position league-position-first">
-            <i class="fas fa-exclamation-triangle"></i>
-            <h3>This tournament has not concluded!</h3>
-            <h5>Information on this page may not be final.</h5>
-        </div>
+        <i class="fas fa-exclamation-triangle"></i>
+        <h3>This tournament has not concluded!</h3>
+        <h5>Information on this page may not be final.</h5>
+    </div>
 </div>
 {{/if}}
 {{/results}}
@@ -115,7 +115,7 @@
                     <tr>
                         <td>Gamemodes</td>
                         <td>
-                            {{#each gamemodes}}
+                            {{#each (sort gamemodes)}}
                             {{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}
                             {{/each}}
                         </td>
@@ -142,7 +142,7 @@
     {{#if stages}}
     <div class="col-md-6">
         <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates and Times</div>
+            <div class="league-info-section">Dates</div>
             <table class="league-info-table">
                 <tbody>
                     {{#stages}}
@@ -195,7 +195,7 @@
 </div>
 {{/if}}
 {{#if groups}}
-<div class="league-info-section large" id="teams">Teams</div>
+<div class="league-info-section large" id="teams">Teams <small>{{teams}}</small></div>
 <div class="row">
     {{#groups}}
     <div class="col-md-3">
@@ -207,16 +207,23 @@
                     <th>Seed</th>
                     <th>Team Name</th>
                 </thead>
-                {{/if}}
                 <tbody>
-                    {{#teams}}
+                    {{#each teams}}
                     <tr>
-                        {{#if seed}}
                         <td><b>{{seed}}</b></td>
-                        {{/if}}
                         <td>{{name}}</td>
                     </tr>
-                    {{/teams}}
+                    {{/each}}
+                </tbody>
+                {{else}}
+                <tbody>
+                    {{#each (sortBy teams "name")}}
+                    <tr>
+                        <td>{{name}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                {{/if}}
                 </tbody>
             </table>
         </div>

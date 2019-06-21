@@ -3,9 +3,24 @@
     "subtitle": "Records for WOOL-E, a tournament hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
     "settings": {
-        "host": "stratus"
+        "tournaments": {
+            "host": "stratus"
+        }
     },
-    "results": {},
+    "results": {
+        "panels": [
+            {
+                "label": "Qualifiers Results",
+                "size": "full",
+                "rows": [
+                    {"content": "<div class='center'><img src='https://i.imgur.com/P12VBW6.png'></div>"}
+                ]
+            }
+        ],
+        "challonge": [
+            {"url": "https://stratus.challonge.com/WOOLE", "description": "Invitational"}
+        ]
+    },
     "method": "Qualifiers, then Double Elimination Invitational",
     "gamemodes": ["ctw"],
     "teams": "",
@@ -16,6 +31,18 @@
         {"stage": "Invitational Week 2", "date": "June 29-30, 2019"}
     ],
     "maps": [
+        {
+            "name": "Dead Heat",
+            "slug": "dead_heat",
+            "tags": ["ctw", "blitz"],
+            "stage": "Vetoing Decider"
+        },
+        {
+            "name": "Greenhouse",
+            "slug": "greenhouse",
+            "tags": ["ctf"],
+            "stage": "Tie Breaker"
+        },
         {
             "name": "Fun Guy",
             "slug": "fun_guy",
@@ -42,5 +69,29 @@
             "tags": ["ctw"]
         }
     ],
-    "groups": []
+    "groups": [
+        {
+            "name": "Group A",
+            "teams": [
+                {"name": "Ram Ranch"},
+                {"name": "SHREW"},
+                {"name": "Boca Juniors"},
+                {"name": "BHT Glory"},
+                {"name": "lleva linea pero no canta bingo"},
+                {"name": "sup"},
+                {"name": "OpticBallZ"}
+            ]
+        },
+        {
+            "name": "Group B",
+            "teams": [
+                {"name": "Assemble"},
+                {"name": "Adventure Club"},
+                {"name": "PERDON NO!!! QUE HACES???"},
+                {"name": "Bluedu & the boys"},
+                {"name": "GGeneSiS"},
+                {"name": "Velocite"}
+            ]
+        }
+    ]
 }

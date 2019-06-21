@@ -1,11 +1,11 @@
 {{> navigation_header}}
 <div class="section leagues center">
     {{#tournaments}}
-    <a href="{{#if disabled}}#{{else}}/leagues/{{@root.settings.maps.group}}/{{snakecase (lowercase name)}}{{/if}}">
-        {{#if no_custom_banner}}
-        <div class="league-banner{{#if disabled}} hide{{/if}}" style="background: url('../../assets/img/tournament/banners/{{@root.settings.host}}/{{snakecase (lowercase name)}}.jpg');background-position:center">{{name}}</div>
+    <a href="{{#if disabled}}#{{else}}/leagues/{{@root.settings.tournaments.host}}/{{snakecase (lowercase name)}}{{/if}}">
+        {{#if default_banner}}
+        <div class="league-banner{{#if disabled}} hide{{/if}}" style="background: url('../../assets/img/tournament/banners/default/{{default_banner}}.jpg');background-position:center">{{name}}</div>
         {{else}}
-        <img class="league-banner-custom {{#if disabled}}hide{{/if}}" src="../../assets/img/tournament/banners/{{@root.settings.host}}/{{snakecase (lowercase name)}}.png">
+        <img class="league-banner-custom {{#if disabled}}hide{{/if}}" src="../../assets/img/tournament/banners/{{@root.settings.tournaments.host}}/{{snakecase (lowercase name)}}.png">
         {{/if}}
     </a>
     {{/tournaments}}
