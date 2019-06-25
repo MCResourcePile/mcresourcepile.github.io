@@ -2,10 +2,10 @@
     <div class="center">
         <span id="records-count"></span>
     </div>
-    <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="{{#if placeholder}}{{placeholder}}{{else}}Search maps{{/if}}">
+    <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="{{#if @root.settings.maps.advanced_menu.placeholder}}Search {{@root.settings.maps.advanced_menu.placeholder}}{{else}}Search maps{{/if}}">
     <div class="filters">
         <b>Filters</b>
-        <small>Use filters to narrow your query when searching for specific maps.</small>
+        <small>Use filters to narrow your query when searching for specific {{@root.settings.maps.advanced_menu.placeholder}}.</small>
         {{#each settings.maps.advanced_menu.groups}}
         <div class="group">
             {{#if title}}
