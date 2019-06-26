@@ -10,7 +10,7 @@
             <div class="tm-labels">
                 {{#information}}
                 {{#if type}}
-                <a href="?f={{type}}">
+                <a class="click-search" data-query="{{type}}">
                     <span class="tm-label">{{type}} #{{number}}</span>
                 </a>
                 {{/if}}
@@ -20,7 +20,7 @@
                 <span class="tm-label"><i class="far fa-calendar"></i> {{year}}</span>
                 {{/if}}
                 {{#if winner}}
-                <a href="?s={{winner}}">
+                <a class="click-search" data-query="{{winner}}">
                     <span class="tm-label"><i class="fas fa-trophy"></i> {{winner}}</span>
                 </a>
                 {{else}}

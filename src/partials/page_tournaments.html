@@ -1,4 +1,41 @@
 {{> navigation_header}}
+{{#if order}}
+{{#order}}
+<nav>
+    <ul class="pager tm-pager">
+        <div class="row">
+            <div class="col-xs-4">
+                {{#if last}}
+                <li class="previous">
+                    <a href="/leagues/{{@root.settings.tournaments.host}}/{{snakecase (lowercase last)}}"><i class="fas fa-long-arrow-alt-left"></i> Last: {{@root.order.last}}</a>
+                </li>
+                {{else}}
+                <li class="previous disabled">
+                    <a><i class="fas fa-long-arrow-alt-left"></i> Last</a>
+                </li>
+                {{/if}}
+            </div>
+            <div class="col-xs-4">
+                <li class="pager-center">
+                    <p>{{type}} #{{number}}</p>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                {{#if next}}
+                <li class="next">
+                    <a href="/leagues/{{@root.settings.tournaments.host}}/{{snakecase (lowercase next)}}">Next: {{@root.order.next}} <i class="fas fa-long-arrow-alt-right"></i></a>
+                </li>
+                {{else}}
+                <li class="next disabled">
+                    <a>Next <i class="fas fa-long-arrow-alt-right"></i></a>
+                </li>
+                {{/if}}
+            </div>
+        </div>
+    </ul>
+</nav>
+{{/order}}
+{{/if}}
 <div class="center">
     {{#if @root.settings.tournaments.default_banner}}
     <div class="tm-default-banner" style="background: url('../../assets/img/tournament/banners/default/{{@root.settings.tournaments.default_banner}}.jpg'); background-position: center;">{{title}}</div>
