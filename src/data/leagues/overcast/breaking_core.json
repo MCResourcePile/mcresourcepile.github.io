@@ -2,147 +2,200 @@
     "title": "Breaking Core",
     "subtitle": "Records for Breaking Core, a tournament hosted by Overcast Network",
     "page-category": ["tournaments", "league", "overcast"],
-    "announcement": "",
-    "challonge": [
-        {"bracket": "https://ocn.challonge.com/bc/module"}
-    ],
-    "method": "Qualifiers -> Single Elimination",
-    "gamemodes": "Destroy the Monument, Destroy the Core",
-    "selection": "16 teams",
-    "players": "8v8",
+    "settings": {
+        "tournaments": {
+            "host": "overcast"
+        }
+    },
+    "order": {
+        "type": "Tournament",
+        "number": 6,
+        "last": "Return of the Hill",
+        "next": "Boom in a Box"
+    },
+    "results": {
+        "first_place": "LunGGlove",
+        "second_place": "Game Mode 1",
+        "third_place": "Instant Crash",
+        "panels": [
+            {
+                "label": "Results for Qualifiers",
+                "size": "full",
+                "rows": [
+                    {"content": "<b>Results for all 5 weeks:</b> <a href='https://docs.google.com/spreadsheets/d/1XMh8VYAPX8j5rzuXV-HeJt7j7-1MBMqjhEXHRGPhnCQ/' target='_blank'g>Click Here</a> (Google Sheets)"}
+                ]
+            }
+        ],
+        "challonge": [
+            {"url": "https://ocn.challonge.com/bc", "description": "Bracket"}
+        ]
+    },
+    "method": "Qualifiers, then Single Elimination Invitational",
+    "gamemodes": ["dtcm"],
+    "teams": "16 teams",
+    "teamsize": "8v8",
     "stages": [
-        {"stage": "Week 1 - Spaceship Battles", "date": "Feburary 14th-16th, 2014"},
-        {"stage": "Week 2 - Fortress Battles", "date": "Feburary 21st-23rd, 2014"},
-        {"stage": "Week 3 - Blocks DTC", "date": "Feburary 28th-March 2nd, 2014"},
-        {"stage": "Week 4 - Iris DTC", "date": "March 7th-9th, 2014"},
-        {"stage": "Week 5 - Fractal Descent TE", "date": "March 14th-16th, 2014"},
-        {"stage": "Ro16 - Spaceship Battles", "date": "March 29th, 2014"},
-        {"stage": "Quarter-Finals - Runes of Ruins", "date": "March 29th, 2014"},
-        {"stage": "Semi-Finals - Interitus", "date": "March 29th, 2014"},
-        {"stage": "Finals/Bronze - Retaliation 2", "date": "March 30th, 2014"}
+        {"stage": "Week 1 - Spaceship Battles", "date": "Feburary 14-16, 2014"},
+        {"stage": "Week 2 - Fortress Battles", "date": "Feburary 21-23, 2014"},
+        {"stage": "Week 3 - Blocks DTC", "date": "Feburary 28-March 2, 2014"},
+        {"stage": "Week 4 - Iris DTC", "date": "March 7-9, 2014"},
+        {"stage": "Week 5 - Fractal Descent TE", "date": "March 14-16, 2014"},
+        {"stage": "Round of 16 - Spaceship Battles", "date": "March 29, 2014"},
+        {"stage": "QuarterFinals - Runes of Ruins", "date": "March 29, 2014"},
+        {"stage": "SemiFinals - Interitus", "date": "March 29, 2014"},
+        {"stage": "Finals/Bronze - Retaliation 2", "date": "March 30, 2014"}
     ],
-    "pool": [
-        {"name": "Blocks DTC",        "slug": "blocks_dtc",        "gamemode": "Destroy the Core"},
-        {"name": "Boom",              "slug": "boom",              "gamemode": "Destroy the Monument"},
-        {"name": "Fortress Battles",  "slug": "fortress_battles",  "gamemode": "Destroy the Core"},
-        {"name": "Fractal Descent",   "slug": "fractal_descent",   "gamemode": "Destroy the Monument, Destroy the Core"},
-        {"name": "Interitus",         "slug": "interitus",         "gamemode": "Destroy the Core"},
-        {"name": "Iris DTC",          "slug": "iris_dtc",          "gamemode": "Destroy the Core"},
-        {"name": "Retaliation 2",     "slug": "retaliation_2",     "gamemode": "Destroy the Core"},
-        {"name": "Runes of Ruin",     "slug": "runes_of_ruin",     "gamemode": "Destroy the Core"},
-        {"name": "Spaceship Battles", "slug": "spaceship_battles", "gamemode": "Destroy the Monument, Destroy the Core"}
-    ],
-    "panels": [
+    "maps": [
         {
-            "label": "Results for Qualifiers",
-            "size": "full",
-            "rows": [
-                {"content": "<b>Results for all 5 weeks</b>: <a href='https://docs.google.com/spreadsheets/d/1XMh8VYAPX8j5rzuXV-HeJt7j7-1MBMqjhEXHRGPhnCQ/'>Click Here</a>"}
-            ]
+            "name": "Boom",
+            "slug": "boom",
+            "tags": ["dtm"],
+            "stage": "Tie Breaker"
+        },
+        {
+            "name": "Spaceship Battles",
+            "slug": "spaceship_battles",
+            "tags": ["dtcm"],
+            "stage": "Week 1, Round of 16"
+        },
+        {
+            "name": "Fortress Battles",
+            "slug": "fortress_battles",
+            "tags": ["dtc"],
+            "stage": "Week 2"
+        },
+        {
+            "name": "Blocks DTC",
+            "slug": "blocks_dtc",
+            "tags": ["dtc"],
+            "stage": "Week 3"
+        },
+        {
+            "name": "Iris DTC",
+            "slug": "iris_dtc",
+            "tags": ["dtc"],
+            "stage": "Week 4"
+        },
+        {
+            "name": "Fractal Descent TE",
+            "slug": "fractal_descent",
+            "tags": ["dtcm"],
+            "stage": "Week 5"
+        },
+        {
+            "name": "Runes of Ruin",
+            "slug": "runes_of_ruin",
+            "tags": ["dtcm"],
+            "stage": "QuarterFinals"
+        },
+        {
+            "name": "Interitus",
+            "slug": "interitus",
+            "tags": ["dtcm"],
+            "stage": "SemiFinals"
+        },
+        {
+            "name": "Retaliation 2",
+            "slug": "retaliation_2",
+            "tags": ["dtc"],
+            "stage": "Finals/Bronze"
         }
     ],
-    "first_place": "LunGGlove",
-    "second_place": "Game Mode 1",
-    "third_place": "Instant Crash",
     "groups": [
         {
-            "group": "Teams",
             "teams": [
-                {"team": "Starfish"},
-                {"team": "Team Fishy"},
-                {"team": "Game Mode 1"},
-                {"team": "Ambush"},
-                {"team": "Orbit"},
-                {"team": "Wolves in Quebec"},
-                {"team": "Impact"},
-                {"team": "Instant Crash"},
-                {"team": "LunGGlove"},
-                {"team": "Team Grief"},
-                {"team": "Vindicate"},
-                {"team": "Space Monkey Mafia"},
-                {"team": "Proximity"},
-                {"team": "Tactical Info"},
-                {"team": "Punishers"},
-                {"team": "Ninja Squad"},
-                {"team": "Turquaars"},
-                {"team": "Looting III"},
-                {"team": "Outliers"},
-                {"team": "Pony Swag"}
+                {"name": "Starfish"},
+                {"name": "Team Fishy"},
+                {"name": "Game Mode 1"},
+                {"name": "Ambush"},
+                {"name": "Orbit"},
+                {"name": "Wolves in Quebec"},
+                {"name": "Impact"},
+                {"name": "Instant Crash"},
+                {"name": "LunGGlove"},
+                {"name": "Team Grief"},
+                {"name": "Vindicate"},
+                {"name": "Space Monkey Mafia"},
+                {"name": "Proximity"},
+                {"name": "Tactical Info"},
+                {"name": "Punishers"},
+                {"name": "Ninja Squad"},
+                {"name": "Turquaars"},
+                {"name": "Looting III"},
+                {"name": "Outliers"},
+                {"name": "Pony Swag"}
             ]
         },
         {
-            "group": "Teams",
             "teams": [
-                {"team": "Nemesis"},
-                {"team": "Bacon Warriors"},
-                {"team": "Sexy Squad"},
-                {"team": "Ender Fox"},
-                {"team": "Mindcool"},
-                {"team": "Drifters"},
-                {"team": "LogisticGamers"},
-                {"team": "Jaeger"},
-                {"team": "Afternoon Tea"},
-                {"team": "Blaze Face"},
-                {"team": "Dynasty"},
-                {"team": "Virus"},
-                {"team": "Eclipse"},
-                {"team": "Fracture"},
-                {"team": "Open Islanders"},
-                {"team": "SquadCat"},
-                {"team": "TheRaptors"},
-                {"team": "Storm"},
-                {"team": "GameOver"},
-                {"team": "VortexRush"}
+                {"name": "Nemesis"},
+                {"name": "Bacon Warriors"},
+                {"name": "Sexy Squad"},
+                {"name": "Ender Fox"},
+                {"name": "Mindcool"},
+                {"name": "Drifters"},
+                {"name": "LogisticGamers"},
+                {"name": "Jaeger"},
+                {"name": "Afternoon Tea"},
+                {"name": "Blaze Face"},
+                {"name": "Dynasty"},
+                {"name": "Virus"},
+                {"name": "Eclipse"},
+                {"name": "Fracture"},
+                {"name": "Open Islanders"},
+                {"name": "SquadCat"},
+                {"name": "TheRaptors"},
+                {"name": "Storm"},
+                {"name": "GameOver"},
+                {"name": "VortexRush"}
             ]
         },
         {
-            "group": "Teams",
             "teams": [
-                {"team": "LastFist"},
-                {"team": "Deluxe"},
-                {"team": "Bone Breakers"},
-                {"team": "TheJackHammers"},
-                {"team": "Stained Glass"},
-                {"team": "PureBlox"},
-                {"team": "SentsFromHeaven"},
-                {"team": "Cloud City"},
-                {"team": "Team CacaFuego"},
-                {"team": "The Unloved Miners"},
-                {"team": "PentaKillers"},
-                {"team": "BloodyLions"},
-                {"team": "RedPanthers"},
-                {"team": "Minexus ^^"},
-                {"team": "Entity"},
-                {"team": "ProtextionX"},
-                {"team": "Building Blox"},
-                {"team": "FreeStyle"},
-                {"team": "FireFoxes"},
-                {"team": "Team Brainfart"}
+                {"name": "LastFist"},
+                {"name": "Deluxe"},
+                {"name": "Bone Breakers"},
+                {"name": "TheJackHammers"},
+                {"name": "Stained Glass"},
+                {"name": "PureBlox"},
+                {"name": "SentsFromHeaven"},
+                {"name": "Cloud City"},
+                {"name": "Team CacaFuego"},
+                {"name": "The Unloved Miners"},
+                {"name": "PentaKillers"},
+                {"name": "BloodyLions"},
+                {"name": "RedPanthers"},
+                {"name": "Minexus ^^"},
+                {"name": "Entity"},
+                {"name": "ProtextionX"},
+                {"name": "Building Blox"},
+                {"name": "FreeStyle"},
+                {"name": "FireFoxes"},
+                {"name": "Team Brainfart"}
             ]
         },
         {
-            "group": "Teams",
             "teams": [
-                {"team": "Block Glitch"},
-                {"team": "Assassin's Soul"},
-                {"team": "FlamingFrost"},
-                {"team": "Concatenation"},
-                {"team": "Padlock"},
-                {"team": "DynamicIssue"},
-                {"team": "Skrull PvP"},
-                {"team": "NextGeneration"},
-                {"team": "CraftYourDeath"},
-                {"team": "Boltato"},
-                {"team": "YoloStory"},
-                {"team": "Ghost Rushers"},
-                {"team": "Unbreaking III"},
-                {"team": "GlaDiaTorS"},
-                {"team": "Dark Souls"},
-                {"team": "AirCrash"},
-                {"team": "Leviathan"},
-                {"team": "EleKtro"},
-                {"team": "Dynamo"},
-                {"team": "EnderSwag"}
+                {"name": "Block Glitch"},
+                {"name": "Assassin's Soul"},
+                {"name": "FlamingFrost"},
+                {"name": "Concatenation"},
+                {"name": "Padlock"},
+                {"name": "DynamicIssue"},
+                {"name": "Skrull PvP"},
+                {"name": "NextGeneration"},
+                {"name": "CraftYourDeath"},
+                {"name": "Boltato"},
+                {"name": "YoloStory"},
+                {"name": "Ghost Rushers"},
+                {"name": "Unbreaking III"},
+                {"name": "GlaDiaTorS"},
+                {"name": "Dark Souls"},
+                {"name": "AirCrash"},
+                {"name": "Leviathan"},
+                {"name": "EleKtro"},
+                {"name": "Dynamo"},
+                {"name": "EnderSwag"}
             ]
         }
     ]

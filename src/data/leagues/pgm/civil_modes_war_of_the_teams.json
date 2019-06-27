@@ -2,105 +2,154 @@
     "title": "Civil Modes: War of the Teams",
     "subtitle": "Records for Civil Modes: War of the Teams, a tournament hosted by Campeh",
     "page-category": ["tournaments", "league", "pgm"],
-    "heading": true,
-    "announcement": "",
-    "challonge": [
-        {"bracket": "https://challonge.com/CMWotT/module"}
-    ],
-    "method": "Groups and Double Elimination",
-    "gamemodes": "Mixed",
-    "selection": "40 teams",
-    "players": "5v5",
+    "settings": {
+        "tournaments": {
+            "host": "pgm",
+            "default_banner": "desert"
+        }
+    },
+    "results": {
+        "first_place": "HUGE wall",
+        "second_place": "UbeR",
+        "third_place": "Sigma Omega",
+        "challonge": [
+            {"url": "https://challonge.com/CMWotT", "description": "Bracket"}
+        ]
+    },
+    "method": "Groups, then Double Elimination",
+    "gamemodes": ["ctf", "ctw", "kotf", "tdm"],
+    "teams": "40 teams",
+    "teamsize": "5v5",
     "stages": [
-        {"stage": "Group Stage",   "date": "April 9th / 10th / 16th / 17th, 2016"},
-        {"stage": "Invitationals", "date": "April 23rd / 24th, 2016"}
+        {"stage": "Group Stage",   "date": "April 9-10, 16-17, 2016"},
+        {"stage": "Invitationals", "date": "April 23-24, 2016"}
     ],
-    "pool": [
-        {"name": "Nartica",          "slug": "nartica",          "gamemode": "Capture the Flag"},
-        {"name": "Holo",             "slug": "holo",             "gamemode": "Capture the Flag"},
-        {"name": "Gemini",           "slug": "gemini",           "gamemode": "Capture the Flag"},
-        {"name": "Limbo III",        "slug": "limbo_iii",        "gamemode": "King of the Hill"},
-        {"name": "Facility",         "slug": "facility",         "gamemode": "Team Deathmatch"},
-        {"name": "Desert Sanctuary", "slug": "desert_sanctuary", "gamemode": "Capture the Flag"},
-        {"name": "Terricreus",       "slug": "terricreus",       "gamemode": "Capture the Wool"},
-        {"name": "Horseshoe Ranch",  "slug": "horseshoe_ranch",  "gamemode": "Capture the Wool"},
-        {"name": "Abstract",         "slug": "abstract",         "gamemode": "Capture the Wool"}
+    "maps": [
+        {
+            "name": "Nartica",
+            "slug": "nartica",
+            "tags": ["ctf"]
+        },
+        {
+            "name": "Holo",
+            "slug": "holo",
+            "tags": ["ctf"]
+        },
+        {
+            "name": "Gemini",
+            "slug": "gemini",
+            "tags": ["ctf"]
+        },
+        {
+            "name": "Limbo III",
+            "slug": "limbo_iii",
+            "tags": ["ctf"]
+        },
+        {
+            "name": "Facility",
+            "slug": "facility",
+            "tags": ["tdm"]
+        },
+        {
+            "name": "Desert Sanctuary",
+            "slug": "desert_sanctuary",
+            "tags": ["kotf"]
+        },
+        {
+            "name": "Terricreus",
+            "slug": "terricreus",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Horseshoe Ranch",
+            "slug": "horseshoe_ranch",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Abstract",
+            "slug": "abstract",
+            "tags": ["ctw"]
+        }
     ],
-    "first_place": "HUGE wall",
-    "second_place": "UbeR",
-    "third_place": "Sigma Omega",
     "groups": [
         {
-            "group": "Group A",
+            "name": "Group A",
             "teams": [
-                {"team": "HUGE wall"},
-                {"team": "PureBlox"},
-                {"team": "Fatal Fury"},
-                {"team": "HazeFNS"},
-                {"team": "ConnectionLost"}
+                {"name": "HUGE wall"},
+                {"name": "PureBlox"},
+                {"name": "Fatal Fury"},
+                {"name": "HazeFNS"},
+                {"name": "ConnectionLost"}
             ]
-        }, {
-            "group": "Group B",
+        },
+        {
+            "name": "Group B",
             "teams": [
-                {"team": "Wrap"},
-                {"team": "Anubis"},
-                {"team": "BigStomp (Orion)"},
-                {"team": "Colossus"},
-                {"team": "GameRule"}
+                {"name": "Wrap"},
+                {"name": "Anubis"},
+                {"name": "BigStomp (Orion)"},
+                {"name": "Colossus"},
+                {"name": "GameRule"}
             ]
-        }, {
-            "group": "Group C",
+        },
+        {
+            "name": "Group C",
             "teams": [
-                {"team": "BraveHearts"},
-                {"team": "Cryptosys"},
-                {"team": "Nice"},
-                {"team": "Unity!"},
-                {"team": "NameNotYet"}
+                {"name": "BraveHearts"},
+                {"name": "Cryptosys"},
+                {"name": "Nice"},
+                {"name": "Unity!"},
+                {"name": "NameNotYet"}
             ]
-        }, {
-            "group": "Group D",
+        },
+        {
+            "name": "Group D",
             "teams": [
-                {"team": "UbeR"},
-                {"team": "Zona Ganjah"},
-                {"team": "Night Vision"},
-                {"team": "Grim"},
-                {"team": "BlackHole"}
+                {"name": "UbeR"},
+                {"name": "Zona Ganjah"},
+                {"name": "Night Vision"},
+                {"name": "Grim"},
+                {"name": "BlackHole"}
             ]
-        }, {
-            "group": "Group E",
+        },
+        {
+            "name": "Group E",
             "teams": [
-                {"team": "Caos"},
-                {"team": "Varsity"},
-                {"team": "Scorpia"},
-                {"team": "Creixell"},
-                {"team": "Bleup"}
+                {"name": "Caos"},
+                {"name": "Varsity"},
+                {"name": "Scorpia"},
+                {"name": "Creixell"},
+                {"name": "Bleup"}
             ]
-        }, {
-            "group": "Group F",
+        },
+        {
+            "name": "Group F",
             "teams": [
-                {"team": "Polo's Team"},
-                {"team": "Out"},
-                {"team": "RedBull"},
-                {"team": "Arkham"},
-                {"team": "TRILLUMINATI"}
+                {"name": "Polo's Team"},
+                {"name": "Out"},
+                {"name": "RedBull"},
+                {"name": "Arkham"},
+                {"name": "TRILLUMINATI"}
             ]
-        }, {
-            "group": "Group G",
+        },
+        {
+            "name": "Group G",
             "teams": [
-                {"team": "Sigma Omega"},
-                {"team": "Amnesia"},
-                {"team": "Focus"},
-                {"team": "Hypetic"},
-                {"team": "Furyus"}
+                {"name": "Sigma Omega"},
+                {"name": "Amnesia"},
+                {"name": "Focus"},
+                {"name": "Hypetic"},
+                {"name": "Furyus"}
             ]
-        }, {
-            "group": "Group H",
+        },
+        {
+            "name": "Group H",
             "teams": [
-                {"team": "YGang"},
-                {"team": "Ethernal Cross"},
-                {"team": "Sigma Alfa"},
-                {"team": "FrostFire"},
-                {"team": "PvPsTaRs"}
+                {"name": "YGang"},
+                {"name": "Ethernal Cross"},
+                {"name": "Sigma Alfa"},
+                {"name": "FrostFire"},
+                {"name": "PvPsTaRs"}
             ]
         }
     ]

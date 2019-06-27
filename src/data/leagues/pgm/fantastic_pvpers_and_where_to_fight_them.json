@@ -2,69 +2,111 @@
     "title": "Fantastic Pvpers and Where to Fight Them",
     "subtitle": "Records for Fantastic Pvpers and Where to Fight Them, a tournament hosted by Campeh",
     "page-category": ["tournaments", "league", "pgm"],
-    "heading": true,
-    "announcement": "",
-    "challonge": [
-        {"bracket": "https://challonge.com/FantasticPvpers/module"}
-    ],
-    "method": "Groups and Single Elimination",
-    "gamemodes": "Mixed",
-    "selection": "20 teams",
-    "players": "8v8",
+    "settings": {
+        "tournaments": {
+            "host": "pgm",
+            "default_banner": "smoke"
+        }
+    },
+    "results": {
+        "first_place": "PureBlox",
+        "second_place": "yirang",
+        "third_place": "Swiss In Pyjamas",
+        "challonge": [
+            {"url": "https://challonge.com/FantasticPvpers", "description": "Bracket"}
+        ]
+    },
+    "method": "Groups, then Single Elimination Invitational",
+    "gamemodes": ["ctf", "kotf", "koth", "ctf"],
+    "teams": "20 teams",
+    "teamsize": "8v8",
     "stages": [
-        {"stage": "Group Stage",   "date": "January 14th / 15th, 2017"},
-        {"stage": "Invitationals", "date": "January 22nd / 23rd, 2017"}
+        {"stage": "Group Stage",   "date": "January 14-15, 2017"},
+        {"stage": "Invitationals", "date": "January 22-23, 2017"}
     ],
-    "pool": [
-        {"name": "Facility",         "slug": "facility",         "gamemode": "Team Deathmatch"},
-        {"name": "Urban Jungle",     "slug": "urban_jungle",     "gamemode": "King of the Hill"},
-        {"name": "Harb",             "slug": "harb",             "gamemode": "Team Deathmatch"},
-        {"name": "Nartica",          "slug": "nartica",          "gamemode": "Capture the Flag"},
-        {"name": "Desert Sanctuary", "slug": "desert_sanctuary", "gamemode": "Capture the Flag"},
-        {"name": "Opis",             "slug": "opis",             "gamemode": "Capture the Flag"},
-        {"name": "Limbo II",         "slug": "limbo_ii",         "gamemode": "King of the Hill"},
-        {"name": "Macedon",          "slug": "macedon",          "gamemode": "Capture Points"},
-        {"name": "Factory",          "slug": "factory",          "gamemode": "King of the Hill"}
+    "maps": [
+        {
+            "name": "Facility",
+            "slug": "facility",
+            "tags": ["tdm"]
+        },
+        {
+            "name": "Urban Jungle",
+            "slug": "urban_jungle",
+            "tags": ["koth"]
+        },
+        {
+            "name": "Harb",
+            "slug": "harb",
+            "tags": ["tdm"]
+        },
+        {
+            "name": "Nartica",
+            "slug": "nartica",
+            "tags": ["ctf"]
+        },
+        {
+            "name": "Desert Sanctuary",
+            "slug": "desert_sanctuary",
+            "tags": ["kotf"]
+        },
+        {
+            "name": "Opis",
+            "slug": "opis",
+            "tags": ["ctf"]
+        },
+        {
+            "name": "Limbo II",
+            "slug": "limbo_ii",
+            "tags": ["koth"]
+        },
+        {
+            "name": "Macedon",
+            "slug": "macedon",
+            "tags": ["cp"]
+        },
+        {
+            "name": "Factory",
+            "slug": "factory",
+            "tags": ["koth"]
+        }
     ],
-    "first_place": "PureBlox",
-    "second_place": "yirang",
-    "third_place": "Swiss In Pyjamas",
     "groups": [
         {
-            "group": "Group A",
+            "name": "Group A",
             "teams": [
-                {"team": "yirang"},
-                {"team": "0bey"},
-                {"team": "Missouri"},
-                {"team": "ConnectionLost"},
-                {"team": "Amnesia"}
+                {"name": "yirang"},
+                {"name": "0bey"},
+                {"name": "Missouri"},
+                {"name": "ConnectionLost"},
+                {"name": "Amnesia"}
             ]
         }, {
-            "group": "Group B",
+            "name": "Group B",
             "teams": [
-                {"team": "PureBlox"},
-                {"team": "#Foundry!"},
-                {"team": "OKTG"},
-                {"team": "LosMapuches"},
-                {"team": "GGeneSiS"}
+                {"name": "PureBlox"},
+                {"name": "#Foundry!"},
+                {"name": "OKTG"},
+                {"name": "LosMapuches"},
+                {"name": "GGeneSiS"}
             ]
         }, {
-            "group": "Group C",
+            "name": "Group C",
             "teams": [
-                {"team": "Trinity"},
-                {"team": "TSM"},
-                {"team": "Heart Claw"},
-                {"team": "Volvic"},
-                {"team": "SpaceDeepers"}
+                {"name": "Trinity"},
+                {"name": "TSM"},
+                {"name": "Heart Claw"},
+                {"name": "Volvic"},
+                {"name": "SpaceDeepers"}
             ]
         }, {
-            "group": "Group D",
+            "name": "Group D",
             "teams": [
-                {"team": "Swiss In Pyjamas"},
-                {"team": "Grim"},
-                {"team": "Kronus"},
-                {"team": "Fireh"},
-                {"team": "Royalty"}
+                {"name": "Swiss In Pyjamas"},
+                {"name": "Grim"},
+                {"name": "Kronus"},
+                {"name": "Fireh"},
+                {"name": "Royalty"}
             ]
         }
     ]

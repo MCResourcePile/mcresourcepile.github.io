@@ -2,75 +2,125 @@
     "title": "Overcast Squad",
     "subtitle": "Records for Overcast Squad, a tournament hosted by Campeh",
     "page-category": ["tournaments", "league", "pgm"],
-    "heading": true,
-    "announcement": "",
-    "challonge": [
-        {"bracket": "https://challonge.com/OvercastSquad/module"}
-    ],
-    "method": "Double Elimination Groups, then Single Elimination",
-    "gamemodes": "Mixed",
-    "selection": "24 teams",
-    "players": "8v8",
+    "settings": {
+        "tournaments": {
+            "host": "pgm",
+            "default_banner": "highlands"
+        }
+    },
+    "results": {
+        "first_place": "Grim",
+        "second_place": "TypicalSwitz",
+        "third_place": "Shaikru",
+        "challonge": [
+            {"url": "https://challonge.com/OvercastSquad", "description": "Bracket"}
+        ]
+    },
+    "method": "Double Elimination Groups, then Single Elimination Invitational",
+    "gamemodes": ["cp", "ctw", "dtcm", "koth", "tdm"],
+    "teams": "24 teams",
+    "teamsize": "8v8",
     "stages": [
-        {"stage": "Group Stage",   "date": "September 24th / 25th, 2016"},
-        {"stage": "Invitationals", "date": "October 1st / 2nd, 2016"}
+        {"stage": "Group Stage",   "date": "September 24-25, 2016"},
+        {"stage": "Invitationals", "date": "October 1-2, 2016"}
     ],
-    "pool": [
-        {"name": "Race for Victory",   "slug": "race_for_victory",   "gamemode": "Capture the Wool"},
-        {"name": "Golden Drought iii", "slug": "golden_drought_iii", "gamemode": "Capture the Wool"},
-        {"name": "Deepwind Jungle",    "slug": "deepwind_jungle",    "gamemode": "Capture the Wool"},
-        {"name": "Fortress Battle",    "slug": "fortress_battle",    "gamemode": "Destroy the Core"},
-        {"name": "Spaceship Battles",  "slug": "spaceship_battles",  "gamemode": "Destroy the Core and Monument"},
-        {"name": "Fractal Descent",    "slug": "fractal_descent",    "gamemode": "Destroy the Core and Monument"},
-        {"name": "Limbo II",           "slug": "limbo_ii",           "gamemode": "King of the Hill"},
-        {"name": "Facility",           "slug": "facility",           "gamemode": "Team Deathmatch"},
-        {"name": "Urban Jungle",       "slug": "urban_jungle",       "gamemode": "King of the Hill"},
-        {"name": "Bliss TDM",          "slug": "bliss_tdm",          "gamemode": "Team Deathmatch"},
-        {"name": "Ascendance",         "slug": "ascendance",         "gamemode": "Capture Points"}
+    "maps": [
+        {
+            "name": "Race for Victory",
+            "slug": "race_for_victory",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Golden Drought iii",
+            "slug": "golden_drought_iii",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Deepwind Jungle",
+            "slug": "deepwind_jungle",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Fortress Battle",
+            "slug": "fortress_battle",
+            "tags": ["dtc"]
+        },
+        {
+            "name": "Spaceship Battles",
+            "slug": "spaceship_battles",
+            "tags": ["dtcm"]
+        },
+        {
+            "name": "Fractal Descent",
+            "slug": "fractal_descent",
+            "tags": ["dtcm"]
+        },
+        {
+            "name": "Limbo II",
+            "slug": "limbo_ii",
+            "tags": ["koth"]
+        },
+        {
+            "name": "Facility",
+            "slug": "facility",
+            "tags": ["tdm"]
+        },
+        {
+            "name": "Urban Jungle",
+            "slug": "urban_jungle",
+            "tags": ["koth"]
+        },
+        {
+            "name": "Bliss TDM",
+            "slug": "bliss_tdm",
+            "tags": ["tdm"]
+        },
+        {
+            "name": "Ascendance",
+            "slug": "ascendance",
+            "tags": ["cp"]
+        }
     ],
-    "first_place": "Grim",
-    "second_place": "TypicalSwitz",
-    "third_place": "Shaikru",
     "groups": [
         {
-            "group": "Group A",
+            "name": "Group A",
             "teams": [
-                {"team": "Night Vision"},
-                {"team": "UbeR"},
-                {"team": "LerP!"},
-                {"team": "OldParr"},
-                {"team": "FrostFire"},
-                {"team": "OldCritics"}
+                {"name": "Night Vision"},
+                {"name": "UbeR"},
+                {"name": "LerP!"},
+                {"name": "OldParr"},
+                {"name": "FrostFire"},
+                {"name": "OldCritics"}
             ]
         }, {
-            "group": "Group B",
+            "name": "Group B",
             "teams": [
-                {"team": "TypicalSwitz"},
-                {"team": "Caos"},
-                {"team": "BlackHole"},
-                {"team": "Acid"},
-                {"team": "#Anubiz!"},
-                {"team": "glassboat"}
+                {"name": "TypicalSwitz"},
+                {"name": "Caos"},
+                {"name": "BlackHole"},
+                {"name": "Acid"},
+                {"name": "#Anubiz!"},
+                {"name": "glassboat"}
             ]
         }, {
-            "group": "Group C",
+            "name": "Group C",
             "teams": [
-                {"team": "Shaikru"},
-                {"team": "Inactivos Rechazardos"},
-                {"team": "Furyus"},
-                {"team": "CHEH"},
-                {"team": "Chikilipussy"},
-                {"team": "Drops"}
+                {"name": "Shaikru"},
+                {"name": "Inactivos Rechazardos"},
+                {"name": "Furyus"},
+                {"name": "CHEH"},
+                {"name": "Chikilipussy"},
+                {"name": "Drops"}
             ]
         }, {
-            "group": "Group D",
+            "name": "Group D",
             "teams": [
-                {"team": "Grim"},
-                {"team": "Fireh"},
-                {"team": "Tango"},
-                {"team": "LostMexicans"},
-                {"team": "Banshee"},
-                {"team": "TheRaptors"}
+                {"name": "Grim"},
+                {"name": "Fireh"},
+                {"name": "Tango"},
+                {"name": "LostMexicans"},
+                {"name": "Banshee"},
+                {"name": "TheRaptors"}
             ]
         }
     ]

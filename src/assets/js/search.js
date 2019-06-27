@@ -1,6 +1,7 @@
 var maps;
 var filters = [];
 var url;
+var searchable_name = "maps";
 
 $(document).ready(function(){
     if ($('#slider').length != 0)
@@ -107,11 +108,11 @@ function countResults() {
     total = maps.items.length;
     visible = maps.matchingItems.length;
     if (visible > 0) {
-        string = "Showing " + visible + " matching maps out of " + total;
+        string = "Showing " + visible + " matching " + searchable_name + " out of " + total;
     } else if (visible == 0) {
-        string = "No maps match your query or filter";
+        string = "No " + searchable_name + " match your query or filter";
     } else {
-        string = "There are no maps to display";
+        string = "There are no " + searchable_name + " to display";
     }
     $('#records-count').text(string);
 }
@@ -155,7 +156,7 @@ function forceUpdateSearch() {
 }
 
 function scrollToTop() {
-    $("body, html").animate({
+    $("body, html").stop(true).animate({
         scrollTop: $('#searchable-collection').position().top - 90
     });
 }

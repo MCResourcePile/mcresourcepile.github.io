@@ -1,37 +1,80 @@
 {
     "title": "Race to Victory II",
-    "subtitle": "Records to Race for Victory II, a tournament hosted by the Avicus Network",
+    "subtitle": "Records to Race for Victory II, a tournament hosted by Avicus Network",
     "page-category": ["tournaments", "league", "avicus"],
-    "announcement": "https://avicus.net/tournaments/race-to-victory-ii",
-    "challonge": [],
-    "method": "TBD",
-    "gamemodes": "Capture the Wool",
-    "selection": "TBD",
-    "players": "6-8",
+    "settings": {
+        "tournaments": {
+            "host": "avicus"
+        }
+    },
+    "order": {
+        "type": "Tournament",
+        "number": 6,
+        "last": "Conquest Inc.",
+        "next": "Battle of Eternity II"
+    },
+    "results": {
+        "first_place": "Horizon",
+        "second_place": "Teamlas",
+        "third_place": "Team Rocket",
+        "challonge": [
+            {"url": "https://avicus.challonge.com/RaceToVictoryII", "description": "Group Stage & Invitational"}
+        ]
+    },
+    "method": "Group Stages, then Single Elimination Invitational",
+    "gamemodes": ["ctw"],
+    "teams": "10 teams",
+    "teamsize": "8v8",
     "stages": [
-        {"stage": "First round of matches", "date": "July 22nd, 2017"}
+        {"stage": "Group Stages", "date": "July 29, 2017"},
+        {"stage": "Invitational", "date": "August 5-6, 2017"}
     ],
-    "pool": [
-        {"name": "Coral Reef II",    "slug": "coral-reef-ii",  "gamemode": "Capture the Wool"},
-        {"name": "Forestry",		 "slug": "forestry", 	   "gamemode": "Capture the Wool"},
-        {"name": "Rendezvous CTW",   "slug": "rendezvous-ctw", "gamemode": "Capture the Wool"},
-        {"name": "Sea Port",         "slug": "sea-port",       "gamemode": "Capture the Wool"},
-        {"name": "Sub Urban",        "slug": "sub-urban",      "gamemode": "Capture the Wool"},
-        {"name": "Maps unconfirmed", "slug": "",               "gamemode": ""}
+    "maps": [
+        {
+            "name": "Coral Reef II",
+            "slug": "coral_reef_ii",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Forestry",
+            "slug": "forestry",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Rendezvous CTW",
+            "slug": "rendezvous_ctw",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Sea Port",
+            "slug": "sea-port",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Sub Urban",
+            "slug": "sub-urban",
+            "tags": ["ctw"]
+        }
     ],
-    "first_place": "",
-    "second_place": "",
-    "third_place": "",
     "groups": [
         {
-            "group": "Group A",
+            "name": "Group A",
             "teams": [
-                {"team": "Teams unconfirmed"}
+                {"name": "Teamlas"},
+                {"name": "Horizon"},
+                {"name": "Team Rocket"},
+                {"name": "Celestial"},
+                {"name": "Crede"}
             ]
-        }, {
-            "group": "Group B",
+        },
+        {
+            "name": "Group B",
             "teams": [
-                {"team": "Teams unconfirmed"}
+                {"name": "SquadCatt"},
+                {"name": "Apollo"},
+                {"name": "Team Allah"},
+                {"name": "Jalapenos"},
+                {"name": "Cacalmarin"}
             ]
         }
     ]

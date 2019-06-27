@@ -1,0 +1,13 @@
+{{> navigation_header}}
+<div class="section leagues center">
+    {{#tournaments}}
+    <a href="{{#if disabled}}#{{else}}/contests/{{@root.settings.maps.group}}/{{snakecase (lowercase name)}}{{/if}}">
+        {{#if heading}}
+        <div class="league-banner {{#if disabled}}hide{{/if}}" style="background: url('../../assets/img/contest/{{snakecase (lowercase name)}}/banner.jpg');background-position:center">{{name}}</div>
+        {{else}}
+        <img class="league-banner-custom {{#if disabled}}hide{{/if}}" src="../../assets/img/contest/{{snakecase (lowercase name)}}/banner.png">
+        {{/if}}
+    </a>
+    {{/tournaments}}
+</div>
+{{> navigation_footer}}

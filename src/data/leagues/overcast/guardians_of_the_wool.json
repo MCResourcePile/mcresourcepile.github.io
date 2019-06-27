@@ -2,25 +2,75 @@
     "title": "Guardians of the Wool",
     "subtitle": "Records for Guardians of the Wool, a tournament hosted by Overcast Network",
     "page-category": ["tournaments", "league", "overcast"],
-    "announcement": "",
-    "challonge": [
-        {"bracket": "https://ocn.challonge.com/GOTW/module"}
-    ],
+    "settings": {
+        "tournaments": {
+            "host": "overcast"
+        }
+    },
+    "order": {
+        "type": "Tournament",
+        "number": 7,
+        "last": "Boom in a Box",
+        "next": "Conquest"
+    },
+    "results": {
+        "first_place": "Impact",
+        "second_place": "Game Mode 1",
+        "third_place": "LunGGlove",
+        "challonge": [
+            {"url": "https://ocn.challonge.com/GOTW", "description": "Bracket"}
+        ]
+    },
     "method": "Single Elimination",
-    "gamemodes": "Capture the Wool",
-    "selection": "64 teams",
-    "players": "8v8",
+    "gamemodes": ["ctw"],
+    "teams": "64 teams",
+    "teamsize": "8v8",
     "stages": [
-        {"stage": "Tournament", "date": "August 29-30th, 2014"}
+        {"stage": "Tournament", "date": "August 29-30, 2014"}
     ],
-    "pool": [
-        {"name": "Deepwind Jungle",    "slug": "deepwind_jungle",    "gamemode": "Capture the Wool"},
-        {"name": "Golden Drought",     "slug": "golden_drought",     "gamemode": "Capture the Wool"},
-        {"name": "Golden Drought III", "slug": "golden_drought_iii", "gamemode": "Capture the Wool"},
-        {"name": "Greenhouse",         "slug": "greenhouse",         "gamemode": "Capture the Wool, Blitz"},
-        {"name": "NextGen",            "slug": "nextgen",            "gamemode": "Capture the Wool"},
-        {"name": "Race for Victory",   "slug": "race_for_victory",   "gamemode": "Capture the Wool"},
-        {"name": "Wit's End",          "slug": "wits_end",           "gamemode": "Capture the Wool"}
+    "maps": [
+        {
+            "name": "Greenhouse",
+            "slug": "greenhouse",
+            "tags": ["ctw"],
+            "stage": "Tie Breaker"
+        },
+        {
+            "name": "Wit's End",
+            "slug": "wits_end",
+            "tags": ["ctw"],
+            "stage": "Round of 64"
+        },
+        {
+            "name": "NextGen",
+            "slug": "nextgen",
+            "tags": ["ctw"],
+            "stage": "Round of 32"
+        },
+        {
+            "name": "Golden Drought",
+            "slug": "golden_drought",
+            "tags": ["ctw"],
+            "stage": "Round of 16"
+        },
+        {
+            "name": "Race for Victory",
+            "slug": "race_for_victory",
+            "tags": ["ctw"],
+            "stage": "QuarterFinals"
+        },
+        {
+            "name": "Golden Drought III",
+            "slug": "golden_drought_iii",
+            "tags": ["ctw"],
+            "stage": "SemiFinals"
+        },
+        {
+            "name": "Deepwind Jungle",
+            "slug": "deepwind_jungle",
+            "tags": ["ctw"],
+            "stage": "Finals"
+        }
     ],
     "panels": [
         {
@@ -31,89 +81,82 @@
             ]
         }
     ],
-    "first_place": "Impact",
-    "second_place": "Game Mode 1",
-    "third_place": "LunGGlove",
     "groups": [
         {
-            "group": "Participants",
             "teams": [
-                {"team": "Loading"},
-                {"team": "UnionForce"},
-                {"team": "Kiube"},
-                {"team": "DarkPlus"},
-                {"team": "ScorpionS"},
-                {"team": "TheOutsiders"},
-                {"team": "Impact"},
-                {"team": "EleKtro"},
-                {"team": "Team Fishy"},
-                {"team": "Radical"},
-                {"team": "Cocoa Beans"},
-                {"team": "Sly"},
-                {"team": "LookThat"},
-                {"team": "Phoenix"},
-                {"team": "FireFoxes"},
-                {"team": "BlazeRod"}
+                {"name": "Loading"},
+                {"name": "UnionForce"},
+                {"name": "Kiube"},
+                {"name": "DarkPlus"},
+                {"name": "ScorpionS"},
+                {"name": "TheOutsiders"},
+                {"name": "Impact"},
+                {"name": "EleKtro"},
+                {"name": "Team Fishy"},
+                {"name": "Radical"},
+                {"name": "Cocoa Beans"},
+                {"name": "Sly"},
+                {"name": "LookThat"},
+                {"name": "Phoenix"},
+                {"name": "FireFoxes"},
+                {"name": "BlazeRod"}
             ]
         }, {
-            "group": "Participants",
             "teams": [
-                {"team": "Kyudo"},
-                {"team": "Insane Criticals"},
-                {"team": "SentsFromHeaven"},
-                {"team": "Chance"},
-                {"team": "Orpheus"},
-                {"team": "Pekeng"},
-                {"team": "Punishers"},
-                {"team": "Contagion"},
-                {"team": "Dopamine"},
-                {"team": "Rek it Walph"},
-                {"team": "honsetly spooky"},
-                {"team": "Afternoon Tea"},
-                {"team": "Ninja Squad"},
-                {"team": "Prominence"},
-                {"team": "VortexRush"},
-                {"team": "EnderFox"}
+                {"name": "Kyudo"},
+                {"name": "Insane Criticals"},
+                {"name": "SentsFromHeaven"},
+                {"name": "Chance"},
+                {"name": "Orpheus"},
+                {"name": "Pekeng"},
+                {"name": "Punishers"},
+                {"name": "Contagion"},
+                {"name": "Dopamine"},
+                {"name": "Rek it Walph"},
+                {"name": "honsetly spooky"},
+                {"name": "Afternoon Tea"},
+                {"name": "Ninja Squad"},
+                {"name": "Prominence"},
+                {"name": "VortexRush"},
+                {"name": "EnderFox"}
             ]
         }, {
-            "group": "Participants",
             "teams": [
-                {"team": "LunGGlove"},
-                {"team": "ClutchCrewV2"},
-                {"team": "Polaris"},
-                {"team": "Bone Breakers"},
-                {"team": "Looting III"},
-                {"team": "DarkSouls"},
-                {"team": "Asadito"},
-                {"team": "Singularity"},
-                {"team": "Atlas"},
-                {"team": "Team Fortis"},
-                {"team": "Beijing"},
-                {"team": "NightCore"},
-                {"team": "Jaeger"},
-                {"team": "OsitosDeGoma"},
-                {"team": "Outliers"},
-                {"team": "Beyond"}
+                {"name": "LunGGlove"},
+                {"name": "ClutchCrewV2"},
+                {"name": "Polaris"},
+                {"name": "Bone Breakers"},
+                {"name": "Looting III"},
+                {"name": "DarkSouls"},
+                {"name": "Asadito"},
+                {"name": "Singularity"},
+                {"name": "Atlas"},
+                {"name": "Team Fortis"},
+                {"name": "Beijing"},
+                {"name": "NightCore"},
+                {"name": "Jaeger"},
+                {"name": "OsitosDeGoma"},
+                {"name": "Outliers"},
+                {"name": "Beyond"}
             ]
         }, {
-            "group": "Participants",
             "teams": [
-                {"team": "Game Mode 1"},
-                {"team": "Sombrero Flippas"},
-                {"team": "AYS"},
-                {"team": "iZi"},
-                {"team": "FlameShooters"},
-                {"team": "Infamous"},
-                {"team": "LastFist"},
-                {"team": "Origins"},
-                {"team": "Divinum Hexis"},
-                {"team": "Padlock"},
-                {"team": "eZkuedk3t"},
-                {"team": "Ubermine"},
-                {"team": "Sigma"},
-                {"team": "Syntax"},
-                {"team": "LogisticGamers"},
-                {"team": "Bladestorm"}
+                {"name": "Game Mode 1"},
+                {"name": "Sombrero Flippas"},
+                {"name": "AYS"},
+                {"name": "iZi"},
+                {"name": "FlameShooters"},
+                {"name": "Infamous"},
+                {"name": "LastFist"},
+                {"name": "Origins"},
+                {"name": "Divinum Hexis"},
+                {"name": "Padlock"},
+                {"name": "eZkuedk3t"},
+                {"name": "Ubermine"},
+                {"name": "Sigma"},
+                {"name": "Syntax"},
+                {"name": "LogisticGamers"},
+                {"name": "Bladestorm"}
             ]
         }
     ]

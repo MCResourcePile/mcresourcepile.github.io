@@ -2,90 +2,209 @@
     "title": "The Legend of Ares",
     "subtitle": "Records for The Legend of Ares, a tournament hosted by Overcast Network",
     "page-category": ["tournaments", "league", "overcast"],
-    "announcement": "",
-    "challonge": [
-        {"bracket": "https://ocn.challonge.com/TLOA/module"}
-    ],
+    "settings": {
+        "tournaments": {
+            "host": "overcast"
+        }
+    },
+    "order": {
+        "type": "Tournament",
+        "number": 13,
+        "last": "Straight Outta Capture",
+        "next": "Kung-Fu Capture"
+    },
+    "results": {
+        "first_place": "Team Grief",
+        "second_place": "PureBlox",
+        "third_place": "Punishers & Orpheus",
+        "panels": [
+            {
+                "label": "Knockout Round",
+                "size": "full",
+                "rows": [
+                    {"content": "Before the Invitations, there was a knockout round. The knockout round were all scheduled matches, and they all took place on Sunday, August 21st, 2016. 6 of the lowest seeds of the 32 originally selected teams had to face 6 more chosen teams who were able to have enough to sign up. Maps were chosen beforehand for the knockout round with a Bo3 gamemodes (vetoing to determine order) with <b>SSB, NextGen, Ascendance & Storm & Bliss TDM</b>.<br><br><b>Results: Bold moved on to Invitations</b><br><br><ul><li><b>Drops</b> Vs Slivers</li><li><b>Sigma</b> Vs Macht</li><li><b>Bone Breakers</b> Vs Pony Swag</li><li><b>Fireh</b> Vs BlackHole</li><li><b>XoriZ0n</b> Vs FrostFire</li><li><b>HTIOTTWPTPAW</b> Vs GGensis</li></ul>"}
+                ]
+            }
+        ],
+        "challonge": [
+            {"url": "https://ocn.challonge.com/TLOA", "description": "Bracket"}
+        ]
+    },
     "method": "Pre-invitational knockout, then Single Elimination",
-    "gamemodes": "DTC, DTM, CTW, TDM, CP, KotH, and Blitz",
-    "selection": "38 teams",
-    "players": "8v8",
+    "gamemodes": ["dtcm", "ctw", "tdm", "cp", "koth"],
+    "teams": "38 teams",
+    "teamsize": "8v8",
     "stages": [
-        {"stage": "Knockout Rounds", "date": "August 21th, 2016"},
-        {"stage": "Invitationals", "date": "August 27-28th, 2016"}
+        {"stage": "Knockout Rounds", "date": "August 21, 2016"},
+        {"stage": "Invitationals", "date": "August 27-28, 2016"}
     ],
-    "pool": [
-        {"name": "Ascendance",         "slug": "ascendance",         "gamemode": "Control Points"},
-        {"name": "Bliss TDM",          "slug": "bliss_tdm",          "gamemode": "Team Deathmatch"},
-        {"name": "Boom TE",            "slug": "boom_te",            "gamemode": "Destroy the Monument"},
-        {"name": "Deepwind Jungle",    "slug": "deepwind_jungle",    "gamemode": "Capture the Wool"},
-        {"name": "Fortress Battles",   "slug": "fortress_battles",   "gamemode": "Destroy the Core"},
-        {"name": "Fractal Descent TE", "slug": "fractal_descent_te", "gamemode": "Destroy the Monument, Destroy the Core"},
-        {"name": "Golden Drought III", "slug": "golden_drought_iii", "gamemode": "Capture the Wool"},
-        {"name": "Harb",               "slug": "harb",               "gamemode": "Team Deathmatch"},
-        {"name": "Interitus TE",       "slug": "interitus_te",       "gamemode": "Destroy the Core"},
-        {"name": "NextGen",            "slug": "nextgen",            "gamemode": "Capture the Wool"},
-        {"name": "No Return",          "slug": "no_return",          "gamemode": "Blitz"},
-        {"name": "Race for Victory",   "slug": "race_for_victory",   "gamemode": "Capture the Wool"},
-        {"name": "Ring Race",          "slug": "ring_race",          "gamemode": "Capture the Wool"},
-        {"name": "Runes of Ruin",      "slug": "runes_of_ruin",      "gamemode": "Destroy the Core"},
-        {"name": "Spaceship Battles",  "slug": "spaceship_battles",  "gamemode": "Destroy the Monument, Destroy the Core"},
-        {"name": "Storm",              "slug": "storm",              "gamemode": "King of The Hill"},
-        {"name": "The Complex",        "slug": "the_complex",        "gamemode": "Blitz"},
-        {"name": "Urban Jungle",       "slug": "urban_jungle",       "gamemode": "King of The Hill"}
-    ],
-    "panels": [
+    "maps": [
         {
-            "label": "Knockout Round",
-            "size": "full",
-            "rows": [
-                {"content": "Before the Invitations, there was a knockout round. The knockout round were all scheduled matches, and they all took place on Sunday, August 21st, 2016. 6 of the lowest seeds of the 32 originally selected teams had to face 6 more chosen teams who were able to have enough to sign up. Maps were chosen beforehand for the knockout round with a Bo3 gamemodes (vetoing to determine order) with <b>SSB, NextGen, Ascendance & Storm & Bliss TDM</b>.<br><br><b>Results: Bold moved on to Invitations</b><br><br><ul><li><b>Drops</b> Vs Slivers</li><li><b>Sigma</b> Vs Macht</li><li><b>Bone Breakers</b> Vs Pony Swag</li><li><b>Fireh</b> Vs BlackHole</li><li><b>Xorizon</b> Vs FrostFire</li><li><b>HTIOTTWPTPAW</b> Vs GGensis</li></ul>"}
-            ]
+            "name": "War Wars",
+            "slug": "warwars",
+            "tags": ["dtc", "blitz"],
+            "stage": "Vetoing Decider"
+        },
+        {
+            "name": "Boom TE",
+            "slug": "boom_te",
+            "tags": ["dtm"],
+            "stage": "Tie Breaker"
+        },
+        {
+            "name": "No Return",
+            "slug": "no_return",
+            "tags": ["blitz"],
+            "stage": "Tie Breaker"
+        },
+        {
+            "name": "The Complex",
+            "slug": "the_complex",
+            "tags": ["blitz"],
+            "stage": "Tie Breaker"
+        },
+        {
+            "name": "Ascendance",
+            "slug": "ascendance",
+            "tags": ["cp"]
+        }, 
+        {
+            "name": "Bliss TDM",
+            "slug": "bliss_tdm",
+            "tags": ["tdm"]
+        },
+        {
+            "name": "Deepwind Jungle",
+            "slug": "deepwind_jungle",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Fortress Battles",
+            "slug": "fortress_battles",
+            "tags": ["dtc"]
+        },
+        {
+            "name": "Fractal Descent TE",
+            "slug": "fractal_descent",
+            "tags": ["dtcm"]
+        },
+        {
+            "name": "Golden Drought III",
+            "slug": "golden_drought_iii",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Harb",
+            "slug": "harb",
+            "tags": ["tdm"]
+        },
+        {
+            "name": "Interitus TE",
+            "slug": "interitus_te",
+            "tags": ["dtcm"]
+        },
+        {
+            "name": "NextGen",
+            "slug": "nextgen",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Race for Victory",
+            "slug": "race_for_victory",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Ring Race",
+            "slug": "ring_race",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Runes of Ruin",
+            "slug": "runes_of_ruin",
+            "tags": ["dtc"]
+        },
+        {
+            "name": "Spaceship Battles",
+            "slug": "spaceship_battles",
+            "tags": ["dtcm"]
+        },
+        {
+            "name": "Storm",
+            "slug": "storm",
+            "tags": ["koth"]
+        },
+        {
+            "name": "Urban Jungle",
+            "slug": "urban_jungle",
+            "tags": ["koth"]
         }
     ],
-    "first_place": "Team Grief",
-    "second_place": "PureBlox",
-    "third_place": "Punishers & Orpheus",
     "groups": [
         {
-            "group": "Participants",
+            "name": "Knockout Round",
             "teams": [
-                {"team": "PureBlox"},
-                {"team": "Obey"},
-                {"team": "Padlock"},
-                {"team": "LostMexicans"},
-                {"team": "Eclipse"},
-                {"team": "XoriZOn"},
-                {"team": "Grim"},
-                {"team": "Origin"},
-                {"team": "Punishers"},
-                {"team": "Nebula"},
-                {"team": "Fussion"},
-                {"team": "Drops"},
-                {"team": "UbeR"},
-                {"team": "Instant Crash 2.0"},
-                {"team": "Old Krysis"},
-                {"team": "Sabretooth"}
+                {"name": "Drops"},
+                {"name": "Silver"},
+                {"name": "Sigma"},
+                {"name": "Macht"},
+                {"name": "Bone Breakers"},
+                {"name": "Pony Swag"},
+                {"name": "Fireh"},
+                {"name": "BlackHole"},
+                {"name": "XoriZ0n"},
+                {"name": "FrostFire"},
+                {"name": "HTIOTTWPTPAW"},
+                {"name": "GGensis"}
             ]
-        }, {
-            "group": "Participants",
+        },
+        {
+            "name": "Invitationals",
+            "seeded": true,
             "teams": [
-                {"team": "Tribal"},
-                {"team": "Anubiz"},
-                {"team": "Prospekt"},
-                {"team": "ieat and the boys"},
-                {"team": "Orpheus"},
-                {"team": "Fireh"},
-                {"team": "Night Vision"},
-                {"team": "SquadCat"},
-                {"team": "Team Grief"},
-                {"team": "Nice!"},
-                {"team": "xxoemyixx"},
-                {"team": "Bone Breakers"},
-                {"team": "Sigma"},
-                {"team": "HTIOTTWPTPAW"},
-                {"team": "Kiubee"},
-                {"team": "Varsity"}
+                {"seed": 1, "name": "PureBlox"},
+                {"seed": 2, "name": "Tribal"},
+                {"seed": 3, "name": "Team Grief"},
+                {"seed": 4, "name": "Punishers"},
+                {"seed": 5, "name": "UbeR"},
+                {"seed": 6, "name": "Sigma"},
+                {"seed": 7, "name": "Orpheus"},
+                {"seed": 8, "name": "Eclipse"},
+                {"seed": 9, "name": "Grim"},
+                {"seed": 10, "name": "Night Vision"},
+                {"seed": 11, "name": "Kiubee"}
+            ]
+        },
+        {
+            "name": "Invitationals",
+            "seeded": true,
+            "teams": [
+                {"seed": 12, "name": "Old Krysis"},
+                {"seed": 13, "name": "Fussion"},
+                {"seed": 14, "name": "xxoemyixx"},
+                {"seed": 15, "name": "Prospekt"},
+                {"seed": 16, "name": "Padlock"},
+                {"seed": 17, "name": "LostMexicans"},
+                {"seed": 18, "name": "ieat and the boys"},
+                {"seed": 19, "name": "Bone Breakers"},
+                {"seed": 20, "name": "Drops"},
+                {"seed": 21, "name": "Sabretooth"},
+                {"seed": 22, "name": "Varsity"}
+            ]
+        },
+        {
+            "name": "Invitationals",
+            "seeded": true,
+            "teams": [
+                {"seed": 23, "name": "SquadCatt"},
+                {"seed": 24, "name": "Origin"},
+                {"seed": 25, "name": "XoriZ0n"},
+                {"seed": 26, "name": "Fireh"},
+                {"seed": 27, "name": "HTIOTTWPTPAW"},
+                {"seed": 28, "name": "Instant Crash 2.0"},
+                {"seed": 29, "name": "Nebula"},
+                {"seed": 30, "name": "Nice!"},
+                {"seed": 31, "name": "Anubiz"},
+                {"seed": 32, "name": "Obey"}
             ]
         }
     ]

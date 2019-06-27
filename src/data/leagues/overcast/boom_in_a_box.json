@@ -1,65 +1,92 @@
 {
     "title": "Boom in a Box",
-    "subtitle": "Records for Boom in a Box, a tournament hosted by Overcast Network",
+    "subtitle": "Records for Boom in a Box, a mini event hosted by Overcast Network",
     "page-category": ["tournaments", "league", "overcast"],
-    "announcement": "",
-    "challonge": [
-        {"bracket": "https://ocn.challonge.com/BoomBox/module"}
-    ],
-    "method": "Single Elimination Attack / Defense",
-    "gamemodes": "Destroy the Monument",
-    "selection": "32 teams",
-    "players": "Unknown",
+    "settings": {
+        "tournaments": {
+            "host": "overcast"
+        }
+    },
+    "order": {
+        "type": "Mini Event",
+        "number": 3,
+        "last": "Breaking Core",
+        "next": "Guardians of the Wool"
+    },
+    "results": {
+        "first_place": "Dopamine",
+        "second_place": "Kyudo",
+        "third_place": "Big Dango Family",
+        "challonge": [
+            {"url": "https://ocn.challonge.com/BoomBox", "description": "Bracket"}
+        ]
+    },
+    "method": "Single Elimination",
+    "gamemodes": ["dtm", "ad"],
+    "teams": "32 teams",
+    "teamsize": "10v10",
     "stages": [
-        {"stage": "Event", "date": "Unknown"}
+        {"stage": "Event", "date": "July 26, 2014"}
     ],
-    "pool": [
-        {"name": "BoomBox",     "slug": "boombox",     "gamemode": "Destroy the Monument"},
-        {"name": "Cannon Duel", "slug": "cannon_duel", "gamemode": "Destroy the Monument"}
+    "maps": [
+        {
+            "name": "BoomBox",
+            "slug": "boombox",
+            "tags": ["dtm", "ad"]
+        },
+        {
+            "name": "Cannon Duel",
+            "slug": "cannon_duel",
+            "tags": ["blitz", "tnt"]
+        }
     ],
-    "first_place": "Dopamine",
-    "second_place": "Kyudo",
-    "third_place": "Big Dango Family",
     "groups": [
         {
-            "group": "Participants",
             "teams": [
-                {"team": "Sabertooth"},
-                {"team": "Rejected"},
-                {"team": "Looting III"},
-                {"team": "DarkPlus"},
-                {"team": "Slithering Shadows"},
-                {"team": "Team Fortis"},
-                {"team": "Dopamine"},
-                {"team": "Padlock"},
-                {"team": "Singularity"},
-                {"team": "Kiube"},
-                {"team": "Khronos"},
-                {"team": "Proximity"},
-                {"team": "Big Dango Family"},
-                {"team": "JonasBrothers"},
-                {"team": "FirstStep"},
-                {"team": "Infamous"}
+                {"name": "Sabertooth"},
+                {"name": "Rejected"},
+                {"name": "Looting III"},
+                {"name": "DarkPlus"},
+                {"name": "Slithering Shadows"},
+                {"name": "Team Fortis"},
+                {"name": "Dopamine"},
+                {"name": "Padlock"}
             ]
-        }, {
-            "group": "Participants",
+        },
+        {
             "teams": [
-                {"team": "LastFist"},
-                {"team": "Pony Swag"},
-                {"team": "Kyudo"},
-                {"team": "Kami"},
-                {"team": "MachinimaPvPartner"},
-                {"team": "EnderFox"},
-                {"team": "ClutchCrewV2"},
-                {"team": "Origins"},
-                {"team": "CuddlyKittens"},
-                {"team": "PureBlocks"},
-                {"team": "Bacon Warriors"},
-                {"team": "Fusion"},
-                {"team": "VortexRush"},
-                {"team": "Bolt"},
-                {"team": "Deluxe"},
-                {"team": "Chance"}
+                {"name": "Singularity"},
+                {"name": "Kiube"},
+                {"name": "Khronos"},
+                {"name": "Proximity"},
+                {"name": "Big Dango Family"},
+                {"name": "JonasBrothers"},
+                {"name": "FirstStep"},
+                {"name": "Infamous"}
+            ]
+        },
+        {
+            "teams": [
+                {"name": "LastFist"},
+                {"name": "Pony Swag"},
+                {"name": "Kyudo"},
+                {"name": "Kami"},
+                {"name": "MachinimaPvPartner"},
+                {"name": "EnderFox"},
+                {"name": "ClutchCrewV2"},
+                {"name": "Origins"}
+            ]
+        },
+        {
+            "teams": [
+                {"name": "CuddlyKittens"},
+                {"name": "PureBlocks"},
+                {"name": "Bacon Warriors"},
+                {"name": "Fusion"},
+                {"name": "VortexRush"},
+                {"name": "Bolt"},
+                {"name": "Deluxe"},
+                {"name": "Chance"}
             ]
         }
     ]

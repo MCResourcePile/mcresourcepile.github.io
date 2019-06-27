@@ -1,68 +1,81 @@
 {
     "title": "The Quad Before Christmas",
-    "subtitle": "Records for The Quad Before Christmas, a tournament hosted by Stratus Network",
+    "subtitle": "Records for The Quad Before Christmas, a mini event hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
-    "announcement": "https://stratus.network/forums/topics/5a20468577db1a0001000006",
-    "challonge": [
-        {"bracket": ""}
-    ],
+    "settings": {
+        "tournaments": {
+            "host": "stratus"
+        }
+    },
+    "order": {
+        "type": "Mini Event",
+        "number": 2,
+        "last": "Just Deserts",
+        "next": "Stranger Cores"
+    },
+    "results": {
+        "first_place": "Seoul",
+        "second_place": "Team Rocket",
+        "third_place": "Praetorians and Pochinki*"
+    },
     "method": "Swiss-style group stage, then first to 3-wins",
-    "gamemodes": "Blitz",
-    "selection": "16 teams (max 6 players)",
-    "players": "4v4v4v4",
+    "gamemodes": ["blitz"],
+    "teams": "16 teams (max 6 players per team)",
+    "teamsize": "4v4v4v4",
     "stages": [
-        {"stage": "Matches begin", "date": "Saturday, December 16th"}
+        {"stage": "Event", "date": "Saturday, December 16, 2017"}
     ],
-    "pool": [
-        {"name": "Christmas Quad: TE", "slug": "christmas_quad_te", "gamemode": "Blitz"}
+    "maps": [
+        {
+            "name": "Christmas Quad: TE",
+            "slug": "christmas_quad_te",
+            "tags": ["blitz", "tnt"]
+        }
     ],
     "panels": [
         {
             "label": "The winner of the tournament: Pochinki",
             "size": "full",
             "rows": [
-                {"content": "<p>Congratulations to team Seoul for winning The Quad Before Christmas!</p><br><ul><li>Choboo</li><li>CDS_</li><li>Thye</li><li>marquezp59</li><li>cheatingg</li><li>Iviiiiiii</li></ul><br><strong>* Runner ups:</strong> Team Rocket, Praetorians, and Pochinki were the runner ups of this tournament, losing out to the overall champions, Pochinki."}
+                {"content": "<p>Roster of the team:</p><br><ul><li>Choboo</li><li>CDS_</li><li>Thye</li><li>marquezp59</li><li>cheatingg</li><li>Iviiiiiii</li></ul><br><strong>* Runner ups:</strong> Team Rocket, Praetorians, and Pochinki were the runner ups of this tournament, losing out to the overall champions, Pochinki."}
             ]
         }
     ],
-    "first_place": "Seoul",
-    "second_place": "Team Rocket",
-    "third_place": "Praetorians and Pochinki*",
     "groups": [
         {
-            "group": "Match 1 Teams",
+            "name": "Match 1 Teams",
             "teams": [
-                {"team": "Furio Tigre"},
-                {"team": "PopCornFunk"},
-                {"team": "Team Rocket"},
-                {"team": "Pochinki"}
+                {"name": "Furio Tigre"},
+                {"name": "PopCornFunk"},
+                {"name": "Team Rocket"},
+                {"name": "Pochinki"}
             ]
         },
         {
-            "group": "Match 2 Teams",
+            "name": "Match 2 Teams",
             "teams": [
-                {"team": "Epic Night"},
-                {"team": "Praetorians"},
-                {"team": "Obey"},
-                {"team": "T R I N I T Y"}
+                {"name": "Epic Night"},
+                {"name": "Praetorians"},
+                {"name": "Obey"},
+                {"name": "T R I N I T Y"}
             ]
         },
         {
-            "group": "Match 3 Teams",
+            "name": "Match 3 Teams",
             "teams": [
-                {"team": "Seoul"},
-                {"team": "Branca"},
-                {"team": "United Doutei"},
-                {"team": "Khronos"}
+                {"name": "Seoul"},
+                {"name": "Branca"},
+                {"name": "United Doutei"},
+                {"name": "Khronos"}
             ]
         },
         {
-            "group": "Match 4 Teams",
+            "name": "Match 4 Teams",
             "teams": [
-                {"team": "Again"},
-                {"team": "PointecK"},
-                {"team": "Fairy-Tail"},
-                {"team": "Retireds"}
+                {"name": "Again"},
+                {"name": "PointecK"},
+                {"name": "Fairy-Tail"},
+                {"name": "Retireds"}
             ]
         }
     ]

@@ -2,49 +2,81 @@
     "title": "Project Redemption",
     "subtitle": "Records for Project Redemption, a tournament hosted by the Avicus Network.",
     "page-category": ["tournaments", "league", "avicus"],
-    "announcement": "https://avicus.net/tournaments/project-redemption",
-    "challonge": [
-        {"bracket": "https://avicus.challonge.com/ProjectRedemption/module"}
-    ],
-    "method": "Group Stage, Invitationals, Bo3 Semifinals & Finals",
-    "gamemodes": "Capture the Wool, Destroy the Monument",
-    "selection": "12 teams",
-    "players": "10-18",
+    "settings": {
+        "tournaments": {
+            "host": "avicus"
+        }
+    },
+    "order": {
+        "type": "Tournament",
+        "number": 4,
+        "last": "Battle of Eternity",
+        "next": "Conquest Inc."
+    },
+    "results": {
+        "first_place": "Team Allah",
+        "second_place": "Sagrevyum",
+        "third_place": "Apollo",
+        "challonge": [
+            {"url": "https://avicus.challonge.com/ProjectRedemption", "description": "Bracket"}
+        ]
+    },
+    "method": "Group Stage, then Invitationals (Bo3 Semifinals & Finals)",
+    "gamemodes": ["ctw", "dtm"],
+    "teams": "12 teams",
+    "teamsize": "8v8",
     "stages": [
-        {"stage": "Group Stage",   "date": "December 3rd, 2016"},
-        {"stage": "Invitationals", "date": "December 10th, 2016"},
-        {"stage": "Finals",        "date": "December 10th, 2016"}
+        {"stage": "Group Stage",   "date": "December 3, 2016"},
+        {"stage": "Invitationals", "date": "December 10, 2016"}
     ],
-    "pool": [
-        {"name": "Static",               "slug": "static",               "gamemode": "Destroy the Monument"},
-        {"name": "Hold Fast",            "slug": "hold-fast",            "gamemode": "Capture the Wool"},
-        {"name": "Rendezvous Champions", "slug": "rendezvous-champions", "gamemode": "Unknown"},
-        {"name": "Boolean CTW",          "slug": "boolean-ctw",          "gamemode": "Capture the Wool"},
-        {"name": "Outbreak",             "slug": "outbreak",             "gamemode": "Unknown"}
+    "maps": [
+        {
+            "name": "Static",
+            "slug": "static",
+            "tags": ["dtm"]
+        },
+        {
+            "name": "Hold Fast",
+            "slug": "hold-fast",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Rendezvous Champions",
+            "slug": "rendezvous-champions",
+            "tags": ["dtm"]
+        },
+        {
+            "name": "Boolean CTW",
+            "slug": "boolean-ctw",
+            "tags": ["ctw"]
+        },
+        {
+            "name": "Outbreak",
+            "slug": "outbreak",
+            "tags": ["dtm"]
+        }
     ],
-    "first_place": "Team Allah",
-    "second_place": "Sagrevyum",
-    "third_place": "Apollo",
     "groups": [
         {
-            "group": "Group A",
+            "name": "Group A",
             "teams": [
-                {"team": "Apollo"},
-                {"team": "Sagrevyum"},
-                {"team": "Cronus"},
-                {"team": "Cacalmarin"},
-                {"team": "Jalapenos"},
-                {"team": "Twix"}
+                {"name": "Apollo"},
+                {"name": "Sagrevyum"},
+                {"name": "Cronus"},
+                {"name": "Cacalmarin"},
+                {"name": "Jalapenos"},
+                {"name": "Twix"}
             ]
-        }, {
-            "group": "Group B",
+        },
+        {
+            "name": "Group B",
             "teams": [
-                {"team": "Cennet"},
-                {"team": "Team Allah"},
-                {"team": "Team Rocket"},
-                {"team": "labradoodles"},
-                {"team": "SpaceDeepers"},
-                {"team": "HOME"}
+                {"name": "Cennet"},
+                {"name": "Team Allah"},
+                {"name": "Team Rocket"},
+                {"name": "labradoodles"},
+                {"name": "SpaceDeepers"},
+                {"name": "HOME"}
             ]
         }
     ]
