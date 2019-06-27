@@ -5,16 +5,16 @@
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Records for Star War Wars, a tournament hosted by Overcast Network" name="description">
+        <meta content="Records for Star War Wars, a mini event hosted by Overcast Network" name="description">
         <meta content="Star War Wars - ResourcePile" property="og:title">
-        <meta content="Records for Star War Wars, a tournament hosted by Overcast Network" name="og:description">
+        <meta content="Records for Star War Wars, a mini event hosted by Overcast Network" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
         <meta content="Star War Wars - ResourcePile" name="twitter:title">
-        <meta content="Records for Star War Wars, a tournament hosted by Overcast Network" name="twitter:description">
+        <meta content="Records for Star War Wars, a mini event hosted by Overcast Network" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
@@ -110,32 +110,64 @@
                         </noscript>
                     </div>
                     <div class="content-title">Star War Wars</div>
-                    <div class="content-subtitle">Records for Star War Wars, a tournament hosted by Overcast Network</div>
+                    <div class="content-subtitle">Records for Star War Wars, a mini event hosted by Overcast Network</div>
                 </div>
             <!-- Start page content -->
-<!-- League banner -->
+<nav>
+    <ul class="pager tm-pager">
+        <div class="row">
+            <div class="col-xs-4">
+                <li class="previous">
+                    <a href="/leagues/overcast/house_of_cores"><i class="fas fa-long-arrow-alt-left"></i> Last: House of Cores</a>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="pager-center">
+                    <p>Mini Event #4</p>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="next">
+                    <a href="/leagues/overcast/defenders_age_of_ares">Next: Defenders: Age of Ares <i class="fas fa-long-arrow-alt-right"></i></a>
+                </li>
+            </div>
+        </div>
+    </ul>
+</nav>
 <div class="center">
-    <img class="league-banner-custom" src="../../assets/img/tournament/banners/star_war_wars.png">
+    <img class="tm-banner" src="../../assets/img/tournament/banners/overcast/star_war_wars.png">
 </div>
-<!-- League winners -->
-<div class="league-results row center">
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">Turquaars</div>
-        <div class="league-team-position">2nd place</div>
-    </div>
-    <div class="league-position league-position-first col-sm-4">
-        <span class="fa fa-trophy"></span>
+<div class="center">
+    <div class="league-position league-position-first">
+        <i class="fas fa-trophy"></i>
         <div class="league-team">PureBlox</div>
-        <div class="league-team-position">1st place</div>
+        <div class="league-team-position">1<sup>st</sup> place</div>
     </div>
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">America &amp; Enzym</div>
-        <div class="league-team-position">3rd place</div>
+    <div class="row">
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star"></i>
+            <div class="league-team">Turquaars</div>
+            <div class="league-team-position">2<sup>nd</sup> place</div>
+        </div>
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star-half-alt"></i>
+            <div class="league-team">America &amp; Enzym</div>
+            <div class="league-team-position">3<sup>rd</sup> place</div>
+        </div>
+    </div>
+    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
+</div>
+<div class="collapse" id="resultsCollapse">
+    <div class="league-results">
+        <div class="challonge-bracket">
+            <span>Bracket</span>
+            <a href="https://ocn.challonge.com/warwars" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            <iframe src="https://ocn.challonge.com/warwars/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
     </div>
 </div>
-<!-- League information -->
 <div class="league-info-section large">Tournament Information</div>
 <div class="row">
     <div class="col-md-6">
@@ -149,15 +181,20 @@
                     </tr>
                     <tr>
                         <td>Gamemodes</td>
-                        <td>Destroy the Monument</td>
+                        <td>
+                            Blitz,
+                            Destroy the Core
+                        </td>
                     </tr>
                     <tr>
                         <td>Teams</td>
-                        <td>96 teams</td>
+                        <td>
+                            <a href="#teams">96 teams <i class="fas fa-chevron-down"></i></a>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Players</td>
-                        <td>Unknown</td>
+                        <td>Team Size</td>
+                        <td>5v5</td>
                     </tr>
                 </tbody>
             </table>
@@ -165,7 +202,7 @@
     </div>
     <div class="col-md-6">
         <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates and Times</div>
+            <div class="league-info-section">Dates</div>
             <table class="league-info-table">
                 <tbody>
                     <tr>
@@ -177,17 +214,17 @@
         </div>
     </div>
 </div>
-<!-- Leage map pool -->
-<div class="league-info-section large">Map Pool</div>
+<div class="league-info-section large">Map Pool <small>1</small></div>
 <div class="dynamic">
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/warwars.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="War Wars Collection">
-                    <div class="title"><a>War Wars Collection</a></div>
+                    <div class="title"><a class="s-title">War Wars Collection</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Destroy the Core, Blitz</a></li>
+                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span>,</li>
+                        <li class="game-tag map-tag s-tag">Blitz</li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -198,139 +235,338 @@
             </div>
         </div>
     </div>
+    
 </div>
-<!-- League teams -->
-<div class="league-info-section large">Teams</div>
+<div class="league-info-section large" id="teams">Teams <small>96 teams</small></div>
 <div class="row">
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Participants</div>
-            <ul>
-                <li>Fuxsake</li>
-                <li>The Plazma Pack</li>
-                <li>SpaceDeepers</li>
-                <li>TheXisermans</li>
-                <li>Ocean Lads</li>
-                <li>ProxWater</li>
-                <li>ProxFire</li>
-                <li>StarField</li>
-                <li>Discordia</li>
-                <li>America</li>
-                <li>HogDorks</li>
-                <li>Memory</li>
-                <li>DlayLy</li>
-                <li>Slash</li>
-                <li>Orpheus</li>
-                <li>InterPool</li>
-                <li>WhyNot?</li>
-                <li>SSJ</li>
-                <li>Netflix Afternoons</li>
-                <li>EnderFox</li>
-                <li>Wasteland Rebels</li>
-                <li>Dynamo</li>
-                <li>Instant Damage</li>
-                <li>LostMexicans</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>24 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>America</td>
+                    </tr>
+                    <tr>
+                        <td>Discordia</td>
+                    </tr>
+                    <tr>
+                        <td>DlayLy</td>
+                    </tr>
+                    <tr>
+                        <td>Dynamo</td>
+                    </tr>
+                    <tr>
+                        <td>EnderFox</td>
+                    </tr>
+                    <tr>
+                        <td>Fuxsake</td>
+                    </tr>
+                    <tr>
+                        <td>HogDorks</td>
+                    </tr>
+                    <tr>
+                        <td>Instant Damage</td>
+                    </tr>
+                    <tr>
+                        <td>InterPool</td>
+                    </tr>
+                    <tr>
+                        <td>LostMexicans</td>
+                    </tr>
+                    <tr>
+                        <td>Memory</td>
+                    </tr>
+                    <tr>
+                        <td>Netflix Afternoons</td>
+                    </tr>
+                    <tr>
+                        <td>Ocean Lads</td>
+                    </tr>
+                    <tr>
+                        <td>Orpheus</td>
+                    </tr>
+                    <tr>
+                        <td>ProxFire</td>
+                    </tr>
+                    <tr>
+                        <td>ProxWater</td>
+                    </tr>
+                    <tr>
+                        <td>SSJ</td>
+                    </tr>
+                    <tr>
+                        <td>Slash</td>
+                    </tr>
+                    <tr>
+                        <td>SpaceDeepers</td>
+                    </tr>
+                    <tr>
+                        <td>StarField</td>
+                    </tr>
+                    <tr>
+                        <td>The Plazma Pack</td>
+                    </tr>
+                    <tr>
+                        <td>TheXisermans</td>
+                    </tr>
+                    <tr>
+                        <td>Wasteland Rebels</td>
+                    </tr>
+                    <tr>
+                        <td>WhyNot?</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Participants</div>
-            <ul>
-                <li>Ascendance</li>
-                <li>BlackPvPTeam</li>
-                <li>Jackgreen Peppersprinkles</li>
-                <li>Archonsas</li>
-                <li>Ignite</li>
-                <li>Team Allah</li>
-                <li>Refugees</li>
-                <li>GameOver</li>
-                <li>Kotex</li>
-                <li>Illusion</li>
-                <li>Nymphs</li>
-                <li>Turquaars</li>
-                <li>Nokho</li>
-                <li>Trap Lords</li>
-                <li>InsertName</li>
-                <li>Bone Breakers</li>
-                <li>Wyvern</li>
-                <li>8 Deadly Sins</li>
-                <li>Dry Cereals</li>
-                <li>Advanced</li>
-                <li>TeamSoloMine</li>
-                <li>Sabertooth</li>
-                <li>LetMeWinOrReport</li>
-                <li>Descendance</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>24 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>8 Deadly Sins</td>
+                    </tr>
+                    <tr>
+                        <td>Advanced</td>
+                    </tr>
+                    <tr>
+                        <td>Archonsas</td>
+                    </tr>
+                    <tr>
+                        <td>Ascendance</td>
+                    </tr>
+                    <tr>
+                        <td>BlackPvPname</td>
+                    </tr>
+                    <tr>
+                        <td>Bone Breakers</td>
+                    </tr>
+                    <tr>
+                        <td>Descendance</td>
+                    </tr>
+                    <tr>
+                        <td>Dry Cereals</td>
+                    </tr>
+                    <tr>
+                        <td>GameOver</td>
+                    </tr>
+                    <tr>
+                        <td>Ignite</td>
+                    </tr>
+                    <tr>
+                        <td>Illusion</td>
+                    </tr>
+                    <tr>
+                        <td>InsertName</td>
+                    </tr>
+                    <tr>
+                        <td>Jackgreen Peppersprinkles</td>
+                    </tr>
+                    <tr>
+                        <td>Kotex</td>
+                    </tr>
+                    <tr>
+                        <td>LetMeWinOrReport</td>
+                    </tr>
+                    <tr>
+                        <td>Nokho</td>
+                    </tr>
+                    <tr>
+                        <td>Nymphs</td>
+                    </tr>
+                    <tr>
+                        <td>Refugees</td>
+                    </tr>
+                    <tr>
+                        <td>Sabertooth</td>
+                    </tr>
+                    <tr>
+                        <td>Team Allah</td>
+                    </tr>
+                    <tr>
+                        <td>TeamSoloMine</td>
+                    </tr>
+                    <tr>
+                        <td>Trap Lords</td>
+                    </tr>
+                    <tr>
+                        <td>Turquaars</td>
+                    </tr>
+                    <tr>
+                        <td>Wyvern</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Participants</div>
-            <ul>
-                <li>Les Toucans</li>
-                <li>Varsity</li>
-                <li>Origin</li>
-                <li>Krysis</li>
-                <li>qqqq</li>
-                <li>Sub Par</li>
-                <li>PureBlox</li>
-                <li>Oasis</li>
-                <li>Les Grecs</li>
-                <li>Sakurasou</li>
-                <li>Argo</li>
-                <li>Donko Time</li>
-                <li>Kyetho Z</li>
-                <li>Kappa</li>
-                <li>MongoloSensationV3</li>
-                <li>Zhejiang</li>
-                <li>Autoclickers in Paris</li>
-                <li>KFC KillGood</li>
-                <li>EleKtro</li>
-                <li>Dark Sigma</li>
-                <li>Radical</li>
-                <li>Divinum Hexis</li>
-                <li>Team Fishy</li>
-                <li>5Elements</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>24 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>5Elements</td>
+                    </tr>
+                    <tr>
+                        <td>Argo</td>
+                    </tr>
+                    <tr>
+                        <td>Autoclickers in Paris</td>
+                    </tr>
+                    <tr>
+                        <td>Dark Sigma</td>
+                    </tr>
+                    <tr>
+                        <td>Divinum Hexis</td>
+                    </tr>
+                    <tr>
+                        <td>Donko Time</td>
+                    </tr>
+                    <tr>
+                        <td>EleKtro</td>
+                    </tr>
+                    <tr>
+                        <td>KFC KillGood</td>
+                    </tr>
+                    <tr>
+                        <td>Kappa</td>
+                    </tr>
+                    <tr>
+                        <td>Krysis</td>
+                    </tr>
+                    <tr>
+                        <td>Kyetho Z</td>
+                    </tr>
+                    <tr>
+                        <td>Les Grecs</td>
+                    </tr>
+                    <tr>
+                        <td>Les Toucans</td>
+                    </tr>
+                    <tr>
+                        <td>MongoloSensationV3</td>
+                    </tr>
+                    <tr>
+                        <td>Oasis</td>
+                    </tr>
+                    <tr>
+                        <td>Origin</td>
+                    </tr>
+                    <tr>
+                        <td>PureBlox</td>
+                    </tr>
+                    <tr>
+                        <td>Radical</td>
+                    </tr>
+                    <tr>
+                        <td>Sakurasou</td>
+                    </tr>
+                    <tr>
+                        <td>Sub Par</td>
+                    </tr>
+                    <tr>
+                        <td>Team Fishy</td>
+                    </tr>
+                    <tr>
+                        <td>Varsity</td>
+                    </tr>
+                    <tr>
+                        <td>Zhejiang</td>
+                    </tr>
+                    <tr>
+                        <td>qqqq</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Participants</div>
-            <ul>
-                <li>ClutchCrew</li>
-                <li>Esphagna</li>
-                <li>Enzym</li>
-                <li>Outliers</li>
-                <li>Square Up</li>
-                <li>Night Vision</li>
-                <li>FirePvP</li>
-                <li>Papaya</li>
-                <li>Evolution</li>
-                <li>Ezkuetqet</li>
-                <li>Punishers</li>
-                <li>Steam</li>
-                <li>Drome</li>
-                <li>Bolt</li>
-                <li>UbeRLunDrat</li>
-                <li>Kyetho GT</li>
-                <li>Begins</li>
-                <li>UbeRSolDrat</li>
-                <li>Light Sigma</li>
-                <li>Aselvados</li>
-                <li>Sweat</li>
-                <li>Mindcool</li>
-                <li>Akron</li>
-                <li>Slivers</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>24 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Akron</td>
+                    </tr>
+                    <tr>
+                        <td>Aselvados</td>
+                    </tr>
+                    <tr>
+                        <td>Begins</td>
+                    </tr>
+                    <tr>
+                        <td>Bolt</td>
+                    </tr>
+                    <tr>
+                        <td>ClutchCrew</td>
+                    </tr>
+                    <tr>
+                        <td>Drome</td>
+                    </tr>
+                    <tr>
+                        <td>Enzym</td>
+                    </tr>
+                    <tr>
+                        <td>Esphagna</td>
+                    </tr>
+                    <tr>
+                        <td>Evolution</td>
+                    </tr>
+                    <tr>
+                        <td>Ezkuetqet</td>
+                    </tr>
+                    <tr>
+                        <td>FirePvP</td>
+                    </tr>
+                    <tr>
+                        <td>Kyetho GT</td>
+                    </tr>
+                    <tr>
+                        <td>Light Sigma</td>
+                    </tr>
+                    <tr>
+                        <td>Mindcool</td>
+                    </tr>
+                    <tr>
+                        <td>Night Vision</td>
+                    </tr>
+                    <tr>
+                        <td>Outliers</td>
+                    </tr>
+                    <tr>
+                        <td>Papaya</td>
+                    </tr>
+                    <tr>
+                        <td>Punishers</td>
+                    </tr>
+                    <tr>
+                        <td>Slivers</td>
+                    </tr>
+                    <tr>
+                        <td>Sname</td>
+                    </tr>
+                    <tr>
+                        <td>Square Up</td>
+                    </tr>
+                    <tr>
+                        <td>Sweat</td>
+                    </tr>
+                    <tr>
+                        <td>UbeRLunDrat</td>
+                    </tr>
+                    <tr>
+                        <td>UbeRSolDrat</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
-<!-- League standings -->
-<div class="league-info-section large">Standings</div>
-<div class="challonge-bracket">
-    <iframe src="https://ocn.challonge.com/warwars/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
 </div>
             <!-- End page content -->
             </div>

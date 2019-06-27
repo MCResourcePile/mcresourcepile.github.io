@@ -1,19 +1,19 @@
 <html>
     <head>
-        <title>Avicus Network - League Records - ResourcePile</title>
+        <title>Avicus Network Tournament Records - ResourcePile</title>
         <!-- Page meta data -->
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta content="Records for tournaments hosted by Avicus Network" name="description">
-        <meta content="Avicus Network - League Records - ResourcePile" property="og:title">
+        <meta content="Avicus Network Tournament Records - ResourcePile" property="og:title">
         <meta content="Records for tournaments hosted by Avicus Network" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
-        <meta content="Avicus Network - League Records - ResourcePile" name="twitter:title">
+        <meta content="Avicus Network Tournament Records - ResourcePile" name="twitter:title">
         <meta content="Records for tournaments hosted by Avicus Network" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
@@ -28,6 +28,10 @@
         <script src="/assets/js/js.cookie.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="/assets/js/moment.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+        <script src="/assets/js/url.min.js"></script>
+        <script src="/assets/js/tournaments.js"></script>
+        <script src="/assets/js/search.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -109,32 +113,222 @@
                             <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
                         </noscript>
                     </div>
-                    <div class="content-title">Avicus Network - League Records</div>
+                    <div class="content-title">Avicus Network Tournament Records</div>
                     <div class="content-subtitle">Records for tournaments hosted by Avicus Network</div>
                 </div>
+                <p>Click on a tournament for more information.</p>
             <!-- Start page content -->
-<div class="section leagues center">
-    <a href="/leagues/avicus/race_to_victory_ii">
-        <img class="league-banner-custom " src="../../assets/img/tournament/banners/race_to_victory_ii.png">
-    </a>
-    <a href="/leagues/avicus/project_redemption">
-        <img class="league-banner-custom " src="../../assets/img/tournament/banners/project_redemption.png">
-    </a>
-    <a href="#">
-        <img class="league-banner-custom hide" src="../../assets/img/tournament/banners/conquest_inc.png">
-    </a>
-    <a href="/leagues/avicus/battle_of_eternity">
-        <img class="league-banner-custom " src="../../assets/img/tournament/banners/battle_of_eternity.png">
-    </a>
-    <a href="/leagues/avicus/avicus_league_season_1">
-        <img class="league-banner-custom " src="../../assets/img/tournament/banners/avicus_league_season_1.png">
-    </a>
-    <a href="/leagues/avicus/race_for_victory">
-        <img class="league-banner-custom " src="../../assets/img/tournament/banners/race_for_victory.png">
-    </a>
-    <a href="/leagues/avicus/the_omega_championship">
-        <img class="league-banner-custom " src="../../assets/img/tournament/banners/the_omega_championship.png">
-    </a>
+<div id="searchable-collection" class="row">
+    <div class="col-md-3 col-md-push-9">
+        <div class="thumbnail map-search">
+            <div class="center">
+                <span id="records-count"></span>
+            </div>
+            <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search tournaments">
+            <div class="filters">
+                <b>Filters</b>
+                <small>Use filters to narrow your query when searching for specific tournaments.</small>
+                <div class="group">
+                    <b>Types</b>
+                    <span class="filter">Tournament</span>
+                    <span class="filter">Season</span>
+                </div>
+                <div class="group">
+                    <b>Games</b>
+                    <span class="filter">Capture Points</span>
+                    <span class="filter">Capture the Wool</span>
+                    <span class="filter">Capture the Flag</span>
+                    <span class="filter">Destroy the Core</span>
+                    <span class="filter">Destroy the Monument</span>
+                    <span class="filter">King of the Flag</span>
+                    <span class="filter">King of the Hill</span>
+                    <span class="filter">Team Deathmatch</span>
+                </div>
+                <div class="group">
+                    <b>Addons</b>
+                    <span class="filter">Attack/Defend</span>
+                    <span class="filter">Blitz</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3 list">
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <a class="click-search" data-query="Tournament">
+                    <span class="tm-label">Tournament #8</span>
+                </a>
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="December 23, 2017"><i class="far fa-calendar"></i> 2017</span>
+                <a class="click-search" data-query="Aura">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> Aura</span>
+                </a>
+            </div>
+            <a href="/leagues/avicus/how_alm_captured_christmas">
+                <div class="tm-name">How ALM Captured Christmas</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Capture the Flag</span>,
+                    <span class="tm-tag">King of the Hill</span>
+                    <div class="tags hidden">Aura,Tournament,Capture the Flag,King of the Hill</div>
+                </div>
+                <img class="tm-banner" src="../../assets/img/tournament/banners/avicus/how_alm_captured_christmas.png">
+            </a>
+        </div>
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <a class="click-search" data-query="Tournament">
+                    <span class="tm-label">Tournament #7</span>
+                </a>
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 18, 2017 to November 25, 2017"><i class="far fa-calendar"></i> 2017</span>
+                <a class="click-search" data-query="50 Shades of ALM">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> 50 Shades of ALM</span>
+                </a>
+            </div>
+            <a href="/leagues/avicus/battle_of_eternity_ii">
+                <div class="tm-name">Battle of Eternity II</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Team Deathmatch</span>
+                    <div class="tags hidden">50 Shades of ALM,Tournament,Team Deathmatch</div>
+                </div>
+                <img class="tm-banner" src="../../assets/img/tournament/banners/avicus/battle_of_eternity_ii.png">
+            </a>
+        </div>
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <a class="click-search" data-query="Tournament">
+                    <span class="tm-label">Tournament #6</span>
+                </a>
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="July 29, 2017 to August 5-6, 2017"><i class="far fa-calendar"></i> 2017</span>
+                <a class="click-search" data-query="Horizon">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> Horizon</span>
+                </a>
+            </div>
+            <a href="/leagues/avicus/race_to_victory_ii">
+                <div class="tm-name">Race to Victory II</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Capture the Wool</span>
+                    <div class="tags hidden">Horizon,Tournament,Capture the Wool</div>
+                </div>
+                <img class="tm-banner" src="../../assets/img/tournament/banners/avicus/race_to_victory_ii.png">
+            </a>
+        </div>
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <a class="click-search" data-query="Tournament">
+                    <span class="tm-label">Tournament #5</span>
+                </a>
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="April 29-30, 2017 to May 6-7, 2017"><i class="far fa-calendar"></i> 2017</span>
+                <a class="click-search" data-query="PureDogs">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> PureDogs</span>
+                </a>
+            </div>
+            <a href="/leagues/avicus/conquest_inc">
+                <div class="tm-name">Conquest Inc.</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Capture Points</span>,
+                    <span class="tm-tag">Capture the Wool</span>,
+                    <span class="tm-tag">King of the Hill</span>
+                    <div class="tags hidden">PureDogs,Tournament,Capture Points,Capture the Wool,King of the Hill</div>
+                </div>
+                <img class="tm-banner" src="../../assets/img/tournament/banners/avicus/conquest_inc.png">
+            </a>
+        </div>
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <a class="click-search" data-query="Tournament">
+                    <span class="tm-label">Tournament #4</span>
+                </a>
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="December 3, 2016 to December 10, 2016"><i class="far fa-calendar"></i> 2016</span>
+                <a class="click-search" data-query="Team Allah">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> Team Allah</span>
+                </a>
+            </div>
+            <a href="/leagues/avicus/project_redemption">
+                <div class="tm-name">Project Redemption</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Capture the Wool</span>,
+                    <span class="tm-tag">Destroy the Monument</span>
+                    <div class="tags hidden">Team Allah,Tournament,Capture the Wool,Destroy the Monument</div>
+                </div>
+                <img class="tm-banner" src="../../assets/img/tournament/banners/avicus/project_redemption.png">
+            </a>
+        </div>
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <a class="click-search" data-query="Tournament">
+                    <span class="tm-label">Tournament #3</span>
+                </a>
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="June 4, 2016 to July 10, 2016"><i class="far fa-calendar"></i> 2016</span>
+                <a class="click-search" data-query="Team Allah">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> Team Allah</span>
+                </a>
+            </div>
+            <a href="/leagues/avicus/battle_of_eternity">
+                <div class="tm-name">Battle of Eternity</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Team Deathmatch</span>
+                    <div class="tags hidden">Team Allah,Tournament,Team Deathmatch</div>
+                </div>
+                <img class="tm-banner" src="../../assets/img/tournament/banners/avicus/battle_of_eternity.png">
+            </a>
+        </div>
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <a class="click-search" data-query="Season">
+                    <span class="tm-label">Season #1</span>
+                </a>
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 28, 2015 to January 23, 2016"><i class="far fa-calendar"></i> 2015</span>
+                <a class="click-search" data-query="Team Allah">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> Team Allah</span>
+                </a>
+            </div>
+            <a href="/leagues/avicus/avicus_league_season_1">
+                <div class="tm-name">Avicus League - Season 1</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Team Deathmatch</span>
+                    <div class="tags hidden">Team Allah,Season,Team Deathmatch</div>
+                </div>
+                <img class="tm-banner" src="../../assets/img/tournament/banners/avicus/avicus_league_season_1.png">
+            </a>
+        </div>
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <a class="click-search" data-query="Tournament">
+                    <span class="tm-label">Tournament #2</span>
+                </a>
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 7-8, 2015"><i class="far fa-calendar"></i> 2015</span>
+                <a class="click-search" data-query="Powerpuff Boys">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> Powerpuff Boys</span>
+                </a>
+            </div>
+            <a href="/leagues/avicus/race_to_victory">
+                <div class="tm-name">Race to Victory</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Capture the Wool</span>
+                    <div class="tags hidden">Powerpuff Boys,Tournament,Capture the Wool</div>
+                </div>
+                <img class="tm-banner" src="../../assets/img/tournament/banners/avicus/race_to_victory.png">
+            </a>
+        </div>
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <a class="click-search" data-query="Tournament">
+                    <span class="tm-label">Tournament #1</span>
+                </a>
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="June 6, 2015 to June 22, 2015"><i class="far fa-calendar"></i> 2015</span>
+                <a class="click-search" data-query="BerzerkV2">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> BerzerkV2</span>
+                </a>
+            </div>
+            <a href="/leagues/avicus/the_omega_championship">
+                <div class="tm-name">The Omega Championship</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Destroy the Monument</span>
+                    <div class="tags hidden">BerzerkV2,Tournament,Destroy the Monument</div>
+                </div>
+                <img class="tm-banner" src="../../assets/img/tournament/banners/avicus/the_omega_championship.png">
+            </a>
+        </div>
+    </div>
 </div>
             <!-- End page content -->
             </div>

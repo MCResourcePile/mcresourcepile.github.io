@@ -5,16 +5,16 @@
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Records for Battle of Eternity, a tournament hosted by the Avicus Network" name="description">
+        <meta content="Records for Battle of Eternity, a tournament hosted by Avicus Network" name="description">
         <meta content="Battle of Eternity - ResourcePile" property="og:title">
-        <meta content="Records for Battle of Eternity, a tournament hosted by the Avicus Network" name="og:description">
+        <meta content="Records for Battle of Eternity, a tournament hosted by Avicus Network" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
         <meta content="Battle of Eternity - ResourcePile" name="twitter:title">
-        <meta content="Records for Battle of Eternity, a tournament hosted by the Avicus Network" name="twitter:description">
+        <meta content="Records for Battle of Eternity, a tournament hosted by Avicus Network" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
@@ -110,32 +110,64 @@
                         </noscript>
                     </div>
                     <div class="content-title">Battle of Eternity</div>
-                    <div class="content-subtitle">Records for Battle of Eternity, a tournament hosted by the Avicus Network</div>
+                    <div class="content-subtitle">Records for Battle of Eternity, a tournament hosted by Avicus Network</div>
                 </div>
             <!-- Start page content -->
-<!-- League banner -->
+<nav>
+    <ul class="pager tm-pager">
+        <div class="row">
+            <div class="col-xs-4">
+                <li class="previous">
+                    <a href="/leagues/avicus/avicus_league_season_1"><i class="fas fa-long-arrow-alt-left"></i> Last: Avicus League - Season 1</a>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="pager-center">
+                    <p>Tournament #3</p>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="next">
+                    <a href="/leagues/avicus/project_redemption">Next: Project Redemption <i class="fas fa-long-arrow-alt-right"></i></a>
+                </li>
+            </div>
+        </div>
+    </ul>
+</nav>
 <div class="center">
-    <img class="league-banner-custom" src="../../assets/img/tournament/banners/battle_of_eternity.png">
+    <img class="tm-banner" src="../../assets/img/tournament/banners/avicus/battle_of_eternity.png">
 </div>
-<!-- League winners -->
-<div class="league-results row center">
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">Apollo</div>
-        <div class="league-team-position">2nd place</div>
-    </div>
-    <div class="league-position league-position-first col-sm-4">
-        <span class="fa fa-trophy"></span>
+<div class="center">
+    <div class="league-position league-position-first">
+        <i class="fas fa-trophy"></i>
         <div class="league-team">Team Allah</div>
-        <div class="league-team-position">1st place</div>
+        <div class="league-team-position">1<sup>st</sup> place</div>
     </div>
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">China Baby Toes</div>
-        <div class="league-team-position">3rd place</div>
+    <div class="row">
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star"></i>
+            <div class="league-team">Apollo</div>
+            <div class="league-team-position">2<sup>nd</sup> place</div>
+        </div>
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star-half-alt"></i>
+            <div class="league-team">China Baby Toes</div>
+            <div class="league-team-position">3<sup>rd</sup> place</div>
+        </div>
+    </div>
+    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
+</div>
+<div class="collapse" id="resultsCollapse">
+    <div class="league-results">
+        <div class="challonge-bracket">
+            <span>Group Stage &amp; Invitational</span>
+            <a href="https://avicus.challonge.com/BattleOfEternity" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            <iframe src="https://avicus.challonge.com/BattleOfEternity/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
     </div>
 </div>
-<!-- League information -->
 <div class="league-info-section large">Tournament Information</div>
 <div class="row">
     <div class="col-md-6">
@@ -145,19 +177,23 @@
                 <tbody>
                     <tr>
                         <td>Method</td>
-                        <td>Groups and Double Elimination</td>
+                        <td>Groups Stage, then Double Elimination Invitational</td>
                     </tr>
                     <tr>
                         <td>Gamemodes</td>
-                        <td>Team Deathmatch</td>
+                        <td>
+                            Team Deathmatch
+                        </td>
                     </tr>
                     <tr>
                         <td>Teams</td>
-                        <td>20 teams</td>
+                        <td>
+                            <a href="#teams">20 teams <i class="fas fa-chevron-down"></i></a>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Players</td>
-                        <td>10-16</td>
+                        <td>Team Size</td>
+                        <td>8v8</td>
                     </tr>
                 </tbody>
             </table>
@@ -165,53 +201,52 @@
     </div>
     <div class="col-md-6">
         <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates and Times</div>
+            <div class="league-info-section">Dates</div>
             <table class="league-info-table">
                 <tbody>
                     <tr>
                         <td>Group A Matches 1-4</td>
-                        <td>June 4th, 2016</td>
+                        <td>June 4, 2016</td>
                     </tr>
                     <tr>
                         <td>Group A Matches 5-7</td>
-                        <td>June 11th, 2016</td>
+                        <td>June 11, 2016</td>
                     </tr>
                     <tr>
                         <td>Group B Matches 1-4</td>
-                        <td>June 18th, 2016</td>
+                        <td>June 18, 2016</td>
                     </tr>
                     <tr>
                         <td>Group B Matches 5-7</td>
-                        <td>June 25th, 2016</td>
+                        <td>June 25, 2016</td>
                     </tr>
                     <tr>
                         <td>Invitationals - 1st &amp; 2nd Round</td>
-                        <td>July 9th, 2016</td>
+                        <td>July 9, 2016</td>
                     </tr>
                     <tr>
-                        <td>Semifinals</td>
-                        <td>July 9th, 2016</td>
+                        <td>SemiFinals</td>
+                        <td>July 9, 2016</td>
                     </tr>
                     <tr>
                         <td>Finals</td>
-                        <td>July 10th, 2016</td>
+                        <td>July 10, 2016</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<!-- Leage map pool -->
-<div class="league-info-section large">Map Pool</div>
+<div class="league-info-section large">Map Pool <small>5</small></div>
 <div class="dynamic">
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/arcadia.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Arcadia">
-                    <div class="title"><a>Arcadia</a></div>
+                    <div class="title"><a class="s-title">Arcadia</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Team Deathmatch</a></li>
+                        <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -222,14 +257,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/crossfire.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Crossfire">
-                    <div class="title"><a>Crossfire</a></div>
+                    <div class="title"><a class="s-title">Crossfire</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Team Deathmatch</a></li>
+                        <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -240,14 +276,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/injustice.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Injustice">
-                    <div class="title"><a>Injustice</a></div>
+                    <div class="title"><a class="s-title">Injustice</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Team Deathmatch</a></li>
+                        <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -258,14 +295,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/supply.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Supply">
-                    <div class="title"><a>Supply</a></div>
+                    <div class="title"><a class="s-title">Supply</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Team Deathmatch</a></li>
+                        <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -276,14 +314,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/xena.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Xena">
-                    <div class="title"><a>Xena</a></div>
+                    <div class="title"><a class="s-title">Xena</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Team Deathmatch</a></li>
+                        <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -294,49 +333,90 @@
             </div>
         </div>
     </div>
+    
 </div>
-<!-- League teams -->
-<div class="league-info-section large">Teams</div>
+<div class="league-info-section large" id="teams">Teams <small>20 teams</small></div>
 <div class="row">
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Group A</div>
-            <ul>
-                <li>Team Allah</li>
-                <li>Apollo</li>
-                <li>ScorpionS</li>
-                <li>The Crazy Beaners</li>
-                <li>Varsity</li>
-                <li>Cacalmarin</li>
-                <li>Endless Aptitude</li>
-                <li>Proxy</li>
-                <li>Arcadeus</li>
-                <li>Necromancy</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Group A <small>10 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Apollo</td>
+                    </tr>
+                    <tr>
+                        <td>Arcadeus</td>
+                    </tr>
+                    <tr>
+                        <td>Cacalmarin</td>
+                    </tr>
+                    <tr>
+                        <td>Endless Aptitude</td>
+                    </tr>
+                    <tr>
+                        <td>Necromancy</td>
+                    </tr>
+                    <tr>
+                        <td>Proxy</td>
+                    </tr>
+                    <tr>
+                        <td>ScorpionS</td>
+                    </tr>
+                    <tr>
+                        <td>Team Allah</td>
+                    </tr>
+                    <tr>
+                        <td>The Crazy Beaners</td>
+                    </tr>
+                    <tr>
+                        <td>Varsity</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Group B</div>
-            <ul>
-                <li>UbeR</li>
-                <li>China Baby Toes</li>
-                <li>Cronus</li>
-                <li>Sagrevyum</li>
-                <li>Jalapenos</li>
-                <li>Black Hole</li>
-                <li>Eternal Cross</li>
-                <li>Xenarch</li>
-                <li>La Vigen</li>
-                <li>Team Ungespielt</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Group B <small>10 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Black Hole</td>
+                    </tr>
+                    <tr>
+                        <td>China Baby Toes</td>
+                    </tr>
+                    <tr>
+                        <td>Cronus</td>
+                    </tr>
+                    <tr>
+                        <td>Eternal Cross</td>
+                    </tr>
+                    <tr>
+                        <td>Jalapenos</td>
+                    </tr>
+                    <tr>
+                        <td>La Vigen</td>
+                    </tr>
+                    <tr>
+                        <td>Sagrevyum</td>
+                    </tr>
+                    <tr>
+                        <td>Team Ungespielt</td>
+                    </tr>
+                    <tr>
+                        <td>UbeR</td>
+                    </tr>
+                    <tr>
+                        <td>Xenarch</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
-<!-- League standings -->
-<div class="league-info-section large">Standings</div>
-<div class="challonge-bracket">
-    <iframe src="https://avicus.challonge.com/BattleOfEternity/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
 </div>
             <!-- End page content -->
             </div>

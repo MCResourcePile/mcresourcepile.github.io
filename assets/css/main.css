@@ -1144,19 +1144,112 @@ li.game-tag {
     padding-top: 60px;
 }
 
-.league-info-section.large {
+::placeholder {
+    line-height: normal;
+}
+
+.tm-banner-row > a {
+    color: #000;
+}
+
+.tm-banner-row > a:hover > .tm-banner {
+    -webkit-box-shadow: 0 0 4px 1px #2f6bde;
+    -moz-box-shadow: 0 0 4px 1px #2f6bde;
+    box-shadow: 0 0 4px 1px #2f6bde;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.tm-labels > a:hover {
+    text-decoration: none;
+}
+
+.tm-label {
+    color: #3b3b3b;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    margin-right: 10px;
+}
+
+.tm-name {
     font-size: 18px;
+    font-weight: 600;
+    margin-top: -8px;
+}
+
+.tm-tags {
+    margin-top: -8px;
+    margin-bottom: 2px;
+    font-size: 11px;
+}
+
+.tm-banner {
+    background-color: #343436 !important;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.tm-default-banner {
+    background-color: #343436 !important;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 700;
+    text-shadow: 2px 2px #1c1c1c;
+    text-align: left;
+    border-radius: 4px;
+    padding: 80px;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+    .tm-default-banner {
+        font-size: 25px;
+        padding: 8%;
+        padding-left: 20px;
+    }
+}
+
+.tm-banner-row > a:hover > .tm-default-banner {
+    display: inline-block;
+    -webkit-box-shadow: 0 0 4px 1px #2f6bde;
+    -moz-box-shadow: 0 0 4px 1px #2f6bde;
+    box-shadow: 0 0 4px 1px #2f6bde;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -webkit-transition: .3s;
+    transition: .3s;
+    text-decoration: none !important;
+}
+
+.league-info-section.large {
+    font-size: 22px;
     margin-bottom: 18px;
 }
 
 .league-info-section {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     padding-bottom: 2px;
     padding-left: 3px;
     padding-right: 12px;
     margin-bottom: 12px;
     border-bottom: 1px solid #cbcaca;
+}
+.league-info-section > small {
+    font-size: 70%;
+    color: #9b9b9b;
 }
 
 .league-info-table > tbody > tr > td {
@@ -1173,6 +1266,10 @@ li.game-tag {
     width: 4% !important;
 }
 
+.league-info-table > tbody > tr > td img {
+    max-width: 100%;
+}
+
 .league-info-table > thead > tr > td {
     font-weight: 600;
 }
@@ -1183,16 +1280,17 @@ li.game-tag {
 
 .league-position {
     font-size: 28px;
-    padding-top: 90px;
-    margin-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 10px;
 }
 
 .league-position-first {
     padding-top: 30px;
+    padding-bottom: 5px;
 }
 
-.league-position-first > .fa {
-    font-size: 40px;
+.league-position-first > .fas {
+    font-size: 50px;
     font-weight: 600;
 }
 
@@ -1203,7 +1301,6 @@ li.game-tag {
 
 .league-position-first > .league-team-position {
     font-size: 26px;
-    color: #868383;
     display: inline;
     border-top: 1px solid #9b9999;
     padding-left: 48px;
@@ -1226,11 +1323,79 @@ li.game-tag {
     background-color: #272A33;
 }
 
-.challonge-bracket span{
+.challonge-bracket > span {
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin-left: 5px;
+}
+
+.challonge-bracket > a {
+    color: #ababab !important;
+    display: block;
+    float: right;
+    font-size: 15px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.tournament-expand-results.collapsed:before {
+    content: "Show Full Results";
+    font-size: 18px;
+    padding-bottom: 10px;
+    display: block;
+    text-align: center;
+    color: #9b9b9b !important;
+    cursor: pointer;
+}
+
+.tournament-expand-results:before {
+    content: "Hide Full Results";
+    font-size: 18px;
+    padding-bottom: 10px;
+    display: block;
+    text-align: center;
+    color: #9b9b9b !important;
+    cursor: pointer;
+}
+
+.league-results {
+    border: 1px solid #ababab;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.tm-pager {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 576px) {
+    .tm-pager {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tm-pager a {
+        width: 130px;
+        font-size: 12px;
+    }
+}
+
+.pager-center > p {
+    display: inline-block;
+    padding: 3px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media (max-width: 576px) {
+    .pager-center {
+        display: none !important;
+    }
 }
 
 .alert-global {

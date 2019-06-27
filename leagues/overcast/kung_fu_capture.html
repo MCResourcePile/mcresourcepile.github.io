@@ -1,0 +1,495 @@
+<html>
+    <head>
+        <title>Kung-Fu Capture - ResourcePile</title>
+        <!-- Page meta data -->
+        <meta charset=" UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="Records for Kung-Fu Capture, a tournament hosted by Overcast Network" name="description">
+        <meta content="Kung-Fu Capture - ResourcePile" property="og:title">
+        <meta content="Records for Kung-Fu Capture, a tournament hosted by Overcast Network" name="og:description">
+        <meta content="website" property="og:type">
+        <meta content="ResourcePile" property="og:site_name">
+        <meta content="https://mcresourcepile.github.io/" property="og:url">
+        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
+        <meta content="summary" name="twitter:card">
+        <meta content="Kung-Fu Capture - ResourcePile" name="twitter:title">
+        <meta content="Records for Kung-Fu Capture, a tournament hosted by Overcast Network" name="twitter:description">
+        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <!-- Page stylesheets -->
+        <link href="/assets/favicon.ico" rel="shortcut icon">
+        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+        <!-- Page script files -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/assets/js/js.cookie.js"></script>
+        <script src="/assets/js/preferences.js"></script>
+        <script src="/assets/js/moment.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-91801520-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
+    </head>
+    <body >
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/maps/overcast">Overcast Collection</a></li>
+                                <li><a href="/maps/pgm">PGM Collection</a></li>
+                                <li><a href="/maps/stratus">Stratus Collection</a></li>
+                                <li><a href="/maps/avicus">Avicus Collection</a></li>
+                                <li><a href="/maps/rfw">RFW Collection</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/contests/overcast">Overcast Network</a></li>
+                                <li><a href="/contests/stratus">Stratus Network</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown active">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/leagues/overcast">Overcast Network</a></li>
+                                <li><a href="/leagues/pgm">PGM Community</a></li>
+                                <li><a href="/leagues/stratus">Stratus Network</a></li>
+                                <li><a href="/leagues/avicus">Avicus Network</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><p class="navbar-menu-title">Overcast</p></li>
+                                <li><a href="/stats/overcast/bow">Bow Records</a></li>
+                                <li><a href="/stats/overcast/miscellaneous">Miscellaneous</a></li>
+                                <li><a href="/stats/overcast/objective">Objective Leaderboards</a></li>
+                                <li><p class="navbar-menu-title">Stratus</p></li>
+                                <li><a href="/stats/stratus/bow">Bow Records</a></li>
+                                <li><p class="navbar-menu-title">Avicus</p></li>
+                                <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
+                            </ul>
+                        </li>
+                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="navbar-right auth-disabled"><a href="/admin/preferences"><i class="fab fa-github-alt"></i> <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
+                        <li class="navbar-right auth-enabled" style="display: none;"><a href="/admin/preferences"><img src="/assets/img/logo.png" class="user-avatar"> <span class="user-name">ResourcePile</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-background">
+            <div class="container">
+                <div class="content-header">
+                    <div class="content-alert">
+                        <noscript>
+                            <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+                        </noscript>
+                    </div>
+                    <div class="content-title">Kung-Fu Capture</div>
+                    <div class="content-subtitle">Records for Kung-Fu Capture, a tournament hosted by Overcast Network</div>
+                </div>
+            <!-- Start page content -->
+<nav>
+    <ul class="pager tm-pager">
+        <div class="row">
+            <div class="col-xs-4">
+                <li class="previous">
+                    <a href="/leagues/overcast/the_legend_of_ares"><i class="fas fa-long-arrow-alt-left"></i> Last: The Legend of Ares</a>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="pager-center">
+                    <p>Tournament #14</p>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="next">
+                    <a href="/leagues/overcast/rogue_gamemodes">Next: Rogue Gamemodes <i class="fas fa-long-arrow-alt-right"></i></a>
+                </li>
+            </div>
+        </div>
+    </ul>
+</nav>
+<div class="center">
+    <img class="tm-banner" src="../../assets/img/tournament/banners/overcast/kung_fu_capture.png">
+</div>
+<div class="center">
+    <div class="league-position league-position-first">
+        <i class="fas fa-trophy"></i>
+        <div class="league-team">Fussion</div>
+        <div class="league-team-position">1<sup>st</sup> place</div>
+    </div>
+    <div class="row">
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star"></i>
+            <div class="league-team">yirang</div>
+            <div class="league-team-position">2<sup>nd</sup> place</div>
+        </div>
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star-half-alt"></i>
+            <div class="league-team">Punishers</div>
+            <div class="league-team-position">3<sup>rd</sup> place</div>
+        </div>
+    </div>
+    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
+</div>
+<div class="collapse" id="resultsCollapse">
+    <div class="league-results">
+        <div class="challonge-bracket">
+            <span>Invitational</span>
+            <a href="https://ocn.challonge.com/kfc" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            <iframe src="https://ocn.challonge.com/kfc/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
+    </div>
+</div>
+<div class="league-info-section large">Tournament Information</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Details</div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td>Method</td>
+                        <td>Qualifiers, then Double Elimination Invitational</td>
+                    </tr>
+                    <tr>
+                        <td>Gamemodes</td>
+                        <td>
+                            Capture the Wool
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Teams</td>
+                        <td>
+                            <a href="#teams">16 teams (Invitational) <i class="fas fa-chevron-down"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Team Size</td>
+                        <td>8v8</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Dates</div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td>Invitationals</td>
+                        <td>November 19-20, 2016</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="league-info-section large">Map Pool <small>6</small></div>
+<div class="dynamic">
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/warwars.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="War Wars">
+                    <div class="title"><a class="s-title">War Wars</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span>,</li>
+                        <li class="game-tag map-tag s-tag">Blitz</li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info">Vetoing Decider</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/bamboo_valley_v.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Bamboo Valley V">
+                    <div class="title"><a class="s-title">Bamboo Valley V</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/coral_reef_ii.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Coral Reef II">
+                    <div class="title"><a class="s-title">Coral Reef II</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/garden_of_tholos.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Garden of Tholos">
+                    <div class="title"><a class="s-title">Garden of Tholos</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/gobi.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Gobi">
+                    <div class="title"><a class="s-title">Gobi</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/wallop_too.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Wallop Too">
+                    <div class="title"><a class="s-title">Wallop Too</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="league-info-section large" id="teams">Teams <small>16 teams (Invitational)</small></div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Invitationals <small>4 teams</small></div>
+            <table class="table table-striped">
+                <thead>
+                    <th>Seed</th>
+                    <th>Team Name</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>1</b></td>
+                        <td>Shaikru</td>
+                    </tr>
+                    <tr>
+                        <td><b>2</b></td>
+                        <td>Punishers</td>
+                    </tr>
+                    <tr>
+                        <td><b>3</b></td>
+                        <td>Drops</td>
+                    </tr>
+                    <tr>
+                        <td><b>4</b></td>
+                        <td>Fussion</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Invitationals <small>4 teams</small></div>
+            <table class="table table-striped">
+                <thead>
+                    <th>Seed</th>
+                    <th>Team Name</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>5</b></td>
+                        <td>yirang</td>
+                    </tr>
+                    <tr>
+                        <td><b>6</b></td>
+                        <td>Obey</td>
+                    </tr>
+                    <tr>
+                        <td><b>7</b></td>
+                        <td>SteelWool</td>
+                    </tr>
+                    <tr>
+                        <td><b>8</b></td>
+                        <td>Grimm</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Invitationals <small>4 teams</small></div>
+            <table class="table table-striped">
+                <thead>
+                    <th>Seed</th>
+                    <th>Team Name</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>9</b></td>
+                        <td>Secret!</td>
+                    </tr>
+                    <tr>
+                        <td><b>10</b></td>
+                        <td>#Hogwarts</td>
+                    </tr>
+                    <tr>
+                        <td><b>11</b></td>
+                        <td>Night Vision</td>
+                    </tr>
+                    <tr>
+                        <td><b>12</b></td>
+                        <td>Stupeflip</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Invitationals <small>4 teams</small></div>
+            <table class="table table-striped">
+                <thead>
+                    <th>Seed</th>
+                    <th>Team Name</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>13</b></td>
+                        <td>Potato Cactus #BLESSED</td>
+                    </tr>
+                    <tr>
+                        <td><b>14</b></td>
+                        <td>Kiub3</td>
+                    </tr>
+                    <tr>
+                        <td><b>15</b></td>
+                        <td>ConnectionLost</td>
+                    </tr>
+                    <tr>
+                        <td><b>16</b></td>
+                        <td>Missouri</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+            <!-- End page content -->
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row center" style="width: 70%">
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">About</div>
+                        <a class="footer-item" href="/staff">Staff</a>
+                        <a class="footer-item" href="/updates">Updates</a>
+                        <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Development</div>
+                        <a class="footer-item" href="/revisions/website">Revisions</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Administration</div>
+                        <a class="footer-item" href="/policies/terms">Terms of Use</a>
+                        <a class="footer-item" href="/policies/maps">Map Policy</a>
+                        <a class="footer-item" href="/admin/references">References</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Site</div>
+                        <a class="footer-item" href="/tools">Tools</a>
+                        <a class="footer-item" href="/admin/preferences">Preferences</a>
+                        <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
+                    </div>
+                </div>
+                <div class="footer-bottom center">
+                    <div class="resourcepile-copyright-year"></div>
+                </div>
+            </div>
+        </div>
+        <script src="/assets/js/global.js"></script>
+    </body>
+</html>

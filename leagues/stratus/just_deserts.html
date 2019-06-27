@@ -5,16 +5,16 @@
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Records for Just Deserts, a tournament hosted by Stratus Network" name="description">
+        <meta content="Records for Just Deserts, a mini event hosted by Stratus Network" name="description">
         <meta content="Just Deserts - ResourcePile" property="og:title">
-        <meta content="Records for Just Deserts, a tournament hosted by Stratus Network" name="og:description">
+        <meta content="Records for Just Deserts, a mini event hosted by Stratus Network" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
         <meta content="Just Deserts - ResourcePile" name="twitter:title">
-        <meta content="Records for Just Deserts, a tournament hosted by Stratus Network" name="twitter:description">
+        <meta content="Records for Just Deserts, a mini event hosted by Stratus Network" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
@@ -110,32 +110,64 @@
                         </noscript>
                     </div>
                     <div class="content-title">Just Deserts</div>
-                    <div class="content-subtitle">Records for Just Deserts, a tournament hosted by Stratus Network</div>
+                    <div class="content-subtitle">Records for Just Deserts, a mini event hosted by Stratus Network</div>
                 </div>
             <!-- Start page content -->
-<!-- League banner -->
+<nav>
+    <ul class="pager tm-pager">
+        <div class="row">
+            <div class="col-xs-4">
+                <li class="previous">
+                    <a href="/leagues/stratus/stratus_return_of_the_gamemodes"><i class="fas fa-long-arrow-alt-left"></i> Last: Stratus: Return of the Gamemodes</a>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="pager-center">
+                    <p>Mini Event #1</p>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="next">
+                    <a href="/leagues/stratus/the_quad_before_christmas">Next: The Quad Before Christmas <i class="fas fa-long-arrow-alt-right"></i></a>
+                </li>
+            </div>
+        </div>
+    </ul>
+</nav>
 <div class="center">
-    <img class="league-banner-custom" src="../../assets/img/tournament/banners/just_deserts.png">
+    <img class="tm-banner" src="../../assets/img/tournament/banners/stratus/just_deserts.png">
 </div>
-<!-- League winners -->
-<div class="league-results row center">
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">Praetorians</div>
-        <div class="league-team-position">2nd place</div>
-    </div>
-    <div class="league-position league-position-first col-sm-4">
-        <span class="fa fa-trophy"></span>
+<div class="center">
+    <div class="league-position league-position-first">
+        <i class="fas fa-trophy"></i>
         <div class="league-team">Pochinki</div>
-        <div class="league-team-position">1st place</div>
+        <div class="league-team-position">1<sup>st</sup> place</div>
     </div>
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">Red October</div>
-        <div class="league-team-position">3rd place</div>
+    <div class="row">
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star"></i>
+            <div class="league-team">Praetorians</div>
+            <div class="league-team-position">2<sup>nd</sup> place</div>
+        </div>
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star-half-alt"></i>
+            <div class="league-team">Red October</div>
+            <div class="league-team-position">3<sup>rd</sup> place</div>
+        </div>
+    </div>
+    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
+</div>
+<div class="collapse" id="resultsCollapse">
+    <div class="league-results">
+        <div class="challonge-bracket">
+            <span>Bracket</span>
+            <a href="http://stratus.challonge.com/jd" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            <iframe src="http://stratus.challonge.com/jd/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
     </div>
 </div>
-<!-- League information -->
 <div class="league-info-section large">Tournament Information</div>
 <div class="row">
     <div class="col-md-6">
@@ -149,14 +181,18 @@
                     </tr>
                     <tr>
                         <td>Gamemodes</td>
-                        <td>Capture the Flag</td>
+                        <td>
+                            King of the Flag
+                        </td>
                     </tr>
                     <tr>
                         <td>Teams</td>
-                        <td>16 teams</td>
+                        <td>
+                            <a href="#teams">16 teams <i class="fas fa-chevron-down"></i></a>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Players</td>
+                        <td>Team Size</td>
                         <td>7v7</td>
                     </tr>
                 </tbody>
@@ -165,41 +201,40 @@
     </div>
     <div class="col-md-6">
         <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates and Times</div>
+            <div class="league-info-section">Dates</div>
             <table class="league-info-table">
                 <tbody>
                     <tr>
                         <td>Tournament</td>
-                        <td>October 14th</td>
+                        <td>October 14, 2017</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
     <div class="col-md-12">
-        <div class="well well-sm well-custom-blue">
+        <div class="well well-sm well-custom-purple">
             <div class="league-info-section">The winner of the tournament: Pochinki</div>
             <table class="league-info-table">
                 <tbody>
                     <tr>
-                        <td colspan="2" style="font-weight:400"><p>Congratulations to team Pochinki for winning the first Stratus Network mini event!</p><br><ul><li>Subir</li><li>weaboo511</li><li>CincoDeMayo</li><li>Rau1</li><li>ButIDK</li><li>ShreyaBista</li><li>WikiStark</li><li>LittleSwagger</li><li>xHeimskr</li><li>mcboyfriend</li></ul></td>
+                        <td colspan="2" style="font-weight:400"><p>Roster of the team:</p><br><ul><li>Subir</li><li>weaboo511</li><li>CincoDeMayo</li><li>Rau1</li><li>ButIDK</li><li>ShreyaBista</li><li>WikiStark</li><li>LittleSwagger</li><li>xHeimskr</li><li>mcboyfriend</li></ul></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<!-- Leage map pool -->
-<div class="league-info-section large">Map Pool</div>
+<div class="league-info-section large">Map Pool <small>1</small></div>
 <div class="dynamic">
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/desert_sanctuary.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Desert Sanctuary">
-                    <div class="title"><a>Desert Sanctuary</a></div>
+                    <div class="title"><a class="s-title">Desert Sanctuary</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">King of the Flag</a></li>
+                        <li class="game-tag map-tag s-tag">King of the Flag<span class="hidden">kotf</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -210,45 +245,98 @@
             </div>
         </div>
     </div>
+    
 </div>
-<!-- League teams -->
-<div class="league-info-section large">Teams</div>
+<div class="league-info-section large" id="teams">Teams <small>16 teams</small></div>
 <div class="row">
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Teams</div>
-            <ul>
-                <li>Branca</li>
-                <li>Artemis</li>
-                <li>Furyus</li>
-                <li>Lyon</li>
-                <li>Red October</li>
-                <li>Cihuri</li>
-                <li>HeartClaw</li>
-                <li>Pochinki</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>4 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Artemis</td>
+                    </tr>
+                    <tr>
+                        <td>Branca</td>
+                    </tr>
+                    <tr>
+                        <td>Furyus</td>
+                    </tr>
+                    <tr>
+                        <td>Lyon</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Teams</div>
-            <ul>
-                <li>PureBlox</li>
-                <li>Celestial</li>
-                <li>Drops</li>
-                <li>Team Rocket</li>
-                <li>Night Vision</li>
-                <li>SquadCat</li>
-                <li>Praetorians</li>
-                <li>Discordia</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>4 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Cihuri</td>
+                    </tr>
+                    <tr>
+                        <td>HeartClaw</td>
+                    </tr>
+                    <tr>
+                        <td>Pochinki</td>
+                    </tr>
+                    <tr>
+                        <td>Red October</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
-<!-- League standings -->
-<div class="league-info-section large">Standings</div>
-<div class="challonge-bracket">
-    <iframe src="http://stratus.challonge.com/jd/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>4 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Celestial</td>
+                    </tr>
+                    <tr>
+                        <td>Drops</td>
+                    </tr>
+                    <tr>
+                        <td>PureBlox</td>
+                    </tr>
+                    <tr>
+                        <td>Team Rocket</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>4 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Discordia</td>
+                    </tr>
+                    <tr>
+                        <td>Night Vision</td>
+                    </tr>
+                    <tr>
+                        <td>Praetorians</td>
+                    </tr>
+                    <tr>
+                        <td>SquadCat</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
             <!-- End page content -->
             </div>

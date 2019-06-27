@@ -1,19 +1,19 @@
 <html>
     <head>
-        <title>PGM Community - League Records - ResourcePile</title>
+        <title>PGM Community Tournament Records - ResourcePile</title>
         <!-- Page meta data -->
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta content="A collection of tournament records from the PGM community" name="description">
-        <meta content="PGM Community - League Records - ResourcePile" property="og:title">
+        <meta content="PGM Community Tournament Records - ResourcePile" property="og:title">
         <meta content="A collection of tournament records from the PGM community" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
-        <meta content="PGM Community - League Records - ResourcePile" name="twitter:title">
+        <meta content="PGM Community Tournament Records - ResourcePile" name="twitter:title">
         <meta content="A collection of tournament records from the PGM community" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
@@ -28,6 +28,10 @@
         <script src="/assets/js/js.cookie.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="/assets/js/moment.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+        <script src="/assets/js/url.min.js"></script>
+        <script src="/assets/js/tournaments.js"></script>
+        <script src="/assets/js/search.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -109,20 +113,104 @@
                             <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
                         </noscript>
                     </div>
-                    <div class="content-title">PGM Community - League Records</div>
+                    <div class="content-title">PGM Community Tournament Records</div>
                     <div class="content-subtitle">A collection of tournament records from the PGM community</div>
                 </div>
+                <p>Click on a tournament for more information.</p>
             <!-- Start page content -->
-<div class="section leagues center">
-    <a href="/leagues/pgm/civil_modes_war_of_the_teams">
-        <div class="league-banner " style="background: url('../../assets/img/tournament/banners/civil_modes_war_of_the_teams.jpg');background-position:center">Civil Modes: War of the Teams</div>
-    </a>
-    <a href="/leagues/pgm/overcast_squad">
-        <div class="league-banner " style="background: url('../../assets/img/tournament/banners/overcast_squad.jpg');background-position:center">Overcast Squad</div>
-    </a>
-    <a href="/leagues/pgm/fantastic_pvpers_and_where_to_fight_them">
-        <div class="league-banner " style="background: url('../../assets/img/tournament/banners/fantastic_pvpers_and_where_to_fight_them.jpg');background-position:center">Fantastic PvPers and Where to Fight Them</div>
-    </a>
+<div id="searchable-collection" class="row">
+    <div class="col-md-3 col-md-push-9">
+        <div class="thumbnail map-search">
+            <div class="center">
+                <span id="records-count"></span>
+            </div>
+            <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search tournaments">
+            <div class="filters">
+                <b>Filters</b>
+                <small>Use filters to narrow your query when searching for specific tournaments.</small>
+                <div class="group">
+                    <b>Types</b>
+                    <span class="filter">Tournament</span>
+                </div>
+                <div class="group">
+                    <b>Games</b>
+                    <span class="filter">Capture Points</span>
+                    <span class="filter">Capture the Wool</span>
+                    <span class="filter">Capture the Flag</span>
+                    <span class="filter">Destroy the Core</span>
+                    <span class="filter">Destroy the Monument</span>
+                    <span class="filter">King of the Flag</span>
+                    <span class="filter">King of the Hill</span>
+                    <span class="filter">Team Deathmatch</span>
+                </div>
+                <div class="group">
+                    <b>Addons</b>
+                    <span class="filter">Attack/Defend</span>
+                    <span class="filter">Blitz</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3 list">
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="January 14-15, 2017 to January 22-23, 2017"><i class="far fa-calendar"></i> 2017</span>
+                <a class="click-search" data-query="PureBlox">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> PureBlox</span>
+                </a>
+            </div>
+            <a href="/leagues/pgm/fantastic_pvpers_and_where_to_fight_them">
+                <div class="tm-name">Fantastic PvPers and Where to Fight Them</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Capture the Flag</span>,
+                    <span class="tm-tag">Capture the Flag</span>,
+                    <span class="tm-tag">King of the Flag</span>,
+                    <span class="tm-tag">King of the Hill</span>
+                    <div class="tags hidden">PureBlox,,Capture the Flag,Capture the Flag,King of the Flag,King of the Hill</div>
+                </div>
+                <div class="tm-default-banner" style="background: url('../../assets/img/tournament/banners/default/smoke.jpg'); background-position: center;">Fantastic PvPers and Where to Fight Them</div>
+            </a>
+        </div>
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="September 24-25, 2016 to October 1-2, 2016"><i class="far fa-calendar"></i> 2016</span>
+                <a class="click-search" data-query="Grim">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> Grim</span>
+                </a>
+            </div>
+            <a href="/leagues/pgm/overcast_squad">
+                <div class="tm-name">Overcast Squad</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Capture Points</span>,
+                    <span class="tm-tag">Capture the Wool</span>,
+                    <span class="tm-tag">Destroy the Core and Monument</span>,
+                    <span class="tm-tag">King of the Hill</span>,
+                    <span class="tm-tag">Team Deathmatch</span>
+                    <div class="tags hidden">Grim,,Capture Points,Capture the Wool,Destroy the Core and Monument,King of the Hill,Team Deathmatch</div>
+                </div>
+                <div class="tm-default-banner" style="background: url('../../assets/img/tournament/banners/default/highlands.jpg'); background-position: center;">Overcast Squad</div>
+            </a>
+        </div>
+        <div class="tm-banner-row">
+            <div class="tm-labels">
+                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="April 9-10, 2016 to April 23-24, 2016"><i class="far fa-calendar"></i> 2016</span>
+                <a class="click-search" data-query="HUGE wall">
+                    <span class="tm-label"><i class="fas fa-trophy"></i> HUGE wall</span>
+                </a>
+            </div>
+            <a href="/leagues/pgm/civil_modes_war_of_the_teams">
+                <div class="tm-name">Civil Modes: War of the Teams</div>
+                <div class="tm-tags">
+                    <span class="tm-tag">Capture the Flag</span>,
+                    <span class="tm-tag">Capture the Wool</span>,
+                    <span class="tm-tag">King of the Flag</span>,
+                    <span class="tm-tag">Team Deathmatch</span>
+                    <div class="tags hidden">HUGE wall,,Capture the Flag,Capture the Wool,King of the Flag,Team Deathmatch</div>
+                </div>
+                <div class="tm-default-banner" style="background: url('../../assets/img/tournament/banners/default/desert.jpg'); background-position: center;">Civil Modes: War of the Teams</div>
+            </a>
+        </div>
+    </div>
 </div>
             <!-- End page content -->
             </div>

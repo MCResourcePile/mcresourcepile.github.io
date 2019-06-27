@@ -113,29 +113,75 @@
                     <div class="content-subtitle">Records for The Legend of Ares, a tournament hosted by Overcast Network</div>
                 </div>
             <!-- Start page content -->
-<!-- League banner -->
+<nav>
+    <ul class="pager tm-pager">
+        <div class="row">
+            <div class="col-xs-4">
+                <li class="previous">
+                    <a href="/leagues/overcast/straight_outta_capture"><i class="fas fa-long-arrow-alt-left"></i> Last: Straight Outta Capture</a>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="pager-center">
+                    <p>Tournament #13</p>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="next">
+                    <a href="/leagues/overcast/kung_fu_capture">Next: Kung-Fu Capture <i class="fas fa-long-arrow-alt-right"></i></a>
+                </li>
+            </div>
+        </div>
+    </ul>
+</nav>
 <div class="center">
-    <img class="league-banner-custom" src="../../assets/img/tournament/banners/the_legend_of_ares.png">
+    <img class="tm-banner" src="../../assets/img/tournament/banners/overcast/the_legend_of_ares.png">
 </div>
-<!-- League winners -->
-<div class="league-results row center">
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">PureBlox</div>
-        <div class="league-team-position">2nd place</div>
-    </div>
-    <div class="league-position league-position-first col-sm-4">
-        <span class="fa fa-trophy"></span>
+<div class="center">
+    <div class="league-position league-position-first">
+        <i class="fas fa-trophy"></i>
         <div class="league-team">Team Grief</div>
-        <div class="league-team-position">1st place</div>
+        <div class="league-team-position">1<sup>st</sup> place</div>
     </div>
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">Punishers &amp; Orpheus</div>
-        <div class="league-team-position">3rd place</div>
+    <div class="row">
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star"></i>
+            <div class="league-team">PureBlox</div>
+            <div class="league-team-position">2<sup>nd</sup> place</div>
+        </div>
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star-half-alt"></i>
+            <div class="league-team">Punishers &amp; Orpheus</div>
+            <div class="league-team-position">3<sup>rd</sup> place</div>
+        </div>
+    </div>
+    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
+</div>
+<div class="collapse" id="resultsCollapse">
+    <div class="league-results">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-sm well-custom-blue">
+                    <div class="league-info-section">Knockout Round</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            <tr>
+                                <td colspan="2" style="font-weight:400">Before the Invitations, there was a knockout round. The knockout round were all scheduled matches, and they all took place on Sunday, August 21st, 2016. 6 of the lowest seeds of the 32 originally selected teams had to face 6 more chosen teams who were able to have enough to sign up. Maps were chosen beforehand for the knockout round with a Bo3 gamemodes (vetoing to determine order) with <b>SSB, NextGen, Ascendance & Storm & Bliss TDM</b>.<br><br><b>Results: Bold moved on to Invitations</b><br><br><ul><li><b>Drops</b> Vs Slivers</li><li><b>Sigma</b> Vs Macht</li><li><b>Bone Breakers</b> Vs Pony Swag</li><li><b>Fireh</b> Vs BlackHole</li><li><b>XoriZ0n</b> Vs FrostFire</li><li><b>HTIOTTWPTPAW</b> Vs GGensis</li></ul></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="challonge-bracket">
+            <span>Bracket</span>
+            <a href="https://ocn.challonge.com/TLOA" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            <iframe src="https://ocn.challonge.com/TLOA/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
     </div>
 </div>
-<!-- League information -->
 <div class="league-info-section large">Tournament Information</div>
 <div class="row">
     <div class="col-md-6">
@@ -149,14 +195,22 @@
                     </tr>
                     <tr>
                         <td>Gamemodes</td>
-                        <td>DTC, DTM, CTW, TDM, CP, KotH, and Blitz</td>
+                        <td>
+                            Capture Points,
+                            Capture the Wool,
+                            Destroy the Core and Monument,
+                            King of the Hill,
+                            Team Deathmatch
+                        </td>
                     </tr>
                     <tr>
                         <td>Teams</td>
-                        <td>38 teams</td>
+                        <td>
+                            <a href="#teams">38 teams <i class="fas fa-chevron-down"></i></a>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Players</td>
+                        <td>Team Size</td>
                         <td>8v8</td>
                     </tr>
                 </tbody>
@@ -165,333 +219,109 @@
     </div>
     <div class="col-md-6">
         <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates and Times</div>
+            <div class="league-info-section">Dates</div>
             <table class="league-info-table">
                 <tbody>
                     <tr>
                         <td>Knockout Rounds</td>
-                        <td>August 21th, 2016</td>
+                        <td>August 21, 2016</td>
                     </tr>
                     <tr>
                         <td>Invitationals</td>
-                        <td>August 27-28th, 2016</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-12">
-        <div class="well well-sm well-custom-blue">
-            <div class="league-info-section">Knockout Round</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td colspan="2" style="font-weight:400">Before the Invitations, there was a knockout round. The knockout round were all scheduled matches, and they all took place on Sunday, August 21st, 2016. 6 of the lowest seeds of the 32 originally selected teams had to face 6 more chosen teams who were able to have enough to sign up. Maps were chosen beforehand for the knockout round with a Bo3 gamemodes (vetoing to determine order) with <b>SSB, NextGen, Ascendance & Storm & Bliss TDM</b>.<br><br><b>Results: Bold moved on to Invitations</b><br><br><ul><li><b>Drops</b> Vs Slivers</li><li><b>Sigma</b> Vs Macht</li><li><b>Bone Breakers</b> Vs Pony Swag</li><li><b>Fireh</b> Vs BlackHole</li><li><b>Xorizon</b> Vs FrostFire</li><li><b>HTIOTTWPTPAW</b> Vs GGensis</li></ul></td>
+                        <td>August 27-28, 2016</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<!-- Leage map pool -->
-<div class="league-info-section large">Map Pool</div>
+<div class="league-info-section large">Map Pool <small>19</small></div>
 <div class="dynamic">
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/ascendance.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Ascendance">
-                    <div class="title"><a>Ascendance</a></div>
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/warwars.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="War Wars">
+                    <div class="title"><a class="s-title">War Wars</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Control Points</a></li>
+                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span>,</li>
+                        <li class="game-tag map-tag s-tag">Blitz</li>
                     </div>
                     <div class="icon-alerts">
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-info"></span>
+                    <span class="label label-info">Vetoing Decider</span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/bliss_tdm.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Bliss TDM">
-                    <div class="title"><a>Bliss TDM</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Team Deathmatch</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/boom_te.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Boom TE">
-                    <div class="title"><a>Boom TE</a></div>
+                    <div class="title"><a class="s-title">Boom TE</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Destroy the Monument</a></li>
+                        <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-info"></span>
+                    <span class="label label-info">Tie Breaker</span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/deepwind_jungle.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Deepwind Jungle">
-                    <div class="title"><a>Deepwind Jungle</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/fortress_battles.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Fortress Battles">
-                    <div class="title"><a>Fortress Battles</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Destroy the Core</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/fractal_descent_te.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Fractal Descent TE">
-                    <div class="title"><a>Fractal Descent TE</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Destroy the Monument, Destroy the Core</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/golden_drought_iii.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Golden Drought III">
-                    <div class="title"><a>Golden Drought III</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/harb.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Harb">
-                    <div class="title"><a>Harb</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Team Deathmatch</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/interitus_te.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Interitus TE">
-                    <div class="title"><a>Interitus TE</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Destroy the Core</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/nextgen.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="NextGen">
-                    <div class="title"><a>NextGen</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/no_return.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="No Return">
-                    <div class="title"><a>No Return</a></div>
+                    <div class="title"><a class="s-title">No Return</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Blitz</a></li>
+                        <li class="game-tag map-tag s-tag">Blitz</li>
                     </div>
                     <div class="icon-alerts">
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-info"></span>
+                    <span class="label label-info">Tie Breaker</span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/race_for_victory.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Race for Victory">
-                    <div class="title"><a>Race for Victory</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/ring_race.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Ring Race">
-                    <div class="title"><a>Ring Race</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/runes_of_ruin.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Runes of Ruin">
-                    <div class="title"><a>Runes of Ruin</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Destroy the Core</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/spaceship_battles.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Spaceship Battles">
-                    <div class="title"><a>Spaceship Battles</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Destroy the Monument, Destroy the Core</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/storm.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Storm">
-                    <div class="title"><a>Storm</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">King of The Hill</a></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/the_complex.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="The Complex">
-                    <div class="title"><a>The Complex</a></div>
+                    <div class="title"><a class="s-title">The Complex</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Blitz</a></li>
+                        <li class="game-tag map-tag s-tag">Blitz</li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info">Tie Breaker</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/ascendance.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Ascendance">
+                    <div class="title"><a class="s-title">Ascendance</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Capture Points<span class="hidden">cp</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -502,14 +332,262 @@
             </div>
         </div>
     </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/bliss_tdm.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Bliss TDM">
+                    <div class="title"><a class="s-title">Bliss TDM</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/deepwind_jungle.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Deepwind Jungle">
+                    <div class="title"><a class="s-title">Deepwind Jungle</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/fortress_battles.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Fortress Battles">
+                    <div class="title"><a class="s-title">Fortress Battles</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/fractal_descent.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Fractal Descent TE">
+                    <div class="title"><a class="s-title">Fractal Descent TE</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Destroy the Core and Monument<span class="hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/golden_drought_iii.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Golden Drought III">
+                    <div class="title"><a class="s-title">Golden Drought III</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/harb.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Harb">
+                    <div class="title"><a class="s-title">Harb</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/interitus_te.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Interitus TE">
+                    <div class="title"><a class="s-title">Interitus TE</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Destroy the Core and Monument<span class="hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/nextgen.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="NextGen">
+                    <div class="title"><a class="s-title">NextGen</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/race_for_victory.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Race for Victory">
+                    <div class="title"><a class="s-title">Race for Victory</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/ring_race.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Ring Race">
+                    <div class="title"><a class="s-title">Ring Race</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/runes_of_ruin.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Runes of Ruin">
+                    <div class="title"><a class="s-title">Runes of Ruin</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/spaceship_battles.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Spaceship Battles">
+                    <div class="title"><a class="s-title">Spaceship Battles</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">Destroy the Core and Monument<span class="hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/storm.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Storm">
+                    <div class="title"><a class="s-title">Storm</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag map-tag s-tag">King of the Hill<span class="hidden">koth</span></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/urban_jungle.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Urban Jungle">
-                    <div class="title"><a>Urban Jungle</a></div>
+                    <div class="title"><a class="s-title">Urban Jungle</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">King of The Hill</a></li>
+                        <li class="game-tag map-tag s-tag">King of the Hill<span class="hidden">koth</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -520,61 +598,226 @@
             </div>
         </div>
     </div>
+    
 </div>
-<!-- League teams -->
-<div class="league-info-section large">Teams</div>
+<div class="league-info-section large" id="teams">Teams <small>38 teams</small></div>
 <div class="row">
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Participants</div>
-            <ul>
-                <li>PureBlox</li>
-                <li>Obey</li>
-                <li>Padlock</li>
-                <li>LostMexicans</li>
-                <li>Eclipse</li>
-                <li>XoriZOn</li>
-                <li>Grim</li>
-                <li>Origin</li>
-                <li>Punishers</li>
-                <li>Nebula</li>
-                <li>Fussion</li>
-                <li>Drops</li>
-                <li>UbeR</li>
-                <li>Instant Crash 2.0</li>
-                <li>Old Krysis</li>
-                <li>Sabretooth</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Knockout Round <small>12 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>BlackHole</td>
+                    </tr>
+                    <tr>
+                        <td>Bone Breakers</td>
+                    </tr>
+                    <tr>
+                        <td>Drops</td>
+                    </tr>
+                    <tr>
+                        <td>Fireh</td>
+                    </tr>
+                    <tr>
+                        <td>FrostFire</td>
+                    </tr>
+                    <tr>
+                        <td>GGensis</td>
+                    </tr>
+                    <tr>
+                        <td>HTIOTTWPTPAW</td>
+                    </tr>
+                    <tr>
+                        <td>Macht</td>
+                    </tr>
+                    <tr>
+                        <td>Pony Swag</td>
+                    </tr>
+                    <tr>
+                        <td>Sigma</td>
+                    </tr>
+                    <tr>
+                        <td>Silver</td>
+                    </tr>
+                    <tr>
+                        <td>XoriZ0n</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Participants</div>
-            <ul>
-                <li>Tribal</li>
-                <li>Anubiz</li>
-                <li>Prospekt</li>
-                <li>ieat and the boys</li>
-                <li>Orpheus</li>
-                <li>Fireh</li>
-                <li>Night Vision</li>
-                <li>SquadCat</li>
-                <li>Team Grief</li>
-                <li>Nice!</li>
-                <li>xxoemyixx</li>
-                <li>Bone Breakers</li>
-                <li>Sigma</li>
-                <li>HTIOTTWPTPAW</li>
-                <li>Kiubee</li>
-                <li>Varsity</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Invitationals <small>11 teams</small></div>
+            <table class="table table-striped">
+                <thead>
+                    <th>Seed</th>
+                    <th>Team Name</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>1</b></td>
+                        <td>PureBlox</td>
+                    </tr>
+                    <tr>
+                        <td><b>2</b></td>
+                        <td>Tribal</td>
+                    </tr>
+                    <tr>
+                        <td><b>3</b></td>
+                        <td>Team Grief</td>
+                    </tr>
+                    <tr>
+                        <td><b>4</b></td>
+                        <td>Punishers</td>
+                    </tr>
+                    <tr>
+                        <td><b>5</b></td>
+                        <td>UbeR</td>
+                    </tr>
+                    <tr>
+                        <td><b>6</b></td>
+                        <td>Sigma</td>
+                    </tr>
+                    <tr>
+                        <td><b>7</b></td>
+                        <td>Orpheus</td>
+                    </tr>
+                    <tr>
+                        <td><b>8</b></td>
+                        <td>Eclipse</td>
+                    </tr>
+                    <tr>
+                        <td><b>9</b></td>
+                        <td>Grim</td>
+                    </tr>
+                    <tr>
+                        <td><b>10</b></td>
+                        <td>Night Vision</td>
+                    </tr>
+                    <tr>
+                        <td><b>11</b></td>
+                        <td>Kiubee</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
-<!-- League standings -->
-<div class="league-info-section large">Standings</div>
-<div class="challonge-bracket">
-    <iframe src="https://ocn.challonge.com/TLOA/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Invitationals <small>11 teams</small></div>
+            <table class="table table-striped">
+                <thead>
+                    <th>Seed</th>
+                    <th>Team Name</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>12</b></td>
+                        <td>Old Krysis</td>
+                    </tr>
+                    <tr>
+                        <td><b>13</b></td>
+                        <td>Fussion</td>
+                    </tr>
+                    <tr>
+                        <td><b>14</b></td>
+                        <td>xxoemyixx</td>
+                    </tr>
+                    <tr>
+                        <td><b>15</b></td>
+                        <td>Prospekt</td>
+                    </tr>
+                    <tr>
+                        <td><b>16</b></td>
+                        <td>Padlock</td>
+                    </tr>
+                    <tr>
+                        <td><b>17</b></td>
+                        <td>LostMexicans</td>
+                    </tr>
+                    <tr>
+                        <td><b>18</b></td>
+                        <td>ieat and the boys</td>
+                    </tr>
+                    <tr>
+                        <td><b>19</b></td>
+                        <td>Bone Breakers</td>
+                    </tr>
+                    <tr>
+                        <td><b>20</b></td>
+                        <td>Drops</td>
+                    </tr>
+                    <tr>
+                        <td><b>21</b></td>
+                        <td>Sabretooth</td>
+                    </tr>
+                    <tr>
+                        <td><b>22</b></td>
+                        <td>Varsity</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Invitationals <small>10 teams</small></div>
+            <table class="table table-striped">
+                <thead>
+                    <th>Seed</th>
+                    <th>Team Name</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>23</b></td>
+                        <td>SquadCatt</td>
+                    </tr>
+                    <tr>
+                        <td><b>24</b></td>
+                        <td>Origin</td>
+                    </tr>
+                    <tr>
+                        <td><b>25</b></td>
+                        <td>XoriZ0n</td>
+                    </tr>
+                    <tr>
+                        <td><b>26</b></td>
+                        <td>Fireh</td>
+                    </tr>
+                    <tr>
+                        <td><b>27</b></td>
+                        <td>HTIOTTWPTPAW</td>
+                    </tr>
+                    <tr>
+                        <td><b>28</b></td>
+                        <td>Instant Crash 2.0</td>
+                    </tr>
+                    <tr>
+                        <td><b>29</b></td>
+                        <td>Nebula</td>
+                    </tr>
+                    <tr>
+                        <td><b>30</b></td>
+                        <td>Nice!</td>
+                    </tr>
+                    <tr>
+                        <td><b>31</b></td>
+                        <td>Anubiz</td>
+                    </tr>
+                    <tr>
+                        <td><b>32</b></td>
+                        <td>Obey</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
             <!-- End page content -->
             </div>

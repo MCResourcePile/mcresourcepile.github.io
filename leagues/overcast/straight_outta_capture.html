@@ -113,29 +113,61 @@
                     <div class="content-subtitle">Records for Straight Outta Capture, a tournament hosted by Overcast Network</div>
                 </div>
             <!-- Start page content -->
-<!-- League banner -->
+<nav>
+    <ul class="pager tm-pager">
+        <div class="row">
+            <div class="col-xs-4">
+                <li class="previous">
+                    <a href="/leagues/overcast/back_to_the_conquest_ii"><i class="fas fa-long-arrow-alt-left"></i> Last: Back to the Conquest II</a>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="pager-center">
+                    <p>Tournament #12</p>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="next">
+                    <a href="/leagues/overcast/the_legend_of_ares">Next: The Legend of Ares <i class="fas fa-long-arrow-alt-right"></i></a>
+                </li>
+            </div>
+        </div>
+    </ul>
+</nav>
 <div class="center">
-    <img class="league-banner-custom" src="../../assets/img/tournament/banners/straight_outta_capture.png">
+    <img class="tm-banner" src="../../assets/img/tournament/banners/overcast/straight_outta_capture.png">
 </div>
-<!-- League winners -->
-<div class="league-results row center">
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">Tribal</div>
-        <div class="league-team-position">2nd place</div>
-    </div>
-    <div class="league-position league-position-first col-sm-4">
-        <span class="fa fa-trophy"></span>
+<div class="center">
+    <div class="league-position league-position-first">
+        <i class="fas fa-trophy"></i>
         <div class="league-team">PureBlox</div>
-        <div class="league-team-position">1st place</div>
+        <div class="league-team-position">1<sup>st</sup> place</div>
     </div>
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">Street Sharks &amp; Punishers</div>
-        <div class="league-team-position">3rd place</div>
+    <div class="row">
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star"></i>
+            <div class="league-team">Tribal</div>
+            <div class="league-team-position">2<sup>nd</sup> place</div>
+        </div>
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star-half-alt"></i>
+            <div class="league-team">Street Sharks &amp; Punishers</div>
+            <div class="league-team-position">3<sup>rd</sup> place</div>
+        </div>
+    </div>
+    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
+</div>
+<div class="collapse" id="resultsCollapse">
+    <div class="league-results">
+        <div class="challonge-bracket">
+            <span>Bracket</span>
+            <a href="https://ocn.challonge.com/StraightOuttaCapture" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            <iframe src="https://ocn.challonge.com/StraightOuttaCapture/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
     </div>
 </div>
-<!-- League information -->
 <div class="league-info-section large">Tournament Information</div>
 <div class="row">
     <div class="col-md-6">
@@ -145,18 +177,24 @@
                 <tbody>
                     <tr>
                         <td>Method</td>
-                        <td>Group Stages -&gt; Single Elimination</td>
+                        <td>Group Stages, then Single Elimination</td>
                     </tr>
                     <tr>
                         <td>Gamemodes</td>
-                        <td>Capture the Wool, Capture the Flag, Control Points</td>
+                        <td>
+                            Capture Points,
+                            Capture the Flag,
+                            Capture the Wool
+                        </td>
                     </tr>
                     <tr>
                         <td>Teams</td>
-                        <td>72 Teams</td>
+                        <td>
+                            <a href="#teams">72 Teams <i class="fas fa-chevron-down"></i></a>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Players</td>
+                        <td>Team Size</td>
                         <td>5v5</td>
                     </tr>
                 </tbody>
@@ -165,12 +203,12 @@
     </div>
     <div class="col-md-6">
         <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates and Times</div>
+            <div class="league-info-section">Dates</div>
             <table class="league-info-table">
                 <tbody>
                     <tr>
                         <td>Group Stages</td>
-                        <td>May 7th, 14th and 21st, 2016</td>
+                        <td>May 7, 14, and 21, 2016</td>
                     </tr>
                     <tr>
                         <td>Invitationals</td>
@@ -181,17 +219,16 @@
         </div>
     </div>
 </div>
-<!-- Leage map pool -->
-<div class="league-info-section large">Map Pool</div>
+<div class="league-info-section large">Map Pool <small>9</small></div>
 <div class="dynamic">
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/abstract.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Abstract">
-                    <div class="title"><a>Abstract</a></div>
+                    <div class="title"><a class="s-title">Abstract</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -202,14 +239,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/bamboo_valley_iv.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Bamboo Valley IV">
-                    <div class="title"><a>Bamboo Valley IV</a></div>
+                    <div class="title"><a class="s-title">Bamboo Valley IV</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Control Points</a></li>
+                        <li class="game-tag map-tag s-tag">Capture Points<span class="hidden">cp</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -220,14 +258,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/flush.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Flush">
-                    <div class="title"><a>Flush</a></div>
+                    <div class="title"><a class="s-title">Flush</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Capture the Flag</a></li>
+                        <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -238,14 +277,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/foundry.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Foundry">
-                    <div class="title"><a>Foundry</a></div>
+                    <div class="title"><a class="s-title">Foundry</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Control Points</a></li>
+                        <li class="game-tag map-tag s-tag">Capture Points<span class="hidden">cp</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -256,14 +296,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/siege.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Siege">
-                    <div class="title"><a>Siege</a></div>
+                    <div class="title"><a class="s-title">Siege</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Control Points</a></li>
+                        <li class="game-tag map-tag s-tag">Capture Points<span class="hidden">cp</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -274,14 +315,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/space_race_1969.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Space Race: 1969">
-                    <div class="title"><a>Space Race: 1969</a></div>
+                    <div class="title"><a class="s-title">Space Race: 1969</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Capture the Flag</a></li>
+                        <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -292,14 +334,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/thicket.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Thicket">
-                    <div class="title"><a>Thicket</a></div>
+                    <div class="title"><a class="s-title">Thicket</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -310,14 +353,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/versatile.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Versatile">
-                    <div class="title"><a>Versatile</a></div>
+                    <div class="title"><a class="s-title">Versatile</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Capture the Flag</a></li>
+                        <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -328,14 +372,15 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/wallop.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Wallop">
-                    <div class="title"><a>Wallop</a></div>
+                    <div class="title"><a class="s-title">Wallop</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -346,108 +391,342 @@
             </div>
         </div>
     </div>
+    
 </div>
-<!-- League teams -->
-<div class="league-info-section large">Teams</div>
+<div class="league-info-section large" id="teams">Teams <small>72 Teams</small></div>
 <div class="row">
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Group A</div>
-            <ul>
-                <li>JurassicRush</li>
-                <li>Padlock</li>
-                <li>Of Moose and Men</li>
-                <li>Mazork&#x27;s</li>
-                <li>SoulTeam_</li>
-                <li>Midas</li>
-                <li>Street Sharks</li>
-                <li>Highlights</li>
-                <li>UbeR</li>
-                <li>FrostFire</li>
-                <li>Divinum Hexis</li>
-                <li>Fancy</li>
-                <li>Light Sigma</li>
-                <li>Colossus</li>
-                <li>VH</li>
-                <li>Dynamo</li>
-                <li>Bravehearts</li>
-                <li>Squadcatt</li>
-                <li>Caos</li>
-                <li>Old Generation</li>
-                <li>BruteForce</li>
-                <li>Varsity</li>
-                <li>FatalFury</li>
-                <li>zEnergyPvP</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Group A <small>24 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Bravehearts</td>
+                    </tr>
+                    <tr>
+                        <td>BruteForce</td>
+                    </tr>
+                    <tr>
+                        <td>Caos</td>
+                    </tr>
+                    <tr>
+                        <td>Colossus</td>
+                    </tr>
+                    <tr>
+                        <td>Divinum Hexis</td>
+                    </tr>
+                    <tr>
+                        <td>Dynamo</td>
+                    </tr>
+                    <tr>
+                        <td>Fancy</td>
+                    </tr>
+                    <tr>
+                        <td>FatalFury</td>
+                    </tr>
+                    <tr>
+                        <td>FrostFire</td>
+                    </tr>
+                    <tr>
+                        <td>Highlights</td>
+                    </tr>
+                    <tr>
+                        <td>JurassicRush</td>
+                    </tr>
+                    <tr>
+                        <td>Light Sigma</td>
+                    </tr>
+                    <tr>
+                        <td>Mazork&#x27;s</td>
+                    </tr>
+                    <tr>
+                        <td>Midas</td>
+                    </tr>
+                    <tr>
+                        <td>Of Moose and Men</td>
+                    </tr>
+                    <tr>
+                        <td>Old Generation</td>
+                    </tr>
+                    <tr>
+                        <td>Padlock</td>
+                    </tr>
+                    <tr>
+                        <td>Soulname_</td>
+                    </tr>
+                    <tr>
+                        <td>Squadcatt</td>
+                    </tr>
+                    <tr>
+                        <td>Street Sharks</td>
+                    </tr>
+                    <tr>
+                        <td>UbeR</td>
+                    </tr>
+                    <tr>
+                        <td>VH</td>
+                    </tr>
+                    <tr>
+                        <td>Varsity</td>
+                    </tr>
+                    <tr>
+                        <td>zEnergyPvP</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Group B</div>
-            <ul>
-                <li>Dark Sigma</li>
-                <li>Miracle</li>
-                <li>Tribal</li>
-                <li>Hypetic</li>
-                <li>ZiReGG YT</li>
-                <li>AriZ0ne</li>
-                <li>HUGE Wall</li>
-                <li>Inertia</li>
-                <li>Outliers</li>
-                <li>Fireh</li>
-                <li>CON SI THIS</li>
-                <li>Cryptosys</li>
-                <li>GGeneSiS</li>
-                <li>Gamerule</li>
-                <li>PureBlox</li>
-                <li>Blueagle</li>
-                <li>Bunyola ALE</li>
-                <li>Obey</li>
-                <li>PancakeAirlines</li>
-                <li>InsanityThunder</li>
-                <li>Starbeans</li>
-                <li>Pandora</li>
-                <li>YGang</li>
-                <li>Warp</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Group B <small>24 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>AriZ0ne</td>
+                    </tr>
+                    <tr>
+                        <td>Blueagle</td>
+                    </tr>
+                    <tr>
+                        <td>Bunyola ALE</td>
+                    </tr>
+                    <tr>
+                        <td>CON SI THIS</td>
+                    </tr>
+                    <tr>
+                        <td>Cryptosys</td>
+                    </tr>
+                    <tr>
+                        <td>Dark Sigma</td>
+                    </tr>
+                    <tr>
+                        <td>Fireh</td>
+                    </tr>
+                    <tr>
+                        <td>GGeneSiS</td>
+                    </tr>
+                    <tr>
+                        <td>Gamerule</td>
+                    </tr>
+                    <tr>
+                        <td>HUGE Wall</td>
+                    </tr>
+                    <tr>
+                        <td>Hypetic</td>
+                    </tr>
+                    <tr>
+                        <td>Inertia</td>
+                    </tr>
+                    <tr>
+                        <td>InsanityThunder</td>
+                    </tr>
+                    <tr>
+                        <td>Miracle</td>
+                    </tr>
+                    <tr>
+                        <td>Obey</td>
+                    </tr>
+                    <tr>
+                        <td>Outliers</td>
+                    </tr>
+                    <tr>
+                        <td>PancakeAirlines</td>
+                    </tr>
+                    <tr>
+                        <td>Pandora</td>
+                    </tr>
+                    <tr>
+                        <td>PureBlox</td>
+                    </tr>
+                    <tr>
+                        <td>Starbeans</td>
+                    </tr>
+                    <tr>
+                        <td>Tribal</td>
+                    </tr>
+                    <tr>
+                        <td>Warp</td>
+                    </tr>
+                    <tr>
+                        <td>YGang</td>
+                    </tr>
+                    <tr>
+                        <td>ZiReGG YT</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Group C</div>
-            <ul>
-                <li>eZcusas</li>
-                <li>Night Vision</li>
-                <li>Drops</li>
-                <li>M8</li>
-                <li>Dropped</li>
-                <li>Macumba Night</li>
-                <li>Ecl</li>
-                <li>Nice!</li>
-                <li>xxoemyixx</li>
-                <li>Incremented4Ever</li>
-                <li>Bolt</li>
-                <li>SweetNight</li>
-                <li>#Hogwarts</li>
-                <li>Language Hackers</li>
-                <li>Punishers</li>
-                <li>Bleup</li>
-                <li>Focus</li>
-                <li>Pawprint</li>
-                <li>Grim</li>
-                <li>Anubis</li>
-                <li>Furyus</li>
-                <li>Ducksoup</li>
-                <li>Scorpia</li>
-                <li>Zona Ganjah</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Group C <small>24 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>#Hogwarts</td>
+                    </tr>
+                    <tr>
+                        <td>Anubis</td>
+                    </tr>
+                    <tr>
+                        <td>Bleup</td>
+                    </tr>
+                    <tr>
+                        <td>Bolt</td>
+                    </tr>
+                    <tr>
+                        <td>Dropped</td>
+                    </tr>
+                    <tr>
+                        <td>Drops</td>
+                    </tr>
+                    <tr>
+                        <td>Ducksoup</td>
+                    </tr>
+                    <tr>
+                        <td>Ecl</td>
+                    </tr>
+                    <tr>
+                        <td>Focus</td>
+                    </tr>
+                    <tr>
+                        <td>Furyus</td>
+                    </tr>
+                    <tr>
+                        <td>Grim</td>
+                    </tr>
+                    <tr>
+                        <td>Incremented4Ever</td>
+                    </tr>
+                    <tr>
+                        <td>Language Hackers</td>
+                    </tr>
+                    <tr>
+                        <td>M8</td>
+                    </tr>
+                    <tr>
+                        <td>Macumba Night</td>
+                    </tr>
+                    <tr>
+                        <td>Nice!</td>
+                    </tr>
+                    <tr>
+                        <td>Night Vision</td>
+                    </tr>
+                    <tr>
+                        <td>Pawprint</td>
+                    </tr>
+                    <tr>
+                        <td>Punishers</td>
+                    </tr>
+                    <tr>
+                        <td>Scorpia</td>
+                    </tr>
+                    <tr>
+                        <td>SweetNight</td>
+                    </tr>
+                    <tr>
+                        <td>Zona Ganjah</td>
+                    </tr>
+                    <tr>
+                        <td>eZcusas</td>
+                    </tr>
+                    <tr>
+                        <td>xxoemyixx</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
-<!-- League standings -->
-<div class="league-info-section large">Standings</div>
-<div class="challonge-bracket">
-    <iframe src="https://ocn.challonge.com/StraightOuttaCapture/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section">Invitational <small>18 teams</small></div>
+            <table class="table table-striped">
+                <thead>
+                    <th>Seed</th>
+                    <th>Team Name</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>1</b></td>
+                        <td>Street Sharks</td>
+                    </tr>
+                    <tr>
+                        <td><b>2</b></td>
+                        <td>HUGE Wall</td>
+                    </tr>
+                    <tr>
+                        <td><b>3</b></td>
+                        <td>Punishers</td>
+                    </tr>
+                    <tr>
+                        <td><b>4</b></td>
+                        <td>Zona Ganjah</td>
+                    </tr>
+                    <tr>
+                        <td><b>5</b></td>
+                        <td>Tribal</td>
+                    </tr>
+                    <tr>
+                        <td><b>6</b></td>
+                        <td>VH</td>
+                    </tr>
+                    <tr>
+                        <td><b>7</b></td>
+                        <td>PureBlox</td>
+                    </tr>
+                    <tr>
+                        <td><b>8</b></td>
+                        <td>Light Sigma</td>
+                    </tr>
+                    <tr>
+                        <td><b>9</b></td>
+                        <td>Night Vision</td>
+                    </tr>
+                    <tr>
+                        <td><b>10</b></td>
+                        <td>Fancy</td>
+                    </tr>
+                    <tr>
+                        <td><b>11</b></td>
+                        <td>Grim</td>
+                    </tr>
+                    <tr>
+                        <td><b>12</b></td>
+                        <td>Wrap</td>
+                    </tr>
+                    <tr>
+                        <td><b>13</b></td>
+                        <td>xxoemyixx</td>
+                    </tr>
+                    <tr>
+                        <td><b>14</b></td>
+                        <td>BruteForce</td>
+                    </tr>
+                    <tr>
+                        <td><b>15</b></td>
+                        <td>Dark Sigma</td>
+                    </tr>
+                    <tr>
+                        <td><b>16</b></td>
+                        <td>Starbeans</td>
+                    </tr>
+                    <tr>
+                        <td><b>17</b></td>
+                        <td>Ecl</td>
+                    </tr>
+                    <tr>
+                        <td><b>18</b></td>
+                        <td>UbeR</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
             <!-- End page content -->
             </div>

@@ -5,16 +5,16 @@
         <meta charset=" UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Records for Boom in a Box, a tournament hosted by Overcast Network" name="description">
+        <meta content="Records for Boom in a Box, a mini event hosted by Overcast Network" name="description">
         <meta content="Boom in a Box - ResourcePile" property="og:title">
-        <meta content="Records for Boom in a Box, a tournament hosted by Overcast Network" name="og:description">
+        <meta content="Records for Boom in a Box, a mini event hosted by Overcast Network" name="og:description">
         <meta content="website" property="og:type">
         <meta content="ResourcePile" property="og:site_name">
         <meta content="https://mcresourcepile.github.io/" property="og:url">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
         <meta content="summary" name="twitter:card">
         <meta content="Boom in a Box - ResourcePile" name="twitter:title">
-        <meta content="Records for Boom in a Box, a tournament hosted by Overcast Network" name="twitter:description">
+        <meta content="Records for Boom in a Box, a mini event hosted by Overcast Network" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
@@ -110,32 +110,64 @@
                         </noscript>
                     </div>
                     <div class="content-title">Boom in a Box</div>
-                    <div class="content-subtitle">Records for Boom in a Box, a tournament hosted by Overcast Network</div>
+                    <div class="content-subtitle">Records for Boom in a Box, a mini event hosted by Overcast Network</div>
                 </div>
             <!-- Start page content -->
-<!-- League banner -->
+<nav>
+    <ul class="pager tm-pager">
+        <div class="row">
+            <div class="col-xs-4">
+                <li class="previous">
+                    <a href="/leagues/overcast/breaking_core"><i class="fas fa-long-arrow-alt-left"></i> Last: Breaking Core</a>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="pager-center">
+                    <p>Mini Event #3</p>
+                </li>
+            </div>
+            <div class="col-xs-4">
+                <li class="next">
+                    <a href="/leagues/overcast/guardians_of_the_wool">Next: Guardians of the Wool <i class="fas fa-long-arrow-alt-right"></i></a>
+                </li>
+            </div>
+        </div>
+    </ul>
+</nav>
 <div class="center">
-    <img class="league-banner-custom" src="../../assets/img/tournament/banners/boom_in_a_box.png">
+    <img class="tm-banner" src="../../assets/img/tournament/banners/overcast/boom_in_a_box.png">
 </div>
-<!-- League winners -->
-<div class="league-results row center">
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">Kyudo</div>
-        <div class="league-team-position">2nd place</div>
-    </div>
-    <div class="league-position league-position-first col-sm-4">
-        <span class="fa fa-trophy"></span>
+<div class="center">
+    <div class="league-position league-position-first">
+        <i class="fas fa-trophy"></i>
         <div class="league-team">Dopamine</div>
-        <div class="league-team-position">1st place</div>
+        <div class="league-team-position">1<sup>st</sup> place</div>
     </div>
-    <div class="league-position col-sm-4">
-        <div class="fa fa-star"></div>
-        <div class="league-team">Big Dango Family</div>
-        <div class="league-team-position">3rd place</div>
+    <div class="row">
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star"></i>
+            <div class="league-team">Kyudo</div>
+            <div class="league-team-position">2<sup>nd</sup> place</div>
+        </div>
+        <div class="league-position col-sm-6">
+            <i class="fas fa-star-half-alt"></i>
+            <div class="league-team">Big Dango Family</div>
+            <div class="league-team-position">3<sup>rd</sup> place</div>
+        </div>
+    </div>
+    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
+</div>
+<div class="collapse" id="resultsCollapse">
+    <div class="league-results">
+        <div class="challonge-bracket">
+            <span>Bracket</span>
+            <a href="https://ocn.challonge.com/BoomBox" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            <iframe src="https://ocn.challonge.com/BoomBox/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
     </div>
 </div>
-<!-- League information -->
 <div class="league-info-section large">Tournament Information</div>
 <div class="row">
     <div class="col-md-6">
@@ -145,19 +177,24 @@
                 <tbody>
                     <tr>
                         <td>Method</td>
-                        <td>Single Elimination Attack / Defense</td>
+                        <td>Single Elimination</td>
                     </tr>
                     <tr>
                         <td>Gamemodes</td>
-                        <td>Destroy the Monument</td>
+                        <td>
+                            Attack/Defend,
+                            Destroy the Monument
+                        </td>
                     </tr>
                     <tr>
                         <td>Teams</td>
-                        <td>32 teams</td>
+                        <td>
+                            <a href="#teams">32 teams <i class="fas fa-chevron-down"></i></a>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Players</td>
-                        <td>Unknown</td>
+                        <td>Team Size</td>
+                        <td>10v10</td>
                     </tr>
                 </tbody>
             </table>
@@ -165,29 +202,29 @@
     </div>
     <div class="col-md-6">
         <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates and Times</div>
+            <div class="league-info-section">Dates</div>
             <table class="league-info-table">
                 <tbody>
                     <tr>
                         <td>Event</td>
-                        <td>Unknown</td>
+                        <td>July 26, 2014</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<!-- Leage map pool -->
-<div class="league-info-section large">Map Pool</div>
+<div class="league-info-section large">Map Pool <small>2</small></div>
 <div class="dynamic">
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/boombox.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="BoomBox">
-                    <div class="title"><a>BoomBox</a></div>
+                    <div class="title"><a class="s-title">BoomBox</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Destroy the Monument</a></li>
+                        <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span>,</li>
+                        <li class="game-tag map-tag s-tag">Attack/Defend<span class="hidden">ad a/d</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -198,14 +235,16 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/cannon_duel.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Cannon Duel">
-                    <div class="title"><a>Cannon Duel</a></div>
+                    <div class="title"><a class="s-title">Cannon Duel</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Destroy the Monument</a></li>
+                        <li class="game-tag map-tag s-tag">Blitz,</li>
+                        <li class="game-tag map-tag s-tag">TNT<span class="hidden">tnt cannon</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -216,61 +255,146 @@
             </div>
         </div>
     </div>
+    
 </div>
-<!-- League teams -->
-<div class="league-info-section large">Teams</div>
+<div class="league-info-section large" id="teams">Teams <small>32 teams</small></div>
 <div class="row">
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Participants</div>
-            <ul>
-                <li>Sabertooth</li>
-                <li>Rejected</li>
-                <li>Looting III</li>
-                <li>DarkPlus</li>
-                <li>Slithering Shadows</li>
-                <li>Team Fortis</li>
-                <li>Dopamine</li>
-                <li>Padlock</li>
-                <li>Singularity</li>
-                <li>Kiube</li>
-                <li>Khronos</li>
-                <li>Proximity</li>
-                <li>Big Dango Family</li>
-                <li>JonasBrothers</li>
-                <li>FirstStep</li>
-                <li>Infamous</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>8 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>DarkPlus</td>
+                    </tr>
+                    <tr>
+                        <td>Dopamine</td>
+                    </tr>
+                    <tr>
+                        <td>Looting III</td>
+                    </tr>
+                    <tr>
+                        <td>Padlock</td>
+                    </tr>
+                    <tr>
+                        <td>Rejected</td>
+                    </tr>
+                    <tr>
+                        <td>Sabertooth</td>
+                    </tr>
+                    <tr>
+                        <td>Slithering Shadows</td>
+                    </tr>
+                    <tr>
+                        <td>Team Fortis</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="well well-sm well-custom-red">
-            <div class="league-info-section">Participants</div>
-            <ul>
-                <li>LastFist</li>
-                <li>Pony Swag</li>
-                <li>Kyudo</li>
-                <li>Kami</li>
-                <li>MachinimaPvPartner</li>
-                <li>EnderFox</li>
-                <li>ClutchCrewV2</li>
-                <li>Origins</li>
-                <li>CuddlyKittens</li>
-                <li>PureBlocks</li>
-                <li>Bacon Warriors</li>
-                <li>Fusion</li>
-                <li>VortexRush</li>
-                <li>Bolt</li>
-                <li>Deluxe</li>
-                <li>Chance</li>
-            </ul>
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>8 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Big Dango Family</td>
+                    </tr>
+                    <tr>
+                        <td>FirstStep</td>
+                    </tr>
+                    <tr>
+                        <td>Infamous</td>
+                    </tr>
+                    <tr>
+                        <td>JonasBrothers</td>
+                    </tr>
+                    <tr>
+                        <td>Khronos</td>
+                    </tr>
+                    <tr>
+                        <td>Kiube</td>
+                    </tr>
+                    <tr>
+                        <td>Proximity</td>
+                    </tr>
+                    <tr>
+                        <td>Singularity</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
-<!-- League standings -->
-<div class="league-info-section large">Standings</div>
-<div class="challonge-bracket">
-    <iframe src="https://ocn.challonge.com/BoomBox/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>8 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>ClutchCrewV2</td>
+                    </tr>
+                    <tr>
+                        <td>EnderFox</td>
+                    </tr>
+                    <tr>
+                        <td>Kami</td>
+                    </tr>
+                    <tr>
+                        <td>Kyudo</td>
+                    </tr>
+                    <tr>
+                        <td>LastFist</td>
+                    </tr>
+                    <tr>
+                        <td>MachinimaPvPartner</td>
+                    </tr>
+                    <tr>
+                        <td>Origins</td>
+                    </tr>
+                    <tr>
+                        <td>Pony Swag</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well well-sm well-custom-red tournament-teams-table">
+            <div class="league-info-section"> <small>8 teams</small></div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Bacon Warriors</td>
+                    </tr>
+                    <tr>
+                        <td>Bolt</td>
+                    </tr>
+                    <tr>
+                        <td>Chance</td>
+                    </tr>
+                    <tr>
+                        <td>CuddlyKittens</td>
+                    </tr>
+                    <tr>
+                        <td>Deluxe</td>
+                    </tr>
+                    <tr>
+                        <td>Fusion</td>
+                    </tr>
+                    <tr>
+                        <td>PureBlocks</td>
+                    </tr>
+                    <tr>
+                        <td>VortexRush</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
             <!-- End page content -->
             </div>
