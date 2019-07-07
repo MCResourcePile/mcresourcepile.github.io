@@ -1,0 +1,440 @@
+{
+    "title": "Winter Mapmaking Contest",
+    "subtitle": "Records for the Winter Mapmaking Contest, a map making contest hosted by Stratus Network",
+    "page-category": ["maps", "tournaments", "contest", "stratus"],
+    "settings": {
+        "include": {
+            "stylesheets": [
+                "/assets/css/gamemodes.css"
+            ],
+            "scripts": [
+                "/assets/js/jquery.tablesorter.min.js"
+            ]
+        },
+        "maps": {
+            "group": "stratus"
+        }
+    },
+    "heading": true,
+    "announcement": "http://stratus.network/",
+    "stages": [
+        {"stage": "Submissions open",  "date": "January 31st, 2019"},
+        {"stage": "Submissions close", "date": "March 4th, 2019"},
+        {"stage": "Public testing",    "date": "March 8th, 2019"},
+        {"stage": "Results announced", "date": "April 9th, 2019"}
+    ],
+    "panels": [ {
+            "label": "Details and Guidelines",
+            "size": "half",
+            "rows": [
+                {"content": "Maps could be any gamemode, but must be between <code>4 v 4</code> to <code>20 v 20</code>"},
+                {"content": "Maps must be in a team format, no FFA"},
+                {"content": "XML documents were to be included with the submission. XML must be at least protocol <code>1.4.0</code>"},
+                {"content": "Authors were allowed to be author on up to 3 maps, but only their top scored map was counted"},
+                {"content": "Maps previously submitted to Stratus Network could not be entered into this contest"}
+            ]
+        }, {
+            "label": "Prizes",
+            "size": "half",
+            "rows": [
+                {"label": "First",  "content": "Strato, 5x Set Next tokens, winner trophy, winner tag on discord, guaranteed spot in Rotatation Update #20"},
+                {"label": "Second", "content": "3 weeks of Nimbus, 5x Set Next tokens, runner up tag on discord"},
+                {"label": "Third",  "content": "3 weeks of Nimbus, 3x Set Next tokens"}
+            ]
+        }
+    ],
+    "score_method": "sum",
+    "criteria": {
+        "gameplay":   {"label": "Gameplay",      "max": "40"},
+        "aesthetics": {"label": "Aesthetics",    "max": "30"},
+        "innovation": {"label": "Innovation",    "max": "20"},
+        "bonus-xml":  {"label": "Bonus", "operation": "percent", "amount": "3", "reason": "XML with minimal errors and proper conventions"},
+        "bonus-3":    {"label": "Bonus", "operation": "percent", "amount": "3", "reason": "map gamemodes in high demand"},
+        "bonus-2":    {"label": "Bonus", "operation": "percent", "amount": "2", "reason": "map gamemodes in medium demand"},
+        "penalty":    {"label": "Penalty", "operation": "subtract", "amount": "5", "reason": "author didn't do something right"}
+    },
+    "submissions": [ {
+            "name": "Outcrop",
+            "slug": "outcrop",
+            "authors": [
+                {"username": "Dowly_", "uuid": "74e59389-2b3e-490d-954a-a7af1fb1eded"}
+            ],
+            "gamemode": "Capture the Wool",
+            "position": "1",
+            "scores": [
+                {"criteria": "gameplay",   "score": "23.92"},
+                {"criteria": "aesthetics", "score": "23.17"},
+                {"criteria": "innovation", "score": "14.92"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Ceasefire",
+            "slug": "ceasefire",
+            "authors": [
+                {"username": "Blazy36", "uuid": "b8add1ba-8e13-4673-bc73-4e3ed524d40e"},
+                {"username": "jam0828", "uuid": "a9373ae5-37c7-4319-95d8-867d011bcdee"}
+            ],
+            "gamemode": "Capture the Wool",
+            "position": "2",
+            "scores": [
+                {"criteria": "gameplay",   "score": "26"},
+                {"criteria": "aesthetics", "score": "21.17"},
+                {"criteria": "innovation", "score": "12.83"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "The Bug",
+            "slug": "the_bug",
+            "authors": [
+                {"username": "Sharpie", "uuid": "62d9830a-0b77-4e21-9d4f-de4b60c68fb5"}
+            ],
+            "gamemode": "Destroy the Core",
+            "position": "3",
+            "scores": [
+                {"criteria": "gameplay",   "score": "25.08"},
+                {"criteria": "aesthetics", "score": "19.50"},
+                {"criteria": "innovation", "score": "13.17"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Urban Sprawl",
+            "slug": "urban_sprawl",
+            "authors": [
+                {"username": "rockymine", "uuid": "fe3608b7-d105-4029-8800-34b3147065b6"},
+                {"username": "AlmightyBread", "uuid": "d3814d5a-3d37-42f2-9db8-916846bb70ad"}
+            ],
+            "gamemode": "Destroy the Monument",
+            "position": "3",
+            "scores": [
+                {"criteria": "gameplay",   "score": "22.25"},
+                {"criteria": "aesthetics", "score": "23.50"},
+                {"criteria": "innovation", "score": "12"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Royal",
+            "slug": "royal",
+            "authors": [
+                {"username": "Xerocoles", "uuid": "0c44ca5a-6a42-49b7-81f2-58dc6d2ae3e9"}
+            ],
+            "gamemode": "King of the Flag",
+            "position": "5",
+            "scores": [
+                {"criteria": "gameplay",   "score": "22.83"},
+                {"criteria": "aesthetics", "score": "20.33"},
+                {"criteria": "innovation", "score": "13.92"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Cottage",
+            "slug": "cottage",
+            "authors": [
+                {"username": "Dowly_", "uuid": "74e59389-2b3e-490d-954a-a7af1fb1eded"}
+            ],
+            "gamemode": "Capture the Wool",
+            "position": "6",
+            "scores": [
+                {"criteria": "gameplay",   "score": "23.17"},
+                {"criteria": "aesthetics", "score": "20.33"},
+                {"criteria": "innovation", "score": "12.83"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Canyon",
+            "slug": "canyon",
+            "authors": [
+                {"username": "Xerocoles", "uuid": "0c44ca5a-6a42-49b7-81f2-58dc6d2ae3e9"}
+            ],
+            "gamemode": "Capture the Wool",
+            "position": "7",
+            "scores": [
+                {"criteria": "gameplay",   "score": "22.50"},
+                {"criteria": "aesthetics", "score": "22.50"},
+                {"criteria": "innovation", "score": "13.50"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Rocky's Bane",
+            "slug": "rocky_s_bane",
+            "authors": [
+                {"username": "Obelistics", "uuid": "b03360db-b8cd-49de-8ba1-b7920c2238a9"},
+                {"username": "DoomyBoy", "uuid": "dff980ed-9f69-491e-b79c-30c21350baf2"}
+            ],
+            "gamemode": "Capture the Wool",
+            "position": "8",
+            "scores": [
+                {"criteria": "gameplay",   "score": "22.92"},
+                {"criteria": "aesthetics", "score": "19.17"},
+                {"criteria": "innovation", "score": "12.33"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Ruediger's Octawool",
+            "slug": "ruediger_s_octawool",
+            "authors": [
+                {"username": "Ruediger_LP", "uuid": "e2d2c2c6-cea9-4510-9ab2-a091b5605b30"}
+            ],
+            "gamemode": "Capture the Wool",
+            "position": "9",
+            "scores": [
+                {"criteria": "gameplay",   "score": "21.33"},
+                {"criteria": "aesthetics", "score": "16.67"},
+                {"criteria": "innovation", "score": "16.33"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": true}
+            ]
+        }, {
+            "name": "Moor",
+            "slug": "moor",
+            "authors": [
+                {"username": "Tywnis", "uuid": "2ca8072f-74be-4798-85b8-bbce03aa91af"}
+            ],
+            "gamemode": "Team Deathmatch",
+            "position": "10",
+            "scores": [
+                {"criteria": "gameplay",   "score": "20.33"},
+                {"criteria": "aesthetics", "score": "22.67"},
+                {"criteria": "innovation", "score": "13.92"},
+                {"criteria": "bonus-xml",  "eligible": true},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false},
+                {"criteria": "penalty",    "eligible": true}
+            ]
+        }, {
+            "name": "Moor RAGE",
+            "slug": "moor_rage",
+            "authors": [
+                {"username": "Tywnis", "uuid": "2ca8072f-74be-4798-85b8-bbce03aa91af"}
+            ],
+            "gamemode": "Rage Team Deathmatch",
+            "position": "11",
+            "scores": [
+                {"criteria": "gameplay",   "score": "18.83"},
+                {"criteria": "aesthetics", "score": "22.33"},
+                {"criteria": "innovation", "score": "14"},
+                {"criteria": "bonus-xml",  "eligible": true},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Wooled War",
+            "slug": "wooled_war",
+            "authors": [
+                {"username": "teagod", "uuid": "f1352a57-4fe3-4f0c-b867-56b771fc1a0f"},
+                {"username": "JapaneseSquid", "uuid": "c1d94f18-6ea3-495a-8d1b-7d9eaf393f64"}
+            ],
+            "gamemode": "Capture the Wool",
+            "position": "12",
+            "scores": [
+                {"criteria": "gameplay",   "score": "21.17"},
+                {"criteria": "aesthetics", "score": "18.83"},
+                {"criteria": "innovation", "score": "12.25"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Flumine",
+            "slug": "flumine",
+            "authors": [
+                {"username": "Sharpie", "uuid": "62d9830a-0b77-4e21-9d4f-de4b60c68fb5"}
+            ],
+            "gamemode": "Capture the Flag",
+            "position": "13",
+            "scores": [
+                {"criteria": "gameplay",   "score": "21.58"},
+                {"criteria": "aesthetics", "score": "17.33"},
+                {"criteria": "innovation", "score": "11.67"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Woodlot KoTF",
+            "slug": "woodlot_kotf",
+            "authors": [
+                {"username": "AlmightyBread", "uuid": "d3814d5a-3d37-42f2-9db8-916846bb70ad"}
+            ],
+            "gamemode": "King of the Flag",
+            "position": "14",
+            "scores": [
+                {"criteria": "gameplay",   "score": "16.83"},
+                {"criteria": "aesthetics", "score": "20.50"},
+                {"criteria": "innovation", "score": "11.67"},
+                {"criteria": "bonus-xml",  "eligible": true},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": false}          
+            ]
+        }, {
+            "name": "Settlement",
+            "slug": "settlement",
+            "authors": [
+                {"username": "AlmightyBread", "uuid": "d3814d5a-3d37-42f2-9db8-916846bb70ad"}
+            ],
+            "gamemode": "Destroy the Monument",
+            "position": "15",
+            "scores": [
+                {"criteria": "gameplay",   "score": "19.67"},
+                {"criteria": "aesthetics", "score": "19.33"},
+                {"criteria": "innovation", "score": "11"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Ruediger's Real Garden",
+            "slug": "ruediger_s_real_garden",
+            "authors": [
+                {"username": "Ruediger_LP", "uuid": "e2d2c2c6-cea9-4510-9ab2-a091b5605b30"}
+            ],
+            "gamemode": "Capture the Wool",
+            "position": "16",
+            "scores": [
+                {"criteria": "gameplay",   "score": "21.83"},
+                {"criteria": "aesthetics", "score": "17.33"},
+                {"criteria": "innovation", "score": "10.67"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Sloped",
+            "slug": "sloped",
+            "authors": [
+                {"username": "Sharpie", "uuid": "62d9830a-0b77-4e21-9d4f-de4b60c68fb5"},
+                {"username": "Clijmart", "uuid": "ae5c1e91-745b-4a6f-a337-11484ede6957"},
+                {"username": "BD33", "uuid": "450c2d83-1757-4021-9789-5e57b3d4cc58"}
+            ],
+            "gamemode": "Destroy the Monument",
+            "position": "17",
+            "scores": [
+                {"criteria": "gameplay",   "score": "21.08"},
+                {"criteria": "aesthetics", "score": "16.92"},
+                {"criteria": "innovation", "score": "11.33"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Sprout",
+            "slug": "sprout",
+            "authors": [
+                {"username": "Anthonny", "uuid": "bb628049-e368-4b1c-b8aa-d4557ae9416b"},
+                {"username": "PepsiDog", "uuid": "060baa18-2852-40d8-afcb-e61607c04be3"},
+                {"username": "Kaleeka", "uuid": "df5fd9f4-4840-4293-9346-5c77bf7bc08f"}
+            ],
+            "gamemode": "King of the Hill",
+            "position": "18",
+            "scores": [
+                {"criteria": "gameplay",   "score": "22.50"},
+                {"criteria": "aesthetics", "score": "20"},
+                {"criteria": "innovation", "score": "11.50"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},
+                {"criteria": "penalty",    "eligible": true}
+            ]
+        }, {
+            "name": "Ruediger's Golftron",
+            "slug": "ruediger_s_golftron",
+            "authors": [
+                {"username": "Ruediger_LP", "uuid": "e2d2c2c6-cea9-4510-9ab2-a091b5605b30"}
+            ],
+            "gamemode": "Capture the Wool",
+            "position": "19",
+            "scores": [
+                {"criteria": "gameplay",   "score": "20"},
+                {"criteria": "aesthetics", "score": "14.83"},
+                {"criteria": "innovation", "score": "11.33"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Crystal",
+            "slug": "crystal",
+            "authors": [
+                {"username": "Xerocoles", "uuid": "0c44ca5a-6a42-49b7-81f2-58dc6d2ae3e9"}
+            ],
+            "gamemode": "Capture the Flag",
+            "position": "20",
+            "scores": [
+                {"criteria": "gameplay",   "score": "17.33"},
+                {"criteria": "aesthetics", "score": "16.17"},
+                {"criteria": "innovation", "score": "13.17"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": false},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "Clay Soldiers",
+            "slug": "clay_soldiers",
+            "authors": [
+                {"username": "__BT", "uuid": "53af1e46-7424-485b-97de-7bf8d854a2aa"}
+            ],
+            "gamemode": "Capture the Wool",
+            "position": "21",
+            "scores": [
+                {"criteria": "gameplay",   "score": "16.83"},
+                {"criteria": "aesthetics", "score": "14.50"},
+                {"criteria": "innovation", "score": "10.67"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false},
+                {"criteria": "penalty",    "eligible": false}
+            ]
+        }, {
+            "name": "New Realm",
+            "slug": "new_realm",
+            "authors": [
+                {"username": "Kroest", "uuid": "c26e7a7f-b4ce-4ebc-ac4d-f60691915d23"}
+            ],
+            "gamemode": "Capture the Wool",
+            "position": "22",
+            "scores": [
+                {"criteria": "gameplay",   "score": "16.67"},
+                {"criteria": "aesthetics", "score": "17.17"},
+                {"criteria": "innovation", "score": "11.83"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false},
+                {"criteria": "penalty",    "eligible": true}
+            ]
+        }
+    ]
+}
