@@ -1,0 +1,1580 @@
+<html>
+    <head>
+        <title>Winter Mapmaking Contest - ResourcePile</title>
+        <!-- Page meta data -->
+        <meta charset=" UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="Records for the Winter Mapmaking Contest, a map making contest hosted by Stratus Network" name="description">
+        <meta content="Winter Mapmaking Contest - ResourcePile" property="og:title">
+        <meta content="Records for the Winter Mapmaking Contest, a map making contest hosted by Stratus Network" name="og:description">
+        <meta content="website" property="og:type">
+        <meta content="ResourcePile" property="og:site_name">
+        <meta content="https://mcresourcepile.github.io/" property="og:url">
+        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
+        <meta content="summary" name="twitter:card">
+        <meta content="Winter Mapmaking Contest - ResourcePile" name="twitter:title">
+        <meta content="Records for the Winter Mapmaking Contest, a map making contest hosted by Stratus Network" name="twitter:description">
+        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <!-- Page stylesheets -->
+        <link href="/assets/favicon.ico" rel="shortcut icon">
+        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+        <link href="/assets/css/gamemodes.css" rel="stylesheet">
+        <!-- Page script files -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/assets/js/js.cookie.js"></script>
+        <script src="/assets/js/preferences.js"></script>
+        <script src="/assets/js/moment.js"></script>
+        <script src="/assets/js/jquery.tablesorter.min.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-91801520-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
+    </head>
+    <body >
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/maps/overcast">Overcast Collection</a></li>
+                                <li><a href="/maps/pgm">PGM Collection</a></li>
+                                <li><a href="/maps/stratus">Stratus Collection</a></li>
+                                <li><a href="/maps/avicus">Avicus Collection</a></li>
+                                <li><a href="/maps/rfw">RFW Collection</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/contests/overcast">Overcast Network</a></li>
+                                <li><a href="/contests/stratus">Stratus Network</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/leagues/overcast">Overcast Network</a></li>
+                                <li><a href="/leagues/pgm">PGM Community</a></li>
+                                <li><a href="/leagues/stratus">Stratus Network</a></li>
+                                <li><a href="/leagues/avicus">Avicus Network</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><p class="navbar-menu-title">Overcast</p></li>
+                                <li><a href="/stats/overcast/bow">Bow Records</a></li>
+                                <li><a href="/stats/overcast/miscellaneous">Miscellaneous</a></li>
+                                <li><a href="/stats/overcast/objective">Objective Leaderboards</a></li>
+                                <li><p class="navbar-menu-title">Stratus</p></li>
+                                <li><a href="/stats/stratus/bow">Bow Records</a></li>
+                                <li><p class="navbar-menu-title">Avicus</p></li>
+                                <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
+                            </ul>
+                        </li>
+                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="navbar-right auth-disabled"><a href="/admin/preferences"><i class="fab fa-github-alt"></i> <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
+                        <li class="navbar-right auth-enabled" style="display: none;"><a href="/admin/preferences"><img src="/assets/img/logo.png" class="user-avatar"> <span class="user-name">ResourcePile</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-background">
+            <div class="container">
+                <div class="content-header">
+                    <div class="content-alert">
+                        <noscript>
+                            <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+                        </noscript>
+                    </div>
+                    <div class="content-title">Winter Mapmaking Contest</div>
+                    <div class="content-subtitle">Records for the Winter Mapmaking Contest, a map making contest hosted by Stratus Network</div>
+                </div>
+            <!-- Start page content -->
+<!-- Contest banner -->
+<div class="center">
+    <div class="league-banner" style="background: url('../../assets/img/contest/winter_mapmaking_contest/banner.jpg');background-position:center">Winter Mapmaking Contest</div>
+</div>
+
+<!-- Contest winners -->
+<div class="contest-winners center">
+    <div class="col-sm-4 thumbnail map-thumbnail small collapse-immune">
+        <div class="map-thumbnail-header">
+            <img class="image" src="../../assets/img/contest/winter_mapmaking_contest/maps/ceasefire.png">
+            <div class="banner" data-toggle="tooltip" data-placement="top" title="Ceasefire">
+                <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=ceasefire">Ceasefire</a></div>
+            </div>
+            <div class="labels">
+                <div class="label map-label-contest-second"><span class="fa fa-star"></span> 2nd</div>
+            </div>
+        </div>
+        <div class="map-thumbnail-body">
+            <div class="authors">
+                by
+                <li class="game-tag author-tag"><a href="/maps/stratus?s=b8add1ba-8e13-4673-bc73-4e3ed524d40e">Blazy36</a></li>
+                <li class="game-tag author-tag"><a href="/maps/stratus?s=a9373ae5-37c7-4319-95d8-867d011bcdee">jam0828</a></li>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 thumbnail map-thumbnail collapse-immune">
+        <div class="map-thumbnail-header">
+            <img class="image" src="../../assets/img/contest/winter_mapmaking_contest/maps/outcrop.png">
+            <div class="banner" data-toggle="tooltip" data-placement="top" title="Outcrop">
+                <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=outcrop">Outcrop</a></div>
+            </div>
+            <div class="labels">
+                <div class="label map-label-contest-first"><span class="fa fa-trophy"></span> 1st</div>
+            </div>
+        </div>
+        <div class="map-thumbnail-body">
+            <div class="authors">
+                by
+                <li class="game-tag author-tag"><a href="/maps/stratus?s=74e59389-2b3e-490d-954a-a7af1fb1eded">Dowly_</a></li>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 thumbnail map-thumbnail small collapse-immune">
+        <div class="map-thumbnail-header">
+            <img class="image" src="../../assets/img/contest/winter_mapmaking_contest/maps/the_bug.png">
+            <div class="banner" data-toggle="tooltip" data-placement="top" title="The Bug">
+                <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=the_bug">The Bug</a></div>
+            </div>
+            <div class="labels">
+                <div class="label map-label-contest-third"><span class="fa fa-star"></span> 3rd</div>
+            </div>
+        </div>
+        <div class="map-thumbnail-body">
+            <div class="authors">
+                by
+                <li class="game-tag author-tag"><a href="/maps/stratus?s=62d9830a-0b77-4e21-9d4f-de4b60c68fb5">shaarpie</a></li>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 thumbnail map-thumbnail small collapse-immune">
+        <div class="map-thumbnail-header">
+            <img class="image" src="../../assets/img/contest/winter_mapmaking_contest/maps/urban_sprawl.png">
+            <div class="banner" data-toggle="tooltip" data-placement="top" title="Urban Sprawl">
+                <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=urban_sprawl">Urban Sprawl</a></div>
+            </div>
+            <div class="labels">
+                <div class="label map-label-contest-third"><span class="fa fa-star"></span> 3rd</div>
+            </div>
+        </div>
+        <div class="map-thumbnail-body">
+            <div class="authors">
+                by
+                <li class="game-tag author-tag"><a href="/maps/stratus?s=fe3608b7-d105-4029-8800-34b3147065b6">rockymine</a></li>
+                <li class="game-tag author-tag"><a href="/maps/stratus?s=d3814d5a-3d37-42f2-9db8-916846bb70ad">AlmightyBread</a></li>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contest information -->
+<div class="league-info-section large">Contest Information</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Dates and Times</div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td>Submissions open</td>
+                        <td>January 31st, 2019</td>
+                    </tr>
+                    <tr>
+                        <td>Submissions close</td>
+                        <td>March 4th, 2019</td>
+                    </tr>
+                    <tr>
+                        <td>Public testing</td>
+                        <td>March 8th, 2019</td>
+                    </tr>
+                    <tr>
+                        <td>Results announced</td>
+                        <td>April 9th, 2019</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-green">
+            <div class="league-info-section">Scoring <small>(Total scores are the sum of each criteria)</small></div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td style="font-weight:400"><strong>Gameplay</strong> out of <code>40</code> </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:400"><strong>Aesthetics</strong> out of <code>30</code> </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:400"><strong>Innovation</strong> out of <code>20</code> </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:400"><strong>Additional Bonus</strong> of <code>3%</code> for XML with minimal errors and proper conventions</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:400"><strong>Additional Bonus</strong> of <code>3%</code> for map gamemodes in high demand</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:400"><strong>Additional Bonus</strong> of <code>2%</code> for map gamemodes in medium demand</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:400"><strong>Additional Penalty</strong> of <code>-5 points</code> for author didn&#x27;t do something right</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-blue">
+            <div class="league-info-section">Details and Guidelines</div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td colspan="2" style="font-weight:400">Maps could be any gamemode, but must be between <code>4 v 4</code> to <code>20 v 20</code></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="font-weight:400">Maps must be in a team format, no FFA</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="font-weight:400">XML documents were to be included with the submission. XML must be at least protocol <code>1.4.0</code></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="font-weight:400">Authors were allowed to be author on up to 3 maps, but only their top scored map was counted</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="font-weight:400">Maps previously submitted to Stratus Network could not be entered into this contest</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-sm well-custom-blue">
+            <div class="league-info-section">Prizes</div>
+            <table class="league-info-table">
+                <tbody>
+                    <tr>
+                        <td>First</td>
+                        <td>Strato, 5x Set Next tokens, winner trophy, winner tag on discord, guaranteed spot in Rotatation Update #20</td>
+                    </tr>
+                    <tr>
+                        <td>Second</td>
+                        <td>3 weeks of Nimbus, 5x Set Next tokens, runner up tag on discord</td>
+                    </tr>
+                    <tr>
+                        <td>Third</td>
+                        <td>3 weeks of Nimbus, 3x Set Next tokens</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Contest submissions -->
+<div class="league-info-section large">Submissions <small>(22 maps)</small></div>
+<div class="dynamic">
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/canyon.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Canyon">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=canyon">Canyon</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">7th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="0c44ca5a6a4249b781f258dc6d2ae3e9" href="/maps/stratus?s=0c44ca5a6a4249b781f258dc6d2ae3e9">Xerocoles</a></li>
+                    <div class="hidden">
+                        <div class="users">Xerocoles</div>
+                        <div class="uuids">0c44ca5a6a4249b781f258dc6d2ae3e9</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (22.50 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="22.50" aria-valuemin="0" aria-valuemax="40">Gameplay (22.50 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (22.50 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="22.50" aria-valuemin="0" aria-valuemax="30">Aesthetics (22.50 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (13.50 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="13.50" aria-valuemin="0" aria-valuemax="20">Innovation (13.50 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-second">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/ceasefire.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Ceasefire">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=ceasefire">Ceasefire</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                        <a data-toggle="tooltip" data-placement="top" title="2nd&nbsp;place&nbsp;runner&nbsp;up"><i class="fa fa-trophy"></i></a>
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label map-label-contest-second">2nd place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="b8add1ba8e134673bc734e3ed524d40e" href="/maps/stratus?s=b8add1ba8e134673bc734e3ed524d40e">Blazy36</a></li>,
+                    <li class="game-tag"><a class="click-search" data-query="a9373ae537c7431995d8867d011bcdee" href="/maps/stratus?s=a9373ae537c7431995d8867d011bcdee">jam0828</a></li>
+                    <div class="hidden">
+                        <div class="users">Blazy36,jam0828</div>
+                        <div class="uuids">b8add1ba8e134673bc734e3ed524d40e,a9373ae537c7431995d8867d011bcdee</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (26 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="26" aria-valuemin="0" aria-valuemax="40">Gameplay (26 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (21.17 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="21.17" aria-valuemin="0" aria-valuemax="30">Aesthetics (21.17 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (12.83 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="12.83" aria-valuemin="0" aria-valuemax="20">Innovation (12.83 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/clay_soldiers.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Clay Soldiers">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=clay_soldiers">Clay Soldiers</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">21st place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="53af1e467424485b97de7bf8d854a2aa" href="/maps/stratus?s=53af1e467424485b97de7bf8d854a2aa">__BT</a></li>
+                    <div class="hidden">
+                        <div class="users">__BT</div>
+                        <div class="uuids">53af1e467424485b97de7bf8d854a2aa</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (16.83 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="16.83" aria-valuemin="0" aria-valuemax="40">Gameplay (16.83 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (14.50 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="14.50" aria-valuemin="0" aria-valuemax="30">Aesthetics (14.50 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (10.67 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="10.67" aria-valuemin="0" aria-valuemax="20">Innovation (10.67 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/cottage.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Cottage">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=cottage">Cottage</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">6th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="74e593892b3e490d954aa7af1fb1eded" href="/maps/stratus?s=74e593892b3e490d954aa7af1fb1eded">Dowly_</a></li>
+                    <div class="hidden">
+                        <div class="users">Dowly_</div>
+                        <div class="uuids">74e593892b3e490d954aa7af1fb1eded</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (23.17 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="23.17" aria-valuemin="0" aria-valuemax="40">Gameplay (23.17 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (20.33 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="20.33" aria-valuemin="0" aria-valuemax="30">Aesthetics (20.33 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (12.83 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="12.83" aria-valuemin="0" aria-valuemax="20">Innovation (12.83 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/crystal.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Crystal">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=crystal">Crystal</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Flag</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">20th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="0c44ca5a6a4249b781f258dc6d2ae3e9" href="/maps/stratus?s=0c44ca5a6a4249b781f258dc6d2ae3e9">Xerocoles</a></li>
+                    <div class="hidden">
+                        <div class="users">Xerocoles</div>
+                        <div class="uuids">0c44ca5a6a4249b781f258dc6d2ae3e9</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (17.33 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="17.33" aria-valuemin="0" aria-valuemax="40">Gameplay (17.33 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (16.17 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="16.17" aria-valuemin="0" aria-valuemax="30">Aesthetics (16.17 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (13.17 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="13.17" aria-valuemin="0" aria-valuemax="20">Innovation (13.17 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/flumine.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Flumine">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=flumine">Flumine</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Flag</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">13th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="62d9830a0b774e219d4fde4b60c68fb5" href="/maps/stratus?s=62d9830a0b774e219d4fde4b60c68fb5">shaarpie</a></li>
+                    <div class="hidden">
+                        <div class="users">shaarpie</div>
+                        <div class="uuids">62d9830a0b774e219d4fde4b60c68fb5</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (21.58 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="21.58" aria-valuemin="0" aria-valuemax="40">Gameplay (21.58 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (17.33 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="17.33" aria-valuemin="0" aria-valuemax="30">Aesthetics (17.33 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (11.67 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="11.67" aria-valuemin="0" aria-valuemax="20">Innovation (11.67 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/moor.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Moor">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=moor">Moor</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Team Deathmatch</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">10th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="2ca8072f74be479885b8bbce03aa91af" href="/maps/stratus?s=2ca8072f74be479885b8bbce03aa91af">Tywnis</a></li>
+                    <div class="hidden">
+                        <div class="users">Tywnis</div>
+                        <div class="uuids">2ca8072f74be479885b8bbce03aa91af</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (20.33 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="20.33" aria-valuemin="0" aria-valuemax="40">Gameplay (20.33 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (22.67 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="22.67" aria-valuemin="0" aria-valuemax="30">Aesthetics (22.67 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (13.92 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="13.92" aria-valuemin="0" aria-valuemax="20">Innovation (13.92 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/moor_rage.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Moor RAGE">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=moor_rage">Moor RAGE</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Rage Team Deathmatch</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">11th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="2ca8072f74be479885b8bbce03aa91af" href="/maps/stratus?s=2ca8072f74be479885b8bbce03aa91af">Tywnis</a></li>
+                    <div class="hidden">
+                        <div class="users">Tywnis</div>
+                        <div class="uuids">2ca8072f74be479885b8bbce03aa91af</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (18.83 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="18.83" aria-valuemin="0" aria-valuemax="40">Gameplay (18.83 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (22.33 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="22.33" aria-valuemin="0" aria-valuemax="30">Aesthetics (22.33 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (14 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="20">Innovation (14 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/new_realm.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="New Realm">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=new_realm">New Realm</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">22nd place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="c26e7a7fb4ce4ebcac4df60691915d23" href="/maps/stratus?s=c26e7a7fb4ce4ebcac4df60691915d23">Kroest</a></li>
+                    <div class="hidden">
+                        <div class="users">Kroest</div>
+                        <div class="uuids">c26e7a7fb4ce4ebcac4df60691915d23</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (16.67 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="16.67" aria-valuemin="0" aria-valuemax="40">Gameplay (16.67 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (17.17 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="17.17" aria-valuemin="0" aria-valuemax="30">Aesthetics (17.17 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (11.83 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="11.83" aria-valuemin="0" aria-valuemax="20">Innovation (11.83 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-first">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/outcrop.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Outcrop">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=outcrop">Outcrop</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                        <a data-toggle="tooltip" data-placement="top" title="1st&nbsp;place&nbsp;winner"><i class="fa fa-trophy"></i></a>
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label map-label-contest-first">1st place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="74e593892b3e490d954aa7af1fb1eded" href="/maps/stratus?s=74e593892b3e490d954aa7af1fb1eded">Dowly_</a></li>
+                    <div class="hidden">
+                        <div class="users">Dowly_</div>
+                        <div class="uuids">74e593892b3e490d954aa7af1fb1eded</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (23.92 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="23.92" aria-valuemin="0" aria-valuemax="40">Gameplay (23.92 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (23.17 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="23.17" aria-valuemin="0" aria-valuemax="30">Aesthetics (23.17 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (14.92 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="14.92" aria-valuemin="0" aria-valuemax="20">Innovation (14.92 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/rocky_s_bane.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Rocky&#x27;s Bane">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=rocky_s_bane">Rocky&#x27;s Bane</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">8th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="b03360dbb8cd49de8ba1b7920c2238a9" href="/maps/stratus?s=b03360dbb8cd49de8ba1b7920c2238a9">Obelistics</a></li>,
+                    <li class="game-tag"><a class="click-search" data-query="dff980ed9f69491eb79c30c21350baf2" href="/maps/stratus?s=dff980ed9f69491eb79c30c21350baf2">DoomyBoy</a></li>
+                    <div class="hidden">
+                        <div class="users">Obelistics,DoomyBoy</div>
+                        <div class="uuids">b03360dbb8cd49de8ba1b7920c2238a9,dff980ed9f69491eb79c30c21350baf2</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (22.92 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="22.92" aria-valuemin="0" aria-valuemax="40">Gameplay (22.92 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (19.17 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="19.17" aria-valuemin="0" aria-valuemax="30">Aesthetics (19.17 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (12.33 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="12.33" aria-valuemin="0" aria-valuemax="20">Innovation (12.33 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/royal.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Royal">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=royal">Royal</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">King of the Flag</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">5th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="0c44ca5a6a4249b781f258dc6d2ae3e9" href="/maps/stratus?s=0c44ca5a6a4249b781f258dc6d2ae3e9">Xerocoles</a></li>
+                    <div class="hidden">
+                        <div class="users">Xerocoles</div>
+                        <div class="uuids">0c44ca5a6a4249b781f258dc6d2ae3e9</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (22.83 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="22.83" aria-valuemin="0" aria-valuemax="40">Gameplay (22.83 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (20.33 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="20.33" aria-valuemin="0" aria-valuemax="30">Aesthetics (20.33 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (13.92 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="13.92" aria-valuemin="0" aria-valuemax="20">Innovation (13.92 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/ruediger_s_golftron.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Ruediger&#x27;s Golftron">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=ruediger_s_golftron">Ruediger&#x27;s Golftron</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">19th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="e2d2c2c6cea945109ab2a091b5605b30" href="/maps/stratus?s=e2d2c2c6cea945109ab2a091b5605b30">Ruediger_LP</a></li>
+                    <div class="hidden">
+                        <div class="users">Ruediger_LP</div>
+                        <div class="uuids">e2d2c2c6cea945109ab2a091b5605b30</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (20 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="40">Gameplay (20 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (14.83 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="14.83" aria-valuemin="0" aria-valuemax="30">Aesthetics (14.83 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (11.33 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="11.33" aria-valuemin="0" aria-valuemax="20">Innovation (11.33 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/ruediger_s_octawool.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Ruediger&#x27;s Octawool">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=ruediger_s_octawool">Ruediger&#x27;s Octawool</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">9th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="e2d2c2c6cea945109ab2a091b5605b30" href="/maps/stratus?s=e2d2c2c6cea945109ab2a091b5605b30">Ruediger_LP</a></li>
+                    <div class="hidden">
+                        <div class="users">Ruediger_LP</div>
+                        <div class="uuids">e2d2c2c6cea945109ab2a091b5605b30</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (21.33 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="21.33" aria-valuemin="0" aria-valuemax="40">Gameplay (21.33 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (16.67 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="16.67" aria-valuemin="0" aria-valuemax="30">Aesthetics (16.67 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (16.33 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="16.33" aria-valuemin="0" aria-valuemax="20">Innovation (16.33 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/ruediger_s_real_garden.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Ruediger&#x27;s Real Garden">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=ruediger_s_real_garden">Ruediger&#x27;s Real Garden</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">16th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="e2d2c2c6cea945109ab2a091b5605b30" href="/maps/stratus?s=e2d2c2c6cea945109ab2a091b5605b30">Ruediger_LP</a></li>
+                    <div class="hidden">
+                        <div class="users">Ruediger_LP</div>
+                        <div class="uuids">e2d2c2c6cea945109ab2a091b5605b30</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (21.83 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="21.83" aria-valuemin="0" aria-valuemax="40">Gameplay (21.83 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (17.33 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="17.33" aria-valuemin="0" aria-valuemax="30">Aesthetics (17.33 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (10.67 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="10.67" aria-valuemin="0" aria-valuemax="20">Innovation (10.67 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/settlement.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Settlement">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=settlement">Settlement</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Destroy the Monument</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">15th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="d3814d5a3d3742f29db8916846bb70ad" href="/maps/stratus?s=d3814d5a3d3742f29db8916846bb70ad">AlmightyBread</a></li>
+                    <div class="hidden">
+                        <div class="users">AlmightyBread</div>
+                        <div class="uuids">d3814d5a3d3742f29db8916846bb70ad</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (19.67 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="19.67" aria-valuemin="0" aria-valuemax="40">Gameplay (19.67 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (19.33 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="19.33" aria-valuemin="0" aria-valuemax="30">Aesthetics (19.33 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (11 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="20">Innovation (11 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/sloped.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Sloped">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=sloped">Sloped</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Destroy the Monument</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">17th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="62d9830a0b774e219d4fde4b60c68fb5" href="/maps/stratus?s=62d9830a0b774e219d4fde4b60c68fb5">shaarpie</a></li>,
+                    <li class="game-tag"><a class="click-search" data-query="ae5c1e91745b4a6fa33711484ede6957" href="/maps/stratus?s=ae5c1e91745b4a6fa33711484ede6957">Clijmart</a></li>,
+                    <li class="game-tag"><a class="click-search" data-query="450c2d831757402197895e57b3d4cc58" href="/maps/stratus?s=450c2d831757402197895e57b3d4cc58">BD33</a></li>
+                    <div class="hidden">
+                        <div class="users">shaarpie,Clijmart,BD33</div>
+                        <div class="uuids">62d9830a0b774e219d4fde4b60c68fb5,ae5c1e91745b4a6fa33711484ede6957,450c2d831757402197895e57b3d4cc58</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (21.08 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="21.08" aria-valuemin="0" aria-valuemax="40">Gameplay (21.08 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (16.92 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="16.92" aria-valuemin="0" aria-valuemax="30">Aesthetics (16.92 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (11.33 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="11.33" aria-valuemin="0" aria-valuemax="20">Innovation (11.33 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/sprout.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Sprout">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=sprout">Sprout</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">King of the Hill</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">18th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="bb628049e3684b1cb8aad4557ae9416b" href="/maps/stratus?s=bb628049e3684b1cb8aad4557ae9416b">Anthonny</a></li>,
+                    <li class="game-tag"><a class="click-search" data-query="060baa18285240d8afcbe61607c04be3" href="/maps/stratus?s=060baa18285240d8afcbe61607c04be3">PepsiDog</a></li>,
+                    <li class="game-tag"><a class="click-search" data-query="df5fd9f44840429393465c77bf7bc08f" href="/maps/stratus?s=df5fd9f44840429393465c77bf7bc08f">Kaleeka</a></li>
+                    <div class="hidden">
+                        <div class="users">Anthonny,PepsiDog,Kaleeka</div>
+                        <div class="uuids">bb628049e3684b1cb8aad4557ae9416b,060baa18285240d8afcbe61607c04be3,df5fd9f44840429393465c77bf7bc08f</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (22.50 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="22.50" aria-valuemin="0" aria-valuemax="40">Gameplay (22.50 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (20 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="30">Aesthetics (20 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (11.50 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="11.50" aria-valuemin="0" aria-valuemax="20">Innovation (11.50 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-third">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/the_bug.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="The Bug">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=the_bug">The Bug</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Destroy the Core</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                        <a data-toggle="tooltip" data-placement="top" title="3rd&nbsp;place"><i class="fa fa-trophy"></i></a>
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label map-label-contest-third">3rd place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="62d9830a0b774e219d4fde4b60c68fb5" href="/maps/stratus?s=62d9830a0b774e219d4fde4b60c68fb5">shaarpie</a></li>
+                    <div class="hidden">
+                        <div class="users">shaarpie</div>
+                        <div class="uuids">62d9830a0b774e219d4fde4b60c68fb5</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (25.08 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="25.08" aria-valuemin="0" aria-valuemax="40">Gameplay (25.08 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (19.50 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="19.50" aria-valuemin="0" aria-valuemax="30">Aesthetics (19.50 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (13.17 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="13.17" aria-valuemin="0" aria-valuemax="20">Innovation (13.17 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-third">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/urban_sprawl.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Urban Sprawl">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=urban_sprawl">Urban Sprawl</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Destroy the Monument</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                        <a data-toggle="tooltip" data-placement="top" title="3rd&nbsp;place"><i class="fa fa-trophy"></i></a>
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label map-label-contest-third">3rd place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="fe3608b7d1054029880034b3147065b6" href="/maps/stratus?s=fe3608b7d1054029880034b3147065b6">rockymine</a></li>,
+                    <li class="game-tag"><a class="click-search" data-query="d3814d5a3d3742f29db8916846bb70ad" href="/maps/stratus?s=d3814d5a3d3742f29db8916846bb70ad">AlmightyBread</a></li>
+                    <div class="hidden">
+                        <div class="users">rockymine,AlmightyBread</div>
+                        <div class="uuids">fe3608b7d1054029880034b3147065b6,d3814d5a3d3742f29db8916846bb70ad</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (22.25 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="22.25" aria-valuemin="0" aria-valuemax="40">Gameplay (22.25 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (23.50 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="23.50" aria-valuemin="0" aria-valuemax="30">Aesthetics (23.50 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (12 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="20">Innovation (12 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/woodlot_kotf.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Woodlot KoTF">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=woodlot_kotf">Woodlot KoTF</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">King of the Flag</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">14th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="d3814d5a3d3742f29db8916846bb70ad" href="/maps/stratus?s=d3814d5a3d3742f29db8916846bb70ad">AlmightyBread</a></li>
+                    <div class="hidden">
+                        <div class="users">AlmightyBread</div>
+                        <div class="uuids">d3814d5a3d3742f29db8916846bb70ad</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (16.83 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="16.83" aria-valuemin="0" aria-valuemax="40">Gameplay (16.83 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (20.50 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="20.50" aria-valuemin="0" aria-valuemax="30">Aesthetics (20.50 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (11.67 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="11.67" aria-valuemin="0" aria-valuemax="20">Innovation (11.67 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+        <div class="map-thumbnail-selector">
+            <div class="map-thumbnail-header">
+                <img class="image lazy" data-src="../../assets/img/contest/winter_mapmaking_contest/maps/wooled_war.png">
+                <div class="banner" data-toggle="tooltip" data-placement="top" title="Wooled War">
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=wooled_war">Wooled War</a></div>
+                    <div class="sub-title">
+                        <li class="game-tag"><a class="game-link map-tag">Capture the Wool</a></li>
+                    </div>
+                    <div class="icon-alerts">
+                    </div>
+                </div>
+                <div class="labels">
+                    <span class="label label-default">12th place</span>
+                    <span class="label label-info"></span>
+                </div>
+            </div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="f1352a574fe34f0cb86756b771fc1a0f" href="/maps/stratus?s=f1352a574fe34f0cb86756b771fc1a0f">teagod</a></li>,
+                    <li class="game-tag"><a class="click-search" data-query="c1d94f186ea3495a8d1b7d9eaf393f64" href="/maps/stratus?s=c1d94f186ea3495a8d1b7d9eaf393f64">Skquid</a></li>
+                    <div class="hidden">
+                        <div class="users">teagod,Skquid</div>
+                        <div class="uuids">f1352a574fe34f0cb86756b771fc1a0f,c1d94f186ea3495a8d1b7d9eaf393f64</div>
+                    </div>
+                </div>
+                <div class="map-scores">
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (21.17 / 40)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="21.17" aria-valuemin="0" aria-valuemax="40">Gameplay (21.17 / 40)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (18.83 / 30)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="18.83" aria-valuemin="0" aria-valuemax="30">Aesthetics (18.83 / 30)</div>
+                    </div>
+                    <div class="progress" data-toggle="tooltip" data-placement="top" title="Innovation (12.25 / 20)">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="12.25" aria-valuemin="0" aria-valuemax="20">Innovation (12.25 / 20)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contest submissions score breakdown -->
+<div class="league-info-section large">Score Breakdown</div>
+<div class="table-responsive">
+    <table id="scores-breakdown" class="league-info-table contest-info-table table table-striped">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Map</td>
+                <td>Gameplay <small style="font-size: 12px;">/ 40</small></td>
+                <td>Aesthetics <small style="font-size: 12px;">/ 30</small></td>
+                <td>Innovation <small style="font-size: 12px;">/ 20</small></td>
+                <td>Bonus <small style="font-size: 12px;">3%</small></td>
+                <td>Bonus <small style="font-size: 12px;">3%</small></td>
+                <td>Bonus <small style="font-size: 12px;">2%</small></td>
+                <td>Penalty <small style="font-size: 12px;">5</small></td>
+                <td data-toggle="tooltip" data-placement="top" title="Summed&nbsp;score">Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="map-score-breakdown ">
+                <td>7th</td>
+                <td name="canyon">Canyon</td>
+                <td class="map-score" max="40">22.50</td>
+                <td class="map-score" max="30">22.50</td>
+                <td class="map-score" max="20">13.50</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown contest-table-second">
+                <td>2nd</td>
+                <td name="ceasefire">Ceasefire</td>
+                <td class="map-score" max="40">26</td>
+                <td class="map-score" max="30">21.17</td>
+                <td class="map-score" max="20">12.83</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>21st</td>
+                <td name="clay_soldiers">Clay Soldiers</td>
+                <td class="map-score" max="40">16.83</td>
+                <td class="map-score" max="30">14.50</td>
+                <td class="map-score" max="20">10.67</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="2">No</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>6th</td>
+                <td name="cottage">Cottage</td>
+                <td class="map-score" max="40">23.17</td>
+                <td class="map-score" max="30">20.33</td>
+                <td class="map-score" max="20">12.83</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="2">No</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>20th</td>
+                <td name="crystal">Crystal</td>
+                <td class="map-score" max="40">17.33</td>
+                <td class="map-score" max="30">16.17</td>
+                <td class="map-score" max="20">13.17</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">No</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>13th</td>
+                <td name="flumine">Flumine</td>
+                <td class="map-score" max="40">21.58</td>
+                <td class="map-score" max="30">17.33</td>
+                <td class="map-score" max="20">11.67</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>10th</td>
+                <td name="moor">Moor</td>
+                <td class="map-score" max="40">20.33</td>
+                <td class="map-score" max="30">22.67</td>
+                <td class="map-score" max="20">13.92</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="2">No</td>
+                <td class="map-bonus" operation="subtract" amount="5">Yes</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>11th</td>
+                <td name="moor_rage">Moor RAGE</td>
+                <td class="map-score" max="40">18.83</td>
+                <td class="map-score" max="30">22.33</td>
+                <td class="map-score" max="20">14</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="2">No</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>22nd</td>
+                <td name="new_realm">New Realm</td>
+                <td class="map-score" max="40">16.67</td>
+                <td class="map-score" max="30">17.17</td>
+                <td class="map-score" max="20">11.83</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="2">No</td>
+                <td class="map-bonus" operation="subtract" amount="5">Yes</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown contest-table-first">
+                <td>1st</td>
+                <td name="outcrop">Outcrop</td>
+                <td class="map-score" max="40">23.92</td>
+                <td class="map-score" max="30">23.17</td>
+                <td class="map-score" max="20">14.92</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>8th</td>
+                <td name="rocky_s_bane">Rocky&#x27;s Bane</td>
+                <td class="map-score" max="40">22.92</td>
+                <td class="map-score" max="30">19.17</td>
+                <td class="map-score" max="20">12.33</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="2">No</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>5th</td>
+                <td name="royal">Royal</td>
+                <td class="map-score" max="40">22.83</td>
+                <td class="map-score" max="30">20.33</td>
+                <td class="map-score" max="20">13.92</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>19th</td>
+                <td name="ruediger_s_golftron">Ruediger&#x27;s Golftron</td>
+                <td class="map-score" max="40">20</td>
+                <td class="map-score" max="30">14.83</td>
+                <td class="map-score" max="20">11.33</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="2">No</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>9th</td>
+                <td name="ruediger_s_octawool">Ruediger&#x27;s Octawool</td>
+                <td class="map-score" max="40">21.33</td>
+                <td class="map-score" max="30">16.67</td>
+                <td class="map-score" max="20">16.33</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">Yes</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>16th</td>
+                <td name="ruediger_s_real_garden">Ruediger&#x27;s Real Garden</td>
+                <td class="map-score" max="40">21.83</td>
+                <td class="map-score" max="30">17.33</td>
+                <td class="map-score" max="20">10.67</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>15th</td>
+                <td name="settlement">Settlement</td>
+                <td class="map-score" max="40">19.67</td>
+                <td class="map-score" max="30">19.33</td>
+                <td class="map-score" max="20">11</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>17th</td>
+                <td name="sloped">Sloped</td>
+                <td class="map-score" max="40">21.08</td>
+                <td class="map-score" max="30">16.92</td>
+                <td class="map-score" max="20">11.33</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>18th</td>
+                <td name="sprout">Sprout</td>
+                <td class="map-score" max="40">22.50</td>
+                <td class="map-score" max="30">20</td>
+                <td class="map-score" max="20">11.50</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">Yes</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown contest-table-third">
+                <td>3rd</td>
+                <td name="the_bug">The Bug</td>
+                <td class="map-score" max="40">25.08</td>
+                <td class="map-score" max="30">19.50</td>
+                <td class="map-score" max="20">13.17</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="2">No</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown contest-table-third">
+                <td>3rd</td>
+                <td name="urban_sprawl">Urban Sprawl</td>
+                <td class="map-score" max="40">22.25</td>
+                <td class="map-score" max="30">23.50</td>
+                <td class="map-score" max="20">12</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="2">No</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>14th</td>
+                <td name="woodlot_kotf">Woodlot KoTF</td>
+                <td class="map-score" max="40">16.83</td>
+                <td class="map-score" max="30">20.50</td>
+                <td class="map-score" max="20">11.67</td>
+                <td class="map-bonus" operation="percent" amount="3">Yes</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+            <tr class="map-score-breakdown ">
+                <td>12th</td>
+                <td name="wooled_war">Wooled War</td>
+                <td class="map-score" max="40">21.17</td>
+                <td class="map-score" max="30">18.83</td>
+                <td class="map-score" max="20">12.25</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="3">No</td>
+                <td class="map-bonus" operation="percent" amount="2">Yes</td>
+                <td class="map-bonus" operation="subtract" amount="5">No</td>
+                <td class="map-score-total">0</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $('.progress-bar').each(function(i, obj) {
+        var points_current = $(this).attr('aria-valuenow');
+        var points_max = $(this).attr('aria-valuemax');
+        var points_percentage = Math.floor((points_current / points_max) * 100);
+        $(this).css({
+            'width': points_percentage + '%',
+            'background-color': 'rgba(21, 57, 177, ' + points_percentage / 100 + ')'
+        });
+    });
+    $('.map-score-breakdown').each(function(i, obj) {
+        var map = $(this).find(':first-child').attr('name');
+        var points_given = [];
+        var points_total = 0;
+        var points_bonus = false;
+        var points_method = 'sum'
+        // calculate total score for map
+        $(this).find('.map-score').each(function(){
+            var points = $(this).text();
+            var max = $(this).attr('max');
+            var points_percentage = points / max
+            var weight = $(this).attr('weight');
+            if ( points_method == 'percent' ) {
+                points = points_percentage * weight
+            }
+            points_given.push(points);
+        });
+        $.each(points_given, function() { points_total += parseFloat(this) || 0;});
+        $(this).find('.map-bonus').each(function(){
+            var bonus = $(this).text();
+            if (bonus == 'Yes') {
+                points_bonus = true
+            }
+            var operation = $(this).attr('operation');
+            var amount = parseFloat($(this).attr('amount'));
+            if (points_bonus == true) {
+                switch (operation.toLowerCase()) {
+                    case 'percent':
+                        points_total += ((amount / 100) * points_total);
+                        break;
+                    case 'multiply':
+                        points_total = points_total * amount;
+                        break;
+                    case 'subtract':
+                        points_total -= amount;
+                        break;
+                    default:
+                        points_total += amount;
+                }
+            }
+        });
+        $(this).find(':last-child').text(points_total.toFixed(2));
+    }).promise().done( function() {
+        $('#scores-breakdown').tablesorter({sortList: [[0,0]]});
+    });
+</script>
+            <!-- End page content -->
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row center" style="width: 70%">
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">About</div>
+                        <a class="footer-item" href="/staff">Staff</a>
+                        <a class="footer-item" href="/updates">Updates</a>
+                        <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Development</div>
+                        <a class="footer-item" href="/revisions/website">Revisions</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Administration</div>
+                        <a class="footer-item" href="/policies/terms">Terms of Use</a>
+                        <a class="footer-item" href="/policies/maps">Map Policy</a>
+                        <a class="footer-item" href="/admin/references">References</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Site</div>
+                        <a class="footer-item" href="/tools">Tools</a>
+                        <a class="footer-item" href="/admin/preferences">Preferences</a>
+                        <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
+                    </div>
+                </div>
+                <div class="footer-bottom center">
+                    <div class="resourcepile-copyright-year"></div>
+                </div>
+            </div>
+        </div>
+        <script src="/assets/js/global.js"></script>
+    </body>
+</html>
