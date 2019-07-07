@@ -134,7 +134,7 @@
                     {{/if}}
                     {{#if amount}}
                     <tr>
-                        <td style="font-weight:400"><strong>Additional {{this.label}}</strong> of <code>{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}</code> for {{this.reason}}</td>
+                        <td style="font-weight:400"><strong>Additional {{this.label}}</strong> of <code>{{#is this.operation 'subtract'}}-{{/is}}{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'subtract'}} points{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}{{/is}}</code> for {{this.reason}}</td>
                     </tr>
                     {{/if}}
                     {{/each}}
