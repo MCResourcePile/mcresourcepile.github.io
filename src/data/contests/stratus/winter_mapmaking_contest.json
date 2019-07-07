@@ -43,14 +43,15 @@
             ]
         }
     ],
-    "score_method": "percent",
+    "score_method": "sum",
     "criteria": {
-        "gameplay":   {"label": "Gameplay",      "max": "40",  "weight": "44.3"},
-        "aesthetics": {"label": "Aesthetics",    "max": "30",  "weight": "33.3"},
-        "innovation": {"label": "Innovation",    "max": "20",  "weight": "22.3"},
+        "gameplay":   {"label": "Gameplay",      "max": "40"},
+        "aesthetics": {"label": "Aesthetics",    "max": "30"},
+        "innovation": {"label": "Innovation",    "max": "20"},
         "bonus-xml":  {"label": "Bonus", "operation": "percent", "amount": "3", "reason": "XML with minimal errors and proper conventions"},
         "bonus-3":    {"label": "Bonus", "operation": "percent", "amount": "3", "reason": "map gamemodes in high demand"},
-        "bonus-2":    {"label": "Bonus", "operation": "percent", "amount": "2", "reason": "map gamemodes in medium demand"}  
+        "bonus-2":    {"label": "Bonus", "operation": "percent", "amount": "2", "reason": "map gamemodes in medium demand"},
+        "penalty":    {"label": "Penalty", "operation": "subtract", "amount": "5", "reason": "author didn't do something right"}
     },
     "submissions": [ {
             "name": "Outcrop",
@@ -63,6 +64,8 @@
                 {"criteria": "gameplay",   "score": "23.92"},
                 {"criteria": "aesthetics", "score": "23.17"},
                 {"criteria": "innovation", "score": "14.92"},
+                {"criteria": "bonus-xml",   "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true}
             ]
         }, {
@@ -78,6 +81,8 @@
                 {"criteria": "gameplay",   "score": "26"},
                 {"criteria": "aesthetics", "score": "21.17"},
                 {"criteria": "innovation", "score": "12.83"},
+                {"criteria": "bonus-xml",   "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true}
             ]
         }, {
@@ -92,7 +97,9 @@
                 {"criteria": "gameplay",   "score": "25.08"},
                 {"criteria": "aesthetics", "score": "19.50"},
                 {"criteria": "innovation", "score": "13.17"},
-                {"criteria": "bonus-3",    "eligible": true}
+                {"criteria": "bonus-xml",   "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false}
             ]
         }, {
             "name": "Urban Sprawl",
@@ -107,7 +114,9 @@
                 {"criteria": "gameplay",   "score": "22.25"},
                 {"criteria": "aesthetics", "score": "23.50"},
                 {"criteria": "innovation", "score": "12"},
-                {"criteria": "bonus-3",    "eligible": true}
+                {"criteria": "bonus-xml",   "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false}
             ]
         }, {
             "name": "Royal",
@@ -121,6 +130,8 @@
                 {"criteria": "gameplay",   "score": "22.83"},
                 {"criteria": "aesthetics", "score": "20.33"},
                 {"criteria": "innovation", "score": "13.92"},
+                {"criteria": "bonus-xml",   "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true}
             ]
         }, {
@@ -135,7 +146,9 @@
                 {"criteria": "gameplay",   "score": "23.17"},
                 {"criteria": "aesthetics", "score": "20.33"},
                 {"criteria": "innovation", "score": "12.83"},
-                {"criteria": "bonus-3",    "eligible": true}
+                {"criteria": "bonus-xml",   "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false}
             ]
         }, {
             "name": "Canyon",
@@ -149,6 +162,8 @@
                 {"criteria": "gameplay",   "score": "22.50"},
                 {"criteria": "aesthetics", "score": "22.50"},
                 {"criteria": "innovation", "score": "13.50"},
+                {"criteria": "bonus-xml",   "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true}
             ]
         }, {
@@ -164,7 +179,9 @@
                 {"criteria": "gameplay",   "score": "22.92"},
                 {"criteria": "aesthetics", "score": "19.17"},
                 {"criteria": "innovation", "score": "12.33"},
-                {"criteria": "bonus-3",    "eligible": true}
+                {"criteria": "bonus-xml",   "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false}
             ]
         }, {
             "name": "Ruediger's Octawool",
@@ -178,6 +195,8 @@
                 {"criteria": "gameplay",   "score": "21.33"},
                 {"criteria": "aesthetics", "score": "16.67"},
                 {"criteria": "innovation", "score": "16.33"},
+                {"criteria": "bonus-xml",   "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true}
             ]
         }, {
@@ -192,8 +211,9 @@
                 {"criteria": "gameplay",   "score": "20.33"},
                 {"criteria": "aesthetics", "score": "22.67"},
                 {"criteria": "innovation", "score": "13.92"},
+                {"criteria": "bonus-xml",  "eligible": true},
                 {"criteria": "bonus-3",    "eligible": true},
-                {"criteria": "bonus-xml",  "eligible": true}
+                {"criteria": "bonus-2",    "eligible": false}
             ]
         }, {
             "name": "Moor RAGE",
@@ -207,8 +227,9 @@
                 {"criteria": "gameplay",   "score": "18.83"},
                 {"criteria": "aesthetics", "score": "22.33"},
                 {"criteria": "innovation", "score": "14"},
+                {"criteria": "bonus-xml",  "eligible": true},
                 {"criteria": "bonus-3",    "eligible": true},
-                {"criteria": "bonus-xml",  "eligible": true}
+                {"criteria": "bonus-2",    "eligible": false}
             ]
         }, {
             "name": "Wooled War",
@@ -223,6 +244,8 @@
                 {"criteria": "gameplay",   "score": "21.17"},
                 {"criteria": "aesthetics", "score": "18.83"},
                 {"criteria": "innovation", "score": "12.25"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true}
             ]
         }, {
@@ -237,6 +260,8 @@
                 {"criteria": "gameplay",   "score": "21.58"},
                 {"criteria": "aesthetics", "score": "17.33"},
                 {"criteria": "innovation", "score": "11.67"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true}
             ]
         }, {
@@ -251,8 +276,9 @@
                 {"criteria": "gameplay",   "score": "16.83"},
                 {"criteria": "aesthetics", "score": "20.50"},
                 {"criteria": "innovation", "score": "11.67"},
-                {"criteria": "bonus-2",    "eligible": true},
-                {"criteria": "bonus-xml",  "eligible": true}            
+                {"criteria": "bonus-xml",  "eligible": true},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": true},           
             ]
         }, {
             "name": "Settlement",
@@ -266,6 +292,8 @@
                 {"criteria": "gameplay",   "score": "19.67"},
                 {"criteria": "aesthetics", "score": "19.33"},
                 {"criteria": "innovation", "score": "11"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true}
             ]
         }, {
@@ -280,6 +308,8 @@
                 {"criteria": "gameplay",   "score": "21.83"},
                 {"criteria": "aesthetics", "score": "17.33"},
                 {"criteria": "innovation", "score": "10.67"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true}
             ]
         }, {
@@ -296,6 +326,8 @@
                 {"criteria": "gameplay",   "score": "21.08"},
                 {"criteria": "aesthetics", "score": "16.92"},
                 {"criteria": "innovation", "score": "11.33"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true}
             ]
         }, {
@@ -313,6 +345,8 @@
                 {"criteria": "gameplay",   "score": "22.50"},
                 {"criteria": "aesthetics", "score": "20"},
                 {"criteria": "innovation", "score": "11.50"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true}
             ]
         }, {
@@ -328,7 +362,9 @@
                 {"criteria": "gameplay",   "score": "20"},
                 {"criteria": "aesthetics", "score": "14.83"},
                 {"criteria": "innovation", "score": "11.33"},
-                {"criteria": "bonus-3",    "eligible": true}
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false}
             ]
         }, {
             }, {
@@ -342,7 +378,10 @@
             "scores": [
                 {"criteria": "gameplay",   "score": "17.33"},
                 {"criteria": "aesthetics", "score": "16.17"},
-                {"criteria": "innovation", "score": "13.17"}
+                {"criteria": "innovation", "score": "13.17"},
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": false},
+                {"criteria": "bonus-2",    "eligible": false}
             ]
         }, {
             }, {
@@ -357,7 +396,9 @@
                 {"criteria": "gameplay",   "score": "16.83"},
                 {"criteria": "aesthetics", "score": "14.50"},
                 {"criteria": "innovation", "score": "10.67"},
-                {"criteria": "bonus-3",    "eligible": true}
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false}
             ]
         }, {
             "name": "New Realm",
@@ -371,7 +412,9 @@
                 {"criteria": "gameplay",   "score": "16.67"},
                 {"criteria": "aesthetics", "score": "17.17"},
                 {"criteria": "innovation", "score": "11.83"},
-                {"criteria": "bonus-3",    "eligible": true}
+                {"criteria": "bonus-xml",  "eligible": false},
+                {"criteria": "bonus-3",    "eligible": true},
+                {"criteria": "bonus-2",    "eligible": false}
             ]
         }
     ]
