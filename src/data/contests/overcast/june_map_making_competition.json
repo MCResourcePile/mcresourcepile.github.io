@@ -5,38 +5,40 @@
     "settings": {
         "include": {
             "stylesheets": [
-                "/assets/css/gamemodes.css"
+                "/assets/css/datatables.css"
             ],
             "scripts": [
-                "/assets/js/jquery.tablesorter.min.js"
+                "/assets/js/datatables.min.js"
             ]
         },
         "maps": {
-            "group": "overcast"
+            "group": "overcast",
+            "contest": true
         }
     },
     "stages": [
-        {"stage": "Submissions open",  "date": "June 13th, 2015"},
-        {"stage": "Submissions close", "date": "June 28th, 2015"},
-        {"stage": "Results announced", "date": "July 1st, 2015"}
+        {"stage": "Submissions open",  "date": "June 13, 2015"},
+        {"stage": "Submissions close", "date": "June 28, 2015"},
+        {"stage": "Public Testing", "date": "Unknown"},
+        {"stage": "Results announced", "date": "July 1, 2015"}
     ],
     "panels": [ {
             "label": "Details and Guidelines",
             "size": "half",
             "rows": [
-                {"content": "Only CTF and KoTF maps were allowed, allowing for 10v10 gameplay"},
-                {"content": "Maps being created were to be designed for tournament environments"},
-                {"content": "Upon the approval of an Event Coordinator, select contest maps would be included in Overcast's 10th tournament"},
-                {"content": "XML documents were to be included with the submission"}
+                {"content": "Only CTF and KoTF maps were allowed, allowing for <code>10v10</code> gameplay."},
+                {"content": "Maps being created were to be designed for tournament environments."},
+                {"content": "Upon the approval of an Event Coordinator, select contest maps would be included in <a href=\"/leagues/overcast/defenders_age_of_ares\" target=\"_blank\">Overcast Network's 10th tournament</a>."},
+                {"content": "XML documents were to be included with the submission."}
             ]
         }, {
             "label": "Prizes",
             "size": "half",
             "rows": [
-                {"label": "First",  "content": "Map residence, winner trophy, and a donor rank"},
-                {"label": "Second", "content": "Map residence, and a donor rank"},
-                {"label": "Third",  "content": "Map residence, and a donor rank"},
-                {"content": "All contest maps were considered to be included in Overcast's 10th tournament"}
+                {"label": "First Place",  "content": "Map residence, winner trophy, and a donor rank"},
+                {"label": "Second Place", "content": "Map residence, and a donor rank"},
+                {"label": "Third Place",  "content": "Map residence, and a donor rank"},
+                {"content": "All contest maps were considered to be included in  <a href=\"/leagues/overcast/defenders_age_of_ares\" target=\"_blank\">Overcast Network's 10th tournament</a>."}
             ]
         }
     ],
@@ -53,7 +55,7 @@
             "authors": [
                 {"username": "Z3R0", "uuid": "6f21f5e3-544b-48a9-9670-63aec36038c4"}
             ],
-            "gamemode": "Capture the Flag",
+            "tags": ["ctf"],
             "position": "5",
             "scores": [
                 {"criteria": "gameplay",   "score": "10.75"},
@@ -67,7 +69,7 @@
             "authors": [
                 {"username": "JSBach", "uuid": "61982fa8-f0f9-46d7-977a-47325c9bbd5c"}
             ],
-            "gamemode": "Capture the Flag",
+            "tags": ["ctf"],
             "position": "3",
             "scores": [
                 {"criteria": "gameplay",   "score": "11.2"},
@@ -82,7 +84,7 @@
                 {"username": "NixaniaXi", "uuid": "2958ea4c-3501-404e-88cc-12e8632f68cc"},
                 {"username": "DoomyBoy", "uuid": "dff980ed-9f69-491e-b79c-30c21350baf2"}
             ],
-            "gamemode": "Capture the Flag",
+            "tags": ["ctf"],
             "position": "6",
             "scores": [
                 {"criteria": "gameplay",   "score": "8.5"},
@@ -97,7 +99,7 @@
                 {"username": "TheNoChillDude", "uuid": "5e1c0b5d-cfdd-4e10-95cd-c53f8ee92150"},
                 {"username": "snatimal", "uuid": "b843e63b-4d8c-4606-b6da-08b3ed8534d1"}
             ],
-            "gamemode": "King of the Flag",
+            "tags": ["kotf"],
             "position": "2",
             "scores": [
                 {"criteria": "gameplay",   "score": "14.25"},
@@ -112,7 +114,7 @@
                 {"username": "samthecat43", "uuid": "7ab24d14-0801-48ba-8fea-147ddf400067"},
                 {"username": "ID10", "uuid": "68c0280d-17d6-4c6b-b453-d1b8eb6a866d"}
             ],
-            "gamemode": "King of the Flag",
+            "tags": ["kotf"],
             "position": "8",
             "scores": [
                 {"criteria": "gameplay",   "score": "6.3"},
@@ -126,7 +128,7 @@
             "authors": [
                 {"username": "Yoyo_", "uuid": "07fa10c6-f564-4630-861e-fe134ae27527"}
             ],
-            "gamemode": "Capture the Flag",
+            "tags": ["ctf"],
             "position": "9",
             "scores": [
                 {"criteria": "gameplay",   "score": "5.33"},
@@ -140,7 +142,7 @@
             "authors": [
                 {"username": "rockymine", "uuid": "fe3608b7-d105-4029-8800-34b3147065b6"}
             ],
-            "gamemode": "King of the Flag",
+            "tags": ["kotf"],
             "position": "4",
             "scores": [
                 {"criteria": "gameplay",   "score": "9"},
@@ -156,7 +158,7 @@
                 {"username": "triplezko", "uuid": "9929437a-9b7d-4d7a-b05d-e22fe93ac042"},
                 {"username": "Winne", "uuid": "cf1b2da8-3718-45a9-8836-bb70b0628773"}
             ],
-            "gamemode": "Capture the Flag",
+            "tags": ["ctf"],
             "position": "1",
             "scores": [
                 {"criteria": "gameplay",   "score": "12.83"},
@@ -171,7 +173,7 @@
                 {"username": "CeFour", "uuid": "bdb417b7-8d57-460f-951e-69dfaf764430"},
                 {"username": "_CubeRoot", "uuid": "b06fb221-e8a6-4c84-96c8-9ac4a0fd1b51"}
             ],
-            "gamemode": "Capture the Flag",
+            "tags": ["ctf"],
             "position": "10",
             "scores": [
                 {"criteria": "gameplay",   "score": "4.75"},
@@ -185,7 +187,7 @@
             "authors": [
                 {"username": "ogel", "uuid": "4a05be89-8b8b-4dfe-848e-df6c42967c9a"}
             ],
-            "gamemode": "King of the Flag",
+            "tags": ["kotf"],
             "position": "7",
             "scores": [
                 {"criteria": "gameplay",   "score": "8.63"},
