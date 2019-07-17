@@ -134,15 +134,17 @@ function updateUrl() {
 }
 
 function parseUrl() {
-    $('#search').val(url.query.s);
+    var searchInput = $('#search').val(url.query.s);
     var urlFilters = url.query.f;
-    if (urlFilters) {
-        urlFilters = urlFilters.split(',');
-        for (i = 0; i < urlFilters.length; i++) {
-            $('.filter:contains("' + urlFilters[i] + '")').filter(function() {
-                return $(this).text() == urlFilters[i];
-            }).addClass('active');
-            filters.push(urlFilters[i]);
+    if (urlFilters || searchInput) {
+        if (urlFilters) {
+            urlFilters = urlFilters.split(',');
+            for (i = 0; i < urlFilters.length; i++) {
+                $('.filter:contains("' + urlFilters[i] + '")').filter(function() {
+                    return $(this).text() == urlFilters[i];
+                }).addClass('active');
+                filters.push(urlFilters[i]);
+            }
         }
         filterMaps();
         forceUpdateSearch();
