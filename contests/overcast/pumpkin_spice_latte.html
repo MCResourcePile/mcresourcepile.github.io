@@ -21,7 +21,7 @@
         <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
-        <link href="/assets/css/gamemodes.css" rel="stylesheet">
+        <link href="/assets/css/datatables.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
@@ -29,7 +29,7 @@
         <script src="/assets/js/js.cookie.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="/assets/js/moment.js"></script>
-        <script src="/assets/js/jquery.tablesorter.min.js"></script>
+        <script src="/assets/js/datatables.min.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -117,81 +117,100 @@
             <!-- Start page content -->
 <!-- Contest banner -->
 <div class="center">
-    <img class="league-banner-custom" src="../../assets/img/contest/pumpkin_spice_latte/banner.png">
+    <img class="league-banner" src="../../assets/img/contest/pumpkin_spice_latte/banner.png">
 </div>
-
-<!-- Contest winners -->
-<div class="contest-winners center">
-    <div class="col-sm-4 thumbnail map-thumbnail small collapse-immune">
-        <div class="map-thumbnail-header">
-            <img class="image" src="../../assets/img/contest/pumpkin_spice_latte/maps/treasure_town.png">
-            <div class="banner" data-toggle="tooltip" data-placement="top" title="Treasure Town">
-                <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=treasure_town">Treasure Town</a></div>
+<div class="center">
+        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center large map-glow-contest-first" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
+            <div class="map-thumbnail-selector">
+                <div class="map-thumbnail-header">
+                    <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/l_automne.png">
+                    <div class="banner" data-toggle="tooltip" data-placement="top" title="L&#x27;automne">
+                        <div class="title"><a class="s-title">L&#x27;automne</a></div>
+                        <div class="sub-title">
+                            <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
+                        </div>
+                    </div>
+                    <div class="labels">
+                        <span class="label map-results-label map-label-contest-first"><i class="fas fa-trophy"></i> 1st place</span>
+                    </div>
+                </div>
             </div>
-            <div class="labels">
-                <div class="label map-label-contest-second"><span class="fa fa-star"></span> 2nd</div>
+            <div class="map-thumbnail-body">
+                <div class="authors">
+                    by
+                    <li class="game-tag"><a class="click-search" data-query="5906313bdd1b484781647f9800fcb782" href="/maps/overcast?s=5906313bdd1b484781647f9800fcb782">TruBuild</a></li>,
+                    <li class="game-tag"><a class="click-search" data-query="ff69281783e74afeb5aec5f62aa642b3" href="/maps/overcast?s=ff69281783e74afeb5aec5f62aa642b3">Teh_Myth</a></li>
+                </div>
             </div>
-        </div>
-        <div class="map-thumbnail-body">
-            <div class="authors">
-                by
-                <li class="game-tag author-tag"><a href="/maps/overcast?s=36dc036a-dfbc-4627-b66a-501223f08075">bend</a></li>
-            </div>
-        </div>
+        </div>    <div class="row">
+        <div class="col-md-6">
+                <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center small map-glow-contest-second" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
+                    <div class="map-thumbnail-selector">
+                        <div class="map-thumbnail-header">
+                            <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/treasure_town.png">
+                            <div class="banner" data-toggle="tooltip" data-placement="top" title="Treasure Town">
+                                <div class="title"><a class="s-title">Treasure Town</a></div>
+                                <div class="sub-title">
+                                    <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
+                                </div>
+                            </div>
+                            <div class="labels">
+                                <span class="label map-results-label map-label-contest-second"><i class="fas fa-star"></i> 2nd place</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-thumbnail-body">
+                        <div class="authors">
+                            by
+                            <li class="game-tag"><a class="click-search" data-query="36dc036adfbc4627b66a501223f08075" href="/maps/overcast?s=36dc036adfbc4627b66a501223f08075">bend</a></li>
+                        </div>
+                    </div>
+                </div>        </div>
+        <div class="col-md-6">
+                <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center small map-glow-contest-third" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
+                    <div class="map-thumbnail-selector">
+                        <div class="map-thumbnail-header">
+                            <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/enthral.png">
+                            <div class="banner" data-toggle="tooltip" data-placement="top" title="Enthral">
+                                <div class="title"><a class="s-title">Enthral</a></div>
+                                <div class="sub-title">
+                                    <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
+                                </div>
+                            </div>
+                            <div class="labels">
+                                <span class="label map-results-label map-label-contest-third"><i class="fas fa-star-half-alt"></i> 3rd place</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-thumbnail-body">
+                        <div class="authors">
+                            by
+                            <li class="game-tag"><a class="click-search" data-query="07fa10c6f5644630861efe134ae27527" href="/maps/overcast?s=07fa10c6f5644630861efe134ae27527">Yoyo_</a></li>,
+                            <li class="game-tag"><a class="click-search" data-query="fe3608b7d1054029880034b3147065b6" href="/maps/overcast?s=fe3608b7d1054029880034b3147065b6">rockymine</a></li>
+                        </div>
+                    </div>
+                </div>        </div>
     </div>
-    <div class="col-sm-4 thumbnail map-thumbnail collapse-immune">
-        <div class="map-thumbnail-header">
-            <img class="image" src="../../assets/img/contest/pumpkin_spice_latte/maps/l_automne.png">
-            <div class="banner" data-toggle="tooltip" data-placement="top" title="L&#x27;automne">
-                <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=l_automne">L&#x27;automne</a></div>
-            </div>
-            <div class="labels">
-                <div class="label map-label-contest-first"><span class="fa fa-trophy"></span> 1st</div>
-            </div>
-        </div>
-        <div class="map-thumbnail-body">
-            <div class="authors">
-                by
-                <li class="game-tag author-tag"><a href="/maps/overcast?s=5906313b-dd1b-4847-8164-7f9800fcb782">TruBuild</a></li>
-                <li class="game-tag author-tag"><a href="/maps/overcast?s=ff692817-83e7-4afe-b5ae-c5f62aa642b3">Teh_Myth</a></li>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-4 thumbnail map-thumbnail small collapse-immune">
-        <div class="map-thumbnail-header">
-            <img class="image" src="../../assets/img/contest/pumpkin_spice_latte/maps/enthral.png">
-            <div class="banner" data-toggle="tooltip" data-placement="top" title="Enthral">
-                <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=enthral">Enthral</a></div>
-            </div>
-            <div class="labels">
-                <div class="label map-label-contest-third"><span class="fa fa-star"></span> 3rd</div>
-            </div>
-        </div>
-        <div class="map-thumbnail-body">
-            <div class="authors">
-                by
-                <li class="game-tag author-tag"><a href="/maps/overcast?s=07fa10c6-f564-4630-861e-fe134ae27527">Yoyo_</a></li>
-                <li class="game-tag author-tag"><a href="/maps/overcast?s=fe3608b7-d105-4029-8800-34b3147065b6">rockymine</a></li>
-            </div>
-        </div>
-    </div>
+    <a class="contest-scores-link" href="#scores">View Score Breakdown</a>
 </div>
-
-<!-- Contest information -->
 <div class="league-info-section large">Contest Information</div>
 <div class="row">
     <div class="col-md-6">
         <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates and Times</div>
+            <div class="league-info-section">Dates</div>
             <table class="league-info-table">
                 <tbody>
                     <tr>
                         <td>Submissions open</td>
-                        <td>October 1st, 2015</td>
+                        <td>October 1, 2015</td>
                     </tr>
                     <tr>
                         <td>Submissions close</td>
-                        <td>October 31st, 2015</td>
+                        <td>October 31, 2015</td>
+                    </tr>
+                    <tr>
+                        <td>Public Testing</td>
+                        <td>Unknown</td>
                     </tr>
                     <tr>
                         <td>Results announced</td>
@@ -228,10 +247,10 @@
             <table class="league-info-table">
                 <tbody>
                     <tr>
-                        <td colspan="2" style="font-weight:400">Only Free for All (FFA) maps were allowed to be submitted into this contest</td>
+                        <td colspan="2" style="font-weight:400">Only Free for All (FFA) maps were allowed to be submitted into this contest.</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-weight:400">XML documents were to be included with the submission</td>
+                        <td colspan="2" style="font-weight:400">XML documents were to be included with the submission.</td>
                     </tr>
                 </tbody>
             </table>
@@ -243,15 +262,15 @@
             <table class="league-info-table">
                 <tbody>
                     <tr>
-                        <td>First</td>
+                        <td>First Place</td>
                         <td>Map residence, winner trophy, and a donor rank</td>
                     </tr>
                     <tr>
-                        <td>Second</td>
+                        <td>Second Place</td>
                         <td>Map residence, and a donor rank</td>
                     </tr>
                     <tr>
-                        <td>Third</td>
+                        <td>Third Place</td>
                         <td>Map residence, and a donor rank</td>
                     </tr>
                 </tbody>
@@ -259,24 +278,22 @@
         </div>
     </div>
 </div>
-
-<!-- Contest submissions -->
-<div class="league-info-section large">Submissions <small>(12 maps)</small></div>
+<div class="league-info-section large">Submissions <small>12</small></div>
 <div class="dynamic">
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/asura.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Asura">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=asura">Asura</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=asura" class="s-title">Asura</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">*th place</span>
+                    <span class="label label-default">- place</span>
                     <span class="label label-info"></span>
                 </div>
             </div>
@@ -291,29 +308,38 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (4.43 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.43" aria-valuemin="0" aria-valuemax="10">Design (4.43 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="4.43" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (4.43 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (3.14 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.14" aria-valuemin="0" aria-valuemax="5">Aesthetics (3.14 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.14" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (3.14 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (4.4 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.4" aria-valuemin="0" aria-valuemax="10">Gameplay (4.4 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="4.4" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (4.4 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (2.25 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.25" aria-valuemin="0" aria-valuemax="5">Public rating (2.25 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.25" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (2.25 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/bifrost.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Bifrost">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=bifrost">Bifrost</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=bifrost" class="s-title">Bifrost</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -335,29 +361,38 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.71 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.71" aria-valuemin="0" aria-valuemax="10">Design (3.71 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.71" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (3.71 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (4 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5">Aesthetics (4 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (4 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.2 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.2" aria-valuemin="0" aria-valuemax="10">Gameplay (3.2 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.2" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (3.2 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (2.2 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.2" aria-valuemin="0" aria-valuemax="5">Public rating (2.2 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.2" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (2.2 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-third">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/enthral.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Enthral">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=enthral">Enthral</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=enthral" class="s-title">Enthral</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                         <a data-toggle="tooltip" data-placement="top" title="3rd&nbsp;place"><i class="fa fa-trophy"></i></a>
@@ -380,29 +415,38 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (4.71 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.71" aria-valuemin="0" aria-valuemax="10">Design (4.71 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="4.71" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (4.71 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (3.57 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.57" aria-valuemin="0" aria-valuemax="5">Aesthetics (3.57 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.57" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (3.57 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.8 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.8" aria-valuemin="0" aria-valuemax="10">Gameplay (3.8 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.8" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (3.8 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (2.08 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.08" aria-valuemin="0" aria-valuemax="5">Public rating (2.08 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.08" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (2.08 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/fallen_debris.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Fallen Debris">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=fallen_debris">Fallen Debris</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=fallen_debris" class="s-title">Fallen Debris</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -423,29 +467,38 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.86 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.86" aria-valuemin="0" aria-valuemax="10">Design (3.86 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.86" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (3.86 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (3 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5">Aesthetics (3 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (3 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.83 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.83" aria-valuemin="0" aria-valuemax="10">Gameplay (3.83 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.83" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (3.83 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (2.24 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.24" aria-valuemin="0" aria-valuemax="5">Public rating (2.24 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.24" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (2.24 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/hillside.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Hillside">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=hillside">Hillside</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=hillside" class="s-title">Hillside</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -466,29 +519,38 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.43 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.43" aria-valuemin="0" aria-valuemax="10">Design (3.43 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.43" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (3.43 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.86 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.86" aria-valuemin="0" aria-valuemax="5">Aesthetics (2.86 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.86" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (2.86 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2.4 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.4" aria-valuemin="0" aria-valuemax="10">Gameplay (2.4 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.4" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (2.4 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (1.98 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.98" aria-valuemin="0" aria-valuemax="5">Public rating (1.98 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="1.98" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (1.98 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-first">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/l_automne.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="L&#x27;automne">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=l_automne">L&#x27;automne</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=l_automne" class="s-title">L&#x27;automne</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                         <a data-toggle="tooltip" data-placement="top" title="1st&nbsp;place&nbsp;winner"><i class="fa fa-trophy"></i></a>
@@ -511,29 +573,38 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (5 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="10">Design (5 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (5 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (3.83 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.83" aria-valuemin="0" aria-valuemax="5">Aesthetics (3.83 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.83" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (3.83 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (4.17 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.17" aria-valuemin="0" aria-valuemax="10">Gameplay (4.17 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="4.17" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (4.17 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (2.33 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.33" aria-valuemin="0" aria-valuemax="5">Public rating (2.33 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.33" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (2.33 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/pompeii.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Pompeii">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=pompeii">Pompeii</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=pompeii" class="s-title">Pompeii</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -555,29 +626,38 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.71 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.71" aria-valuemin="0" aria-valuemax="10">Design (3.71 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.71" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (3.71 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (3.43 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.43" aria-valuemin="0" aria-valuemax="5">Aesthetics (3.43 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.43" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (3.43 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2.2 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.2" aria-valuemin="0" aria-valuemax="10">Gameplay (2.2 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.2" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (2.2 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (2.3 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.3" aria-valuemin="0" aria-valuemax="5">Public rating (2.3 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.3" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (2.3 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/pumpkin_spice_latte_ffa.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Pumpkin Spice Latte FFA">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=pumpkin_spice_latte_ffa">Pumpkin Spice Latte FFA</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=pumpkin_spice_latte_ffa" class="s-title">Pumpkin Spice Latte FFA</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -598,29 +678,38 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.57 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.57" aria-valuemin="0" aria-valuemax="10">Design (3.57 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.57" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (3.57 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5">Aesthetics (2 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (2 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.34 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.34" aria-valuemin="0" aria-valuemax="10">Gameplay (3.34 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.34" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (3.34 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (2.57 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.57" aria-valuemin="0" aria-valuemax="5">Public rating (2.57 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.57" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (2.57 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/simulation_1.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Simulation #1">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=simulation_1">Simulation #1</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=simulation_1" class="s-title">Simulation #1</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -641,29 +730,38 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (4.29 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.29" aria-valuemin="0" aria-valuemax="10">Design (4.29 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="4.29" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (4.29 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (1.86 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.86" aria-valuemin="0" aria-valuemax="5">Aesthetics (1.86 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="1.86" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (1.86 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (1.8 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1.8" aria-valuemin="0" aria-valuemax="10">Gameplay (1.8 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="1.8" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (1.8 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (2.2 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.2" aria-valuemin="0" aria-valuemax="5">Public rating (2.2 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.2" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (2.2 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-second">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/treasure_town.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Treasure Town">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=treasure_town">Treasure Town</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=treasure_town" class="s-title">Treasure Town</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                         <a data-toggle="tooltip" data-placement="top" title="2nd&nbsp;place&nbsp;runner&nbsp;up"><i class="fa fa-trophy"></i></a>
@@ -685,29 +783,38 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (4.86 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.86" aria-valuemin="0" aria-valuemax="10">Design (4.86 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="4.86" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (4.86 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (3.29 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.29" aria-valuemin="0" aria-valuemax="5">Aesthetics (3.29 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.29" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (3.29 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (4.2 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.2" aria-valuemin="0" aria-valuemax="10">Gameplay (4.2 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="4.2" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (4.2 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (2.17 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.17" aria-valuemin="0" aria-valuemax="5">Public rating (2.17 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.17" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (2.17 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/two_way_road.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Two Way Road">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=two_way_road">Two Way Road</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=two_way_road" class="s-title">Two Way Road</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -729,29 +836,38 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (3.29 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.29" aria-valuemin="0" aria-valuemax="10">Design (3.29 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.29" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (3.29 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (2.14 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.14" aria-valuemin="0" aria-valuemax="5">Aesthetics (2.14 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.14" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (2.14 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (2.83 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.83" aria-valuemin="0" aria-valuemax="10">Gameplay (2.83 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.83" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (2.83 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (2.09 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.09" aria-valuemin="0" aria-valuemax="5">Public rating (2.09 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.09" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (2.09 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/pumpkin_spice_latte/maps/weirwood.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Weirwood">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=weirwood">Weirwood</a></div>
+                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=weirwood" class="s-title">Weirwood</a></div>
                     <div class="sub-title">
-                        <li class="game-tag"><a class="game-link map-tag">Free for All</a></li>
+                        <li class="game-tag map-tag s-tag">Free-for-all<span class="hidden">ffa Free for All</span></li>
                     </div>
                     <div class="icon-alerts">
                     </div>
@@ -773,27 +889,34 @@
                 </div>
                 <div class="map-scores">
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Design (4.43 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="4.43" aria-valuemin="0" aria-valuemax="10">Design (4.43 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="4.43" aria-valuemin="0" aria-valuemax="10">
+                            <span>Design (4.43 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Aesthetics (3.29 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.29" aria-valuemin="0" aria-valuemax="5">Aesthetics (3.29 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.29" aria-valuemin="0" aria-valuemax="5">
+                            <span>Aesthetics (3.29 / 5)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Gameplay (3.83 / 10)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="3.83" aria-valuemin="0" aria-valuemax="10">Gameplay (3.83 / 10)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="3.83" aria-valuemin="0" aria-valuemax="10">
+                            <span>Gameplay (3.83 / 10)</span>
+                        </div>
                     </div>
                     <div class="progress" data-toggle="tooltip" data-placement="top" title="Public rating (2.31 / 5)">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="2.31" aria-valuemin="0" aria-valuemax="5">Public rating (2.31 / 5)</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="2.31" aria-valuemin="0" aria-valuemax="5">
+                            <span>Public rating (2.31 / 5)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 </div>
-
-<!-- Contest submissions score breakdown -->
-<div class="league-info-section large">Score Breakdown</div>
+<div class="league-info-section large" id="scores">Score Breakdown</div>
 <div class="table-responsive">
-    <table id="scores-breakdown" class="league-info-table contest-info-table table table-striped">
+    <table id="scores-breakdown" class="contest-info-table table table-striped table-bordered">
         <thead>
             <tr>
                 <td>#</td>
@@ -806,8 +929,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="map-score-breakdown ">
-                <td>*th</td>
+            <tr class="map-score-breakdown contest-table-none">
+                <td data-order="1000">-</td>
                 <td name="asura">Asura</td>
                 <td class="map-score" max="10">4.43</td>
                 <td class="map-score" max="5">3.14</td>
@@ -816,7 +939,7 @@
                 <td class="map-score-total">0</td>
             </tr>
             <tr class="map-score-breakdown ">
-                <td>5th</td>
+                <td data-order="5">5th</td>
                 <td name="bifrost">Bifrost</td>
                 <td class="map-score" max="10">3.71</td>
                 <td class="map-score" max="5">4</td>
@@ -825,7 +948,7 @@
                 <td class="map-score-total">0</td>
             </tr>
             <tr class="map-score-breakdown contest-table-third">
-                <td>3rd</td>
+                <td data-order="3">3rd</td>
                 <td name="enthral">Enthral</td>
                 <td class="map-score" max="10">4.71</td>
                 <td class="map-score" max="5">3.57</td>
@@ -834,7 +957,7 @@
                 <td class="map-score-total">0</td>
             </tr>
             <tr class="map-score-breakdown ">
-                <td>6th</td>
+                <td data-order="6">6th</td>
                 <td name="fallen_debris">Fallen Debris</td>
                 <td class="map-score" max="10">3.86</td>
                 <td class="map-score" max="5">3</td>
@@ -843,7 +966,7 @@
                 <td class="map-score-total">0</td>
             </tr>
             <tr class="map-score-breakdown ">
-                <td>9th</td>
+                <td data-order="9">9th</td>
                 <td name="hillside">Hillside</td>
                 <td class="map-score" max="10">3.43</td>
                 <td class="map-score" max="5">2.86</td>
@@ -852,7 +975,7 @@
                 <td class="map-score-total">0</td>
             </tr>
             <tr class="map-score-breakdown contest-table-first">
-                <td>1st</td>
+                <td data-order="1">1st</td>
                 <td name="l_automne">L&#x27;automne</td>
                 <td class="map-score" max="10">5</td>
                 <td class="map-score" max="5">3.83</td>
@@ -861,7 +984,7 @@
                 <td class="map-score-total">0</td>
             </tr>
             <tr class="map-score-breakdown ">
-                <td>7th</td>
+                <td data-order="7">7th</td>
                 <td name="pompeii">Pompeii</td>
                 <td class="map-score" max="10">3.71</td>
                 <td class="map-score" max="5">3.43</td>
@@ -870,7 +993,7 @@
                 <td class="map-score-total">0</td>
             </tr>
             <tr class="map-score-breakdown ">
-                <td>8th</td>
+                <td data-order="8">8th</td>
                 <td name="pumpkin_spice_latte_ffa">Pumpkin Spice Latte FFA</td>
                 <td class="map-score" max="10">3.57</td>
                 <td class="map-score" max="5">2</td>
@@ -879,7 +1002,7 @@
                 <td class="map-score-total">0</td>
             </tr>
             <tr class="map-score-breakdown ">
-                <td>11th</td>
+                <td data-order="11">11th</td>
                 <td name="simulation_1">Simulation #1</td>
                 <td class="map-score" max="10">4.29</td>
                 <td class="map-score" max="5">1.86</td>
@@ -888,7 +1011,7 @@
                 <td class="map-score-total">0</td>
             </tr>
             <tr class="map-score-breakdown contest-table-second">
-                <td>2nd</td>
+                <td data-order="2">2nd</td>
                 <td name="treasure_town">Treasure Town</td>
                 <td class="map-score" max="10">4.86</td>
                 <td class="map-score" max="5">3.29</td>
@@ -897,7 +1020,7 @@
                 <td class="map-score-total">0</td>
             </tr>
             <tr class="map-score-breakdown ">
-                <td>10th</td>
+                <td data-order="10">10th</td>
                 <td name="two_way_road">Two Way Road</td>
                 <td class="map-score" max="10">3.29</td>
                 <td class="map-score" max="5">2.14</td>
@@ -906,7 +1029,7 @@
                 <td class="map-score-total">0</td>
             </tr>
             <tr class="map-score-breakdown ">
-                <td>4th</td>
+                <td data-order="4">4th</td>
                 <td name="weirwood">Weirwood</td>
                 <td class="map-score" max="10">4.43</td>
                 <td class="map-score" max="5">3.29</td>
@@ -933,7 +1056,7 @@
         var points_given = [];
         var points_total = 0;
         var points_bonus = false;
-        var points_method = 'sum'
+        var points_method = "sum"
         // calculate total score for map
         $(this).find('.map-score').each(function(){
             var points = $(this).text();
@@ -947,31 +1070,64 @@
         });
         $.each(points_given, function() { points_total += parseFloat(this) || 0;});
         $(this).find('.map-bonus').each(function(){
-            var bonus = $(this).text();
-            if (bonus == 'Yes') {
-                points_bonus = true
+            var bonus = $(this).attr('bonus');
+            if (bonus == 'yes') {
+                points_bonus = true;
+            } else {
+                points_bonus = false;
             }
             var operation = $(this).attr('operation');
             var amount = parseFloat($(this).attr('amount'));
-            if (points_bonus == true) {
+            if (points_bonus) {
                 switch (operation.toLowerCase()) {
                     case 'percent':
                         points_total += ((amount / 100) * points_total);
                         break;
                     case 'multiply':
-                        points_total = points_total * amount;
+                        points_total *= amount;
                         break;
                     case 'subtract':
                         points_total -= amount;
                         break;
+                    case 'add':
+                        points_total += amount;
                     default:
                         points_total += amount;
                 }
             }
         });
-        $(this).find(':last-child').text(points_total.toFixed(2));
+        $(this).find('.map-score-total').text(points_total.toFixed(2));
     }).promise().done( function() {
-        $('#scores-breakdown').tablesorter({sortList: [[0,0]]});
+        $('#scores-breakdown').DataTable( {
+            paging: false,
+            scrollY: false,
+            order: [0, 'asc'],
+            responsive: {
+                details: {
+                    renderer: function ( api, rowIdx, columns ) {
+                        var data = $.map( columns, function ( col, i ) {
+                            return col.hidden ?
+                                '<tr data-dt-row="' + col.rowIndex + '" data-dt-column="' + col.columnIndex + '">' +
+                                    '<td class="title">' + col.title + '</td> '+
+                                    '<td class="data">' + col.data + '</td>'+
+                                '</tr>' :
+                                '';
+                        } ).join('');
+
+                        return data ?
+                            $('<table/>').append(data) :
+                            false;
+                    }
+                }
+            },
+            columnDefs: [
+                {responsivePriority: 1, targets: 0},
+                {responsivePriority: 1, targets: 1},
+                {responsivePriority: 1, targets: -1}
+            ],
+            dom: "<'row'<'col-sm-6'i><'col-sm-6'f>>" +
+                 "<'row'<'col-sm-12'tr>>"
+        });
     });
 </script>
             <!-- End page content -->
