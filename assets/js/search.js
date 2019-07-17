@@ -134,7 +134,8 @@ function updateUrl() {
 }
 
 function parseUrl() {
-    var searchInput = $('#search').val(url.query.s);
+    $('#search').val(url.query.s);
+    var searchInput = url.query.s;
     var urlFilters = url.query.f;
     if (urlFilters || searchInput) {
         if (urlFilters) {
