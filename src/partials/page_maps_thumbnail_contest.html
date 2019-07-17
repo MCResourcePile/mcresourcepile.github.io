@@ -1,0 +1,43 @@
+<div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center{{#is position '1'}} large map-glow-contest-first{{/is}}{{#is position '2'}} small map-glow-contest-second{{/is}}{{#is position '3'}} small map-glow-contest-third{{/is}}" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
+    <div class="map-thumbnail-selector">
+        <div class="map-thumbnail-header">
+            <img class="image lazy" data-src="../../assets/img/contest/{{snakecase (lowercase @root.title)}}/maps/{{slug}}.png">
+            <div class="banner" data-toggle="tooltip" data-placement="top" title="{{name}}">
+                <div class="title"><a class="s-title">{{#if name}}{{name}}{{else}}{{slug}}{{/if}}</a></div>
+                <div class="sub-title">
+                    {{#if tags}}
+                    {{#each tags}}
+                    <li class="game-tag map-tag s-tag">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}<span class="hidden">{{lookup (lookup @root.settings.maps.tags this) 'keywords'}}</span>{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}</li>
+                    {{/each}}
+                    {{else}}
+                    {{#if gamemode}}
+                    <li class="game-tag map-tag">{{gamemode}}</li>
+                    {{else}}
+                    <li class="game-tag map-tag">Unknown tags</li>
+                    {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+            <div class="labels">
+                <span class="label map-results-label {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}label-default{{/is}}{{/is}}{{/is}}">{{#is position '1'}}<i class="fas fa-trophy"></i>{{else}}{{#is position '2'}}<i class="fas fa-star"></i>{{else}}{{#is position '3'}}<i class="fas fa-star-half-alt"></i>{{/is}}{{/is}}{{/is}} {{ordinalize position}} place</span>
+            </div>
+        </div>
+    </div>
+    <div class="map-thumbnail-body">
+        <div class="authors">
+            by
+            {{#if authors}}
+            {{#each authors}}
+            {{#lt @index 3}}
+            <li class="game-tag">{{#or username uuid}}<a class="click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}" href="/maps/{{@root.settings.maps.group}}?s={{formatUUID uuid 'strip'}}">{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</a>{{else}}Ghost{{/or}}</li>{{#unless @last}},{{/unless}}
+            {{/lt}}
+            {{/each}}
+            {{#gt (length authors) 3}}
+            and {{subtract (length authors) 3}} more
+            {{/gt}}
+            {{else}}
+            Ghost
+            {{/if}}
+        </div>
+    </div>
+</div>

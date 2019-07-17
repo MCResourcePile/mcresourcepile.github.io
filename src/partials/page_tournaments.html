@@ -38,9 +38,9 @@
 {{/if}}
 <div class="center">
     {{#if @root.settings.tournaments.default_banner}}
-    <div class="tm-default-banner" style="background: url('../../assets/img/tournament/banners/default/{{@root.settings.tournaments.default_banner}}.jpg'); background-position: center; background-size: cover;">{{title}}</div>
+    <div class="league-default-banner" style="background: url('../../assets/img/tournament/banners/default/{{@root.settings.tournaments.default_banner}}.jpg'); background-position: center; background-size: cover;">{{title}}</div>
     {{else}}
-    <img class="tm-banner" src="../../assets/img/tournament/banners/{{@root.settings.tournaments.host}}/{{snakecase (lowercase title)}}.png">
+    <img class="league-banner" src="../../assets/img/tournament/banners/{{@root.settings.tournaments.host}}/{{snakecase (lowercase title)}}.png">
     {{/if}}
 </div>
 {{#results}}

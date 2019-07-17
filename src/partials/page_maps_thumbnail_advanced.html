@@ -84,7 +84,7 @@
                 {{/if}}
                 {{/inArray}}
                 {{#inArray @root.page-category 'contest'}}
-                <span class="label {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}label-default{{/is}}{{/is}}{{/is}}">{{ordinalize position}} place</span>
+                <span class="label {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}label-default{{/is}}{{/is}}{{/is}}">{{#if position}}{{ordinalize position}}{{else}}-{{/if}} place</span>
                 {{/inArray}}
                 {{#inArray @root.page-category 'tournaments'}}
                 <span class="label label-info">{{stage}}</span>
@@ -92,9 +92,9 @@
             </div>
         </div>
         {{#inArray @root.page-category 'maps'}}
-        {{#if @root.settings.maps.downloads}}
+        {{#or @root.settings.maps.downloads @root.settings.maps.contest}}
         {{> map_thumbnail_body}}
-        {{/if}}
+        {{/or}}
         {{/inArray}}
     </div>
 </div>

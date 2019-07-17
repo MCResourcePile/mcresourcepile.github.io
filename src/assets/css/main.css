@@ -754,6 +754,10 @@ span.game-mode-button {
     background-color: #e5d0bb !important;
 }
 
+.contest-table-none {
+    background-color: #d59597 !important;
+}
+
 .map-overlay {
     background-color: rgba(0, 0, 0, 0.56);
     position: absolute;
@@ -1084,12 +1088,12 @@ li.game-tag {
     text-decoration: underline;
 }
 
-.league-banner {
+.league-default-banner {
     background-color: #343436 !important;
     color: #fff;
     font-size: 50px;
     font-weight: 700;
-    text-shadow: 3px 3px #1c1c1c;
+    text-shadow: 3px 2px #1c1c1c;
     text-align: left;
     border-radius: 4px;
     padding: 80px;
@@ -1097,41 +1101,30 @@ li.game-tag {
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
-}
-
-.league-banner-custom {
-    background-color: #343436 !important;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    width: 90%;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media (max-width: 768px) {
-    .league-banner {
-        font-size: 20px;
+    .league-default-banner {
+        font-size: 25px;
         padding: 8%;
         padding-left: 20px;
     }
 }
 
+.league-banner {
+    background-color: #343436 !important;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
 .leagues > a:hover,
 .leagues > a:focus {
     text-decoration: none;
-}
-
-.league-banner:hover,
-.league-banner:focus,
-.league-banner-custom:hover,
-.league-banner-custom:focus {
-    -webkit-box-shadow: 0 0 4px 1px #2f6bde;
-    -moz-box-shadow: 0 0 4px 1px #2f6bde;
-    box-shadow: 0 0 4px 1px #2f6bde;
-    -o-transition: .7s;
-    -ms-transition: .7s;
-    -moz-transition: .7s;
-    -webkit-transition: .7s;
-    transition: .7s;
 }
 
 .league-banner-small {
@@ -1152,7 +1145,7 @@ li.game-tag {
     color: #000;
 }
 
-.tm-banner-row > a:hover > .tm-banner {
+.tm-banner-row > a:hover > .league-banner {
     -webkit-box-shadow: 0 0 4px 1px #2f6bde;
     -moz-box-shadow: 0 0 4px 1px #2f6bde;
     box-shadow: 0 0 4px 1px #2f6bde;
@@ -1186,41 +1179,7 @@ li.game-tag {
     font-size: 11px;
 }
 
-.tm-banner {
-    background-color: #343436 !important;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    width: 100%;
-}
-
-.tm-default-banner {
-    background-color: #343436 !important;
-    color: #fff;
-    font-size: 50px;
-    font-weight: 700;
-    text-shadow: 3px 2px #1c1c1c;
-    text-align: left;
-    border-radius: 4px;
-    padding: 80px;
-    margin-bottom: 20px;
-    padding-left: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-@media (max-width: 768px) {
-    .tm-default-banner {
-        font-size: 25px;
-        padding: 8%;
-        padding-left: 20px;
-    }
-}
-
-.tm-banner-row > a:hover > .tm-default-banner {
+.tm-banner-row > a:hover > .league-default-banner {
     display: inline-block;
     -webkit-box-shadow: 0 0 4px 1px #2f6bde;
     -moz-box-shadow: 0 0 4px 1px #2f6bde;
@@ -1257,13 +1216,59 @@ li.game-tag {
     padding: 6px;
 }
 
+.contest-info-table > tbody > tr > td:first-child,
+.contest-info-table > tbody > tr > td:nth-child(2),
+.contest-info-table > tbody > tr > td:last-child,
+.contest-info-table > thead > tr > td {
+    font-weight: 600;
+}
+.contest-info-table > tbody > tr > td {
+    font-size: 13px;
+    padding: 6px;
+    text-align: center;
+}
+
 .league-info-table > tbody > tr > td:first-child {
     font-weight: 600;
     width: 30% !important;
 }
 
-.contest-info-table > tbody > tr > td:first-child {
-    width: 4% !important;
+.map-bonus > i.fa-check,
+tr.child i.fa-check {
+    color: green;
+    font-size: 15px;
+    margin-top: 4px;
+}
+
+.map-bonus > i.fa-times,
+tr.child i.fa-times {
+    color: red;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.map-thumbnail.large .map-results-label {
+    font-size: 18px;
+    margin-top: -12px;
+}
+
+.map-thumbnail.small .map-results-label {
+    font-size: 16px;
+    margin-top: -5px;
+    margin-left: -1px;
+}
+
+.contest-scores-link {
+    font-size: 18px;
+    padding-bottom: 10px;
+    color: #9b9b9b !important;
+}
+
+.progress-bar span {
+    font-size: 11px;
+    position: absolute;
+    color: #fff;
+    text-shadow: 1px 0px #000;
 }
 
 .league-info-table > tbody > tr > td img {
