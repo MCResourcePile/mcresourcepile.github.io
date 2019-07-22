@@ -25,14 +25,64 @@ class User {
     }
 
     /** 
+     * Takes an Object of preference ID value key pairs and sets
+     * them as the current User preferences.
+     *
+     * @param  {object}  Parsed preferences to apply to the user
+     * @return {boolean} Success or fail response
+     */
+    setPreferences(p) {
+        try {
+            for (var key in p) {
+                if (this._preferences[key]) {
+                    this._preferences[key] = p[key];
+                } else {
+                    console.warn('Unknown User preference property:', key)
+                }
+            }
+            console.log('Successfully set User site preferences');
+            return true;
+        } catch (e) {
+            console.log('Failed to set User site preferences');
+            return false;
+        }
+    }
+
+    /** 
+     * Resets the User preferences to the defaults.
+     *
+     * @return {boolean} Success or fail response
+     */
+    resetPreferences() {
+        this._preferences = {
+            theme: "default",
+            show_map_stats: true,
+            show_map_images: true,
+            show_map_suggestions: true
+        };
+        console.log('Successfully reset User site preferences');
+        return true;
+    }
+
+    /** 
      * Takes a GitHub access token and checks that it is valid before
      * applying it to the current User.
      *
-     * @param  {string}  token The GitHub access token to parse
+     * @param  {string}  token The GitHub access token to validate
      * @return {boolean}       Success or fail response
      */
-    parseToken(token) {
-        var self = this;
+    setToken(token) {
+        try {
+            this._token = token;
+            console.log('Successfully updated User access token');
+            return true;
+        } catch (e) {
+            console.log('Failed to update User access token');
+            return false;
+        }
+    }
+    
+    verifyToken(token, success, fail) {
         if (token.length > 40) {
             token = token.split('&')[0].replace('access_token=','').replace(/\s/g,'');
             $('.access_token').val(token);
@@ -41,41 +91,74 @@ class User {
             return false;
         }
         var api = "https://api.github.com/user?access_token=" + token;
-        var req = $.getJSON(api, function(data) {return data });
-        req.done(function() {
-            self._token = token;
-            console.log('Successfully validated User access token');
-            return true;
-        });
-        req.fail(function() {
-            console.log('Invalid access token');
-            return false;
+        $.getJSON(api)
+        .done(function() {
+            console.log('Valid access token');
+            success();
         })
+        .fail(function() {
+            console.log('Invalid access token');
+            fail();
+        });
     }
 
     /** 
-     * Uses saved token to fetch basic GitHub account identity information.
+     * Resets the User access token to nothing.
      *
      * @return {boolean} Success or fail response
      */
-    fetchUserInfo() {
+    resetToken() {
+        this._token = "";
+        this._username = "Guest";
+        this._avatar = "https://avatars0.githubusercontent.com/u/24795789?v=4";
+        this.fetchRates();
+        console.log('Successfully reset User access token');
+        return true;
+    }
+    
+    setUserInfo(identity) {
+        try {
+            this._username = identity.login;
+            this._avatar = identity.avatar_url;
+            console.log('Successfully updated User identity data');
+            return true;
+        } catch (e) {
+            console.log('Failed to update User identity data');
+            return false;
+        }
+    }
+
+    /** 
+     * Fetches GitHub account identity based on provided token.
+     */
+    fetchUserInfo(success, fail) {
         if (this._token) {
             var self = this;
             var api = "https://api.github.com/user?access_token=" + this._token;
-            var req = $.getJSON(api, function(data) { return data });
-            req.done(function() {
-                var r = req.responseJSON;
-                self._username = r.login;
-                self._avatar = r.avatar_url;
+            $.getJSON(api)
+            .done(function(data) {
                 console.log('Successfully retrieved User identity data');
-                return true;
-            });
-            req.fail(function() {
+                success(data);
+            })
+            .fail(function() {
                 console.warn('Failed to retrieve User identity data');
-                return false;
+                fail();
             });
-        } else {
-            console.warn('Unable to retrieve User identity data as no token was provided');
+        }
+    }
+    
+    setRates(r) {
+        try {
+            var rate = {
+                limit: r.rate.limit,
+                remaining: r.rate.remaining,
+                reset: r.rate.reset
+            }
+            this._rate = rate;
+            console.log('Successfully updated User rate limit data');
+            return true;
+        } catch (e) {
+            console.log('Failed to update User rate limit data');
             return false;
         }
     }
@@ -83,58 +166,22 @@ class User {
     /** 
      * Fetches the current GitHub API rate limit numbers. Uses access token
      * if one has been applied to the User.
-     *
-     * @return {boolean} Success or fail response
      */
-    fetchRates() {
-        var self = this;
+    fetchRates(success, fail) {
         var api = "https://api.github.com/rate_limit";
         if (this._token) {
             api += "?access_token=" + this._token;
         }
-        var req = $.getJSON(api, function(data) { return data });
-        req.done(function() {
-            var r = req.responseJSON.rate;
-            var rate = {
-                limit: r.limit,
-                remaining: r.remaining,
-                reset: r.reset
-            };
-            self._rate = rate;
+        $.getJSON(api)
+        .done(function(data) {
             console.log('Successfully retrieved User rate limit data');
-            return true;
-        });
-        req.fail(function() {
+            success(data);
+        })
+        .fail(function() {
             console.warn('Failed to retrieve User rate limit data');
-            return false;
+            fail();
         });
     }
-
-    // TODO: move HTML interaction to preferences.js
-    fetchPreferences() {
-        var preferences = {};
-        $('.preference').each(function(i, obj) {
-            var type = $(this).data('type');
-            var value = $(this).val();
-            preferences[type] = value;
-        });
-        this._preferences = preferences;
-    }
-
-    loadPreferences() {
-        try {
-            var p = this._preferences;
-            for (var i in p) {
-                $('.preference[data-type=' + i + ']').val(p[i]);
-            }
-            console.log('Successfully loaded User preferences');
-            return true;
-        } catch (e) {
-            console.log('Failed to load User preferences');
-            return false;
-        }
-    }
-    
 
     /** 
      * Checks if a User cookie already exists.

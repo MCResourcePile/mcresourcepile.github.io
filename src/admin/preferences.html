@@ -19,12 +19,12 @@
                 <div class="form-group">
                     <label for="user-access-token" class="col-sm-3 control-label">Access Token</label>
                     <div class="col-sm-9">
-                        <input type="password" id="user-access-token" name="user-access-token" tabindex="1" class="form-control" placeholder="Access Token" value="">
+                        <input type="password" id="user-access-token" name="user_access_token" tabindex="1" class="form-control" placeholder="Access Token" value="">
                     </div>
                 </div>
             </form>
             <div class="text-right">
-                <button id="user-revoke-access-token" class="btn btn-danger">Reset</button>
+                <button id="user-reset-access-token" class="btn btn-danger">Reset</button>
                 <button id="user-save-access-token" class="btn btn-success">Save</button>
             </div>
         </div>
@@ -36,19 +36,19 @@
                 <div class="form-group">
                     <label for="user-rate-limit" class="col-sm-3 control-label">Request Limit</label>
                     <div class="col-sm-9">
-                        <input type="text" id="user-rate-limit" name="user-rate-limit" tabindex="1" class="form-control user-rate-limit" placeholder="0" value="" disabled>
+                        <input type="text" id="user-rate-limit" name="user_rate_limit" tabindex="1" class="form-control user-rate-limit" placeholder="0" value="" disabled>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="user-rate-remaining" class="col-sm-3 control-label">Reqs. Remaining</label>
                     <div class="col-sm-9">
-                        <input type="text" id="user-rateremaining" name="user-rate-remaining" tabindex="1" class="form-control user-rateremaining" placeholder="0" value="" disabled>
+                        <input type="text" id="user-rate-remaining" name="user_rate_remaining" tabindex="1" class="form-control user-rateremaining" placeholder="0" value="" disabled>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="user-rate-reset" class="col-sm-3 control-label">Limit Resets At</label>
                     <div class="col-sm-9">
-                        <input type="text" id="user-rate-reset" name="user-rate-reset" tabindex="1" class="form-control user-rate-reset" placeholder="0" value="" disabled>
+                        <input type="text" id="user-rate-reset" name="user_rate_reset" tabindex="1" class="form-control user-rate-reset" placeholder="0" value="" disabled>
                     </div>
                 </div>
             </form>
@@ -63,7 +63,7 @@
                 <div class="form-group">
                     <label for="preference-theme" class="col-sm-3 control-label">Theme <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Use an alternative dark site theme."></a></label>
                     <div class="col-sm-9">
-                        <select id="preference-theme" name="preference-theme" class="form-control">
+                        <select id="preference-theme" name="theme" class="form-control preference">
                             <option value="default">Default</option>
                             <option value="dark">Dark</option>
                         </select>
@@ -72,7 +72,7 @@
                 <div class="form-group">
                     <label for="preference-show-map-stats" class="col-sm-3 control-label">Map Statistics <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Display additional map download statistics for collection maps."></a></label>
                     <div class="col-sm-9">
-                        <select id="preference-show-map-stats" name="preference-show-map-stats" class="form-control">
+                        <select id="preference-show-map-stats" name="show_map_stats" class="form-control preference">
                             <option value="true">True</option>
                             <option value="false">False</option>
                         </select>
@@ -81,7 +81,7 @@
                 <div class="form-group">
                     <label for="preference-show-map-images" class="col-sm-3 control-label">Map Images <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Remove map images to improve loading times for slower connections."></a></label>
                     <div class="col-sm-9">
-                        <select id="preference-show-map-images" name="preference-show-map-images" class="form-control">
+                        <select id="preference-show-map-images" name="show_map_images" class="form-control preference">
                             <option value="true">True</option>
                             <option value="false">False</option>
                         </select>
@@ -90,7 +90,7 @@
                 <div class="form-group">
                     <label for="preference-show-map-suggestions" class="col-sm-3 control-label">Suggestions <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Suggest similar maps to the ones just downloaded."></a></label>
                     <div class="col-sm-9">
-                        <select id="preference-show-map-suggestions" name="preference-show-map-suggestions" class="form-control">
+                        <select id="preference-show-map-suggestions" name="show_map_suggestions" class="form-control preference">
                             <option value="true">True</option>
                             <option value="false">False</option>
                         </select>

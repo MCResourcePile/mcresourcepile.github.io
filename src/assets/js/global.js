@@ -2,30 +2,27 @@
  * Common JS functions and variables which all pages use.
  */
 
-var user;
-
-$(function() {
-    user = new User();
-    displayUserInfo();
-    displayRates();
+var user = new User();
+displayUserInfo();
+displayRates();
+applyUserPreferences();
     
-    // check is the page is being loaded in development directory
-    var is_development = /\/(out|src)\//i.test(window.location.href);
+// check is the page is being loaded in development directory
+var is_development = /\/(out|src)\//i.test(window.location.href);
 
-    // offset page to prevent navigation overlap
-    var window_offset = function() { scrollBy(0, - 70) };
-    if (location.hash) window_offset();
-    window.addEventListener("hashcchange", window_offset);
+// offset page to prevent navigation overlap
+var window_offset = function() { scrollBy(0, - 70) };
+if (location.hash) window_offset();
+window.addEventListener("hashcchange", window_offset);
 
-    // enable bootstrap toggles
-    $('[data-toggle="tooltip"]').tooltip({container: 'body'});
-    $('[data-toggle="popover"]').popover({trigger: 'hover'});
-});
+// enable bootstrap toggles
+$('[data-toggle="tooltip"]').tooltip({container: 'body'});
+$('[data-toggle="popover"]').popover({trigger: 'hover'});
 
 /**
  * Get the current Url params.
  *
- * @return {Array} Array of key value Url param pairs
+ * @return {array} Array of key value Url param pairs
  */
 function getUrlVars() {
     var vars = [], hash;
@@ -40,8 +37,8 @@ function getUrlVars() {
 /** 
  * Create a new or update an existing cookie.
  *
- * @param {String} cname  The cookie name
- * @param {String} cvalue The value for the cookie
+ * @param {string} cname  The cookie name
+ * @param {string} cvalue The value for the cookie
  */
 function setCookie(cname, cvalue) {
     var d = new Date();
@@ -54,8 +51,8 @@ function setCookie(cname, cvalue) {
  * Get the value of a saved cookie. Returns an empty string if the cookie
  * could not be found.
  *
- * @param  {String} cname The cookie name
- * @return {String}       The value of the cookie 
+ * @param  {string} cname The cookie name
+ * @return {string}       The value of the cookie 
  */
 function getCookie(cname) {
     var name = cname + "=";
@@ -71,4 +68,32 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+/** 
+ * Displays current User information on the page.
+ * Username is inserted in elements with the '.user-username' class.
+ * Avatar is placed in images with the '.user-avatar' class.
+ *
+ * @param {User} The User object
+ */
+function displayUserInfo() {
+    $('.user-username').text(user._username);
+    $('img.user-avatar').attr('src', user._avatar);
+}
+
+/** 
+ * Displays current User API rate limits on the page.
+ * Limit is inserted in elements with the '.user-rate-limit' class.
+ * Remaining is inserted in elements with the '.user-rate-remaining' class.
+ * Reset is inserted in elements with the '.user-rate-reset' class.
+ * Approximate downloads left is inserted in elements with the '.user-rate-approx' class.
+ *
+ * @param {User} The User object
+ */
+function displayRates() {
+    $('.user-rate-limit').text(user._rate.limit).val(user._rate.limit);;
+    $('.user-rate-remaining').text(user._rate.remaining).val(user._rate.remaining);
+    $('.user-rate-reset').text(new Date(user._rate.reset * 1000)).val(new Date(user._rate.reset * 1000));
+    $('.user-rate-approx').text(user._rate.remaining / 7).val(user._rate.remaining / 7);
 }
