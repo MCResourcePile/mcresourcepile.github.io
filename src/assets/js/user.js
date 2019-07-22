@@ -6,7 +6,7 @@ class User {
     constructor() {
         this._token = "";
         this._username = "Guest";
-        this._avatar = "";
+        this._avatar = "https://avatars0.githubusercontent.com/u/24795789?v=4";
         this._rate = {
             limit: 0,
             remaining: 0,

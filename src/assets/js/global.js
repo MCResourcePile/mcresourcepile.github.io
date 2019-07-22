@@ -2,7 +2,13 @@
  * Common JS functions and variables which all pages use.
  */
 
+var user;
+
 $(function() {
+    user = new User();
+    displayUserInfo();
+    displayRates();
+    
     // check is the page is being loaded in development directory
     var is_development = /\/(out|src)\//i.test(window.location.href);
 
@@ -13,7 +19,7 @@ $(function() {
 
     // enable bootstrap toggles
     $('[data-toggle="tooltip"]').tooltip({container: 'body'});
-    $('[data-toggle="popover"]').popover();
+    $('[data-toggle="popover"]').popover({trigger: 'hover'});
 });
 
 /**

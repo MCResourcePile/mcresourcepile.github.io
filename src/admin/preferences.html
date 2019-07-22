@@ -1,110 +1,108 @@
 {{> navigation_header}}
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div id="auth-well" class="well well-custom-red">
-            <div class="well-header">GitHub Access Token</div>
-            <noscript>
-                <div class="alert alert-danger alert-sm" role="alert" style="margin-bottom: 12px;">You must have JavaScript enabled to authenticate with the GitHub API</div>
-            </noscript>
-            <div id="prf-alert-token-saved" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token successfully saved</div>
-            <div id="prf-alert-token-revoked" class="alert alert-info alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token has been revoked</div>
-            <div id="prf-alert-token-missing" class="alert alert-danger alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Please enter a valid access token</div>
-            <div id="prf-alert-token-invalid" class="alert alert-danger alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Access token unable to be saved - bad credentials</div>
-            <input type="text" name="access_token" id="access_token" tabindex="1" class="form-control form-text-box" style="width:100%" placeholder="Token" value="">
-            <div class="row" style="margin-top:12px;">
-                <div class="col-md-6">
-                    <div class="prf-token-auth-panel" style="display:none">
-                        <a class="btn btn-danger btn-auth" onclick="revokeToken()">Revoke</a>
-                    </div>
-                    <div class="prf-token-unauth-panel">
-                        <a class="btn btn-success btn-auth" onclick="saveToken()" id="token-save-button">Save</a>
-                        <a class="btn btn-info btn-auth" href="https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216">Generate Access Token</a>
-                    </div>
-                    <br>
-                    Using a GitHub API access token to authorize your map downloads will allow you to increase the amount of maps you can download per hour significantly.
-                    <i>This token only allows us to access your public information.</i>
-                </div>
-                <div class="col-md-6">
-                    <div class="prf-token-auth-panel" style="display:none">
-                        Welcome to ResourcePile, <strong id="user_user_name">User</strong>.<br><br>
-                        You currently have <code id="user_rate_remaining">0</code> requests of <code id="user_rate_limit">0</code> remaining to the GitHub API, which means you can download approximately <code id="user_rate_approximate">0</code> more maps from our <a href="/maps">collections</a>. This limit will reset <span id="user_rate_reset"></span>.
-                    </div>
-                    <div class="prf-token-unauth-panel">
-                        <h6><strong>How to generate an access token</strong></h6>
-                        <ol>
-                            <li>Click <code>Generate Access Token</code></li>
-                            <li>Click <code>Authorize MCResourcePile</code></li>
-                            <li>Open the <code>access_token</code> file downloaded</li>
-                            <li>Copy the string of numbers and letters following <code>access_token=</code> (this will be 40 characters long)</li>
-                            <li>Paste the token into field above and click <code>Save</code></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div id="theme-well" class="well well-custom-blue">
-            <div class="well-header">Site Preferences</div>
-            <noscript>
-                <div class="alert alert-danger alert-sm" role="alert" style="margin-bottom: 12px;">You must have JavaScript enabled to change your site preferences</div>
-            </noscript>
-            <div id="prf-alert-site-saved" class="alert alert-success alert-sm" role="alert" style="display: none;margin-bottom: 12px;">Site preferences successfully updated</div>
-            <div class="row">
-                <h6 class="col-md-4 control-label"><b>Site Theme</b></h6>
-                <div class="col-md-4">
-                    <select id="site-select-theme" name="site-select-theme" class="form-control">
-                        <option value="default">Default</option>
-                        <option value="dark">Dark</option>
-                    </select>
-                </div>
-                <small class="col-md-4">Use an alternative dark site theme.</small>
-            </div>
-            <br>
-            <div class="row">
-                <h6 class="col-md-4 control-label"><b>Map Images</b></h6>
-                <div class="col-md-4">
-                    <select id="site-select-map-images" name="site-select-map-images" class="form-control">
-                        <option value="false">Visible</option>
-                        <option value="true">Hidden</option>
-                    </select>
-                </div>
-                <small class="col-md-4">Remove map images to improve loading times for slower connections.</small>
-            </div>
-            <br>
-            <div class="row">
-                <h6 class="col-md-4 control-label"><b>Download Statistics</b></h6>
-                <div class="col-md-4">
-                    <select id="site-select-download-stats" name="site-select-download-stats" class="form-control">
-                        <option value="false">Disabled</option>
-                        <option value="true">Enabled</option>
-                    </select>
-                </div>
-                <small class="col-md-4">Display additional map download statistics for collection maps.</small>
-            </div>
-            <br>
-            <div class="row">
-                <h6 class="col-md-4 control-label"><b>Map Suggestions</b></h6>
-                <div class="col-md-4">
-                    <select id="site-select-map-suggestions" name="site-select-map-suggestions" class="form-control">
-                        <option value="true">Enabled</option>
-                        <option value="false">Disabled</option>
-                    </select>
-                </div>
-                <small class="col-md-4">Suggest similar maps to the ones just downloaded.</small>
-            </div>
-            <br>
-            <a class="btn btn-success btn-auth" onclick="savePreferences()">Save preferences</a>
-        </div>
-    </div>
-    <div class="center"><small>This information is not tracked or stored by ResourcePile and is only accessible by this device.</small></div>
+<div class="center user-header">
+    <img class="user-avatar" src="">
+    <h5 class="user-welcome"><strong>Welcome to ResourcePile, <span class="user-username"></span>.</strong></h5>
+    <div class="text-muted">Manage your User info and settings to make ResourcePile work better for you.</div>
 </div>
-<script>
-updateUserInfo(function () {
-    updateRateLimit(function () {
-        displayUserInfo();
-        saveSettings();
-    });
-});
-</script>
+<div class="row">
+    <div id="user-alert-wrapper" style="display:none">
+        <div id="user-alert" class="alert alert-info"></div>
+        <br>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-custom-green">
+            <h5>GitHub Access Token</h5>
+            <div>The GitHub API limits the amount of requests a single User can send during a period of time. By adding an access token, you will be able to increase the amount of requests allowed, increasing the amount of maps you can download at a time. <i>This token only allows us to access your <strong>public</strong> information.</i></div>
+            <div>You can generate a new GitHub API access token <strong><a href="https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216">here</a></strong>.</div>
+            <hr>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="user-access-token" class="col-sm-3 control-label">Access Token</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="user-access-token" name="user-access-token" tabindex="1" class="form-control" placeholder="Access Token" value="">
+                    </div>
+                </div>
+            </form>
+            <div class="text-right">
+                <button id="user-revoke-access-token" class="btn btn-danger">Reset</button>
+                <button id="user-save-access-token" class="btn btn-success">Save</button>
+            </div>
+        </div>
+        <div class="well well-custom-blue">
+            <h5>GitHub API Rate Limit</h5>
+            <div>The following are your current request rate limits to the GitHub API.</div>
+            <hr>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="user-rate-limit" class="col-sm-3 control-label">Request Limit</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="user-rate-limit" name="user-rate-limit" tabindex="1" class="form-control user-rate-limit" placeholder="0" value="" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="user-rate-remaining" class="col-sm-3 control-label">Reqs. Remaining</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="user-rateremaining" name="user-rate-remaining" tabindex="1" class="form-control user-rateremaining" placeholder="0" value="" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="user-rate-reset" class="col-sm-3 control-label">Limit Resets At</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="user-rate-reset" name="user-rate-reset" tabindex="1" class="form-control user-rate-reset" placeholder="0" value="" disabled>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well well-custom-green">
+            <h5>Site Preferences</h5>
+            <div>Customize how you see and interact with the ResourcePile website.</div>
+            <hr>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="preference-theme" class="col-sm-3 control-label">Theme <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Use an alternative dark site theme."></a></label>
+                    <div class="col-sm-9">
+                        <select id="preference-theme" name="preference-theme" class="form-control">
+                            <option value="default">Default</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="preference-show-map-stats" class="col-sm-3 control-label">Map Statistics <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Display additional map download statistics for collection maps."></a></label>
+                    <div class="col-sm-9">
+                        <select id="preference-show-map-stats" name="preference-show-map-stats" class="form-control">
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="preference-show-map-images" class="col-sm-3 control-label">Map Images <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Remove map images to improve loading times for slower connections."></a></label>
+                    <div class="col-sm-9">
+                        <select id="preference-show-map-images" name="preference-show-map-images" class="form-control">
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="preference-show-map-suggestions" class="col-sm-3 control-label">Suggestions <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Suggest similar maps to the ones just downloaded."></a></label>
+                    <div class="col-sm-9">
+                        <select id="preference-show-map-suggestions" name="preference-show-map-suggestions" class="form-control">
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+            <div class="text-right">
+                <button id="user-reset-preferences" class="btn btn-danger">Reset</button>
+                <button id="user-save-preferences" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="center text-mute"><small>This information is not tracked or stored by ResourcePile and is only accessible by this device.</small></div>
 {{> navigation_footer}}
