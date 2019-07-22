@@ -2,7 +2,7 @@
    $("a:contains('CrazyisCreeps')").html("<span class=\"position-manager\">Crazy_</span>")
    $("a:contains('a9f11454-beac-4cc3-a138-1780802c8794')").html("<span class=\"position-manager\">Crazy_</span>")
    $("a:contains('Crazy_')").html("<span class=\"position-manager\">Crazy_</span>")
-   $("a:contains('mitchiiii')").html("<span class=\"position-manager\">mitchiii_</span>")
+   $("a:contains('mitchts')").html("<span class=\"position-manager\">mitchiii_</span>")
    $("a:contains('f690a591-348b-482e-a18d-7779d0c0a28c')").html("<span class=\"position-manager\">mitchiii_</span>")
    $("a:contains('mitchiii_')").html("<span class=\"position-manager\">mitchiii_</span>")
    $("a:contains('48924ea3-3aad-4e16-838c-368d8d9e0a25')").html("<span class=\"position-manager\">Matic0B</span>")
