@@ -27,11 +27,18 @@ $('[data-toggle="popover"]').popover({trigger: 'hover'});
 function getUrlVars() {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++) {
+    for(var i = 1; i < hashes.length; i++) {
         hash = hashes[i].split('=');
         vars[hash[0]] = hash[1];
     }
     return vars;
+}
+
+function getUrlParam(param) {
+    var vars = getUrlVars();
+    var value = vars[param];
+    var param = (typeof value !== 'undefined') ? decodeURI(value) : undefined;
+    return param;
 }
 
 /** 
@@ -96,4 +103,9 @@ function displayRates() {
     $('.user-rate-remaining').text(user._rate.remaining).val(user._rate.remaining);
     $('.user-rate-reset').text(new Date(user._rate.reset * 1000)).val(new Date(user._rate.reset * 1000));
     $('.user-rate-approx').text(user._rate.remaining / 7).val(user._rate.remaining / 7);
+}
+
+function updateAndDisplayRates() {
+    updateUserRates();
+    displayRates();
 }
