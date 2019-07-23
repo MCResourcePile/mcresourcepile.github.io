@@ -1,5 +1,7 @@
 /**
  * User
+ *
+ * NOTE: changes made to a User will not be saved unless User.save() is called.
  */
 
 class User {
@@ -64,12 +66,12 @@ class User {
         return true;
     }
 
+
     /** 
-     * Takes a GitHub access token and checks that it is valid before
-     * applying it to the current User.
+     * Sets a User's GitHub access token. Call as a success
+     * response from verifyToken() only.
      *
-     * @param  {string}  token The GitHub access token to validate
-     * @return {boolean}       Success or fail response
+     * @return {boolean} Success or fail response
      */
     setToken(token) {
         try {
@@ -81,7 +83,14 @@ class User {
             return false;
         }
     }
-    
+
+    /** 
+     * Takes a GitHub access token and checks that it is valid.
+     *
+     * @param  {string}  token   The GitHub access token to validate
+     * @param {function} success Function to run if API call completes
+     * @param {function} fail    Function to run if API call fails
+     */
     verifyToken(token, success, fail) {
         if (token.length > 40) {
             token = token.split('&')[0].replace('access_token=','').replace(/\s/g,'');
@@ -115,7 +124,13 @@ class User {
         console.log('Successfully reset User access token');
         return true;
     }
-    
+
+    /** 
+     * Updates User identity information. Call as a success response
+     * from fetchUserInfo() only.
+     *
+     * @return {boolean} Success or fail response
+     */
     setUserInfo(identity) {
         try {
             this._username = identity.login;
@@ -130,6 +145,9 @@ class User {
 
     /** 
      * Fetches GitHub account identity based on provided token.
+     *
+     * @param {function} success Function to run if API call completes
+     * @param {function} fail    Function to run if API call fails
      */
     fetchUserInfo(success, fail) {
         if (this._token) {
@@ -146,7 +164,13 @@ class User {
             });
         }
     }
-    
+
+    /** 
+     * Updates User rate limits. Call as a success response
+     * from fetchRates() only.
+     *
+     * @return {boolean} Success or fail response
+     */
     setRates(r) {
         try {
             var rate = {
@@ -166,6 +190,9 @@ class User {
     /** 
      * Fetches the current GitHub API rate limit numbers. Uses access token
      * if one has been applied to the User.
+     *
+     * @param {function} success Function to run if API call completes
+     * @param {function} fail    Function to run if API call fails
      */
     fetchRates(success, fail) {
         var api = "https://api.github.com/rate_limit";

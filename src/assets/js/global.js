@@ -2,6 +2,7 @@
  * Common JS functions and variables which all pages use.
  */
 
+// setup user
 var user = new User();
 displayUserInfo();
 displayRates();
@@ -10,6 +11,7 @@ applyUserPreferences();
 // check is the page is being loaded in development directory
 var is_development = /\/(out|src)\//i.test(window.location.href);
 
+// the current page directory
 var current_path = window.location.pathname.replace('.html', '');
 
 // offset page to prevent navigation overlap
@@ -22,7 +24,7 @@ $('[data-toggle="tooltip"]').tooltip({container: 'body'});
 $('[data-toggle="popover"]').popover({trigger: 'hover'});
 
 /**
- * Get the current Url params.
+ * Get the all current Url params.
  *
  * @return {array} Array of key value Url param pairs
  */
@@ -36,6 +38,11 @@ function getUrlVars() {
     return vars;
 }
 
+/**
+ * Get a specific Url param.
+ *
+ * @return {string} The param value
+ */
 function getUrlParam(param) {
     var vars = getUrlVars();
     var value = vars[param];
@@ -83,8 +90,6 @@ function getCookie(cname) {
  * Displays current User information on the page.
  * Username is inserted in elements with the '.user-username' class.
  * Avatar is placed in images with the '.user-avatar' class.
- *
- * @param {User} The User object
  */
 function displayUserInfo() {
     $('.user-username').text(user._username);
@@ -97,8 +102,6 @@ function displayUserInfo() {
  * Remaining is inserted in elements with the '.user-rate-remaining' class.
  * Reset is inserted in elements with the '.user-rate-reset' class.
  * Approximate downloads left is inserted in elements with the '.user-rate-approx' class.
- *
- * @param {User} The User object
  */
 function displayRates() {
     $('.user-rate-limit').text(user._rate.limit).val(user._rate.limit);;
@@ -107,7 +110,11 @@ function displayRates() {
     $('.user-rate-approx').text(user._rate.remaining / 7).val(user._rate.remaining / 7);
 }
 
+/**
+ * Updates User rate limit numbers and then displays them
+ */
 function updateAndDisplayRates() {
-    updateUserRates();
-    displayRates();
+    user.fetchRates(function() {
+        displayRates();
+    });
 }
