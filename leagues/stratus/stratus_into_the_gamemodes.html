@@ -24,10 +24,9 @@
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
-        <script src="/assets/js/bootstrap.min.js"></script>
-        <script src="/assets/js/js.cookie.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
-        <script src="/assets/js/moment.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -95,20 +94,19 @@
                         <li><a href="/addon-project/wiki">Wiki</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar-right auth-disabled"><a href="/admin/preferences"><i class="fab fa-github-alt"></i> <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
-                        <li class="navbar-right auth-enabled" style="display: none;"><a href="/admin/preferences"><img src="/assets/img/logo.png" class="user-avatar"> <span class="user-name">ResourcePile</span></a></li>
+                        <li><a href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="content-background">
             <div class="container">
+                <div class="content-alert">
+                    <noscript>
+                        <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+                    </noscript>
+                </div>
                 <div class="content-header">
-                    <div class="content-alert">
-                        <noscript>
-                            <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
-                        </noscript>
-                    </div>
                     <div class="content-title">Stratus: Into the Gamemodes</div>
                     <div class="content-subtitle">Records for Stratus: Into the Gamemodes, a tournament hosted by Stratus Network</div>
                 </div>

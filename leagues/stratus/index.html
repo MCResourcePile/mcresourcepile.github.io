@@ -24,10 +24,9 @@
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
-        <script src="/assets/js/bootstrap.min.js"></script>
-        <script src="/assets/js/js.cookie.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
-        <script src="/assets/js/moment.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
         <script src="/assets/js/url.min.js"></script>
         <script src="/assets/js/tournaments.js"></script>
@@ -99,20 +98,19 @@
                         <li><a href="/addon-project/wiki">Wiki</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar-right auth-disabled"><a href="/admin/preferences"><i class="fab fa-github-alt"></i> <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Authenticate in order to download maps without a limit">Unauthenticated</span></a></li>
-                        <li class="navbar-right auth-enabled" style="display: none;"><a href="/admin/preferences"><img src="/assets/img/logo.png" class="user-avatar"> <span class="user-name">ResourcePile</span></a></li>
+                        <li><a href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="content-background">
             <div class="container">
+                <div class="content-alert">
+                    <noscript>
+                        <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+                    </noscript>
+                </div>
                 <div class="content-header">
-                    <div class="content-alert">
-                        <noscript>
-                            <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
-                        </noscript>
-                    </div>
                     <div class="content-title">Stratus Network Tournament Records</div>
                     <div class="content-subtitle">Records for tournaments hosted by Stratus Network</div>
                 </div>
@@ -122,7 +120,7 @@
     <div class="col-md-3 col-md-push-9">
         <div class="thumbnail map-search">
             <div class="center">
-                <span id="records-count"></span>
+                <span id="searchable-count"></span>
             </div>
             <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search tournaments">
             <div class="filters">
