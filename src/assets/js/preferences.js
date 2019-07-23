@@ -3,16 +3,31 @@
  */
 
 $(document).ready(function() {
-    loadUserPreferenceOptions();
-
-    $('#user-save-preferences').click(saveUserPreferences);  
-    $('#user-reset-preferences').click(resetUserPreferences);  
-    $('#user-save-access-token').click(saveUserToken);  
-    $('#user-reset-access-token').click(resetUserToken);  
+    // setup preferences page
+    if (current_path == 'admin/preferences') {
+        loadUserPreferenceOptions();
+        $('#user-save-preferences').click(saveUserPreferences);  
+        $('#user-reset-preferences').click(resetUserPreferences);  
+        $('#user-save-access-token').click(saveUserToken);  
+        $('#user-reset-access-token').click(resetUserToken);  
+    }
 });
 
 function applyUserPreferences() {
-    // do stuff
+    // apply dark theme
+    if (user._preferences.theme == 'dark') {
+        $('head').append('<link href=\'/assets/css/dark.css\' rel=\'stylesheet\'>');
+    }
+    // load lazy loadable images
+    if (user._preferences.show_map_images) {
+        var myLazyLoad = new LazyLoad({
+            elements_selector: '.lazy',
+            threshold: 50,
+            callback_error: function(element) {
+                $(element).attr('src', '/assets/img/404.png');
+            },
+        });
+    }
 }
 
 function loadUserPreferenceOptions() {
@@ -47,6 +62,11 @@ function saveUserPreferences() {
         sendAlert('Successfully updates your site preferences!', 'alert-success');
         saveUser();
         applyUserPreferences();
+        if (user._preferences.theme == 'default') {
+            $('head').find('link').filter(function(){
+                return $(this).attr('href') === '/assets/css/dark.css'
+            }).remove();
+        }
     } else {
         sendAlert('Unable to update your site preferences. Please try again.', 'alert-danger');
     }

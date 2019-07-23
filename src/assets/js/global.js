@@ -10,6 +10,8 @@ applyUserPreferences();
 // check is the page is being loaded in development directory
 var is_development = /\/(out|src)\//i.test(window.location.href);
 
+var current_page = window.location.pathname.replace('.html', '');
+
 // offset page to prevent navigation overlap
 var window_offset = function() { scrollBy(0, - 70) };
 if (location.hash) window_offset();
