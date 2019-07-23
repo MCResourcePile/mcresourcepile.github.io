@@ -35,6 +35,7 @@ SOFTWARE.
 
     var token;
     var additionalFiles = {};
+    var production = true;
 
     var statusHandle = function(status){
         if(status == 'error' || status == 'done') isBusy = false;
@@ -118,7 +119,7 @@ SOFTWARE.
         }else{
             zip.generateAsync({type:"blob"})
             .then(function (content) {
-                if (!is_development) saveAs(content, filename + ".zip");
+                if (production) saveAs(content, filename + ".zip");
             }, function(error){
                 console.log(error);
             });
@@ -395,6 +396,10 @@ SOFTWARE.
         token = strToken;
     }
     
+    function setProductionState(state){
+        production = state;
+    }
+    
     function addTextFile(file, contents){
         additionalFiles[file] = contents;
     }
@@ -405,6 +410,7 @@ SOFTWARE.
     fn.downloadFile = downloadZip;
     fn.registerCallback = registerCallback;
     fn.setAccessToken = setAccessToken;
+    fn.setProductionState = setProductionState;
     fn.addTextFile = addTextFile;
 
     scope.GitZip = fn;
