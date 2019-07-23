@@ -71,7 +71,7 @@ function setupSearch(config, type) {
     if ($('#slider').length) {
         $('#slider').slider({tooltip_split: true});
     }
-    //countMatching();
+    countMatching();
     parseUrl();
 }
 
@@ -129,11 +129,11 @@ function countMatching() {
     var match = searchable.matchingItems.length;
     var output;
     if (match > 0) {
-        output = "Showing", match, "matching", searchable_type, "out of", total;
+        output = "Showing " + match + " matching " + searchable_type + " out of " + total;
     } else if (match == 0) {
-        output = "No", searchable_type, "match your query or filter";
+        output = "No " + searchable_type + " match your query or filter";
     } else {
-        output = "There are no", searchable_type, "to display";
+        output = "There are no " + searchable_type + " to display";
     }
     $('#searchable-count').text(output);
 }
