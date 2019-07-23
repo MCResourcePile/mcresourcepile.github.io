@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
     // setup preferences page
-    if (current_path == 'admin/preferences') {
+    if (current_path == '/admin/preferences') {
         loadUserPreferenceOptions();
         $('#user-save-preferences').click(saveUserPreferences);  
         $('#user-reset-preferences').click(resetUserPreferences);  
