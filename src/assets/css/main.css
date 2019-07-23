@@ -1632,7 +1632,16 @@ pre > code {
 }
 
 .map-search {
+    position: inherit;
     padding: 12px;
+}
+
+@media only screen and (min-width: 990px) {
+    .map-search {
+        position: fixed;
+        width: 270px;
+        z-index: 1;
+    }
 }
 
 .filters {
