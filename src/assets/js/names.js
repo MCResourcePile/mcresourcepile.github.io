@@ -22,7 +22,7 @@ var alternate = {
     "CrazyisCreeps": "Crazy_",
     "BTKingly": "BTKing",
     "NanuSci": "Nanu",
-    "Palmidence": "ViceTechnicolour",
+    "Palmidence": "ViceTechnicolor",
     "3Each": "_3Each",
     "Starkman123": "AranoixStark",
     "Numberz99": "99250",
@@ -32,7 +32,7 @@ var alternate = {
 }
 
 function highlightAuthors() {
-    $('.commit-author').each(function() {
+    $('a#commitAuthor').each(function() {
         var author = $(this).text();
         if (names[author]) {
             $(this).addClass('position-' + names[author]);
