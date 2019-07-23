@@ -21,7 +21,7 @@ $(function() {
     });
     
     // unmute records whenever the search is run
-    maps.on('searchStart', function() {
+    searchable.on('searchStart', function() {
         $('.bow-user-record.bow-record-mute').removeClass('bow-record-mute');
     });
 
