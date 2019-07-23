@@ -34,6 +34,7 @@ SOFTWARE.
         /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
 
     var token;
+    var additionalFiles = {};
 
     var statusHandle = function(status){
         if(status == 'error' || status == 'done') isBusy = false;
@@ -105,7 +106,9 @@ SOFTWARE.
                 ++progressCallback._idx / (progressCallback._len * 2) * 100);
             zipContent.file(item.path, item.content, {createFolders:true,base64:true});
         });
-        zip.file(filename + '/' + imported_license.file, imported_license.contents);
+        for (key in additionalFiles){
+            zip.file(filename + '/' + key, additionalFiles[key]);
+        }
         if(isSafari){
             zip.generateAsync({type:"base64"})
             .then(function (content) {
@@ -391,6 +394,10 @@ SOFTWARE.
     function setAccessToken(strToken){
         token = strToken;
     }
+    
+    function addTextFile(file, contents){
+        additionalFiles[file] = contents;
+    }
 
 
     fn.zipRepo = createURL;
@@ -398,6 +405,7 @@ SOFTWARE.
     fn.downloadFile = downloadZip;
     fn.registerCallback = registerCallback;
     fn.setAccessToken = setAccessToken;
+    fn.addTextFile = addTextFile;
 
     scope.GitZip = fn;
 
