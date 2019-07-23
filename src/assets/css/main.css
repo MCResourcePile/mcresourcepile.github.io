@@ -449,9 +449,13 @@ span.game-mode-button {
 }
 
 .content-header {
-    margin-top: 6em;
+    margin-top: 1em;
     margin-bottom: 24px;
     border-bottom: 2px solid #e0e0e0;
+}
+
+.content-buffer {
+    margin-top: 2em;
 }
 
 .content-body {
@@ -877,7 +881,7 @@ li.game-tag {
 .well-custom-green {
     border-width: 1px;
     border-top-width: 4px !important;
-    background-color: #f4f4f4;
+    background-color: #fcf9f9;
 }
 
 .well-custom-red {
@@ -958,6 +962,7 @@ li.game-tag {
 }
 
 .content-alert {
+    padding-top: 9rem;
     width: 86%;
     margin: 0 auto;
 }
@@ -1006,6 +1011,14 @@ li.game-tag {
 
 .form-text-box {
     width: 200px;
+}
+
+.form-info {
+    cursor: pointer;
+}
+
+.form-info:hover {
+    text-decoration: none;
 }
 
 .paginate-nav a {
@@ -1620,7 +1633,16 @@ pre > code {
 }
 
 .map-search {
+    position: inherit;
     padding: 12px;
+}
+
+@media only screen and (min-width: 990px) {
+    .map-search {
+        position: fixed;
+        width: 270px;
+        z-index: 1;
+    }
 }
 
 .filters {
@@ -1762,4 +1784,13 @@ pre > code {
 
 .click-search {
     cursor: pointer;
+}
+
+.user-header {
+    margin-bottom: 24px;
+}
+
+.user-header > img {
+    width: 10%;
+    border-radius: 8px;
 }

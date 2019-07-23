@@ -1,20 +1,30 @@
-var maps;
+var searchable;
+var searchable_type = "items";
 var filters = [];
-var url;
-var searchable_name = "maps";
 
-$(document).ready(function(){
-    if ($('#slider').length != 0)
-        $('#slider').slider({tooltip_split: true});
-    countResults();
-    url = new Url;
-    parseUrl();
-});
+$(function() {
+    // handle top position of search controls
+    var nav = $('.nav').height();
+    var wrapper_top = $('#searchable-collection').position().top;
+    var wrapper_height = $('#searchable-collection').height() + 98;
+    $(document).scroll(function() {
+        var scroll_position = $(document).scrollTop();
+        var panel_top = $('.map-search').position().top;
+        var panel_bottom = $('.map-search').height() + scroll_position;
+        if (scroll_position + nav > wrapper_top) {
+            if (panel_bottom < wrapper_height) {
+                $('.map-search').css('top', nav + 15);
+            } else {
+                $('.map-search').css('top', nav - (panel_bottom - wrapper_height));
+            }
+        } else {
+            $('.map-search').css('top', wrapper_top - scroll_position);
+        }
+    });
     
-function searchRequests() {
-    // update search when user typs
+    // update search when user types
     $('#search').on('input', function(e){
-        maps.search($('#search').val());
+        searchable.search($('#search').val());
         updateUrl();
     });
     
@@ -35,15 +45,15 @@ function searchRequests() {
     });
     
     // handle slider
-    if ($('#slider').length != 0) {
+    if ($('#slider').length) {
         $('#slider').slider().change(function() {
             filterMaps();
         });
     }
     
     // update stats counter
-    maps.on('updated', function() {
-        countResults();
+    searchable.on('updated', function() {
+        countMatching();
         scrollToTop();
     });
     
@@ -51,8 +61,18 @@ function searchRequests() {
     $('.click-search').click(function() {
         query = $(this).data('query');
         $('#search').val(query);
-        forceUpdateSearch();
+        updateSearch();
     });
+});
+
+function setupSearch(config, type) {
+    searchable = config;
+    searchable_type = type;
+    if ($('#slider').length) {
+        $('#slider').slider({tooltip_split: true});
+    }
+    //countMatching();
+    parseUrl();
 }
 
 function filterMaps() {
@@ -64,7 +84,7 @@ function filterMaps() {
         range[1] = parseInt(range[1]);
     }
     if (filters.length > 0 || range) {
-        maps.filter(function(item) {
+        searchable.filter(function(item) {
             tags = item.values().tags;
             tags = tags.split(',');
             if ($.inArray('Destroy the Core and Monument', tags) != -1) {
@@ -99,22 +119,23 @@ function filterMaps() {
             }
         });
     } else {
-        maps.filter();
-        maps.update();
+        searchable.filter();
+        searchable.update();
     }
 }
 
-function countResults() {
-    total = maps.items.length;
-    visible = maps.matchingItems.length;
-    if (visible > 0) {
-        string = "Showing " + visible + " matching " + searchable_name + " out of " + total;
-    } else if (visible == 0) {
-        string = "No " + searchable_name + " match your query or filter";
+function countMatching() {
+    var total = searchable.items.length;
+    var match = searchable.matchingItems.length;
+    var output;
+    if (match > 0) {
+        output = "Showing", match, "matching", searchable_type, "out of", total;
+    } else if (match == 0) {
+        output = "No", searchable_type, "match your query or filter";
     } else {
-        string = "There are no " + searchable_name + " to display";
+        output = "There are no", searchable_type, "to display";
     }
-    $('#records-count').text(string);
+    $('#searchable-count').text(output);
 }
 
 function updateUrl() {
@@ -134,9 +155,10 @@ function updateUrl() {
 }
 
 function parseUrl() {
-    $('#search').val(url.query.s);
-    var searchInput = url.query.s;
-    var urlFilters = url.query.f;
+    return;
+    $('#search').val(getUrlParam('s'));
+    var searchInput = getUrlParam('s');
+    var urlFilters = getUrlParam('f');
     if (urlFilters || searchInput) {
         if (urlFilters) {
             urlFilters = urlFilters.split(',');
@@ -148,14 +170,15 @@ function parseUrl() {
             }
         }
         filterMaps();
-        forceUpdateSearch();
+        updateSearch();
     }
 }
 
-function forceUpdateSearch() {
-    maps.search($('#search').val());
+function updateSearch() {
+    var search = $('#search').val();
+    searchable.search(search);
     updateUrl();
-    countResults();
+    countMatching();
 }
 
 function scrollToTop() {
