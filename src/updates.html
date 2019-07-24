@@ -5,7 +5,7 @@
     {{#unless hidden}}
     <post id="{{id}}" class="post-thumbnail {{#if important}}post-thumbnail-important{{/if}}">
         <div class="post-header">{{#if important}}<i class="fa fa-bookmark" aria-hidden="true"></i> {{/if}}<a href="#{{id}}" class="post-header">{{#if heading}}{{heading}}{{else}}Untitiled announcement{{/if}}</a></div>
-        <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/{{#if author}}{{author}}{{else}}d3c47f6f-ae3a-45c1-ad7c-e2c762b03ae6{{/if}}?size=12&overlay"> {{#if author}}<a href="https://mcresourcepile.github.io/staff">{{author}}</a>{{else}}<span class="position-manager">ResourcePile</span>{{/if}} {{#if date}}<span class="convert" data-toggle="tooltip" data-placement="top">{{date}}</span>{{/if}}</div>
+        <div class="post-details">Posted by <img class="post-author-avatar" src="https://crafatar.com/avatars/{{#if author}}{{author}}{{else}}d3c47f6f-ae3a-45c1-ad7c-e2c762b03ae6{{/if}}?size=12&overlay"> {{#if author}}<a href="https://mcresourcepile.github.io/staff" id="author-name">{{author}}</a>{{else}}<span class="position-manager">ResourcePile</span>{{/if}} {{#if date}}<span class="convert" data-toggle="tooltip" data-placement="top">{{date}}</span>{{/if}}</div>
         <div class="post-body">{{#markdown}}{{> ( lookup . 'id')}}{{/markdown}}</div>
         {{#if buttons}}
         <div class="post-links">
@@ -27,6 +27,7 @@
             var exact = moment($dateElem.text(), 'MM-DD-YYYY').format('MMMM D, YYYY');
             $(this).text(relative).attr('data-original-title', exact);
         });
+        convertUUIDs();
     });
 </script>
 {{> navigation_footer}}
