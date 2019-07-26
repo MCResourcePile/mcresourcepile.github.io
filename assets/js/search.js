@@ -155,7 +155,6 @@ function updateUrl() {
 }
 
 function parseUrl() {
-    return;
     $('#search').val(getUrlParam('s'));
     var searchInput = getUrlParam('s');
     var urlFilters = getUrlParam('f');

@@ -81,12 +81,8 @@ $(function() {
         fetchRecentDownloads();
     }
     
-    // collapse hidden map images
+    // show map image buttons
     if (user._preferences.show_map_images == false) {
-        $('.map-thumbnail:not(.collapse-immune)').css({'height': 'auto'});
-        $('.map-thumbnail:not(.collapse-immune) .image').css({'visbility': 'hidden', 'height': '60px'});
-        $('.map-thumbnail:not(.collapse-immune) .banner').css({'height': '60px'});
-        $('.map-thumbnail:not(.collapse-immune) .labels').css({'top': '45', 'left': '8'});
         $('.map-thumbnail:not(.collapse-immune) .map-button').addClass('map-button-sm');
         $('.map-thumbnail:not(.collapse-immune) .click-image').show();
     }

@@ -27,6 +27,13 @@ function applyUserPreferences() {
                 $(element).attr('src', '/assets/img/404.png');
             },
         });
+    } else {
+        // if map images are disabled, collapse hidden map images
+        $('.map-thumbnail:not(.collapse-immune)').css({'height': 'auto'});
+        $('.map-thumbnail:not(.collapse-immune) .image').css({'visbility': 'hidden', 'height': '60px'});
+        $('.map-thumbnail:not(.collapse-immune) .banner').css({'height': '60px'});
+        $('.map-thumbnail:not(.collapse-immune) .labels').css({'top': '45', 'left': '8'});
+        $('.map-thumbnail:not(.collapse-immune) .map-results-label').css({'font-size': '16px', 'margin-top': '-8px'});
     }
 }
 
