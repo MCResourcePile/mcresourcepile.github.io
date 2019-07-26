@@ -1633,13 +1633,18 @@ pre > code {
 }
 
 .map-search {
-    position: inherit;
     padding: 12px;
 }
 
-@media only screen and (min-width: 990px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
     .map-search {
-        position: fixed;
+        width: 230px;
+        z-index: 1;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .map-search {
         width: 270px;
         z-index: 1;
     }

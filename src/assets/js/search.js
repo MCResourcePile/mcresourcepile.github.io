@@ -3,25 +3,32 @@ var searchable_type = "items";
 var filters = [];
 
 $(function() {
-    // handle top position of search controls
-    var nav = $('.nav').height();
-    var wrapper_top = $('#searchable-collection').position().top;
-    var wrapper_height = $('#searchable-collection').height() + 98;
+    //handle top position of search controls
     $(document).scroll(function() {
+        var nav = $('.nav').height();
+        var wrapper_top = $('#searchable-collection').position().top;
+        var wrapper_height = $('#searchable-collection').height() + 98;
         var scroll_position = $(document).scrollTop();
-        var panel_top = $('.map-search').position().top;
         var panel_bottom = $('.map-search').height() + scroll_position;
-        if (scroll_position + nav > wrapper_top) {
-            if (panel_bottom < wrapper_height) {
-                $('.map-search').css('top', nav + 15);
+        var window_width = $(window).width();
+        if (window_width >= 992) {
+            if (scroll_position + nav > wrapper_top) {
+                $('.map-search').css('position', 'fixed');
+                if (panel_bottom < wrapper_height) {
+                    $('.map-search').css('top', nav + 15);
+                } else {
+                    $('.map-search').css('top', nav - (panel_bottom - wrapper_height));
+                }
             } else {
-                $('.map-search').css('top', nav - (panel_bottom - wrapper_height));
+                $('.map-search').css('position', 'relative');
+                $('.map-search').css('top', 0);
             }
         } else {
-            $('.map-search').css('top', wrapper_top - scroll_position);
+            $('.map-search').css('position', 'relative');
+            $('.map-search').css('top', 0);
         }
     });
-    
+
     // update search when user types
     $('#search').on('input', function(e){
         searchable.search($('#search').val());
