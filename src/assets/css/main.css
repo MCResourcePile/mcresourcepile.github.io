@@ -1169,6 +1169,15 @@ input[type="text"] {
     transition: .3s;
 }
 
+.no-banner > .tm-banner-row:not(:last-child) {
+    border-bottom: 1px solid #cbcaca;
+    margin-bottom: 12px;
+}
+
+.no-banner > .tm-banner-row:not(:last-child) .tm-tags {
+    margin-bottom: 10px;
+}
+
 .tm-labels > a:hover {
     text-decoration: none;
 }
@@ -1338,6 +1347,57 @@ tr.child i.fa-times {
     padding-top: 10px;
 }
 
+.tm-team-group > hr {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.team-group-name {
+    font-size: 18px;
+    margin-bottom: -8px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.team-group-count {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #9b9b9b;
+} 
+
+.tm-team {
+    color: #424242;
+    background-color: #e5e5e5;
+    margin-bottom: 7px;
+  }
+    
+.tm-team > .seed {
+    display: inline-block;
+    color: #fff;
+    background-color: #9a9a9a;
+    width: 35px;
+    padding: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+    
+.tm-team > .name {
+    display: inline-block;
+    padding: 5px;
+    font-weight: 500;
+}
+
+.tm-team > .name.no-seed {
+    padding-left: 10px;
+}
+
+.tm-team-mute {
+    color: #e5e5e5;
+}
+
 .challonge-bracket {
     margin-bottom: 10px;
     background-color: #272A33;
@@ -1433,25 +1493,6 @@ tr.child i.fa-times {
 .tag_hidden,
 .tag-hidden {
     display: none
-}
-
-.tablesorter-header {
-    cursor: pointer;
-    background-repeat: no-repeat;
-    background-position: center right;
-    white-space: normal;
-}
-
-.tablesorter-headerUnSorted {
-    background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==)
-}
-
-.tablesorter-headerAsc {
-    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7)
-}
-
-.tablesorter-headerDesc {
-    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7)
 }
 
 .btn-auth {

@@ -44,8 +44,8 @@
     {{/if}}
 </div>
 {{#results}}
-{{#if first_place}}
 <div class="center">
+    {{#if first_place}}
     <div class="league-position league-position-first">
         <i class="fas fa-trophy"></i>
         <div class="league-team">{{first_place}}</div>
@@ -63,10 +63,18 @@
             <div class="league-team-position">3<sup>rd</sup> place</div>
         </div>
     </div>
+    {{else}}
+    <div class="league-position league-position-first">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h3>This tournament has not concluded!</h3>
+        <h5>Information on this page may not be final.</h5>
+    </div>
+    {{/if}}
     {{#or challonge panels}}
     <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
     {{/or}}
 </div>
+{{#or challonge panels}}
 <div class="collapse" id="resultsCollapse">
     <div class="league-results">
         {{#if panels}}
@@ -115,15 +123,7 @@
         {{/if}}
     </div>
 </div>
-{{else}}
-<div class="center">
-    <div class="league-position league-position-first">
-        <i class="fas fa-exclamation-triangle"></i>
-        <h3>This tournament has not concluded!</h3>
-        <h5>Information on this page may not be final.</h5>
-    </div>
-</div>
-{{/if}}
+{{/or}}
 {{/results}}
 <div class="league-info-section large">Tournament Information</div>
 <div class="row">
@@ -220,7 +220,7 @@
     {{/if}}
 </div>
 {{#if maps}}
-<div class="league-info-section large">Map Pool <small>{{length maps}}</small></div>
+<div class="league-info-section large">Map Pool <small>{{length maps}} maps</small></div>
 <div class="dynamic">
     {{#maps}}
     {{> page_maps_thumbnail_advanced}}
@@ -228,40 +228,52 @@
 </div>
 {{/if}}
 {{#if groups}}
-<div class="league-info-section large" id="teams">Teams <small>{{teams}}</small></div>
-<div class="row">
-    {{#groups}}
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
-            {{#if name}}<div class="league-info-section">{{name}} <small>{{length teams}} teams</small></div>{{/if}}
-            <table class="table table-striped table-condensed">
-                {{#if seeded}}
-                <thead>
-                    <th>Seed</th>
-                    <th>Team Name</th>
-                </thead>
-                <tbody>
-                    {{#each teams}}
-                    <tr>
-                        <td><b>{{seed}}</b></td>
-                        <td>{{name}}</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-                {{else}}
-                <tbody>
-                    {{#each (sortBy teams "name")}}
-                    <tr>
-                        <td>{{name}}</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
+<div id="teams">
+    <div class="league-info-section large">Teams <small>{{teams}}</small></div>
+    {{#gte (length groups) 4}}
+    <div class="row">
+        {{#each groups}}
+        <div class="col-md-3">
+            <div class="tm-team-group">
+                {{#if name}}
+                <div class="team-group-name">{{name}}</div>
+                <div class="team-group-name team-group-count">{{length teams}} teams</div>
                 {{/if}}
-                </tbody>
-            </table>
+                {{#each teams}}
+                    <div class="tm-team" data-name="{{snakecase (lowercase name)}}">
+                        {{#if seed}}
+                        <div class="seed">{{seed}}</div>
+                        {{/if}}
+                        <div class="name{{#unless seed}} no-seed{{/unless}}">{{name}}</div>
+                    </div>
+                {{/each}}
+            </div>
         </div>
+        {{/each}}
     </div>
-    {{/groups}}
+    {{else}}
+    {{#each groups}}
+    <div class="tm-team-group">
+        {{#if name}}
+        <div class="team-group-name">{{name}}</div>
+        <div class="team-group-name team-group-count">{{length teams}} teams</div>
+        {{/if}}
+        <div class="row">
+            {{#each teams}}
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div class="tm-team" data-name="{{snakecase (lowercase name)}}">
+                    {{#if seed}}
+                    <div class="seed">{{seed}}</div>
+                    {{/if}}
+                    <div class="name{{#unless seed}} no-seed{{/unless}}">{{name}}</div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{#unless @last}}<hr>{{/unless}}
+    </div>
+    {{/each}}
+    {{/gte}}
 </div>
 {{/if}}
 {{> navigation_footer}}

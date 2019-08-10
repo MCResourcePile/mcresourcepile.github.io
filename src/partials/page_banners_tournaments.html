@@ -3,16 +3,14 @@
     <div class="col-md-3 col-md-push-9">
         {{> page_search_menu_advanced}}
     </div>
-    <div class="col-md-9 col-md-pull-3 list">
+    <div class="col-md-9 col-md-pull-3 list{{#if @root.settings.tournaments.no_banner}} no-banner{{/if}}">
         {{#tournaments}}
         {{#unless hidden}}
         <div class="tm-banner-row">
             <div class="tm-labels">
                 {{#information}}
                 {{#if type}}
-                <a class="click-search" data-query="{{type}}">
-                    <span class="tm-label">{{type}} #{{number}}</span>
-                </a>
+                <span class="tm-label click-search" data-query="{{type}}">{{type}} <strong>#{{number}}</strong></span>
                 {{/if}}
                 {{#if dates}}
                 <span class="tm-label" data-toggle="tooltip" data-placement="top" title="{{dates}}"><i class="far fa-calendar"></i> {{year}}</span>
@@ -20,9 +18,7 @@
                 <span class="tm-label"><i class="far fa-calendar"></i> {{year}}</span>
                 {{/if}}
                 {{#if winner}}
-                <a class="click-search" data-query="{{winner}}">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> {{winner}}</span>
-                </a>
+                <span class="tm-label click-search" data-query="{{winner}}"><i class="fas fa-trophy"></i> {{winner}}</span>
                 {{else}}
                 <span class="tm-label"><i class="fas fa-hourglass-half"></i> In Progress</span>
                 {{/if}}
@@ -36,11 +32,13 @@
                     {{/each}}
                     <div class="tags hidden">{{#information}}{{#if winner}}{{winner}},{{/if}}{{type}},{{/information}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
                 </div>
+                {{#unless @root.settings.tournaments.no_banner}}
                 {{#if default_banner}}
                 <div class="league-default-banner" style="background: url('../../assets/img/tournament/banners/default/{{default_banner}}.jpg'); background-position: center; background-size: cover;">{{name}}</div>
                 {{else}}
                 <img class="league-banner" src="../../assets/img/tournament/banners/{{@root.settings.tournaments.host}}/{{snakecase (lowercase name)}}.png">
                 {{/if}}
+                {{/unless}}
             </a>
         </div>
         {{/unless}}

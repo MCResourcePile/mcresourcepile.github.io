@@ -3,6 +3,11 @@
     "subtitle": "Records for Straight Outta Capture, a tournament hosted by Overcast Network",
     "page-category": ["tournaments", "league", "overcast"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "overcast"
         }
@@ -79,7 +84,6 @@
     "groups": [
         {
             "name": "Group A",
-            "seeded": false,
             "teams": [
                 {"name": "JurassicRush"},
                 {"name": "Padlock"},
@@ -109,7 +113,6 @@
         },
         {
             "name": "Group B",
-            "seeded": false,
             "teams": [
                 {"name": "Dark Sigma"},
                 {"name": "Miracle"},
@@ -139,7 +142,6 @@
         },
         {
             "name": "Group C",
-            "seeded": false,
             "teams": [
                 {"name": "eZcusas"},
                 {"name": "Night Vision"},
@@ -168,8 +170,7 @@
             ]
         },
         {
-            "name": "Invitational",
-            "seeded": true,
+            "name": "Invitationals",
             "teams": [
                 {"seed": 1, "name": "Street Sharks"},
                 {"seed": 2, "name": "HUGE Wall"},
