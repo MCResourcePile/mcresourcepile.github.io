@@ -104,10 +104,14 @@ function displayUserInfo() {
  * Approximate downloads left is inserted in elements with the '.user-rate-approx' class.
  */
 function displayRates() {
-    $('.user-rate-limit').text(user._rate.limit).val(user._rate.limit);;
-    $('.user-rate-remaining').text(user._rate.remaining).val(user._rate.remaining);
-    $('.user-rate-reset').text(new Date(user._rate.reset * 1000)).val(new Date(user._rate.reset * 1000));
-    $('.user-rate-approx').text(user._rate.remaining / 7).val(user._rate.remaining / 7);
+    var limit = user._rate.limit;
+    var remaining = user._rate.remaining;
+    var reset = new Date(user._rate.reset * 1000);
+    var approx = Math.floor(user._rate.remaining / 7);
+    $('.user-rate-limit').text(limit).val(limit);
+    $('.user-rate-remaining').text(remaining).val(remaining);
+    $('.user-rate-reset').text(reset).val(reset);
+    $('.user-rate-approx').text(approx).val(approx);
 }
 
 /**
