@@ -94,9 +94,13 @@ function resetUserPreferences() {
 function saveUserToken() {
     var token = $('#user-access-token').val();
     sendAlert('Verifing access token. Please wait.', 'alert-info');
+    // clean up token
+    token = token.replace('access_token=', '');
+    token = token.substr(0, token.indexOf('&')); 
     if (user.verifyToken(token, function() {
         if(user.setToken(token)) {
             sendAlert('Successfully added your token. You can now download more maps at once.', 'alert-success');
+            $('#user-access-token').val(token);
             saveUser();
             updateUserInfo();
             updateUserRates();
