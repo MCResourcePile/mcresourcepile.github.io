@@ -1348,8 +1348,8 @@ tr.child i.fa-times {
 }
 
 .tm-team-group > hr {
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 13px;
+    margin-bottom: 8px;
 }
 
 .team-group-name {
@@ -1371,7 +1371,7 @@ tr.child i.fa-times {
     color: #424242;
     background-color: #e5e5e5;
     margin-bottom: 7px;
-  }
+}
     
 .tm-team > .seed {
     display: inline-block;
@@ -1394,8 +1394,40 @@ tr.child i.fa-times {
     padding-left: 10px;
 }
 
-.tm-team-mute {
-    color: #e5e5e5;
+.tm-group-advances .tm-team-fade {
+    color: #aaaaaa;
+}
+
+.tm-teams-tabs {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.tm-teams-tabs > li.active > a {
+    font-weight: 600;
+}
+
+.tm-teams-fade-checkbox {
+    color: #000;
+}
+
+@media (max-width: 500px) {
+    .tm-teams-fade-checkbox {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+@media (min-width: 501px) {
+    .tm-teams-fade-checkbox {
+        float: right;
+    }
+}
+
+.tm-teams-fade-checkbox input:checked:after {
+    background-color: #000 !important;
+    border-color: #000 !important;
 }
 
 .challonge-bracket {
@@ -1419,18 +1451,7 @@ tr.child i.fa-times {
     margin-top: 10px;
 }
 
-.tournament-expand-results.collapsed:before {
-    content: "Show Full Results";
-    font-size: 18px;
-    padding-bottom: 10px;
-    display: block;
-    text-align: center;
-    color: #9b9b9b !important;
-    cursor: pointer;
-}
-
-.tournament-expand-results:before {
-    content: "Hide Full Results";
+.tournament-expand-results {
     font-size: 18px;
     padding-bottom: 10px;
     display: block;

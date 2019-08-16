@@ -71,7 +71,7 @@
     </div>
     {{/if}}
     {{#or challonge panels}}
-    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
+    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse">Show Full Results</a>
     {{/or}}
 </div>
 {{#or challonge panels}}
@@ -154,11 +154,11 @@
                         </td>
                     </tr>
                     {{/if}}
-                    {{#if teams}}
+                    {{#if teams-count}}
                     <tr>
                         <td>Teams</td>
                         <td>
-                            <a href="#teams">{{teams}} <i class="fas fa-chevron-down"></i></a>
+                            <a href="#teams">{{teams-count}} <i class="fas fa-chevron-down"></i></a>
                         </td>
                     </tr>
                     {{/if}}
@@ -227,52 +227,34 @@
     {{/maps}}
 </div>
 {{/if}}
-{{#if groups}}
+{{#if teams}}
 <div id="teams">
-    <div class="league-info-section large">Teams <small>{{teams}}</small></div>
-    {{#gte (length groups) 4}}
-    <div class="row">
-        {{#each groups}}
-        <div class="col-md-3">
-            <div class="tm-team-group">
-                {{#if name}}
-                <div class="team-group-name">{{name}}</div>
-                <div class="team-group-name team-group-count">{{length teams}} teams</div>
-                {{/if}}
-                {{#each teams}}
-                    <div class="tm-team" data-name="{{snakecase (lowercase name)}}">
-                        {{#if seed}}
-                        <div class="seed">{{seed}}</div>
-                        {{/if}}
-                        <div class="name{{#unless seed}} no-seed{{/unless}}">{{name}}</div>
-                    </div>
-                {{/each}}
-            </div>
+    <div class="league-info-section large">Teams <small>{{teams-count}}</small></div>
+    {{#gte (length teams) 2}}
+    <ul class="nav nav-tabs tm-teams-tabs" role="tablist">
+        {{#teams}}
+        <li {{#if @first}}class="active"{{/if}}>
+            <a href="#{{snakecase (lowercase name)}}" role="tab" data-toggle="tab">{{name}}</a>
+        </li>
+        {{/teams}}
+    </ul>
+    <div class="checkbox tm-teams-fade-checkbox">
+        <label>
+            <input type="checkbox" id="team-fade-checkbox" checked>
+            Fade teams that did not advance
+        </label>
+    </div>
+    <div class="tab-content">
+        {{#teams}}
+        <div role="tabpanel" class="tab-pane{{#if @first}} active{{/if}}{{#if advances}} tm-group-advances{{/if}}" id="{{snakecase (lowercase name)}}">
+            {{> team_section}}
         </div>
-        {{/each}}
+        {{/teams}}
     </div>
     {{else}}
-    {{#each groups}}
-    <div class="tm-team-group">
-        {{#if name}}
-        <div class="team-group-name">{{name}}</div>
-        <div class="team-group-name team-group-count">{{length teams}} teams</div>
-        {{/if}}
-        <div class="row">
-            {{#each teams}}
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                <div class="tm-team" data-name="{{snakecase (lowercase name)}}">
-                    {{#if seed}}
-                    <div class="seed">{{seed}}</div>
-                    {{/if}}
-                    <div class="name{{#unless seed}} no-seed{{/unless}}">{{name}}</div>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-        {{#unless @last}}<hr>{{/unless}}
-    </div>
-    {{/each}}
+    {{#teams}}
+    {{> team_section}}
+    {{/teams}}
     {{/gte}}
 </div>
 {{/if}}
