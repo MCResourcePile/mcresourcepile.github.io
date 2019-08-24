@@ -3,6 +3,11 @@
     "subtitle": "Records for Stranger Cores, a tournament hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "stratus"
         }
@@ -18,12 +23,12 @@
         "second_place": "Fussion",
         "third_place": "Kiube",
         "challonge": [
-            {"url": "https://stratus.challonge.com/sc", "description": "Bracket"}
+            {"url": "https://stratus.challonge.com/sc", "description": "Invitationals"}
         ]
     },
-    "method": "5 round Swiss-style Qualifiers, then Double Elimination Invitational",
+    "method": "5 round Swiss Qualifiers, then Double Elimination Invitationals",
     "gamemodes": ["dtcm"],
-    "teams": "16 teams",
+    "teams-count": "16 teams",
     "teamsize": "8v8",
     "stages": [
         {"stage": "Qualifiers", "date": "March 10, 17-18, 2018"},
@@ -65,38 +70,50 @@
             ]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "teams": [
-                {"name": "Fussion"},
-                {"name": "La Perrera"},
-                {"name": "Steves of the World"},
-                {"name": "GGeneSiS"},
-                {"name": "Seul"},
-                {"name": "Praetorians"},
-                {"name": "Obey"},
-                {"name": "HeartClaw"},
-                {"name": "Padlock"},
-                {"name": "Kiube"},
-                {"name": "Night Vision"},
-                {"name": "Muellers Elbows"},
-                {"name": "United Doutei"},
-                {"name": "Rubber Ducks"},
-                {"name": "LETHAL"},
-                {"name": "Cacique"}
+            "name": "Qualifiers",
+            "advances": true,
+            "groups": [
+                {
+                    "name": "Qualifiers",
+                    "teams": [
+                        {"name": "Cacique"},
+                        {"name": "Fussion", "advances": true},
+                        {"name": "GGeneSiS"},
+                        {"name": "HeartClaw", "advances": true},
+                        {"name": "Kiube", "advances": true},
+                        {"name": "LETHAL"},
+                        {"name": "La Perrera"},
+                        {"name": "Muellers Elbows", "advances": true},
+                        {"name": "Night Vision", "advances": true},
+                        {"name": "Obey", "advances": true},
+                        {"name": "Padlock"},
+                        {"name": "Praetorians", "advances": true},
+                        {"name": "Rubber Ducks"},
+                        {"name": "Seul"},
+                        {"name": "Steves of the World", "advances": true},
+                        {"name": "United Doutei"}
+                    ]
+                }
             ]
         },
         {
-            "name": "Invitational",
-            "teams": [
-                {"seed": 1, "name": "Fussion"},
-                {"seed": 2, "name": "Kiube"},
-                {"seed": 3, "name": "Steves of the World"},
-                {"seed": 4, "name": "Obey"},
-                {"seed": 5, "name": "Praetorians"},
-                {"seed": 6, "name": "Muellers Elbows"},
-                {"seed": 7, "name": "Night Vision"},
-                {"seed": 8, "name": "HeartClaw"}
+            "name": "Invitationals",
+            "groups": [
+                {
+                    "name": "Invitationals",
+                    "teams": [
+                        {"seed": 1, "name": "Fussion"},
+                        {"seed": 2, "name": "Kiube"},
+                        {"seed": 3, "name": "Steves of the World"},
+                        {"seed": 4, "name": "Obey"},
+                        {"seed": 5, "name": "Praetorians"},
+                        {"seed": 6, "name": "Muellers Elbows"},
+                        {"seed": 7, "name": "Night Vision"},
+                        {"seed": 8, "name": "HeartClaw"}
+                    ]
+                }
             ]
         }
     ]

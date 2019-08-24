@@ -3,6 +3,11 @@
     "subtitle": "Records for The Omega Champtionship, a tournament hosted by Avicus Network",
     "page-category": ["tournaments", "league", "avicus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "avicus"
         }
@@ -22,7 +27,7 @@
     },
     "method": "Group Stages, the Single Elimination Invitational",
     "gamemodes": ["dtm"],
-    "teams": "16 teams",
+    "teams-count": "16 teams",
     "teamsize": "10v10",
     "stages": [
         {"stage": "First games",    "date": "June 6, 2015"},
@@ -68,38 +73,65 @@
             "stage": "Finals"
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "name": "Group A",
-            "teams": [
-                {"name": "Insidia"},
-                {"name": "Impact"},
-                {"name": "Emancipators"},
-                {"name": "Peruan Combo"}
+            "name": "Group Stage",
+            "advances": true,
+            "groups": [
+                {
+                    "name": "Group A",
+                    "teams": [
+                        {"name": "Emancipators"},
+                        {"name": "Impact", "advances": true},
+                        {"name": "Insidia", "advances": true},
+                        {"name": "Peruan Combo"}
+                    ]
+                },
+                {
+                    "name": "Group B",
+                    "teams": [
+                        {"name": "Apollo", "advances": true},
+                        {"name": "Cacalmarin", "advances": true},
+                        {"name": "Coffee"},
+                        {"name": "Fortissimus"}
+                    ]
+                },
+                {
+                    "name": "Group C",
+                    "teams": [
+                        {"name": "Bad Company", "advances": true},
+                        {"name": "Citsitua", "advances": true},
+                        {"name": "FaZe"},
+                        {"name": "PureBlox"}
+                    ]
+                },
+                {
+                    "name": "Group D",
+                    "teams": [
+                        {"name": "Berzerk", "advances": true},
+                        {"name": "Kyudo"},
+                        {"name": "Team Allah"},
+                        {"name": "TheCrazyBeaners", "advances": true}
+                    ]
+                }
             ]
-        }, {
-            "name": "Group B",
-            "teams": [
-                {"name": "Cacalmarin"},
-                {"name": "Apollo"},
-                {"name": "Fortissimus"},
-                {"name": "Coffee"}
-            ]
-        }, {
-            "name": "Group C",
-            "teams": [
-                {"name": "Bad Company"},
-                {"name": "Citsitua"},
-                {"name": "PureBlox"},
-                {"name": "FaZe"}
-            ]
-        }, {
-            "name": "Group D",
-            "teams": [
-                {"name": "TheCrazyBeaners"},
-                {"name": "Berzerk"},
-                {"name": "Kyudo"},
-                {"name": "Team Allah"}
+        },
+        {
+            "name": "Invitationals",
+            "groups": [
+                {
+                    "name": "Invitationals",
+                    "teams": [
+                        {"name": "Apollo"},
+                        {"name": "Bad Company"},
+                        {"name": "Berzerk"},
+                        {"name": "Cacalmarin"},
+                        {"name": "Citsitua"},
+                        {"name": "Impact"},
+                        {"name": "Insidia"},
+                        {"name": "TheCrazyBeaners"}
+                    ]
+                }
             ]
         }
     ]

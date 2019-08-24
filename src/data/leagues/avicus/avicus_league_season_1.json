@@ -3,6 +3,11 @@
     "subtitle": "Records for Avicus League - Season 1, a tournament hosted the Avicus Network",
     "page-category": ["tournaments", "league", "avicus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "avicus"
         }
@@ -20,7 +25,7 @@
     },
     "method": "League, Bo3 for TDM / 3 Points for a win, 1 for a tie, 0 for a loss",
     "gamemodes": ["dtm", "ctw", "tdm"],
-    "teams": "13 teams",
+    "teams-count": "13 teams",
     "teamsize": "12-20",
     "stages": [
         {"stage": "League Start", "date": "November 28, 2015"},
@@ -73,22 +78,26 @@
             "tags": ["tdm"]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "teams": [
-                {"name": "JardinerosTeam"},
-                {"name": "TheCrazyBeaners"},
-                {"name": "Apollo"},
-                {"name": "Bad Company"},
-                {"name": "Ethernam Cross"},
-                {"name": "Powerpuff Boys"},
-                {"name": "Cacalmarin"},
-                {"name": "TheChubuTeam"},
-                {"name": "Reclaimers"},
-                {"name": "Cronus"},
-                {"name": "QuiDizii"},
-                {"name": "Kaldorei"},
-                {"name": "Assassins"}
+            "groups": [
+                {
+                    "teams": [
+                        {"name": "Apollo"},
+                        {"name": "Assassins"},
+                        {"name": "Bad Company"},
+                        {"name": "Cacalmarin"},
+                        {"name": "Cronus"},
+                        {"name": "Ethernam Cross"},
+                        {"name": "JardinerosTeam"},
+                        {"name": "Kaldorei"},
+                        {"name": "Powerpuff Boys"},
+                        {"name": "QuiDizii"},
+                        {"name": "Reclaimers"},
+                        {"name": "TheChubuTeam"},
+                        {"name": "TheCrazyBeaners"}
+                    ]
+                }
             ]
         }
     ]

@@ -3,6 +3,11 @@
     "subtitle": "Records for Defenders: Age of Ares, a tournament hosted by Overcast Network",
     "page-category": ["tournaments", "league", "overcast"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "overcast"
         }
@@ -96,68 +101,70 @@
     ],
     "teams": [
         {
+            "name": "Group Stage",
+            "advances": true,
             "groups": [
                 {
                     "name": "Group 1A",
                     "teams": [
-                        {"name": "VH"},
-                        {"name": "Sigma"},
-                        {"name": "PUR1TY"},
                         {"name": "Deep Ocean"},
-                        {"name": "VortexRush sin Scary:("},
-                        {"name": "SectorOne"}
+                        {"name": "PUR1TY"},
+                        {"name": "SectorOne", "advances": true},
+                        {"name": "Sigma", "advances": true},
+                        {"name": "VH", "advances": true},
+                        {"name": "VortexRush sin Scary:("}
                     ]
                 },
                 {
                     "name": "Group 2A",
                     "teams": [
-                        {"name": "Orpheus"},
-                        {"name": "Ozone"},
-                        {"name": "NaVi"},
-                        {"name": "Survey Corps"},
+                        {"name": "1nsidious"},
                         {"name": "MP4"},
-                        {"name": "1nsidious"}
+                        {"name": "NaVi", "advances": true},
+                        {"name": "Orpheus", "advances": true},
+                        {"name": "Ozone", "advances": true},
+                        {"name": "Survey Corps"}
                     ]
                 },
                 {
                     "name": "Group 3A",
                     "teams": [
-                        {"name": "Punishers"},
-                        {"name": "Arya"},
-                        {"name": "Team Unerfahren"},
-                        {"name": "Implosion"},
+                        {"name": "Arya", "advances": true},
                         {"name": "Cosmic Offensive"},
-                        {"name": "Salicyl1c"}
+                        {"name": "Implosion"},
+                        {"name": "Punishers", "advances": true},
+                        {"name": "Salicyl1c"},
+                        {"name": "Team Unerfahren"}
                     ]
                 },
                 {
                     "name": "Group 4B",
                     "teams": [
-                        {"name": "Square Up"},
                         {"name": "Dropout"},
-                        {"name": "SquadCat"},
                         {"name": "eSportastic"},
                         {"name": "Isymius"},
-                        {"name": "Wake Up"}
+                        {"name": "SquadCat", "advances": true},
+                        {"name": "Square Up", "advances": true},
+                        {"name": "Wake Up", "advances": true}
                     ]
                 },
                 {
                     "name": "Group 5B",
                     "teams": [
-                        {"name": "Impact"},
                         {"name": "DlayLy"},
-                        {"name": "xxoemyixx"},
                         {"name": "FinallyV3"},
                         {"name": "FirePVP"},
-                        {"name": "Sandals"}
+                        {"name": "Impact", "advances": true},
+                        {"name": "Sandals", "advances": true},
+                        {"name": "xxoemyixx", "advances": true}
                     ]
                 },
                 {
                     "name": "Group 6B",
                     "teams": [
                         {"name": "Kiube"},
-                        {"name": "Drifters"},
-                        {"name": "Pureblox"},
+                        {"name": "Drifters", "advances": true},
+                        {"name": "Pureblox", "advances": true},
                         {"name": "Courtiers"},
                         {"name": "FrenchKidz"},
                         {"name": "United Paws"}
@@ -166,67 +173,109 @@
                 {
                     "name": "Group 7C",
                     "teams": [
-                        {"name": "LunGGlove"},
-                        {"name": "Dynamo"},
                         {"name": "DeepClouds"},
+                        {"name": "Dynamo", "advances": true},
+                        {"name": "InterPool"},
+                        {"name": "LunGGlove", "advances": true},
                         {"name": "Rainbow Outplay"},
-                        {"name": "Tokyo"},
-                        {"name": "InterPool"}
+                        {"name": "Tokyo"}
                     ]
                 },
                 {
                     "name": "Group 8C",
                     "teams": [
-                        {"name": "Kyudo"},
                         {"name": "Beyond"},
-                        {"name": "Switzerland"},
-                        {"name": "WhitOutName"},
-                        {"name": "Chikilipush"},
-                        {"name": "Criticals"}
+                        {"name": "Chikilipush", "advances": true},
+                        {"name": "Criticals"},
+                        {"name": "Kyudo", "advances": true},
+                        {"name": "Switzerland", "advances": true},
+                        {"name": "WhitOutName"}
                     ]
                 },
                 {
                     "name": "Group 9C",
                     "teams": [
-                        {"name": "Kappa"},
+                        {"name": "Kappa", "advances": true},
                         {"name": "iMineForces"},
-                        {"name": "Origin"},
+                        {"name": "Origin", "advances": true},
                         {"name": "The Old School"},
-                        {"name": "ToxiCity"},
+                        {"name": "ToxiCity", "advances": true},
                         {"name": "XoriZ0n"}
                     ]
                 },
                 {
                     "name": "Group 10D",
                     "teams": [
-                        {"name": "Dopamine"},
-                        {"name": "Tekila"},
-                        {"name": "Eclipse"},
-                        {"name": "Vindicate"},
                         {"name": "Anteiku"},
-                        {"name": "Nice"}
+                        {"name": "Dopamine", "advances": true},
+                        {"name": "Eclipse", "advances": true},
+                        {"name": "Nice"},
+                        {"name": "Tekila"},
+                        {"name": "Vindicate"}
                     ]
                 },
                 {
                     "name": "Group 11D",
                     "teams": [
-                        {"name": "Divinum Hexis"},
-                        {"name": "Culturtal Enrichment"},
-                        {"name": "Outliers"},
                         {"name": "Another"},
+                        {"name": "Culturtal Enrichment"},
+                        {"name": "Divinum Hexis",  "advances": true},
+                        {"name": "Krysis", "advances": true},
                         {"name": "Night Vision"},
-                        {"name": "Krysis"}
+                        {"name": "Outliers", "advances": true}
                     ]
                 },
                 {
                     "name": "Group 12D",
                     "teams": [
-                        {"name": "Bone Breakers"},
+                        {"name": "Bone Breakers", "advances": true},
+                        {"name": "Guicotsch & the band", "advances": true},
+                        {"name": "LostMexicans", "advances": true},
+                        {"name": "Score Breakers"},
                         {"name": "Triumph"},
+                        {"name": "Vegas"}
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Invitationals",
+            "groups": [
+                {
+                    "name": "Invitationals",
+                    "teams": [
+                        {"name": "Arya"},
+                        {"name": "Bone Breakers"},
+                        {"name": "Chikilipush"},
+                        {"name": "Divinum Hexis"},
+                        {"name": "Dopamine"},
+                        {"name": "Drifters"},
+                        {"name": "Dynamo"},
+                        {"name": "Eclipse"},
                         {"name": "Guicotsch & the band"},
+                        {"name": "Impact"},
+                        {"name": "Kappa"},
+                        {"name": "Krysis"},
+                        {"name": "Kyudo"},
                         {"name": "LostMexicans"},
-                        {"name": "Vegas"},
-                        {"name": "Score Breakers"}
+                        {"name": "LunGGlove"},
+                        {"name": "NaVi"},
+                        {"name": "Origin"},
+                        {"name": "Orpheus"},
+                        {"name": "Outliers"},
+                        {"name": "Ozone"},
+                        {"name": "Punishers"},
+                        {"name": "Pureblox"},
+                        {"name": "Sandals"},
+                        {"name": "SectorOne"},
+                        {"name": "Sigma"},
+                        {"name": "SquadCat"},
+                        {"name": "Square Up"},
+                        {"name": "Switzerland"},
+                        {"name": "ToxiCity"},
+                        {"name": "VH"},
+                        {"name": "Wake Up"},
+                        {"name": "xxoemyixx"}
                     ]
                 }
             ]

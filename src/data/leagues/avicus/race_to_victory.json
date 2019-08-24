@@ -3,6 +3,11 @@
     "subtitle": "Records for Race to Victory, a tournament hosted by Avicus Network",
     "page-category": ["tournaments", "league", "avicus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "avicus"
         }
@@ -23,7 +28,7 @@
     },
     "method": "Single Elimination, Bo3",
     "gamemodes": ["ctw"],
-    "teams": "16 teams",
+    "teams-count": "16 teams",
     "teamsize": "10v10",
     "stages": [
         {"stage": "Rounds 1 & 2",           "date": "November 7, 2015"},
@@ -66,17 +71,21 @@
             "tags": ["ctw"]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "teams": [
-                {"name": "Powerpuff Boys"},
-                {"name": "Bad Company"},
-                {"name": "Apollo"},
-                {"name": "Fortissimus"},
-                {"name": "Cacalmarin"},
-                {"name": "Cronus"},
-                {"name": "Eternal Cross"},
-                {"name": "Kaldorei"}
+            "groups": [
+                {
+                    "teams": [
+                        {"seed": 1, "name": "Bad Company"},
+                        {"seed": 2, "name": "Powerpuff Boys"},
+                        {"seed": 3, "name": "Apollo"},
+                        {"seed": 4, "name": "Eternal Cross"},
+                        {"seed": 5, "name": "Fortissimus"},
+                        {"seed": 6, "name": "Kaldorei"},
+                        {"seed": 7, "name": "Cacalmarin"},
+                        {"seed": 8, "name": "Cronus"}
+                    ]
+                }
             ]
         }
     ]

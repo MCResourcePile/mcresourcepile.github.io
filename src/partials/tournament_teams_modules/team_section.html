@@ -7,6 +7,9 @@
             <div class="team-group-name">{{name}}</div>
             <div class="team-group-name team-group-count">{{length teams}} teams</div>
             {{/if}}
+            {{#if description}}
+            <div class="team-group-name team-group-description">{{description}}</div>
+            {{/if}}
             {{#each teams}}
             {{> team_box}}
             {{/each}}
@@ -19,8 +22,11 @@
 <div class="tm-team-group">
     {{#if name}}
     <div class="team-group-name">{{name}}</div>
-    {{/if}}
     <div class="team-group-name team-group-count">{{length teams}} teams</div>
+    {{/if}}
+    {{#if description}}
+    <div class="team-group-name team-group-description">{{description}}</div>
+    {{/if}}
     <div class="row">
         {{#each teams}}
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">

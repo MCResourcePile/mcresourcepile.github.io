@@ -3,6 +3,11 @@
     "subtitle": "Records for Attack on Point, a mini event hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "stratus"
         }
@@ -23,7 +28,7 @@
     },
     "method": "Double Elimination",
     "gamemodes": ["cp"],
-    "teams": "16 teams",
+    "teams-count": "16 teams",
     "teamsize": "7v7",
     "stages": [
         {"stage": "Event", "date": "July 7, 2018"}
@@ -55,25 +60,29 @@
             "tags": ["cp"]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "teams": [
-                {"seed": 1, "name": "Praetorians"},
-                {"seed": 2, "name": "Night Vision"},
-                {"seed": 3, "name": "YACK"},
-                {"seed": 4, "name": "HeartClaw"},
-                {"seed": 5, "name": "Obey"},
-                {"seed": 6, "name": "PERDON NO!!! QUE HACES ?!"},
-                {"seed": 7, "name": "Gummy Bears"},
-                {"seed": 8, "name": "Team Rocket"},
-                {"seed": 9, "name": "OldParr"},
-                {"seed": 10, "name": "Origin"},
-                {"seed": 11, "name": "GGeneSiS"},
-                {"seed": 12, "name": "Beaners"},
-                {"seed": 13, "name": "My Team"},
-                {"seed": 14, "name": "duh purpul apez"},
-                {"seed": 15, "name": "United Doutei"},
-                {"seed": 16, "name": "Furyus"}
+            "groups": [
+                {
+                    "teams": [
+                        {"seed": 1, "name": "Praetorians"},
+                        {"seed": 2, "name": "Night Vision"},
+                        {"seed": 3, "name": "YACK"},
+                        {"seed": 4, "name": "HeartClaw"},
+                        {"seed": 5, "name": "Obey"},
+                        {"seed": 6, "name": "PERDON NO!!! QUE HACES ?!"},
+                        {"seed": 7, "name": "Gummy Bears"},
+                        {"seed": 8, "name": "Team Rocket"},
+                        {"seed": 9, "name": "OldParr"},
+                        {"seed": 10, "name": "Origin"},
+                        {"seed": 11, "name": "GGeneSiS"},
+                        {"seed": 12, "name": "Beaners"},
+                        {"seed": 13, "name": "My Team"},
+                        {"seed": 14, "name": "duh purpul apez"},
+                        {"seed": 15, "name": "United Doutei"},
+                        {"seed": 16, "name": "Furyus"}
+                    ]
+                }
             ]
         }
     ]

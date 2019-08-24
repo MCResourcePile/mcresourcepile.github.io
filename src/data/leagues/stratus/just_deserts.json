@@ -3,6 +3,11 @@
     "subtitle": "Records for Just Deserts, a mini event hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "stratus"
         }
@@ -23,7 +28,7 @@
     },
     "method": "Double Elimination",
     "gamemodes": ["kotf"],
-    "teams": "16 teams",
+    "teams-count": "16 teams",
     "teamsize": "7v7",
     "stages": [
         {"stage": "Tournament", "date": "October 14, 2017"}
@@ -44,25 +49,51 @@
             ]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "teams": [
-                {"name": "Branca"},
-                {"name": "Artemis"},
-                {"name": "Furyus"},
-                {"name": "Lyon"},
-                {"name": "Red October"},
-                {"name": "Cihuri"},
-                {"name": "HeartClaw"},
-                {"name": "Pochinki"},
-                {"name": "PureBlox"},
-                {"name": "Celestial"},
-                {"name": "Drops"},
-                {"name": "Team Rocket"},
-                {"name": "Night Vision"},
-                {"name": "SquadCat"},
-                {"name": "Praetorians"},
-                {"name": "Discordia"}
+            "name": "Upper Bracket",
+            "advances": true,
+            "groups": [
+                {
+                    "name": "Upper Bracket",
+                    "description": "Teams that did not advance were put in the lower bracket",
+                    "teams": [
+                        {"name": "Artemis"},
+                        {"name": "Branca", "advances": true},
+                        {"name": "Celestial", "advances": true},
+                        {"name": "Cihuri"},
+                        {"name": "Discordia"},
+                        {"name": "Drops", "advances": true},
+                        {"name": "Furyus", "advances": true},
+                        {"name": "HeartClaw"},
+                        {"name": "Lyon"},
+                        {"name": "Night Vision", "advances": true},
+                        {"name": "Pochinki", "advances": true},
+                        {"name": "Praetorians", "advances": true},
+                        {"name": "PureBlox"},
+                        {"name": "Red October", "advances": true},
+                        {"name": "SquadCat"},
+                        {"name": "Team Rocket"}
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Lower Bracket",
+            "groups": [
+                {
+                    "name": "Lower Bracket",
+                    "teams": [
+                        {"name": "Artemis"},
+                        {"name": "Cihuri"},
+                        {"name": "Discordia"},
+                        {"name": "HeartClaw"},
+                        {"name": "Lyon"},
+                        {"name": "PureBlox"},
+                        {"name": "SquadCat"},
+                        {"name": "Team Rocket"}
+                    ]
+                }
             ]
         }
     ]

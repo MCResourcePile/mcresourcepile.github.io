@@ -3,6 +3,11 @@
     "subtitle": "Records for Project Ares: Endgame, a tournament hosted by Campeh",
     "page-category": ["tournaments", "league", "pgm"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "pgm",
             "default_banner": "nextgen"
@@ -19,7 +24,7 @@
     "announcement": "https://stratus.network/forums/topics/5d1c8c85221cb30001003aba",
     "method": "Double Elimination Groups, then Single Elimination Invitational",
     "gamemodes": ["cp", "ctw", "dtc", "dtm", "koth", "tdm"],
-    "teams": "10 teams",
+    "teams-count": "10 teams",
     "teamsize": "8v8",
     "stages": [
         {"stage": "Group Stage",   "date": "July 20-21, 2019"},
@@ -82,24 +87,49 @@
             "tags": ["cp"]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "name": "Group A",
-            "teams": [
-                {"seed": 1, "name": "Aura"},
-                {"seed": 2, "name": "PERDON NO!!!ESTO YA ES VAINA!!!"},
-                {"seed": 3, "name": "Soy Concha, entro"},
-                {"seed": 4, "name": "Horizon"},
-                {"seed": 5, "name": "do /tpall and bang bang #freeref"}
+            "name": "Group Stage",
+            "advances": true,
+            "groups": [
+                {
+                    "name": "Group A",
+                    "teams": [
+                        {"name": "Aura", "advances": true},
+                        {"name": "do /tpall and bang bang #freeref", "advances": true},
+                        {"name": "Horizon", "advances": true},
+                        {"name": "PERDON NO!!!ESTO YA ES VAINA!!!"},
+                        {"name": "Soy Concha, entro", "advances": true}
+                    ]
+                },
+                {
+                    "name": "Group B",
+                    "teams": [
+                        {"name": "HeartClaw", "advances": true},
+                        {"name": "sup", "advances": true},
+                        {"name": "TRUE G4NG", "advances": true},
+                        {"name": "UbeR", "advances": true},
+                        {"name": "XtremeOmyiPotienceDuki"}
+                    ]
+                }
             ]
-        }, {
-            "name": "Group B",
-            "teams": [
-                {"seed": 1, "name": "UbeR"},
-                {"seed": 2, "name": "sup"},
-                {"seed": 3, "name": "TRUE G4NG"},
-                {"seed": 4, "name": "HeartClaw"},
-                {"seed": 5, "name": "XtremeOmyiPotienceDuki"}
+        },
+        {
+            "name": "Invitationals",
+            "groups": [
+                {
+                    "name": "Invitationals",
+                    "teams": [
+                        {"name": "Aura"},
+                        {"name": "do /tpall and bang bang #freeref"},
+                        {"name": "HeartClaw"},
+                        {"name": "Horizon"},
+                        {"name": "Soy Concha, entro"},
+                        {"name": "sup"},
+                        {"name": "TRUE G4NG"},
+                        {"name": "UbeR"}
+                    ]
+                }
             ]
         }
     ]

@@ -3,6 +3,11 @@
     "subtitle": "Records for Stratus: Into the Gamemodes, a tournament hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "stratus"
         }
@@ -27,12 +32,12 @@
             }
         ],
         "challonge": [
-            {"url": "https://stratus.challonge.com/FMC", "description": "Bracket"}
+            {"url": "https://stratus.challonge.com/itg", "description": "Bracket"}
         ]
     },
     "method": "Swiss Qualifiers, then Double Elimination Invitational",
     "gamemodes": ["ctw", "cp", "dtcm", "kotf", "koth"],
-    "teams": "14 teams",
+    "teams-count": "14 teams",
     "teamsize": "8v8",
     "stages": [
         {"stage": "Qualifiers", "date": "March 9-10, 2019"},
@@ -91,23 +96,48 @@
             "tags": ["dtcm"]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "teams": [
-                {"name": "Aura"},
-                {"name": "Nayya's Neckers"},
-                {"name": "Ram Ranch"},
-                {"name": "Bait"},
-                {"name": "SHREW"},
-                {"name": "yebO"},
-                {"name": "Oniria"},
-                {"name": "Relogeo Tactico"},
-                {"name": ":yum:"},
-                {"name": "VAC Officers"},
-                {"name": "xxoemyixx"},
-                {"name": "Horizon"},
-                {"name": "Sakura"},
-                {"name": "Heartclaw"}
+            "name": "Qualifiers",
+            "advances": true,
+            "groups": [
+                {
+                    "name": "Qualifiers",
+                    "teams": [
+                        {"name": ":yum:"},
+                        {"name": "Aura", "advances": true},
+                        {"name": "Bait", "advances": true},
+                        {"name": "Heartclaw"},
+                        {"name": "Horizon"},
+                        {"name": "Nayya's Neckers", "advances": true},
+                        {"name": "Oniria", "advances": true},
+                        {"name": "Ram Ranch", "advances": true},
+                        {"name": "Relogeo Tactico", "advances": true},
+                        {"name": "SHREW", "advances": true},
+                        {"name": "Sakura"},
+                        {"name": "VAC Officers"},
+                        {"name": "xxoemyixx"},
+                        {"name": "yebO", "advances": true}
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Invitationals",
+            "groups": [
+                {
+                    "name": "Invitationals",
+                    "teams": [
+                        {"name": "Aura"},
+                        {"name": "Bait"},
+                        {"name": "Nayya's Neckers"},
+                        {"name": "Oniria"},
+                        {"name": "Ram Ranch"},
+                        {"name": "Relogeo Tactico"},
+                        {"name": "SHREW"},
+                        {"name": "yebO"}
+                    ]
+                }
             ]
         }
     ]

@@ -3,6 +3,11 @@
     "subtitle": "Records for The Quad Before Christmas, a mini event hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "stratus"
         }
@@ -20,7 +25,7 @@
     },
     "method": "Swiss-style group stage, then first to 3-wins",
     "gamemodes": ["blitz"],
-    "teams": "16 teams (max 6 players per team)",
+    "teams-count": "16 teams (max 6 players per team)",
     "teamsize": "4v4v4v4",
     "stages": [
         {"stage": "Event", "date": "Saturday, December 16, 2017"}
@@ -41,41 +46,45 @@
             ]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "name": "Match 1 Teams",
-            "teams": [
-                {"name": "Furio Tigre"},
-                {"name": "PopCornFunk"},
-                {"name": "Team Rocket"},
-                {"name": "Pochinki"}
-            ]
-        },
-        {
-            "name": "Match 2 Teams",
-            "teams": [
-                {"name": "Epic Night"},
-                {"name": "Praetorians"},
-                {"name": "Obey"},
-                {"name": "T R I N I T Y"}
-            ]
-        },
-        {
-            "name": "Match 3 Teams",
-            "teams": [
-                {"name": "Seoul"},
-                {"name": "Branca"},
-                {"name": "United Doutei"},
-                {"name": "Khronos"}
-            ]
-        },
-        {
-            "name": "Match 4 Teams",
-            "teams": [
-                {"name": "Again"},
-                {"name": "PointecK"},
-                {"name": "Fairy-Tail"},
-                {"name": "Retireds"}
+            "groups": [
+                {
+                    "name": "Match 1",
+                    "teams": [
+                        {"name": "Furio Tigre"},
+                        {"name": "Pochinki"},
+                        {"name": "PopCornFunk"},
+                        {"name": "Team Rocket"}
+                    ]
+                },
+                {
+                    "name": "Match 2",
+                    "teams": [
+                        {"name": "Epic Night"},
+                        {"name": "Obey"},
+                        {"name": "Praetorians"},
+                        {"name": "T R I N I T Y"}
+                    ]
+                },
+                {
+                    "name": "Match 3",
+                    "teams": [
+                        {"name": "Branca"},
+                        {"name": "Khronos"},
+                        {"name": "Seoul"},
+                        {"name": "United Doutei"}
+                    ]
+                },
+                {
+                    "name": "Match 4",
+                    "teams": [
+                        {"name": "Again"},
+                        {"name": "Fairy-Tail"},
+                        {"name": "PointecK"},
+                        {"name": "Retireds"}
+                    ]
+                }
             ]
         }
     ]

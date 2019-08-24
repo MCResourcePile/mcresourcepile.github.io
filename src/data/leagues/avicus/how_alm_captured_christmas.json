@@ -3,6 +3,11 @@
     "subtitle": "Records for How ALM Capture Christmas, a tournament hosted by Avicus Network",
     "page-category": ["tournaments", "league", "avicus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "avicus"
         }
@@ -22,7 +27,7 @@
     },
     "method": "Double Elimination",
     "gamemodes": ["koth", "ctf"],
-    "teams": "10 teams",
+    "teams-count": "10 teams",
     "teamsize": "7v7",
     "stages": [
         {"stage": "Tournaments", "date": "December 23, 2017"}
@@ -54,19 +59,23 @@
             "tags": ["ctf"]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "teams": [
-                {"seed": 1, "name": "Horizon"},
-                {"seed": 2, "name": "Praetorians"},
-                {"seed": 3, "name": "50 Shades of ALM"},
-                {"seed": 4, "name": "Team Rocket"},
-                {"seed": 5, "name": "Jalapenos"},
-                {"seed": 6, "name": "ILLICIT"},
-                {"seed": 7, "name": "PointecK"},
-                {"seed": 8, "name": "Underdogs"},
-                {"seed": 9, "name": "Aura"},
-                {"seed": 10, "name": "Primal"}
+            "groups": [
+                {
+                    "teams": [
+                        {"seed": 1, "name": "Horizon"},
+                        {"seed": 2, "name": "Praetorians"},
+                        {"seed": 3, "name": "50 Shades of ALM"},
+                        {"seed": 4, "name": "Team Rocket"},
+                        {"seed": 5, "name": "Jalapenos"},
+                        {"seed": 6, "name": "ILLICIT"},
+                        {"seed": 7, "name": "PointecK"},
+                        {"seed": 8, "name": "Underdogs"},
+                        {"seed": 9, "name": "Aura"},
+                        {"seed": 10, "name": "Primal"}
+                    ]
+                }
             ]
         }
     ]
