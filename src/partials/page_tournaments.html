@@ -225,6 +225,55 @@
         </div>
     </div>
 </div>
+{{#if videos}}
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true"><i class="fas fa-angle-down"></i> Videos <small>{{length videos}} videos</small></div>
+    <div class="collapse-section-body">
+        <div class="row" style="margin-top: -5px;">
+            {{#videos}}
+            <div class="col-md-6">
+                <div class="video-embed-header">
+                    {{#is service 'youtube'}}
+                    <i class="fab fa-youtube" style="color: #FF0000; margin-top: -3px;"></i>
+                    {{else}}
+                    {{#is service 'twitch'}}
+                    <i class="fab fa-twitch" style="color: #6441A4; margin-top: 1px;"></i>
+                    {{/is}}
+                    {{/is}}
+                    <div class="video-embed-title">{{title}}</div>
+                    <div class="video-embed-description">{{description}}</div>
+                </div>
+                <div class="video-embed">
+                    {{#is service 'youtube'}}
+                        {{#is type 'video'}}
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        {{else}}
+                        {{#is type 'playlist'}}
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list={{id}}" frameborder="0" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        {{/is}}
+                        {{/is}}
+                    {{else}}
+                    {{#is service 'twitch'}}
+                        {{#is type 'collection'}}
+                        <iframe src="https://player.twitch.tv/?autoplay=false&collection={{id}}" frameborder="0" allowfullscreen="true" scrolling="no" width="560" height="315" ></iframe>
+                        {{else}}
+                        {{#is type 'clip'}}
+                        <iframe src="https://clips.twitch.tv/embed?autoplay=false&clip={{id}}" frameborder="0" allowfullscreen="true" scrolling="no" width="560" height="315" ></iframe>
+                        {{else}}
+                        {{#is type 'video'}}
+                        <iframe src="https://player.twitch.tv/?autoplay=false&video={{id}}" frameborder="0" allowfullscreen="true" scrolling="no" width="560" height="315" ></iframe>
+                        {{/is}}
+                        {{/is}}
+                        {{/is}}
+                    {{/is}}
+                    {{/is}}
+                </div>
+            </div>
+            {{/videos}}
+        </div>
+    </div>
+</div>
+{{/if}}
 {{#if maps}}
 <div class="collapse-section">
     <div class="league-info-section large collapse-section-heading" data-expanded="true"><i class="fas fa-angle-down"></i> Map Pool <small>{{length maps}} maps</small></div>
