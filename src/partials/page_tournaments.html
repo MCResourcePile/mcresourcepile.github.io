@@ -125,137 +125,147 @@
 </div>
 {{/or}}
 {{/results}}
-<div class="league-info-section large">Tournament Information</div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Details</div>
-            <table class="league-info-table">
-                <tbody>
-                    {{#if announcement}}
-                    <tr>
-                        <td>Announcement Page</td>
-                        <td><a href="{{announcement}}">{{announcement}}</a></td>
-                    </tr>
-                    {{/if}}
-                    {{#if method}}
-                    <tr>
-                        <td>Method</td>
-                        <td>{{method}}</td>
-                    </tr>
-                    {{/if}}
-                    {{#if gamemodes}}
-                    <tr>
-                        <td>Gamemodes</td>
-                        <td>
-                            {{#each (sort gamemodes)}}
-                            {{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}
-                            {{/each}}
-                        </td>
-                    </tr>
-                    {{/if}}
-                    {{#if teams-count}}
-                    <tr>
-                        <td>Teams</td>
-                        <td>
-                            <a href="#teams">{{teams-count}} <i class="fas fa-chevron-down"></i></a>
-                        </td>
-                    </tr>
-                    {{/if}}
-                    {{#if teamsize}}
-                    <tr>
-                        <td>Team Size</td>
-                        <td>{{teamsize}}</td>
-                    </tr>
-                    {{/if}}
-                </tbody>
-            </table>
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true"><i class="fas fa-angle-down"></i> Tournament Information</div>
+    <div class="collapse-section-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="well well-sm well-custom-green">
+                    <div class="league-info-section">Details</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            {{#if announcement}}
+                            <tr>
+                                <td>Announcement Page</td>
+                                <td><a href="{{announcement}}">{{announcement}}</a></td>
+                            </tr>
+                            {{/if}}
+                            {{#if method}}
+                            <tr>
+                                <td>Method</td>
+                                <td>{{method}}</td>
+                            </tr>
+                            {{/if}}
+                            {{#if gamemodes}}
+                            <tr>
+                                <td>Gamemodes</td>
+                                <td>
+                                    {{#each (sort gamemodes)}}
+                                    {{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}
+                                    {{/each}}
+                                </td>
+                            </tr>
+                            {{/if}}
+                            {{#if teams-count}}
+                            <tr>
+                                <td>Teams</td>
+                                <td>
+                                    <a href="#teams">{{teams-count}} <i class="fas fa-chevron-down"></i></a>
+                                </td>
+                            </tr>
+                            {{/if}}
+                            {{#if teamsize}}
+                            <tr>
+                                <td>Team Size</td>
+                                <td>{{teamsize}}</td>
+                            </tr>
+                            {{/if}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {{#if stages}}
+            <div class="col-md-6">
+                <div class="well well-sm well-custom-green">
+                    <div class="league-info-section">Dates</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            {{#stages}}
+                            <tr>
+                                <td>{{stage}}</td>
+                                <td>{{date}}</td>
+                            </tr>
+                            {{/stages}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {{/if}}
+            {{#if panels}}
+            {{#panels}}
+            <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
+                <div class="well well-sm well-custom-purple">
+                    <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            {{#if rows}}
+                            {{#rows}}
+                            <tr>
+                                {{#if label}}
+                                <td>{{label}}</td>
+                                <td>{{{content}}}</td>
+                                {{else}}
+                                <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                                {{/if}}
+                            </tr>
+                            {{/rows}}
+                            {{else}}
+                            <tr>
+                                <td>This panel has no information.</td>
+                            </tr>
+                            {{/if}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {{/panels}}
+            {{/if}}
         </div>
     </div>
-    {{#if stages}}
-    <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates</div>
-            <table class="league-info-table">
-                <tbody>
-                    {{#stages}}
-                    <tr>
-                        <td>{{stage}}</td>
-                        <td>{{date}}</td>
-                    </tr>
-                    {{/stages}}
-                </tbody>
-            </table>
-        </div>
-    </div>
-    {{/if}}
-    {{#if panels}}
-    {{#panels}}
-    <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
-        <div class="well well-sm well-custom-purple">
-            <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
-            <table class="league-info-table">
-                <tbody>
-                    {{#if rows}}
-                    {{#rows}}
-                    <tr>
-                        {{#if label}}
-                        <td>{{label}}</td>
-                        <td>{{{content}}}</td>
-                        {{else}}
-                        <td colspan="2" style="font-weight:400">{{{content}}}</td>
-                        {{/if}}
-                    </tr>
-                    {{/rows}}
-                    {{else}}
-                    <tr>
-                        <td>This panel has no information.</td>
-                    </tr>
-                    {{/if}}
-                </tbody>
-            </table>
-        </div>
-    </div>
-    {{/panels}}
-    {{/if}}
 </div>
 {{#if maps}}
-<div class="league-info-section large">Map Pool <small>{{length maps}} maps</small></div>
-<div class="dynamic">
-    {{#maps}}
-    {{> page_maps_thumbnail_advanced}}
-    {{/maps}}
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true"><i class="fas fa-angle-down"></i> Map Pool <small>{{length maps}} maps</small></div>
+    <div class="collapse-section-body">
+        <div class="dynamic">
+            {{#maps}}
+            {{> page_maps_thumbnail_advanced}}
+            {{/maps}}
+        </div>
+    </div>
 </div>
 {{/if}}
 {{#if teams}}
-<div id="teams">
-    <div class="league-info-section large">Teams <small>{{teams-count}}</small></div>
-    {{#gte (length teams) 2}}
-    <ul class="nav nav-tabs tm-teams-tabs" role="tablist">
-        {{#teams}}
-        <li {{#if @first}}class="active"{{/if}}>
-            <a href="#{{snakecase (lowercase name)}}" role="tab" data-toggle="tab">{{name}}</a>
-        </li>
-        {{/teams}}
-    </ul>
-    <div class="checkbox tm-teams-fade-checkbox">
-        <label>
-            <input type="checkbox" id="team-fade-checkbox" checked>
-            Fade Teams That Did Not Advance
-        </label>
-    </div>
-    <div class="tab-content">
-        {{#teams}}
-        <div role="tabpanel" class="tab-pane{{#if @first}} active{{/if}}{{#if advances}} tm-group-advances{{/if}}" id="{{snakecase (lowercase name)}}">
-            {{> team_section}}
+<div class="collapse-section" id="teams">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true"><i class="fas fa-angle-down"></i> Teams <small>{{teams-count}}</small></div>
+    <div class="collapse-section-body">
+        {{#gte (length teams) 2}}
+        <ul class="nav nav-tabs tm-teams-tabs" role="tablist">
+            {{#teams}}
+            <li {{#if @first}}class="active"{{/if}}>
+                <a href="#{{snakecase (lowercase name)}}" role="tab" data-toggle="tab">{{name}}</a>
+            </li>
+            {{/teams}}
+        </ul>
+        <div class="checkbox tm-teams-fade-checkbox">
+            <label>
+                <input type="checkbox" id="team-fade-checkbox" checked>
+                Fade Teams that did not Advance
+            </label>
         </div>
+        <div class="tab-content">
+            {{#teams}}
+            <div role="tabpanel" class="tab-pane{{#if @first}} active{{/if}}{{#if advances}} tm-group-advances{{/if}}" id="{{snakecase (lowercase name)}}">
+                {{> team_section}}
+            </div>
+            {{/teams}}
+        </div>
+        {{else}}
+        {{#teams}}
+        {{> team_section}}
         {{/teams}}
+        {{/gte}}
     </div>
-    {{else}}
-    {{#teams}}
-    {{> team_section}}
-    {{/teams}}
-    {{/gte}}
 </div>
 {{/if}}
 {{> navigation_footer}}

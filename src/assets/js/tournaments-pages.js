@@ -17,4 +17,17 @@ $(function() {
             $(this).text('Hide Full Results');
         }
     });
+
+    $('.collapse-section-heading').click(function() {
+        body = $(this).parent().find('.collapse-section-body');
+        $(body).slideToggle('200');
+        expanded = $(this).data('expanded');
+        if (expanded) {
+            $(this).data('expanded', false);
+            $(this).find('.fas').removeClass('fa-angle-down').addClass('fa-angle-right');
+        } else {
+            $(this).data('expanded', true);
+            $(this).find('.fas').removeClass('fa-angle-right').addClass('fa-angle-down');
+        }
+    });
 });
