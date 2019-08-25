@@ -140,10 +140,12 @@
                                 <td><a href="{{announcement}}">{{announcement}}</a></td>
                             </tr>
                             {{/if}}
-                            {{#if method}}
+                            {{#if format}}
                             <tr>
-                                <td>Method</td>
-                                <td>{{method}}</td>
+                                <td>Format</td>
+                                <td>
+                                    {{#each format}}{{this}}{{#unless @last}}<i class="fas fa-long-arrow-alt-right" style="vertical-align: middle; padding-left: 7px; padding-right: 6px;"></i>{{/unless}}{{/each}}
+                                </td>
                             </tr>
                             {{/if}}
                             {{#if gamemodes}}
