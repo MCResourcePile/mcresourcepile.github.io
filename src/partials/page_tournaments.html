@@ -232,18 +232,22 @@
         <div class="row" style="margin-top: -5px;">
             {{#videos}}
             <div class="col-md-6">
-                <div class="video-embed-header">
-                    {{#is service 'youtube'}}
-                    <i class="fab fa-youtube" style="color: #FF0000; margin-top: -3px;"></i>
-                    {{else}}
-                    {{#is service 'twitch'}}
-                    <i class="fab fa-twitch" style="color: #6441A4; margin-top: 1px;"></i>
-                    {{/is}}
-                    {{/is}}
-                    <div class="video-embed-title">{{title}}</div>
-                    {{#if description}}
-                    <div class="video-embed-description">{{description}}</div>
-                    {{/if}}
+                <div class="video-embed-header row">
+                    <div class="col-sm-2 col-xs-3">
+                        {{#is service 'youtube'}}
+                        <i class="fab fa-youtube" style="color: #FF0000; margin-top: -3px;"></i>
+                        {{else}}
+                        {{#is service 'twitch'}}
+                        <i class="fab fa-twitch" style="color: #6441A4; margin-left: 8px;"></i>
+                        {{/is}}
+                        {{/is}}
+                    </div>
+                    <div class="col-sm-10 col-xs-9">
+                        <div class="video-embed-title">{{title}}</div>
+                        {{#if description}}
+                        <div class="video-embed-description">{{description}}</div>
+                        {{/if}}
+                    </div>
                 </div>
                 <div class="video-embed">
                     {{#is service 'youtube'}}

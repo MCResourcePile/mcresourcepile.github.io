@@ -1883,30 +1883,44 @@ pre > code {
 }
 
 .video-embed-header {
-    padding-bottom: 20px;
+    padding-right: 5px;
 }
 
-.video-embed-header > .fab {
-    float: left;
+@media (max-width: 767px) {
+    .video-embed-header {
+        padding-bottom: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .video-embed-header {
+        padding-bottom: 10px;
+    }
+}
+
+.video-embed-header .fab {
     font-size: 56px;
     padding-left: 5px;
-    padding-right: 30px;
+    padding-right: 25px;
 }
 
-.video-embed-header > .video-embed-title {
+.video-embed-header .video-embed-title {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 1;
+    margin-top: 3px;
+    margin-bottom: 8px;
 }
 
-.video-embed-header > .video-embed-description {
+.video-embed-header .video-embed-description {
     color: #ababab;
-    line-height: 1.25;
+    line-height: 1;
 }
 
 .video-embed {
     position: relative;
     padding-bottom: 56.25%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .video-embed iframe {
