@@ -11,16 +11,14 @@ $(function() {
         expanded = $(this).data('expanded');
         if (expanded) {
             $(this).data('expanded', false);
-            $(this).text('Show Full Results');
+            $(this).text('Show Full Results +');
         } else {
             $(this).data('expanded', true);
-            $(this).text('Hide Full Results');
+            $(this).text('Hide Full Results -');
         }
     });
 
     $('.collapse-section-heading').click(function() {
-        body = $(this).parent().find('.collapse-section-body');
-        $(body).slideToggle('200');
         expanded = $(this).data('expanded');
         if (expanded) {
             $(this).data('expanded', false);

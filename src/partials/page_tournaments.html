@@ -44,7 +44,7 @@
     {{/if}}
 </div>
 {{#results}}
-<div class="center">
+<div class="center" style="margin-bottom: 5px;">
     {{#if first_place}}
     <div class="league-position league-position-first">
         <i class="fas fa-trophy"></i>
@@ -70,64 +70,67 @@
         <h5>Information on this page may not be final.</h5>
     </div>
     {{/if}}
-    {{#or challonge panels}}
-    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse">Show Full Results</a>
-    {{/or}}
 </div>
 {{#or challonge panels}}
-<div class="collapse" id="resultsCollapse">
-    <div class="league-results">
-        {{#if panels}}
-        {{#panels}}
-        <div class="row">
-            <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
-                <div class="well well-sm well-custom-blue">
-                    <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
-                    <table class="league-info-table">
-                        <tbody>
-                            {{#if rows}}
-                            {{#rows}}
-                            <tr>
-                                {{#if label}}
-                                <td>{{label}}</td>
-                                <td>{{{content}}}</td>
+<div class="tm-results">
+    <span class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" data-target="#section-results">Show Full Results +</span>
+    <div class="collapse" id="section-results">
+        <div class="tm-results-well">
+            {{#if panels}}
+            {{#panels}}
+            <div class="row">
+                <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
+                    <div class="well well-sm well-custom-blue">
+                        <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
+                        <table class="league-info-table">
+                            <tbody>
+                                {{#if rows}}
+                                {{#rows}}
+                                <tr>
+                                    {{#if label}}
+                                    <td>{{label}}</td>
+                                    <td>{{{content}}}</td>
+                                    {{else}}
+                                    <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                                    {{/if}}
+                                </tr>
+                                {{/rows}}
                                 {{else}}
-                                <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                                <tr>
+                                    <td>This panel has no information.</td>
+                                </tr>
                                 {{/if}}
-                            </tr>
-                            {{/rows}}
-                            {{else}}
-                            <tr>
-                                <td>This panel has no information.</td>
-                            </tr>
-                            {{/if}}
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-        {{/panels}}
-        {{/if}}
-        {{#if challonge}}
-        {{#challonge}}
-        <div class="challonge-bracket">
-            {{#if description}}
-            <span>{{description}}</span>
+            {{/panels}}
             {{/if}}
-            <a href="{{url}}" target="_blank">
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-            <iframe src="{{url}}/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+            {{#if challonge}}
+            <div class="challonge-brackets">
+                {{#challonge}}
+                <div class="challonge-bracket">
+                    {{#if description}}
+                    <span>{{description}}</span>
+                    {{/if}}
+                    <a href="{{url}}" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <iframe src="{{url}}/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+                </div>
+                {{/challonge}}
+            </div>
+            {{/if}}
         </div>
-        {{/challonge}}
-        {{/if}}
     </div>
 </div>
 {{/or}}
 {{/results}}
+{{#information}}
 <div class="collapse-section">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true"><i class="fas fa-angle-down"></i> Tournament Information</div>
-    <div class="collapse-section-body">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
+    <div class="collapse in" id="section-info">
         <div class="row">
             <div class="col-md-6">
                 <div class="well well-sm well-custom-green">
@@ -225,10 +228,11 @@
         </div>
     </div>
 </div>
+{{/information}}
 {{#if videos}}
 <div class="collapse-section">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true"><i class="fas fa-angle-down"></i> Videos <small>{{length videos}} videos</small></div>
-    <div class="collapse-section-body">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-videos"><i class="fas fa-angle-down"></i> Videos <small>{{length videos}} videos</small></div>
+    <div class="collapse in" id="section-videos">
         <div class="row" style="margin-top: -5px;">
             {{#videos}}
             <div class="col-md-6">
@@ -249,7 +253,7 @@
                         {{/if}}
                     </div>
                 </div>
-                <div class="video-embed">
+                <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 20px;">
                     {{#is service 'youtube'}}
                         {{#is type 'video'}}
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
@@ -282,8 +286,8 @@
 {{/if}}
 {{#if maps}}
 <div class="collapse-section">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true"><i class="fas fa-angle-down"></i> Map Pool <small>{{length maps}} maps</small></div>
-    <div class="collapse-section-body">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-maps"><i class="fas fa-angle-down"></i> Map Pool <small>{{length maps}} maps</small></div>
+    <div class="collapse in" id="section-maps">
         <div class="dynamic">
             {{#maps}}
             {{> page_maps_thumbnail_advanced}}
@@ -294,8 +298,8 @@
 {{/if}}
 {{#if teams}}
 <div class="collapse-section" id="teams">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true"><i class="fas fa-angle-down"></i> Teams <small>{{teams-count}}</small></div>
-    <div class="collapse-section-body">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>{{teams-count}}</small></div>
+    <div class="collapse in" id="section-teams">
         {{#gte (length teams) 2}}
         <ul class="nav nav-tabs tm-teams-tabs" role="tablist">
             {{#teams}}
