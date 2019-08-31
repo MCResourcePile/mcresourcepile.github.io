@@ -1169,13 +1169,50 @@ input[type="text"] {
     transition: .3s;
 }
 
-.no-banner > .tm-banner-row:not(:last-child) {
+.no-banners > .tm-banner-row .league-default-banner,
+.no-banners > .tm-banner-row .league-banner {
+    display: none;
+}
+
+.no-banners > .tm-banner-row:not(:last-child) {
     border-bottom: 1px solid #cbcaca;
     margin-bottom: 12px;
 }
 
-.no-banner > .tm-banner-row:not(:last-child) .tm-tags {
+.no-banners > .tm-banner-row:not(:last-child) .tm-tags {
     margin-bottom: 10px;
+}
+
+.tm-banner-options {
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.tm-banner-options a {
+    color: inherit;
+}
+
+.tm-banner-options span {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 1px 6px;
+    margin: 2px 5px;
+    border-radius: 16px;
+    white-space: nowrap;
+}
+
+.tm-banner-options span:hover, 
+.tm-banner-options span:focus {
+    background-color: #b6c0ff;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.tm-banner-options span.active {
+    background-color: #5f6fc7;
+    color: #fff;
 }
 
 .tm-labels > a:hover {
