@@ -1174,6 +1174,10 @@ input[type="text"] {
     display: none;
 }
 
+.no-banners > .tm-banner-row > a:hover > .league-default-banner {
+    display: none;
+}
+
 .no-banners > .tm-banner-row:not(:last-child) {
     border-bottom: 1px solid #cbcaca;
     margin-bottom: 12px;
@@ -1204,7 +1208,9 @@ input[type="text"] {
 }
 
 .tm-banner-options span:hover, 
-.tm-banner-options span:focus {
+.tm-banner-options span:focus,
+.tm-banner-options a > span:hover,
+.tm-banner-options a > span:focus {
     background-color: #b6c0ff;
     transition: 0.2s;
     cursor: pointer;
@@ -1944,37 +1950,30 @@ pre > code {
     text-align: center;
 }
 
+.video-embed-labels {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.video-embed-labels .fab {
+    font-size: 22px;
+    vertical-align: middle;
+}
+
 .video-embed-header {
-    padding-right: 5px;
-}
-
-@media (max-width: 767px) {
-    .video-embed-header {
-        padding-bottom: 15px;
-    }
-}
-
-@media (min-width: 768px) {
-    .video-embed-header {
-        padding-bottom: 10px;
-    }
-}
-
-.video-embed-header .fab {
-    font-size: 56px;
-    padding-left: 5px;
-    padding-right: 25px;
+    height: 65px;
 }
 
 .video-embed-header .video-embed-title {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1;
     margin-top: 3px;
-    margin-bottom: 8px;
+    margin-bottom: 3px;
 }
 
 .video-embed-header .video-embed-description {
-    color: #ababab;
+    color: #878787;
     line-height: 1;
+    font-size: 13px;
 }

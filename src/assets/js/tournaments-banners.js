@@ -19,4 +19,8 @@ $(function() {
         $('span#display-banners').removeClass('active');
         $('.list').addClass('no-banners');
     }
+
+    var myLazyLoad = new LazyLoad({
+        elements_selector: '.lazy',
+    });
 });
