@@ -1950,30 +1950,68 @@ pre > code {
     text-align: center;
 }
 
+#section-videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.video-embed {
+    margin-bottom: 10px;
+}
+
+.video-embed-info {
+    border: 0.5px #ededed solid;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #f2f1f6;
+    padding: 5px 10px 10px 10px;
+    text-align: center;
+}
+
+@media (max-width: 413px) {
+    .video-embed-info {
+        width: 310px;
+    }
+}
+
+@media (min-width: 414px) and (max-width: 659px) {
+    .video-embed-info {
+        width: 400px;
+    }
+}
+
+@media (min-width: 660px) and (max-width: 767px) {
+    .video-embed-info {
+        width: 310px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .video-embed-info {
+        width: 355px;
+    }
+}
+
+@media (min-width: 992px) {
+    .video-embed-info {
+        width: 375px;
+    }
+}
+
 .video-embed-labels {
-    font-size: 12px;
-    font-weight: 300;
-}
-
-.video-embed-labels .fab {
-    font-size: 22px;
-    vertical-align: middle;
-}
-
-.video-embed-header {
-    height: 65px;
-}
-
-.video-embed-header .video-embed-title {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1;
-    margin-top: 3px;
-    margin-bottom: 3px;
-}
-
-.video-embed-header .video-embed-description {
-    color: #878787;
-    line-height: 1;
+    margin-bottom: -2px;
     font-size: 13px;
+}
+
+.video-embed-title {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.25;
+}
+
+.video-embed-description {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 1.15;
 }
