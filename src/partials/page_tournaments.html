@@ -233,52 +233,54 @@
 <div class="collapse-section">
     <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-videos"><i class="fas fa-angle-down"></i> Videos <small>{{inflect (length videos) "video" "videos" true}}</small></div>
     <div class="collapse in" id="section-videos">
-        {{#videos}}
-        <div class="video-embed">
-            <div class="embed-responsive embed-responsive-16by9">
-                {{#is service 'youtube'}}
-                    {{#is type 'video'}}
-                    <iframe src="https://www.youtube.com/embed/{{id}}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
-                    {{else}}
-                    {{#is type 'playlist'}}
-                    <iframe src="https://www.youtube.com/embed/videoseries?list={{id}}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
-                    {{/is}}
-                    {{/is}}
-                {{else}}
-                {{#is service 'twitch'}}
-                    {{#is type 'collection'}}
-                    <iframe src="https://player.twitch.tv/?autoplay=false&collection={{id}}" allowfullscreen="true" scrolling="no"></iframe>
-                    {{else}}
-                    {{#is type 'clip'}}
-                    <iframe src="https://clips.twitch.tv/embed?autoplay=false&clip={{id}}" allowfullscreen="true" scrolling="no"></iframe>
-                    {{else}}
-                    {{#is type 'video'}}
-                    <iframe src="https://player.twitch.tv/?autoplay=false&video={{id}}"  allowfullscren="true" scrolling="no"></iframe>
-                    {{/is}}
-                    {{/is}}
-                    {{/is}}
-                {{/is}}
-                {{/is}}
-            </div>
-            <div class="video-embed-info">
-                <div class="video-embed-labels">
+        <div class="video-embed-container">
+            {{#videos}}
+            <div class="video-embed">
+                <div class="embed-responsive embed-responsive-16by9">
                     {{#is service 'youtube'}}
-                    <i class="fab fa-youtube" style="color: #FF0000"></i>
+                        {{#is type 'video'}}
+                        <iframe src="https://www.youtube.com/embed/{{id}}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        {{else}}
+                        {{#is type 'playlist'}}
+                        <iframe src="https://www.youtube.com/embed/videoseries?list={{id}}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        {{/is}}
+                        {{/is}}
                     {{else}}
                     {{#is service 'twitch'}}
-                    <i class="fab fa-twitch" style="color: #6441A4"></i>
+                        {{#is type 'collection'}}
+                        <iframe src="https://player.twitch.tv/?autoplay=false&collection={{id}}" allowfullscreen="true" scrolling="no"></iframe>
+                        {{else}}
+                        {{#is type 'clip'}}
+                        <iframe src="https://clips.twitch.tv/embed?autoplay=false&clip={{id}}" allowfullscreen="true" scrolling="no"></iframe>
+                        {{else}}
+                        {{#is type 'video'}}
+                        <iframe src="https://player.twitch.tv/?autoplay=false&video={{id}}"  allowfullscren="true" scrolling="no"></iframe>
+                        {{/is}}
+                        {{/is}}
+                        {{/is}}
                     {{/is}}
                     {{/is}}
-                    - {{capitalize type}}
-                    {{#if highlight}}
-                    <i class="fas fa-star" style="color: #FFD81F; margin-left: 15px;"></i> - Highlight
-                    {{/if}}
                 </div>
-                <div class="video-embed-title">{{title}}</div>
-                <div class="video-embed-description">{{description}}</div>
+                <div class="video-embed-info">
+                    <div class="video-embed-labels">
+                        {{#is service 'youtube'}}
+                        <i class="fab fa-youtube" style="color: #FF0000"></i>
+                        {{else}}
+                        {{#is service 'twitch'}}
+                        <i class="fab fa-twitch" style="color: #6441A4"></i>
+                        {{/is}}
+                        {{/is}}
+                        - {{capitalize type}}
+                        {{#if highlight}}
+                        <i class="fas fa-star" style="color: #FFD81F; margin-left: 15px;"></i> - Highlight
+                        {{/if}}
+                    </div>
+                    <div class="video-embed-title">{{title}}</div>
+                    <div class="video-embed-description">{{description}}</div>
+                </div>
             </div>
+            {{/videos}}
         </div>
-        {{/videos}}
     </div>
 </div>
 {{/if}}
