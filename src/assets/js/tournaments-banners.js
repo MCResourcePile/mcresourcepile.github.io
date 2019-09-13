@@ -20,7 +20,7 @@ $(function() {
         $('.list').addClass('no-banners');
     }
 
-    var myLazyLoad = new LazyLoad({
+    var lazyLoad = new LazyLoad({
         elements_selector: '.lazy',
     });
 });

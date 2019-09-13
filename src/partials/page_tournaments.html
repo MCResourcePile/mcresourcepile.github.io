@@ -53,12 +53,12 @@
     </div>
     <div class="row">
         <div class="league-position col-sm-6">
-            <i class="fas fa-star"></i>
+            <i class="fas fa-medal"></i>
             <div class="league-team">{{second_place}}</div>
             <div class="league-team-position">2<sup>nd</sup> place</div>
         </div>
         <div class="league-position col-sm-6">
-            <i class="fas fa-star-half-alt"></i>
+            <i class="fas fa-medal"></i>
             <div class="league-team">{{third_place}}</div>
             <div class="league-team-position">3<sup>rd</sup> place</div>
         </div>
@@ -77,10 +77,10 @@
     <div class="collapse" id="section-results">
         <div class="tm-results-well">
             {{#if panels}}
-            {{#panels}}
-            <div class="row">
+            <div class="row" id="results-panels">
+                {{#panels}}
                 <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
-                    <div class="well well-sm well-custom-blue">
+                    <div class="league-information blue">
                         <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
                         <table class="league-info-table">
                             <tbody>
@@ -91,7 +91,7 @@
                                     <td>{{label}}</td>
                                     <td>{{{content}}}</td>
                                     {{else}}
-                                    <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                                    <td colspan="2" style="font-weight: 400;">{{{content}}}</td>
                                     {{/if}}
                                 </tr>
                                 {{/rows}}
@@ -104,11 +104,11 @@
                         </table>
                     </div>
                 </div>
+                {{/panels}}
             </div>
-            {{/panels}}
             {{/if}}
             {{#if challonge}}
-            <div class="challonge-brackets">
+            <div id="challonge-brackets">
                 {{#challonge}}
                 <div class="challonge-bracket">
                     {{#if description}}
@@ -133,7 +133,7 @@
     <div class="collapse in" id="section-info">
         <div class="row">
             <div class="col-md-6">
-                <div class="well well-sm well-custom-green">
+                <div class="league-information red">
                     <div class="league-info-section">Details</div>
                     <table class="league-info-table">
                         <tbody>
@@ -181,7 +181,7 @@
             </div>
             {{#if stages}}
             <div class="col-md-6">
-                <div class="well well-sm well-custom-green">
+                <div class="league-information red">
                     <div class="league-info-section">Dates</div>
                     <table class="league-info-table">
                         <tbody>
@@ -199,7 +199,7 @@
             {{#if panels}}
             {{#panels}}
             <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
-                <div class="well well-sm well-custom-purple">
+                <div class="league-information green">
                     <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
                     <table class="league-info-table">
                         <tbody>
@@ -210,7 +210,7 @@
                                 <td>{{label}}</td>
                                 <td>{{{content}}}</td>
                                 {{else}}
-                                <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                                <td colspan="2" style="font-weight: 400;">{{{content}}}</td>
                                 {{/if}}
                             </tr>
                             {{/rows}}
