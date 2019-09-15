@@ -5,9 +5,17 @@
     </div>
     <div class="col-md-9 col-md-pull-3{{#if @root.settings.tournaments.no_banner}} no-banners{{/if}}">
         <div class="tm-banner-options thumbnail">
-            <span class="active" id="display-banners"><i class="fas fa-images"></i> Display Banners</span>
-            <a href="/admin/preferences#preference-show-tm-banners" target="_blank">
-                <span><i class="fas fa-cog"></i> Preferences</span>
+            Display: 
+            <span class="active" id="display-text">
+                <i class="fas fa-font"></i> Text</a></li>
+            </span>
+            <span class="active" id="display-banners">
+                <i class="fas fa-images"></i> Banners</a>
+            </span> |
+            <a href="/admin/preferences#preference-tm-banners-display" target="_blank">
+                <span>
+                    <i class="fas fa-cog"></i> Set a Default
+                </span>
             </a>
         </div>
         <div class="list">
@@ -41,7 +49,7 @@
                     </div>
                     {{#unless @root.settings.tournaments.no_banner}}
                     {{#if default_banner}}
-                    <div class="league-default-banner lazy" data-bg="url('../../assets/img/tournament/banners/default/{{default_banner}}.jpg')" style="background-position: center; background-size: cover;">{{name}}</div>
+                    <div class="league-default-banner lazy" data-bg="url('../../assets/img/tournament/banners/default/{{default_banner}}.jpg')" style="background-position: center; background-size: cover;" title="{{name}}">{{name}}</div>
                     {{else}}
                     <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/{{@root.settings.tournaments.host}}/{{snakecase (lowercase name)}}.png">
                     {{/if}}

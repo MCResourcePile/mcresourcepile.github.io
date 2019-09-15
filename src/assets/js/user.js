@@ -19,7 +19,7 @@ class User {
             show_map_stats: true,
             show_map_images: true,
             show_map_suggestions: true,
-            show_tm_banners: true
+            tm_banners_display: "all"
         };
         // check if pre-existing User data exists
         if (this.saveExists()) {
@@ -62,7 +62,7 @@ class User {
             show_map_stats: true,
             show_map_images: true,
             show_map_suggestions: true,
-            show_tm_banners: true
+            tm_banners_display: "all"
         };
         console.log('Successfully reset User site preferences');
         return true;

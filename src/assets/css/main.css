@@ -1170,10 +1170,7 @@ input[type="text"] {
 }
 
 .no-banners > .tm-banner-row .league-default-banner,
-.no-banners > .tm-banner-row .league-banner {
-    display: none;
-}
-
+.no-banners > .tm-banner-row .league-banner,
 .no-banners > .tm-banner-row > a:hover > .league-default-banner {
     display: none;
 }
@@ -1185,6 +1182,20 @@ input[type="text"] {
 
 .no-banners > .tm-banner-row:not(:last-child) .tm-tags {
     margin-bottom: 10px;
+}
+
+.no-text > .tm-banner-row .tm-labels,
+.no-text > .tm-banner-row .tm-name,
+.no-text > .tm-banner-row .tm-tags {
+    display: none;
+}
+
+.tm-banner-options > span.disabled:hover {
+    cursor: not-allowed;
+}
+
+.tm-banner-options > span.active.disabled {
+    background-color: #a3acdf;
 }
 
 .tm-banner-options {
@@ -1201,16 +1212,18 @@ input[type="text"] {
 .tm-banner-options span {
     display: inline-block;
     background-color: #f0f0f0;
-    padding: 1px 6px;
-    margin: 2px 5px;
+    padding: 1px 7px;
+    margin: 2px 1px;
     border-radius: 16px;
     white-space: nowrap;
+    -webkit-user-select: none;  
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.tm-banner-options span:hover, 
-.tm-banner-options span:focus,
-.tm-banner-options a > span:hover,
-.tm-banner-options a > span:focus {
+.tm-banner-options span:hover,
+.tm-banner-options a > span:hover {
     background-color: #b6c0ff;
     transition: 0.2s;
     cursor: pointer;
@@ -1357,7 +1370,7 @@ tr.child i.fa-times {
 }
 
 .league-position-first {
-    padding-top: 30px;
+    padding-top: 20px;
     padding-bottom: 5px;
 }
 
@@ -1504,6 +1517,10 @@ tr.child i.fa-times {
 
 .tm-teams-fade-checkbox {
     color: #000;
+    -webkit-user-select: none;  
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @media (max-width: 500px) {
