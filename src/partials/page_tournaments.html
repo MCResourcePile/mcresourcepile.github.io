@@ -239,10 +239,10 @@
                 <div class="embed-responsive embed-responsive-16by9">
                     {{#is service 'youtube'}}
                         {{#is type 'video'}}
-                        <iframe src="https://www.youtube.com/embed/{{id}}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube-nocookie.com/embed/{{id}}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
                         {{else}}
                         {{#is type 'playlist'}}
-                        <iframe src="https://www.youtube.com/embed/videoseries?list={{id}}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list={{id}}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
                         {{/is}}
                         {{/is}}
                     {{else}}
