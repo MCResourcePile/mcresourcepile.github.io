@@ -1,0 +1,36 @@
+{{#gte (length groups) 4}}
+<div class="tm-team-groups-grid">
+    {{#each groups}}
+    <div class="tm-team-group">
+        {{#if name}}
+        <div class="team-group-name">{{name}}</div>
+        <div class="team-group-name team-group-count">{{length teams}} teams</div>
+        {{/if}}
+        {{#if description}}
+        <div class="team-group-name team-group-description">{{description}}</div>
+        {{/if}}
+        {{#each teams}}
+        {{> team_box}}
+        {{/each}}
+    </div>
+    {{/each}}
+</div>
+{{else}}
+{{#each groups}}
+<div class="tm-team-group">
+    {{#if name}}
+    <div class="team-group-name">{{name}}</div>
+    <div class="team-group-name team-group-count">{{length teams}} teams</div>
+    {{/if}}
+    {{#if description}}
+    <div class="team-group-name team-group-description">{{description}}</div>
+    {{/if}}
+    <div class="tm-team-group-teams">
+        {{#each teams}}
+        {{> team_box}}
+        {{/each}}
+    </div>
+    {{#unless @last}}<hr>{{/unless}}
+</div>
+{{/each}}
+{{/gte}}

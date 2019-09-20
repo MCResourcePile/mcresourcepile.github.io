@@ -3,6 +3,11 @@
     "subtitle": "Records for Project Redemption, a tournament hosted by the Avicus Network.",
     "page-category": ["tournaments", "league", "avicus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "avicus"
         }
@@ -21,14 +26,16 @@
             {"url": "https://avicus.challonge.com/ProjectRedemption", "description": "Bracket"}
         ]
     },
-    "method": "Group Stage, then Invitationals (Bo3 Semifinals & Finals)",
-    "gamemodes": ["ctw", "dtm"],
-    "teams": "12 teams",
-    "teamsize": "8v8",
-    "stages": [
-        {"stage": "Group Stage",   "date": "December 3, 2016"},
-        {"stage": "Invitationals", "date": "December 10, 2016"}
-    ],
+    "information": {
+        "format": ["Qualifier (Group)", "Invitational (Single Elimination, Bo3 Semifinals & Finals)"],
+        "gamemodes": ["ctw", "dtm"],
+        "teams-count": "12 teams",
+        "teamsize": "8v8",
+        "stages": [
+            {"stage": "Group Stage",   "date": "December 3, 2016"},
+            {"stage": "Invitationals", "date": "December 10, 2016"}
+        ]
+    },
     "maps": [
         {
             "name": "Static",
@@ -56,27 +63,47 @@
             "tags": ["dtm"]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "name": "Group A",
-            "teams": [
-                {"name": "Apollo"},
-                {"name": "Sagrevyum"},
-                {"name": "Cronus"},
-                {"name": "Cacalmarin"},
-                {"name": "Jalapenos"},
-                {"name": "Twix"}
+            "name": "Qualifier",
+            "advances": true,
+            "groups": [
+                {
+                    "name": "Group A",
+                    "teams": [
+                        {"name": "Apollo", "advances": true},
+                        {"name": "Cacalmarin"},
+                        {"name": "Cronus"},
+                        {"name": "Jalapenos"},
+                        {"name": "Sagrevyum", "advances": true},
+                        {"name": "Twix"}
+                    ]
+                },
+                {
+                    "name": "Group B",
+                    "teams": [
+                        {"name": "Cennet", "advances": true},
+                        {"name": "HOME"},
+                        {"name": "labradoodles"},
+                        {"name": "SpaceDeepers"},
+                        {"name": "Team Allah", "advances": true},
+                        {"name": "Team Rocket"}
+                    ]
+                }
             ]
         },
         {
-            "name": "Group B",
-            "teams": [
-                {"name": "Cennet"},
-                {"name": "Team Allah"},
-                {"name": "Team Rocket"},
-                {"name": "labradoodles"},
-                {"name": "SpaceDeepers"},
-                {"name": "HOME"}
+            "name": "Invitational",
+            "groups": [
+                {
+                    "name": "Invitational",
+                    "teams": [
+                        {"name": "Apollo"},
+                        {"name": "Cennet"},
+                        {"name": "Sagrevyum"},
+                        {"name": "Team Allah"}
+                    ]
+                }
             ]
         }
     ]

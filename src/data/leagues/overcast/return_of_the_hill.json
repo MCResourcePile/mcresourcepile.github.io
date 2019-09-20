@@ -3,6 +3,11 @@
     "subtitle": "Records for Return of the Hill, a tournament hosted by Overcast Network",
     "page-category": ["tournaments", "league", "overcast"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "overcast"
         }
@@ -30,24 +35,30 @@
             {"url": "https://ocn.challonge.com/roth", "description": "Invitational"}
         ]
     },
-    "method": "3 Week Qualifiers, then Single Elimination Invitational",
-    "gamemodes": ["ctw", "dtc", "dtm", "tdm", "koth"],
-    "teams": "72 teams",
-    "teamsize": "8v8",
-    "panels": [
-        {
-            "label": "Qualifier Weeks Groups",
-            "size": "full",
-            "rows": [
-                {"content": "<a href='https://docs.google.com/spreadsheets/d/1ScNcz4I1hy4CL06mcf64KsrXFx90UQVNFHHojZ2S_do/edit#gid=0' target='_blank'>Week 1 Groups (Google Sheets)</a><br><br><a href='https://docs.google.com/spreadsheets/d/1RHAZodg71ZPgVL-2DH__WZA9zJsLKkhBAXFTIwZhsAA/edit#gid=2' target='_blank'>Week 2 Groups (Google Sheets)</a><br><br><a href='https://docs.google.com/spreadsheets/d/1PhvEduj2dTYHqAqudJiDFrFSYWGcYNzVfpKU_v_K09E/edit#gid=0' target='_blank'>Week 3 Groups (Google Sheets)</a>"}
-            ]
-        }
-    ],
-    "stages": [
-        {"stage": "Week 1", "date": "December 7, 2013"},
-        {"stage": "Week 2", "date": "December 14, 2013"},
-        {"stage": "Week 3", "date": "December 21, 2013"},
-        {"stage": "Invitational", "date": "January 4-5, 2014"}
+    "information": {
+        "format": ["Qualifier (Group)", "Invitational (Single Elimination)"],
+        "gamemodes": ["ctw", "dtc", "dtm", "tdm", "koth"],
+        "teams-count": "72 teams",
+        "teamsize": "8v8",
+        "stages": [
+            {"stage": "Week 1", "date": "December 7, 2013"},
+            {"stage": "Week 2", "date": "December 14, 2013"},
+            {"stage": "Week 3", "date": "December 21, 2013"},
+            {"stage": "Invitational", "date": "January 4-5, 2014"}
+        ],
+        "panels": [
+            {
+                "label": "Qualifier Weeks Groups",
+                "size": "full",
+                "rows": [
+                    {"content": "<a href='https://docs.google.com/spreadsheets/d/1ScNcz4I1hy4CL06mcf64KsrXFx90UQVNFHHojZ2S_do/edit#gid=0' target='_blank'>Week 1 Groups (Google Sheets)</a><br><br><a href='https://docs.google.com/spreadsheets/d/1RHAZodg71ZPgVL-2DH__WZA9zJsLKkhBAXFTIwZhsAA/edit#gid=2' target='_blank'>Week 2 Groups (Google Sheets)</a><br><br><a href='https://docs.google.com/spreadsheets/d/1PhvEduj2dTYHqAqudJiDFrFSYWGcYNzVfpKU_v_K09E/edit#gid=0' target='_blank'>Week 3 Groups (Google Sheets)</a>"}
+                ]
+            }
+        ]
+    },
+    "videos": [
+        {"service": "youtube", "type": "video", "id": "_puTPXPwOZ4", "title": "Finals First Match", "description": "First match of the Finals between Ambush and Gamemode 1 on Balloons DTM."},
+        {"service": "youtube", "type": "playlist", "id": "PLpSinlbNk9PlQThTqNlr5rfBZPAH5zTSU", "title": "itsMartin's playlist", "description": "Playlist of matches streamed by itsMartin."}
     ],
     "maps": [
         {
@@ -182,93 +193,114 @@
             "tags": ["koth"]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "teams": [
-                {"name": "Starfish"},
-                {"name": "Loading..."},
-                {"name": "Game Mode 1"},
-                {"name": "Impact"},
-                {"name": "Rebellion"},
-                {"name": "Orbit"},
-                {"name": "Team Fishy"},
-                {"name": "Vindicate"},
-                {"name": "Sabertooth"},
-                {"name": "Prism"},
-                {"name": "Instant Crash"},
-                {"name": "Turquaars"},
-                {"name": "Ambush"},
-                {"name": "LungGlove"},
-                {"name": "Space Monkey Mafia"},
-                {"name": "Team Grief"},
-                {"name": "Resilience"},
-                {"name": "Angry Lambs"}
+            "name": "Qualifier",
+            "advances": true,
+            "groups": [
+                {
+                    "name": "Qualifier",
+                    "teams": [
+                        {"name": "6FPS"},
+                        {"name": "Afternoon Tea"},
+                        {"name": "Ambush", "advances": true},
+                        {"name": "Angry Lambs"},
+                        {"name": "Assassinssoul"},
+                        {"name": "Bacon Warriors"},
+                        {"name": "Bad Intentions"},
+                        {"name": "Blaze Face"},
+                        {"name": "Blaze Rod"},
+                        {"name": "Bloodplayers"},
+                        {"name": "BlowUp!"},
+                        {"name": "Bolt"},
+                        {"name": "Bone Breakers"},
+                        {"name": "Clutch Crew"},
+                        {"name": "Cool People"},
+                        {"name": "Crayola"},
+                        {"name": "CyBlast"},
+                        {"name": "Dauntless"},
+                        {"name": "DeadcraftMC"},
+                        {"name": "Drifters"},
+                        {"name": "Eclipse"},
+                        {"name": "Ender Fox"},
+                        {"name": "Erudite"},
+                        {"name": "Fracture"},
+                        {"name": "Frozensouls"},
+                        {"name": "FusionServer"},
+                        {"name": "Galactia"},
+                        {"name": "Galactic Warriors"},
+                        {"name": "Game Mode 1", "advances": true},
+                        {"name": "Gummybears"},
+                        {"name": "Heavy Falcons"},
+                        {"name": "Impact", "advances": true},
+                        {"name": "Instant Crash", "advances": true},
+                        {"name": "Jaeger"},
+                        {"name": "Killerscraft"},
+                        {"name": "Last Minute!"},
+                        {"name": "Lastfist"},
+                        {"name": "Late Night Shenanigans"},
+                        {"name": "Legacy"},
+                        {"name": "Loading...", "advances": true},
+                        {"name": "Looting III"},
+                        {"name": "LungGlove", "advances": true},
+                        {"name": "Mid-Michigan Murderers"},
+                        {"name": "Narwhals"},
+                        {"name": "No Chance"},
+                        {"name": "Orbit", "advances": true},
+                        {"name": "Outliers"},
+                        {"name": "Prism", "advances": true},
+                        {"name": "Punishers"},
+                        {"name": "Pureblocks"},
+                        {"name": "PvPLeague"},
+                        {"name": "PvPeeps"},
+                        {"name": "R.O.K."},
+                        {"name": "Ragers"},
+                        {"name": "Rebellion", "advances": true},
+                        {"name": "Resilience"},
+                        {"name": "Sabertooth", "advances": true},
+                        {"name": "Satisfactory"},
+                        {"name": "Sent from Heaven"},
+                        {"name": "Sharpness X"},
+                        {"name": "Space Monkey Mafia", "advances": true},
+                        {"name": "Stained Glass"},
+                        {"name": "Starfish", "advances": true},
+                        {"name": "Storm"},
+                        {"name": "Team Bloodhounds"},
+                        {"name": "Team Fishy", "advances": true},
+                        {"name": "Team Grief", "advances": true},
+                        {"name": "The Noobs"},
+                        {"name": "The Unloved Miners"},
+                        {"name": "Turquaars", "advances": true},
+                        {"name": "Unacceptable Behaviors"},
+                        {"name": "Vindicate", "advances": true}
+                    ]
+                }
             ]
         },
         {
-            "teams": [
-                {"name": "Satisfactory"},
-                {"name": "Storm"},
-                {"name": "Team Bloodhounds"},
-                {"name": "Stained Glass"},
-                {"name": "Lastfist"},
-                {"name": "Ender Fox"},
-                {"name": "Bolt"},
-                {"name": "Last Minute!"},
-                {"name": "Frozensouls"},
-                {"name": "DeadcraftMC"},
-                {"name": "Sent from Heaven"},
-                {"name": "R.O.K."},
-                {"name": "Jaeger"},
-                {"name": "Eclipse"},
-                {"name": "Erudite"},
-                {"name": "Bacon Warriors"},
-                {"name": "Drifters"},
-                {"name": "Unacceptable Behaviors"}
-            ]
-        },
-        {
-            "teams": [
-                {"name": "Galactic Warriors"},
-                {"name": "Late Night Shenanigans"},
-                {"name": "The Noobs"},
-                {"name": "Looting III"},
-                {"name": "Bad Intentions"},
-                {"name": "Outliers"},
-                {"name": "Gummybears"},
-                {"name": "Bone Breakers"},
-                {"name": "Bloodplayers"},
-                {"name": "CyBlast"},
-                {"name": "Heavy Falcons"},
-                {"name": "6FPS"},
-                {"name": "Ragers"},
-                {"name": "Dauntless"},
-                {"name": "BlowUp!"},
-                {"name": "PvPLeague"},
-                {"name": "The Unloved Miners"},
-                {"name": "No Chance"}
-            ]
-        },
-        {
-            "teams": [
-                {"name": "Legacy"},
-                {"name": "Cool People"},
-                {"name": "Crayola"},
-                {"name": "Fracture"},
-                {"name": "Mid-Michigan Murderers"},
-                {"name": "PvPeeps"},
-                {"name": "Clutch Crew"},
-                {"name": "Punishers"},
-                {"name": "Narwhals"},
-                {"name": "Blaze Rod"},
-                {"name": "Afternoon Tea"},
-                {"name": "Assassinssoul"},
-                {"name": "Pureblocks"},
-                {"name": "Blaze Face"},
-                {"name": "FusionServer"},
-                {"name": "Killerscraft"},
-                {"name": "Sharpness X"},
-                {"name": "Galactia"}
+            "name": "Invitational",
+            "groups": [
+                {
+                    "name": "Invitational",
+                    "teams": [
+                        {"seed": 1, "name": "Starfish"},
+                        {"seed": 2, "name": "Loading..."},
+                        {"seed": 3, "name": "Game Mode 1"},
+                        {"seed": 4, "name": "Impact"},
+                        {"seed": 5, "name": "Rebellion"},
+                        {"seed": 6, "name": "Orbit"},
+                        {"seed": 7, "name": "Team Fishy"},
+                        {"seed": 8, "name": "Vindicate"},
+                        {"seed": 9, "name": "Sabertooth"},
+                        {"seed": 10, "name": "Prism"},
+                        {"seed": 11, "name": "Instant Crash"},
+                        {"seed": 12, "name": "Turquaars"},
+                        {"seed": 13, "name": "Ambush"},
+                        {"seed": 14, "name": "LungGlove"},
+                        {"seed": 15, "name": "Space Monkey Mafia"},
+                        {"seed": 16, "name": "Team Grief"}
+                    ]
+                }
             ]
         }
     ]

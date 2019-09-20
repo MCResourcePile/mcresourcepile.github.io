@@ -3,6 +3,11 @@
     "subtitle": "Records for Beta Tournament, a tournament hosted by Overcast Network",
     "page-category": ["tournaments", "league", "overcast"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "overcast",
             "default_banner": "complex"
@@ -16,26 +21,31 @@
     "results": {
         "first_place": "Badlion",
         "second_place": "Starfish",
-        "third_place": "Victorious Secret & YoloSwag",
+        "third_place": "Victorious Secret, YoloSwag",
         "challonge": [
             {"url": "https://ocn.challonge.com/beta", "description": "Bracket"}
         ]
     },
-    "method": "Single Elimination (Bo3)",
-    "gamemodes": ["ctw", "dtcm", "tdm"],
-    "teams": "16 teams",
-    "teamsize": "8v8",
-    "panels": [
-        {
-            "label": "Map Selection",
-            "size": "full",
-            "rows": [
-                {"content": "Each round consisted of:<br><ul><li>1 Capture the Wool style map (45 minute time limit)</li><li>1 Team Deathmatch style map</li><li>1 Destroy the Core / Destroy the Monument style map (30 minute time limit)</li><li>Blitz sudden death matches in the case of a tie (10 minute time limit)</li></ul><br>Round 1, QuarterFinals, and SemiFinals each had predetermined maps and order.<br><br>Round 1:<ul><li>Race for Victory 2</li><li>Harb</li><li>Airship Battles</li></ul><br>QuarterFinals:<ul><li>Golden Drought</li><li>Zoo: Tournament</li><li>Cake Wars</li></ul><br>SemiFinals:<ul><li>Race for Victory</li><li>Cairo TDM</li><li>Spaceship Battles</li></ul><br>Finals: \"For each match, both teams chose half of the available maps, as maps they \"want to play.\" If 1 map overlaps, you play that map. If more than 1 overlaps, teams repeat the process (chose half of the available maps, and vote on the overlap). If there is an even number of maps to chose from the teams chose half of the maps plus 1. If there are two maps left and teams cannot agree on a map, a ref will chose the map.\"<br><br>Capture the Wool:<ul><li>Race for Victory</li><li>Race for Victory 2</li><li>Golden Drought</li><li>Fairy Tales 2</li></ul><br>Team Deathmatch:<ul><li>Harb</li><li>Zoo: Tournament</li><li>Cairo TDM</li></ul><br>DTC / DTM:<ul><li>Spaceship Battles</li><li>Airship Battle</li><li>Interitus</li><li>Fortress Battles</li><li>Cake Wars</li><li>Warlock</li><li>Shroom Trip</li></ul>"}
-            ]
-        }
-    ],
-    "stages": [
-        {"stage": "Tournament", "date": "January 19, 2013"}
+    "information": {
+        "format": ["Single Elimination (Bo3)"],
+        "gamemodes": ["ctw", "dtcm", "tdm"],
+        "teams-count": "16 teams",
+        "teamsize": "8v8",
+        "stages": [
+            {"stage": "Tournament", "date": "January 19, 2013"}
+        ],
+        "panels": [
+            {
+                "label": "Map Selection",
+                "size": "full",
+                "rows": [
+                    {"content": "Each round consisted of:<br><ul><li>1 Capture the Wool style map (45 minute time limit)</li><li>1 Team Deathmatch style map</li><li>1 Destroy the Core / Destroy the Monument style map (30 minute time limit)</li><li>Blitz sudden death matches in the case of a tie (10 minute time limit)</li></ul><br>Round 1, QuarterFinals, and SemiFinals each had predetermined maps and order.<br><br>Round 1:<ul><li>Race for Victory 2</li><li>Harb</li><li>Airship Battles</li></ul><br>QuarterFinals:<ul><li>Golden Drought</li><li>Zoo: Tournament</li><li>Cake Wars</li></ul><br>SemiFinals:<ul><li>Race for Victory</li><li>Cairo TDM</li><li>Spaceship Battles</li></ul><br>Finals: \"For each match, both teams chose half of the available maps, as maps they \"want to play.\" If 1 map overlaps, you play that map. If more than 1 overlaps, teams repeat the process (chose half of the available maps, and vote on the overlap). If there is an even number of maps to chose from the teams chose half of the maps plus 1. If there are two maps left and teams cannot agree on a map, a ref will chose the map.\"<br><br>Capture the Wool:<ul><li>Race for Victory</li><li>Race for Victory 2</li><li>Golden Drought</li><li>Fairy Tales 2</li></ul><br>Team Deathmatch:<ul><li>Harb</li><li>Zoo: Tournament</li><li>Cairo TDM</li></ul><br>DTC / DTM:<ul><li>Spaceship Battles</li><li>Airship Battle</li><li>Interitus</li><li>Fortress Battles</li><li>Cake Wars</li><li>Warlock</li><li>Shroom Trip</li></ul>"}
+                ]
+            }
+        ]
+    },
+    "videos": [
+        {"service": "youtube", "type": "video", "id": "mR2Ue_UeNOQ", "title": "Finals Tie Breaker", "description": "Last match of the tournament on The Complex as a tiebreaker between Badlion and Starfish."}
     ],
     "maps": [
         {
@@ -124,41 +134,29 @@
             "tags": ["dtc"]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "seeded": true,
-            "teams": [
-                {"seed": 1, "name": "Badlion"},
-                {"seed": 2, "name": "Starfish"},
-                {"seed": 3, "name": "Victorious Secret"},
-                {"seed": 4, "name": "YoloSwag"}
-            ]
-        },
-        {
-            "seeded": true,
-            "teams": [
-                {"seed": 5, "name": "Impact"},
-                {"seed": 6, "name": "CJam"},
-                {"seed": 7, "name": "Good Kittens"},
-                {"seed": 8, "name": "ODNSBG"}
-            ]
-        },
-        {
-            "seeded": true,
-            "teams": [
-                {"seed": 9, "name": "Omega Awesome"},
-                {"seed": 10, "name": "The Ninja Squad"},
-                {"seed": 11, "name": "OCBP"},
-                {"seed": 12, "name": "Mumbell"}
-            ]
-        },
-        {
-            "seeded": true,
-            "teams": [
-                {"seed": 13, "name": "Game Mode 1"},
-                {"seed": 14, "name": "Argonian Berzerkers"},
-                {"seed": 15, "name": "Totally Decent"},
-                {"seed": 16, "name": "Underdogs"}
+            "groups": [
+                {
+                    "teams": [
+                        {"seed": 1, "name": "Badlion"},
+                        {"seed": 2, "name": "Starfish"},
+                        {"seed": 3, "name": "Victorious Secret"},
+                        {"seed": 4, "name": "YoloSwag"},
+                        {"seed": 5, "name": "Impact"},
+                        {"seed": 6, "name": "CJam"},
+                        {"seed": 7, "name": "Good Kittens"},
+                        {"seed": 8, "name": "ODNSBG"},
+                        {"seed": 9, "name": "Omega Awesome"},
+                        {"seed": 10, "name": "The Ninja Squad"},
+                        {"seed": 11, "name": "OCBP"},
+                        {"seed": 12, "name": "Mumbell"},
+                        {"seed": 13, "name": "Game Mode 1"},
+                        {"seed": 14, "name": "Argonian Berzerkers"},
+                        {"seed": 15, "name": "Totally Decent"},
+                        {"seed": 16, "name": "Underdogs"}
+                    ]
+                }
             ]
         }
     ]

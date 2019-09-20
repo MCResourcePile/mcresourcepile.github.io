@@ -3,6 +3,11 @@
     "subtitle": "Records for Stratus: Return of the Gamemodes, a tournament hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "stratus"
         }
@@ -15,19 +20,43 @@
     "results": {
         "first_place": "DARN",
         "second_place": "Night Vision",
-        "third_place": "Obey & OKTG",
+        "third_place": "Obey, OKTG",
+        "panels": [
+            {
+                "label": "Group Stages Results",
+                "size": "full",
+                "rows": [
+                    {"content": "<a href=\"https://docs.google.com/spreadsheets/d/1amaOA8c6iMzfw0VO5ZAnkgjiz03364T2dkkM1p0Nndg/edit#gid=0\" target=\"_blank\">Google Sheets</a>"}
+                ]
+            }
+        ],
         "challonge": [
             {"url": "https://stratus.challonge.com/RotG", "description": "Bracket"}
         ]
     },
-    "method": "Round-Robin group stages, then Single Elimination Invitational",
-    "gamemodes": ["dtc", "dtm", "ctw", "tdm", "koth", "cp", "ctf"],
-    "teams": "17 teams",
-    "teamsize": "8v8",
-    "stages": [
-        {"stage": "Group Stage", "date": "June 24-25, 2017"},
-        {"stage": "QuarterFinals", "date": "July 1, 2017"},
-        {"stage": "SemiFinals and Finals", "date": "July 2, 2017"}
+    "information": {
+        "format": ["Qualifier (Round-Robin Group)", "Invitational (Single Elimination)"],
+        "gamemodes": ["dtc", "dtm", "ctw", "tdm", "koth", "cp", "ctf"],
+        "teams-count": "17 teams",
+        "teamsize": "8v8",
+        "stages": [
+            {"stage": "Qualifier", "date": "June 24-25, 2017"},
+            {"stage": "QuarterFinals", "date": "July 1, 2017"},
+            {"stage": "SemiFinals and Finals", "date": "July 2, 2017"}
+        ],
+        "panels": [
+            {
+                "label": "The winner of the tournament: DARN",
+                "size": "full",
+                "rows": [
+                    {"content": "<p>Roster of the team:</p><br><ul><li>Igmatias</li><li>Zegita</li><li>Brandoff</li><li>Spooks_9900</li><li>Pedrah</li><li>Hivlik</li><li>anbu_</li><li>Tomqss</li><li>Jyesuhn</li><li>INSIPID</li><li>Rau1</li><li>xNemoll</li><li>JaidenSmih</li><li>noTwp</li></ul>"}
+                ]
+            }
+        ]
+    },
+    "videos": [
+        {"service": "twitch", "type": "video", "id": "157368272", "title": "Finals - DARN vs Night Vision", "description": "Stream of the Finals between DARN and Night Vision."},
+        {"service": "twitch", "type": "video", "id": "157367077", "title": "Semifinals - OKTG vs Night Vision", "description": "Stream of the Semifinals between OKTG and Night Vision."}
     ],
     "maps": [
         {
@@ -126,48 +155,73 @@
             "tags": ["ctf", "koth"]
         }
     ],
-    "panels": [
+    "teams": [
         {
-            "label": "The winner of the tournament: DARN",
-            "size": "full",
-            "rows": [
-                {"content": "<p>Roster of the team:</p><br><ul><li>Igmatias</li><li>Zegita</li><li>Brandoff</li><li>Spooks_9900</li><li>Pedrah</li><li>Hivlik</li><li>anbu_</li><li>Tomqss</li><li>Jyesuhn</li><li>INSIPID</li><li>Rau1</li><li>xNemoll</li><li>JaidenSmih</li><li>noTwp</li></ul>"}
+            "name": "Qualifier",
+            "advances": true,
+            "groups": [
+                {
+                    "name": "Group A",
+                    "teams": [
+                        {"name": "Amnesia", "advances": true},
+                        {"name": "HeartClaw", "advances": true},
+                        {"name": "Lucid", "advances": true},
+                        {"name": "Obey", "advances": true}
+                    ]
+                },
+                {
+                    "name": "Group B",
+                    "teams": [
+                        {"name": "Fussion", "advances": true},
+                        {"name": "Night Vision", "advances": true},
+                        {"name": "Team Rocket", "advances": true},
+                        {"name": "United Doutei", "advances": true}
+                    ]
+                },
+                {
+                    "name": "Group C",
+                    "teams": [
+                        {"name": "After Light"},
+                        {"name": "Macht", "advances": true},
+                        {"name": "OKTG", "advances": true},
+                        {"name": "OldParr", "advances": true},
+                        {"name": "SpanishGibraltar", "advances": true}
+                    ]
+                },
+                {
+                    "name": "Group D",
+                    "teams": [
+                        {"name": "DARN", "advances": true},
+                        {"name": "Drops"},
+                        {"name": "FatalFury", "advances": true},
+                        {"name": "PureBlox", "advances": true}
+                    ]
+                }
             ]
-        }
-    ],
-    "groups": [
+        },
         {
-            "name": "Group A",
-            "teams": [
-                {"name": "Lucid"},
-                {"name": "Obey"},
-                {"name": "HeartClaw"},
-                {"name": "Amnesia"}
-            ]
-        }, {
-            "name": "Group B",
-            "teams": [
-                {"name": "Team Rocket"},
-                {"name": "Night Vision"},
-                {"name": "United Doutei"},
-                {"name": "Fussion"}
-            ]
-        }, {
-            "name": "Group C",
-            "teams": [
-                {"name": "OKTG"},
-                {"name": "Macht"},
-                {"name": "After Light"},
-                {"name": "SpanishGibraltar"},
-                {"name": "OldParr"}
-            ]
-        }, {
-            "name": "Group D",
-            "teams": [
-                {"name": "DARN"},
-                {"name": "Drops"},
-                {"name": "PureBlox"},
-                {"name": "FatalFury"}
+            "name": "Invitational",
+            "groups": [
+                {
+                    "name": "Invitational",
+                    "teams": [
+                        {"seed": 1, "name": "Obey"},
+                        {"seed": 2, "name": "Night Vision"},
+                        {"seed": 3, "name": "PureBlox"},
+                        {"seed": 4, "name": "SpanishGibraltar"},
+                        {"seed": 5, "name": "DARN"},
+                        {"seed": 6, "name": "OKTG"},
+                        {"seed": 7, "name": "Team Rocket"},
+                        {"seed": 8, "name": "HeartClaw"},
+                        {"seed": 9, "name": "Macht"},
+                        {"seed": 10, "name": "OldParr"},
+                        {"seed": 11, "name": "Amnesia"},
+                        {"seed": 12, "name": "Fussion"},
+                        {"seed": 13, "name": "FatalFury"},
+                        {"seed": 14, "name": "United Doutei"},
+                        {"seed": 15, "name": "Lucid"}
+                    ]
+                }
             ]
         }
     ]

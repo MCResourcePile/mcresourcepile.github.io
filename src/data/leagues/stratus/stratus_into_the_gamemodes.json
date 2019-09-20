@@ -3,6 +3,11 @@
     "subtitle": "Records for Stratus: Into the Gamemodes, a tournament hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "stratus"
         }
@@ -27,16 +32,23 @@
             }
         ],
         "challonge": [
-            {"url": "https://stratus.challonge.com/FMC", "description": "Bracket"}
+            {"url": "https://stratus.challonge.com/itg", "description": "Bracket"}
         ]
     },
-    "method": "Swiss Qualifiers, then Double Elimination Invitational",
-    "gamemodes": ["ctw", "cp", "dtcm", "kotf", "koth"],
-    "teams": "14 teams",
-    "teamsize": "8v8",
-    "stages": [
-        {"stage": "Qualifiers", "date": "March 9-10, 2019"},
-        {"stage": "Invitational", "date": "March 16-17, 2019"}
+    "information": {
+        "format": ["Qualifier (Swiss)", "Invitational (Double Elimination)"],
+        "gamemodes": ["ctw", "cp", "dtcm", "kotf", "koth"],
+        "teams-count": "14 teams",
+        "teamsize": "8v8",
+        "stages": [
+            {"stage": "Qualifier", "date": "March 9-10, 2019"},
+            {"stage": "Invitational", "date": "March 16-17, 2019"}
+        ]
+    },
+    "videos": [
+        {"service": "youtube", "type": "video", "id": "Xhb0nyPeyDQ", "title": "Into the Gamemodes Trailer", "description": "Trailer for Into the Gamemodes"},
+        {"service": "twitch", "type": "collection", "id": "9srSVXfOjhXYsA", "title": "Twitch Matches", "description": "Twitch collection of saved matches that were streamed"},
+        {"service": "youtube", "type": "video", "id": "RPHKm-QYZpk", "title": "Into the Gamemodes Highlight Reel", "description": "Highlight Reel for Into the Gamemodes"}
     ],
     "maps": [
         {
@@ -91,35 +103,48 @@
             "tags": ["dtcm"]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "teams": [
-                {"name": "Aura"},
-                {"name": "Nayya's Neckers"},
-                {"name": "Ram Ranch"},
-                {"name": "Bait"}
+            "name": "Qualifier",
+            "advances": true,
+            "groups": [
+                {
+                    "name": "Qualifier",
+                    "teams": [
+                        {"name": ":yum:"},
+                        {"name": "Aura", "advances": true},
+                        {"name": "Bait", "advances": true},
+                        {"name": "Heartclaw"},
+                        {"name": "Horizon"},
+                        {"name": "Nayya's Neckers", "advances": true},
+                        {"name": "Oniria", "advances": true},
+                        {"name": "Ram Ranch", "advances": true},
+                        {"name": "Relogeo Tactico", "advances": true},
+                        {"name": "SHREW", "advances": true},
+                        {"name": "Sakura"},
+                        {"name": "VAC Officers"},
+                        {"name": "xxoemyixx"},
+                        {"name": "yebO", "advances": true}
+                    ]
+                }
             ]
         },
         {
-            "teams": [
-                {"name": "SHREW"},
-                {"name": "yebO"},
-                {"name": "Oniria"}
-            ]
-        },
-        {
-            "teams": [
-                {"name": "Relogeo Tactico"},
-                {"name": ":yum:"},
-                {"name": "VAC Officers"},
-                {"name": "xxoemyixx"}
-            ]
-        },
-        {
-            "teams": [
-                {"name": "Horizon"},
-                {"name": "Sakura"},
-                {"name": "Heartclaw"}
+            "name": "Invitational",
+            "groups": [
+                {
+                    "name": "Invitational",
+                    "teams": [
+                        {"name": "Aura"},
+                        {"name": "Bait"},
+                        {"name": "Nayya's Neckers"},
+                        {"name": "Oniria"},
+                        {"name": "Ram Ranch"},
+                        {"name": "Relogeo Tactico"},
+                        {"name": "SHREW"},
+                        {"name": "yebO"}
+                    ]
+                }
             ]
         }
     ]

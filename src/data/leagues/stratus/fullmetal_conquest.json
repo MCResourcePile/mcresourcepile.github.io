@@ -3,6 +3,11 @@
     "subtitle": "Records for Fullmetal Conquest, a tournament hosted by Stratus Network",
     "page-category": ["tournaments", "league", "stratus"],
     "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/tournaments-pages.js"
+            ]
+        },
         "tournaments": {
             "host": "stratus"
         }
@@ -30,13 +35,19 @@
             {"url": "https://stratus.challonge.com/FMC", "description": "Bracket"}
         ]
     },
-    "method": "Swiss Qualifiers, then Double Elimination Invitational",
-    "gamemodes": ["cp", "ctf", "kotf", "koth", "tdm"],
-    "teams": "16 teams",
-    "teamsize": "8v8",
-    "stages": [
-        {"stage": "Qualifiers", "date": "November 10-11, 2018"},
-        {"stage": "Invitational", "date": "August 17-18, 2018"}
+    "information": {
+        "format": ["Qualifier (Swiss)", "Invitational (Double Elimination)"],
+        "gamemodes": ["cp", "ctf", "kotf", "koth", "tdm"],
+        "teams-count": "16 teams",
+        "teamsize": "8v8",
+        "stages": [
+            {"stage": "Qualifier", "date": "November 10-11, 2018"},
+            {"stage": "Invitational", "date": "August 17-18, 2018"}
+        ]
+    },
+    "videos": [
+        {"service": "youtube", "type": "video", "id": "r9Lyl9oiqw4", "title": "Fullmetal Conquest Trailer", "description": "Trailer for Fullmetal Conquest"},
+        {"service": "twitch", "type": "collection", "id": "594fcYiCaRUzzw", "title": "Twitch Matches", "description": "Twitch collection of saved matches that were streamed"}
     ],
     "maps": [
         {
@@ -71,49 +82,50 @@
             "tags": ["tdm"]
         }
     ],
-    "groups": [
+    "teams": [
         {
-            "teams": [
-                {"name": "Aura"},
-                {"name": "men"},
-                {"name": "FNATIC"},
-                {"name": "RompeGiris"},
-                {"name": "The Dojo Dogos"},
-                {"name": "APOLLO"},
-                {"name": "PointecK"},
-                {"name": "Walrus"}
-            ]
-        },
-        {
-            "teams": [
-                {"name": "RubberDucks"},
-                {"name": "Sagrevyum"},
-                {"name": "TheRushers"},
-                {"name": "Horizon"},
-                {"name": "Jalapenos"},
-                {"name": "Triskel"},
-                {"name": "Athene"},
-                {"name": "GGeneSiS"}
-            ]
-        },
-        {
-            "name": "Invitational",
-            "seeded": true,
-            "teams": [
-                {"seed": 1, "name": "Aura"},
-                {"seed": 2, "name": "men"},
-                {"seed": 3, "name": "The Dojo Dogos"},
-                {"seed": 4, "name": "FNATIC"}
+            "name": "Qualifier",
+            "advances": true,
+            "groups": [
+                {
+                    "name": "Qualifier",
+                    "teams": [
+                        {"name": "APOLLO", "advances": true},
+                        {"name": "Athene"},
+                        {"name": "Aura", "advances": true},
+                        {"name": "FNATIC", "advances": true},
+                        {"name": "GGeneSiS"},
+                        {"name": "Horizon"},
+                        {"name": "Jalapenos"},
+                        {"name": "men", "advances": true},
+                        {"name": "PointecK", "advances": true},
+                        {"name": "RompeGirls", "advances": true},
+                        {"name": "RubberDucks"},
+                        {"name": "Sagrevyum"},
+                        {"name": "The Dojo Dogos", "advances": true},
+                        {"name": "TheRushers"},
+                        {"name": "Triskel"},
+                        {"name": "Walrus", "advances": true}
+                    ]
+                }
             ]
         },
         {
             "name": "Invitational",
-            "seeded": true,
-            "teams": [
-                {"seed": 5, "name": "RompeGirls"},
-                {"seed": 6, "name": "Walrus"},
-                {"seed": 7, "name": "APOLLO"},
-                {"seed": 8, "name": "PointecK"}
+            "groups": [
+                {
+                    "name": "Invitational",
+                    "teams": [
+                        {"seed": 1, "name": "Aura"},
+                        {"seed": 2, "name": "men"},
+                        {"seed": 3, "name": "The Dojo Dogos"},
+                        {"seed": 4, "name": "FNATIC"},
+                        {"seed": 5, "name": "RompeGirls"},
+                        {"seed": 6, "name": "Walrus"},
+                        {"seed": 7, "name": "APOLLO"},
+                        {"seed": 8, "name": "PointecK"}
+                    ]
+                }
             ]
         }
     ]
