@@ -18,17 +18,17 @@
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-        <script src="/assets/js/tournaments.js"></script>
+        <script src="/assets/js/tournaments-banners.js"></script>
         <script src="/assets/js/search.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -149,362 +149,310 @@
             </div>
         </div>
     </div>
-    <div class="col-md-9 col-md-pull-3 list">
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #15</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="February 18-19, 2017"><i class="far fa-calendar"></i> 2017</span>
-                <a class="click-search" data-query="PureBlox">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> PureBlox</span>
-                </a>
-            </div>
-            <a href="/leagues/overcast/rogue_gamemodes">
-                <div class="tm-name">Rogue Gamemodes: An Overcast Story</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>,
-                    <span class="tm-tag">Capture the Flag</span>,
-                    <span class="tm-tag">Capture the Wool</span>,
-                    <span class="tm-tag">Destroy the Core and Monument</span>,
-                    <span class="tm-tag">King of the Flag</span>,
-                    <span class="tm-tag">King of the Hill</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">PureBlox,Tournament,Capture Points,Capture the Flag,Capture the Wool,Destroy the Core and Monument,King of the Flag,King of the Hill,Team Deathmatch</div>
-                </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/rogue_gamemodes.png">
+    <div class="col-md-9 col-md-pull-3">
+        <div class="tm-banner-options thumbnail">
+            Display: 
+            <span class="active" id="display-text">
+                <i class="fas fa-font"></i> Text</a></li>
+            </span>
+            <span class="active" id="display-banners">
+                <i class="fas fa-images"></i> Banners</a>
+            </span> |
+            <a href="/admin/preferences#preference-tm-banners-display" target="_blank">
+                <span>
+                    <i class="fas fa-cog"></i> Set a Default
+                </span>
             </a>
         </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #14</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 19-20, 2016"><i class="far fa-calendar"></i> 2016</span>
-                <a class="click-search" data-query="Fussion">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Fussion</span>
+        <div class="list">
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#15</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="February 18-19, 2017"><i class="far fa-calendar"></i> 2017</span>
+                    <span class="tm-label click-search" data-query="PureBlox"><i class="fas fa-trophy"></i> PureBlox</span>
+                </div>
+                <a href="/leagues/overcast/rogue_gamemodes">
+                    <div class="tm-name">Rogue Gamemodes: An Overcast Story</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">Capture the Flag</span>,
+                        <span class="tm-tag">Capture the Wool</span>,
+                        <span class="tm-tag">Destroy the Core and Monument</span>,
+                        <span class="tm-tag">King of the Flag</span>,
+                        <span class="tm-tag">King of the Hill</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">PureBlox,Tournament,Capture Points,Capture the Flag,Capture the Wool,Destroy the Core and Monument,King of the Flag,King of the Hill,Team Deathmatch</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/rogue_gamemodes.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/kung_fu_capture">
-                <div class="tm-name">Kung-Fu Capture</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture the Wool</span>
-                    <div class="tags hidden">Fussion,Tournament,Capture the Wool</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#14</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 19-20, 2016"><i class="far fa-calendar"></i> 2016</span>
+                    <span class="tm-label click-search" data-query="Fussion"><i class="fas fa-trophy"></i> Fussion</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/kung_fu_capture.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #13</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 21, 2016 to August 27-28, 2016"><i class="far fa-calendar"></i> 2016</span>
-                <a class="click-search" data-query="Team Grief">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Team Grief</span>
+                <a href="/leagues/overcast/kung_fu_capture">
+                    <div class="tm-name">Kung-Fu Capture</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture the Wool</span>
+                        <div class="tags hidden">Fussion,Tournament,Capture the Wool</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/kung_fu_capture.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/the_legend_of_ares">
-                <div class="tm-name">The Legend of Ares</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>,
-                    <span class="tm-tag">Capture the Wool</span>,
-                    <span class="tm-tag">Destroy the Core and Monument</span>,
-                    <span class="tm-tag">King of the Hill</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">Team Grief,Tournament,Capture Points,Capture the Wool,Destroy the Core and Monument,King of the Hill,Team Deathmatch</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#13</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 21, 2016 to August 27-28, 2016"><i class="far fa-calendar"></i> 2016</span>
+                    <span class="tm-label click-search" data-query="Team Grief"><i class="fas fa-trophy"></i> Team Grief</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/the_legend_of_ares.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #12</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="May 7, 2016 to May 28, 2016"><i class="far fa-calendar"></i> 2016</span>
-                <a class="click-search" data-query="PureBlox">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> PureBlox</span>
+                <a href="/leagues/overcast/the_legend_of_ares">
+                    <div class="tm-name">The Legend of Ares</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">Capture the Wool</span>,
+                        <span class="tm-tag">Destroy the Core and Monument</span>,
+                        <span class="tm-tag">King of the Hill</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">Team Grief,Tournament,Capture Points,Capture the Wool,Destroy the Core and Monument,King of the Hill,Team Deathmatch</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/the_legend_of_ares.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/straight_outta_capture">
-                <div class="tm-name">Straight Outta Capture</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>,
-                    <span class="tm-tag">Capture the Flag</span>,
-                    <span class="tm-tag">Capture the Wool</span>
-                    <div class="tags hidden">PureBlox,Tournament,Capture Points,Capture the Flag,Capture the Wool</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#12</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="May 7, 2016 to May 28, 2016"><i class="far fa-calendar"></i> 2016</span>
+                    <span class="tm-label click-search" data-query="PureBlox"><i class="fas fa-trophy"></i> PureBlox</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/straight_outta_capture.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #11</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 14, 2015 to November 21-22, 2015"><i class="far fa-calendar"></i> 2015</span>
-                <a class="click-search" data-query="Street Sharks">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Street Sharks</span>
+                <a href="/leagues/overcast/straight_outta_capture">
+                    <div class="tm-name">Straight Outta Capture</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">Capture the Flag</span>,
+                        <span class="tm-tag">Capture the Wool</span>
+                        <div class="tags hidden">PureBlox,Tournament,Capture Points,Capture the Flag,Capture the Wool</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/straight_outta_capture.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/back_to_the_conquest_ii">
-                <div class="tm-name">Back to the Conquest II</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>,
-                    <span class="tm-tag">Capture the Flag</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">Street Sharks,Tournament,Capture Points,Capture the Flag,Team Deathmatch</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#11</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 14, 2015 to November 21-22, 2015"><i class="far fa-calendar"></i> 2015</span>
+                    <span class="tm-label click-search" data-query="Street Sharks"><i class="fas fa-trophy"></i> Street Sharks</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/back_to_the_conquest_ii.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #10</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 8-9, 2015 to August 22-23, 2015"><i class="far fa-calendar"></i> 2015</span>
-                <a class="click-search" data-query="Impact">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Impact</span>
+                <a href="/leagues/overcast/back_to_the_conquest_ii">
+                    <div class="tm-name">Back to the Conquest II</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">Capture the Flag</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">Street Sharks,Tournament,Capture Points,Capture the Flag,Team Deathmatch</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/back_to_the_conquest_ii.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/defenders_age_of_ares">
-                <div class="tm-name">Defenders: Age of Ares</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>,
-                    <span class="tm-tag">Capture the Flag</span>,
-                    <span class="tm-tag">Capture the Wool</span>,
-                    <span class="tm-tag">Destroy the Core</span>,
-                    <span class="tm-tag">King of the Flag</span>,
-                    <span class="tm-tag">King of the Hill</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">Impact,Tournament,Capture Points,Capture the Flag,Capture the Wool,Destroy the Core,King of the Flag,King of the Hill,Team Deathmatch</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#10</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 8-9, 2015 to August 22-23, 2015"><i class="far fa-calendar"></i> 2015</span>
+                    <span class="tm-label click-search" data-query="Impact"><i class="fas fa-trophy"></i> Impact</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/defenders_age_of_ares.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Mini Event">
-                    <span class="tm-label">Mini Event #4</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="April 18, 2015"><i class="far fa-calendar"></i> 2015</span>
-                <a class="click-search" data-query="PureBlox">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> PureBlox</span>
+                <a href="/leagues/overcast/defenders_age_of_ares">
+                    <div class="tm-name">Defenders: Age of Ares</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">Capture the Flag</span>,
+                        <span class="tm-tag">Capture the Wool</span>,
+                        <span class="tm-tag">Destroy the Core</span>,
+                        <span class="tm-tag">King of the Flag</span>,
+                        <span class="tm-tag">King of the Hill</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">Impact,Tournament,Capture Points,Capture the Flag,Capture the Wool,Destroy the Core,King of the Flag,King of the Hill,Team Deathmatch</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/defenders_age_of_ares.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/star_war_wars">
-                <div class="tm-name">Star War Wars: A New Event</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Blitz</span>,
-                    <span class="tm-tag">Destroy the Core</span>
-                    <div class="tags hidden">PureBlox,Mini Event,Blitz,Destroy the Core</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Mini Event">Mini Event <strong>#4</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="April 18, 2015"><i class="far fa-calendar"></i> 2015</span>
+                    <span class="tm-label click-search" data-query="PureBlox"><i class="fas fa-trophy"></i> PureBlox</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/star_war_wars.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #9</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="February 6-7, 2015 to March 28-29, 2015"><i class="far fa-calendar"></i> 2015</span>
-                <a class="click-search" data-query="Oklahomies">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Oklahomies</span>
+                <a href="/leagues/overcast/star_war_wars">
+                    <div class="tm-name">Star War Wars: A New Event</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Blitz</span>,
+                        <span class="tm-tag">Destroy the Core</span>
+                        <div class="tags hidden">PureBlox,Mini Event,Blitz,Destroy the Core</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/star_war_wars.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/house_of_cores">
-                <div class="tm-name">House of Cores</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Destroy the Core and Monument</span>
-                    <div class="tags hidden">Oklahomies,Tournament,Destroy the Core and Monument</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#9</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="February 6-7, 2015 to March 28-29, 2015"><i class="far fa-calendar"></i> 2015</span>
+                    <span class="tm-label click-search" data-query="Oklahomies"><i class="fas fa-trophy"></i> Oklahomies</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/house_of_cores.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #8</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 8-9, 2014"><i class="far fa-calendar"></i> 2014</span>
-                <a class="click-search" data-query="Impact">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Impact</span>
+                <a href="/leagues/overcast/house_of_cores">
+                    <div class="tm-name">House of Cores</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Destroy the Core and Monument</span>
+                        <div class="tags hidden">Oklahomies,Tournament,Destroy the Core and Monument</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/house_of_cores.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/conquest">
-                <div class="tm-name">Conquest</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>,
-                    <span class="tm-tag">King of the Hill</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">Impact,Tournament,Capture Points,King of the Hill,Team Deathmatch</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#8</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 8-9, 2014"><i class="far fa-calendar"></i> 2014</span>
+                    <span class="tm-label click-search" data-query="Impact"><i class="fas fa-trophy"></i> Impact</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/conquest.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #7</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 29-30, 2014"><i class="far fa-calendar"></i> 2014</span>
-                <a class="click-search" data-query="Impact">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Impact</span>
+                <a href="/leagues/overcast/conquest">
+                    <div class="tm-name">Conquest</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">King of the Hill</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">Impact,Tournament,Capture Points,King of the Hill,Team Deathmatch</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/conquest.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/guardians_of_the_wool">
-                <div class="tm-name">Guardians of the Wool</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture the Wool</span>
-                    <div class="tags hidden">Impact,Tournament,Capture the Wool</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#7</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 29-30, 2014"><i class="far fa-calendar"></i> 2014</span>
+                    <span class="tm-label click-search" data-query="Impact"><i class="fas fa-trophy"></i> Impact</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/guardians_of_the_wool.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Mini Event">
-                    <span class="tm-label">Mini Event #3</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="July 26, 2014"><i class="far fa-calendar"></i> 2014</span>
-                <a class="click-search" data-query="Dopamine">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Dopamine</span>
+                <a href="/leagues/overcast/guardians_of_the_wool">
+                    <div class="tm-name">Guardians of the Wool</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture the Wool</span>
+                        <div class="tags hidden">Impact,Tournament,Capture the Wool</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/guardians_of_the_wool.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/boom_in_a_box">
-                <div class="tm-name">Boom in a Box</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Attack/Defend</span>,
-                    <span class="tm-tag">Destroy the Monument</span>
-                    <div class="tags hidden">Dopamine,Mini Event,Attack/Defend,Destroy the Monument</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Mini Event">Mini Event <strong>#3</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="July 26, 2014"><i class="far fa-calendar"></i> 2014</span>
+                    <span class="tm-label click-search" data-query="Dopamine"><i class="fas fa-trophy"></i> Dopamine</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/boom_in_a_box.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #6</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="Feburary 14-16, 2014 to March 30, 2014"><i class="far fa-calendar"></i> 2014</span>
-                <a class="click-search" data-query="LunGGlove">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> LunGGlove</span>
+                <a href="/leagues/overcast/boom_in_a_box">
+                    <div class="tm-name">Boom in a Box</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Attack/Defend</span>,
+                        <span class="tm-tag">Destroy the Monument</span>
+                        <div class="tags hidden">Dopamine,Mini Event,Attack/Defend,Destroy the Monument</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/boom_in_a_box.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/breaking_core">
-                <div class="tm-name">Breaking Core</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Destroy the Core and Monument</span>
-                    <div class="tags hidden">LunGGlove,Tournament,Destroy the Core and Monument</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#6</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="Feburary 14-16, 2014 to March 30, 2014"><i class="far fa-calendar"></i> 2014</span>
+                    <span class="tm-label click-search" data-query="LunGGlove"><i class="fas fa-trophy"></i> LunGGlove</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/breaking_core.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #5</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="December 7, 2013 to January 4-5, 2014"><i class="far fa-calendar"></i> 2013</span>
-                <a class="click-search" data-query="Game Mode 1">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Game Mode 1</span>
+                <a href="/leagues/overcast/breaking_core">
+                    <div class="tm-name">Breaking Core</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Destroy the Core and Monument</span>
+                        <div class="tags hidden">LunGGlove,Tournament,Destroy the Core and Monument</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/breaking_core.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/return_of_the_hill">
-                <div class="tm-name">Lord of the Games: Return of the Hill</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture the Wool</span>,
-                    <span class="tm-tag">Destroy the Core</span>,
-                    <span class="tm-tag">Destroy the Monument</span>,
-                    <span class="tm-tag">King of the Hill</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">Game Mode 1,Tournament,Capture the Wool,Destroy the Core,Destroy the Monument,King of the Hill,Team Deathmatch</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#5</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="December 7, 2013 to January 4-5, 2014"><i class="far fa-calendar"></i> 2013</span>
+                    <span class="tm-label click-search" data-query="Game Mode 1"><i class="fas fa-trophy"></i> Game Mode 1</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/return_of_the_hill.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #4</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 17, 2013"><i class="far fa-calendar"></i> 2013</span>
-                <a class="click-search" data-query="Starfish">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Starfish</span>
+                <a href="/leagues/overcast/return_of_the_hill">
+                    <div class="tm-name">Lord of the Games: Return of the Hill</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture the Wool</span>,
+                        <span class="tm-tag">Destroy the Core</span>,
+                        <span class="tm-tag">Destroy the Monument</span>,
+                        <span class="tm-tag">King of the Hill</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">Game Mode 1,Tournament,Capture the Wool,Destroy the Core,Destroy the Monument,King of the Hill,Team Deathmatch</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/return_of_the_hill.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/goblet_of_gamemodes">
-                <div class="tm-name">Goblet of Gamemodes</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture the Wool</span>,
-                    <span class="tm-tag">Destroy the Core and Monument</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">Starfish,Tournament,Capture the Wool,Destroy the Core and Monument,Team Deathmatch</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#4</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 17, 2013"><i class="far fa-calendar"></i> 2013</span>
+                    <span class="tm-label click-search" data-query="Starfish"><i class="fas fa-trophy"></i> Starfish</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/goblet_of_gamemodes.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #3</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="April 6, 2013"><i class="far fa-calendar"></i> 2013</span>
-                <a class="click-search" data-query="Starfish">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Starfish</span>
+                <a href="/leagues/overcast/goblet_of_gamemodes">
+                    <div class="tm-name">Goblet of Gamemodes</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture the Wool</span>,
+                        <span class="tm-tag">Destroy the Core and Monument</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">Starfish,Tournament,Capture the Wool,Destroy the Core and Monument,Team Deathmatch</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/goblet_of_gamemodes.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/raiders_of_the_lost_wool">
-                <div class="tm-name">Project Ares and the Raiders of the Lost Wool</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture the Wool</span>
-                    <div class="tags hidden">Starfish,Tournament,Capture the Wool</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#3</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="April 6, 2013"><i class="far fa-calendar"></i> 2013</span>
+                    <span class="tm-label click-search" data-query="Starfish"><i class="fas fa-trophy"></i> Starfish</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/raiders_of_the_lost_wool.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #2</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="Feburary 16, 2013"><i class="far fa-calendar"></i> 2013</span>
-                <a class="click-search" data-query="Starfish">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Starfish</span>
+                <a href="/leagues/overcast/raiders_of_the_lost_wool">
+                    <div class="tm-name">Project Ares and the Raiders of the Lost Wool</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture the Wool</span>
+                        <div class="tags hidden">Starfish,Tournament,Capture the Wool</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/raiders_of_the_lost_wool.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/attack_of_the_cores">
-                <div class="tm-name">Attack of the Cores</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Destroy the Core</span>,
-                    <span class="tm-tag">Destroy the Monument</span>
-                    <div class="tags hidden">Starfish,Tournament,Destroy the Core,Destroy the Monument</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#2</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="Feburary 16, 2013"><i class="far fa-calendar"></i> 2013</span>
+                    <span class="tm-label click-search" data-query="Starfish"><i class="fas fa-trophy"></i> Starfish</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/overcast/attack_of_the_cores.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #1</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="January 19, 2013"><i class="far fa-calendar"></i> 2013</span>
-                <a class="click-search" data-query="Badlion">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Badlion</span>
+                <a href="/leagues/overcast/attack_of_the_cores">
+                    <div class="tm-name">Attack of the Cores</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Destroy the Core</span>,
+                        <span class="tm-tag">Destroy the Monument</span>
+                        <div class="tags hidden">Starfish,Tournament,Destroy the Core,Destroy the Monument</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/overcast/attack_of_the_cores.png">
                 </a>
             </div>
-            <a href="/leagues/overcast/beta_tournament">
-                <div class="tm-name">Beta Tournament</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture the Wool</span>,
-                    <span class="tm-tag">Destroy the Core and Monument</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">Badlion,Tournament,Capture the Wool,Destroy the Core and Monument,Team Deathmatch</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#1</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="January 19, 2013"><i class="far fa-calendar"></i> 2013</span>
+                    <span class="tm-label click-search" data-query="Badlion"><i class="fas fa-trophy"></i> Badlion</span>
                 </div>
-                <div class="league-default-banner" style="background: url('../../assets/img/tournament/banners/default/complex.jpg'); background-position: center; background-size: cover;">Beta Tournament</div>
-            </a>
+                <a href="/leagues/overcast/beta_tournament">
+                    <div class="tm-name">Beta Tournament</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture the Wool</span>,
+                        <span class="tm-tag">Destroy the Core and Monument</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">Badlion,Tournament,Capture the Wool,Destroy the Core and Monument,Team Deathmatch</div>
+                    </div>
+                    <div class="league-default-banner lazy" data-bg="url('../../assets/img/tournament/banners/default/complex.jpg')" style="background-position: center; background-size: cover;" title="Beta Tournament">Beta Tournament</div>
+                </a>
+            </div>
         </div>
     </div>
 </div>

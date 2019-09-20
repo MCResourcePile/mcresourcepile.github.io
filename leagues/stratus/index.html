@@ -18,17 +18,17 @@
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-        <script src="/assets/js/tournaments.js"></script>
+        <script src="/assets/js/tournaments-banners.js"></script>
         <script src="/assets/js/search.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -149,191 +149,190 @@
             </div>
         </div>
     </div>
-    <div class="col-md-9 col-md-pull-3 list">
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #6</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="June 15-16, 2019 to June 29-30, 2019"><i class="far fa-calendar"></i> 2019</span>
-                <a class="click-search" data-query="Adventure Club">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Adventure Club</span>
-                </a>
-            </div>
-            <a href="/leagues/stratus/wool_e">
-                <div class="tm-name">WOOL-E</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture the Wool</span>
-                    <div class="tags hidden">Adventure Club,Tournament,Capture the Wool</div>
-                </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/stratus/wool_e.png">
+    <div class="col-md-9 col-md-pull-3">
+        <div class="tm-banner-options thumbnail">
+            Display: 
+            <span class="active" id="display-text">
+                <i class="fas fa-font"></i> Text</a></li>
+            </span>
+            <span class="active" id="display-banners">
+                <i class="fas fa-images"></i> Banners</a>
+            </span> |
+            <a href="/admin/preferences#preference-tm-banners-display" target="_blank">
+                <span>
+                    <i class="fas fa-cog"></i> Set a Default
+                </span>
             </a>
         </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #5</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="March 9-10, 2019 to March 16-17, 2019"><i class="far fa-calendar"></i> 2019</span>
-                <a class="click-search" data-query="Aura">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Aura</span>
+        <div class="list">
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#7</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 31, 2019 to September 1, 2019"><i class="far fa-calendar"></i> 2019</span>
+                    <span class="tm-label click-search" data-query="ZUU"><i class="fas fa-trophy"></i> ZUU</span>
+                </div>
+                <a href="/leagues/stratus/conquest_reloaded">
+                    <div class="tm-name">Conquest Reloaded</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">Capture the Flag</span>,
+                        <span class="tm-tag">King of the Flag</span>,
+                        <span class="tm-tag">King of the Hill</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">ZUU,Tournament,Capture Points,Capture the Flag,King of the Flag,King of the Hill,Team Deathmatch</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/stratus/conquest_reloaded.png">
                 </a>
             </div>
-            <a href="/leagues/stratus/stratus_into_the_gamemodes">
-                <div class="tm-name">Stratus: Into the Gamemodes</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>,
-                    <span class="tm-tag">Capture the Wool</span>,
-                    <span class="tm-tag">Destroy the Core and Monument</span>,
-                    <span class="tm-tag">King of the Flag</span>,
-                    <span class="tm-tag">King of the Hill</span>
-                    <div class="tags hidden">Aura,Tournament,Capture Points,Capture the Wool,Destroy the Core and Monument,King of the Flag,King of the Hill</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#6</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="June 15-16, 2019 to June 29-30, 2019"><i class="far fa-calendar"></i> 2019</span>
+                    <span class="tm-label click-search" data-query="Adventure Club"><i class="fas fa-trophy"></i> Adventure Club</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/stratus/stratus_into_the_gamemodes.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #4</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 10-11, 2018 to August 17-18, 2018"><i class="far fa-calendar"></i> 2018</span>
-                <a class="click-search" data-query="men">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> men</span>
+                <a href="/leagues/stratus/wool_e">
+                    <div class="tm-name">WOOL-E</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture the Wool</span>
+                        <div class="tags hidden">Adventure Club,Tournament,Capture the Wool</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/stratus/wool_e.png">
                 </a>
             </div>
-            <a href="/leagues/stratus/fullmetal_conquest">
-                <div class="tm-name">Fullmetal Conquest</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>,
-                    <span class="tm-tag">Capture the Flag</span>,
-                    <span class="tm-tag">King of the Flag</span>,
-                    <span class="tm-tag">King of the Hill</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">men,Tournament,Capture Points,Capture the Flag,King of the Flag,King of the Hill,Team Deathmatch</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#5</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="March 9-10, 2019 to March 16-17, 2019"><i class="far fa-calendar"></i> 2019</span>
+                    <span class="tm-label click-search" data-query="Aura"><i class="fas fa-trophy"></i> Aura</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/stratus/fullmetal_conquest.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #3</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 11-12, 2018 to August 18-19, 2018"><i class="far fa-calendar"></i> 2018</span>
-                <a class="click-search" data-query="Night Doobers">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Night Doobers</span>
+                <a href="/leagues/stratus/stratus_into_the_gamemodes">
+                    <div class="tm-name">Stratus: Into the Gamemodes</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">Capture the Wool</span>,
+                        <span class="tm-tag">Destroy the Core and Monument</span>,
+                        <span class="tm-tag">King of the Flag</span>,
+                        <span class="tm-tag">King of the Hill</span>
+                        <div class="tags hidden">Aura,Tournament,Capture Points,Capture the Wool,Destroy the Core and Monument,King of the Flag,King of the Hill</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/stratus/stratus_into_the_gamemodes.png">
                 </a>
             </div>
-            <a href="/leagues/stratus/incrediwools">
-                <div class="tm-name">Incrediwools</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture the Wool</span>
-                    <div class="tags hidden">Night Doobers,Tournament,Capture the Wool</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#4</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 10-11, 2018 to August 17-18, 2018"><i class="far fa-calendar"></i> 2018</span>
+                    <span class="tm-label click-search" data-query="men"><i class="fas fa-trophy"></i> men</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/stratus/incrediwools.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Mini Event">
-                    <span class="tm-label">Mini Event #3</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="July 7, 2018"><i class="far fa-calendar"></i> 2018</span>
-                <a class="click-search" data-query="YACK">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> YACK</span>
+                <a href="/leagues/stratus/fullmetal_conquest">
+                    <div class="tm-name">Fullmetal Conquest</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">Capture the Flag</span>,
+                        <span class="tm-tag">King of the Flag</span>,
+                        <span class="tm-tag">King of the Hill</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">men,Tournament,Capture Points,Capture the Flag,King of the Flag,King of the Hill,Team Deathmatch</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/stratus/fullmetal_conquest.png">
                 </a>
             </div>
-            <a href="/leagues/stratus/attack_on_point">
-                <div class="tm-name">Attack on Point</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>
-                    <div class="tags hidden">YACK,Mini Event,Capture Points</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#3</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 11-12, 2018 to August 18-19, 2018"><i class="far fa-calendar"></i> 2018</span>
+                    <span class="tm-label click-search" data-query="Night Doobers"><i class="fas fa-trophy"></i> Night Doobers</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/stratus/attack_on_point.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #2</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="March 10, 2018 to March 24-25, 2018"><i class="far fa-calendar"></i> 2018</span>
-                <a class="click-search" data-query="Praetorians">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Praetorians</span>
+                <a href="/leagues/stratus/incrediwools">
+                    <div class="tm-name">Incrediwools</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture the Wool</span>
+                        <div class="tags hidden">Night Doobers,Tournament,Capture the Wool</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/stratus/incrediwools.png">
                 </a>
             </div>
-            <a href="/leagues/stratus/stranger_cores">
-                <div class="tm-name">Stratus: Stranger Cores</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Destroy the Core and Monument</span>
-                    <div class="tags hidden">Praetorians,Tournament,Destroy the Core and Monument</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Mini Event">Mini Event <strong>#3</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="July 7, 2018"><i class="far fa-calendar"></i> 2018</span>
+                    <span class="tm-label click-search" data-query="YACK"><i class="fas fa-trophy"></i> YACK</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/stratus/stranger_cores.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Mini Event">
-                    <span class="tm-label">Mini Event #2</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="December 16, 2017"><i class="far fa-calendar"></i> 2017</span>
-                <a class="click-search" data-query="Seoul">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Seoul</span>
+                <a href="/leagues/stratus/attack_on_point">
+                    <div class="tm-name">Attack on Point</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>
+                        <div class="tags hidden">YACK,Mini Event,Capture Points</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/stratus/attack_on_point.png">
                 </a>
             </div>
-            <a href="/leagues/stratus/the_quad_before_christmas">
-                <div class="tm-name">The Quad Before Christmas</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Blitz</span>
-                    <div class="tags hidden">Seoul,Mini Event,Blitz</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#2</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="March 10, 2018 to March 24-25, 2018"><i class="far fa-calendar"></i> 2018</span>
+                    <span class="tm-label click-search" data-query="Praetorians"><i class="fas fa-trophy"></i> Praetorians</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/stratus/the_quad_before_christmas.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Mini Event">
-                    <span class="tm-label">Mini Event #1</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="October 14, 2017"><i class="far fa-calendar"></i> 2017</span>
-                <a class="click-search" data-query="Pochinki">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Pochinki</span>
+                <a href="/leagues/stratus/stranger_cores">
+                    <div class="tm-name">Stratus: Stranger Cores</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Destroy the Core and Monument</span>
+                        <div class="tags hidden">Praetorians,Tournament,Destroy the Core and Monument</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/stratus/stranger_cores.png">
                 </a>
             </div>
-            <a href="/leagues/stratus/just_deserts">
-                <div class="tm-name">Just Deserts</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">King of the Flag</span>
-                    <div class="tags hidden">Pochinki,Mini Event,King of the Flag</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Mini Event">Mini Event <strong>#2</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="December 16, 2017"><i class="far fa-calendar"></i> 2017</span>
+                    <span class="tm-label click-search" data-query="Seoul"><i class="fas fa-trophy"></i> Seoul</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/stratus/just_deserts.png">
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <a class="click-search" data-query="Tournament">
-                    <span class="tm-label">Tournament #1</span>
-                </a>
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="June 24-25, 2017 to July 2, 2017"><i class="far fa-calendar"></i> 2017</span>
-                <a class="click-search" data-query="DARN">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> DARN</span>
+                <a href="/leagues/stratus/the_quad_before_christmas">
+                    <div class="tm-name">The Quad Before Christmas</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Blitz</span>
+                        <div class="tags hidden">Seoul,Mini Event,Blitz</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/stratus/the_quad_before_christmas.png">
                 </a>
             </div>
-            <a href="/leagues/stratus/stratus_return_of_the_gamemodes">
-                <div class="tm-name">Stratus: Return of the Gamemodes</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>,
-                    <span class="tm-tag">Capture the Flag</span>,
-                    <span class="tm-tag">Capture the Wool</span>,
-                    <span class="tm-tag">Destroy the Core</span>,
-                    <span class="tm-tag">Destroy the Monument</span>,
-                    <span class="tm-tag">King of the Hill</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">DARN,Tournament,Capture Points,Capture the Flag,Capture the Wool,Destroy the Core,Destroy the Monument,King of the Hill,Team Deathmatch</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Mini Event">Mini Event <strong>#1</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="October 14, 2017"><i class="far fa-calendar"></i> 2017</span>
+                    <span class="tm-label click-search" data-query="Pochinki"><i class="fas fa-trophy"></i> Pochinki</span>
                 </div>
-                <img class="league-banner" src="../../assets/img/tournament/banners/stratus/stratus_return_of_the_gamemodes.png">
-            </a>
+                <a href="/leagues/stratus/just_deserts">
+                    <div class="tm-name">Just Deserts</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">King of the Flag</span>
+                        <div class="tags hidden">Pochinki,Mini Event,King of the Flag</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/stratus/just_deserts.png">
+                </a>
+            </div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#1</strong></span>
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="June 24-25, 2017 to July 2, 2017"><i class="far fa-calendar"></i> 2017</span>
+                    <span class="tm-label click-search" data-query="DARN"><i class="fas fa-trophy"></i> DARN</span>
+                </div>
+                <a href="/leagues/stratus/stratus_return_of_the_gamemodes">
+                    <div class="tm-name">Stratus: Return of the Gamemodes</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">Capture the Flag</span>,
+                        <span class="tm-tag">Capture the Wool</span>,
+                        <span class="tm-tag">Destroy the Core</span>,
+                        <span class="tm-tag">Destroy the Monument</span>,
+                        <span class="tm-tag">King of the Hill</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">DARN,Tournament,Capture Points,Capture the Flag,Capture the Wool,Destroy the Core,Destroy the Monument,King of the Hill,Team Deathmatch</div>
+                    </div>
+                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/stratus/stratus_return_of_the_gamemodes.png">
+                </a>
+            </div>
         </div>
     </div>
 </div>

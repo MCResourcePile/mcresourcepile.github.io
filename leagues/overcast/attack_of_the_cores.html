@@ -18,15 +18,16 @@
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
+        <script src="/assets/js/tournaments-pages.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -135,7 +136,7 @@
 <div class="center">
     <img class="league-banner" src="../../assets/img/tournament/banners/overcast/attack_of_the_cores.png">
 </div>
-<div class="center">
+<div class="center" style="margin-bottom: 5px;">
     <div class="league-position league-position-first">
         <i class="fas fa-trophy"></i>
         <div class="league-team">Starfish</div>
@@ -143,502 +144,435 @@
     </div>
     <div class="row">
         <div class="league-position col-sm-6">
-            <i class="fas fa-star"></i>
+            <i class="fas fa-medal"></i>
             <div class="league-team">Badlion</div>
             <div class="league-team-position">2<sup>nd</sup> place</div>
         </div>
         <div class="league-position col-sm-6">
-            <i class="fas fa-star-half-alt"></i>
+            <i class="fas fa-medal"></i>
             <div class="league-team">#YOLOSwag</div>
             <div class="league-team-position">3<sup>rd</sup> place</div>
         </div>
     </div>
-    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
 </div>
-<div class="collapse" id="resultsCollapse">
-    <div class="league-results">
-        <div class="challonge-bracket">
-            <span>Bracket</span>
-            <a href="https://ocn.challonge.com/aotc" target="_blank">
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-            <iframe src="https://ocn.challonge.com/aotc/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-        </div>
-    </div>
-</div>
-<div class="league-info-section large">Tournament Information</div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Details</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>Method</td>
-                        <td>Single Elimination</td>
-                    </tr>
-                    <tr>
-                        <td>Gamemodes</td>
-                        <td>
-                            Destroy the Core,
-                            Destroy the Monument
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Teams</td>
-                        <td>
-                            <a href="#teams">32 teams <i class="fas fa-chevron-down"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Team Size</td>
-                        <td>8v8</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>Tournament</td>
-                        <td>Feburary 16, 2013</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-12">
-        <div class="well well-sm well-custom-purple">
-            <div class="league-info-section">Map Selection Process</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td colspan="2" style="font-weight:400"><ol><li>Teams rank the 12 available maps (below) in order from most favored to least favored.</lI><li>Each choice carries a weight: +13 for 1st choice, +10 for 2nd, +8 for 3rd, +6 for 4th, +4 for 5th, +1 for 6th, -1 for 7th, -4 for 8th, -6 for 9th, -8 for 10th, -10 for 11th, and -13 for last.</li><li>At the beginning of each round, the weightings for all the maps of both teams are tallied, and the map with the highest "score" is played. In the case of a tie, a coin will be flipped, a die will be rolled, or a random number generator be used by a head referee to decide the map (whichever is more suiting).</li><ul></td>
-                    </tr>
-                </tbody>
-            </table>
+<div class="tm-results">
+    <span class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" data-target="#section-results">Show Full Results +</span>
+    <div class="collapse" id="section-results">
+        <div class="tm-results-well">
+            <div id="challonge-brackets">
+                <div class="challonge-bracket">
+                    <span>Bracket</span>
+                    <a href="https://ocn.challonge.com/aotc" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <iframe src="https://ocn.challonge.com/aotc/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="league-info-section large">Map Pool <small>12</small></div>
-<div class="dynamic">
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/the_complex.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="The Complex">
-                    <div class="title"><a class="s-title">The Complex</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Blitz</li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
+    <div class="collapse in" id="section-info">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="league-information red">
+                    <div class="league-info-section">Details</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            <tr>
+                                <td>Format</td>
+                                <td>
+                                    Single Elimination
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Gamemodes</td>
+                                <td>
+                                    Destroy the Core,
+                                    Destroy the Monument
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Teams</td>
+                                <td>
+                                    <a href="#teams">32 teams <i class="fas fa-chevron-down"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Team Size</td>
+                                <td>8v8</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="labels">
-                    <span class="label label-info">Tie Breaker</span>
+            </div>
+            <div class="col-md-6">
+                <div class="league-information red">
+                    <div class="league-info-section">Dates</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            <tr>
+                                <td>Tournament</td>
+                                <td>Feburary 16, 2013</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="league-information green">
+                    <div class="league-info-section">Map Selection Process</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            <tr>
+                                <td colspan="2" style="font-weight: 400;"><ol><li>Teams rank the 12 available maps (below) in order from most favored to least favored.</lI><li>Each choice carries a weight: +13 for 1st choice, +10 for 2nd, +8 for 3rd, +6 for 4th, +4 for 5th, +1 for 6th, -1 for 7th, -4 for 8th, -6 for 9th, -8 for 10th, -10 for 11th, and -13 for last.</li><li>At the beginning of each round, the weightings for all the maps of both teams are tallied, and the map with the highest "score" is played. In the case of a tie, a coin will be flipped, a die will be rolled, or a random number generator be used by a head referee to decide the map (whichever is more suiting).</li><ul></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/airship_battle.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Airship Battle">
-                    <div class="title"><a class="s-title">Airship Battle</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/avalanche.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Avalanche">
-                    <div class="title"><a class="s-title">Avalanche</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/balloon_archipelago.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Balloon Archipelago">
-                    <div class="title"><a class="s-title">Balloon Archipelago</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/cake_wars.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Cake Wars">
-                    <div class="title"><a class="s-title">Cake Wars</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/fortress_battles.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Fortress Battles">
-                    <div class="title"><a class="s-title">Fortress Battles</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/full_salvo.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Full Salvo">
-                    <div class="title"><a class="s-title">Full Salvo</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/interitus.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Interitus">
-                    <div class="title"><a class="s-title">Interitus</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/medieval_warfare.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Medieval Warfare">
-                    <div class="title"><a class="s-title">Medieval Warfare</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/runes_of_ruin.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Runes of Ruin">
-                    <div class="title"><a class="s-title">Runes of Ruin</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/spaceship_battles.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Spaceship Battles">
-                    <div class="title"><a class="s-title">Spaceship Battles</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Core and Monument<span class="hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/warlock.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Warlock">
-                    <div class="title"><a class="s-title">Warlock</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
 </div>
-<div class="league-info-section large" id="teams">Teams <small>32 teams</small></div>
-<div class="row">
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-maps"><i class="fas fa-angle-down"></i> Map Pool <small>12 maps</small></div>
+    <div class="collapse in" id="section-maps">
+        <div class="dynamic">
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/the_complex.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="The Complex">
+                            <div class="title"><a class="s-title">The Complex</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Blitz</li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info">Tie Breaker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <table class="table table-striped table-condensed">
-                <thead>
-                    <th>Seed</th>
-                    <th>Team Name</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><b>1</b></td>
-                        <td>Badlion</td>
-                    </tr>
-                    <tr>
-                        <td><b>2</b></td>
-                        <td>Starfish</td>
-                    </tr>
-                    <tr>
-                        <td><b>3</b></td>
-                        <td>#YOLOSwag</td>
-                    </tr>
-                    <tr>
-                        <td><b>4</b></td>
-                        <td>Better Get a Broom</td>
-                    </tr>
-                    <tr>
-                        <td><b>5</b></td>
-                        <td>Impact</td>
-                    </tr>
-                    <tr>
-                        <td><b>6</b></td>
-                        <td>Team Fishy</td>
-                    </tr>
-                    <tr>
-                        <td><b>7</b></td>
-                        <td>Team Supreme</td>
-                    </tr>
-                    <tr>
-                        <td><b>8</b></td>
-                        <td>Ursa Major</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/airship_battle.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Airship Battle">
+                            <div class="title"><a class="s-title">Airship Battle</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/avalanche.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Avalanche">
+                            <div class="title"><a class="s-title">Avalanche</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/balloon_archipelago.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Balloon Archipelago">
+                            <div class="title"><a class="s-title">Balloon Archipelago</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/cake_wars.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Cake Wars">
+                            <div class="title"><a class="s-title">Cake Wars</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/fortress_battles.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Fortress Battles">
+                            <div class="title"><a class="s-title">Fortress Battles</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/full_salvo.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Full Salvo">
+                            <div class="title"><a class="s-title">Full Salvo</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/interitus.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Interitus">
+                            <div class="title"><a class="s-title">Interitus</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/medieval_warfare.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Medieval Warfare">
+                            <div class="title"><a class="s-title">Medieval Warfare</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/runes_of_ruin.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Runes of Ruin">
+                            <div class="title"><a class="s-title">Runes of Ruin</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/spaceship_battles.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Spaceship Battles">
+                            <div class="title"><a class="s-title">Spaceship Battles</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Core and Monument<span class="hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/warlock.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Warlock">
+                            <div class="title"><a class="s-title">Warlock</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
+</div>
+<div class="collapse-section" id="teams">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>32 teams</small></div>
+    <div class="collapse in" id="section-teams">
+        <div class="tm-team-group">
+            <div class="tm-team-group-teams">
+                <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="1 Seed">1</div>
+                    <div class="name">Badlion</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="2 Seed">2</div>
+                    <div class="name">Starfish</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="3 Seed">3</div>
+                    <div class="name">#YOLOSwag</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="4 Seed">4</div>
+                    <div class="name">Better Get a Broom</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="5 Seed">5</div>
+                    <div class="name">Impact</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="6 Seed">6</div>
+                    <div class="name">Team Fishy</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="7 Seed">7</div>
+                    <div class="name">Team Supreme</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="8 Seed">8</div>
+                    <div class="name">Ursa Major</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="9 Seed">9</div>
+                    <div class="name">Girl Scouts</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="10 Seed">10</div>
+                    <div class="name">Game Mode 1</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="11 Seed">11</div>
+                    <div class="name">SC</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="12 Seed">12</div>
+                    <div class="name">Sexy Squad</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="13 Seed">13</div>
+                    <div class="name">SpiderBronies</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="14 Seed">14</div>
+                    <div class="name">Fairytales</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="15 Seed">15</div>
+                    <div class="name">Divinance</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="16 Seed">16</div>
+                    <div class="name">OCBP</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="17 Seed">17</div>
+                    <div class="name">OmegaWolves</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="18 Seed">18</div>
+                    <div class="name">Omega Gamers</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="19 Seed">19</div>
+                    <div class="name">Core Attackers</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="20 Seed">20</div>
+                    <div class="name">Team Infinite</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="21 Seed">21</div>
+                    <div class="name">FishBears</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="22 Seed">22</div>
+                    <div class="name">PhatKidz</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="23 Seed">23</div>
+                    <div class="name">Ligers</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="24 Seed">24</div>
+                    <div class="name">Loading...</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="25 Seed">25</div>
+                    <div class="name">BichesGonCrazy</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="26 Seed">26</div>
+                    <div class="name">Multiple Scoregasms</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="27 Seed">27</div>
+                    <div class="name">nope.avi</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="28 Seed">28</div>
+                    <div class="name">Broseidon</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="29 Seed">29</div>
+                    <div class="name">Normania</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="30 Seed">30</div>
+                    <div class="name">The Imposters</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="31 Seed">31</div>
+                    <div class="name">Team Synergy</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="32 Seed">32</div>
+                    <div class="name">Fellowship of project ares</div>
+                </div>    </div>
             
-            <table class="table table-striped table-condensed">
-                <thead>
-                    <th>Seed</th>
-                    <th>Team Name</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><b>9</b></td>
-                        <td>Girl Scouts</td>
-                    </tr>
-                    <tr>
-                        <td><b>10</b></td>
-                        <td>Game Mode 1</td>
-                    </tr>
-                    <tr>
-                        <td><b>11</b></td>
-                        <td>SC</td>
-                    </tr>
-                    <tr>
-                        <td><b>12</b></td>
-                        <td>Sexy Squad</td>
-                    </tr>
-                    <tr>
-                        <td><b>13</b></td>
-                        <td>SpiderBronies</td>
-                    </tr>
-                    <tr>
-                        <td><b>14</b></td>
-                        <td>Fairytales</td>
-                    </tr>
-                    <tr>
-                        <td><b>15</b></td>
-                        <td>Divinance</td>
-                    </tr>
-                    <tr>
-                        <td><b>17</b></td>
-                        <td>OCBP</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
-            
-            <table class="table table-striped table-condensed">
-                <thead>
-                    <th>Seed</th>
-                    <th>Team Name</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><b>17</b></td>
-                        <td>OmegaWolves</td>
-                    </tr>
-                    <tr>
-                        <td><b>18</b></td>
-                        <td>Omega Gamers</td>
-                    </tr>
-                    <tr>
-                        <td><b>19</b></td>
-                        <td>Core Attackers</td>
-                    </tr>
-                    <tr>
-                        <td><b>20</b></td>
-                        <td>Team Infinite</td>
-                    </tr>
-                    <tr>
-                        <td><b>21</b></td>
-                        <td>FishBears</td>
-                    </tr>
-                    <tr>
-                        <td><b>22</b></td>
-                        <td>PhatKidz</td>
-                    </tr>
-                    <tr>
-                        <td><b>23</b></td>
-                        <td>Ligers</td>
-                    </tr>
-                    <tr>
-                        <td><b>24</b></td>
-                        <td>Loading...</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
-            
-            <table class="table table-striped table-condensed">
-                <thead>
-                    <th>Seed</th>
-                    <th>Team Name</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><b>25</b></td>
-                        <td>BichesGonCrazy</td>
-                    </tr>
-                    <tr>
-                        <td><b>26</b></td>
-                        <td>Multiple Scoregasms</td>
-                    </tr>
-                    <tr>
-                        <td><b>27</b></td>
-                        <td>nope.avi</td>
-                    </tr>
-                    <tr>
-                        <td><b>28</b></td>
-                        <td>Broseidon</td>
-                    </tr>
-                    <tr>
-                        <td><b>29</b></td>
-                        <td>Normania</td>
-                    </tr>
-                    <tr>
-                        <td><b>30</b></td>
-                        <td>The Imposters</td>
-                    </tr>
-                    <tr>
-                        <td><b>31</b></td>
-                        <td>Team Synergy</td>
-                    </tr>
-                    <tr>
-                        <td><b>32</b></td>
-                        <td>Fellowship of project ares</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
         </div>
     </div>
 </div>

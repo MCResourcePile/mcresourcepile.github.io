@@ -18,12 +18,12 @@
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
@@ -202,6 +202,16 @@
                         <select id="preference-show-map-suggestions" name="show_map_suggestions" class="form-control preference">
                             <option value="true">True</option>
                             <option value="false">False</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="preference-tm-banners-display" class="col-sm-3 control-label">Tournament Banners Display <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Choose what should be displayed for tournament banners."></a></label>
+                    <div class="col-sm-9">
+                        <select id="preference-tm-banners-display" name="tm_banners_display" class="form-control preference">
+                            <option value="all">All</option>
+                            <option value="only-text">Only Text</option>
+                            <option value="only-banners">Only Banners</option>
                         </select>
                     </div>
                 </div>

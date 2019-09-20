@@ -18,17 +18,17 @@
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-        <script src="/assets/js/tournaments.js"></script>
+        <script src="/assets/js/tournaments-banners.js"></script>
         <script src="/assets/js/search.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -148,85 +148,93 @@
             </div>
         </div>
     </div>
-    <div class="col-md-9 col-md-pull-3 list">
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="July 20-21, 2019 to July 27-28, 2019"><i class="far fa-calendar"></i> 2019</span>
-                <a class="click-search" data-query="UbeR">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> UbeR</span>
-                </a>
-            </div>
-            <a href="/leagues/pgm/project_ares_endgame">
-                <div class="tm-name">Project Ares: Endgame</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>,
-                    <span class="tm-tag">Capture the Wool</span>,
-                    <span class="tm-tag">Destroy the Core</span>,
-                    <span class="tm-tag">Destroy the Monument</span>,
-                    <span class="tm-tag">King of the Hill</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">UbeR,,Capture Points,Capture the Wool,Destroy the Core,Destroy the Monument,King of the Hill,Team Deathmatch</div>
-                </div>
-                <div class="league-default-banner" style="background: url('../../assets/img/tournament/banners/default/nextgen.jpg'); background-position: center; background-size: cover;">Project Ares: Endgame</div>
+    <div class="col-md-9 col-md-pull-3">
+        <div class="tm-banner-options thumbnail">
+            Display: 
+            <span class="active" id="display-text">
+                <i class="fas fa-font"></i> Text</a></li>
+            </span>
+            <span class="active" id="display-banners">
+                <i class="fas fa-images"></i> Banners</a>
+            </span> |
+            <a href="/admin/preferences#preference-tm-banners-display" target="_blank">
+                <span>
+                    <i class="fas fa-cog"></i> Set a Default
+                </span>
             </a>
         </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="January 14-15, 2017 to January 22-23, 2017"><i class="far fa-calendar"></i> 2017</span>
-                <a class="click-search" data-query="PureBlox">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> PureBlox</span>
+        <div class="list">
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="July 20-21, 2019 to July 27-28, 2019"><i class="far fa-calendar"></i> 2019</span>
+                    <span class="tm-label click-search" data-query="UbeR"><i class="fas fa-trophy"></i> UbeR</span>
+                </div>
+                <a href="/leagues/pgm/project_ares_endgame">
+                    <div class="tm-name">Project Ares: Endgame</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">Capture the Wool</span>,
+                        <span class="tm-tag">Destroy the Core</span>,
+                        <span class="tm-tag">Destroy the Monument</span>,
+                        <span class="tm-tag">King of the Hill</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">UbeR,,Capture Points,Capture the Wool,Destroy the Core,Destroy the Monument,King of the Hill,Team Deathmatch</div>
+                    </div>
+                    <div class="league-default-banner lazy" data-bg="url('../../assets/img/tournament/banners/default/nextgen.jpg')" style="background-position: center; background-size: cover;" title="Project Ares: Endgame">Project Ares: Endgame</div>
                 </a>
             </div>
-            <a href="/leagues/pgm/fantastic_pvpers_and_where_to_fight_them">
-                <div class="tm-name">Fantastic PvPers and Where to Fight Them</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture the Flag</span>,
-                    <span class="tm-tag">Capture the Flag</span>,
-                    <span class="tm-tag">King of the Flag</span>,
-                    <span class="tm-tag">King of the Hill</span>
-                    <div class="tags hidden">PureBlox,,Capture the Flag,Capture the Flag,King of the Flag,King of the Hill</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="January 14-15, 2017 to January 22-23, 2017"><i class="far fa-calendar"></i> 2017</span>
+                    <span class="tm-label click-search" data-query="PureBlox"><i class="fas fa-trophy"></i> PureBlox</span>
                 </div>
-                <div class="league-default-banner" style="background: url('../../assets/img/tournament/banners/default/smoke.jpg'); background-position: center; background-size: cover;">Fantastic PvPers and Where to Fight Them</div>
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="September 24-25, 2016 to October 1-2, 2016"><i class="far fa-calendar"></i> 2016</span>
-                <a class="click-search" data-query="Grim">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> Grim</span>
+                <a href="/leagues/pgm/fantastic_pvpers_and_where_to_fight_them">
+                    <div class="tm-name">Fantastic PvPers and Where to Fight Them</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture the Flag</span>,
+                        <span class="tm-tag">Capture the Flag</span>,
+                        <span class="tm-tag">King of the Flag</span>,
+                        <span class="tm-tag">King of the Hill</span>
+                        <div class="tags hidden">PureBlox,,Capture the Flag,Capture the Flag,King of the Flag,King of the Hill</div>
+                    </div>
+                    <div class="league-default-banner lazy" data-bg="url('../../assets/img/tournament/banners/default/smoke.jpg')" style="background-position: center; background-size: cover;" title="Fantastic PvPers and Where to Fight Them">Fantastic PvPers and Where to Fight Them</div>
                 </a>
             </div>
-            <a href="/leagues/pgm/overcast_squad">
-                <div class="tm-name">Overcast Squad</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture Points</span>,
-                    <span class="tm-tag">Capture the Wool</span>,
-                    <span class="tm-tag">Destroy the Core and Monument</span>,
-                    <span class="tm-tag">King of the Hill</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">Grim,,Capture Points,Capture the Wool,Destroy the Core and Monument,King of the Hill,Team Deathmatch</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="September 24-25, 2016 to October 1-2, 2016"><i class="far fa-calendar"></i> 2016</span>
+                    <span class="tm-label click-search" data-query="Grim"><i class="fas fa-trophy"></i> Grim</span>
                 </div>
-                <div class="league-default-banner" style="background: url('../../assets/img/tournament/banners/default/highlands.jpg'); background-position: center; background-size: cover;">Overcast Squad</div>
-            </a>
-        </div>
-        <div class="tm-banner-row">
-            <div class="tm-labels">
-                <span class="tm-label" data-toggle="tooltip" data-placement="top" title="April 9-10, 2016 to April 23-24, 2016"><i class="far fa-calendar"></i> 2016</span>
-                <a class="click-search" data-query="HUGE wall">
-                    <span class="tm-label"><i class="fas fa-trophy"></i> HUGE wall</span>
+                <a href="/leagues/pgm/overcast_squad">
+                    <div class="tm-name">Overcast Squad</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture Points</span>,
+                        <span class="tm-tag">Capture the Wool</span>,
+                        <span class="tm-tag">Destroy the Core and Monument</span>,
+                        <span class="tm-tag">King of the Hill</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">Grim,,Capture Points,Capture the Wool,Destroy the Core and Monument,King of the Hill,Team Deathmatch</div>
+                    </div>
+                    <div class="league-default-banner lazy" data-bg="url('../../assets/img/tournament/banners/default/highlands.jpg')" style="background-position: center; background-size: cover;" title="Overcast Squad">Overcast Squad</div>
                 </a>
             </div>
-            <a href="/leagues/pgm/civil_modes_war_of_the_teams">
-                <div class="tm-name">Civil Modes: War of the Teams</div>
-                <div class="tm-tags">
-                    <span class="tm-tag">Capture the Flag</span>,
-                    <span class="tm-tag">Capture the Wool</span>,
-                    <span class="tm-tag">King of the Flag</span>,
-                    <span class="tm-tag">Team Deathmatch</span>
-                    <div class="tags hidden">HUGE wall,,Capture the Flag,Capture the Wool,King of the Flag,Team Deathmatch</div>
+            <div class="tm-banner-row">
+                <div class="tm-labels">
+                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="April 9-10, 2016 to April 23-24, 2016"><i class="far fa-calendar"></i> 2016</span>
+                    <span class="tm-label click-search" data-query="HUGE wall"><i class="fas fa-trophy"></i> HUGE wall</span>
                 </div>
-                <div class="league-default-banner" style="background: url('../../assets/img/tournament/banners/default/desert.jpg'); background-position: center; background-size: cover;">Civil Modes: War of the Teams</div>
-            </a>
+                <a href="/leagues/pgm/civil_modes_war_of_the_teams">
+                    <div class="tm-name">Civil Modes: War of the Teams</div>
+                    <div class="tm-tags">
+                        <span class="tm-tag">Capture the Flag</span>,
+                        <span class="tm-tag">Capture the Wool</span>,
+                        <span class="tm-tag">King of the Flag</span>,
+                        <span class="tm-tag">Team Deathmatch</span>
+                        <div class="tags hidden">HUGE wall,,Capture the Flag,Capture the Wool,King of the Flag,Team Deathmatch</div>
+                    </div>
+                    <div class="league-default-banner lazy" data-bg="url('../../assets/img/tournament/banners/default/desert.jpg')" style="background-position: center; background-size: cover;" title="Civil Modes: War of the Teams">Civil Modes: War of the Teams</div>
+                </a>
+            </div>
         </div>
     </div>
 </div>

@@ -18,15 +18,16 @@
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
+        <script src="/assets/js/tournaments-pages.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -125,8 +126,8 @@
                 </li>
             </div>
             <div class="col-xs-4">
-                <li class="next disabled">
-                    <a>Next <i class="fas fa-long-arrow-alt-right"></i></a>
+                <li class="next">
+                    <a href="/leagues/stratus/conquest_reloaded">Next: Conquest Reloaded <i class="fas fa-long-arrow-alt-right"></i></a>
                 </li>
             </div>
         </div>
@@ -135,7 +136,7 @@
 <div class="center">
     <img class="league-banner" src="../../assets/img/tournament/banners/stratus/wool_e.png">
 </div>
-<div class="center">
+<div class="center" style="margin-bottom: 5px;">
     <div class="league-position league-position-first">
         <i class="fas fa-trophy"></i>
         <div class="league-team">Adventure Club</div>
@@ -143,292 +144,369 @@
     </div>
     <div class="row">
         <div class="league-position col-sm-6">
-            <i class="fas fa-star"></i>
+            <i class="fas fa-medal"></i>
             <div class="league-team">SHREW</div>
             <div class="league-team-position">2<sup>nd</sup> place</div>
         </div>
         <div class="league-position col-sm-6">
-            <i class="fas fa-star-half-alt"></i>
+            <i class="fas fa-medal"></i>
             <div class="league-team">PERDON NO!!! QUE HACES?</div>
             <div class="league-team-position">3<sup>rd</sup> place</div>
         </div>
     </div>
-    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
 </div>
-<div class="collapse" id="resultsCollapse">
-    <div class="league-results">
+<div class="tm-results">
+    <span class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" data-target="#section-results">Show Full Results +</span>
+    <div class="collapse" id="section-results">
+        <div class="tm-results-well">
+            <div class="row" id="results-panels">
+                <div class="col-md-12">
+                    <div class="league-information blue">
+                        <div class="league-info-section">Qualifier Results</div>
+                        <table class="league-info-table">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" style="font-weight: 400;"><div class='center'><img src='https://i.imgur.com/xdaqTSe.png'></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="challonge-brackets">
+                <div class="challonge-bracket">
+                    <span>Invitational</span>
+                    <a href="https://stratus.challonge.com/WOOLE" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <iframe src="https://stratus.challonge.com/WOOLE/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
+    <div class="collapse in" id="section-info">
         <div class="row">
-            <div class="col-md-12">
-                <div class="well well-sm well-custom-blue">
-                    <div class="league-info-section">Qualifiers Results</div>
+            <div class="col-md-6">
+                <div class="league-information red">
+                    <div class="league-info-section">Details</div>
                     <table class="league-info-table">
                         <tbody>
                             <tr>
-                                <td colspan="2" style="font-weight:400"><div class='center'><img src='https://i.imgur.com/xdaqTSe.png'></div></td>
+                                <td>Format</td>
+                                <td>
+                                    Qualifier<i class="fas fa-long-arrow-alt-right" style="vertical-align: middle; padding-left: 7px; padding-right: 6px;"></i>Invitational (Double Elimination)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Gamemodes</td>
+                                <td>
+                                    Capture the Wool
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Teams</td>
+                                <td>
+                                    <a href="#teams">13 teams <i class="fas fa-chevron-down"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Team Size</td>
+                                <td>8v8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="league-information red">
+                    <div class="league-info-section">Dates</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            <tr>
+                                <td>Qualifier</td>
+                                <td>June 15-16, 2019</td>
+                            </tr>
+                            <tr>
+                                <td>Invitational Week 1</td>
+                                <td>June 22-23, 2019</td>
+                            </tr>
+                            <tr>
+                                <td>Invitational Week 2</td>
+                                <td>June 29-30, 2019</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        <div class="challonge-bracket">
-            <span>Invitational</span>
-            <a href="https://stratus.challonge.com/WOOLE" target="_blank">
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-            <iframe src="https://stratus.challonge.com/WOOLE/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    </div>
+</div>
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-videos"><i class="fas fa-angle-down"></i> Videos <small>2 videos</small></div>
+    <div class="collapse in" id="section-videos">
+        <div class="video-embed-container">
+            <div class="video-embed">
+                <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="https://www.youtube-nocookie.com/embed/dxmbGW7Fljw" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-embed-info">
+                    <div class="video-embed-labels">
+                        <i class="fab fa-youtube" style="color: #FF0000" data-toggle="tooltip" data-placement="bottom" title="YouTube"></i>
+                        - Video
+                    </div>
+                    <div class="video-embed-title">WOOL-E Trailer</div>
+                    <div class="video-embed-description">Trailer created by bYuri with help from Maripossa for WOOL-E</div>
+                </div>
+            </div>
+            <div class="video-embed">
+                <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="https://www.youtube-nocookie.com/embed/PIrpeLnwEws" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-embed-info">
+                    <div class="video-embed-labels">
+                        <i class="fab fa-youtube" style="color: #FF0000" data-toggle="tooltip" data-placement="bottom" title="YouTube"></i>
+                        - Video
+                    </div>
+                    <div class="video-embed-title">WOOL-E Highlight Reel</div>
+                    <div class="video-embed-description">Highlight Reel created by vYuri for WOOL-E</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="league-info-section large">Tournament Information</div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Details</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>Method</td>
-                        <td>Qualifiers, then Double Elimination Invitational</td>
-                    </tr>
-                    <tr>
-                        <td>Gamemodes</td>
-                        <td>
-                            Capture the Wool
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Teams</td>
-                        <td>
-                            <a href="#teams">13 teams <i class="fas fa-chevron-down"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Team Size</td>
-                        <td>8v8</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>Qualifiers</td>
-                        <td>June 15-16, 2019</td>
-                    </tr>
-                    <tr>
-                        <td>Invitational Week 1</td>
-                        <td>June 22-23, 2019</td>
-                    </tr>
-                    <tr>
-                        <td>Invitational Week 2</td>
-                        <td>June 29-30, 2019</td>
-                    </tr>
-                </tbody>
-            </table>
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-maps"><i class="fas fa-angle-down"></i> Map Pool <small>7 maps</small></div>
+    <div class="collapse in" id="section-maps">
+        <div class="dynamic">
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/dead_heat.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Dead Heat">
+                            <div class="title"><a class="s-title">Dead Heat</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span>,</li>
+                                <li class="game-tag map-tag s-tag">Blitz</li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info">Vetoing Decider</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/greenhouse.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Greenhouse">
+                            <div class="title"><a class="s-title">Greenhouse</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info">Tie Breaker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/fun_guy.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Fun Guy">
+                            <div class="title"><a class="s-title">Fun Guy</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/pickle.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Pickle">
+                            <div class="title"><a class="s-title">Pickle</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/sharks_killed.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Sharks Killed">
+                            <div class="title"><a class="s-title">Sharks Killed</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/union.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Union">
+                            <div class="title"><a class="s-title">Union</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/we_sell_mushrooms.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="We Sell Mushrooms">
+                            <div class="title"><a class="s-title">We Sell Mushrooms</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>
-<div class="league-info-section large">Map Pool <small>7</small></div>
-<div class="dynamic">
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/dead_heat.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Dead Heat">
-                    <div class="title"><a class="s-title">Dead Heat</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span>,</li>
-                        <li class="game-tag map-tag s-tag">Blitz</li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
+<div class="collapse-section" id="teams">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>13 teams</small></div>
+    <div class="collapse in" id="section-teams">
+        <ul class="nav nav-tabs tm-teams-tabs" role="tablist">
+            <li class="active">
+                <a href="#qualifier" role="tab" data-toggle="tab">Qualifier</a>
+            </li>
+            <li >
+                <a href="#invitational" role="tab" data-toggle="tab">Invitational</a>
+            </li>
+        </ul>
+        <div class="checkbox tm-teams-fade-checkbox">
+            <label>
+                <input type="checkbox" id="team-fade-checkbox" checked>
+                Fade Teams that did not Advance
+            </label>
+        </div>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active tm-group-advances" id="qualifier">
+                <div class="tm-team-group">
+                    <div class="team-group-name">Group A</div>
+                    <div class="team-group-name team-group-count">7 teams</div>
+                    <div class="tm-team-group-teams">
+                        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">BHT Glory</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Boca Juniors</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">lleva linea pero no canta bingo</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">OpticBallZ</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Ram Ranch</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">SHREW</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">sup</div>
+                        </div>    </div>
+                    <hr>
                 </div>
-                <div class="labels">
-                    <span class="label label-info">Vetoing Decider</span>
+                <div class="tm-team-group">
+                    <div class="team-group-name">Group B</div>
+                    <div class="team-group-name team-group-count">6 teams</div>
+                    <div class="tm-team-group-teams">
+                        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Adventure Club</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Assemble</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Bluedu &amp; the boys</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">GGeneSiS</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">PERDON NO!!! QUE HACES???</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Velocite</div>
+                        </div>    </div>
+                    
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/greenhouse.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Greenhouse">
-                    <div class="title"><a class="s-title">Greenhouse</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info">Tie Breaker</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/fun_guy.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Fun Guy">
-                    <div class="title"><a class="s-title">Fun Guy</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
+            <div role="tabpanel" class="tab-pane" id="invitational">
+                <div class="tm-team-group">
+                    <div class="team-group-name">Invitational</div>
+                    <div class="team-group-name team-group-count">10 teams</div>
+                    <div class="tm-team-group-teams">
+                        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Adventure Club</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Assemble</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">BHT Glory</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Bluedu &amp; the boys</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Boca Juniors</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">GGeneSiS</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">lleva linea pero no canta bingo</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">PERDON NO!!! QUE HACES???</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Ram Ranch</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">SHREW</div>
+                        </div>    </div>
+                    
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/pickle.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Pickle">
-                    <div class="title"><a class="s-title">Pickle</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/sharks_killed.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Sharks Killed">
-                    <div class="title"><a class="s-title">Sharks Killed</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/union.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Union">
-                    <div class="title"><a class="s-title">Union</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/we_sell_mushrooms.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="We Sell Mushrooms">
-                    <div class="title"><a class="s-title">We Sell Mushrooms</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-</div>
-<div class="league-info-section large" id="teams">Teams <small>13 teams</small></div>
-<div class="row">
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
-            <div class="league-info-section">Group A <small>7 teams</small></div>
-            <table class="table table-striped table-condensed">
-                <tbody>
-                    <tr>
-                        <td>BHT Glory</td>
-                    </tr>
-                    <tr>
-                        <td>Boca Juniors</td>
-                    </tr>
-                    <tr>
-                        <td>OpticBallZ</td>
-                    </tr>
-                    <tr>
-                        <td>Ram Ranch</td>
-                    </tr>
-                    <tr>
-                        <td>SHREW</td>
-                    </tr>
-                    <tr>
-                        <td>lleva linea pero no canta bingo</td>
-                    </tr>
-                    <tr>
-                        <td>sup</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
-            <div class="league-info-section">Group B <small>6 teams</small></div>
-            <table class="table table-striped table-condensed">
-                <tbody>
-                    <tr>
-                        <td>Adventure Club</td>
-                    </tr>
-                    <tr>
-                        <td>Assemble</td>
-                    </tr>
-                    <tr>
-                        <td>Bluedu &amp; the boys</td>
-                    </tr>
-                    <tr>
-                        <td>GGeneSiS</td>
-                    </tr>
-                    <tr>
-                        <td>PERDON NO!!! QUE HACES???</td>
-                    </tr>
-                    <tr>
-                        <td>Velocite</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
         </div>
     </div>
 </div>

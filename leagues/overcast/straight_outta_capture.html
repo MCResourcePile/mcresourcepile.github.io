@@ -18,15 +18,16 @@
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
+        <script src="/assets/js/tournaments-pages.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -135,7 +136,7 @@
 <div class="center">
     <img class="league-banner" src="../../assets/img/tournament/banners/overcast/straight_outta_capture.png">
 </div>
-<div class="center">
+<div class="center" style="margin-bottom: 5px;">
     <div class="league-position league-position-first">
         <i class="fas fa-trophy"></i>
         <div class="league-team">PureBlox</div>
@@ -143,586 +144,549 @@
     </div>
     <div class="row">
         <div class="league-position col-sm-6">
-            <i class="fas fa-star"></i>
+            <i class="fas fa-medal"></i>
             <div class="league-team">Tribal</div>
             <div class="league-team-position">2<sup>nd</sup> place</div>
         </div>
         <div class="league-position col-sm-6">
-            <i class="fas fa-star-half-alt"></i>
-            <div class="league-team">Street Sharks &amp; Punishers</div>
+            <i class="fas fa-medal"></i>
+            <div class="league-team">Street Sharks, Punishers</div>
             <div class="league-team-position">3<sup>rd</sup> place</div>
         </div>
     </div>
-    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
 </div>
-<div class="collapse" id="resultsCollapse">
-    <div class="league-results">
-        <div class="challonge-bracket">
-            <span>Bracket</span>
-            <a href="https://ocn.challonge.com/StraightOuttaCapture" target="_blank">
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-            <iframe src="https://ocn.challonge.com/StraightOuttaCapture/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-        </div>
-    </div>
-</div>
-<div class="league-info-section large">Tournament Information</div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Details</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>Method</td>
-                        <td>Group Stages, then Single Elimination</td>
-                    </tr>
-                    <tr>
-                        <td>Gamemodes</td>
-                        <td>
-                            Capture Points,
-                            Capture the Flag,
-                            Capture the Wool
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Teams</td>
-                        <td>
-                            <a href="#teams">72 Teams <i class="fas fa-chevron-down"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Team Size</td>
-                        <td>5v5</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>Group Stages</td>
-                        <td>May 7, 14, and 21, 2016</td>
-                    </tr>
-                    <tr>
-                        <td>Invitationals</td>
-                        <td>May 28, 2016</td>
-                    </tr>
-                </tbody>
-            </table>
+<div class="tm-results">
+    <span class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" data-target="#section-results">Show Full Results +</span>
+    <div class="collapse" id="section-results">
+        <div class="tm-results-well">
+            <div id="challonge-brackets">
+                <div class="challonge-bracket">
+                    <span>Bracket</span>
+                    <a href="https://ocn.challonge.com/StraightOuttaCapture" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <iframe src="https://ocn.challonge.com/StraightOuttaCapture/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="league-info-section large">Map Pool <small>9</small></div>
-<div class="dynamic">
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/abstract.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Abstract">
-                    <div class="title"><a class="s-title">Abstract</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
+    <div class="collapse in" id="section-info">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="league-information red">
+                    <div class="league-info-section">Details</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            <tr>
+                                <td>Format</td>
+                                <td>
+                                    Qualifier (Group)<i class="fas fa-long-arrow-alt-right" style="vertical-align: middle; padding-left: 7px; padding-right: 6px;"></i>Invitational (Single Elimination)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Gamemodes</td>
+                                <td>
+                                    Capture Points,
+                                    Capture the Flag,
+                                    Capture the Wool
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Teams</td>
+                                <td>
+                                    <a href="#teams">72 Teams <i class="fas fa-chevron-down"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Team Size</td>
+                                <td>5v5</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
+            </div>
+            <div class="col-md-6">
+                <div class="league-information red">
+                    <div class="league-info-section">Dates</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            <tr>
+                                <td>Qualifier</td>
+                                <td>May 7, 14, and 21, 2016</td>
+                            </tr>
+                            <tr>
+                                <td>Invitational</td>
+                                <td>May 28, 2016</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/bamboo_valley_iv.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Bamboo Valley IV">
-                    <div class="title"><a class="s-title">Bamboo Valley IV</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture Points<span class="hidden">cp</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/flush.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Flush">
-                    <div class="title"><a class="s-title">Flush</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/foundry.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Foundry">
-                    <div class="title"><a class="s-title">Foundry</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture Points<span class="hidden">cp</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/siege.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Siege">
-                    <div class="title"><a class="s-title">Siege</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture Points<span class="hidden">cp</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/space_race_1969.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Space Race: 1969">
-                    <div class="title"><a class="s-title">Space Race: 1969</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/thicket.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Thicket">
-                    <div class="title"><a class="s-title">Thicket</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/versatile.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Versatile">
-                    <div class="title"><a class="s-title">Versatile</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/wallop.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="Wallop">
-                    <div class="title"><a class="s-title">Wallop</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
 </div>
-<div class="league-info-section large" id="teams">Teams <small>72 Teams</small></div>
-<div class="row">
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
-            <div class="league-info-section">Group A <small>24 teams</small></div>
-            <table class="table table-striped table-condensed">
-                <tbody>
-                    <tr>
-                        <td>Bravehearts</td>
-                    </tr>
-                    <tr>
-                        <td>BruteForce</td>
-                    </tr>
-                    <tr>
-                        <td>Caos</td>
-                    </tr>
-                    <tr>
-                        <td>Colossus</td>
-                    </tr>
-                    <tr>
-                        <td>Divinum Hexis</td>
-                    </tr>
-                    <tr>
-                        <td>Dynamo</td>
-                    </tr>
-                    <tr>
-                        <td>Fancy</td>
-                    </tr>
-                    <tr>
-                        <td>FatalFury</td>
-                    </tr>
-                    <tr>
-                        <td>FrostFire</td>
-                    </tr>
-                    <tr>
-                        <td>Highlights</td>
-                    </tr>
-                    <tr>
-                        <td>JurassicRush</td>
-                    </tr>
-                    <tr>
-                        <td>Light Sigma</td>
-                    </tr>
-                    <tr>
-                        <td>Mazork&#x27;s</td>
-                    </tr>
-                    <tr>
-                        <td>Midas</td>
-                    </tr>
-                    <tr>
-                        <td>Of Moose and Men</td>
-                    </tr>
-                    <tr>
-                        <td>Old Generation</td>
-                    </tr>
-                    <tr>
-                        <td>Padlock</td>
-                    </tr>
-                    <tr>
-                        <td>Soulname_</td>
-                    </tr>
-                    <tr>
-                        <td>Squadcatt</td>
-                    </tr>
-                    <tr>
-                        <td>Street Sharks</td>
-                    </tr>
-                    <tr>
-                        <td>UbeR</td>
-                    </tr>
-                    <tr>
-                        <td>VH</td>
-                    </tr>
-                    <tr>
-                        <td>Varsity</td>
-                    </tr>
-                    <tr>
-                        <td>zEnergyPvP</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-videos"><i class="fas fa-angle-down"></i> Videos <small>2 videos</small></div>
+    <div class="collapse in" id="section-videos">
+        <div class="video-embed-container">
+            <div class="video-embed">
+                <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="https://player.twitch.tv/?autoplay=false&video=72729488"  allowfullscren="true" scrolling="no"></iframe>
+                </div>
+                <div class="video-embed-info">
+                    <div class="video-embed-labels">
+                        <i class="fab fa-twitch" style="color: #6441A4" data-toggle="tooltip" data-placement="bottom" title="Twitch"></i>
+                        - Video
+                    </div>
+                    <div class="video-embed-title">Qualifier (May 7th)</div>
+                    <div class="video-embed-description">Stream of the Qualifier on May 7, 2016.</div>
+                </div>
+            </div>
+            <div class="video-embed">
+                <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="https://player.twitch.tv/?autoplay=false&video=72729580"  allowfullscren="true" scrolling="no"></iframe>
+                </div>
+                <div class="video-embed-info">
+                    <div class="video-embed-labels">
+                        <i class="fab fa-twitch" style="color: #6441A4" data-toggle="tooltip" data-placement="bottom" title="Twitch"></i>
+                        - Video
+                    </div>
+                    <div class="video-embed-title">Qualifier (May 21st)</div>
+                    <div class="video-embed-description">Stream of the Qualifier on May 21, 2016.</div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
-            <div class="league-info-section">Group B <small>24 teams</small></div>
-            <table class="table table-striped table-condensed">
-                <tbody>
-                    <tr>
-                        <td>AriZ0ne</td>
-                    </tr>
-                    <tr>
-                        <td>Blueagle</td>
-                    </tr>
-                    <tr>
-                        <td>Bunyola ALE</td>
-                    </tr>
-                    <tr>
-                        <td>CON SI THIS</td>
-                    </tr>
-                    <tr>
-                        <td>Cryptosys</td>
-                    </tr>
-                    <tr>
-                        <td>Dark Sigma</td>
-                    </tr>
-                    <tr>
-                        <td>Fireh</td>
-                    </tr>
-                    <tr>
-                        <td>GGeneSiS</td>
-                    </tr>
-                    <tr>
-                        <td>Gamerule</td>
-                    </tr>
-                    <tr>
-                        <td>HUGE Wall</td>
-                    </tr>
-                    <tr>
-                        <td>Hypetic</td>
-                    </tr>
-                    <tr>
-                        <td>Inertia</td>
-                    </tr>
-                    <tr>
-                        <td>InsanityThunder</td>
-                    </tr>
-                    <tr>
-                        <td>Miracle</td>
-                    </tr>
-                    <tr>
-                        <td>Obey</td>
-                    </tr>
-                    <tr>
-                        <td>Outliers</td>
-                    </tr>
-                    <tr>
-                        <td>PancakeAirlines</td>
-                    </tr>
-                    <tr>
-                        <td>Pandora</td>
-                    </tr>
-                    <tr>
-                        <td>PureBlox</td>
-                    </tr>
-                    <tr>
-                        <td>Starbeans</td>
-                    </tr>
-                    <tr>
-                        <td>Tribal</td>
-                    </tr>
-                    <tr>
-                        <td>Warp</td>
-                    </tr>
-                    <tr>
-                        <td>YGang</td>
-                    </tr>
-                    <tr>
-                        <td>ZiReGG YT</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
+</div>
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-maps"><i class="fas fa-angle-down"></i> Map Pool <small>9 maps</small></div>
+    <div class="collapse in" id="section-maps">
+        <div class="dynamic">
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/abstract.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Abstract">
+                            <div class="title"><a class="s-title">Abstract</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/bamboo_valley_iv.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Bamboo Valley IV">
+                            <div class="title"><a class="s-title">Bamboo Valley IV</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture Points<span class="hidden">cp</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/flush.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Flush">
+                            <div class="title"><a class="s-title">Flush</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/foundry.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Foundry">
+                            <div class="title"><a class="s-title">Foundry</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture Points<span class="hidden">cp</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/siege.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Siege">
+                            <div class="title"><a class="s-title">Siege</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture Points<span class="hidden">cp</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/space_race_1969.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Space Race: 1969">
+                            <div class="title"><a class="s-title">Space Race: 1969</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/thicket.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Thicket">
+                            <div class="title"><a class="s-title">Thicket</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/versatile.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Versatile">
+                            <div class="title"><a class="s-title">Versatile</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/wallop.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Wallop">
+                            <div class="title"><a class="s-title">Wallop</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
-            <div class="league-info-section">Group C <small>24 teams</small></div>
-            <table class="table table-striped table-condensed">
-                <tbody>
-                    <tr>
-                        <td>#Hogwarts</td>
-                    </tr>
-                    <tr>
-                        <td>Anubis</td>
-                    </tr>
-                    <tr>
-                        <td>Bleup</td>
-                    </tr>
-                    <tr>
-                        <td>Bolt</td>
-                    </tr>
-                    <tr>
-                        <td>Dropped</td>
-                    </tr>
-                    <tr>
-                        <td>Drops</td>
-                    </tr>
-                    <tr>
-                        <td>Ducksoup</td>
-                    </tr>
-                    <tr>
-                        <td>Ecl</td>
-                    </tr>
-                    <tr>
-                        <td>Focus</td>
-                    </tr>
-                    <tr>
-                        <td>Furyus</td>
-                    </tr>
-                    <tr>
-                        <td>Grim</td>
-                    </tr>
-                    <tr>
-                        <td>Incremented4Ever</td>
-                    </tr>
-                    <tr>
-                        <td>Language Hackers</td>
-                    </tr>
-                    <tr>
-                        <td>M8</td>
-                    </tr>
-                    <tr>
-                        <td>Macumba Night</td>
-                    </tr>
-                    <tr>
-                        <td>Nice!</td>
-                    </tr>
-                    <tr>
-                        <td>Night Vision</td>
-                    </tr>
-                    <tr>
-                        <td>Pawprint</td>
-                    </tr>
-                    <tr>
-                        <td>Punishers</td>
-                    </tr>
-                    <tr>
-                        <td>Scorpia</td>
-                    </tr>
-                    <tr>
-                        <td>SweetNight</td>
-                    </tr>
-                    <tr>
-                        <td>Zona Ganjah</td>
-                    </tr>
-                    <tr>
-                        <td>eZcusas</td>
-                    </tr>
-                    <tr>
-                        <td>xxoemyixx</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
+</div>
+<div class="collapse-section" id="teams">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>72 Teams</small></div>
+    <div class="collapse in" id="section-teams">
+        <ul class="nav nav-tabs tm-teams-tabs" role="tablist">
+            <li class="active">
+                <a href="#qualifier" role="tab" data-toggle="tab">Qualifier</a>
+            </li>
+            <li >
+                <a href="#invitational" role="tab" data-toggle="tab">Invitational</a>
+            </li>
+        </ul>
+        <div class="checkbox tm-teams-fade-checkbox">
+            <label>
+                <input type="checkbox" id="team-fade-checkbox" checked>
+                Fade Teams that did not Advance
+            </label>
         </div>
-    </div>
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
-            <div class="league-info-section">Invitational <small>18 teams</small></div>
-            <table class="table table-striped table-condensed">
-                <thead>
-                    <th>Seed</th>
-                    <th>Team Name</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><b>1</b></td>
-                        <td>Street Sharks</td>
-                    </tr>
-                    <tr>
-                        <td><b>2</b></td>
-                        <td>HUGE Wall</td>
-                    </tr>
-                    <tr>
-                        <td><b>3</b></td>
-                        <td>Punishers</td>
-                    </tr>
-                    <tr>
-                        <td><b>4</b></td>
-                        <td>Zona Ganjah</td>
-                    </tr>
-                    <tr>
-                        <td><b>5</b></td>
-                        <td>Tribal</td>
-                    </tr>
-                    <tr>
-                        <td><b>6</b></td>
-                        <td>VH</td>
-                    </tr>
-                    <tr>
-                        <td><b>7</b></td>
-                        <td>PureBlox</td>
-                    </tr>
-                    <tr>
-                        <td><b>8</b></td>
-                        <td>Light Sigma</td>
-                    </tr>
-                    <tr>
-                        <td><b>9</b></td>
-                        <td>Night Vision</td>
-                    </tr>
-                    <tr>
-                        <td><b>10</b></td>
-                        <td>Fancy</td>
-                    </tr>
-                    <tr>
-                        <td><b>11</b></td>
-                        <td>Grim</td>
-                    </tr>
-                    <tr>
-                        <td><b>12</b></td>
-                        <td>Wrap</td>
-                    </tr>
-                    <tr>
-                        <td><b>13</b></td>
-                        <td>xxoemyixx</td>
-                    </tr>
-                    <tr>
-                        <td><b>14</b></td>
-                        <td>BruteForce</td>
-                    </tr>
-                    <tr>
-                        <td><b>15</b></td>
-                        <td>Dark Sigma</td>
-                    </tr>
-                    <tr>
-                        <td><b>16</b></td>
-                        <td>Starbeans</td>
-                    </tr>
-                    <tr>
-                        <td><b>17</b></td>
-                        <td>Ecl</td>
-                    </tr>
-                    <tr>
-                        <td><b>18</b></td>
-                        <td>UbeR</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active tm-group-advances" id="qualifier">
+                <div class="tm-team-group">
+                    <div class="team-group-name">Group A</div>
+                    <div class="team-group-name team-group-count">24 teams</div>
+                    <div class="tm-team-group-teams">
+                        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Bravehearts</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">BruteForce</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Caos</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Colossus</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Divinum Hexis</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Dynamo</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Fancy</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">FatalFury</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">FrostFire</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Highlights</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">JurassicRush</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Light Sigma</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Mazork&#x27;s</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Midas</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Of Moose and Men</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Old Generation</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Padlock</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Soulname_</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Squadcatt</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Street Sharks</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">UbeR</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">VH</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Varsity</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">zEnergyPvP</div>
+                        </div>    </div>
+                    <hr>
+                </div>
+                <div class="tm-team-group">
+                    <div class="team-group-name">Group B</div>
+                    <div class="team-group-name team-group-count">24 teams</div>
+                    <div class="tm-team-group-teams">
+                        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">AriZ0ne</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Blueagle</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Bunyola ALE</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">CON SI THIS</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Cryptosys</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Dark Sigma</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Fireh</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">GGeneSiS</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Gamerule</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">HUGE Wall</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Hypetic</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Inertia</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">InsanityThunder</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Miracle</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Obey</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Outliers</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">PancakeAirlines</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Pandora</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">PureBlox</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Starbeans</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Tribal</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Wrap</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">YGang</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">ZiReGG YT</div>
+                        </div>    </div>
+                    <hr>
+                </div>
+                <div class="tm-team-group">
+                    <div class="team-group-name">Group C</div>
+                    <div class="team-group-name team-group-count">24 teams</div>
+                    <div class="tm-team-group-teams">
+                        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">#Hogwarts</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Anubis</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Bleup</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Bolt</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Dropped</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Drops</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Ducksoup</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Ecl</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">eZcusas</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Focus</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Furyus</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Grim</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Incremented4Ever</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Language Hackers</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">M8</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Macumba Night</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Nice!</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Night Vision</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Pawprint</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Punishers</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">Scorpia</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="name no-seed">SweetNight</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">Zona Ganjah</div>
+                        </div>        <div class="tm-team" data-advances="true">
+                            <div class="name no-seed">xxoemyixx</div>
+                        </div>    </div>
+                    
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="invitational">
+                <div class="tm-team-group">
+                    <div class="team-group-name">Invitational</div>
+                    <div class="team-group-name team-group-count">18 teams</div>
+                    <div class="tm-team-group-teams">
+                        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="1 Seed">1</div>
+                            <div class="name">Street Sharks</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="2 Seed">2</div>
+                            <div class="name">HUGE Wall</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="3 Seed">3</div>
+                            <div class="name">Punishers</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="4 Seed">4</div>
+                            <div class="name">Zona Ganjah</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="5 Seed">5</div>
+                            <div class="name">Tribal</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="6 Seed">6</div>
+                            <div class="name">VH</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="7 Seed">7</div>
+                            <div class="name">PureBlox</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="8 Seed">8</div>
+                            <div class="name">Light Sigma</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="9 Seed">9</div>
+                            <div class="name">Night Vision</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="10 Seed">10</div>
+                            <div class="name">Fancy</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="11 Seed">11</div>
+                            <div class="name">Grim</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="12 Seed">12</div>
+                            <div class="name">Wrap</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="13 Seed">13</div>
+                            <div class="name">xxoemyixx</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="14 Seed">14</div>
+                            <div class="name">BruteForce</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="15 Seed">15</div>
+                            <div class="name">Dark Sigma</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="16 Seed">16</div>
+                            <div class="name">Starbeans</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="17 Seed">17</div>
+                            <div class="name">Ecl</div>
+                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="18 Seed">18</div>
+                            <div class="name">UbeR</div>
+                        </div>    </div>
+                    
+                </div>
+            </div>
         </div>
     </div>
 </div>

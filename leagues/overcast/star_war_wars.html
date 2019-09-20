@@ -18,15 +18,16 @@
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
         <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.3.5/lazyload.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
+        <script src="/assets/js/tournaments-pages.js"></script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -135,7 +136,7 @@
 <div class="center">
     <img class="league-banner" src="../../assets/img/tournament/banners/overcast/star_war_wars.png">
 </div>
-<div class="center">
+<div class="center" style="margin-bottom: 5px;">
     <div class="league-position league-position-first">
         <i class="fas fa-trophy"></i>
         <div class="league-team">PureBlox</div>
@@ -143,426 +144,311 @@
     </div>
     <div class="row">
         <div class="league-position col-sm-6">
-            <i class="fas fa-star"></i>
+            <i class="fas fa-medal"></i>
             <div class="league-team">Turquaars</div>
             <div class="league-team-position">2<sup>nd</sup> place</div>
         </div>
         <div class="league-position col-sm-6">
-            <i class="fas fa-star-half-alt"></i>
-            <div class="league-team">America &amp; Enzym</div>
+            <i class="fas fa-medal"></i>
+            <div class="league-team">America, Enzym</div>
             <div class="league-team-position">3<sup>rd</sup> place</div>
         </div>
     </div>
-    <a class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" href="#resultsCollapse"></a>
 </div>
-<div class="collapse" id="resultsCollapse">
-    <div class="league-results">
-        <div class="challonge-bracket">
-            <span>Bracket</span>
-            <a href="https://ocn.challonge.com/warwars" target="_blank">
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-            <iframe src="https://ocn.challonge.com/warwars/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-        </div>
-    </div>
-</div>
-<div class="league-info-section large">Tournament Information</div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Details</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>Method</td>
-                        <td>Single Elimination</td>
-                    </tr>
-                    <tr>
-                        <td>Gamemodes</td>
-                        <td>
-                            Blitz,
-                            Destroy the Core
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Teams</td>
-                        <td>
-                            <a href="#teams">96 teams <i class="fas fa-chevron-down"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Team Size</td>
-                        <td>5v5</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>Event</td>
-                        <td>April 18, 2015</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-<div class="league-info-section large">Map Pool <small>1</small></div>
-<div class="dynamic">
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
-        <div class="map-thumbnail-selector">
-            <div class="map-thumbnail-header">
-                <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/warwars.png">
-                <div class="banner" data-toggle="tooltip" data-placement="top" title="War Wars Collection">
-                    <div class="title"><a class="s-title">War Wars Collection</a></div>
-                    <div class="sub-title">
-                        <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span>,</li>
-                        <li class="game-tag map-tag s-tag">Blitz</li>
-                    </div>
-                    <div class="icon-alerts">
-                    </div>
-                </div>
-                <div class="labels">
-                    <span class="label label-info"></span>
+<div class="tm-results">
+    <span class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" data-target="#section-results">Show Full Results +</span>
+    <div class="collapse" id="section-results">
+        <div class="tm-results-well">
+            <div id="challonge-brackets">
+                <div class="challonge-bracket">
+                    <span>Bracket</span>
+                    <a href="https://ocn.challonge.com/warwars" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <iframe src="https://ocn.challonge.com/warwars/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
                 </div>
             </div>
         </div>
     </div>
-    
 </div>
-<div class="league-info-section large" id="teams">Teams <small>96 teams</small></div>
-<div class="row">
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
-            
-            <table class="table table-striped table-condensed">
-                <tbody>
-                    <tr>
-                        <td>America</td>
-                    </tr>
-                    <tr>
-                        <td>Discordia</td>
-                    </tr>
-                    <tr>
-                        <td>DlayLy</td>
-                    </tr>
-                    <tr>
-                        <td>Dynamo</td>
-                    </tr>
-                    <tr>
-                        <td>EnderFox</td>
-                    </tr>
-                    <tr>
-                        <td>Fuxsake</td>
-                    </tr>
-                    <tr>
-                        <td>HogDorks</td>
-                    </tr>
-                    <tr>
-                        <td>Instant Damage</td>
-                    </tr>
-                    <tr>
-                        <td>InterPool</td>
-                    </tr>
-                    <tr>
-                        <td>LostMexicans</td>
-                    </tr>
-                    <tr>
-                        <td>Memory</td>
-                    </tr>
-                    <tr>
-                        <td>Netflix Afternoons</td>
-                    </tr>
-                    <tr>
-                        <td>Ocean Lads</td>
-                    </tr>
-                    <tr>
-                        <td>Orpheus</td>
-                    </tr>
-                    <tr>
-                        <td>ProxFire</td>
-                    </tr>
-                    <tr>
-                        <td>ProxWater</td>
-                    </tr>
-                    <tr>
-                        <td>SSJ</td>
-                    </tr>
-                    <tr>
-                        <td>Slash</td>
-                    </tr>
-                    <tr>
-                        <td>SpaceDeepers</td>
-                    </tr>
-                    <tr>
-                        <td>StarField</td>
-                    </tr>
-                    <tr>
-                        <td>The Plazma Pack</td>
-                    </tr>
-                    <tr>
-                        <td>TheXisermans</td>
-                    </tr>
-                    <tr>
-                        <td>Wasteland Rebels</td>
-                    </tr>
-                    <tr>
-                        <td>WhyNot?</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
+    <div class="collapse in" id="section-info">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="league-information red">
+                    <div class="league-info-section">Details</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            <tr>
+                                <td>Format</td>
+                                <td>
+                                    Single Elimination
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Gamemodes</td>
+                                <td>
+                                    Blitz,
+                                    Destroy the Core
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Teams</td>
+                                <td>
+                                    <a href="#teams">96 teams <i class="fas fa-chevron-down"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Team Size</td>
+                                <td>5v5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="league-information red">
+                    <div class="league-info-section">Dates</div>
+                    <table class="league-info-table">
+                        <tbody>
+                            <tr>
+                                <td>Event</td>
+                                <td>April 18, 2015</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
+</div>
+<div class="collapse-section">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-maps"><i class="fas fa-angle-down"></i> Map Pool <small>1 map</small></div>
+    <div class="collapse in" id="section-maps">
+        <div class="dynamic">
+            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+                <div class="map-thumbnail-selector">
+                    <div class="map-thumbnail-header">
+                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/warwars.png">
+                        <div class="banner" data-toggle="tooltip" data-placement="top" title="War Wars Collection">
+                            <div class="title"><a class="s-title">War Wars Collection</a></div>
+                            <div class="sub-title">
+                                <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span>,</li>
+                                <li class="game-tag map-tag s-tag">Blitz</li>
+                            </div>
+                            <div class="icon-alerts">
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <span class="label label-info"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <table class="table table-striped table-condensed">
-                <tbody>
-                    <tr>
-                        <td>8 Deadly Sins</td>
-                    </tr>
-                    <tr>
-                        <td>Advanced</td>
-                    </tr>
-                    <tr>
-                        <td>Archonsas</td>
-                    </tr>
-                    <tr>
-                        <td>Ascendance</td>
-                    </tr>
-                    <tr>
-                        <td>BlackPvPname</td>
-                    </tr>
-                    <tr>
-                        <td>Bone Breakers</td>
-                    </tr>
-                    <tr>
-                        <td>Descendance</td>
-                    </tr>
-                    <tr>
-                        <td>Dry Cereals</td>
-                    </tr>
-                    <tr>
-                        <td>GameOver</td>
-                    </tr>
-                    <tr>
-                        <td>Ignite</td>
-                    </tr>
-                    <tr>
-                        <td>Illusion</td>
-                    </tr>
-                    <tr>
-                        <td>InsertName</td>
-                    </tr>
-                    <tr>
-                        <td>Jackgreen Peppersprinkles</td>
-                    </tr>
-                    <tr>
-                        <td>Kotex</td>
-                    </tr>
-                    <tr>
-                        <td>LetMeWinOrReport</td>
-                    </tr>
-                    <tr>
-                        <td>Nokho</td>
-                    </tr>
-                    <tr>
-                        <td>Nymphs</td>
-                    </tr>
-                    <tr>
-                        <td>Refugees</td>
-                    </tr>
-                    <tr>
-                        <td>Sabertooth</td>
-                    </tr>
-                    <tr>
-                        <td>Team Allah</td>
-                    </tr>
-                    <tr>
-                        <td>TeamSoloMine</td>
-                    </tr>
-                    <tr>
-                        <td>Trap Lords</td>
-                    </tr>
-                    <tr>
-                        <td>Turquaars</td>
-                    </tr>
-                    <tr>
-                        <td>Wyvern</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
+</div>
+<div class="collapse-section" id="teams">
+    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>96 teams</small></div>
+    <div class="collapse in" id="section-teams">
+        <div class="tm-team-group">
+            <div class="tm-team-group-teams">
+                <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">5Elements</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">8 Deadly Sins</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Advanced</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Akron</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">America</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Archonsas</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Argo</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Ascendance</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Aselvados</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Autoclickers in Paris</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Begins</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">BlackPvPname</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Bolt</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Bone Breakers</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">ClutchCrew</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Dark Sigma</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Descendance</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Discordia</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Divinum Hexis</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">DlayLy</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Donko Time</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Drome</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Dry Cereals</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Dynamo</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">EleKtro</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">EnderFox</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Enzym</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Esphagna</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Evolution</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Ezkuetqet</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">FirePvP</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Fuxsake</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">GameOver</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">HogDorks</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Ignite</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Illusion</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">InsertName</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Instant Damage</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">InterPool</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Jackgreen Peppersprinkles</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">KFC KillGood</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Kappa</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Kotex</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Krysis</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Kyetho GT</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Kyetho Z</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Les Grecs</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Les Toucans</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">LetMeWinOrReport</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Light Sigma</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">LostMexicans</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Memory</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Mindcool</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">MongoloSensationV3</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Netflix Afternoons</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Night Vision</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Nokho</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Nymphs</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Oasis</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Ocean Lads</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Origin</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Orpheus</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Outliers</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Papaya</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">ProxFire</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">ProxWater</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Punishers</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">PureBlox</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">qqqq</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Radical</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Refugees</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">SSJ</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Sabertooth</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Sakurasou</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Slash</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Slivers</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Sname</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">SpaceDeepers</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Square Up</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">StarField</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Sub Par</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Sweat</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Team Allah</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Team Fishy</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">TeamSoloMine</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">The Plazma Pack</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">TheXisermans</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Trap Lords</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Turquaars</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">UbeRLunDrat</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">UbeRSolDrat</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Varsity</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Wasteland Rebels</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">WhyNot?</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Wyvern</div>
+                </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                    <div class="name no-seed">Zhejiang</div>
+                </div>    </div>
             
-            <table class="table table-striped table-condensed">
-                <tbody>
-                    <tr>
-                        <td>5Elements</td>
-                    </tr>
-                    <tr>
-                        <td>Argo</td>
-                    </tr>
-                    <tr>
-                        <td>Autoclickers in Paris</td>
-                    </tr>
-                    <tr>
-                        <td>Dark Sigma</td>
-                    </tr>
-                    <tr>
-                        <td>Divinum Hexis</td>
-                    </tr>
-                    <tr>
-                        <td>Donko Time</td>
-                    </tr>
-                    <tr>
-                        <td>EleKtro</td>
-                    </tr>
-                    <tr>
-                        <td>KFC KillGood</td>
-                    </tr>
-                    <tr>
-                        <td>Kappa</td>
-                    </tr>
-                    <tr>
-                        <td>Krysis</td>
-                    </tr>
-                    <tr>
-                        <td>Kyetho Z</td>
-                    </tr>
-                    <tr>
-                        <td>Les Grecs</td>
-                    </tr>
-                    <tr>
-                        <td>Les Toucans</td>
-                    </tr>
-                    <tr>
-                        <td>MongoloSensationV3</td>
-                    </tr>
-                    <tr>
-                        <td>Oasis</td>
-                    </tr>
-                    <tr>
-                        <td>Origin</td>
-                    </tr>
-                    <tr>
-                        <td>PureBlox</td>
-                    </tr>
-                    <tr>
-                        <td>Radical</td>
-                    </tr>
-                    <tr>
-                        <td>Sakurasou</td>
-                    </tr>
-                    <tr>
-                        <td>Sub Par</td>
-                    </tr>
-                    <tr>
-                        <td>Team Fishy</td>
-                    </tr>
-                    <tr>
-                        <td>Varsity</td>
-                    </tr>
-                    <tr>
-                        <td>Zhejiang</td>
-                    </tr>
-                    <tr>
-                        <td>qqqq</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="well well-sm well-custom-red tournament-teams-table">
-            
-            <table class="table table-striped table-condensed">
-                <tbody>
-                    <tr>
-                        <td>Akron</td>
-                    </tr>
-                    <tr>
-                        <td>Aselvados</td>
-                    </tr>
-                    <tr>
-                        <td>Begins</td>
-                    </tr>
-                    <tr>
-                        <td>Bolt</td>
-                    </tr>
-                    <tr>
-                        <td>ClutchCrew</td>
-                    </tr>
-                    <tr>
-                        <td>Drome</td>
-                    </tr>
-                    <tr>
-                        <td>Enzym</td>
-                    </tr>
-                    <tr>
-                        <td>Esphagna</td>
-                    </tr>
-                    <tr>
-                        <td>Evolution</td>
-                    </tr>
-                    <tr>
-                        <td>Ezkuetqet</td>
-                    </tr>
-                    <tr>
-                        <td>FirePvP</td>
-                    </tr>
-                    <tr>
-                        <td>Kyetho GT</td>
-                    </tr>
-                    <tr>
-                        <td>Light Sigma</td>
-                    </tr>
-                    <tr>
-                        <td>Mindcool</td>
-                    </tr>
-                    <tr>
-                        <td>Night Vision</td>
-                    </tr>
-                    <tr>
-                        <td>Outliers</td>
-                    </tr>
-                    <tr>
-                        <td>Papaya</td>
-                    </tr>
-                    <tr>
-                        <td>Punishers</td>
-                    </tr>
-                    <tr>
-                        <td>Slivers</td>
-                    </tr>
-                    <tr>
-                        <td>Sname</td>
-                    </tr>
-                    <tr>
-                        <td>Square Up</td>
-                    </tr>
-                    <tr>
-                        <td>Sweat</td>
-                    </tr>
-                    <tr>
-                        <td>UbeRLunDrat</td>
-                    </tr>
-                    <tr>
-                        <td>UbeRSolDrat</td>
-                    </tr>
-                </tbody>
-                </tbody>
-            </table>
         </div>
     </div>
 </div>
