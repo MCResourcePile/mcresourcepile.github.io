@@ -37,7 +37,7 @@ class User {
     setPreferences(p) {
         try {
             for (var key in p) {
-                if (this._preferences[key]) {
+                if (this._preferences[key] != undefined) {
                     this._preferences[key] = p[key];
                 } else {
                     console.warn('Unknown User preference property:', key)
