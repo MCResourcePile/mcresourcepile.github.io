@@ -1,6 +1,6 @@
 <div class="tm-team{{#unless advances}} tm-team-fade{{/unless}}" data-advances="{{#if advances}}true{{else}}false{{/if}}">
     {{#if seed}}
-    <div class="seed">{{seed}}</div>
+    <div class="seed" data-toggle="tooltip" data-placement="bottom" title="{{seed}} Seed">{{seed}}</div>
     {{/if}}
-    <div class="name{{#unless seed}} no-seed{{/unless}}" data-toggle="tooltip" data-placement="bottom" title="{{seed}} Seed">{{name}}</div>
+    <div class="name{{#unless seed}} no-seed{{/unless}}">{{name}}</div>
 </div>
