@@ -1,7 +1,7 @@
 {{> navigation_header}}
 <div class="row center">
     {{#each cards}}
-    <a class="col-md-3 col-sm-6 col-xs-12 card card{{#if color}}-{{color}}{{/if}}{{#if light}} lighten{{/if}}" href="{{url}}">
+    <a class="col-md-3 col-sm-6 col-xs-12 index-card index-card{{#if color}}-{{color}}{{/if}}{{#if light}} lighten{{/if}}" href="{{url}}">
         <div class="icon"><i class="fa fa-{{#if icon}}{{icon}}{{else}}asterisk{{/if}}" aria-hidden="true"></i></div>
         <div class="header">{{header}}</div>
         <div class="description">{{description}}</div>

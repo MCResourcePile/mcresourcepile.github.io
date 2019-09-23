@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center{{#is position '1'}} large map-glow-contest-first{{/is}}{{#is position '2'}} small map-glow-contest-second{{/is}}{{#is position '3'}} small map-glow-contest-third{{/is}}" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
+<div class="col-sm-6 col-lg-3 img-thumbnail map-thumbnail center{{#is position '1'}} large map-glow-contest-first{{/is}}{{#is position '2'}} small map-glow-contest-second{{/is}}{{#is position '3'}} small map-glow-contest-third{{/is}}" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
     <div class="map-thumbnail-selector">
         <div class="map-thumbnail-header">
             <img class="image lazy" data-src="../../assets/img/contest/{{snakecase (lowercase @root.title)}}/maps/{{slug}}.png">
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="labels">
-                <span class="label map-results-label {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}label-default{{/is}}{{/is}}{{/is}}">{{#is position '1'}}<i class="fas fa-trophy"></i>{{else}}{{#is position '2'}}<i class="fas fa-star"></i>{{else}}{{#is position '3'}}<i class="fas fa-star-half-alt"></i>{{/is}}{{/is}}{{/is}} {{ordinalize position}} place</span>
+                <span class="badge map-results-label {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}label-default{{/is}}{{/is}}{{/is}}">{{#is position '1'}}<i class="fas fa-trophy"></i>{{else}}{{#is position '2'}}<i class="fas fa-star"></i>{{else}}{{#is position '3'}}<i class="fas fa-star-half-alt"></i>{{/is}}{{/is}}{{/is}} {{ordinalize position}} place</span>
             </div>
         </div>
     </div>

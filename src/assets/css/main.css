@@ -450,7 +450,7 @@ span.game-mode-button {
 
 .content-header {
     margin-top: 1em;
-    margin-bottom: 24px;
+    margin-bottom: 15px;
     border-bottom: 2px solid #e0e0e0;
 }
 
@@ -469,9 +469,12 @@ span.game-mode-button {
 .map-thumbnail {
     float: none;
     display: inline-block;
-    width: 270px !important;
+    max-width: 270px !important;
     /*height: 300px*/;
     text-align: left;
+    padding-left: 4;
+    padding-right: 0;
+    margin-bottom: 20px;
 }
 
 .map-thumbnail-header .image {
@@ -504,7 +507,6 @@ span.game-mode-button {
 }
 
 .map-thumbnail-header .banner .sub-title {
-    margin-top: -4px;
     font-size: 9px;
 }
 
@@ -550,7 +552,8 @@ span.game-mode-button {
 
 .map-thumbnail.small,
 .map-thumbnail.small .map-thumbnail-header {
-    width: 230px !important;
+    font-size: 100%;
+    max-width: 230px !important;
 }
 
 .map-thumbnail.small .map-thumbnail-header .image {
@@ -591,17 +594,20 @@ span.game-mode-button {
 }
 
 .map-suggestions {
-    align-content: center;
+    justify-content: space-around;
 }
 
 .map-suggestions .map-thumbnail {
-    margin: 34px;
     margin-top: 8px;
     margin-bottom: -14px;
 }
 
 .map-suggestions .map-thumbnail.small .map-thumbnail-body .authors {
     margin-bottom: -3px;
+}
+
+.map-suggestions .map-thumbnail.small .map-thumbnail-header .banner {
+    top: 0;
 }
 
 .map-label-locked {
@@ -724,6 +730,7 @@ span.game-mode-button {
 
 .map-label-contest-first {
     background-color: #cca12e;
+    color: #fff;
 }
 
 .contest-table-first {
@@ -738,6 +745,7 @@ span.game-mode-button {
 
 .map-label-contest-second {
     background-color: #5c959d;
+    color: #fff;
 }
 
 .contest-table-second {
@@ -752,6 +760,7 @@ span.game-mode-button {
 
 .map-label-contest-third {
     background-color: #7c4a18;
+    color: #fff;
 }
 
 .contest-table-third {
@@ -857,7 +866,7 @@ li.game-tag {
     margin-bottom: 16px;
 }
 
-.modal-section-body > .label {
+.modal-section-body > .badge {
     display: inline-block;
     padding: 4px;
     margin-bottom: 4px;
@@ -962,7 +971,7 @@ li.game-tag {
 }
 
 .content-alert {
-    padding-top: 9rem;
+    padding-top: 5rem;
     width: 86%;
     margin: 0 auto;
 }
@@ -1342,10 +1351,16 @@ tr.child i.fa-times {
     color: #9b9b9b !important;
 }
 
+.map-scores .progress {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
 .progress-bar span {
     font-size: 11px;
     position: absolute;
     color: #fff;
+    margin-left: 5px;
     text-shadow: 1px 0px #000;
 }
 
@@ -1824,11 +1839,18 @@ pre > code {
 
 .map-search {
     padding: 12px;
+    max-width: initial;
+}
+
+@media only screen and (max-width: 992px) {
+    .map-search {
+        margin-bottom: 10px;
+    }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .map-search {
-        width: 230px;
+        width: 215px;
         z-index: 1;
     }
 }

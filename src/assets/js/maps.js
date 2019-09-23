@@ -252,7 +252,7 @@ function suggestMaps(slug) {
                     if (j != similar[i].tags.length - 1) tags += ", ";
                 }
                 $('.map-suggestions').append(
-                    "<div class='col-sm-4 thumbnail map-thumbnail small collapse-immune'>\
+                    "<div class='col-sm-4 img-thumbnail map-thumbnail small collapse-immune'>\
                         <div class='map-thumbnail-header'>\
                             <img class='image' src='https://raw.githubusercontent.com/MCResourcePile/" + repo + "/master/maps/" + similar[i].slug + "/map.png'>\
                             <div class='banner'>\

@@ -42,66 +42,72 @@
 <div class="league-info-section large">Contest Information</div>
 <div class="row">
     <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates</div>
-            <table class="league-info-table">
-                <tbody>
-                    {{#stages}}
-                    <tr>
-                        <td>{{stage}}</td>
-                        <td>{{date}}</td>
-                    </tr>
-                    {{/stages}}
-                </tbody>
-            </table>
+        <div class="card border-success">
+            <h5 class="card-header bg-light text-success border-success" style="text-align: center; font-weight: 600;">Dates</h5>
+            <div class="card-body">
+                <table class="league-info-table">
+                    <tbody>
+                        {{#stages}}
+                        <tr>
+                            <td>{{stage}}</td>
+                            <td>{{date}}</td>
+                        </tr>
+                        {{/stages}}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Scoring <small>(Total scores are {{#is score_method 'percent'}}a percentage out of 100%{{else}}the sum of each criteria{{/is}})</small></div>
-            <table class="league-info-table">
-                <tbody>
-                    {{#each criteria}}
-                    {{#if max}}
-                    <tr>
-                        <td style="font-weight:400"><strong>{{this.label}}</strong> out of <code>{{this.max}}</code> {{#if this.weight}}(weighted {{this.weight}}%){{/if}}</td>
-                    </tr>
-                    {{/if}}
-                    {{#if amount}}
-                    <tr>
-                        <td style="font-weight:400"><strong>Additional {{this.label}}</strong> of <code>{{#is this.operation 'subtract'}}-{{/is}}{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'subtract'}} points{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}{{/is}}</code> for {{this.reason}}</td>
-                    </tr>
-                    {{/if}}
-                    {{/each}}
-                </tbody>
-            </table>
+        <div class="card border-success">
+            <h5 class="card-header bg-light text-success border-success" style="text-align: center; font-weight: 600;">Scoring <small>(Total scores are {{#is score_method 'percent'}}a percentage out of 100%{{else}}the sum of each criteria{{/is}})</small></h5>
+            <div class="card-body">
+                <table class="league-info-table">
+                    <tbody>
+                        {{#each criteria}}
+                        {{#if max}}
+                        <tr>
+                            <td style="font-weight:400"><strong>{{this.label}}</strong> out of <code>{{this.max}}</code> {{#if this.weight}}(weighted {{this.weight}}%){{/if}}</td>
+                        </tr>
+                        {{/if}}
+                        {{#if amount}}
+                        <tr>
+                            <td style="font-weight:400"><strong>Additional {{this.label}}</strong> of <code>{{#is this.operation 'subtract'}}-{{/is}}{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'subtract'}} points{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}{{/is}}</code> for {{this.reason}}</td>
+                        </tr>
+                        {{/if}}
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     {{#if panels}}
     {{#panels}}
     <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
-        <div class="well well-sm well-custom-blue">
-            <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
-            <table class="league-info-table">
-                <tbody>
-                    {{#if rows}}
-                    {{#rows}}
-                    <tr>
-                        {{#if label}}
-                        <td>{{label}}</td>
-                        <td>{{{content}}}</td>
+        <div class="card border-primary">
+            <h5 class="card-header bg-light text-primary border-primary" style="text-align: center; font-weight: 600;">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</h5>
+            <div class="card-body">
+                <table class="league-info-table">
+                    <tbody>
+                        {{#if rows}}
+                        {{#rows}}
+                        <tr>
+                            {{#if label}}
+                            <td>{{label}}</td>
+                            <td>{{{content}}}</td>
+                            {{else}}
+                            <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                            {{/if}}
+                        </tr>
+                        {{/rows}}
                         {{else}}
-                        <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                        <tr>
+                            <td>This panel has no information.</td>
+                        </tr>
                         {{/if}}
-                    </tr>
-                    {{/rows}}
-                    {{else}}
-                    <tr>
-                        <td>This panel has no information.</td>
-                    </tr>
-                    {{/if}}
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     {{/panels}}

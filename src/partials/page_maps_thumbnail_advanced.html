@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}{{#inArray @root.page-category 'contest'}}{{#is position '1'}} map-glow-contest-first{{/is}}{{#is position '2'}} map-glow-contest-second{{/is}}{{#is position '3'}} map-glow-contest-third{{/is}}{{/inArray}}">
+<div class="col img-thumbnail map-thumbnail center{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}{{#inArray @root.page-category 'contest'}}{{#is position '1'}} map-glow-contest-first{{/is}}{{#is position '2'}} map-glow-contest-second{{/is}}{{#is position '3'}} map-glow-contest-third{{/is}}{{/inArray}}">
     <div class="map-thumbnail-selector">
         <div class="map-thumbnail-header">
             <img class="image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{snakecase (lowercase @root.title)}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/{{#unless @root.settings.maps.downloads}}images/maps/{{slug}}.png{{else}}master/maps/{{slug}}/map.png{{/unless}}{{/inArray}}">
@@ -51,43 +51,43 @@
             <div class="labels">
                 {{#inArray @root.page-category 'collections'}}
                 {{#inArray @root.data.new slug}}
-                <a href="?s=new" class="label label-primary">New</a>
+                <a href="?s=new" class="badge badge-primary">New</a>
                 {{/inArray}}
                 {{#inArray @root.data.popular slug}}
-                <a href="?s=popular" class="label label-danger">Popular</a>
+                <a href="?s=popular" class="badge badge-danger">Popular</a>
                 {{/inArray}}
                 {{#inArray @root.data.rotations.micro slug}}
-                <a href="?s=popular" class="label label-default">Micro</a>
+                <a href="?s=popular" class="badge badge-secondary">Micro</a>
                 {{/inArray}}
                 {{#inArray @root.data.rotations.mini slug}}
-                <a href="?s=popular" class="label label-default">Mini</a>
+                <a href="?s=popular" class="badge badge-secondary">Mini</a>
                 {{/inArray}}
                 {{#inArray @root.data.rotations.medium slug}}
-                <a href="?s=popular" class="label label-default">Medium</a>
+                <a href="?s=popular" class="badge badge-secondary">Medium</a>
                 {{/inArray}}
                 {{#inArray @root.data.rotations.mega slug}}
-                <a href="?s=popular" class="label label-default">Mega</a>
+                <a href="?s=popular" class="badge badge-secondary">Mega</a>
                 {{/inArray}}
                 {{#inArray @root.data.rotations.mammoth slug}}
-                <a href="?s=popular" class="label label-default">Mammoth</a>
+                <a href="?s=popular" class="badge badge-secondary">Mammoth</a>
                 {{/inArray}}
                 {{#if @root.settings.maps.downloads}}
                 {{#if sourced}}
-                <span class="label label-default">Unlicensed</span>
+                <span class="badge badge-secondary">Unlicensed</span>
                 {{else}}
                 {{#if commercial}}
-                <a href="?s=by-sa" class="label label-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                <a href="?s=by-sa" class="badge badge-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                 {{else}}
-                <a href="?s=by-nc-sa" class="label label-warning" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                <a href="?s=by-nc-sa" class="badge badge-warning" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                 {{/if}}
                 {{/if}}
                 {{/if}}
                 {{/inArray}}
                 {{#inArray @root.page-category 'contest'}}
-                <span class="label {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}label-default{{/is}}{{/is}}{{/is}}">{{#if position}}{{ordinalize position}}{{else}}-{{/if}} place</span>
+                <span class="badge {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}badge-secondary{{/is}}{{/is}}{{/is}}">{{#if position}}{{ordinalize position}}{{else}}-{{/if}} place</span>
                 {{/inArray}}
                 {{#inArray @root.page-category 'tournaments'}}
-                <span class="label label-info">{{stage}}</span>
+                <span class="badge badge-info">{{stage}}</span>
                 {{/inArray}}
             </div>
         </div>

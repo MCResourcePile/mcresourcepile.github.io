@@ -1,10 +1,10 @@
 {{> navigation_header}}
 <div id="searchable-collection" class="row">
-    <div class="col-md-3 col-md-push-9">
+    <div class="col-md-3 order-9">
         {{> page_search_menu_advanced}}
     </div>
-    <div class="col-md-9 col-md-pull-3{{#if @root.settings.tournaments.no_banner}} no-banners{{/if}}">
-        <div class="tm-banner-options thumbnail">
+    <div class="col-md-9 order-3{{#if @root.settings.tournaments.no_banner}} no-banners{{/if}}">
+        <div class="tm-banner-options img-thumbnail">
             Display: 
             <span class="active" id="display-text">
                 <i class="fas fa-font"></i> Text</a></li>

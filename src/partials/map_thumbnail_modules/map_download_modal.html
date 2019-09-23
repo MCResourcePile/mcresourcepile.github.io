@@ -61,23 +61,23 @@
                         <div class="modal-section-head">Tags</div>
                         <div class="modal-section-body">
                             {{#each tags}}
-                            <span class="label label-info">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>
+                            <span class="badge badge-info">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>
                             {{/each}}
-                            {{#if contest}}<span class="label label-info">Contest Submission</span>{{/if}}
-                            {{#inArray @root.data.new slug}}<span class="label label-primary">New</span>{{/inArray}}
-                            {{#inArray @root.data.popular slug}}<span class="label label-danger">Popular</span>{{/inArray}}
+                            {{#if contest}}<span class="badge badge-info">Contest Submission</span>{{/if}}
+                            {{#inArray @root.data.new slug}}<span class="badge badge-primary">New</span>{{/inArray}}
+                            {{#inArray @root.data.popular slug}}<span class="badge badge-danger">Popular</span>{{/inArray}}
                             {{#if sourced}}
-                            <span class="label label-default">Unlicensed</span>
+                            <span class="badge badge-secondary">Unlicensed</span>
                             {{else}}
                             {{#if commercial}}
-                            <span class="label label-success">Commercial</span>
+                            <span class="badge badge-success">Commercial</span>
                             {{else}}
-                            <span class="label label-warning">Noncommercial</span>
+                            <span class="badge badge-warning">Noncommercial</span>
                             {{/if}}
                             {{/if}}
-                            <span class="label label-primary">{{#if (lookup @root.settings.maps.environments environment)}}{{#with (lookup @root.settings.maps.environments environment)}}{{{this.label}}}{{/with}}{{else}}{{#with (lookup @root.settings.maps.environments @root.settings.maps.default_environment)}}{{{this.label}}}{{/with}}{{/if}}</span>
-                            {{#if cardinal}}<span class="label label-primary">Cardinal</span>{{/if}}
-                            <span class="label label-default">{{slug}}</span>
+                            <span class="badge badge-primary">{{#if (lookup @root.settings.maps.environments environment)}}{{#with (lookup @root.settings.maps.environments environment)}}{{{this.label}}}{{/with}}{{else}}{{#with (lookup @root.settings.maps.environments @root.settings.maps.default_environment)}}{{{this.label}}}{{/with}}{{/if}}</span>
+                            {{#if cardinal}}<span class="badge badge-primary">Cardinal</span>{{/if}}
+                            <span class="badge badge-secondary">{{slug}}</span>
                         </div>
                         <div class="map-download-stats" style="display:none">
                             <div class="modal-section-head">Downloads</div>
@@ -107,21 +107,21 @@
                     </div>
                 </div>
                 {{#if (isString download)}}
-                <a type="button" id="{{name}}" slug="{{slug}}" href="{{download}}" target="_blank" class="btn map-link click-download-external">Download</a>
+                <a role="button" id="{{name}}" slug="{{slug}}" href="{{download}}" target="_blank" class="btn map-link click-download-external">Download</a>
                 {{else}}
-                <a type="button" id="{{name}}" slug="{{slug}}" path="https://github.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/tree/master/maps/{{slug}}" license="{{#if sourced}}none{{else}}{{#unless commercial}}noncommercial{{else}}commercial{{/unless}}{{/if}}" class="btn map-link click-download">Download</a>
+                <button role="button" id="{{name}}" slug="{{slug}}" path="https://github.com/MCResourcePile/{{@root.settings.maps.group}}-maps{{#is @root.settings.maps.group 'overcast'}}-{{findGroup slug}}{{/is}}/tree/master/maps/{{slug}}" license="{{#if sourced}}none{{else}}{{#unless commercial}}noncommercial{{else}}commercial{{/unless}}{{/if}}" class="btn map-link click-download">Download</button>
                 {{/if}}
                 {{#if discussion}}
-                <a type="button" id="{{name}}" slug="{{slug}}" href="{{discussion}}" target="_blank" class="btn map-link click-download-external">Original Download</a>
+                <a role="button" id="{{name}}" slug="{{slug}}" href="{{discussion}}" target="_blank" class="btn map-link click-download-external">Original Download</a>
                 {{else}}
                 {{#if sourced}}
                 {{#is sourced true}}
                 {{else}}
-                <a type="button" id="{{name}}" slug="{{slug}}" href="{{sourced}}" target="_blank" class="btn map-link click-download-external">Original Download</a>
+                <a role="button" id="{{name}}" slug="{{slug}}" href="{{sourced}}" target="_blank" class="btn map-link click-download-external">Original Download</a>
                 {{/is}}
                 {{/if}}
                 {{/if}}
-                <a type="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</a>
+                <button role="button" class="btn btn-danger" data-dismiss="modal" style="text-transform:none">Close</button>
             </div>
         </div>
     </div>
