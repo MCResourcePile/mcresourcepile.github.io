@@ -1,19 +1,25 @@
 {{> navigation_header}}
 <ul class="nav nav-tabs">
-    <li role="presentation" {{#inArray page-category 'rev_website'}}class="active" style="font-weight: bold"{{/inArray}}><a href="/revisions/website">Website</a></li>
-    <li role="presentation" class="dropdown" {{#inArray page-category 'rev_maps'}}class="active" style="font-weight: bold"{{/inArray}}>
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Maps <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li role="presentation"><a href="/revisions/maps/overcast">Overcast Collection</a></li>
-            <li role="presentation"><a href="/revisions/maps/pgm">PGM Collection</a></li>
-            <li role="presentation"><a href="/revisions/maps/stratus">Stratus Collection</a></li>
-            <li role="presentation"><a href="/revisions/maps/avicus">Avicus Collection</a></li>
-        </ul>
+    <li class="nav-item">
+        <a class="nav-link{{#inArray page-category 'rev_website'}} active{{/inArray}}" href="/revisions/website">Website</a>
     </li>
-    <li role="presentation" {{#inArray page-category 'rev_addon'}}class="active" style="font-weight: bold"{{/inArray}}><a href="/revisions/addonproject">Addon Project</a></li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle{{#inArray page-category 'rev_maps'}} active{{/inArray}}" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            Maps
+        </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="/revisions/maps/overcast">Overcast Collection</a>
+            <a class="dropdown-item" href="/revisions/maps/pgm">PGM Collection</a>
+            <a class="dropdown-item" href="/revisions/maps/stratus">Stratus Collection</a>
+            <a class="dropdown-item" href="/revisions/maps/avicus">Avicus Collection</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link{{#inArray page-category 'rev_addon'}} active{{/inArray}}" href="/revisions/addonproject">Addon Project</a>
+    </li>
 </ul>
 {{#each settings.revisions.repositories}}
-<h5><strong>Viewing:</strong> <a href="https://github.com/{{user}}/{{repo}}" target="_blank">{{repo}}</a></h5>
+<h5 style="margin-top: 10px;"><strong>Viewing:</strong> <a href="https://github.com/{{user}}/{{repo}}" target="_blank">{{repo}}</a></h5>
 <div id="commits-{{replace repo "." "-"}}"></div>
 <script type="text/javascript">
     $(function() {

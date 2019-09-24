@@ -507,6 +507,7 @@ span.game-mode-button {
 }
 
 .map-thumbnail-header .banner .sub-title {
+    margin-top: -4px;
     font-size: 9px;
 }
 
@@ -652,6 +653,7 @@ span.game-mode-button {
 
 .map-link {
     color: #ffffff;
+    cursor: pointer;
     background-color: #7492f7;
     border-color: transparent;
     text-transform: none;
@@ -971,7 +973,7 @@ li.game-tag {
 }
 
 .content-alert {
-    padding-top: 5rem;
+    padding-top: 4rem;
     width: 86%;
     margin: 0 auto;
 }
@@ -1611,24 +1613,15 @@ tr.child i.fa-times {
 }
 
 .tm-pager {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-@media (max-width: 576px) {
-    .tm-pager {
-        margin-bottom: 15px;
-    }
+.tm-pager .tm-pager-last {
+    text-align: left;
 }
 
-@media (max-width: 576px) {
-    .tm-pager a {
-        width: 130px;
-        font-size: 12px;
-    }
-}
 
-.pager-center > p {
-    display: inline-block;
+.tm-pager .tm-pager-number {
     padding: 3px;
     vertical-align: middle;
     text-align: center;
@@ -1636,9 +1629,29 @@ tr.child i.fa-times {
     font-weight: bold;
 }
 
-@media (max-width: 576px) {
-    .pager-center {
-        display: none !important;
+.tm-pager .tm-pager-next {
+    text-align: right;
+}
+
+.tm-pager :disabled {
+    cursor: not-allowed;
+}
+
+@media (max-width: 959px) {
+    .tm-pager {
+        margin-bottom: 10px;
+    }
+
+    .tm-pager .tm-pager-last {
+        max-width: 50%;
+    }
+    
+    .tm-pager .tm-pager-number {
+        display: none;
+    }
+    
+    .tm-pager .tm-pager-next {
+        max-width: 50%;
     }
 }
 
@@ -1910,7 +1923,6 @@ pre > code {
 }
 
 .bow-record {
-    display: block;
     width: 100%;
     padding: 8px;
     margin: 0px 15px 10px 15px;
