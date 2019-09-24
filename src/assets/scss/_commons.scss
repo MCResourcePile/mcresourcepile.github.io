@@ -1,0 +1,210 @@
+body {
+    background-color: #343436;
+}
+
+@media only screen and (max-width: 768px) {
+  html, body{
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+.content-alert {
+    padding-top: 4rem;
+    width: 86%;
+    margin: 0 auto;
+}
+
+.content-background {
+    background-color: #fff;
+    padding-bottom: 36px;
+}
+
+.content-background-full {
+    background-color: #ededed;
+}
+
+.content-title {
+    font-size: 38px;
+    font-weight: 600;
+    color: #3c3a3a;
+}
+
+.content-subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    color: #3c3a3a;
+}
+
+.content-header {
+    margin-top: 1em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.content-buffer {
+    margin-top: 2em;
+}
+
+.content-body {
+    font-size: 16px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.alert > a {
+    text-decoration: underline;
+}
+
+.alert-global {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.alert-sm {
+    padding: 6px;
+    margin: 12px;
+    margin-bottom: -18px;
+    font-size: 11px;
+}
+
+.resourcepile-copyright-year:before {
+    content: "© 2019 ResourcePile"
+}
+
+.navbar-menu-title {
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 6px;
+    margin-bottom: -4px;
+    color: #bbbbbb;
+}
+
+.footer {
+    width: 100%;
+    background-color: #343436;
+    padding: 28px;
+}
+
+.footer-section {
+    margin-bottom: 12px;
+}
+
+.footer-section-head {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #777777;
+    margin-bottom: 8px;
+}
+
+.footer-item {
+    display: block;
+    color: #bfbfbf;
+}
+
+.footer-item:hover,
+.footer-item:focus {
+    color: #efebeb;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    width: 50%;
+    border-top: 1px solid #464242;
+    margin-top: 20px;
+    padding-top: 28px;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+thead {
+    background-color: #f0f0f0;
+}
+
+tbody.counted-rows {
+    counter-reset: rowNumber;
+}
+
+tbody.counted-rows tr {
+    counter-increment: rowNumber;
+}
+
+tbody.counted-rows tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+
+.well-custom-red,
+.well-custom-purple,
+.well-custom-orange,
+.well-custom-blue,
+.well-custom-green {
+    border-width: 1px;
+    border-top-width: 4px !important;
+    background-color: #fcf9f9;
+}
+
+.well-custom-red {
+    border-color: #D0D0D0;
+    border-top-color: #E74C3C;
+}
+
+.well-custom-purple {
+    border-color: #D0D0D0;
+    border-top-color: #9B59B6;
+}
+
+.well-custom-orange {
+    border-color: #D0D0D0;
+    border-top-color: #F1892D;
+}
+
+.well-custom-blue {
+    border-color: #D0D0D0;
+    border-top-color: #0287D0;
+}
+
+.well-custom-green {
+    border-color: #D0D0D0;
+    border-top-color: #0EAC51;
+}
+
+.section-head {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.section-item {
+    display: block;
+    font-size: 14px;
+    padding-left: 6px;
+    margin-bottom: 4px;
+    color: #6f6f6f;
+    background-color: #ede6e6;
+    border-radius: 4px;
+}
+
+.section-item:hover,
+.section-item.active {
+    color: #fff;
+    background-color: #759aff;
+    text-decoration: none;
+}
+
+.dynamic {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+}

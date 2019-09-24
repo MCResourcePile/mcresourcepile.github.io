@@ -9,7 +9,21 @@ module.exports = function(grunt) {
                     reporter: 'jshint'
                 }
             }
-
+        },
+        sass: {
+            dist: {
+                options: {
+                    noCache: true,
+                    style: 'expanded'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'src/assets/scss',
+                    src: ['*.scss'],
+                    dest: 'src/assets/css',
+                    ext: '.css'
+                }]
+            }
         },
         'compile-handlebars': {
             main: {
@@ -49,6 +63,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-compile-handlebars');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
-    grunt.registerTask('default', ['jsonlint', 'compile-handlebars', 'copy']);
+    grunt.registerTask('default', ['jsonlint', 'sass', 'compile-handlebars', 'copy']);
 }
