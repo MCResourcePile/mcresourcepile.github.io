@@ -45,16 +45,18 @@
     </div>
 </div>
 <div class="modal fade" id="download-opened" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Your download has been opened in a new window</h4>
             </div>
             <div class="modal-body">
                 You have been directed to the location of the original download for this map. Please note that if using this map on a server running {{#inArray @root.page-category 'pgm_server'}}Overcast's{{else}}Avicus'{{/inArray}} game plugins that there may be unresolved errors. As we have no control over these downloads we cannot fix these problems and hold no responsibility towards them.
-                <div class="well well-sm" style="margin-top:12px;margin-bottom:-16px;">
-                    You currently have <span class="user-rate-remaining"></span> out of <span class="user-rate-limit"></span> requests left to the GitHub API.<br>
-                    This means that you can download approximately <span class="user-rate-approx"></span> more maps before you must wait until <span class="user-rate-reset"></span> for the limit to reset.
+                <div class="card bg-light border-secondary" style="margin-top: 12px; margin-bottom: 12px;">
+                    <div class="card-body">
+                        You currently have <span class="user-rate-remaining"></span> out of <span class="user-rate-limit"></span> requests left to the GitHub API.<br>
+                        This means that you can download approximately <span class="user-rate-approx"></span> more maps before you must wait until <span class="user-rate-reset"></span> for the limit to reset.
+                    </div>
                 </div>
                 <div class="map-suggestions-wrapper" style="display:hidden">
                     <div class="modal-section-head">Suggested Maps</div>
@@ -70,7 +72,7 @@
     </div>
 </div>
 <div class="modal fade" id="download-error-message" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">An error has occurred</h4>
@@ -80,9 +82,11 @@
                 <br><br>
                 Error output:
                 <pre id="download-error-output"></pre>
-                <div class="well well-sm" style="margin-top:12px;margin-bottom:-16px;">
-                    You currently have <span class="user-rate-remaining"></span> out of <span class="user-rate-limit"></span> requests left to the GitHub API.<br>
-                    This means that you can download approximately <span class="user-rate-approx"></span> more maps before you must wait until <span class="user-rate-reset"></span> for the limit to reset.
+                <div class="card bg-light border-secondary" style="margin-top: 12px; margin-bottom: 12px;">
+                    <div class="card-body">
+                        You currently have <span class="user-rate-remaining"></span> out of <span class="user-rate-limit"></span> requests left to the GitHub API.<br>
+                        This means that you can download approximately <span class="user-rate-approx"></span> more maps before you must wait until <span class="user-rate-reset"></span> for the limit to reset.
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -92,16 +96,18 @@
     </div>
 </div>
 <div class="modal fade" id="download-rate-limit-message" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">You've hit the rate limit</h4>
             </div>
             <div class="modal-body">
                 Looks like you've hit GitHub's rate limit. <a href="/admin/auth">Authenticate your download with GitHub</a> if you would like to download more maps now. Alternatively you can wait an hour for your rate to reset.
-                <div class="well well-sm" style="margin-top:12px;margin-bottom:-16px;">
-                    You currently have <span class="user-rate-remaining"></span> out of <span class="user-rate-limit"></span> requests left to the GitHub API.<br>
-                    This means that you can download approximately <span class="user-rate-approx"></span> more maps before you must wait until <span class="user-rate-reset"></span> for the limit to reset.
+                <div class="card bg-light border-secondary" style="margin-top: 12px; margin-bottom: 12px;">
+                    <div class="card-body">
+                        You currently have <span class="user-rate-remaining"></span> out of <span class="user-rate-limit"></span> requests left to the GitHub API.<br>
+                        This means that you can download approximately <span class="user-rate-approx"></span> more maps before you must wait until <span class="user-rate-reset"></span> for the limit to reset.
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
