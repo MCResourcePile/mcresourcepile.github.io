@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   background-color: #343436;
 }
@@ -85,10 +84,6 @@ body {
   font-size: 11px;
 }
 
-.resourcepile-copyright-year:before {
-  content: "© 2019 ResourcePile";
-}
-
 .navbar-menu-title {
   float: left;
   margin-left: 15px;
@@ -111,7 +106,7 @@ body {
 .footer-section-head {
   text-transform: uppercase;
   font-weight: 600;
-  color: #777777;
+  color: #6d6d6d;
   margin-bottom: 8px;
 }
 
@@ -127,8 +122,9 @@ body {
 }
 
 .footer-bottom {
+  color: #bfbfbf;
   width: 50%;
-  border-top: 1px solid #464242;
+  border-top: 1px solid #666666;
   margin-top: 20px;
   padding-top: 28px;
 }
@@ -278,6 +274,15 @@ tbody.counted-rows tr td:first-child::before {
 
 .bow-user-record > img {
   width: 12px;
+}
+
+.bow-user-record .click-search {
+  color: #007bff !important;
+}
+
+.bow-user-record .click-search:hover {
+  color: #0056b3 !important;
+  text-decoration: underline !important;
 }
 
 .bow-player-avatar {
@@ -529,8 +534,10 @@ tr.child i.fa-times {
   color: #007bff !important;
   cursor: pointer;
 }
-.map-thumbnail-body .click-search :hover {
+
+.map-thumbnail-body .click-search:hover {
   color: #0056b3 !important;
+  text-decoration: underline !important;
 }
 
 .contest-winners .map-thumbnail {
@@ -1656,6 +1663,10 @@ pre > code {
 .user-header > img {
   width: 10%;
   border-radius: 8px;
+}
+
+.user-welcome {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
