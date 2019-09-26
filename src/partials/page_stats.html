@@ -3,7 +3,9 @@
     {{#stats}}
     <div class="{{#if full}}col-md-12{{else}}col-md-4{{/if}}">
         <div class="card border-{{color}}">
-            <h5 class="card-header text-{{color}} border-{{color}}"><i class="{{icon}}" style="font-size: 28px; margin-right: 5px;"></i> {{name}}</h5>
+            <h5 class="card-header text-{{color}} border-{{color}}">
+                {{#if icon}}<i class="{{icon}}" style="font-size: 28px; margin-right: 5px;"></i> {{/if}}{{name}}
+            </h5>
             <div class="card-body">
                 {{#if custom}}
                 <ul>
@@ -18,7 +20,7 @@
                         {{#unless ../non-player}}
                         <img src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&default=MHF_Steve&overlay">
                         {{/unless}}
-                        <strong>{{name}}</strong> - {{number}}
+                        <strong>{{name}}</strong> - {{addCommas number}}
                     </li>
                     {{/data}}
                 </ol>
