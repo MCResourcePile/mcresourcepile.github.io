@@ -311,18 +311,11 @@
                 <a class="nav-link{{#if @first}} active{{/if}}" href="#{{snakecase (lowercase name)}}" role="tab" data-toggle="tab">{{name}}</a>
             </li>
             {{/teams}}
-            <!--
-            <div class="custom-control custom-switch tm-teams-fade-checkbox">
-                <label>
-                    <input class="custom-control-input" type="checkbox" id="team-fade-checkbox" checked>
-                    Fade Teams that did not Advance
-                </label>
-            </div> -->
-            <div class="nav-item custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="team-fade-checkbox" checked>
-                <label class="custom-control-label" for="team-fade-checkbox">Fade Teams that did not Advance</label>
-            </div>
         </ul>
+        <div class="custom-control custom-switch tm-teams-fade-toggle">
+            <input type="checkbox" class="custom-control-input" id="team-fade-toggle" checked>
+            <label class="custom-control-label" for="team-fade-toggle">Fade Teams that did not Advance</label>
+        </div>
         <div class="tab-content">
             {{#teams}}
             <div role="tabpanel" class="tab-pane{{#if @first}} active{{/if}}{{#if advances}} tm-group-advances{{/if}}" id="{{snakecase (lowercase name)}}">
