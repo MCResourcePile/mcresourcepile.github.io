@@ -2,17 +2,17 @@
     width: 100%;
     padding: 8px;
     margin: 0px 15px 10px 15px;
-}
 
-.bow-record-header {
-    padding: 0px;
-}
+    .bow-record-header {
+        padding: 0px;
 
-.bow-record > .bow-record-header > img {
-    width: 88px;
-    height: 75.3px;
-    border-radius: 4px;
-    background-color: #525252;
+        > img {
+            width: 88px;
+            height: 75.3px;
+            border-radius: 4px;
+            background-color: #525252;
+        }
+    }
 }
 
 .bow-titles {
@@ -31,42 +31,44 @@
     font-size: 11px;
 }
 
-.bow-user-record .fa.fa-check-circle {
-    font-size: 12px;
-}
+.bow-user-record {
+    .fas.fa-check-circle {
+        font-size: 12px;
+    }
 
-.bow-user-record:first-child {
-    font-size: 15px;
-}
+    > img {
+        width: 12px;
+    }
 
-.bow-user-record:first-child > .fa {
-    font-size: 22px;
-    vertical-align: -4px;
-}
+    .click-search {
+        color: #007bff !important;
+    }
 
-.bow-user-record:first-child > img {
-    width: 24px;
-}
+    .click-search:hover {
+        color: #0056b3 !important;
+        text-decoration: underline !important;
+    }
 
-.bow-user-record:not(:first-child) {
-    margin-left: 15px;
-}
+    &:first-child {
+        font-size: 15px;
 
-.bow-user-record:nth-child(n+10) {
-    margin-left: 8px;
-}
+        > .fas {
+            font-size: 22px;
+            vertical-align: -4px;
+        }
 
-.bow-user-record > img {
-    width: 12px;
-}
+        > img {
+            width: 24px;
+        }
+    }
 
-.bow-user-record .click-search {
-    color: #007bff !important;
-}
+    &:not(:first-child) {
+        margin-left: 15px;
+    }
 
-.bow-user-record .click-search:hover {
-    color: #0056b3 !important;
-    text-decoration: underline !important;
+    &:nth-child(n+10) {
+        margin-left: 8px;
+    }
 }
 
 .bow-player-avatar {

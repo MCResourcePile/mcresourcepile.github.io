@@ -5,35 +5,37 @@
 
 .doc-table {
     margin-bottom: 0px;
+
+    > tbody,
+    > thead > tr > th {
+        font-size: 14px;
+    }
 }
 
-.doc-table > tbody,
-.doc-table > thead > tr > th {
-    font-size: 14px;
-}
+.sidenav {
+    > li > a,
+    > li > span {
+        padding: 0px 15px;
+    }
 
-.sidenav > li > a,
-.sidenav > li > span {
-    padding: 0px 15px;
-}
+    > li {
+        padding-left: 12px;
+    }
 
-.sidenav > li {
-    padding-left: 12px;
-}
+    > li.active > a {
+        background-color: rgba(255, 255, 255, 0);
+        color: #337ab7;
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
 
-.sidenav > li.active > a {
-    background-color: rgba(255, 255, 255, 0);
-    color: #337ab7;
-    font-weight: 600;
-    margin-bottom: 2px;
-}
-
-.sidenav > li > a:hover,
-.sidenav > li > a:focus,
-.sidenav > li.active > a:hover,
-.sidenav > li.active > a:focus {
-    background-color: #f0f0f0;
-    color: #337ab7;
+    > li > a:hover,
+    > li > a:focus,
+    > li.active > a:hover,
+    > li.active > a:focus {
+        background-color: #f0f0f0;
+        color: #337ab7;
+    }
 }
 
 pre {
@@ -42,13 +44,13 @@ pre {
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
+
+    > code {
+        border: none;
+    }
 }
 
 code {
     background-color: #f5f5f5 !important;
     border: 1px solid #cccccc;
-}
-
-pre > code {
-    border: none;
 }
