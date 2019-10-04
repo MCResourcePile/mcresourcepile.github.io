@@ -2,9 +2,9 @@
 <!-- Contest banner -->
 <div class="center">
     {{#if @root.settings.maps.header}}
-    <div class="league-default-banner" style="background: url('../../assets/img/contest/{{snakecase (lowercase title)}}/banner.png'); background-position: center; background-size: cover;">{{title}}</div>
+    <div class="image-banner-default" style="background: url('../../assets/img/contest/{{snakecase (lowercase title)}}/banner.png'); background-position: center; background-size: cover;">{{title}}</div>
     {{else}}
-    <img class="league-banner" src="../../assets/img/contest/{{snakecase (lowercase title)}}/banner.png">
+    <img class="image-banner-custom" src="../../assets/img/contest/{{snakecase (lowercase title)}}/banner.png">
     {{/if}}
 </div>
 <div class="center">
@@ -39,13 +39,13 @@
     </div>
     {{/if}}
 </div>
-<div class="league-info-section large">Contest Information</div>
+<div class="info-section-heading">Contest Information</div>
 <div class="row">
     <div class="col-md-6">
         <div class="card border-success">
             <h5 class="card-header text-success border-success">Dates</h5>
             <div class="card-body">
-                <table class="league-info-table">
+                <table class="info-table">
                     <tbody>
                         {{#stages}}
                         <tr>
@@ -62,7 +62,7 @@
         <div class="card border-success">
             <h5 class="card-header text-success border-success">Scoring <small>(Total scores are {{#is score_method 'percent'}}a percentage out of 100%{{else}}the sum of each criteria{{/is}})</small></h5>
             <div class="card-body">
-                <table class="league-info-table">
+                <table class="info-table">
                     <tbody>
                         {{#each criteria}}
                         {{#if max}}
@@ -87,7 +87,7 @@
         <div class="card border-primary">
             <h5 class="card-header text-primary border-primary">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</h5>
             <div class="card-body">
-                <table class="league-info-table">
+                <table class="info-table">
                     <tbody>
                         {{#if rows}}
                         {{#rows}}
@@ -114,13 +114,13 @@
     {{/if}}
 </div>
 {{#if submissions}}
-<div class="league-info-section large">Submissions <small>{{length submissions}}</small></div>
+<div class="info-section-heading large">Submissions <small>{{length submissions}}</small></div>
 <div class="dynamic">
     {{#withSort submissions "name"}}
     {{> page_maps_thumbnail_advanced}}
     {{/withSort}}
 </div>
-<div class="league-info-section large" id="scores">Score Breakdown</div>
+<div class="info-section-heading large" id="scores">Score Breakdown</div>
 {{#if results_info}}
 {{{results_info}}}
 {{/if}}

@@ -89,9 +89,8 @@ body {
   float: left;
   margin-left: 15px;
   margin-right: 15px;
-  margin-top: 6px;
   margin-bottom: -4px;
-  color: #bbbbbb;
+  color: #aaaaaa;
 }
 
 .footer {
@@ -297,7 +296,7 @@ tbody.counted-rows tr td:first-child::before {
   max-height: 28px;
 }
 
-.league-default-banner {
+.image-banner-default {
   background-color: #343436 !important;
   color: #fff;
   font-size: 50px;
@@ -317,88 +316,79 @@ tbody.counted-rows tr td:first-child::before {
 }
 
 @media (max-width: 768px) {
-  .league-default-banner {
+  .image-banner-default {
     font-size: 25px;
     padding: 8%;
     padding-left: 20px;
   }
 }
-.league-banner {
+.image-banner-custom {
   background-color: #343436 !important;
   border-radius: 4px;
   margin-bottom: 20px;
   width: 100%;
 }
 
-.league-info-section.large {
+.info-section-heading {
   font-size: 22px;
-  margin-bottom: 18px;
-}
-
-.league-info-section {
-  font-size: 18px;
   font-weight: 600;
   padding-bottom: 2px;
   padding-left: 3px;
   padding-right: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   border-bottom: 1px solid #cbcaca;
 }
-
-.league-info-section > small {
+.info-section-heading > small {
   font-size: 70%;
   color: #9b9b9b;
 }
 
-.league-info-table > tbody > tr > td {
-  font-size: 13px;
-  padding: 6px;
-}
-
-.league-info-table > tbody > tr > td:first-child {
-  font-weight: 600;
-  width: 35% !important;
-}
-
-.league-info-table > tbody > tr > td img {
-  max-width: 100%;
-}
-
-.league-info-table > thead > tr > td {
-  font-weight: 600;
-}
-
-.league-info-table {
+.info-table {
   width: 100%;
   table-layout: fixed;
   word-wrap: break-word;
 }
-.league-info-table code {
+.info-table code {
   background-color: inherit !important;
   border: none;
   font-size: 100%;
+}
+.info-table > tbody > tr > td {
+  font-size: 13px;
+  padding: 6px;
+}
+.info-table > tbody > tr > td:first-child {
+  font-weight: 600;
+  width: 35% !important;
+}
+.info-table > tbody > tr > td img {
+  max-width: 100%;
+}
+.info-table > thead > tr > td {
+  font-weight: 600;
 }
 
 .collapse-section-heading {
   cursor: pointer;
 }
-
 .collapse-section-heading > .fas {
   width: 20px;
   text-align: center;
-}
-
-.contest-info-table > tbody > tr > td:first-child,
-.contest-info-table > tbody > tr > td:nth-child(2),
-.contest-info-table > tbody > tr > td:last-child,
-.contest-info-table > thead > tr > td {
-  font-weight: 600;
 }
 
 .contest-info-table > tbody > tr > td {
   font-size: 13px;
   padding: 6px;
   text-align: center;
+}
+.contest-info-table > tbody > tr > td:first-child,
+.contest-info-table > tbody > tr > td:nth-child(2),
+.contest-info-table > tbody > tr > td:last-child,
+.contest-info-table > thead > tr > td {
+  font-weight: 600;
+}
+.contest-info-table .map-score {
+  vertical-align: middle;
 }
 
 .contest-table-first {
@@ -417,19 +407,14 @@ tbody.counted-rows tr td:first-child::before {
   background-color: #d59597 !important;
 }
 
-.contest-info-table .map-score {
-  vertical-align: middle;
-}
-
 .map-bonus > i.fa-check,
-tr.child i.fa-check {
+.map-bonus tr.child i.fa-check {
   color: green;
   font-size: 15px;
   margin-top: 4px;
 }
-
 .map-bonus > i.fa-times,
-tr.child i.fa-times {
+.map-bonus tr.child i.fa-times {
   color: red;
   font-size: 16px;
   margin-top: 4px;
@@ -983,7 +968,7 @@ code {
     margin-bottom: 10px;
   }
 }
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (min-width: 992px) {
   .map-search {
     width: 215px;
     z-index: 1;
@@ -1065,7 +1050,7 @@ code {
 .tm-banner-row > a {
   color: #000;
 }
-.tm-banner-row > a:hover > .league-banner {
+.tm-banner-row > a:hover > .image-banner-custom {
   -webkit-box-shadow: 0 0 4px 1px #2f6bde;
   -moz-box-shadow: 0 0 4px 1px #2f6bde;
   box-shadow: 0 0 4px 1px #2f6bde;
@@ -1075,7 +1060,7 @@ code {
   -webkit-transition: .3s;
   transition: .3s;
 }
-.tm-banner-row > a:hover > .league-default-banner {
+.tm-banner-row > a:hover > .image-banner-default {
   display: inline-block;
   -webkit-box-shadow: 0 0 4px 1px #2f6bde;
   -moz-box-shadow: 0 0 4px 1px #2f6bde;
@@ -1089,8 +1074,8 @@ code {
 }
 
 .no-banners > .tm-banner-row .league-default-banner,
-.no-banners > .tm-banner-row .league-banner,
-.no-banners > .tm-banner-row > a:hover > .league-default-banner {
+.no-banners > .tm-banner-row .image-banner-custom,
+.no-banners > .tm-banner-row > a:hover > .image-banner-default {
   display: none;
 }
 .no-banners > .tm-banner-row:not(:last-child) {

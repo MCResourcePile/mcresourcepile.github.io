@@ -4,9 +4,9 @@
 <div class="tm-banner-row">
     <a href="/contests/{{@root.settings.maps.group}}/{{snakecase (lowercase name)}}">
         {{#if heading}}
-        <div class="league-default-banner" style="background: url('../../assets/img/contest/{{snakecase (lowercase name)}}/banner.png'); background-position: center; background-size: cover;">{{name}}</div>
+        <div class="image-banner-default" style="background: url('../../assets/img/contest/{{snakecase (lowercase name)}}/banner.png'); background-position: center; background-size: cover;">{{name}}</div>
         {{else}}
-        <img class="league-banner" src="../../assets/img/contest/{{snakecase (lowercase name)}}/banner.png">
+        <img class="image-banner-custom" src="../../assets/img/contest/{{snakecase (lowercase name)}}/banner.png">
         {{/if}}
     </a>
 </div>

@@ -1,14 +1,20 @@
-.contest-info-table > tbody > tr > td:first-child,
-.contest-info-table > tbody > tr > td:nth-child(2),
-.contest-info-table > tbody > tr > td:last-child,
-.contest-info-table > thead > tr > td {
-    font-weight: 600;
-}
+.contest-info-table {
+    > tbody > tr > td {
+        font-size: 13px;
+        padding: 6px;
+        text-align: center;
+    }
 
-.contest-info-table > tbody > tr > td {
-    font-size: 13px;
-    padding: 6px;
-    text-align: center;
+    > tbody > tr > td:first-child,
+    > tbody > tr > td:nth-child(2),
+    > tbody > tr > td:last-child,
+    > thead > tr > td {
+        font-weight: 600;
+    }
+
+    .map-score {
+        vertical-align: middle;
+    }
 }
 
 .contest-table-first {
@@ -27,22 +33,20 @@
     background-color: #d59597 !important;
 }
 
-.contest-info-table .map-score {
-    vertical-align: middle;
-}
+.map-bonus {
+    > i.fa-check,
+    tr.child i.fa-check {
+        color: green;
+        font-size: 15px;
+        margin-top: 4px;
+    }
 
-.map-bonus > i.fa-check,
-tr.child i.fa-check {
-    color: green;
-    font-size: 15px;
-    margin-top: 4px;
-}
-
-.map-bonus > i.fa-times,
-tr.child i.fa-times {
-    color: red;
-    font-size: 16px;
-    margin-top: 4px;
+    > i.fa-times,
+    tr.child i.fa-times {
+        color: red;
+        font-size: 16px;
+        margin-top: 4px;
+    }
 }
 
 .contest-scores-link {
