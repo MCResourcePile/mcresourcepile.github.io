@@ -1,0 +1,61 @@
+.navbar {
+    background-color: #3d3d3d !important;
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+        }
+    }
+
+    .navbar-nav {
+        .nav-link {
+            color: rgba(255, 255, 255, 0.5);
+
+            &:hover,
+            &:focus {
+                color: rgba(255, 255, 255, 0.75);
+            }
+        }
+
+        .nav-item.active .nav-link {
+            color: #fff;
+            background-color: #333;
+        }
+    }
+
+    .navbar-toggler {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .navbar-text {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.nav-tabs {
+    .nav-link {
+        &.active {
+            background: #252525;
+            border-color: #dee2e6 #dee2e6 #252525;
+            color: #fff;
+        }
+
+        &:not(.active):hover,
+        &:not(.active):focus {
+            border-color: #4d5c6a #4d5c6a #dee2e6;
+        }
+    }
+
+    .dropdown-toggle[aria-expanded=true]:hover,
+    .dropdown-toggle[aria-expanded=true]:focus {
+        background: #252525;
+        color: #fff;
+    }
+}

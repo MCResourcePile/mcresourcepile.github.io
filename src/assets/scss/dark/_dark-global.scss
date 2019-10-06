@@ -1,0 +1,143 @@
+body {
+    color: #ededed;
+    background-color: #19191a;
+}
+
+.content-background,
+.content-background-full {
+    background-color: #2b2b2b;
+}
+
+.content-title {
+    color: #efefef !important;
+}
+
+.content-subtitle {
+    color: #d6d6d6 !important;
+}
+
+a {
+    color: #73b3ea;
+}
+
+a:hover,
+a:focus {
+    color: #bed7ed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: #efefef;
+
+    small {
+        color: #d6d6d6;
+    }
+}
+
+.dropdown-menu {
+    background-color: #3d3d3d;
+
+    .dropdown-item {
+        color: #fff;
+
+        &:hover {
+            background-color: #333 !important;
+        }
+    }
+}
+
+.table {
+    > thead > tr > th,
+    > tbody > tr > th,
+    > tfoot > tr > th,
+    > thead > tr > td,
+    > tbody > tr > td,
+    > tfoot > tr > td {
+        border-top: 1px solid #222222 !important;
+        color: #fff;
+    }
+
+    > thead > tr > th {
+        border-bottom: 2px solid #222222 !important;
+    }
+}
+
+tr:nth-child(odd),
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+td.child tr:nth-child(odd) {
+    background-color: #19191a;
+}
+
+tr:nth-child(even),
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #000;
+}
+
+thead {
+    background-color: #2c2c2c;
+}
+
+.img-thumbnail,
+.modal-content {
+    background-color: #1c1f22;
+    border: 1px solid #585858;
+}
+
+.card {
+    background-color: #1c1f22!important;
+}
+
+input,
+textarea {
+    background-color: #000 !important;
+    color: #fff !important;
+
+    &::placeholder {
+        color: #B6AFA8 !important;
+    }
+
+    &:focus {
+        background-color: #000 !important;
+        border-color: #002b59 !important;
+        color: #fff !important;
+    }
+}
+
+input[disabled] {
+    background-color: #393939 !important;
+}
+
+select{
+    background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23fff' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>") no-repeat right .75rem center/8px 10px !important;
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.progress {
+    background-color: #161310;
+}
+
+
+.click-search:not(.tm-label) {
+    color: #73b3ea;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: #bed7ed;
+        text-decoration: underline;
+    }
+}

@@ -29,7 +29,7 @@
             {{#if authors}}
             {{#each authors}}
             {{#lt @index 3}}
-            <li class="game-tag">{{#or username uuid}}<a class="click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}" href="/maps/{{@root.settings.maps.group}}?s={{formatUUID uuid 'strip'}}">{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</a>{{else}}Ghost{{/or}}</li>{{#unless @last}},{{/unless}}
+            <li class="game-tag">{{#or username uuid}}<span class="click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}" href="/maps/{{@root.settings.maps.group}}?s={{formatUUID uuid 'strip'}}">{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</span>{{else}}Ghost{{/or}}</li>{{#unless @last}},{{/unless}}
             {{/lt}}
             {{/each}}
             {{#gt (length authors) 3}}

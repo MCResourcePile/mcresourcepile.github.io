@@ -14,7 +14,7 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     noCache: true,
-                    style: 'expanded'
+                    style: 'compressed'
                 },
                 files: [{
                     expand: true,
