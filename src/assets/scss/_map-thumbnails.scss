@@ -4,10 +4,13 @@
     max-width: 270px !important;
     /*height: 300px*/;
     text-align: left;
-    padding-left: 4;
     padding-right: 0;
     margin-bottom: 20px;
     align-self: flex-start;
+}
+
+.map-thumbnail-header {
+    margin-left: -11px;
 }
 
 .map-thumbnail-header .image {
@@ -73,10 +76,12 @@
 
 .map-thumbnail-body .authors {
     text-align: center;
+    margin-left: -10px;
 }
 
 .map-thumbnail-body .buttons {
     margin-top: 2px;
+    margin-left: -12px;
 }
 
 .contest-winners .map-thumbnail {
@@ -138,10 +143,19 @@
 
 .map-suggestions .map-thumbnail.small .map-thumbnail-body .authors {
     margin-bottom: -3px;
+    margin-left: -16px;
 }
 
 .map-suggestions .map-thumbnail.small .map-thumbnail-header .banner {
     top: 0;
+}
+
+.collapse-image-thumbnail {
+    padding-right: 3px;
+
+    .map-thumbnail-header {
+        margin-left: 0;
+    }
 }
 
 .map-label-locked {
@@ -185,7 +199,7 @@
 }
 
 .map-link {
-    color: #ffffff;
+    color: #fff !important;
     cursor: pointer;
     background-color: #7492f7;
     border-color: transparent;
@@ -291,10 +305,13 @@
     color: #fff;
 }
 
+.map-scores {
+    margin-left: -10px;
+}
 
 .map-scores .progress {
     margin-top: 5px;
-    margin-right: 5px;
+    margin-right: 5px;  
 }
 
 .map-scores .progress-bar span {

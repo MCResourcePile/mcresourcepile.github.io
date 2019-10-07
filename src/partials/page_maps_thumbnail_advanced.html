@@ -29,7 +29,7 @@
                     {{/with}}
                     {{/if}}
                     {{#if contest}}
-                    <a href="/contests/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}/{{contest}}#{{slug}}" data-toggle="tooltip" data-placement="top" title="{{#is @root.settings.maps.group 'pgm'}}Overcast{{else}}{{sentence @root.settings.maps.group}}{{/is}} contest submission"><i class="fa fa-map"></i></a>
+                    <a href="/contests/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}/{{contest}}" data-toggle="tooltip" data-placement="top" title="{{#is @root.settings.maps.group 'pgm'}}Overcast{{else}}{{sentence @root.settings.maps.group}}{{/is}} contest submission"><i class="fa fa-map"></i></a>
                     {{/if}}
                     {{#if discussion}}
                     <a href="{{discussion}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="fa fa-comments-o"></i></a>
