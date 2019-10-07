@@ -15,8 +15,29 @@ $(document).ready(function() {
 
 function applyUserPreferences() {
     // apply dark theme
-    if (user._preferences.theme == 'dark') {
-        $('head').append('<link href=\'/assets/css/dark.css\' rel=\'stylesheet\'>');
+    if (user._preferences.theme == 'automatic') {
+        // check if prefers-color-scheme is supported
+        if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+            var darkMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+            // set either dark or light depending the color scheme
+            function setTheme(e) {
+                e.matches ? $('html').attr('data-theme', 'dark') : $('html').attr('data-theme', 'light');
+            }
+            // change theme automatically
+            darkMediaQuery.addListener(setTheme);
+            // set the correct theme when page loads
+            document.addEventListener("DOMContentLoaded", function() {
+                setTheme(darkMediaQuery);
+            });
+        // if not, default to light
+        } else {
+            $('html').attr('data-theme', 'light');
+        }
+    } else if (user._preferences.theme == 'dark') {
+        $('html').attr('data-theme', 'dark');
+    // default light
+    } else {
+        $('html').attr('data-theme', 'light');
     }
     // load lazy loadable images
     if (user._preferences.show_map_images) {
@@ -69,10 +90,12 @@ function saveUserPreferences() {
         sendAlert('Successfully updates your site preferences!', 'alert-success');
         saveUser();
         applyUserPreferences();
-        if (user._preferences.theme == 'default') {
-            $('head').find('link').filter(function(){
-                return $(this).attr('href') === '/assets/css/dark.css'
-            }).remove();
+        if (user._preferences.theme == 'automatic') {
+            if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+                window.matchMedia("(prefers-color-scheme: dark)").matches ? $('html').attr('data-theme', 'dark') : $('html').attr('data-theme', 'light');
+            } else {
+                $('html').attr('data-theme', 'light');
+            }
         }
     } else {
         sendAlert('Unable to update your site preferences. Please try again.', 'alert-danger');
