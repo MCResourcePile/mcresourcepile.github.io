@@ -21,7 +21,13 @@ function applyUserPreferences() {
             var darkMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
             // set either dark or light depending the color scheme
             function setTheme(e) {
-                e.matches ? $('html').attr('data-theme', 'dark') : $('html').attr('data-theme', 'light');
+                if (e.matches) {
+                    $('html').attr('data-theme', 'dark');
+                    $('meta[name="theme-color"]').attr('content', '#3d3d3d');
+                } else {
+                    $('html').attr('data-theme', 'light');
+                    $('meta[name="theme-color"]').attr('content', '#f8f9fa');
+                }
             }
             // change theme automatically
             darkMediaQuery.addListener(setTheme);
@@ -32,12 +38,15 @@ function applyUserPreferences() {
         // if not, default to light
         } else {
             $('html').attr('data-theme', 'light');
+            $('meta[name="theme-color"]').attr('content', '#f8f9fa');
         }
     } else if (user._preferences.theme == 'dark') {
         $('html').attr('data-theme', 'dark');
+        $('meta[name="theme-color"]').attr('content', '#3d3d3d');
     // default light
     } else {
         $('html').attr('data-theme', 'light');
+        $('meta[name="theme-color"]').attr('content', '#f8f9fa');
     }
     // load lazy loadable images
     if (user._preferences.show_map_images) {
@@ -92,9 +101,16 @@ function saveUserPreferences() {
         applyUserPreferences();
         if (user._preferences.theme == 'automatic') {
             if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
-                window.matchMedia("(prefers-color-scheme: dark)").matches ? $('html').attr('data-theme', 'dark') : $('html').attr('data-theme', 'light');
+                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    $('html').attr('data-theme', 'dark');
+                    $('meta[name="theme-color"]').attr('content', '#3d3d3d');
+                } else {
+                    $('html').attr('data-theme', 'light');
+                    $('meta[name="theme-color"]').attr('content', '#f8f9fa');
+                }
             } else {
                 $('html').attr('data-theme', 'light');
+                $('meta[name="theme-color"]').attr('content', '#f8f9fa');
             }
         }
     } else {

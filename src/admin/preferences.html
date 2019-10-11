@@ -5,7 +5,7 @@
     <div class="text-muted">Manage your User info and settings to make ResourcePile work better for you.</div>
 </div>
 <div class="row">
-    <div class="col-md-12" id="user-alert-wrapper" style="display: none;">
+    <div class="col-12" id="user-alert-wrapper" style="display: none;">
         <div id="user-alert" class="alert alert-info"></div>
     </div>
     <div class="col-md-6 order-md-1 order-2">
@@ -17,8 +17,8 @@
                 <hr>
                 <form class="form-horizontal">
                     <div class="form-group row">
-                        <label for="user-access-token" class="col-sm-3 control-label">Access Token</label>
-                        <div class="col-sm-9">
+                        <label for="user-access-token" class="col-lg-3 control-label">Access Token</label>
+                        <div class="col-lg-9">
                             <input type="password" id="user-access-token" name="user_access_token" tabindex="1" class="form-control" placeholder="Access Token" value="">
                         </div>
                     </div>
@@ -36,20 +36,20 @@
                 <hr>
                 <form class="form-horizontal">
                     <div class="form-group row">
-                        <label for="user-rate-limit" class="col-sm-3 control-label">Request Limit</label>
-                        <div class="col-sm-9">
+                        <label for="user-rate-limit" class="col-lg-3 control-label">Request Limit</label>
+                        <div class="col-lg-9">
                             <input type="text" id="user-rate-limit" name="user_rate_limit" tabindex="1" class="form-control user-rate-limit" placeholder="0" value="" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="user-rate-remaining" class="col-sm-3 control-label">Reqs. Remaining</label>
-                        <div class="col-sm-9">
+                        <label for="user-rate-remaining" class="col-lg-3 control-label">Requests Remaining</label>
+                        <div class="col-lg-9">
                             <input type="text" id="user-rate-remaining" name="user_rate_remaining" tabindex="1" class="form-control user-rate-remaining" placeholder="0" value="" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="user-rate-reset" class="col-sm-3 control-label">Limit Resets At</label>
-                        <div class="col-sm-9">
+                        <label for="user-rate-reset" class="col-lg-3 control-label">Limit Resets At</label>
+                        <div class="col-lg-9">
                             <input type="text" id="user-rate-reset" name="user_rate_reset" tabindex="1" class="form-control user-rate-reset" placeholder="0" value="" disabled>
                         </div>
                     </div>
@@ -65,50 +65,55 @@
                 <hr>
                 <form class="form-horizontal">
                     <div class="form-group row">
-                        <label for="preference-theme" class="col-sm-3 control-label">Theme <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Choose which theme to display. Automatic will switch between light and dark if your browser supports it."></a></label>
-                        <div class="col-sm-9">
-                            <select id="preference-theme" name="theme" class="custom-select preference">
+                        <label for="preference-theme" class="col-lg-3 control-label">Theme</label>
+                        <div class="col-lg-9">
+                            <select id="preference-theme" name="theme" class="custom-select preference" aria-describedby="preference-theme-help">
                                 <option value="automatic">Automatic</option>
                                 <option value="light">Light</option>
                                 <option value="dark">Dark</option>
                             </select>
+                            <small id="preference-theme-help" class="form-text">Choose which theme to display. Automatic will switch between light and dark only if your browser supports it. Otherwise, light will be set.</small>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="preference-show-map-stats" class="col-sm-3 control-label">Map Statistics <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Display additional map download statistics for collection maps."></a></label>
-                        <div class="col-sm-9">
-                            <select id="preference-show-map-stats" name="show_map_stats" class="custom-select preference">
+                        <label for="preference-show-map-stats" class="col-lg-3 control-label">Map Statistics</label>
+                        <div class="col-lg-9">
+                            <select id="preference-show-map-stats" name="show_map_stats" class="custom-select preference" aria-describedby="preference-show-map-stats-help">
                                 <option value="true">True</option>
                                 <option value="false">False</option>
                             </select>
+                            <small id="preference-show-map-stats-help" class="form-text">Display additional map download statistics for collection maps.</small>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="preference-show-map-images" class="col-sm-3 control-label">Map Images <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Remove map images to improve loading times for slower connections."></a></label>
-                        <div class="col-sm-9">
-                            <select id="preference-show-map-images" name="show_map_images" class="custom-select preference">
+                        <label for="preference-show-map-images" class="col-lg-3 control-label">Map Images</label>
+                        <div class="col-lg-9">
+                            <select id="preference-show-map-images" name="show_map_images" class="custom-select preference" aria-describedby="preference-show-map-images-help">
                                 <option value="true">True</option>
                                 <option value="false">False</option>
                             </select>
+                            <small id="preference-show-map-images-help" class="form-text">Remove map images to improve loading times for slower connections.</small>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="preference-show-map-suggestions" class="col-sm-3 control-label">Suggestions <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Suggest similar maps to the ones just downloaded."></a></label>
-                        <div class="col-sm-9">
-                            <select id="preference-show-map-suggestions" name="show_map_suggestions" class="custom-select preference">
+                        <label for="preference-show-map-suggestions" class="col-lg-3 control-label">Suggestions</label>
+                        <div class="col-lg-9">
+                            <select id="preference-show-map-suggestions" name="show_map_suggestions" class="custom-select preference" aria-describedby="preference-show-map-suggestions-help">
                                 <option value="true">True</option>
                                 <option value="false">False</option>
                             </select>
+                            <small id="preference-show-map-suggestions-help" class="form-text">Suggest similar maps to the ones just downloaded.</small>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="preference-tm-banners-display" class="col-sm-3 control-label">Tournament Banners <a class="fa fa-info-circle form-info" data-container="body" data-toggle="popover" data-placement="left" data-content="Choose what should be displayed for tournament banners."></a></label>
-                        <div class="col-sm-9">
-                            <select id="preference-tm-banners-display" name="tm_banners_display" class="custom-select  preference">
+                        <label for="preference-tm-banners-display" class="col-lg-3 control-label">Tournament Banners</label>
+                        <div class="col-lg-9">
+                            <select id="preference-tm-banners-display" name="tm_banners_display" class="custom-select  preference" aria-describedby="preference-tm-banners-display-help">
                                 <option value="all">All</option>
                                 <option value="only-text">Only Text</option>
                                 <option value="only-banners">Only Banners</option>
                             </select>
+                            <small id="preference-tm-banners-display-help" class="form-text">Choose what should be displayed for tournament banners.</small>
                         </div>
                     </div>
                 </form>
@@ -120,5 +125,5 @@
         </div>
     </div>
 </div>
-<div class="center text-mute"><small>This information is not tracked or stored by ResourcePile and is only accessible by this device.</small></div>
+<div class="center text-muted">This information is not tracked or stored by ResourcePile and is only accessible by this device.</div>
 {{> navigation_footer}}
