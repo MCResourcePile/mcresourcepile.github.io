@@ -16,15 +16,17 @@
         <meta content="Avicus Network Tournament Records - ResourcePile" name="twitter:title">
         <meta content="Records for tournaments hosted by Avicus Network" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <meta name="theme-color">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
         <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
@@ -42,66 +44,68 @@
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
     </head>
     <body >
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
-                </div>
+                <a class="navbar-brand" href="/">
+                    <span class="fas fa-folder-open" style="padding-right: 5px;" aria-hidden="true"></span> ResourcePile
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/maps/overcast">Overcast Collection</a></li>
-                                <li><a href="/maps/pgm">PGM Collection</a></li>
-                                <li><a href="/maps/stratus">Stratus Collection</a></li>
-                                <li><a href="/maps/avicus">Avicus Collection</a></li>
-                                <li><a href="/maps/rfw">RFW Collection</a></li>
-                            </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-cubes"></i> Maps</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/maps/overcast">Overcast Collection</a>
+                                <a class="dropdown-item" href="/maps/pgm">PGM Collection</a>
+                                <a class="dropdown-item" href="/maps/stratus">Stratus Collection</a>
+                                <a class="dropdown-item" href="/maps/avicus">Avicus Collection</a>
+                                <a class="dropdown-item" href="/maps/rfw">RFW Collection</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/contests/overcast">Overcast Network</a></li>
-                                <li><a href="/contests/stratus">Stratus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-medal"></i> Contests</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/contests/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/contests/stratus">Stratus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown active">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/leagues/overcast">Overcast Network</a></li>
-                                <li><a href="/leagues/pgm">PGM Community</a></li>
-                                <li><a href="/leagues/stratus">Stratus Network</a></li>
-                                <li><a href="/leagues/avicus">Avicus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/leagues/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/leagues/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/leagues/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/leagues/avicus">Avicus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><p class="navbar-menu-title">Overcast</p></li>
-                                <li><a href="/stats/overcast/bow">Bow Records</a></li>
-                                <li><a href="/stats/overcast/miscellaneous">Miscellaneous</a></li>
-                                <li><a href="/stats/overcast/objective">Objective Leaderboards</a></li>
-                                <li><p class="navbar-menu-title">Stratus</p></li>
-                                <li><a href="/stats/stratus/bow">Bow Records</a></li>
-                                <li><p class="navbar-menu-title">Avicus</p></li>
-                                <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-chart-bar"></i> Statistics</a>
+                            <div class="dropdown-menu">
+                                <p class="navbar-menu-title">Overcast</p>
+                                <a class="dropdown-item" href="/stats/overcast/bow">Bow Records</a>
+                                <a class="dropdown-item" href="/stats/overcast/miscellaneous">Miscellaneous</a>
+                                <a class="dropdown-item" href="/stats/overcast/objective">Objective Leaderboards</a>
+                                <p class="navbar-menu-title">Stratus</p>
+                                <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
+                                <p class="navbar-menu-title">Avicus</p>
+                                <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
+                           </div>
                         </li>
-                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <!--
+                        <li class="nav-item">
+                            <a class="nav-link" href="/addon-project/wiki"><i class="far fa-newspaper"></i> Stratus Wiki</a>
+                        </li> -->
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a></li>
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </nav>
         <div class="content-background">
             <div class="container">
                 <div class="content-alert">
@@ -116,8 +120,8 @@
                 <p>Click on a tournament for more information.</p>
             <!-- Start page content -->
 <div id="searchable-collection" class="row">
-    <div class="col-md-3 col-md-push-9">
-        <div class="thumbnail map-search">
+    <div class="col-lg-3 order-lg-2 order-1">
+        <div class="img-thumbnail map-search">
             <div class="center">
                 <span id="searchable-count"></span>
             </div>
@@ -149,8 +153,8 @@
             </div>
         </div>
     </div>
-    <div class="col-md-9 col-md-pull-3">
-        <div class="tm-banner-options thumbnail">
+    <div class="col-lg-9 order-lg-1 order-2">
+        <div class="tm-banner-options img-thumbnail">
             Display: 
             <span class="active" id="display-text">
                 <i class="fas fa-font"></i> Text</a></li>
@@ -178,7 +182,7 @@
                         <span class="tm-tag">King of the Hill</span>
                         <div class="tags hidden">Aura,Tournament,Capture the Flag,King of the Hill</div>
                     </div>
-                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/avicus/how_alm_captured_christmas.png">
+                    <img class="image-banner-custom lazy" data-src="../../assets/img/tournament/banners/avicus/how_alm_captured_christmas.png">
                 </a>
             </div>
             <div class="tm-banner-row">
@@ -193,7 +197,7 @@
                         <span class="tm-tag">Team Deathmatch</span>
                         <div class="tags hidden">50 Shades of ALM,Tournament,Team Deathmatch</div>
                     </div>
-                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/avicus/battle_of_eternity_ii.png">
+                    <img class="image-banner-custom lazy" data-src="../../assets/img/tournament/banners/avicus/battle_of_eternity_ii.png">
                 </a>
             </div>
             <div class="tm-banner-row">
@@ -208,7 +212,7 @@
                         <span class="tm-tag">Capture the Wool</span>
                         <div class="tags hidden">Horizon,Tournament,Capture the Wool</div>
                     </div>
-                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/avicus/race_to_victory_ii.png">
+                    <img class="image-banner-custom lazy" data-src="../../assets/img/tournament/banners/avicus/race_to_victory_ii.png">
                 </a>
             </div>
             <div class="tm-banner-row">
@@ -225,7 +229,7 @@
                         <span class="tm-tag">King of the Hill</span>
                         <div class="tags hidden">PureDogs,Tournament,Capture Points,Capture the Wool,King of the Hill</div>
                     </div>
-                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/avicus/conquest_inc.png">
+                    <img class="image-banner-custom lazy" data-src="../../assets/img/tournament/banners/avicus/conquest_inc.png">
                 </a>
             </div>
             <div class="tm-banner-row">
@@ -241,7 +245,7 @@
                         <span class="tm-tag">Destroy the Monument</span>
                         <div class="tags hidden">Team Allah,Tournament,Capture the Wool,Destroy the Monument</div>
                     </div>
-                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/avicus/project_redemption.png">
+                    <img class="image-banner-custom lazy" data-src="../../assets/img/tournament/banners/avicus/project_redemption.png">
                 </a>
             </div>
             <div class="tm-banner-row">
@@ -256,7 +260,7 @@
                         <span class="tm-tag">Team Deathmatch</span>
                         <div class="tags hidden">Team Allah,Tournament,Team Deathmatch</div>
                     </div>
-                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/avicus/battle_of_eternity.png">
+                    <img class="image-banner-custom lazy" data-src="../../assets/img/tournament/banners/avicus/battle_of_eternity.png">
                 </a>
             </div>
             <div class="tm-banner-row">
@@ -271,7 +275,7 @@
                         <span class="tm-tag">Team Deathmatch</span>
                         <div class="tags hidden">Team Allah,Season,Team Deathmatch</div>
                     </div>
-                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/avicus/avicus_league_season_1.png">
+                    <img class="image-banner-custom lazy" data-src="../../assets/img/tournament/banners/avicus/avicus_league_season_1.png">
                 </a>
             </div>
             <div class="tm-banner-row">
@@ -286,7 +290,7 @@
                         <span class="tm-tag">Capture the Wool</span>
                         <div class="tags hidden">Powerpuff Boys,Tournament,Capture the Wool</div>
                     </div>
-                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/avicus/race_to_victory.png">
+                    <img class="image-banner-custom lazy" data-src="../../assets/img/tournament/banners/avicus/race_to_victory.png">
                 </a>
             </div>
             <div class="tm-banner-row">
@@ -301,7 +305,7 @@
                         <span class="tm-tag">Destroy the Monument</span>
                         <div class="tags hidden">BerzerkV2,Tournament,Destroy the Monument</div>
                     </div>
-                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/avicus/the_omega_championship.png">
+                    <img class="image-banner-custom lazy" data-src="../../assets/img/tournament/banners/avicus/the_omega_championship.png">
                 </a>
             </div>
         </div>
@@ -338,9 +342,7 @@
                         <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
                     </div>
                 </div>
-                <div class="footer-bottom center">
-                    <div class="resourcepile-copyright-year"></div>
-                </div>
+                <div class="footer-bottom center">© 2019 ResourcePile</div>
             </div>
         </div>
         <script src="/assets/js/global.js"></script>

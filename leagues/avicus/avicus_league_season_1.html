@@ -16,15 +16,17 @@
         <meta content="Avicus League - Season 1 - ResourcePile" name="twitter:title">
         <meta content="Records for Avicus League - Season 1, a tournament hosted the Avicus Network" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <meta name="theme-color">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
         <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="/assets/js/tournaments-pages.js"></script>
@@ -40,66 +42,68 @@
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
     </head>
     <body >
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
-                </div>
+                <a class="navbar-brand" href="/">
+                    <span class="fas fa-folder-open" style="padding-right: 5px;" aria-hidden="true"></span> ResourcePile
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/maps/overcast">Overcast Collection</a></li>
-                                <li><a href="/maps/pgm">PGM Collection</a></li>
-                                <li><a href="/maps/stratus">Stratus Collection</a></li>
-                                <li><a href="/maps/avicus">Avicus Collection</a></li>
-                                <li><a href="/maps/rfw">RFW Collection</a></li>
-                            </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-cubes"></i> Maps</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/maps/overcast">Overcast Collection</a>
+                                <a class="dropdown-item" href="/maps/pgm">PGM Collection</a>
+                                <a class="dropdown-item" href="/maps/stratus">Stratus Collection</a>
+                                <a class="dropdown-item" href="/maps/avicus">Avicus Collection</a>
+                                <a class="dropdown-item" href="/maps/rfw">RFW Collection</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/contests/overcast">Overcast Network</a></li>
-                                <li><a href="/contests/stratus">Stratus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-medal"></i> Contests</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/contests/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/contests/stratus">Stratus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown active">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/leagues/overcast">Overcast Network</a></li>
-                                <li><a href="/leagues/pgm">PGM Community</a></li>
-                                <li><a href="/leagues/stratus">Stratus Network</a></li>
-                                <li><a href="/leagues/avicus">Avicus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/leagues/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/leagues/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/leagues/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/leagues/avicus">Avicus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><p class="navbar-menu-title">Overcast</p></li>
-                                <li><a href="/stats/overcast/bow">Bow Records</a></li>
-                                <li><a href="/stats/overcast/miscellaneous">Miscellaneous</a></li>
-                                <li><a href="/stats/overcast/objective">Objective Leaderboards</a></li>
-                                <li><p class="navbar-menu-title">Stratus</p></li>
-                                <li><a href="/stats/stratus/bow">Bow Records</a></li>
-                                <li><p class="navbar-menu-title">Avicus</p></li>
-                                <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-chart-bar"></i> Statistics</a>
+                            <div class="dropdown-menu">
+                                <p class="navbar-menu-title">Overcast</p>
+                                <a class="dropdown-item" href="/stats/overcast/bow">Bow Records</a>
+                                <a class="dropdown-item" href="/stats/overcast/miscellaneous">Miscellaneous</a>
+                                <a class="dropdown-item" href="/stats/overcast/objective">Objective Leaderboards</a>
+                                <p class="navbar-menu-title">Stratus</p>
+                                <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
+                                <p class="navbar-menu-title">Avicus</p>
+                                <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
+                           </div>
                         </li>
-                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <!--
+                        <li class="nav-item">
+                            <a class="nav-link" href="/addon-project/wiki"><i class="far fa-newspaper"></i> Stratus Wiki</a>
+                        </li> -->
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a></li>
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </nav>
         <div class="content-background">
             <div class="container">
                 <div class="content-alert">
@@ -113,28 +117,24 @@
                 </div>
             <!-- Start page content -->
 <nav>
-    <ul class="pager tm-pager">
-        <div class="row">
-            <div class="col-xs-4">
-                <li class="previous">
-                    <a href="/leagues/avicus/race_to_victory"><i class="fas fa-long-arrow-alt-left"></i> Last: Race to Victory</a>
-                </li>
-            </div>
-            <div class="col-xs-4">
-                <li class="pager-center">
-                    <p>Season #1</p>
-                </li>
-            </div>
-            <div class="col-xs-4">
-                <li class="next">
-                    <a href="/leagues/avicus/battle_of_eternity">Next: Battle of Eternity <i class="fas fa-long-arrow-alt-right"></i></a>
-                </li>
-            </div>
+    <div class="row tm-pager">
+        <div class="col-lg-4 col-md-6 tm-pager-last">
+            <a class="btn btn-outline-primary" href="/leagues/avicus/race_to_victory" role="button">
+                <i class="fas fa-long-arrow-alt-left"></i> Last: Race to Victory
+            </a>
         </div>
-    </ul>
+        <div class="col-lg-4 tm-pager-number">
+            <p>Season #1</p>
+        </div>
+        <div class="col-lg-4 col-md-6 tm-pager-next">
+            <a class="btn btn-outline-primary" href="/leagues/avicus/battle_of_eternity" role="button">
+                Next: Battle of Eternity <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
+        </div>
+    </div>
 </nav>
 <div class="center">
-    <img class="league-banner" src="../../assets/img/tournament/banners/avicus/avicus_league_season_1.png">
+    <img class="image-banner-custom" src="../../assets/img/tournament/banners/avicus/avicus_league_season_1.png">
 </div>
 <div class="center" style="margin-bottom: 5px;">
     <div class="league-position league-position-first">
@@ -156,72 +156,78 @@
     </div>
 </div>
 <div class="collapse-section">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
-    <div class="collapse in" id="section-info">
+    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
+    <div class="collapse show" id="section-info">
         <div class="row">
             <div class="col-md-6">
-                <div class="league-information red">
-                    <div class="league-info-section">Details</div>
-                    <table class="league-info-table">
-                        <tbody>
-                            <tr>
-                                <td>Format</td>
-                                <td>
-                                    League (Bo3 for TDM / 3 Points for a win, 1 for a tie, 0 for a loss)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Gamemodes</td>
-                                <td>
-                                    Capture the Wool,
-                                    Destroy the Monument,
-                                    Team Deathmatch
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Teams</td>
-                                <td>
-                                    <a href="#teams">13 teams <i class="fas fa-chevron-down"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Team Size</td>
-                                <td>12-20</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="card border-danger">
+                    <h5 class="card-header text-danger border-danger">Details</h5>
+                    <div class="card-body">
+                        <table class="info-table">
+                            <tbody>
+                                <tr>
+                                    <td>Format</td>
+                                    <td>
+                                        League (Bo3 for TDM / 3 Points for a win, 1 for a tie, 0 for a loss)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Gamemodes</td>
+                                    <td>
+                                        Capture the Wool,
+                                        Destroy the Monument,
+                                        Team Deathmatch
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Teams</td>
+                                    <td>
+                                        <a href="#teams">13 teams <i class="fas fa-chevron-down"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Team Size</td>
+                                    <td>12-20</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="league-information red">
-                    <div class="league-info-section">Dates</div>
-                    <table class="league-info-table">
-                        <tbody>
-                            <tr>
-                                <td>League Start</td>
-                                <td>November 28, 2015</td>
-                            </tr>
-                            <tr>
-                                <td>League End</td>
-                                <td>January 23, 2016</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="card border-danger">
+                    <h5 class="card-header text-danger border-danger">Dates</h5>
+                    <div class="card-body">
+                        <table class="info-table">
+                            <tbody>
+                                <tr>
+                                    <td>League Start</td>
+                                    <td>November 28, 2015</td>
+                                </tr>
+                                <tr>
+                                    <td>League End</td>
+                                    <td>January 23, 2016</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="collapse-section">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-maps"><i class="fas fa-angle-down"></i> Map Pool <small>9 maps</small></div>
-    <div class="collapse in" id="section-maps">
+    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-maps"><i class="fas fa-angle-down"></i> Map Pool <small>9 maps</small></div>
+    <div class="collapse show" id="section-maps">
         <div class="dynamic">
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/rendezvous_iii.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Rendezvous 3.5 TE">
-                            <div class="title"><a class="s-title">Rendezvous 3.5 TE</a></div>
+                            <div class="title">
+                                <a class="s-title">Rendezvous 3.5 TE</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                             </div>
@@ -229,18 +235,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/static.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Static">
-                            <div class="title"><a class="s-title">Static</a></div>
+                            <div class="title">
+                                <a class="s-title">Static</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                             </div>
@@ -248,18 +256,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/babylon_gardens_dtm.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Babylon Gardens DTM">
-                            <div class="title"><a class="s-title">Babylon Gardens DTM</a></div>
+                            <div class="title">
+                                <a class="s-title">Babylon Gardens DTM</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                             </div>
@@ -267,18 +277,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/rendezvous_ctw.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Rendezvous New CTW">
-                            <div class="title"><a class="s-title">Rendezvous New CTW</a></div>
+                            <div class="title">
+                                <a class="s-title">Rendezvous New CTW</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
                             </div>
@@ -286,18 +298,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/wahiz.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Wahiz">
-                            <div class="title"><a class="s-title">Wahiz</a></div>
+                            <div class="title">
+                                <a class="s-title">Wahiz</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
                             </div>
@@ -305,18 +319,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/senex_ctw.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Senex CTW">
-                            <div class="title"><a class="s-title">Senex CTW</a></div>
+                            <div class="title">
+                                <a class="s-title">Senex CTW</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
                             </div>
@@ -324,18 +340,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/supply.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Supply">
-                            <div class="title"><a class="s-title">Supply</a></div>
+                            <div class="title">
+                                <a class="s-title">Supply</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
                             </div>
@@ -343,18 +361,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/actrix_te.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Actrix TE">
-                            <div class="title"><a class="s-title">Actrix TE</a></div>
+                            <div class="title">
+                                <a class="s-title">Actrix TE</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
                             </div>
@@ -362,18 +382,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/sentry.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Sentry">
-                            <div class="title"><a class="s-title">Sentry</a></div>
+                            <div class="title">
+                                <a class="s-title">Sentry</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Team Deathmatch<span class="hidden">tdm</span></li>
                             </div>
@@ -381,7 +403,7 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
@@ -390,38 +412,64 @@
         </div>
     </div>
 </div>
-<div class="collapse-section" id="teams">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>13 teams</small></div>
-    <div class="collapse in" id="section-teams">
+<div class="collapse-section id-anchor" id="teams">
+    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>13 teams</small></div>
+    <div class="collapse show" id="section-teams">
         <div class="tm-team-group">
-            <div class="tm-team-group-teams">
-                <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">Apollo</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">Assassins</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">Bad Company</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">Cacalmarin</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">Cronus</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">Ethernam Cross</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">JardinerosTeam</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">Kaldorei</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">Powerpuff Boys</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">QuiDizii</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">Reclaimers</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">TheChubuTeam</div>
-                </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                    <div class="name no-seed">TheCrazyBeaners</div>
-                </div>    </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">Apollo</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">Assassins</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">Bad Company</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">Cacalmarin</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">Cronus</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">Ethernam Cross</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">JardinerosTeam</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">Kaldorei</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">Powerpuff Boys</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">QuiDizii</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">Reclaimers</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">TheChubuTeam</div>
+                    </div>        </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="tm-team tm-team-fade" data-advances="false">
+                        <div class="name no-seed">TheCrazyBeaners</div>
+                    </div>        </div>
+            </div>
             
         </div>
     </div>
@@ -457,9 +505,7 @@
                         <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
                     </div>
                 </div>
-                <div class="footer-bottom center">
-                    <div class="resourcepile-copyright-year"></div>
-                </div>
+                <div class="footer-bottom center">© 2019 ResourcePile</div>
             </div>
         </div>
         <script src="/assets/js/global.js"></script>

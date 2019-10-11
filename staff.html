@@ -16,15 +16,17 @@
         <meta content="Staff - ResourcePile" name="twitter:title">
         <meta content="The team that runs ResourcePile" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <meta name="theme-color">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
         <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="/assets/js/names.js"></script>
@@ -40,66 +42,68 @@
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
     </head>
     <body >
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
-                </div>
+                <a class="navbar-brand" href="/">
+                    <span class="fas fa-folder-open" style="padding-right: 5px;" aria-hidden="true"></span> ResourcePile
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/maps/overcast">Overcast Collection</a></li>
-                                <li><a href="/maps/pgm">PGM Collection</a></li>
-                                <li><a href="/maps/stratus">Stratus Collection</a></li>
-                                <li><a href="/maps/avicus">Avicus Collection</a></li>
-                                <li><a href="/maps/rfw">RFW Collection</a></li>
-                            </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-cubes"></i> Maps</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/maps/overcast">Overcast Collection</a>
+                                <a class="dropdown-item" href="/maps/pgm">PGM Collection</a>
+                                <a class="dropdown-item" href="/maps/stratus">Stratus Collection</a>
+                                <a class="dropdown-item" href="/maps/avicus">Avicus Collection</a>
+                                <a class="dropdown-item" href="/maps/rfw">RFW Collection</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/contests/overcast">Overcast Network</a></li>
-                                <li><a href="/contests/stratus">Stratus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-medal"></i> Contests</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/contests/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/contests/stratus">Stratus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/leagues/overcast">Overcast Network</a></li>
-                                <li><a href="/leagues/pgm">PGM Community</a></li>
-                                <li><a href="/leagues/stratus">Stratus Network</a></li>
-                                <li><a href="/leagues/avicus">Avicus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/leagues/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/leagues/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/leagues/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/leagues/avicus">Avicus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><p class="navbar-menu-title">Overcast</p></li>
-                                <li><a href="/stats/overcast/bow">Bow Records</a></li>
-                                <li><a href="/stats/overcast/miscellaneous">Miscellaneous</a></li>
-                                <li><a href="/stats/overcast/objective">Objective Leaderboards</a></li>
-                                <li><p class="navbar-menu-title">Stratus</p></li>
-                                <li><a href="/stats/stratus/bow">Bow Records</a></li>
-                                <li><p class="navbar-menu-title">Avicus</p></li>
-                                <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-chart-bar"></i> Statistics</a>
+                            <div class="dropdown-menu">
+                                <p class="navbar-menu-title">Overcast</p>
+                                <a class="dropdown-item" href="/stats/overcast/bow">Bow Records</a>
+                                <a class="dropdown-item" href="/stats/overcast/miscellaneous">Miscellaneous</a>
+                                <a class="dropdown-item" href="/stats/overcast/objective">Objective Leaderboards</a>
+                                <p class="navbar-menu-title">Stratus</p>
+                                <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
+                                <p class="navbar-menu-title">Avicus</p>
+                                <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
+                           </div>
                         </li>
-                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <!--
+                        <li class="nav-item">
+                            <a class="nav-link" href="/addon-project/wiki"><i class="far fa-newspaper"></i> Stratus Wiki</a>
+                        </li> -->
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a></li>
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </nav>
         <div class="content-background">
             <div class="container">
                 <div class="content-alert">
@@ -115,52 +119,60 @@
 <div class="contact-position-section">
     <div class="contact-position-title position-manager">Managers <small>4</small></div>
     <div class="row">
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/a9f11454-beac-4cc3-a138-1780802c8794?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-manager">Crazy_</div>
-                <div class="contact-user-description">Manager</div>
-                <a class="contact-user-outlet" href="https://github.com/CrazyisCreeps"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="Crazy#1675" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/a9f11454-beac-4cc3-a138-1780802c8794?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-manager">Crazy_</div>
+                    <div class="contact-user-description">Manager</div>
+                    <a class="contact-user-outlet" href="https://github.com/CrazyisCreeps"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" title="Crazy#1675" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/48924ea3-3aad-4e16-838c-368d8d9e0a25?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-manager">Matic0B</div>
-                <div class="contact-user-description">Manager</div>
-                <a class="contact-user-outlet" href="https://github.com/Matic0B"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="Matic0B#4502" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/48924ea3-3aad-4e16-838c-368d8d9e0a25?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-manager">Matic0B</div>
+                    <div class="contact-user-description">Manager</div>
+                    <a class="contact-user-outlet" href="https://github.com/Matic0B"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" title="Matic0B#4502" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/f690a591-348b-482e-a18d-7779d0c0a28c?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-manager">mitchiii_</div>
-                <div class="contact-user-description">Manager</div>
-                <a class="contact-user-outlet" href="https://github.com/mitchts"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="mitchiii_#4691" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/f690a591-348b-482e-a18d-7779d0c0a28c?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-manager">mitchiii_</div>
+                    <div class="contact-user-description">Manager</div>
+                    <a class="contact-user-outlet" href="https://github.com/mitchts"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" title="mitchiii_#4691" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/53af1e46-7424-485b-97de-7bf8d854a2aa?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-manager">BTKing</div>
-                <div class="contact-user-description">Manager</div>
-                <a class="contact-user-outlet" href="https://github.com/BTkingly"><i class="fab fa-github"></i></a>
-                <a class="contact-user-outlet" href="https://twitter.com/SpontaniousVie"><i class="fab fa-twitter"></i></a>
-                <a class="contact-user-outlet" title="BTKing#8479" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/53af1e46-7424-485b-97de-7bf8d854a2aa?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-manager">BTKing</div>
+                    <div class="contact-user-description">Manager</div>
+                    <a class="contact-user-outlet" href="https://github.com/BTkingly"><i class="fab fa-github"></i></a>
+                    <a class="contact-user-outlet" href="https://twitter.com/SpontaniousVie"><i class="fab fa-twitter"></i></a>
+                    <a class="contact-user-outlet" title="BTKing#8479" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
     </div>
@@ -168,76 +180,88 @@
 <div class="contact-position-section">
     <div class="contact-position-title position-developer">Developers <small>6</small></div>
     <div class="row">
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/f690a591-348b-482e-a18d-7779d0c0a28c?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-developer">mitchiii_</div>
-                <div class="contact-user-description">Developer</div>
-                <a class="contact-user-outlet" href="https://github.com/mitchts"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="mitchiii_#4691" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/f690a591-348b-482e-a18d-7779d0c0a28c?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-developer">mitchiii_</div>
+                    <div class="contact-user-description">Developer</div>
+                    <a class="contact-user-outlet" href="https://github.com/mitchts"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" data-content="mitchiii_#4691" data-toggle="popover" data-placement="bottom"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/48924ea3-3aad-4e16-838c-368d8d9e0a25?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-developer">Matic0B</div>
-                <div class="contact-user-description">Developer</div>
-                <a class="contact-user-outlet" href="https://github.com/Matic0B"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="Matic0B#4502" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/48924ea3-3aad-4e16-838c-368d8d9e0a25?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-developer">Matic0B</div>
+                    <div class="contact-user-description">Developer</div>
+                    <a class="contact-user-outlet" href="https://github.com/Matic0B"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" data-content="Matic0B#4502" data-toggle="popover" data-placement="bottom"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/55ee6876-12bb-46c9-9d3e-f094f2b0093d?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-developer">freundTech</div>
-                <div class="contact-user-description">Developer</div>
-                <a class="contact-user-outlet" href="https://github.com/freundTech"><i class="fab fa-github"></i></a>
-                <a class="contact-user-outlet" href="https://twitter.com/freundTech"><i class="fab fa-twitter"></i></a>
-                <a class="contact-user-outlet" title="freundTech#0743" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/55ee6876-12bb-46c9-9d3e-f094f2b0093d?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-developer">freundTech</div>
+                    <div class="contact-user-description">Developer</div>
+                    <a class="contact-user-outlet" href="https://github.com/freundTech"><i class="fab fa-github"></i></a>
+                    <a class="contact-user-outlet" href="https://twitter.com/freundTech"><i class="fab fa-twitter"></i></a>
+                    <a class="contact-user-outlet" data-content="freundTech#0743" data-toggle="popover" data-placement="bottom"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/9929437a-9b7d-4d7a-b05d-e22fe93ac042?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-developer">triplezko</div>
-                <div class="contact-user-description">Developer</div>
-                <a class="contact-user-outlet" href="https://github.com/triplezko"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="triplezko#4978" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/9929437a-9b7d-4d7a-b05d-e22fe93ac042?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-developer">triplezko</div>
+                    <div class="contact-user-description">Developer</div>
+                    <a class="contact-user-outlet" href="https://github.com/triplezko"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" data-content="triplezko#4978" data-toggle="popover" data-placement="bottom"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/bf331953-4f92-43ee-8abc-7544b8234936?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-developer">ViceWatercolour</div>
-                <div class="contact-user-description">Developer</div>
-                <a class="contact-user-outlet" href="https://github.com/Palmidence"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="ViceWatercolour (para)#4812" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/bf331953-4f92-43ee-8abc-7544b8234936?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-developer">ViceWatercolour</div>
+                    <div class="contact-user-description">Developer</div>
+                    <a class="contact-user-outlet" href="https://github.com/Palmidence"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" data-content="ViceWatercolour (para)#4812" data-toggle="popover" data-placement="bottom"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/62c41f0e-133d-4192-ad33-f0896f47d23a?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-developer">nixter1029</div>
-                <div class="contact-user-description">Developer</div>
-                <a class="contact-user-outlet" href="https://github.com/nixter1029"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="nixter1029#9364" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/62c41f0e-133d-4192-ad33-f0896f47d23a?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-developer">nixter1029</div>
+                    <div class="contact-user-description">Developer</div>
+                    <a class="contact-user-outlet" href="https://github.com/nixter1029"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" data-content="nixter1029#9364" data-toggle="popover" data-placement="bottom"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
     </div>
@@ -245,76 +269,88 @@
 <div class="contact-position-section">
     <div class="contact-position-title position-collaborator">Collaborators <small>6</small></div>
     <div class="row">
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/77912861-9fc0-45fa-aac5-aa455614edbf?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-collaborator">Nanu</div>
-                <div class="contact-user-description">Collaborator</div>
-                
-                
-                <a class="contact-user-outlet" title="Nanu#7388" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/77912861-9fc0-45fa-aac5-aa455614edbf?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-collaborator">Nanu</div>
+                    <div class="contact-user-description">Collaborator</div>
+                    
+                    
+                    <a class="contact-user-outlet" title="Nanu#7388" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/5198dc37-537f-4ea5-8ee8-1e0952d4a36b?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-collaborator">_3Each</div>
-                <div class="contact-user-description">Collaborator</div>
-                <a class="contact-user-outlet" href="https://github.com/3Each"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="_3Each#5786" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/5198dc37-537f-4ea5-8ee8-1e0952d4a36b?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-collaborator">_3Each</div>
+                    <div class="contact-user-description">Collaborator</div>
+                    <a class="contact-user-outlet" href="https://github.com/3Each"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" title="_3Each#5786" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/6cd90ad8-b04e-4fa5-8359-3ac763193cfc?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-collaborator">AranoixStark</div>
-                <div class="contact-user-description">Collaborator</div>
-                <a class="contact-user-outlet" href="https://github.com/Starkman123"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="Дзена#1885" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/6cd90ad8-b04e-4fa5-8359-3ac763193cfc?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-collaborator">AranoixStark</div>
+                    <div class="contact-user-description">Collaborator</div>
+                    <a class="contact-user-outlet" href="https://github.com/Starkman123"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" title="Дзена#1885" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/e16d0672-23c7-4a02-bd22-965e38521c35?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-collaborator">99250</div>
-                <div class="contact-user-description">Collaborator</div>
-                <a class="contact-user-outlet" href="https://github.com/Numberz99"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="Numberz_#4730" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/e16d0672-23c7-4a02-bd22-965e38521c35?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-collaborator">99250</div>
+                    <div class="contact-user-description">Collaborator</div>
+                    <a class="contact-user-outlet" href="https://github.com/Numberz99"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" title="Numberz_#4730" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/1c898c77-b0cc-474a-8ce4-b5521f2b18e7?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-collaborator">Proddyy</div>
-                <div class="contact-user-description">Collaborator</div>
-                <a class="contact-user-outlet" href="https://github.com/Prodigy4532"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="Prodigy4532#6108" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/1c898c77-b0cc-474a-8ce4-b5521f2b18e7?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-collaborator">Proddyy</div>
+                    <div class="contact-user-description">Collaborator</div>
+                    <a class="contact-user-outlet" href="https://github.com/Prodigy4532"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" title="Prodigy4532#6108" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/8b2d7971-7348-4438-9efe-6d6ecf2be972?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-collaborator">Lucaslyoko</div>
-                <div class="contact-user-description">Collaborator</div>
-                <a class="contact-user-outlet" href="https://github.com/Lucaslyoko"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="Lucaslyoko#5118" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/8b2d7971-7348-4438-9efe-6d6ecf2be972?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-collaborator">Lucaslyoko</div>
+                    <div class="contact-user-description">Collaborator</div>
+                    <a class="contact-user-outlet" href="https://github.com/Lucaslyoko"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" title="Lucaslyoko#5118" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
     </div>
@@ -322,28 +358,32 @@
 <div class="contact-position-section">
     <div class="contact-position-title position-associate">Associates <small>2</small></div>
     <div class="row">
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/c88f74cc-51e7-43da-b893-54f8ec630701?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-associate">Epicness</div>
-                <div class="contact-user-description">Associate</div>
-                <a class="contact-user-outlet" href="https://github.com/EpicnessGitHub"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="Epicness#2364" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/c88f74cc-51e7-43da-b893-54f8ec630701?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-associate">Epicness</div>
+                    <div class="contact-user-description">Associate</div>
+                    <a class="contact-user-outlet" href="https://github.com/EpicnessGitHub"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" title="Epicness#2364" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 center">
-            <span class="contact-user-thumbnail thumbnail">
-            <img class="contact-user-avatar" src="https://crafatar.com/avatars/715769c5-8c4c-4489-bdf8-f9cee2b2ae8a?overlay">
-            </span>
-            <div class="contact-user-details">
-                <div class="contact-user-name position-associate">amactus</div>
-                <div class="contact-user-description">Associate</div>
-                <a class="contact-user-outlet" href="https://github.com/amactus"><i class="fab fa-github"></i></a>
-                
-                <a class="contact-user-outlet" title="amactus#7639" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/715769c5-8c4c-4489-bdf8-f9cee2b2ae8a?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-associate">amactus</div>
+                    <div class="contact-user-description">Associate</div>
+                    <a class="contact-user-outlet" href="https://github.com/amactus"><i class="fab fa-github"></i></a>
+                    
+                    <a class="contact-user-outlet" title="amactus#7639" data-toggle="tooltip" data-placement="top"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
     </div>
@@ -379,9 +419,7 @@
                         <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
                     </div>
                 </div>
-                <div class="footer-bottom center">
-                    <div class="resourcepile-copyright-year"></div>
-                </div>
+                <div class="footer-bottom center">© 2019 ResourcePile</div>
             </div>
         </div>
         <script src="/assets/js/global.js"></script>

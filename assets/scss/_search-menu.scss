@@ -1,0 +1,82 @@
+.map-search {
+    padding: 12px;
+    max-width: initial;
+}
+
+@media only screen and (max-width: 992px) {
+    .map-search {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .map-search {
+        width: 215px;
+        z-index: 1;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .map-search {
+        width: 270px;
+        z-index: 1;
+    }
+}
+
+
+.record-search-box {
+    font-size: 15px;
+    max-height: 28px;
+}
+
+.filters {
+    text-align: left;
+    padding-top: 8px;
+
+    > b {
+        font-size: 15px;
+    }
+
+    > small {
+        display: block;
+        font-size: 10px;
+        margin-top: -2px;
+        line-height: 12px
+    }
+}
+
+.group {
+    margin-top: 6px;
+
+    > b {
+        display: block;
+        font-size: 12px;
+    }
+
+    > .filter {
+        display: inline-block;
+        font-size: 10px;
+        background-color: #f0f0f0;
+        padding: 1px 6px;
+        margin: 2px -0px;
+        border-radius: 16px;
+        white-space: nowrap;
+    }
+
+    > .filter:hover,
+    > .filter:focus {
+        background-color: #b6c0ff;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+
+    > .filter.active {
+        background-color: #5f6fc7 !important;
+        color: #fff;
+    }
+}
+
+.slider.slider-horizontal {
+    width: 170px !important;
+    margin: 0px 10px;
+}

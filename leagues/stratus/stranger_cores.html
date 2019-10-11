@@ -16,15 +16,17 @@
         <meta content="Stranger Cores - ResourcePile" name="twitter:title">
         <meta content="Records for Stranger Cores, a tournament hosted by Stratus Network" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <meta name="theme-color">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
         <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="/assets/js/tournaments-pages.js"></script>
@@ -40,66 +42,68 @@
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
     </head>
     <body >
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
-                </div>
+                <a class="navbar-brand" href="/">
+                    <span class="fas fa-folder-open" style="padding-right: 5px;" aria-hidden="true"></span> ResourcePile
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/maps/overcast">Overcast Collection</a></li>
-                                <li><a href="/maps/pgm">PGM Collection</a></li>
-                                <li><a href="/maps/stratus">Stratus Collection</a></li>
-                                <li><a href="/maps/avicus">Avicus Collection</a></li>
-                                <li><a href="/maps/rfw">RFW Collection</a></li>
-                            </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-cubes"></i> Maps</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/maps/overcast">Overcast Collection</a>
+                                <a class="dropdown-item" href="/maps/pgm">PGM Collection</a>
+                                <a class="dropdown-item" href="/maps/stratus">Stratus Collection</a>
+                                <a class="dropdown-item" href="/maps/avicus">Avicus Collection</a>
+                                <a class="dropdown-item" href="/maps/rfw">RFW Collection</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/contests/overcast">Overcast Network</a></li>
-                                <li><a href="/contests/stratus">Stratus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-medal"></i> Contests</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/contests/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/contests/stratus">Stratus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown active">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/leagues/overcast">Overcast Network</a></li>
-                                <li><a href="/leagues/pgm">PGM Community</a></li>
-                                <li><a href="/leagues/stratus">Stratus Network</a></li>
-                                <li><a href="/leagues/avicus">Avicus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/leagues/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/leagues/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/leagues/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/leagues/avicus">Avicus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><p class="navbar-menu-title">Overcast</p></li>
-                                <li><a href="/stats/overcast/bow">Bow Records</a></li>
-                                <li><a href="/stats/overcast/miscellaneous">Miscellaneous</a></li>
-                                <li><a href="/stats/overcast/objective">Objective Leaderboards</a></li>
-                                <li><p class="navbar-menu-title">Stratus</p></li>
-                                <li><a href="/stats/stratus/bow">Bow Records</a></li>
-                                <li><p class="navbar-menu-title">Avicus</p></li>
-                                <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-chart-bar"></i> Statistics</a>
+                            <div class="dropdown-menu">
+                                <p class="navbar-menu-title">Overcast</p>
+                                <a class="dropdown-item" href="/stats/overcast/bow">Bow Records</a>
+                                <a class="dropdown-item" href="/stats/overcast/miscellaneous">Miscellaneous</a>
+                                <a class="dropdown-item" href="/stats/overcast/objective">Objective Leaderboards</a>
+                                <p class="navbar-menu-title">Stratus</p>
+                                <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
+                                <p class="navbar-menu-title">Avicus</p>
+                                <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
+                           </div>
                         </li>
-                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <!--
+                        <li class="nav-item">
+                            <a class="nav-link" href="/addon-project/wiki"><i class="far fa-newspaper"></i> Stratus Wiki</a>
+                        </li> -->
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a></li>
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </nav>
         <div class="content-background">
             <div class="container">
                 <div class="content-alert">
@@ -113,28 +117,24 @@
                 </div>
             <!-- Start page content -->
 <nav>
-    <ul class="pager tm-pager">
-        <div class="row">
-            <div class="col-xs-4">
-                <li class="previous">
-                    <a href="/leagues/stratus/the_quad_before_christmas"><i class="fas fa-long-arrow-alt-left"></i> Last: The Quad Before Christmas</a>
-                </li>
-            </div>
-            <div class="col-xs-4">
-                <li class="pager-center">
-                    <p>Tournament #2</p>
-                </li>
-            </div>
-            <div class="col-xs-4">
-                <li class="next">
-                    <a href="/leagues/stratus/attack_on_point">Next: Attack on Point <i class="fas fa-long-arrow-alt-right"></i></a>
-                </li>
-            </div>
+    <div class="row tm-pager">
+        <div class="col-lg-4 col-md-6 tm-pager-last">
+            <a class="btn btn-outline-primary" href="/leagues/stratus/the_quad_before_christmas" role="button">
+                <i class="fas fa-long-arrow-alt-left"></i> Last: The Quad Before Christmas
+            </a>
         </div>
-    </ul>
+        <div class="col-lg-4 tm-pager-number">
+            <p>Tournament #2</p>
+        </div>
+        <div class="col-lg-4 col-md-6 tm-pager-next">
+            <a class="btn btn-outline-primary" href="/leagues/stratus/attack_on_point" role="button">
+                Next: Attack on Point <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
+        </div>
+    </div>
 </nav>
 <div class="center">
-    <img class="league-banner" src="../../assets/img/tournament/banners/stratus/stranger_cores.png">
+    <img class="image-banner-custom" src="../../assets/img/tournament/banners/stratus/stranger_cores.png">
 </div>
 <div class="center" style="margin-bottom: 5px;">
     <div class="league-position league-position-first">
@@ -172,77 +172,83 @@
     </div>
 </div>
 <div class="collapse-section">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
-    <div class="collapse in" id="section-info">
+    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
+    <div class="collapse show" id="section-info">
         <div class="row">
             <div class="col-md-6">
-                <div class="league-information red">
-                    <div class="league-info-section">Details</div>
-                    <table class="league-info-table">
-                        <tbody>
-                            <tr>
-                                <td>Format</td>
-                                <td>
-                                    Qualifier (Swiss, 5 rounds)<i class="fas fa-long-arrow-alt-right" style="vertical-align: middle; padding-left: 7px; padding-right: 6px;"></i>Invitational (Double Elimination)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Gamemodes</td>
-                                <td>
-                                    Destroy the Core and Monument
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Teams</td>
-                                <td>
-                                    <a href="#teams">16 teams <i class="fas fa-chevron-down"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Team Size</td>
-                                <td>8v8</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="card border-danger">
+                    <h5 class="card-header text-danger border-danger">Details</h5>
+                    <div class="card-body">
+                        <table class="info-table">
+                            <tbody>
+                                <tr>
+                                    <td>Format</td>
+                                    <td>
+                                        Qualifier (Swiss, 5 rounds)<i class="fas fa-long-arrow-alt-right" style="vertical-align: middle; padding-left: 7px; padding-right: 6px;"></i>Invitational (Double Elimination)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Gamemodes</td>
+                                    <td>
+                                        Destroy the Core and Monument
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Teams</td>
+                                    <td>
+                                        <a href="#teams">16 teams <i class="fas fa-chevron-down"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Team Size</td>
+                                    <td>8v8</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="league-information red">
-                    <div class="league-info-section">Dates</div>
-                    <table class="league-info-table">
-                        <tbody>
-                            <tr>
-                                <td>Qualifier</td>
-                                <td>March 10, 17-18, 2018</td>
-                            </tr>
-                            <tr>
-                                <td>Invitational</td>
-                                <td>March 24-25, 2018</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="card border-danger">
+                    <h5 class="card-header text-danger border-danger">Dates</h5>
+                    <div class="card-body">
+                        <table class="info-table">
+                            <tbody>
+                                <tr>
+                                    <td>Qualifier</td>
+                                    <td>March 10, 17-18, 2018</td>
+                                </tr>
+                                <tr>
+                                    <td>Invitational</td>
+                                    <td>March 24-25, 2018</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="league-information green">
-                    <div class="league-info-section">The winner of the tournament: Praetorians</div>
-                    <table class="league-info-table">
-                        <tbody>
-                            <tr>
-                                <td colspan="2" style="font-weight: 400;"><p>Roster of the team:</p><br><ul><li>aresitu</li><li>Sharkskill</li><li>YoureThrowing</li><li>Rober_</li><li>FLIMBI</li><li>10jps10</li><li>nothackk</li><li>XUph</li><li>Matilaina</li><li>Rau1</li><li>Valkyh</li><li>Buw</li><li>Bleeple</li><li>Ninerska</li></ul></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="card border-success">
+                    <h5 class="card-header text-success border-success">The winner of the tournament: Praetorians</h5>
+                    <div class="card-body">
+                        <table class="info-table">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" style="font-weight: 400;"><p>Roster of the team:</p><br><ul><li>aresitu</li><li>Sharkskill</li><li>YoureThrowing</li><li>Rober_</li><li>FLIMBI</li><li>10jps10</li><li>nothackk</li><li>XUph</li><li>Matilaina</li><li>Rau1</li><li>Valkyh</li><li>Buw</li><li>Bleeple</li><li>Ninerska</li></ul></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="collapse-section">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-videos"><i class="fas fa-angle-down"></i> Videos <small>2 videos</small></div>
-    <div class="collapse in" id="section-videos">
-        <div class="video-embed-container">
-            <div class="video-embed">
+    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-videos"><i class="fas fa-angle-down"></i> Videos <small>2 videos</small></div>
+    <div class="collapse show" id="section-videos">
+        <div class="d-flex flex-wrap justify-content-around">
+            <div class="col-lg-4 col-md-6 video-embed">
                 <div class="embed-responsive embed-responsive-16by9">
                         <iframe src="https://www.youtube-nocookie.com/embed/7DUV9l35Y-w" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -255,7 +261,7 @@
                     <div class="video-embed-description">Trailer for Stranger Cores.</div>
                 </div>
             </div>
-            <div class="video-embed">
+            <div class="col-lg-4 col-md-6 video-embed">
                 <div class="embed-responsive embed-responsive-16by9">
                         <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLYwZOaX5vb_9R8fN3gVQcQ4YVqkKwPQNV" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -272,15 +278,17 @@
     </div>
 </div>
 <div class="collapse-section">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-maps"><i class="fas fa-angle-down"></i> Map Pool <small>5 maps</small></div>
-    <div class="collapse in" id="section-maps">
+    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-maps"><i class="fas fa-angle-down"></i> Map Pool <small>5 maps</small></div>
+    <div class="collapse show" id="section-maps">
         <div class="dynamic">
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/mars_odyssey.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Mars Odyssey">
-                            <div class="title"><a class="s-title">Mars Odyssey</a></div>
+                            <div class="title">
+                                <a class="s-title">Mars Odyssey</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Destroy the Core and Monument<span class="hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
                             </div>
@@ -288,18 +296,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/riots_te.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Riots TE">
-                            <div class="title"><a class="s-title">Riots TE</a></div>
+                            <div class="title">
+                                <a class="s-title">Riots TE</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                             </div>
@@ -307,18 +317,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/wallop_9000.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Wallop 9000">
-                            <div class="title"><a class="s-title">Wallop 9000</a></div>
+                            <div class="title">
+                                <a class="s-title">Wallop 9000</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Destroy the Core and Monument<span class="hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
                             </div>
@@ -326,18 +338,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/spaceship_battles.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Spaceship Battles TE">
-                            <div class="title"><a class="s-title">Spaceship Battles TE</a></div>
+                            <div class="title">
+                                <a class="s-title">Spaceship Battles TE</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Destroy the Core and Monument<span class="hidden">dtcm dtmc dtc dtm Destroy the Monument</span></li>
                             </div>
@@ -345,18 +359,20 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+            <div class="col img-thumbnail map-thumbnail center">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
                         <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/iris_dtc.png">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="Iris DTC TE">
-                            <div class="title"><a class="s-title">Iris DTC TE</a></div>
+                            <div class="title">
+                                <a class="s-title">Iris DTC TE</a>
+                            </div>
                             <div class="sub-title">
                                 <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
                             </div>
@@ -364,7 +380,7 @@
                             </div>
                         </div>
                         <div class="labels">
-                            <span class="label label-info"></span>
+                            <span class="badge badge-info"></span>
                         </div>
                     </div>
                 </div>
@@ -373,62 +389,92 @@
         </div>
     </div>
 </div>
-<div class="collapse-section" id="teams">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>16 teams</small></div>
-    <div class="collapse in" id="section-teams">
-        <ul class="nav nav-tabs tm-teams-tabs" role="tablist">
-            <li class="active">
-                <a href="#qualifier" role="tab" data-toggle="tab">Qualifier</a>
+<div class="collapse-section id-anchor" id="teams">
+    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>16 teams</small></div>
+    <div class="collapse show" id="section-teams">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#qualifier" role="tab" data-toggle="tab">Qualifier</a>
             </li>
-            <li >
-                <a href="#invitational" role="tab" data-toggle="tab">Invitational</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#invitational" role="tab" data-toggle="tab">Invitational</a>
             </li>
         </ul>
-        <div class="checkbox tm-teams-fade-checkbox">
-            <label>
-                <input type="checkbox" id="team-fade-checkbox" checked>
-                Fade Teams that did not Advance
-            </label>
+        <div class="custom-control custom-switch tm-teams-fade-toggle">
+            <input type="checkbox" class="custom-control-input" id="team-fade-toggle" checked>
+            <label class="custom-control-label" for="team-fade-toggle">Fade Teams that did not Advance</label>
         </div>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active tm-group-advances" id="qualifier">
                 <div class="tm-team-group">
                     <div class="team-group-name">Qualifier</div>
                     <div class="team-group-name team-group-count">16 teams</div>
-                    <div class="tm-team-group-teams">
-                        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="name no-seed">Cacique</div>
-                        </div>        <div class="tm-team" data-advances="true">
-                            <div class="name no-seed">Fussion</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="name no-seed">GGeneSiS</div>
-                        </div>        <div class="tm-team" data-advances="true">
-                            <div class="name no-seed">HeartClaw</div>
-                        </div>        <div class="tm-team" data-advances="true">
-                            <div class="name no-seed">Kiube</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="name no-seed">LETHAL</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="name no-seed">La Perrera</div>
-                        </div>        <div class="tm-team" data-advances="true">
-                            <div class="name no-seed">Muellers Elbows</div>
-                        </div>        <div class="tm-team" data-advances="true">
-                            <div class="name no-seed">Night Vision</div>
-                        </div>        <div class="tm-team" data-advances="true">
-                            <div class="name no-seed">Obey</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="name no-seed">Padlock</div>
-                        </div>        <div class="tm-team" data-advances="true">
-                            <div class="name no-seed">Praetorians</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="name no-seed">Rubber Ducks</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="name no-seed">Seul</div>
-                        </div>        <div class="tm-team" data-advances="true">
-                            <div class="name no-seed">Steves of the World</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="name no-seed">United Doutei</div>
-                        </div>    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="name no-seed">Cacique</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team" data-advances="true">
+                                <div class="name no-seed">Fussion</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="name no-seed">GGeneSiS</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team" data-advances="true">
+                                <div class="name no-seed">HeartClaw</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team" data-advances="true">
+                                <div class="name no-seed">Kiube</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="name no-seed">LETHAL</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="name no-seed">La Perrera</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team" data-advances="true">
+                                <div class="name no-seed">Muellers Elbows</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team" data-advances="true">
+                                <div class="name no-seed">Night Vision</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team" data-advances="true">
+                                <div class="name no-seed">Obey</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="name no-seed">Padlock</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team" data-advances="true">
+                                <div class="name no-seed">Praetorians</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="name no-seed">Rubber Ducks</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="name no-seed">Seul</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team" data-advances="true">
+                                <div class="name no-seed">Steves of the World</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="name no-seed">United Doutei</div>
+                            </div>        </div>
+                    </div>
                     
                 </div>
             </div>
@@ -436,32 +482,48 @@
                 <div class="tm-team-group">
                     <div class="team-group-name">Invitational</div>
                     <div class="team-group-name team-group-count">8 teams</div>
-                    <div class="tm-team-group-teams">
-                        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="1 Seed">1</div>
-                            <div class="name">Fussion</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="2 Seed">2</div>
-                            <div class="name">Kiube</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="3 Seed">3</div>
-                            <div class="name">Steves of the World</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="4 Seed">4</div>
-                            <div class="name">Obey</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="5 Seed">5</div>
-                            <div class="name">Praetorians</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="6 Seed">6</div>
-                            <div class="name">Muellers Elbows</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="7 Seed">7</div>
-                            <div class="name">Night Vision</div>
-                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
-                            <div class="seed" data-toggle="tooltip" data-placement="bottom" title="8 Seed">8</div>
-                            <div class="name">HeartClaw</div>
-                        </div>    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="1 Seed">1</div>
+                                <div class="name">Fussion</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="2 Seed">2</div>
+                                <div class="name">Kiube</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="3 Seed">3</div>
+                                <div class="name">Steves of the World</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="4 Seed">4</div>
+                                <div class="name">Obey</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="5 Seed">5</div>
+                                <div class="name">Praetorians</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="6 Seed">6</div>
+                                <div class="name">Muellers Elbows</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="7 Seed">7</div>
+                                <div class="name">Night Vision</div>
+                            </div>        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <div class="tm-team tm-team-fade" data-advances="false">
+                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="8 Seed">8</div>
+                                <div class="name">HeartClaw</div>
+                            </div>        </div>
+                    </div>
                     
                 </div>
             </div>
@@ -499,9 +561,7 @@
                         <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
                     </div>
                 </div>
-                <div class="footer-bottom center">
-                    <div class="resourcepile-copyright-year"></div>
-                </div>
+                <div class="footer-bottom center">© 2019 ResourcePile</div>
             </div>
         </div>
         <script src="/assets/js/global.js"></script>

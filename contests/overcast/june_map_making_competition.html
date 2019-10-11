@@ -16,16 +16,18 @@
         <meta content="June Map Making Competition - ResourcePile" name="twitter:title">
         <meta content="Records for June Map Making Competition, a map making contest hosted by Overcast Network" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <meta name="theme-color">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
         <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <link href="/assets/css/datatables.css" rel="stylesheet">
         <!-- Page script files -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="/assets/js/lib/datatables.min.js"></script>
@@ -41,66 +43,68 @@
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
     </head>
     <body >
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
-                </div>
+                <a class="navbar-brand" href="/">
+                    <span class="fas fa-folder-open" style="padding-right: 5px;" aria-hidden="true"></span> ResourcePile
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/maps/overcast">Overcast Collection</a></li>
-                                <li><a href="/maps/pgm">PGM Collection</a></li>
-                                <li><a href="/maps/stratus">Stratus Collection</a></li>
-                                <li><a href="/maps/avicus">Avicus Collection</a></li>
-                                <li><a href="/maps/rfw">RFW Collection</a></li>
-                            </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-cubes"></i> Maps</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/maps/overcast">Overcast Collection</a>
+                                <a class="dropdown-item" href="/maps/pgm">PGM Collection</a>
+                                <a class="dropdown-item" href="/maps/stratus">Stratus Collection</a>
+                                <a class="dropdown-item" href="/maps/avicus">Avicus Collection</a>
+                                <a class="dropdown-item" href="/maps/rfw">RFW Collection</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/contests/overcast">Overcast Network</a></li>
-                                <li><a href="/contests/stratus">Stratus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-medal"></i> Contests</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/contests/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/contests/stratus">Stratus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/leagues/overcast">Overcast Network</a></li>
-                                <li><a href="/leagues/pgm">PGM Community</a></li>
-                                <li><a href="/leagues/stratus">Stratus Network</a></li>
-                                <li><a href="/leagues/avicus">Avicus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/leagues/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/leagues/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/leagues/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/leagues/avicus">Avicus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><p class="navbar-menu-title">Overcast</p></li>
-                                <li><a href="/stats/overcast/bow">Bow Records</a></li>
-                                <li><a href="/stats/overcast/miscellaneous">Miscellaneous</a></li>
-                                <li><a href="/stats/overcast/objective">Objective Leaderboards</a></li>
-                                <li><p class="navbar-menu-title">Stratus</p></li>
-                                <li><a href="/stats/stratus/bow">Bow Records</a></li>
-                                <li><p class="navbar-menu-title">Avicus</p></li>
-                                <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-chart-bar"></i> Statistics</a>
+                            <div class="dropdown-menu">
+                                <p class="navbar-menu-title">Overcast</p>
+                                <a class="dropdown-item" href="/stats/overcast/bow">Bow Records</a>
+                                <a class="dropdown-item" href="/stats/overcast/miscellaneous">Miscellaneous</a>
+                                <a class="dropdown-item" href="/stats/overcast/objective">Objective Leaderboards</a>
+                                <p class="navbar-menu-title">Stratus</p>
+                                <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
+                                <p class="navbar-menu-title">Avicus</p>
+                                <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
+                           </div>
                         </li>
-                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <!--
+                        <li class="nav-item">
+                            <a class="nav-link" href="/addon-project/wiki"><i class="far fa-newspaper"></i> Stratus Wiki</a>
+                        </li> -->
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a></li>
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </nav>
         <div class="content-background">
             <div class="container">
                 <div class="content-alert">
@@ -115,10 +119,10 @@
             <!-- Start page content -->
 <!-- Contest banner -->
 <div class="center">
-    <img class="league-banner" src="../../assets/img/contest/june_map_making_competition/banner.png">
+    <img class="image-banner-custom" src="../../assets/img/contest/june_map_making_competition/banner.png">
 </div>
 <div class="center">
-        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center large map-glow-contest-first" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
+        <div class="col-sm-6 col-lg-3 img-thumbnail map-thumbnail center large map-glow-contest-first" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/breakfast.png">
@@ -129,21 +133,21 @@
                         </div>
                     </div>
                     <div class="labels">
-                        <span class="label map-results-label map-label-contest-first"><i class="fas fa-trophy"></i> 1st place</span>
+                        <span class="badge map-results-label map-label-contest-first"><i class="fas fa-trophy"></i> 1st place</span>
                     </div>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="6bec5c3a49344b199aa8c7c569820f7d" href="/maps/overcast?s=6bec5c3a49344b199aa8c7c569820f7d">Claf</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="9929437a9b7d4d7ab05de22fe93ac042" href="/maps/overcast?s=9929437a9b7d4d7ab05de22fe93ac042">triplezko</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="cf1b2da8371845a98836bb70b0628773" href="/maps/overcast?s=cf1b2da8371845a98836bb70b0628773">BrianDead</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="6bec5c3a49344b199aa8c7c569820f7d" href="/maps/overcast?s=6bec5c3a49344b199aa8c7c569820f7d">Claf</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="9929437a9b7d4d7ab05de22fe93ac042" href="/maps/overcast?s=9929437a9b7d4d7ab05de22fe93ac042">triplezko</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="cf1b2da8371845a98836bb70b0628773" href="/maps/overcast?s=cf1b2da8371845a98836bb70b0628773">BrianDead</span></li>
                 </div>
             </div>
         </div>    <div class="row">
         <div class="col-md-6">
-                <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center small map-glow-contest-second" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
+                <div class="col-sm-6 col-lg-3 img-thumbnail map-thumbnail center small map-glow-contest-second" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
                     <div class="map-thumbnail-selector">
                         <div class="map-thumbnail-header">
                             <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/limbo_iii.png">
@@ -154,20 +158,20 @@
                                 </div>
                             </div>
                             <div class="labels">
-                                <span class="label map-results-label map-label-contest-second"><i class="fas fa-star"></i> 2nd place</span>
+                                <span class="badge map-results-label map-label-contest-second"><i class="fas fa-star"></i> 2nd place</span>
                             </div>
                         </div>
                     </div>
                     <div class="map-thumbnail-body">
                         <div class="authors">
                             by
-                            <li class="game-tag"><a class="click-search" data-query="5e1c0b5dcfdd4e1095cdc53f8ee92150" href="/maps/overcast?s=5e1c0b5dcfdd4e1095cdc53f8ee92150">TheNoChillDude</a></li>,
-                            <li class="game-tag"><a class="click-search" data-query="b843e63b4d8c4606b6da08b3ed8534d1" href="/maps/overcast?s=b843e63b4d8c4606b6da08b3ed8534d1">snatimal</a></li>
+                            <li class="game-tag"><span class="click-search" data-query="5e1c0b5dcfdd4e1095cdc53f8ee92150" href="/maps/overcast?s=5e1c0b5dcfdd4e1095cdc53f8ee92150">TheNoChillDude</span></li>,
+                            <li class="game-tag"><span class="click-search" data-query="b843e63b4d8c4606b6da08b3ed8534d1" href="/maps/overcast?s=b843e63b4d8c4606b6da08b3ed8534d1">snatimal</span></li>
                         </div>
                     </div>
                 </div>        </div>
         <div class="col-md-6">
-                <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center small map-glow-contest-third" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
+                <div class="col-sm-6 col-lg-3 img-thumbnail map-thumbnail center small map-glow-contest-third" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
                     <div class="map-thumbnail-selector">
                         <div class="map-thumbnail-header">
                             <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/flag_duel.png">
@@ -178,122 +182,132 @@
                                 </div>
                             </div>
                             <div class="labels">
-                                <span class="label map-results-label map-label-contest-third"><i class="fas fa-star-half-alt"></i> 3rd place</span>
+                                <span class="badge map-results-label map-label-contest-third"><i class="fas fa-star-half-alt"></i> 3rd place</span>
                             </div>
                         </div>
                     </div>
                     <div class="map-thumbnail-body">
                         <div class="authors">
                             by
-                            <li class="game-tag"><a class="click-search" data-query="61982fa8f0f946d7977a47325c9bbd5c" href="/maps/overcast?s=61982fa8f0f946d7977a47325c9bbd5c">JSBach</a></li>
+                            <li class="game-tag"><span class="click-search" data-query="61982fa8f0f946d7977a47325c9bbd5c" href="/maps/overcast?s=61982fa8f0f946d7977a47325c9bbd5c">JSBach</span></li>
                         </div>
                     </div>
                 </div>        </div>
     </div>
     <a class="contest-scores-link" href="#scores">View Score Breakdown</a>
 </div>
-<div class="league-info-section large">Contest Information</div>
+<div class="info-section-heading">Contest Information</div>
 <div class="row">
     <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>Submissions open</td>
-                        <td>June 13, 2015</td>
-                    </tr>
-                    <tr>
-                        <td>Submissions close</td>
-                        <td>June 28, 2015</td>
-                    </tr>
-                    <tr>
-                        <td>Public Testing</td>
-                        <td>Unknown</td>
-                    </tr>
-                    <tr>
-                        <td>Results announced</td>
-                        <td>July 1, 2015</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card border-success">
+            <h5 class="card-header text-success border-success">Dates</h5>
+            <div class="card-body">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <td>Submissions open</td>
+                            <td>June 13, 2015</td>
+                        </tr>
+                        <tr>
+                            <td>Submissions close</td>
+                            <td>June 28, 2015</td>
+                        </tr>
+                        <tr>
+                            <td>Public Testing</td>
+                            <td>Unknown</td>
+                        </tr>
+                        <tr>
+                            <td>Results announced</td>
+                            <td>July 1, 2015</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Scoring <small>(Total scores are the sum of each criteria)</small></div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td style="font-weight:400"><strong>Gameplay</strong> out of <code>20</code> </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:400"><strong>Aesthetics</strong> out of <code>5</code> </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:400"><strong>Desgin</strong> out of <code>10</code> </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:400"><strong>Public rating</strong> out of <code>5</code> </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card border-success">
+            <h5 class="card-header text-success border-success">Scoring <small>(Total scores are the sum of each criteria)</small></h5>
+            <div class="card-body">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <td style="font-weight:400"><strong>Gameplay</strong> out of <code>20</code> </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:400"><strong>Aesthetics</strong> out of <code>5</code> </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:400"><strong>Desgin</strong> out of <code>10</code> </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:400"><strong>Public rating</strong> out of <code>5</code> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="well well-sm well-custom-blue">
-            <div class="league-info-section">Details and Guidelines</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td colspan="2" style="font-weight:400">Only CTF and KoTF maps were allowed, allowing for <code>10v10</code> gameplay.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="font-weight:400">Maps being created were to be designed for tournament environments.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="font-weight:400">Upon the approval of an Event Coordinator, select contest maps would be included in <a href="/leagues/overcast/defenders_age_of_ares" target="_blank">Overcast Network's 10th tournament</a>.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="font-weight:400">XML documents were to be included with the submission.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card border-primary">
+            <h5 class="card-header text-primary border-primary">Details and Guidelines</h5>
+            <div class="card-body">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Only CTF and KoTF maps were allowed, allowing for <code>10v10</code> gameplay.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Maps being created were to be designed for tournament environments.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Upon the approval of an Event Coordinator, select contest maps would be included in <a href="/leagues/overcast/defenders_age_of_ares" target="_blank">Overcast Network's 10th tournament</a>.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">XML documents were to be included with the submission.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="well well-sm well-custom-blue">
-            <div class="league-info-section">Prizes</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>First Place</td>
-                        <td>Map residence, winner trophy, and a donor rank</td>
-                    </tr>
-                    <tr>
-                        <td>Second Place</td>
-                        <td>Map residence, and a donor rank</td>
-                    </tr>
-                    <tr>
-                        <td>Third Place</td>
-                        <td>Map residence, and a donor rank</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="font-weight:400">All contest maps were considered to be included in  <a href="/leagues/overcast/defenders_age_of_ares" target="_blank">Overcast Network's 10th tournament</a>.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card border-primary">
+            <h5 class="card-header text-primary border-primary">Prizes</h5>
+            <div class="card-body">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <td>First Place</td>
+                            <td>Map residence, winner trophy, and a donor rank</td>
+                        </tr>
+                        <tr>
+                            <td>Second Place</td>
+                            <td>Map residence, and a donor rank</td>
+                        </tr>
+                        <tr>
+                            <td>Third Place</td>
+                            <td>Map residence, and a donor rank</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">All contest maps were considered to be included in  <a href="/leagues/overcast/defenders_age_of_ares" target="_blank">Overcast Network's 10th tournament</a>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
-<div class="league-info-section large">Submissions <small>10</small></div>
+<div class="info-section-heading large">Submissions <small>10</small></div>
 <div class="dynamic">
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/6_sided.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="6 Sided">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=6_sided" class="s-title">6 Sided</a></div>
+                    <div class="title">
+                        <a data-query="6_sided" class="s-title click-search">6 Sided</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">King of the Flag<span class="hidden">kotf</span></li>
                     </div>
@@ -301,14 +315,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">7th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">7th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="4a05be898b8b4dfe848edf6c42967c9a" href="/maps/overcast?s=4a05be898b8b4dfe848edf6c42967c9a">Donald_Trump2k16</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="4a05be898b8b4dfe848edf6c42967c9a" href="/maps/overcast?s=4a05be898b8b4dfe848edf6c42967c9a">Donald_Trump2k16</span></li>
                     <div class="hidden">
                         <div class="users">Donald_Trump2k16</div>
                         <div class="uuids">4a05be898b8b4dfe848edf6c42967c9a</div>
@@ -340,12 +354,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/arroyo_gultch.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Arroyo Gultch">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=arroyo_gultch" class="s-title">Arroyo Gultch</a></div>
+                    <div class="title">
+                        <a data-query="arroyo_gultch" class="s-title click-search">Arroyo Gultch</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">King of the Flag<span class="hidden">kotf</span></li>
                     </div>
@@ -353,15 +369,15 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">8th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">8th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="7ab24d14080148ba8fea147ddf400067" href="/maps/overcast?s=7ab24d14080148ba8fea147ddf400067">samthecat43</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="68c0280d17d64c6bb453d1b8eb6a866d" href="/maps/overcast?s=68c0280d17d64c6bb453d1b8eb6a866d">ID10</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="7ab24d14080148ba8fea147ddf400067" href="/maps/overcast?s=7ab24d14080148ba8fea147ddf400067">samthecat43</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="68c0280d17d64c6bb453d1b8eb6a866d" href="/maps/overcast?s=68c0280d17d64c6bb453d1b8eb6a866d">ID10</span></li>
                     <div class="hidden">
                         <div class="users">samthecat43,ID10</div>
                         <div class="uuids">7ab24d14080148ba8fea147ddf400067,68c0280d17d64c6bb453d1b8eb6a866d</div>
@@ -393,12 +409,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/bill_s_town_ii.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Bill&#x27;s Town II">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=bill_s_town_ii" class="s-title">Bill&#x27;s Town II</a></div>
+                    <div class="title">
+                        <a data-query="bill_s_town_ii" class="s-title click-search">Bill&#x27;s Town II</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
                     </div>
@@ -406,14 +424,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">9th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">9th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="07fa10c6f5644630861efe134ae27527" href="/maps/overcast?s=07fa10c6f5644630861efe134ae27527">Yoyo_</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="07fa10c6f5644630861efe134ae27527" href="/maps/overcast?s=07fa10c6f5644630861efe134ae27527">Yoyo_</span></li>
                     <div class="hidden">
                         <div class="users">Yoyo_</div>
                         <div class="uuids">07fa10c6f5644630861efe134ae27527</div>
@@ -445,12 +463,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-first">
+    <div class="col img-thumbnail map-thumbnail center map-glow-contest-first">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/breakfast.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Breakfast Man&#x27;s Day Off">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=breakfast" class="s-title">Breakfast Man&#x27;s Day Off</a></div>
+                    <div class="title">
+                        <a data-query="breakfast" class="s-title click-search">Breakfast Man&#x27;s Day Off</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
                     </div>
@@ -459,16 +479,16 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label map-label-contest-first">1st place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge map-label-contest-first">1st place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="6bec5c3a49344b199aa8c7c569820f7d" href="/maps/overcast?s=6bec5c3a49344b199aa8c7c569820f7d">Claf</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="9929437a9b7d4d7ab05de22fe93ac042" href="/maps/overcast?s=9929437a9b7d4d7ab05de22fe93ac042">triplezko</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="cf1b2da8371845a98836bb70b0628773" href="/maps/overcast?s=cf1b2da8371845a98836bb70b0628773">BrianDead</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="6bec5c3a49344b199aa8c7c569820f7d" href="/maps/overcast?s=6bec5c3a49344b199aa8c7c569820f7d">Claf</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="9929437a9b7d4d7ab05de22fe93ac042" href="/maps/overcast?s=9929437a9b7d4d7ab05de22fe93ac042">triplezko</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="cf1b2da8371845a98836bb70b0628773" href="/maps/overcast?s=cf1b2da8371845a98836bb70b0628773">BrianDead</span></li>
                     <div class="hidden">
                         <div class="users">Claf,triplezko,BrianDead</div>
                         <div class="uuids">6bec5c3a49344b199aa8c7c569820f7d,9929437a9b7d4d7ab05de22fe93ac042,cf1b2da8371845a98836bb70b0628773</div>
@@ -500,12 +520,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-third">
+    <div class="col img-thumbnail map-thumbnail center map-glow-contest-third">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/flag_duel.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Flag Duel">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=flag_duel" class="s-title">Flag Duel</a></div>
+                    <div class="title">
+                        <a data-query="flag_duel" class="s-title click-search">Flag Duel</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
                     </div>
@@ -514,14 +536,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label map-label-contest-third">3rd place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge map-label-contest-third">3rd place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="61982fa8f0f946d7977a47325c9bbd5c" href="/maps/overcast?s=61982fa8f0f946d7977a47325c9bbd5c">JSBach</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="61982fa8f0f946d7977a47325c9bbd5c" href="/maps/overcast?s=61982fa8f0f946d7977a47325c9bbd5c">JSBach</span></li>
                     <div class="hidden">
                         <div class="users">JSBach</div>
                         <div class="uuids">61982fa8f0f946d7977a47325c9bbd5c</div>
@@ -553,12 +575,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-second">
+    <div class="col img-thumbnail map-thumbnail center map-glow-contest-second">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/limbo_iii.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Limbo III">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=limbo_iii" class="s-title">Limbo III</a></div>
+                    <div class="title">
+                        <a data-query="limbo_iii" class="s-title click-search">Limbo III</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">King of the Flag<span class="hidden">kotf</span></li>
                     </div>
@@ -567,15 +591,15 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label map-label-contest-second">2nd place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge map-label-contest-second">2nd place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="5e1c0b5dcfdd4e1095cdc53f8ee92150" href="/maps/overcast?s=5e1c0b5dcfdd4e1095cdc53f8ee92150">TheNoChillDude</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="b843e63b4d8c4606b6da08b3ed8534d1" href="/maps/overcast?s=b843e63b4d8c4606b6da08b3ed8534d1">snatimal</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="5e1c0b5dcfdd4e1095cdc53f8ee92150" href="/maps/overcast?s=5e1c0b5dcfdd4e1095cdc53f8ee92150">TheNoChillDude</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="b843e63b4d8c4606b6da08b3ed8534d1" href="/maps/overcast?s=b843e63b4d8c4606b6da08b3ed8534d1">snatimal</span></li>
                     <div class="hidden">
                         <div class="users">TheNoChillDude,snatimal</div>
                         <div class="uuids">5e1c0b5dcfdd4e1095cdc53f8ee92150,b843e63b4d8c4606b6da08b3ed8534d1</div>
@@ -607,12 +631,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/overgrowth.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Overgrowth">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=overgrowth" class="s-title">Overgrowth</a></div>
+                    <div class="title">
+                        <a data-query="overgrowth" class="s-title click-search">Overgrowth</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
                     </div>
@@ -620,15 +646,15 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">10th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">10th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="bdb417b78d57460f951e69dfaf764430" href="/maps/overcast?s=bdb417b78d57460f951e69dfaf764430">CeFour</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="b06fb221e8a64c8496c89ac4a0fd1b51" href="/maps/overcast?s=b06fb221e8a64c8496c89ac4a0fd1b51">lowkeyAlting</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="bdb417b78d57460f951e69dfaf764430" href="/maps/overcast?s=bdb417b78d57460f951e69dfaf764430">CeFour</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="b06fb221e8a64c8496c89ac4a0fd1b51" href="/maps/overcast?s=b06fb221e8a64c8496c89ac4a0fd1b51">lowkeyAlting</span></li>
                     <div class="hidden">
                         <div class="users">CeFour,lowkeyAlting</div>
                         <div class="uuids">bdb417b78d57460f951e69dfaf764430,b06fb221e8a64c8496c89ac4a0fd1b51</div>
@@ -660,12 +686,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/rogue.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Rogue">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=rogue" class="s-title">Rogue</a></div>
+                    <div class="title">
+                        <a data-query="rogue" class="s-title click-search">Rogue</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
                     </div>
@@ -673,15 +701,15 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">6th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">6th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="2958ea4c3501404e88cc12e8632f68cc" href="/maps/overcast?s=2958ea4c3501404e88cc12e8632f68cc">NixaniaXi</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="dff980ed9f69491eb79c30c21350baf2" href="/maps/overcast?s=dff980ed9f69491eb79c30c21350baf2">DoomyBoy</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="2958ea4c3501404e88cc12e8632f68cc" href="/maps/overcast?s=2958ea4c3501404e88cc12e8632f68cc">NixaniaXi</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="dff980ed9f69491eb79c30c21350baf2" href="/maps/overcast?s=dff980ed9f69491eb79c30c21350baf2">DoomyBoy</span></li>
                     <div class="hidden">
                         <div class="users">NixaniaXi,DoomyBoy</div>
                         <div class="uuids">2958ea4c3501404e88cc12e8632f68cc,dff980ed9f69491eb79c30c21350baf2</div>
@@ -713,12 +741,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/the_ishtar_collective.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="The Ishtar Collective">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=the_ishtar_collective" class="s-title">The Ishtar Collective</a></div>
+                    <div class="title">
+                        <a data-query="the_ishtar_collective" class="s-title click-search">The Ishtar Collective</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Capture the Flag<span class="hidden">ctf</span></li>
                     </div>
@@ -726,14 +756,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">5th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">5th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="6f21f5e3544b48a9967063aec36038c4" href="/maps/overcast?s=6f21f5e3544b48a9967063aec36038c4">hive_raven</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="6f21f5e3544b48a9967063aec36038c4" href="/maps/overcast?s=6f21f5e3544b48a9967063aec36038c4">hive_raven</span></li>
                     <div class="hidden">
                         <div class="users">hive_raven</div>
                         <div class="uuids">6f21f5e3544b48a9967063aec36038c4</div>
@@ -765,12 +795,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/june_map_making_competition/maps/wine_town.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Wine Town">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/overcast?s=wine_town" class="s-title">Wine Town</a></div>
+                    <div class="title">
+                        <a data-query="wine_town" class="s-title click-search">Wine Town</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">King of the Flag<span class="hidden">kotf</span></li>
                     </div>
@@ -778,14 +810,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">4th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">4th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="fe3608b7d1054029880034b3147065b6" href="/maps/overcast?s=fe3608b7d1054029880034b3147065b6">rockymine</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="fe3608b7d1054029880034b3147065b6" href="/maps/overcast?s=fe3608b7d1054029880034b3147065b6">rockymine</span></li>
                     <div class="hidden">
                         <div class="users">rockymine</div>
                         <div class="uuids">fe3608b7d1054029880034b3147065b6</div>
@@ -818,7 +850,7 @@
     </div>
     
 </div>
-<div class="league-info-section large" id="scores">Score Breakdown</div>
+<div class="info-section-heading large id-anchor" id="scores">Score Breakdown</div>
 <div class="table-responsive">
     <table id="scores-breakdown" class="contest-info-table table table-striped table-bordered">
         <thead>
@@ -934,7 +966,7 @@
         var points_percentage = Math.floor((points_current / points_max) * 100);
         $(this).css({
             'width': points_percentage + '%',
-            'background-color': 'rgba(21, 57, 177, ' + points_percentage / 100 + ')'
+            // 'background-color': 'rgba(21, 57, 177, ' + points_percentage / 100 + ')'
         });
     });
     $('.map-score-breakdown').each(function(i, obj) {
@@ -1047,9 +1079,7 @@
                         <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
                     </div>
                 </div>
-                <div class="footer-bottom center">
-                    <div class="resourcepile-copyright-year"></div>
-                </div>
+                <div class="footer-bottom center">© 2019 ResourcePile</div>
             </div>
         </div>
         <script src="/assets/js/global.js"></script>

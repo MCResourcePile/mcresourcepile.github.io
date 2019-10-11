@@ -5,7 +5,7 @@ var filters = [];
 $(function() {
     //handle top position of search controls
     $(document).scroll(function() {
-        var nav = $('.nav').height();
+        var nav = $('.navbar').height();
         var wrapper_top = $('#searchable-collection').position().top;
         var wrapper_height = $('#searchable-collection').height() + 98;
         var scroll_position = $(document).scrollTop();

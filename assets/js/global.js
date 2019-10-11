@@ -14,11 +14,6 @@ var is_development = /\/(out|src)\//i.test(window.location.href);
 // the current page directory
 var current_path = window.location.pathname.replace('.html', '');
 
-// offset page to prevent navigation overlap
-var window_offset = function() { scrollBy(0, - 70) };
-if (location.hash) window_offset();
-window.addEventListener("hashcchange", window_offset);
-
 // enable bootstrap toggles
 $('[data-toggle="tooltip"]').tooltip({container: 'body'});
 $('[data-toggle="popover"]').popover({trigger: 'hover'});

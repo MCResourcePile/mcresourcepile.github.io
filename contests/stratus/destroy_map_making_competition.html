@@ -16,16 +16,18 @@
         <meta content="Destroy Map Making Competition - ResourcePile" name="twitter:title">
         <meta content="Records for the Destroy Map Making Competition, a map making contest hosted by Stratus Network" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <meta name="theme-color">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
         <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <link href="/assets/css/datatables.css" rel="stylesheet">
         <!-- Page script files -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="/assets/js/lib/datatables.min.js"></script>
@@ -41,66 +43,68 @@
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
     </head>
     <body >
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
-                </div>
+                <a class="navbar-brand" href="/">
+                    <span class="fas fa-folder-open" style="padding-right: 5px;" aria-hidden="true"></span> ResourcePile
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/maps/overcast">Overcast Collection</a></li>
-                                <li><a href="/maps/pgm">PGM Collection</a></li>
-                                <li><a href="/maps/stratus">Stratus Collection</a></li>
-                                <li><a href="/maps/avicus">Avicus Collection</a></li>
-                                <li><a href="/maps/rfw">RFW Collection</a></li>
-                            </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-cubes"></i> Maps</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/maps/overcast">Overcast Collection</a>
+                                <a class="dropdown-item" href="/maps/pgm">PGM Collection</a>
+                                <a class="dropdown-item" href="/maps/stratus">Stratus Collection</a>
+                                <a class="dropdown-item" href="/maps/avicus">Avicus Collection</a>
+                                <a class="dropdown-item" href="/maps/rfw">RFW Collection</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/contests/overcast">Overcast Network</a></li>
-                                <li><a href="/contests/stratus">Stratus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-medal"></i> Contests</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/contests/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/contests/stratus">Stratus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/leagues/overcast">Overcast Network</a></li>
-                                <li><a href="/leagues/pgm">PGM Community</a></li>
-                                <li><a href="/leagues/stratus">Stratus Network</a></li>
-                                <li><a href="/leagues/avicus">Avicus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/leagues/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/leagues/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/leagues/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/leagues/avicus">Avicus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><p class="navbar-menu-title">Overcast</p></li>
-                                <li><a href="/stats/overcast/bow">Bow Records</a></li>
-                                <li><a href="/stats/overcast/miscellaneous">Miscellaneous</a></li>
-                                <li><a href="/stats/overcast/objective">Objective Leaderboards</a></li>
-                                <li><p class="navbar-menu-title">Stratus</p></li>
-                                <li><a href="/stats/stratus/bow">Bow Records</a></li>
-                                <li><p class="navbar-menu-title">Avicus</p></li>
-                                <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-chart-bar"></i> Statistics</a>
+                            <div class="dropdown-menu">
+                                <p class="navbar-menu-title">Overcast</p>
+                                <a class="dropdown-item" href="/stats/overcast/bow">Bow Records</a>
+                                <a class="dropdown-item" href="/stats/overcast/miscellaneous">Miscellaneous</a>
+                                <a class="dropdown-item" href="/stats/overcast/objective">Objective Leaderboards</a>
+                                <p class="navbar-menu-title">Stratus</p>
+                                <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
+                                <p class="navbar-menu-title">Avicus</p>
+                                <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
+                           </div>
                         </li>
-                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <!--
+                        <li class="nav-item">
+                            <a class="nav-link" href="/addon-project/wiki"><i class="far fa-newspaper"></i> Stratus Wiki</a>
+                        </li> -->
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a></li>
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </nav>
         <div class="content-background">
             <div class="container">
                 <div class="content-alert">
@@ -115,10 +119,10 @@
             <!-- Start page content -->
 <!-- Contest banner -->
 <div class="center">
-    <div class="league-default-banner" style="background: url('../../assets/img/contest/destroy_map_making_competition/banner.png'); background-position: center; background-size: cover;">Destroy Map Making Competition</div>
+    <div class="image-banner-default" style="background: url('../../assets/img/contest/destroy_map_making_competition/banner.png'); background-position: center; background-size: cover;">Destroy Map Making Competition</div>
 </div>
 <div class="center">
-        <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center large map-glow-contest-first" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
+        <div class="col-sm-6 col-lg-3 img-thumbnail map-thumbnail center large map-glow-contest-first" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
             <div class="map-thumbnail-selector">
                 <div class="map-thumbnail-header">
                     <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/midgard.png">
@@ -129,21 +133,21 @@
                         </div>
                     </div>
                     <div class="labels">
-                        <span class="label map-results-label map-label-contest-first"><i class="fas fa-trophy"></i> 1st place</span>
+                        <span class="badge map-results-label map-label-contest-first"><i class="fas fa-trophy"></i> 1st place</span>
                     </div>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="f70b7a8f93b2480f9d5488e21485a042" href="/maps/stratus?s=f70b7a8f93b2480f9d5488e21485a042">Diamyx</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="5c0d744e25614e24966c2f5ca4a8f8eb" href="/maps/stratus?s=5c0d744e25614e24966c2f5ca4a8f8eb">SamSafari</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="75fd93dd8e48469881a297dae2ec5b5f" href="/maps/stratus?s=75fd93dd8e48469881a297dae2ec5b5f">Pugzy</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="f70b7a8f93b2480f9d5488e21485a042" href="/maps/stratus?s=f70b7a8f93b2480f9d5488e21485a042">Diamyx</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="5c0d744e25614e24966c2f5ca4a8f8eb" href="/maps/stratus?s=5c0d744e25614e24966c2f5ca4a8f8eb">SamSafari</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="75fd93dd8e48469881a297dae2ec5b5f" href="/maps/stratus?s=75fd93dd8e48469881a297dae2ec5b5f">Pugzy</span></li>
                 </div>
             </div>
         </div>    <div class="row">
         <div class="col-md-6">
-                <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center small map-glow-contest-second" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
+                <div class="col-sm-6 col-lg-3 img-thumbnail map-thumbnail center small map-glow-contest-second" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
                     <div class="map-thumbnail-selector">
                         <div class="map-thumbnail-header">
                             <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/columbia.png">
@@ -154,20 +158,20 @@
                                 </div>
                             </div>
                             <div class="labels">
-                                <span class="label map-results-label map-label-contest-second"><i class="fas fa-star"></i> 2nd place</span>
+                                <span class="badge map-results-label map-label-contest-second"><i class="fas fa-star"></i> 2nd place</span>
                             </div>
                         </div>
                     </div>
                     <div class="map-thumbnail-body">
                         <div class="authors">
                             by
-                            <li class="game-tag"><a class="click-search" data-query="fe3608b7d1054029880034b3147065b6" href="/maps/stratus?s=fe3608b7d1054029880034b3147065b6">rockymine</a></li>,
-                            <li class="game-tag"><a class="click-search" data-query="07fa10c6f5644630861efe134ae27527" href="/maps/stratus?s=07fa10c6f5644630861efe134ae27527">Yoyo_</a></li>
+                            <li class="game-tag"><span class="click-search" data-query="fe3608b7d1054029880034b3147065b6" href="/maps/stratus?s=fe3608b7d1054029880034b3147065b6">rockymine</span></li>,
+                            <li class="game-tag"><span class="click-search" data-query="07fa10c6f5644630861efe134ae27527" href="/maps/stratus?s=07fa10c6f5644630861efe134ae27527">Yoyo_</span></li>
                         </div>
                     </div>
                 </div>        </div>
         <div class="col-md-6">
-                <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center small map-glow-contest-third" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
+                <div class="col-sm-6 col-lg-3 img-thumbnail map-thumbnail center small map-glow-contest-third" style="margin-left: 5px; margin-right: 5px; margin-top: 5px;">
                     <div class="map-thumbnail-selector">
                         <div class="map-thumbnail-header">
                             <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/monastery_siege.png">
@@ -178,127 +182,137 @@
                                 </div>
                             </div>
                             <div class="labels">
-                                <span class="label map-results-label map-label-contest-third"><i class="fas fa-star-half-alt"></i> 3rd place</span>
+                                <span class="badge map-results-label map-label-contest-third"><i class="fas fa-star-half-alt"></i> 3rd place</span>
                             </div>
                         </div>
                     </div>
                     <div class="map-thumbnail-body">
                         <div class="authors">
                             by
-                            <li class="game-tag"><a class="click-search" data-query="89d44df9b7cf4e41991051fae6d30ea5" href="/maps/stratus?s=89d44df9b7cf4e41991051fae6d30ea5">gamez7</a></li>,
-                            <li class="game-tag"><a class="click-search" data-query="1a8709cc086142898c35d5802a5f4c0c" href="/maps/stratus?s=1a8709cc086142898c35d5802a5f4c0c">creeplode</a></li>,
-                            <li class="game-tag"><a class="click-search" data-query="5bb60a0b50594db99169e07db4664e3d" href="/maps/stratus?s=5bb60a0b50594db99169e07db4664e3d">djfigs1</a></li>
+                            <li class="game-tag"><span class="click-search" data-query="89d44df9b7cf4e41991051fae6d30ea5" href="/maps/stratus?s=89d44df9b7cf4e41991051fae6d30ea5">gamez7</span></li>,
+                            <li class="game-tag"><span class="click-search" data-query="1a8709cc086142898c35d5802a5f4c0c" href="/maps/stratus?s=1a8709cc086142898c35d5802a5f4c0c">creeplode</span></li>,
+                            <li class="game-tag"><span class="click-search" data-query="5bb60a0b50594db99169e07db4664e3d" href="/maps/stratus?s=5bb60a0b50594db99169e07db4664e3d">djfigs1</span></li>
                         </div>
                     </div>
                 </div>        </div>
     </div>
     <a class="contest-scores-link" href="#scores">View Score Breakdown</a>
 </div>
-<div class="league-info-section large">Contest Information</div>
+<div class="info-section-heading">Contest Information</div>
 <div class="row">
     <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Dates</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>Submissions open</td>
-                        <td>July 14, 2017</td>
-                    </tr>
-                    <tr>
-                        <td>Submissions close</td>
-                        <td>August 20, 2017</td>
-                    </tr>
-                    <tr>
-                        <td>Public testing</td>
-                        <td>September 1, 2017</td>
-                    </tr>
-                    <tr>
-                        <td>Results announced</td>
-                        <td>September 8, 2017</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card border-success">
+            <h5 class="card-header text-success border-success">Dates</h5>
+            <div class="card-body">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <td>Submissions open</td>
+                            <td>July 14, 2017</td>
+                        </tr>
+                        <tr>
+                            <td>Submissions close</td>
+                            <td>August 20, 2017</td>
+                        </tr>
+                        <tr>
+                            <td>Public testing</td>
+                            <td>September 1, 2017</td>
+                        </tr>
+                        <tr>
+                            <td>Results announced</td>
+                            <td>September 8, 2017</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="well well-sm well-custom-green">
-            <div class="league-info-section">Scoring <small>(Total scores are a percentage out of 100%)</small></div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td style="font-weight:400"><strong>Public rating</strong> out of <code>5</code> (weighted 20%)</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:400"><strong>Gameplay</strong> out of <code>10</code> (weighted 40%)</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:400"><strong>Aesthetics</strong> out of <code>10</code> (weighted 25%)</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:400"><strong>Innovation</strong> out of <code>10</code> (weighted 15%)</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:400"><strong>Additional Bonus</strong> of <code>3%</code> for XML with minimal errors</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card border-success">
+            <h5 class="card-header text-success border-success">Scoring <small>(Total scores are a percentage out of 100%)</small></h5>
+            <div class="card-body">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <td style="font-weight:400"><strong>Public rating</strong> out of <code>5</code> (weighted 20%)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:400"><strong>Gameplay</strong> out of <code>10</code> (weighted 40%)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:400"><strong>Aesthetics</strong> out of <code>10</code> (weighted 25%)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:400"><strong>Innovation</strong> out of <code>10</code> (weighted 15%)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:400"><strong>Additional Bonus</strong> of <code>3%</code> for XML with minimal errors</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="well well-sm well-custom-blue">
-            <div class="league-info-section">Details and Guidelines</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td colspan="2" style="font-weight:400">Maps could only be destroy (dtm/dtc), and can be for any team size.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="font-weight:400">Maps were to be dry, and could not contain an excess of TNT.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="font-weight:400">XML documents were to be included with the submission.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="font-weight:400">Authors were allowed to be author on up to 3 maps, but only their top scored map was counted.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="font-weight:400">Maps previously submitted to Stratus Network could not be entered into this contest.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card border-primary">
+            <h5 class="card-header text-primary border-primary">Details and Guidelines</h5>
+            <div class="card-body">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Maps could only be destroy (dtm/dtc), and can be for any team size.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Maps were to be dry, and could not contain an excess of TNT.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">XML documents were to be included with the submission.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Authors were allowed to be author on up to 3 maps, but only their top scored map was counted.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-weight:400">Maps previously submitted to Stratus Network could not be entered into this contest.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="well well-sm well-custom-blue">
-            <div class="league-info-section">Prizes</div>
-            <table class="league-info-table">
-                <tbody>
-                    <tr>
-                        <td>First Place</td>
-                        <td>Strato,  winner tag on discord</td>
-                    </tr>
-                    <tr>
-                        <td>Second Place</td>
-                        <td>1 month of Stratus-, runner up tag on discord</td>
-                    </tr>
-                    <tr>
-                        <td>Third Place</td>
-                        <td>1 stack of tokens</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card border-primary">
+            <h5 class="card-header text-primary border-primary">Prizes</h5>
+            <div class="card-body">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <td>First Place</td>
+                            <td>Strato,  winner tag on discord</td>
+                        </tr>
+                        <tr>
+                            <td>Second Place</td>
+                            <td>1 month of Stratus-, runner up tag on discord</td>
+                        </tr>
+                        <tr>
+                            <td>Third Place</td>
+                            <td>1 stack of tokens</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
-<div class="league-info-section large">Submissions <small>18</small></div>
+<div class="info-section-heading large">Submissions <small>18</small></div>
 <div class="dynamic">
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/acropolis.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Acropolis">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=acropolis" class="s-title">Acropolis</a></div>
+                    <div class="title">
+                        <a data-query="acropolis" class="s-title click-search">Acropolis</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -306,14 +320,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">10th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">10th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="a63de09d6fa9436f907026f5e9a4d27b" href="/maps/stratus?s=a63de09d6fa9436f907026f5e9a4d27b">DRAGONRlDER</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="a63de09d6fa9436f907026f5e9a4d27b" href="/maps/stratus?s=a63de09d6fa9436f907026f5e9a4d27b">DRAGONRlDER</span></li>
                     <div class="hidden">
                         <div class="users">DRAGONRlDER</div>
                         <div class="uuids">a63de09d6fa9436f907026f5e9a4d27b</div>
@@ -345,12 +359,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/archer.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Archer">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=archer" class="s-title">Archer</a></div>
+                    <div class="title">
+                        <a data-query="archer" class="s-title click-search">Archer</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -358,15 +374,15 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">4th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">4th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="643c727dbc824419a42673cb195cf0d3" href="/maps/stratus?s=643c727dbc824419a42673cb195cf0d3">vapelordliam</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="deeafcb64297467aa6a9a501f29ed5f2" href="/maps/stratus?s=deeafcb64297467aa6a9a501f29ed5f2">Sydiem</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="643c727dbc824419a42673cb195cf0d3" href="/maps/stratus?s=643c727dbc824419a42673cb195cf0d3">vapelordliam</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="deeafcb64297467aa6a9a501f29ed5f2" href="/maps/stratus?s=deeafcb64297467aa6a9a501f29ed5f2">Sydiem</span></li>
                     <div class="hidden">
                         <div class="users">vapelordliam,Sydiem</div>
                         <div class="uuids">643c727dbc824419a42673cb195cf0d3,deeafcb64297467aa6a9a501f29ed5f2</div>
@@ -398,12 +414,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/bearing_point.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Bearing Point">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=bearing_point" class="s-title">Bearing Point</a></div>
+                    <div class="title">
+                        <a data-query="bearing_point" class="s-title click-search">Bearing Point</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -411,15 +429,15 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">15th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">15th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="643c727dbc824419a42673cb195cf0d3" href="/maps/stratus?s=643c727dbc824419a42673cb195cf0d3">vapelordliam</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="deeafcb64297467aa6a9a501f29ed5f2" href="/maps/stratus?s=deeafcb64297467aa6a9a501f29ed5f2">Sydiem</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="643c727dbc824419a42673cb195cf0d3" href="/maps/stratus?s=643c727dbc824419a42673cb195cf0d3">vapelordliam</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="deeafcb64297467aa6a9a501f29ed5f2" href="/maps/stratus?s=deeafcb64297467aa6a9a501f29ed5f2">Sydiem</span></li>
                     <div class="hidden">
                         <div class="users">vapelordliam,Sydiem</div>
                         <div class="uuids">643c727dbc824419a42673cb195cf0d3,deeafcb64297467aa6a9a501f29ed5f2</div>
@@ -451,12 +469,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-second">
+    <div class="col img-thumbnail map-thumbnail center map-glow-contest-second">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/columbia.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Columbia">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=columbia" class="s-title">Columbia</a></div>
+                    <div class="title">
+                        <a data-query="columbia" class="s-title click-search">Columbia</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -465,15 +485,15 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label map-label-contest-second">2nd place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge map-label-contest-second">2nd place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="fe3608b7d1054029880034b3147065b6" href="/maps/stratus?s=fe3608b7d1054029880034b3147065b6">rockymine</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="07fa10c6f5644630861efe134ae27527" href="/maps/stratus?s=07fa10c6f5644630861efe134ae27527">Yoyo_</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="fe3608b7d1054029880034b3147065b6" href="/maps/stratus?s=fe3608b7d1054029880034b3147065b6">rockymine</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="07fa10c6f5644630861efe134ae27527" href="/maps/stratus?s=07fa10c6f5644630861efe134ae27527">Yoyo_</span></li>
                     <div class="hidden">
                         <div class="users">rockymine,Yoyo_</div>
                         <div class="uuids">fe3608b7d1054029880034b3147065b6,07fa10c6f5644630861efe134ae27527</div>
@@ -505,12 +525,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/desert_country_dtm.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Desert Country DTM">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=desert_country_dtm" class="s-title">Desert Country DTM</a></div>
+                    <div class="title">
+                        <a data-query="desert_country_dtm" class="s-title click-search">Desert Country DTM</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -518,15 +540,15 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">17th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">17th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="b596759114fc421fa5e2931498e10fb8" href="/maps/stratus?s=b596759114fc421fa5e2931498e10fb8">OCNs_OMEN</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="d1e3251cdef54328a7e909335934d316" href="/maps/stratus?s=d1e3251cdef54328a7e909335934d316">byRobo</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="b596759114fc421fa5e2931498e10fb8" href="/maps/stratus?s=b596759114fc421fa5e2931498e10fb8">OCNs_OMEN</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="d1e3251cdef54328a7e909335934d316" href="/maps/stratus?s=d1e3251cdef54328a7e909335934d316">byRobo</span></li>
                     <div class="hidden">
                         <div class="users">OCNs_OMEN,byRobo</div>
                         <div class="uuids">b596759114fc421fa5e2931498e10fb8,d1e3251cdef54328a7e909335934d316</div>
@@ -558,12 +580,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/diamond_rush_dtc.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Diamond Rush DTC">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=diamond_rush_dtc" class="s-title">Diamond Rush DTC</a></div>
+                    <div class="title">
+                        <a data-query="diamond_rush_dtc" class="s-title click-search">Diamond Rush DTC</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
                     </div>
@@ -571,14 +595,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">9th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">9th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="e2d2c2c6cea945109ab2a091b5605b30" href="/maps/stratus?s=e2d2c2c6cea945109ab2a091b5605b30">Ruediger_LP</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="e2d2c2c6cea945109ab2a091b5605b30" href="/maps/stratus?s=e2d2c2c6cea945109ab2a091b5605b30">Ruediger_LP</span></li>
                     <div class="hidden">
                         <div class="users">Ruediger_LP</div>
                         <div class="uuids">e2d2c2c6cea945109ab2a091b5605b30</div>
@@ -610,12 +634,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/down_under.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Down Under">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=down_under" class="s-title">Down Under</a></div>
+                    <div class="title">
+                        <a data-query="down_under" class="s-title click-search">Down Under</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -623,14 +649,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">18th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">18th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="cef670559c274b58a16f278d793ff6bc" href="/maps/stratus?s=cef670559c274b58a16f278d793ff6bc">mrcookie_13</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="cef670559c274b58a16f278d793ff6bc" href="/maps/stratus?s=cef670559c274b58a16f278d793ff6bc">mrcookie_13</span></li>
                     <div class="hidden">
                         <div class="users">mrcookie_13</div>
                         <div class="uuids">cef670559c274b58a16f278d793ff6bc</div>
@@ -662,12 +688,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/dune_dtm.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Dune DTM">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=dune_dtm" class="s-title">Dune DTM</a></div>
+                    <div class="title">
+                        <a data-query="dune_dtm" class="s-title click-search">Dune DTM</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -675,15 +703,15 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">5th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">5th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="85c49c6e76cc4af782b9c31cf355c1c4" href="/maps/stratus?s=85c49c6e76cc4af782b9c31cf355c1c4">BlockRage</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="a63de09d6fa9436f907026f5e9a4d27b" href="/maps/stratus?s=a63de09d6fa9436f907026f5e9a4d27b">DRAGONRlDER</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="85c49c6e76cc4af782b9c31cf355c1c4" href="/maps/stratus?s=85c49c6e76cc4af782b9c31cf355c1c4">BlockRage</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="a63de09d6fa9436f907026f5e9a4d27b" href="/maps/stratus?s=a63de09d6fa9436f907026f5e9a4d27b">DRAGONRlDER</span></li>
                     <div class="hidden">
                         <div class="users">BlockRage,DRAGONRlDER</div>
                         <div class="uuids">85c49c6e76cc4af782b9c31cf355c1c4,a63de09d6fa9436f907026f5e9a4d27b</div>
@@ -715,12 +743,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/free_fall.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Free Fall">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=free_fall" class="s-title">Free Fall</a></div>
+                    <div class="title">
+                        <a data-query="free_fall" class="s-title click-search">Free Fall</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -728,15 +758,15 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">16th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">16th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="85c49c6e76cc4af782b9c31cf355c1c4" href="/maps/stratus?s=85c49c6e76cc4af782b9c31cf355c1c4">BlockRage</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="a63de09d6fa9436f907026f5e9a4d27b" href="/maps/stratus?s=a63de09d6fa9436f907026f5e9a4d27b">DRAGONRlDER</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="85c49c6e76cc4af782b9c31cf355c1c4" href="/maps/stratus?s=85c49c6e76cc4af782b9c31cf355c1c4">BlockRage</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="a63de09d6fa9436f907026f5e9a4d27b" href="/maps/stratus?s=a63de09d6fa9436f907026f5e9a4d27b">DRAGONRlDER</span></li>
                     <div class="hidden">
                         <div class="users">BlockRage,DRAGONRlDER</div>
                         <div class="uuids">85c49c6e76cc4af782b9c31cf355c1c4,a63de09d6fa9436f907026f5e9a4d27b</div>
@@ -768,12 +798,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/heath.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Heath">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=heath" class="s-title">Heath</a></div>
+                    <div class="title">
+                        <a data-query="heath" class="s-title click-search">Heath</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -781,14 +813,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">12th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">12th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="b3bf822a42184f969110278cad1ab848" href="/maps/stratus?s=b3bf822a42184f969110278cad1ab848">Ensix</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="b3bf822a42184f969110278cad1ab848" href="/maps/stratus?s=b3bf822a42184f969110278cad1ab848">Ensix</span></li>
                     <div class="hidden">
                         <div class="users">Ensix</div>
                         <div class="uuids">b3bf822a42184f969110278cad1ab848</div>
@@ -820,12 +852,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/jikan.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Jikan">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=jikan" class="s-title">Jikan</a></div>
+                    <div class="title">
+                        <a data-query="jikan" class="s-title click-search">Jikan</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -833,14 +867,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">8th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">8th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="b152107269934fe4ae60dbeeb7dc0cfa" href="/maps/stratus?s=b152107269934fe4ae60dbeeb7dc0cfa">Antnecb</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="b152107269934fe4ae60dbeeb7dc0cfa" href="/maps/stratus?s=b152107269934fe4ae60dbeeb7dc0cfa">Antnecb</span></li>
                     <div class="hidden">
                         <div class="users">Antnecb</div>
                         <div class="uuids">b152107269934fe4ae60dbeeb7dc0cfa</div>
@@ -872,12 +906,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/knights_of_osenden.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Knights of Osenden">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=knights_of_osenden" class="s-title">Knights of Osenden</a></div>
+                    <div class="title">
+                        <a data-query="knights_of_osenden" class="s-title click-search">Knights of Osenden</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -885,14 +921,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">14th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">14th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="be132e39d32f49f9acc21e1a343aeaeb" href="/maps/stratus?s=be132e39d32f49f9acc21e1a343aeaeb">KnightZack</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="be132e39d32f49f9acc21e1a343aeaeb" href="/maps/stratus?s=be132e39d32f49f9acc21e1a343aeaeb">KnightZack</span></li>
                     <div class="hidden">
                         <div class="users">KnightZack</div>
                         <div class="uuids">be132e39d32f49f9acc21e1a343aeaeb</div>
@@ -924,12 +960,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/kora.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Kora">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=kora" class="s-title">Kora</a></div>
+                    <div class="title">
+                        <a data-query="kora" class="s-title click-search">Kora</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
                     </div>
@@ -937,14 +975,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">6th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">6th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="48924ea33aad4e16838c368d8d9e0a25" href="/maps/stratus?s=48924ea33aad4e16838c368d8d9e0a25">Matic0B</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="48924ea33aad4e16838c368d8d9e0a25" href="/maps/stratus?s=48924ea33aad4e16838c368d8d9e0a25">Matic0B</span></li>
                     <div class="hidden">
                         <div class="users">Matic0B</div>
                         <div class="uuids">48924ea33aad4e16838c368d8d9e0a25</div>
@@ -976,12 +1014,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/linked.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Linked">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=linked" class="s-title">Linked</a></div>
+                    <div class="title">
+                        <a data-query="linked" class="s-title click-search">Linked</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -989,16 +1029,16 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">7th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">7th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="ffffec3a728a485aaf6e374e86883939" href="/maps/stratus?s=ffffec3a728a485aaf6e374e86883939">Jeremy_Wade</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="f066a092d8254316bc9a5f8ddd21b167" href="/maps/stratus?s=f066a092d8254316bc9a5f8ddd21b167">FabianoCaruana</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="be28035773fe465ca3422bf0357327c4" href="/maps/stratus?s=be28035773fe465ca3422bf0357327c4">Naatz</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="ffffec3a728a485aaf6e374e86883939" href="/maps/stratus?s=ffffec3a728a485aaf6e374e86883939">Jeremy_Wade</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="f066a092d8254316bc9a5f8ddd21b167" href="/maps/stratus?s=f066a092d8254316bc9a5f8ddd21b167">FabianoCaruana</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="be28035773fe465ca3422bf0357327c4" href="/maps/stratus?s=be28035773fe465ca3422bf0357327c4">Naatz</span></li>
                     <div class="hidden">
                         <div class="users">Jeremy_Wade,FabianoCaruana,Naatz</div>
                         <div class="uuids">ffffec3a728a485aaf6e374e86883939,f066a092d8254316bc9a5f8ddd21b167,be28035773fe465ca3422bf0357327c4</div>
@@ -1030,12 +1070,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-first">
+    <div class="col img-thumbnail map-thumbnail center map-glow-contest-first">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/midgard.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Midgard">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=midgard" class="s-title">Midgard</a></div>
+                    <div class="title">
+                        <a data-query="midgard" class="s-title click-search">Midgard</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -1044,16 +1086,16 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label map-label-contest-first">1st place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge map-label-contest-first">1st place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="f70b7a8f93b2480f9d5488e21485a042" href="/maps/stratus?s=f70b7a8f93b2480f9d5488e21485a042">Diamyx</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="5c0d744e25614e24966c2f5ca4a8f8eb" href="/maps/stratus?s=5c0d744e25614e24966c2f5ca4a8f8eb">SamSafari</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="75fd93dd8e48469881a297dae2ec5b5f" href="/maps/stratus?s=75fd93dd8e48469881a297dae2ec5b5f">Pugzy</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="f70b7a8f93b2480f9d5488e21485a042" href="/maps/stratus?s=f70b7a8f93b2480f9d5488e21485a042">Diamyx</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="5c0d744e25614e24966c2f5ca4a8f8eb" href="/maps/stratus?s=5c0d744e25614e24966c2f5ca4a8f8eb">SamSafari</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="75fd93dd8e48469881a297dae2ec5b5f" href="/maps/stratus?s=75fd93dd8e48469881a297dae2ec5b5f">Pugzy</span></li>
                     <div class="hidden">
                         <div class="users">Diamyx,SamSafari,Pugzy</div>
                         <div class="uuids">f70b7a8f93b2480f9d5488e21485a042,5c0d744e25614e24966c2f5ca4a8f8eb,75fd93dd8e48469881a297dae2ec5b5f</div>
@@ -1085,12 +1127,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center map-glow-contest-third">
+    <div class="col img-thumbnail map-thumbnail center map-glow-contest-third">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/monastery_siege.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Monastery Siege">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=monastery_siege" class="s-title">Monastery Siege</a></div>
+                    <div class="title">
+                        <a data-query="monastery_siege" class="s-title click-search">Monastery Siege</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -1099,16 +1143,16 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label map-label-contest-third">3rd place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge map-label-contest-third">3rd place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="89d44df9b7cf4e41991051fae6d30ea5" href="/maps/stratus?s=89d44df9b7cf4e41991051fae6d30ea5">gamez7</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="1a8709cc086142898c35d5802a5f4c0c" href="/maps/stratus?s=1a8709cc086142898c35d5802a5f4c0c">creeplode</a></li>,
-                    <li class="game-tag"><a class="click-search" data-query="5bb60a0b50594db99169e07db4664e3d" href="/maps/stratus?s=5bb60a0b50594db99169e07db4664e3d">djfigs1</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="89d44df9b7cf4e41991051fae6d30ea5" href="/maps/stratus?s=89d44df9b7cf4e41991051fae6d30ea5">gamez7</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="1a8709cc086142898c35d5802a5f4c0c" href="/maps/stratus?s=1a8709cc086142898c35d5802a5f4c0c">creeplode</span></li>,
+                    <li class="game-tag"><span class="click-search" data-query="5bb60a0b50594db99169e07db4664e3d" href="/maps/stratus?s=5bb60a0b50594db99169e07db4664e3d">djfigs1</span></li>
                     <div class="hidden">
                         <div class="users">gamez7,creeplode,djfigs1</div>
                         <div class="uuids">89d44df9b7cf4e41991051fae6d30ea5,1a8709cc086142898c35d5802a5f4c0c,5bb60a0b50594db99169e07db4664e3d</div>
@@ -1140,12 +1184,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/omega_dtc.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Omega DTC">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=omega_dtc" class="s-title">Omega DTC</a></div>
+                    <div class="title">
+                        <a data-query="omega_dtc" class="s-title click-search">Omega DTC</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Core<span class="hidden">dtc</span></li>
                     </div>
@@ -1153,14 +1199,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">11th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">11th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="e2d2c2c6cea945109ab2a091b5605b30" href="/maps/stratus?s=e2d2c2c6cea945109ab2a091b5605b30">Ruediger_LP</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="e2d2c2c6cea945109ab2a091b5605b30" href="/maps/stratus?s=e2d2c2c6cea945109ab2a091b5605b30">Ruediger_LP</span></li>
                     <div class="hidden">
                         <div class="users">Ruediger_LP</div>
                         <div class="uuids">e2d2c2c6cea945109ab2a091b5605b30</div>
@@ -1192,12 +1238,14 @@
         </div>
     </div>
     
-    <div class="col-sm-6 col-lg-3 thumbnail map-thumbnail center">
+    <div class="col img-thumbnail map-thumbnail center">
         <div class="map-thumbnail-selector">
             <div class="map-thumbnail-header">
                 <img class="image lazy" data-src="../../assets/img/contest/destroy_map_making_competition/maps/risky_waters.png">
                 <div class="banner" data-toggle="tooltip" data-placement="top" title="Risky Waters">
-                    <div class="title"><a href="https://mcresourcepile.github.io/maps/stratus?s=risky_waters" class="s-title">Risky Waters</a></div>
+                    <div class="title">
+                        <a data-query="risky_waters" class="s-title click-search">Risky Waters</a>
+                    </div>
                     <div class="sub-title">
                         <li class="game-tag map-tag s-tag">Destroy the Monument<span class="hidden">dtm</span></li>
                     </div>
@@ -1205,14 +1253,14 @@
                     </div>
                 </div>
                 <div class="labels">
-                    <span class="label label-default">13th place</span>
-                    <span class="label label-info"></span>
+                    <span class="badge badge-secondary">13th place</span>
+                    <span class="badge badge-info"></span>
                 </div>
             </div>
             <div class="map-thumbnail-body">
                 <div class="authors">
                     by
-                    <li class="game-tag"><a class="click-search" data-query="deeafcb64297467aa6a9a501f29ed5f2" href="/maps/stratus?s=deeafcb64297467aa6a9a501f29ed5f2">Sydiem</a></li>
+                    <li class="game-tag"><span class="click-search" data-query="deeafcb64297467aa6a9a501f29ed5f2" href="/maps/stratus?s=deeafcb64297467aa6a9a501f29ed5f2">Sydiem</span></li>
                     <div class="hidden">
                         <div class="users">Sydiem</div>
                         <div class="uuids">deeafcb64297467aa6a9a501f29ed5f2</div>
@@ -1245,7 +1293,7 @@
     </div>
     
 </div>
-<div class="league-info-section large" id="scores">Score Breakdown</div>
+<div class="info-section-heading large id-anchor" id="scores">Score Breakdown</div>
 <div class="table-responsive">
     <table id="scores-breakdown" class="contest-info-table table table-striped table-bordered">
         <thead>
@@ -1488,7 +1536,7 @@
         var points_percentage = Math.floor((points_current / points_max) * 100);
         $(this).css({
             'width': points_percentage + '%',
-            'background-color': 'rgba(21, 57, 177, ' + points_percentage / 100 + ')'
+            // 'background-color': 'rgba(21, 57, 177, ' + points_percentage / 100 + ')'
         });
     });
     $('.map-score-breakdown').each(function(i, obj) {
@@ -1601,9 +1649,7 @@
                         <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
                     </div>
                 </div>
-                <div class="footer-bottom center">
-                    <div class="resourcepile-copyright-year"></div>
-                </div>
+                <div class="footer-bottom center">© 2019 ResourcePile</div>
             </div>
         </div>
         <script src="/assets/js/global.js"></script>

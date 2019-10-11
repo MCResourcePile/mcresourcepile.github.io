@@ -16,15 +16,17 @@
         <meta content="HTML Submissions Builder - ResourcePile" name="twitter:title">
         <meta content="Easily create a map submission thread layout for your map in HTML" name="twitter:description">
         <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <meta name="theme-color">
         <!-- Page stylesheets -->
         <link href="/assets/favicon.ico" rel="shortcut icon">
         <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/css/main.css" rel="stylesheet">
         <!-- Page script files -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
@@ -42,66 +44,68 @@
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
     </head>
     <body >
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/index"><span class="fa fa-folder-open" style="padding-right:6px;" aria-hidden="true"></span> ResourcePile</a>
-                </div>
+                <a class="navbar-brand" href="/">
+                    <span class="fas fa-folder-open" style="padding-right: 5px;" aria-hidden="true"></span> ResourcePile
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Maps <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/maps/overcast">Overcast Collection</a></li>
-                                <li><a href="/maps/pgm">PGM Collection</a></li>
-                                <li><a href="/maps/stratus">Stratus Collection</a></li>
-                                <li><a href="/maps/avicus">Avicus Collection</a></li>
-                                <li><a href="/maps/rfw">RFW Collection</a></li>
-                            </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-cubes"></i> Maps</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/maps/overcast">Overcast Collection</a>
+                                <a class="dropdown-item" href="/maps/pgm">PGM Collection</a>
+                                <a class="dropdown-item" href="/maps/stratus">Stratus Collection</a>
+                                <a class="dropdown-item" href="/maps/avicus">Avicus Collection</a>
+                                <a class="dropdown-item" href="/maps/rfw">RFW Collection</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Contests <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/contests/overcast">Overcast Network</a></li>
-                                <li><a href="/contests/stratus">Stratus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-medal"></i> Contests</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/contests/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/contests/stratus">Stratus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Tournaments <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/leagues/overcast">Overcast Network</a></li>
-                                <li><a href="/leagues/pgm">PGM Community</a></li>
-                                <li><a href="/leagues/stratus">Stratus Network</a></li>
-                                <li><a href="/leagues/avicus">Avicus Network</a></li>
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/leagues/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/leagues/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/leagues/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/leagues/avicus">Avicus Network</a>
+                            </div>
                         </li>
-                        <li class="dropdown ">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Statistics <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><p class="navbar-menu-title">Overcast</p></li>
-                                <li><a href="/stats/overcast/bow">Bow Records</a></li>
-                                <li><a href="/stats/overcast/miscellaneous">Miscellaneous</a></li>
-                                <li><a href="/stats/overcast/objective">Objective Leaderboards</a></li>
-                                <li><p class="navbar-menu-title">Stratus</p></li>
-                                <li><a href="/stats/stratus/bow">Bow Records</a></li>
-                                <li><p class="navbar-menu-title">Avicus</p></li>
-                                <li><a href="/stats/avicus/miscellaneous">Miscellaneous</a></li>                                
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-chart-bar"></i> Statistics</a>
+                            <div class="dropdown-menu">
+                                <p class="navbar-menu-title">Overcast</p>
+                                <a class="dropdown-item" href="/stats/overcast/bow">Bow Records</a>
+                                <a class="dropdown-item" href="/stats/overcast/miscellaneous">Miscellaneous</a>
+                                <a class="dropdown-item" href="/stats/overcast/objective">Objective Leaderboards</a>
+                                <p class="navbar-menu-title">Stratus</p>
+                                <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
+                                <p class="navbar-menu-title">Avicus</p>
+                                <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
+                           </div>
                         </li>
-                        <li><a href="/addon-project/wiki">Wiki</a></li>
+                        <!--
+                        <li class="nav-item">
+                            <a class="nav-link" href="/addon-project/wiki"><i class="far fa-newspaper"></i> Stratus Wiki</a>
+                        </li> -->
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a></li>
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </nav>
         <div class="content-background">
             <div class="container">
                 <div class="content-alert">
@@ -118,13 +122,13 @@
     <div class="col-md-6">
         <form id="input-form" class="form-horizontal" action="#" method="post">
             <fieldset>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-md-3 control-label" for="input-name">Name*</label>  
                     <div class="col-md-8">
                         <input id="input-name" name="input-name" type="text" placeholder="Name" class="form-control input-md" required>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-md-3 control-label" for="input-author">
                         Authors*<br>
                         <small id="author-add"><a href="#"><i class="fa fa-plus"></i> Add</a></small>
@@ -133,27 +137,27 @@
                         <div><input id="input-author" name="input-author" type="text" placeholder="Author 1 name" class="form-control input-md" required></div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-md-3 control-label" for="input-splash">Splash Image</label>  
                     <div class="col-md-8">
                         <input id="input-image" name="input-splash" type="url" placeholder="Image URL" class="form-control input-md">
                         <span class="help-block">Ensure that you only use direct URLs to the image</span> 
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-md-3 control-label" for="input-image">Overview Image*</label>  
                     <div class="col-md-8">
                         <input id="input-image" name="input-image" type="url" placeholder="Image URL" class="form-control input-md" required>
                         <span class="help-block">Ensure that you only use direct URLs to the image</span> 
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-md-3 control-label" for="input-description">Description*</label>
                     <div class="col-md-8">
                         <textarea class="form-control" id="input-description" name="input-description" placeholder="A brief description of your map..." required></textarea>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-md-3 control-label" for="input-sectionn">
                         Sections<br>
                         <small id="section-add"><a href="#"><i class="fa fa-plus"></i> Add</a></small>
@@ -164,20 +168,20 @@
                         <textarea class="form-control" id="input-section-description" name="input-section-description" placeholder="A description of this section..." rows="4" disabled></textarea>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-md-3 control-label" for="input-download">Download URL*</label> 
                     <div class="col-md-8">
                         <input id="input-download" name="input-download" type="url" placeholder="https://www.dropbox.com/sh/..." class="form-control input-md" required>
                         <span class="help-block">Please make sure you have packaged your map correctly, and only use Dropbox or Google Drive</span> 
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-md-3 control-label" for="input-album">Images URL*</label>  
                     <div class="col-md-8">
                         <input id="input-album" name="input-album" type="url" placeholder="https://imgur.com/a/..." class="form-control input-md" required>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-md-3 control-label" for="input-xml">XML URL</label>  
                     <div class="col-md-8">
                         <input id="input-xml" name="input-xml" type="url" placeholder="https://gist.github.com/..." class="form-control input-md"> 
@@ -191,11 +195,15 @@
     </div>
     <div class="col-md-6">
         <ul id="output-tabs" class="nav nav-tabs" style="margin-bottom: 16px;">
-            <li role="presentation" class="active"><a href="#preview" data-toggle="tab">Preview</a></li>
-            <li role="presentation"><a href="#output" data-toggle="tab">Output</a></li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#preview" data-toggle="tab">Preview</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" href="#output" data-toggle="tab">Output</a>
+            </li>
         </ul>
         <div id="output-tabs-content" class="tab-content">
-            <div class="tab-pane active in" id="preview">Nothing to preview; complete the form to generate preview.</div>
+            <div class="tab-pane active" id="preview">Nothing to preview; complete the form to generate preview.</div>
             <div class="tab-pane" id="output">
                 <pre id="thread-output-box">Nothing to output; complete the form to generate markdown.</pre>
                 <div id="output-dummy" class="hidden"></div>
@@ -353,9 +361,7 @@
                         <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
                     </div>
                 </div>
-                <div class="footer-bottom center">
-                    <div class="resourcepile-copyright-year"></div>
-                </div>
+                <div class="footer-bottom center">© 2019 ResourcePile</div>
             </div>
         </div>
         <script src="/assets/js/global.js"></script>
