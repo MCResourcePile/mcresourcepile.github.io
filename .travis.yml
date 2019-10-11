@@ -5,6 +5,8 @@ node_js:
 branches:
     only:
     - source
+before_install:
+- gem install sass
 before_script:
 - npm install -g grunt
 - npm install -g handlebars-helpers
