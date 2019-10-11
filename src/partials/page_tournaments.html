@@ -2,45 +2,41 @@
 {{#if order}}
 {{#order}}
 <nav>
-    <ul class="pager tm-pager">
-        <div class="row">
-            <div class="col-xs-4">
-                {{#if last}}
-                <li class="previous">
-                    <a href="/leagues/{{@root.settings.tournaments.host}}/{{snakecase (lowercase last)}}"><i class="fas fa-long-arrow-alt-left"></i> Last: {{@root.order.last}}</a>
-                </li>
-                {{else}}
-                <li class="previous disabled">
-                    <a><i class="fas fa-long-arrow-alt-left"></i> Last</a>
-                </li>
-                {{/if}}
-            </div>
-            <div class="col-xs-4">
-                <li class="pager-center">
-                    <p>{{type}} #{{number}}</p>
-                </li>
-            </div>
-            <div class="col-xs-4">
-                {{#if next}}
-                <li class="next">
-                    <a href="/leagues/{{@root.settings.tournaments.host}}/{{snakecase (lowercase next)}}">Next: {{@root.order.next}} <i class="fas fa-long-arrow-alt-right"></i></a>
-                </li>
-                {{else}}
-                <li class="next disabled">
-                    <a>Next <i class="fas fa-long-arrow-alt-right"></i></a>
-                </li>
-                {{/if}}
-            </div>
+    <div class="row tm-pager">
+        <div class="col-lg-4 col-md-6 tm-pager-last">
+            {{#if last}}
+            <a class="btn btn-outline-primary" href="/leagues/{{@root.settings.tournaments.host}}/{{snakecase (lowercase last)}}" role="button">
+                <i class="fas fa-long-arrow-alt-left"></i> Last: {{@root.order.last}}
+            </a>
+            {{else}}
+            <button type="button" class="btn btn-outline-primary" disabled>
+                <i class="fas fa-long-arrow-alt-left"></i> Last
+            </button>
+            {{/if}}
         </div>
-    </ul>
+        <div class="col-lg-4 tm-pager-number">
+            <p>{{type}} #{{number}}</p>
+        </div>
+        <div class="col-lg-4 col-md-6 tm-pager-next">
+            {{#if next}}
+            <a class="btn btn-outline-primary" href="/leagues/{{@root.settings.tournaments.host}}/{{snakecase (lowercase next)}}" role="button">
+                Next: {{@root.order.next}} <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
+            {{else}}
+            <button type="button" class="btn btn-outline-primary" disabled>
+                Next <i class="fas fa-long-arrow-alt-right"></i>
+            </button>
+            {{/if}}
+        </div>
+    </div>
 </nav>
 {{/order}}
 {{/if}}
 <div class="center">
     {{#if @root.settings.tournaments.default_banner}}
-    <div class="league-default-banner" style="background: url('../../assets/img/tournament/banners/default/{{@root.settings.tournaments.default_banner}}.jpg'); background-position: center; background-size: cover;">{{title}}</div>
+    <div class="image-banner-default" style="background: url('../../assets/img/tournament/banners/default/{{@root.settings.tournaments.default_banner}}.jpg'); background-position: center; background-size: cover;">{{title}}</div>
     {{else}}
-    <img class="league-banner" src="../../assets/img/tournament/banners/{{@root.settings.tournaments.host}}/{{snakecase (lowercase title)}}.png">
+    <img class="image-banner-custom" src="../../assets/img/tournament/banners/{{@root.settings.tournaments.host}}/{{snakecase (lowercase title)}}.png">
     {{/if}}
 </div>
 {{#results}}
@@ -80,28 +76,30 @@
             <div class="row" id="results-panels">
                 {{#panels}}
                 <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
-                    <div class="league-information blue">
-                        <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
-                        <table class="league-info-table">
-                            <tbody>
-                                {{#if rows}}
-                                {{#rows}}
-                                <tr>
-                                    {{#if label}}
-                                    <td>{{label}}</td>
-                                    <td>{{{content}}}</td>
+                    <div class="card border-primary">
+                        <h5 class="card-header text-primary border-primary">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</h5>
+                        <div class="card-body">
+                            <table class="info-table">
+                                <tbody>
+                                    {{#if rows}}
+                                    {{#rows}}
+                                    <tr>
+                                        {{#if label}}
+                                        <td>{{label}}</td>
+                                        <td>{{{content}}}</td>
+                                        {{else}}
+                                        <td colspan="2" style="font-weight: 400;">{{{content}}}</td>
+                                        {{/if}}
+                                    </tr>
+                                    {{/rows}}
                                     {{else}}
-                                    <td colspan="2" style="font-weight: 400;">{{{content}}}</td>
+                                    <tr>
+                                        <td>This panel has no information.</td>
+                                    </tr>
                                     {{/if}}
-                                </tr>
-                                {{/rows}}
-                                {{else}}
-                                <tr>
-                                    <td>This panel has no information.</td>
-                                </tr>
-                                {{/if}}
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 {{/panels}}
@@ -129,98 +127,104 @@
 {{/results}}
 {{#information}}
 <div class="collapse-section">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
-    <div class="collapse in" id="section-info">
+    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
+    <div class="collapse show" id="section-info">
         <div class="row">
             <div class="col-md-6">
-                <div class="league-information red">
-                    <div class="league-info-section">Details</div>
-                    <table class="league-info-table">
-                        <tbody>
-                            {{#if announcement}}
-                            <tr>
-                                <td>Announcement Page</td>
-                                <td><a href="{{announcement}}">{{announcement}}</a></td>
-                            </tr>
-                            {{/if}}
-                            {{#if format}}
-                            <tr>
-                                <td>Format</td>
-                                <td>
-                                    {{#each format}}{{this}}{{#unless @last}}<i class="fas fa-long-arrow-alt-right" style="vertical-align: middle; padding-left: 7px; padding-right: 6px;"></i>{{/unless}}{{/each}}
-                                </td>
-                            </tr>
-                            {{/if}}
-                            {{#if gamemodes}}
-                            <tr>
-                                <td>Gamemodes</td>
-                                <td>
-                                    {{#each (sort gamemodes)}}
-                                    {{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}
-                                    {{/each}}
-                                </td>
-                            </tr>
-                            {{/if}}
-                            {{#if teams-count}}
-                            <tr>
-                                <td>Teams</td>
-                                <td>
-                                    <a href="#teams">{{teams-count}} <i class="fas fa-chevron-down"></i></a>
-                                </td>
-                            </tr>
-                            {{/if}}
-                            {{#if teamsize}}
-                            <tr>
-                                <td>Team Size</td>
-                                <td>{{teamsize}}</td>
-                            </tr>
-                            {{/if}}
-                        </tbody>
-                    </table>
+                <div class="card border-danger">
+                    <h5 class="card-header text-danger border-danger">Details</h5>
+                    <div class="card-body">
+                        <table class="info-table">
+                            <tbody>
+                                {{#if announcement}}
+                                <tr>
+                                    <td>Announcement Page</td>
+                                    <td><a href="{{announcement}}">{{announcement}}</a></td>
+                                </tr>
+                                {{/if}}
+                                {{#if format}}
+                                <tr>
+                                    <td>Format</td>
+                                    <td>
+                                        {{#each format}}{{this}}{{#unless @last}}<i class="fas fa-long-arrow-alt-right" style="vertical-align: middle; padding-left: 7px; padding-right: 6px;"></i>{{/unless}}{{/each}}
+                                    </td>
+                                </tr>
+                                {{/if}}
+                                {{#if gamemodes}}
+                                <tr>
+                                    <td>Gamemodes</td>
+                                    <td>
+                                        {{#each (sort gamemodes)}}
+                                        {{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}
+                                        {{/each}}
+                                    </td>
+                                </tr>
+                                {{/if}}
+                                {{#if teams-count}}
+                                <tr>
+                                    <td>Teams</td>
+                                    <td>
+                                        <a href="#teams">{{teams-count}} <i class="fas fa-chevron-down"></i></a>
+                                    </td>
+                                </tr>
+                                {{/if}}
+                                {{#if teamsize}}
+                                <tr>
+                                    <td>Team Size</td>
+                                    <td>{{teamsize}}</td>
+                                </tr>
+                                {{/if}}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             {{#if stages}}
             <div class="col-md-6">
-                <div class="league-information red">
-                    <div class="league-info-section">Dates</div>
-                    <table class="league-info-table">
-                        <tbody>
-                            {{#stages}}
-                            <tr>
-                                <td>{{stage}}</td>
-                                <td>{{date}}</td>
-                            </tr>
-                            {{/stages}}
-                        </tbody>
-                    </table>
+                <div class="card border-danger">
+                    <h5 class="card-header text-danger border-danger">Dates</h5>
+                    <div class="card-body">
+                        <table class="info-table">
+                            <tbody>
+                                {{#stages}}
+                                <tr>
+                                    <td>{{stage}}</td>
+                                    <td>{{date}}</td>
+                                </tr>
+                                {{/stages}}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             {{/if}}
             {{#if panels}}
             {{#panels}}
             <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
-                <div class="league-information green">
-                    <div class="league-info-section">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</div>
-                    <table class="league-info-table">
-                        <tbody>
-                            {{#if rows}}
-                            {{#rows}}
-                            <tr>
-                                {{#if label}}
-                                <td>{{label}}</td>
-                                <td>{{{content}}}</td>
+                <div class="card border-success">
+                    <h5 class="card-header text-success border-success">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</h5>
+                    <div class="card-body">
+                        <table class="info-table">
+                            <tbody>
+                                {{#if rows}}
+                                {{#rows}}
+                                <tr>
+                                    {{#if label}}
+                                    <td>{{label}}</td>
+                                    <td>{{{content}}}</td>
+                                    {{else}}
+                                    <td colspan="2" style="font-weight: 400;">{{{content}}}</td>
+                                    {{/if}}
+                                </tr>
+                                {{/rows}}
                                 {{else}}
-                                <td colspan="2" style="font-weight: 400;">{{{content}}}</td>
+                                <tr>
+                                    <td>This panel has no information.</td>
+                                </tr>
                                 {{/if}}
-                            </tr>
-                            {{/rows}}
-                            {{else}}
-                            <tr>
-                                <td>This panel has no information.</td>
-                            </tr>
-                            {{/if}}
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             {{/panels}}
@@ -231,11 +235,11 @@
 {{/information}}
 {{#if videos}}
 <div class="collapse-section">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-videos"><i class="fas fa-angle-down"></i> Videos <small>{{inflect (length videos) "video" "videos" true}}</small></div>
-    <div class="collapse in" id="section-videos">
-        <div class="video-embed-container">
+    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-videos"><i class="fas fa-angle-down"></i> Videos <small>{{inflect (length videos) "video" "videos" true}}</small></div>
+    <div class="collapse show" id="section-videos">
+        <div class="d-flex flex-wrap justify-content-around">
             {{#videos}}
-            <div class="video-embed">
+            <div class="col-lg-4 col-md-6 video-embed">
                 <div class="embed-responsive embed-responsive-16by9">
                     {{#is service 'youtube'}}
                         {{#is type 'video'}}
@@ -286,8 +290,8 @@
 {{/if}}
 {{#if maps}}
 <div class="collapse-section">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-maps"><i class="fas fa-angle-down"></i> Map Pool <small>{{inflect (length maps) "map" "maps" true}}</small></div>
-    <div class="collapse in" id="section-maps">
+    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-maps"><i class="fas fa-angle-down"></i> Map Pool <small>{{inflect (length maps) "map" "maps" true}}</small></div>
+    <div class="collapse show" id="section-maps">
         <div class="dynamic">
             {{#maps}}
             {{> page_maps_thumbnail_advanced}}
@@ -297,22 +301,20 @@
 </div>
 {{/if}}
 {{#if teams}}
-<div class="collapse-section" id="teams">
-    <div class="league-info-section large collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>{{@root.information.teams-count}}</small></div>
-    <div class="collapse in" id="section-teams">
+<div class="collapse-section id-anchor" id="teams">
+    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>{{@root.information.teams-count}}</small></div>
+    <div class="collapse show" id="section-teams">
         {{#gte (length teams) 2}}
-        <ul class="nav nav-tabs tm-teams-tabs" role="tablist">
+        <ul class="nav nav-tabs">
             {{#teams}}
-            <li {{#if @first}}class="active"{{/if}}>
-                <a href="#{{snakecase (lowercase name)}}" role="tab" data-toggle="tab">{{name}}</a>
+            <li class="nav-item">
+                <a class="nav-link{{#if @first}} active{{/if}}" href="#{{snakecase (lowercase name)}}" role="tab" data-toggle="tab">{{name}}</a>
             </li>
             {{/teams}}
         </ul>
-        <div class="checkbox tm-teams-fade-checkbox">
-            <label>
-                <input type="checkbox" id="team-fade-checkbox" checked>
-                Fade Teams that did not Advance
-            </label>
+        <div class="custom-control custom-switch tm-teams-fade-toggle">
+            <input type="checkbox" class="custom-control-input" id="team-fade-toggle" checked>
+            <label class="custom-control-label" for="team-fade-toggle">Fade Teams that did not Advance</label>
         </div>
         <div class="tab-content">
             {{#teams}}

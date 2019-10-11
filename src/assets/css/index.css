@@ -3,7 +3,7 @@
 }
 
 .background-splash-wash {
-    background-color: rgba(11, 33, 56, 0.62);
+    background-color: rgba(11, 33, 56, 0.25);
     width: 100%;
     height: 60%;
     display: flex;
@@ -22,13 +22,18 @@
 .splash-header {
     font-size: 3.2em;
     font-weight: bold;
-    letter-spacing: 6px;
     color: #fff;
     border-bottom: 2px solid #fff;
     margin-bottom: 16px;
     display: inline-block;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+@media screen and (min-width: 414px) {
+    .splash-header {
+        letter-spacing: 6px;
+    }
 }
 
 .splash-subheader {
@@ -43,21 +48,21 @@
 }
 
 .index-content {
-    height: 40%;
     background-color: #fff;
     display: flex;
     align-items: center;
 }
 
-.card {
-    padding-top: 80px;
-    padding-bottom: 80px;
+.index-card {
+    padding-top: 40px;
+    padding-bottom: 40px;
     color: #434343;
 }
 
-.card:hover,
-.card:focus {
+.index-card:hover,
+.index-card:focus {
     text-decoration: none;
+    color: #434343;
     background-color: #d6d6d6;
     -o-transition: .5s;
     -ms-transition: .5s;
@@ -66,34 +71,34 @@
     transition: .5s;
 }
 
-.card > .icon {
+.index-card > .icon {
     font-size: 64px;
     padding-bottom: 48px;
 }
 
-.card > .header {
+.index-card > .header {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 12px;
 }
 
-.card-red:hover,
-.card-red:focus {
+.index-card-red:hover,
+.index-card-red:focus {
     background-color: #ff8787;
 }
 
-.card-blue:hover,
-.card-blue:focus {
+.index-card-blue:hover,
+.index-card-blue:focus {
     background-color: #7c9fff;
 }
 
-.card-red.lighten:hover,
-.card-red.lighten:focus {
+.index-card-red.lighten:hover,
+.index-card-red.lighten:focus {
     background-color: #ffc2c2;
 }
 
-.card-blue.lighten:hover,
-.card-blue.lighten:focus {
+.index-card-blue.lighten:hover,
+.index-card-blue.lighten:focus {
     background-color: #b0c5ff;
 }
 
@@ -109,17 +114,17 @@
         padding-bottom: 12px;
     }
 
-    .card {
+    .index-card {
         padding-top: 20px;
         padding-bottom: 40px;
     }
 
-    .card > .icon {
+    .index-card > .icon {
         font-size: 64px;
         padding-bottom: 20px;
     }
 
-    .card > .description {
+    .index-card > .description {
         padding-left: 20%;
         padding-right: 20%;
     }
@@ -137,17 +142,17 @@
         padding-bottom: 12px;
     }
 
-    .card {
+    .index-card {
         padding-top: 20px;
         padding-bottom: 40px;
     }
 
-    .card > .icon {
+    .index-card > .icon {
         font-size: 64px;
         padding-bottom: 20px;
     }
 
-    .card > .description {
+    .index-card > .description {
         padding-left: 20%;
         padding-right: 20%;
     }

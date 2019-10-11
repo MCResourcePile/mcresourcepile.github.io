@@ -1,12 +1,12 @@
 {{> navigation_header}}
 <div id="searchable-collection" class="bow-output row">
-    <div class="col-md-3 col-md-push-9">
+    <div class="col-lg-3 order-lg-2 order-1">
         {{> page_search_menu_advanced}}
     </div>
-    <div class="col-md-9 col-md-pull-3 dynamic list">
+    <div class="col-lg-9 order-lg-1 order-2 dynamic list">
         {{#each (sortBy maps "name")}}
         {{#gte (length records) 1}}
-        <div class="bow-record thumbnail row">
+        <div class="bow-record img-thumbnail row">
             <div class="bow-record-header col-md-5">
                 <img class="lazy" data-src="https://github.com/MCResourcePile/{{@root.settings.maps.images.repo}}/blob/{{@root.settings.maps.images.branch}}/maps/{{#if slug}}{{slug}}{{else}}{{snakecase name}}{{/if}}.png?raw=true">
                 <div class="bow-titles">
@@ -22,15 +22,15 @@
                 {{#each (arrReverse (sortBy records "distance"))}}
                 <div class="bow-user-record{{#gt @index 2}} extended-record hidden{{/gt}}" data-user-uuid="{{formatUUID uuid 'strip'}}">
                     {{#eq @index 0}}
-                    <i class="fa fa-trophy"></i>
+                    <i class="fas fa-trophy"></i>
                     {{else}}
                     {{add @index 1}}.
                     {{/eq}}
                     <img class="bow-player-avatar" src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=30&default=MHF_Steve&overlay">
-                    <a class="bow-player click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}">{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</a>
+                    <span class="bow-player click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}">{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</span>
                     with a distance of <b>{{distance}}{{#if void}}<span title="Out-of-world kill" data-toggle="tooltip" data-placement="top">*</span>{{/if}}</b> blocks
                     {{#if screenshot}}
-                    <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fa fa-check-circle"></i></a>
+                    <a class="bow-reference" href="{{screenshot}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fas fa-check-circle"></i></a>
                     {{/if}}
                 </div>
                 {{/each}}

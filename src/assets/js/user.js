@@ -15,7 +15,7 @@ class User {
             reset: 0
         };
         this._preferences = {
-            theme: "default",
+            theme: "automatic",
             show_map_stats: true,
             show_map_images: true,
             show_map_suggestions: true,
@@ -58,7 +58,7 @@ class User {
      */
     resetPreferences() {
         this._preferences = {
-            theme: "default",
+            theme: "automatic",
             show_map_stats: true,
             show_map_images: true,
             show_map_suggestions: true,

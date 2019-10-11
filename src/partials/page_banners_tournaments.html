@@ -1,10 +1,10 @@
 {{> navigation_header}}
 <div id="searchable-collection" class="row">
-    <div class="col-md-3 col-md-push-9">
+    <div class="col-lg-3 order-lg-2 order-1">
         {{> page_search_menu_advanced}}
     </div>
-    <div class="col-md-9 col-md-pull-3{{#if @root.settings.tournaments.no_banner}} no-banners{{/if}}">
-        <div class="tm-banner-options thumbnail">
+    <div class="col-lg-9 order-lg-1 order-2{{#if @root.settings.tournaments.no_banner}} no-banners{{/if}}">
+        <div class="tm-banner-options img-thumbnail">
             Display: 
             <span class="active" id="display-text">
                 <i class="fas fa-font"></i> Text</a></li>
@@ -49,9 +49,9 @@
                     </div>
                     {{#unless @root.settings.tournaments.no_banner}}
                     {{#if default_banner}}
-                    <div class="league-default-banner lazy" data-bg="url('../../assets/img/tournament/banners/default/{{default_banner}}.jpg')" style="background-position: center; background-size: cover;" title="{{name}}">{{name}}</div>
+                    <div class="image-banner-default lazy" data-bg="url('../../assets/img/tournament/banners/default/{{default_banner}}.jpg')" style="background-position: center; background-size: cover;" title="{{name}}">{{name}}</div>
                     {{else}}
-                    <img class="league-banner lazy" data-src="../../assets/img/tournament/banners/{{@root.settings.tournaments.host}}/{{snakecase (lowercase name)}}.png">
+                    <img class="image-banner-custom lazy" data-src="../../assets/img/tournament/banners/{{@root.settings.tournaments.host}}/{{snakecase (lowercase name)}}.png">
                     {{/if}}
                     {{/unless}}
                 </a>

@@ -1,5 +1,5 @@
 $(function() {
-    $('#team-fade-checkbox').click(function() {
+    $('#team-fade-toggle').click(function() {
         if (this.checked) {
             $('.tm-team[data-advances="false"]').addClass('tm-team-fade');
         } else {

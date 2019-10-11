@@ -1,7 +1,7 @@
 {{#gte (length groups) 4}}
-<div class="tm-team-groups-grid">
+<div class="row">
     {{#each groups}}
-    <div class="tm-team-group">
+    <div class="col-sm-6 col-lg-4 col-xl-3">
         {{#if name}}
         <div class="team-group-name">{{name}}</div>
         <div class="team-group-name team-group-count">{{length teams}} teams</div>
@@ -25,9 +25,11 @@
     {{#if description}}
     <div class="team-group-name team-group-description">{{description}}</div>
     {{/if}}
-    <div class="tm-team-group-teams">
+    <div class="row">
         {{#each teams}}
-        {{> team_box}}
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+            {{> team_box}}
+        </div>
         {{/each}}
     </div>
     {{#unless @last}}<hr>{{/unless}}
