@@ -124,10 +124,7 @@ function setupSearch(config, type) {
 function filterMaps() {
     var range = false;
     if ($('#slider').length != 0) {
-        range = $('#slider').slider().context.value;
-        range = range.split(',');
-        range[0] = parseInt(range[0]);
-        range[1] = parseInt(range[1]);
+        range = $('#slider').slider('getValue');
     }
     if (filters.length > 0 || range) {
         searchable.filter(function(item) {
@@ -148,9 +145,10 @@ function filterMaps() {
             if ((options.match == "all" && options.invert == false && count == filters.length) || // match all selected filters
                 (options.match == "all" && options.invert == true && count < filters.length ) ||  // match not all selected filters
                 (options.match == "any" && options.invert == false && count > 0) ||               // match any selected filters
-                (options.match == "any" && options.invert == true && count == 0)) {               // match not any selected filters
+                (options.match == "any" && options.invert == true && count == 0) ||               // match not any selected filters
+                (filters.length == 0)) {                                                          // or if no filters are selected
 
-                if ($('#slider').length != 0) {
+                if (range) {
                     distances = item.values().distances;
                     distances = distances.split(',');
                     matched = false;
