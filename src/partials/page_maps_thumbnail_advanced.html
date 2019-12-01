@@ -19,7 +19,7 @@
                     {{/if}}
                     {{/if}}
                     {{#inArray @root.page-category 'collections'}}
-                    <div class="hidden tags">{{slug}},{{#inArray @root.data.new slug}}New,{{/inArray}}{{#inArray @root.data.popular slug}}Popular,{{/inArray}}{{#if commercial}}Commercial,{{else}}Noncommercial,{{/if}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
+                    <div class="hidden tags">{{slug}},{{#inArray @root.data.new slug}}New,{{/inArray}}{{#inArray @root.data.popular slug}}Popular,{{/inArray}}{{#unless sourced}}{{#if commercial}}Commercial,{{else}}Noncommercial,{{/if}}{{/unless}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
                     {{/inArray}}
                 </div>
                 <div class="icon-alerts">
@@ -56,11 +56,13 @@
                 <a href="?f=New" class="badge badge-primary">New</a>
                 {{/inArray}}
                 {{#if @root.settings.maps.downloads}}
+                {{#unless sourced}}
                 {{#if commercial}}
                 <a href="?f=Commercial" class="badge badge-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                 {{else}}
                 <a href="?f=Noncommercial" class="badge badge-warning" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
                 {{/if}}
+                {{/unless}}
                 {{/if}}
                 {{/inArray}}
                 {{#inArray @root.page-category 'contest'}}

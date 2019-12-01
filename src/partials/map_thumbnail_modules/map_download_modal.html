@@ -7,7 +7,7 @@
                     <span class="map-author-name">created by</span>
                     {{#if authors}}
                     {{#authors}}
-                    <li class="game-tag">{{#or username uuid}}<span class="click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}" {{#inArray @root.page-category 'contest'}}{{/inArray}}>{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</span>{{else}}Ghost{{/or}}</li>{{#unless @last}},{{/unless}}
+                    <li class="game-tag">{{#or username uuid}}<img class="map-author-avatar" data-src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=16&default=MHF_Steve&overlay"> <span class="click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}" {{#inArray @root.page-category 'contest'}}{{/inArray}}>{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</span>{{else}}<img class="map-author-avatar" data-src="https://crafatar.com/avatars/MHF_Question?size=16"> Ghost{{/or}}</li>{{#unless @last}},{{/unless}}
                     {{/authors}}
                     {{else}}
                     <img class="map-author-avatar" data-src="https://crafatar.com/avatars/MHF_Question?size=16&overlay"> <span class="map-author-name">Ghost</span>
@@ -60,11 +60,13 @@
                             {{#if contest}}<span class="badge badge-info">Contest Submission</span>{{/if}}
                             {{#inArray @root.data.new slug}}<span class="badge badge-primary">New</span>{{/inArray}}
                             {{#inArray @root.data.popular slug}}<span class="badge badge-danger">Popular</span>{{/inArray}}
+                            {{#unless sourced}}
                             {{#if commercial}}
                             <span class="badge badge-success">Commercial</span>
                             {{else}}
                             <span class="badge badge-warning">Noncommercial</span>
                             {{/if}}
+                            {{/unless}}
                             <span class="badge badge-primary">{{#if (lookup @root.settings.maps.environments environment)}}{{#with (lookup @root.settings.maps.environments environment)}}{{{this.label}}}{{/with}}{{else}}{{#with (lookup @root.settings.maps.environments @root.settings.maps.default_environment)}}{{{this.label}}}{{/with}}{{/if}}</span>
                             {{#if cardinal}}<span class="badge badge-primary">Cardinal</span>{{/if}}
                             <span class="badge badge-secondary">{{slug}}</span>
