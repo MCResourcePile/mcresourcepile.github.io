@@ -19,7 +19,7 @@
                     {{/if}}
                     {{/if}}
                     {{#inArray @root.page-category 'collections'}}
-                    <div class="hidden tags">{{slug}},{{#inArray @root.data.new slug}}New,{{/inArray}}{{#inArray @root.data.popular slug}}Popular,{{/inArray}}{{#inArray @root.data.rotations.micro slug}}Mirco,{{/inArray}}{{#inArray @root.data.rotations.mini slug}}Mini,{{/inArray}}{{#inArray @root.data.rotations.medium slug}}Medium,{{/inArray}}{{#inArray @root.data.rotations.mega slug}}Mega,{{/inArray}}{{#inArray @root.data.rotations.mammoth slug}}Mammoth,{{/inArray}}{{#if sourced}}Unlicensed,{{else}}{{#if commercial}}Commercial,{{else}}Noncommercial,{{/if}}{{/if}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
+                    <div class="hidden tags">{{slug}},{{#inArray @root.data.new slug}}New,{{/inArray}}{{#inArray @root.data.popular slug}}Popular,{{/inArray}}{{#if commercial}}Commercial,{{else}}Noncommercial,{{/if}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
                     {{/inArray}}
                 </div>
                 <div class="icon-alerts">
@@ -55,33 +55,11 @@
                 {{#inArray @root.data.new slug}}
                 <a href="?f=New" class="badge badge-primary">New</a>
                 {{/inArray}}
-                {{#inArray @root.data.popular slug}}
-                <a href="?f=Popular" class="badge badge-danger">Popular</a>
-                {{/inArray}}
-                {{#inArray @root.data.rotations.micro slug}}
-                <a href="?s=popular" class="badge badge-secondary">Micro</a>
-                {{/inArray}}
-                {{#inArray @root.data.rotations.mini slug}}
-                <a href="?s=popular" class="badge badge-secondary">Mini</a>
-                {{/inArray}}
-                {{#inArray @root.data.rotations.medium slug}}
-                <a href="?s=popular" class="badge badge-secondary">Medium</a>
-                {{/inArray}}
-                {{#inArray @root.data.rotations.mega slug}}
-                <a href="?s=popular" class="badge badge-secondary">Mega</a>
-                {{/inArray}}
-                {{#inArray @root.data.rotations.mammoth slug}}
-                <a href="?s=popular" class="badge badge-secondary">Mammoth</a>
-                {{/inArray}}
                 {{#if @root.settings.maps.downloads}}
-                {{#if sourced}}
-                <span class="badge badge-secondary">Unlicensed</span>
-                {{else}}
                 {{#if commercial}}
                 <a href="?f=Commercial" class="badge badge-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
                 {{else}}
                 <a href="?f=Noncommercial" class="badge badge-warning" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
-                {{/if}}
                 {{/if}}
                 {{/if}}
                 {{/inArray}}
