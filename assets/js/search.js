@@ -1,6 +1,10 @@
 var searchable;
 var searchable_type = "items";
 var filters = [];
+var options = {
+    match: "any",
+    invert: false
+}
 
 $(function() {
     //handle top position of search controls
@@ -36,9 +40,11 @@ $(function() {
     });
     
     // handle user filters
-    $('.filter').click(function() {
+    $('.filter:not(.filter-option)').click(function() {
         filter = $(this).text();
-        if ($(this).hasClass('active')) {
+        active = $(this).hasClass('active');
+
+        if (active) {
             $(this).removeClass('active');
             filters = filters.filter(function(f){
                 return f != filter;
@@ -47,6 +53,39 @@ $(function() {
             $(this).addClass('active');
             filters.push(filter);
         }
+
+        filterMaps();
+        updateUrl();
+    });
+  
+    // handle user filter options
+    $('.filter-option').click(function() {
+        option = $(this).data('option');
+        active = $(this).hasClass('active');
+        isToggle = $(this).data('toggle');
+
+        if (isToggle) {
+            if (active) {
+                $(this).removeClass('active');
+                $(this).siblings().first().addClass('active');
+                toggleValue = $(this).siblings().first().data('toggle');
+                options[option] = toggleValue;
+            } else {
+                $(this).addClass('active');
+                $(this).siblings().first().removeClass('active');
+                toggleValue = $(this).data('toggle');
+                options[option] = toggleValue;
+            }
+        } else {
+            if (active) {
+                $(this).removeClass('active');
+                options[option] = false;
+            } else {
+                $(this).addClass('active');
+                options[option] = true;
+            }
+        }
+
         filterMaps();
         updateUrl();
     });
@@ -85,10 +124,7 @@ function setupSearch(config, type) {
 function filterMaps() {
     var range = false;
     if ($('#slider').length != 0) {
-        range = $('#slider').slider().context.value;
-        range = range.split(',');
-        range[0] = parseInt(range[0]);
-        range[1] = parseInt(range[1]);
+        range = $('#slider').slider('getValue');
     }
     if (filters.length > 0 || range) {
         searchable.filter(function(item) {
@@ -106,8 +142,13 @@ function filterMaps() {
                     }
                 }
             }
-            if (count == filters.length) {
-                if ($('#slider').length != 0) {
+            if ((options.match == "all" && options.invert == false && count == filters.length) || // match all selected filters
+                (options.match == "all" && options.invert == true && count < filters.length ) ||  // match not all selected filters
+                (options.match == "any" && options.invert == false && count > 0) ||               // match any selected filters
+                (options.match == "any" && options.invert == true && count == 0) ||               // match not any selected filters
+                (filters.length == 0)) {                                                          // or if no filters are selected
+
+                if (range) {
                     distances = item.values().distances;
                     distances = distances.split(',');
                     matched = false;
@@ -157,6 +198,8 @@ function updateUrl() {
             if (search) string += "&";
             string += "f=" + filterArr;
         }
+        string += "&match=" + options.match;
+        string += "&invert=" + options.invert;
     }
     window.history.replaceState( {} , document.title, string);
 }
@@ -165,6 +208,8 @@ function parseUrl() {
     $('#search').val(getUrlParam('s'));
     var searchInput = getUrlParam('s');
     var urlFilters = getUrlParam('f');
+    options.match = getUrlParam('match');
+    options.invert = getUrlParam('invert');
     if (urlFilters || searchInput) {
         if (urlFilters) {
             urlFilters = urlFilters.split(',');
