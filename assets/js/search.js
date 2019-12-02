@@ -2,7 +2,7 @@ var searchable;
 var searchable_type = "items";
 var filters = [];
 var options = {
-    match: "any",
+    match: "all",
     invert: false
 }
 
@@ -208,9 +208,9 @@ function parseUrl() {
     $('#search').val(getUrlParam('s'));
     var searchInput = getUrlParam('s');
     var urlFilters = getUrlParam('f');
-    options.match = getUrlParam('match');
-    options.invert = getUrlParam('invert');
-    if (urlFilters || searchInput) {
+    var match = getUrlParam('match');
+    var invert = (getUrlParam('invert') == 'true');
+    if (urlFilters || searchInput || match || invert) {
         if (urlFilters) {
             urlFilters = urlFilters.split(',');
             for (i = 0; i < urlFilters.length; i++) {
@@ -219,6 +219,15 @@ function parseUrl() {
                 }).addClass('active');
                 filters.push(urlFilters[i]);
             }
+        }
+        if (match) {
+            options.match = match;
+            $(".filter-option[data-option='match']").removeClass('active');
+            $(".filter-option[data-option='match'][data-toggle=" + match + "]").addClass('active');
+        }
+        if (invert) {
+            options.invert = invert;
+            $(".filter-option[data-option='invert']").addClass('active');
         }
         filterMaps();
         updateSearch();
