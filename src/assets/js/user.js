@@ -35,9 +35,10 @@ class User {
      * @return {boolean} Success or fail response
      */
     setPreferences(p) {
+        const properties = ["theme", "show_map_stats", "show_map_images", "show_map_suggestions", "tm_banners_display"]
         try {
             for (var key in p) {
-                if (this._preferences[key] != undefined) {
+                if (properties.includes(key)) {
                     this._preferences[key] = p[key];
                 } else {
                     console.warn('Unknown User preference property:', key)
