@@ -1,7 +1,6 @@
-{{> navigation_header}}
 <div id="searchable-collection" class="bow-output row">
     <div class="col-lg-3 order-lg-2 order-1">
-        {{> page_search_menu_advanced}}
+        {{> search_sidebar}}
     </div>
     <div class="col-lg-9 order-lg-1 order-2 dynamic list">
         {{#each (sortBy maps "name")}}
@@ -49,4 +48,3 @@
         {{/each}}
     </div>
 </div>
-{{> navigation_footer}}

@@ -1,5 +1,3 @@
-{{> navigation_header}}
-{{#each lists}}
 <div class="list-section" id="{{snakecase (lowercase title)}}">
     <div class="list-heading">
         <div class="list-title">{{#if title}}{{title}}{{else}}File list{{/if}}</div>
@@ -30,5 +28,3 @@
         </tbody>
     </table>
 </div>
-{{/each}}
-{{> navigation_footer}}

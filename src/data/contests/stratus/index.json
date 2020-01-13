@@ -4,13 +4,56 @@
     "page-category": ["maps", "tournaments", "contest", "stratus"],
     "body": "Click on a contest for more information.",
     "settings": {
+        "include": {
+            "scripts": [
+                "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js",
+                "/assets/js/tournaments-banners.js",
+                "/assets/js/search.js"
+            ]
+        },
+        "tournaments": {
+            "host": "stratus",
+            "img_src": "/assets/img/contest/",
+            "type": "contests"
+        },
         "maps": {
-            "group": "stratus"
+            "advanced_menu": {
+                "placeholder": "contests",
+                "groups": [],
+                "dynamic": false
+            }
         }
     },
-    "contests": [
-        {"name": "Winter Mapmaking Contest", "heading": true},
-        {"name": "Destroy Map Making Competition", "heading": true},
-        {"name": "Mini Map Making Competition", "heading": true}
+    "tournaments": [
+        {
+            "name": "Mini Mapmaking Contest",
+            "banner_path": "mini_map_making_competition/banner.png",
+            "overlay": true,
+            "information": {
+                "year": 2017,
+                "dates": "April 4, 2017 to May 21, 2017",
+                "winner": "Midgard"
+            }
+        },
+        {
+            "name": "Destroy Mapmaking Contest",
+            "banner_path": "destroy_map_making_competition/banner.png",
+            "overlay": true,
+            "information": {
+                "year": 2017,
+                "dates": "July 14, 2017 to September 8, 2017",
+                "winner": "Midgard"
+            }
+        },
+        {
+            "name": "Winter Mapmaking Contest",
+            "banner_path": "winter_mapmaking_contest/banner.png",
+            "overlay": true,
+            "information": {
+                "year": 2019,
+                "dates": "January 31, 2019 to April 9, 2019",
+                "winner": "Outcrop"
+            }
+        }
     ]
 }

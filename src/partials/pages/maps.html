@@ -1,16 +1,11 @@
-{{> navigation_header}}
-{{#if data.featured.enabled}}{{> page_maps_featured}}{{/if}}
+{{> featured_maps}}
 <div id="searchable-collection" class="maps-output row center">
     <div class="col-lg-3 order-lg-2 order-1">
-        {{> page_search_menu_advanced}}
+        {{> search_sidebar}}
     </div>
     <div class="col-lg-9 order-lg-1 order-2 dynamic list">
         {{#each (sortBy data.maps "name")}}
-        {{#if data.maps.repo}}
-        {{> page_maps_thumbnail_advanced_repo}}
-        {{else}}
-        {{> page_maps_thumbnail_advanced}}
-        {{/if}}
+        {{> map_thumbnail}}
         {{/each}}
     </div>
 </div>
@@ -129,4 +124,3 @@
         </div>
     </div>
 </div>
-{{> navigation_footer}}

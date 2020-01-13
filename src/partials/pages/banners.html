@@ -1,0 +1,28 @@
+<div id="searchable-collection" class="row">
+    <div class="col-lg-3 order-lg-2 order-1">
+        {{> search_sidebar}}
+    </div>
+    <div class="col-lg-9 order-lg-1 order-2{{#if @root.settings.tournaments.no_banner}} no-banners{{/if}}">
+        <div class="tm-banner-options img-thumbnail">
+            Display: 
+            <span class="active" id="display-text">
+                <i class="fas fa-font"></i> Text</a></li>
+            </span>
+            <span class="active" id="display-banners">
+                <i class="fas fa-images"></i> Banners</a>
+            </span> |
+            <a href="/admin/preferences#preference-tm-banners-display" target="_blank">
+                <span>
+                    <i class="fas fa-cog"></i> Set a Default
+                </span>
+            </a>
+        </div>
+        <div class="list">
+            {{#each (arrReverse tournaments)}}
+            {{#unless hidden}}
+            {{> tm_banner}}
+            {{/unless}}
+            {{/each}}
+        </div>
+    </div>
+</div>

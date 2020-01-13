@@ -1,3 +1,4 @@
+{{#if @root.data.featured.enabled}}
 {{#isEmpty @root.data.featured.maps}}
 {{else}}
 <div class="collection-thumbnail map-glow-featured">
@@ -141,3 +142,4 @@ $(document).ready(function(){
 });
 </script>
 {{/isEmpty}}
+{{/if}}

@@ -1,5 +1,3 @@
-{{> navigation_header}}
-<!-- Contest banner -->
 <div class="center">
     {{#if @root.settings.maps.header}}
     <div class="image-banner-default" style="background: url('../../assets/img/contest/{{snakecase (lowercase title)}}/banner.png'); background-position: center; background-size: cover;">{{title}}</div>
@@ -11,21 +9,21 @@
     {{#if submissions}}
     {{#submissions}}
         {{#is position '1'}}
-        {{> page_maps_thumbnail_contest}}
+        {{> map_thumbnail_contest}}
         {{/is}}
     {{/submissions}}
     <div class="row">
         <div class="col-md-6">
             {{#submissions}}
                 {{#is position '2'}}
-                {{> page_maps_thumbnail_contest}}
+                {{> map_thumbnail_contest}}
                 {{/is}}
             {{/submissions}}
         </div>
         <div class="col-md-6">
             {{#submissions}}
                 {{#is position '3'}}
-                {{> page_maps_thumbnail_contest}}
+                {{> map_thumbnail_contest}}
                 {{/is}}
             {{/submissions}}
         </div>
@@ -117,7 +115,7 @@
 <div class="info-section-heading large">Submissions <small>{{length submissions}}</small></div>
 <div class="dynamic">
     {{#withSort submissions "name"}}
-    {{> page_maps_thumbnail_advanced}}
+    {{> map_thumbnail}}
     {{/withSort}}
 </div>
 <div class="info-section-heading large id-anchor" id="scores">Score Breakdown</div>
@@ -255,4 +253,3 @@
         });
     });
 </script>
-{{> navigation_footer}}
