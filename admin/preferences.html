@@ -1,27 +1,25 @@
 <html>
     <head>
         <title>Preferences - ResourcePile</title>
-        <!-- Page meta data -->
-        <meta charset=" UTF-8">
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Customize your ResourcePile experience" name="description">
-        <meta content="Preferences - ResourcePile" property="og:title">
-        <meta content="Customize your ResourcePile experience" name="og:description">
-        <meta content="website" property="og:type">
-        <meta content="ResourcePile" property="og:site_name">
-        <meta content="https://mcresourcepile.github.io/" property="og:url">
-        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
-        <meta content="summary" name="twitter:card">
-        <meta content="Preferences - ResourcePile" name="twitter:title">
-        <meta content="Customize your ResourcePile experience" name="twitter:description">
-        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <meta name="description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta property="og:title" content="{{title}} - ResourcePile"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://mcresourcepile.github.io/"/>
+        <meta property="og:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
+        <meta property="og:description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta property="og:site_name" content="ResourcePile"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:title" content="{{title}} - ResourcePile"/>
+        <meta name="tiwtter:description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta name="tiwtter:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
         <meta name="theme-color">
-        <!-- Page stylesheets -->
-        <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/assets/css/main.css" rel="stylesheet">
+        <link rel="shortcut icon" href="/assets/favicon.ico">        <!-- Page stylesheets -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/main.css">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -29,18 +27,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-91801520-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
     </head>
-    <body >
+    <body>
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/">
@@ -71,10 +59,10 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/leagues/overcast">Overcast Network</a>
-                                <a class="dropdown-item" href="/leagues/pgm">PGM Community</a>
-                                <a class="dropdown-item" href="/leagues/stratus">Stratus Network</a>
-                                <a class="dropdown-item" href="/leagues/avicus">Avicus Network</a>
+                                <a class="dropdown-item" href="/tournaments/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/tournaments/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/tournaments/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/tournaments/avicus">Avicus Network</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -88,7 +76,7 @@
                                 <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
                                 <p class="navbar-menu-title">Avicus</p>
                                 <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
-                           </div>
+                            </div>
                         </li>
                     </ul>
                     <ul class="navbar-nav navbar-right">
@@ -107,135 +95,133 @@
                     </noscript>
                 </div>
                 <div class="content-buffer"></div>
-            <!-- Start page content -->
-<div class="center user-header">
-    <img class="user-avatar" src="">
-    <h5 class="user-welcome"><strong>Welcome to ResourcePile, <span class="user-username"></span>.</strong></h5>
-    <div class="text-muted">Manage your User info and settings to make ResourcePile work better for you.</div>
-</div>
-<div class="row">
-    <div class="col-12" id="user-alert-wrapper" style="display: none;">
-        <div id="user-alert" class="alert alert-info"></div>
-    </div>
-    <div class="col-md-6 order-md-1 order-2">
-        <div class="card border-success">
-            <h5 class="card-header text-success border-success">GitHub Access Token</h5>
-            <div class="card-body">
-                <div>The GitHub API limits the amount of requests a single User can send during a period of time. By adding an access token, you will be able to increase the amount of requests allowed, increasing the amount of maps you can download at a time. <i>This token only allows us to access your <strong>public</strong> information.</i></div>
-                <div>You can generate a new GitHub API access token <strong><a href="https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216">here</a></strong>.</div>
-                <hr>
-                <form class="form-horizontal">
-                    <div class="form-group row">
-                        <label for="user-access-token" class="col-lg-3 control-label">Access Token</label>
-                        <div class="col-lg-9">
-                            <input type="password" id="user-access-token" name="user_access_token" tabindex="1" class="form-control" placeholder="Access Token" value="">
+                <div class="center user-header">
+                    <img class="user-avatar" src="">
+                    <h5 class="user-welcome"><strong>Welcome to ResourcePile, <span class="user-username"></span>.</strong></h5>
+                    <div class="text-muted">Manage your User info and settings to make ResourcePile work better for you.</div>
+                </div>
+                <div class="row">
+                    <div class="col-12" id="user-alert-wrapper" style="display: none;">
+                        <div id="user-alert" class="alert alert-info"></div>
+                    </div>
+                    <div class="col-md-6 order-md-1 order-2">
+                        <div class="card border-success">
+                            <h5 class="card-header text-success border-success">GitHub Access Token</h5>
+                            <div class="card-body">
+                                <div>The GitHub API limits the amount of requests a single User can send during a period of time. By adding an access token, you will be able to increase the amount of requests allowed, increasing the amount of maps you can download at a time. <i>This token only allows us to access your <strong>public</strong> information.</i></div>
+                                <div>You can generate a new GitHub API access token <strong><a href="https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216">here</a></strong>.</div>
+                                <hr>
+                                <form class="form-horizontal">
+                                    <div class="form-group row">
+                                        <label for="user-access-token" class="col-lg-3 control-label">Access Token</label>
+                                        <div class="col-lg-9">
+                                            <input type="password" id="user-access-token" name="user_access_token" tabindex="1" class="form-control" placeholder="Access Token" value="">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer text-right">
+                                <button id="user-reset-access-token" class="btn btn-danger">Reset</button>
+                                <button id="user-save-access-token" class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+                        <div class="card border-success">
+                            <h5 class="card-header text-success border-success">GitHub API Rate Limit</h5>
+                            <div class="card-body">
+                                <div>The following are your current request rate limits to the GitHub API.</div>
+                                <hr>
+                                <form class="form-horizontal">
+                                    <div class="form-group row">
+                                        <label for="user-rate-limit" class="col-lg-3 control-label">Request Limit</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" id="user-rate-limit" name="user_rate_limit" tabindex="1" class="form-control user-rate-limit" placeholder="0" value="" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="user-rate-remaining" class="col-lg-3 control-label">Requests Remaining</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" id="user-rate-remaining" name="user_rate_remaining" tabindex="1" class="form-control user-rate-remaining" placeholder="0" value="" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="user-rate-reset" class="col-lg-3 control-label">Limit Resets At</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" id="user-rate-reset" name="user_rate_reset" tabindex="1" class="form-control user-rate-reset" placeholder="0" value="" disabled>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="card-footer text-right">
-                <button id="user-reset-access-token" class="btn btn-danger">Reset</button>
-                <button id="user-save-access-token" class="btn btn-success">Save</button>
-            </div>
-        </div>
-        <div class="card border-success">
-            <h5 class="card-header text-success border-success">GitHub API Rate Limit</h5>
-            <div class="card-body">
-                <div>The following are your current request rate limits to the GitHub API.</div>
-                <hr>
-                <form class="form-horizontal">
-                    <div class="form-group row">
-                        <label for="user-rate-limit" class="col-lg-3 control-label">Request Limit</label>
-                        <div class="col-lg-9">
-                            <input type="text" id="user-rate-limit" name="user_rate_limit" tabindex="1" class="form-control user-rate-limit" placeholder="0" value="" disabled>
+                    <div class="col-md-6 order-md-2 order-1">
+                        <div class="card border-primary">
+                            <h5 class="card-header text-primary border-primary">Site Preferences</h5>
+                            <div class="card-body">
+                                <div>Customize how you see and interact with the ResourcePile website.</div>
+                                <hr>
+                                <form class="form-horizontal">
+                                    <div class="form-group row">
+                                        <label for="preference-theme" class="col-lg-3 control-label">Theme</label>
+                                        <div class="col-lg-9">
+                                            <select id="preference-theme" name="theme" class="custom-select preference" aria-describedby="preference-theme-help">
+                                                <option value="automatic">Automatic</option>
+                                                <option value="light">Light</option>
+                                                <option value="dark">Dark</option>
+                                            </select>
+                                            <small id="preference-theme-help" class="form-text">Choose which theme to display. Automatic will switch between light and dark only if your browser supports it. Otherwise, light will be set.</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="preference-show-map-stats" class="col-lg-3 control-label">Map Statistics</label>
+                                        <div class="col-lg-9">
+                                            <select id="preference-show-map-stats" name="show_map_stats" class="custom-select preference" aria-describedby="preference-show-map-stats-help">
+                                                <option value="true">True</option>
+                                                <option value="false">False</option>
+                                            </select>
+                                            <small id="preference-show-map-stats-help" class="form-text">Display additional map download statistics for collection maps.</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="preference-show-map-images" class="col-lg-3 control-label">Map Images</label>
+                                        <div class="col-lg-9">
+                                            <select id="preference-show-map-images" name="show_map_images" class="custom-select preference" aria-describedby="preference-show-map-images-help">
+                                                <option value="true">True</option>
+                                                <option value="false">False</option>
+                                            </select>
+                                            <small id="preference-show-map-images-help" class="form-text">Remove map images to improve loading times for slower connections.</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="preference-show-map-suggestions" class="col-lg-3 control-label">Suggestions</label>
+                                        <div class="col-lg-9">
+                                            <select id="preference-show-map-suggestions" name="show_map_suggestions" class="custom-select preference" aria-describedby="preference-show-map-suggestions-help">
+                                                <option value="true">True</option>
+                                                <option value="false">False</option>
+                                            </select>
+                                            <small id="preference-show-map-suggestions-help" class="form-text">Suggest similar maps to the ones just downloaded.</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="preference-tm-banners-display" class="col-lg-3 control-label">Tournament Banners</label>
+                                        <div class="col-lg-9">
+                                            <select id="preference-tm-banners-display" name="tm_banners_display" class="custom-select  preference" aria-describedby="preference-tm-banners-display-help">
+                                                <option value="all">All</option>
+                                                <option value="only-text">Only Text</option>
+                                                <option value="only-banners">Only Banners</option>
+                                            </select>
+                                            <small id="preference-tm-banners-display-help" class="form-text">Choose what should be displayed for tournament banners.</small>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer text-right">
+                                <button id="user-reset-preferences" class="btn btn-danger">Reset</button>
+                                <button id="user-save-preferences" class="btn btn-success">Save</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="user-rate-remaining" class="col-lg-3 control-label">Requests Remaining</label>
-                        <div class="col-lg-9">
-                            <input type="text" id="user-rate-remaining" name="user_rate_remaining" tabindex="1" class="form-control user-rate-remaining" placeholder="0" value="" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="user-rate-reset" class="col-lg-3 control-label">Limit Resets At</label>
-                        <div class="col-lg-9">
-                            <input type="text" id="user-rate-reset" name="user_rate_reset" tabindex="1" class="form-control user-rate-reset" placeholder="0" value="" disabled>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 order-md-2 order-1">
-        <div class="card border-primary">
-            <h5 class="card-header text-primary border-primary">Site Preferences</h5>
-            <div class="card-body">
-                <div>Customize how you see and interact with the ResourcePile website.</div>
-                <hr>
-                <form class="form-horizontal">
-                    <div class="form-group row">
-                        <label for="preference-theme" class="col-lg-3 control-label">Theme</label>
-                        <div class="col-lg-9">
-                            <select id="preference-theme" name="theme" class="custom-select preference" aria-describedby="preference-theme-help">
-                                <option value="automatic">Automatic</option>
-                                <option value="light">Light</option>
-                                <option value="dark">Dark</option>
-                            </select>
-                            <small id="preference-theme-help" class="form-text">Choose which theme to display. Automatic will switch between light and dark only if your browser supports it. Otherwise, light will be set.</small>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="preference-show-map-stats" class="col-lg-3 control-label">Map Statistics</label>
-                        <div class="col-lg-9">
-                            <select id="preference-show-map-stats" name="show_map_stats" class="custom-select preference" aria-describedby="preference-show-map-stats-help">
-                                <option value="true">True</option>
-                                <option value="false">False</option>
-                            </select>
-                            <small id="preference-show-map-stats-help" class="form-text">Display additional map download statistics for collection maps.</small>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="preference-show-map-images" class="col-lg-3 control-label">Map Images</label>
-                        <div class="col-lg-9">
-                            <select id="preference-show-map-images" name="show_map_images" class="custom-select preference" aria-describedby="preference-show-map-images-help">
-                                <option value="true">True</option>
-                                <option value="false">False</option>
-                            </select>
-                            <small id="preference-show-map-images-help" class="form-text">Remove map images to improve loading times for slower connections.</small>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="preference-show-map-suggestions" class="col-lg-3 control-label">Suggestions</label>
-                        <div class="col-lg-9">
-                            <select id="preference-show-map-suggestions" name="show_map_suggestions" class="custom-select preference" aria-describedby="preference-show-map-suggestions-help">
-                                <option value="true">True</option>
-                                <option value="false">False</option>
-                            </select>
-                            <small id="preference-show-map-suggestions-help" class="form-text">Suggest similar maps to the ones just downloaded.</small>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="preference-tm-banners-display" class="col-lg-3 control-label">Tournament Banners</label>
-                        <div class="col-lg-9">
-                            <select id="preference-tm-banners-display" name="tm_banners_display" class="custom-select  preference" aria-describedby="preference-tm-banners-display-help">
-                                <option value="all">All</option>
-                                <option value="only-text">Only Text</option>
-                                <option value="only-banners">Only Banners</option>
-                            </select>
-                            <small id="preference-tm-banners-display-help" class="form-text">Choose what should be displayed for tournament banners.</small>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="card-footer text-right">
-                <button id="user-reset-preferences" class="btn btn-danger">Reset</button>
-                <button id="user-save-preferences" class="btn btn-success">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="center text-muted">This information is not tracked or stored by ResourcePile and is only accessible by this device.</div>
-            <!-- End page content -->
+                </div>
+                <div class="center text-muted">This information is not tracked or stored by ResourcePile and is only accessible by this device.</div>
             </div>
         </div>
         <div class="footer">
@@ -257,7 +243,6 @@
                         <div class="footer-section-head">Administration</div>
                         <a class="footer-item" href="/policies/terms">Terms of Use</a>
                         <a class="footer-item" href="/policies/maps">Map Policy</a>
-                        <a class="footer-item" href="/admin/references">References</a>
                     </div>
                     <div class="footer-section col-md-3">
                         <div class="footer-section-head">Site</div>

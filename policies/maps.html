@@ -1,27 +1,25 @@
 <html>
     <head>
         <title>Map Policy - ResourcePile</title>
-        <!-- Page meta data -->
-        <meta charset=" UTF-8">
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="ResourcePile&#x27;s map acquisition and use agreement" name="description">
-        <meta content="Map Policy - ResourcePile" property="og:title">
-        <meta content="ResourcePile&#x27;s map acquisition and use agreement" name="og:description">
-        <meta content="website" property="og:type">
-        <meta content="ResourcePile" property="og:site_name">
-        <meta content="https://mcresourcepile.github.io/" property="og:url">
-        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
-        <meta content="summary" name="twitter:card">
-        <meta content="Map Policy - ResourcePile" name="twitter:title">
-        <meta content="ResourcePile&#x27;s map acquisition and use agreement" name="twitter:description">
-        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <meta name="description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta property="og:title" content="{{title}} - ResourcePile"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://mcresourcepile.github.io/"/>
+        <meta property="og:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
+        <meta property="og:description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta property="og:site_name" content="ResourcePile"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:title" content="{{title}} - ResourcePile"/>
+        <meta name="tiwtter:description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta name="tiwtter:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
         <meta name="theme-color">
-        <!-- Page stylesheets -->
-        <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/assets/css/main.css" rel="stylesheet">
+        <link rel="shortcut icon" href="/assets/favicon.ico">        <!-- Page stylesheets -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/main.css">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -29,18 +27,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-91801520-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
     </head>
-    <body >
+    <body>
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/">
@@ -71,10 +59,10 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/leagues/overcast">Overcast Network</a>
-                                <a class="dropdown-item" href="/leagues/pgm">PGM Community</a>
-                                <a class="dropdown-item" href="/leagues/stratus">Stratus Network</a>
-                                <a class="dropdown-item" href="/leagues/avicus">Avicus Network</a>
+                                <a class="dropdown-item" href="/tournaments/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/tournaments/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/tournaments/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/tournaments/avicus">Avicus Network</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -88,7 +76,7 @@
                                 <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
                                 <p class="navbar-menu-title">Avicus</p>
                                 <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
-                           </div>
+                            </div>
                         </li>
                     </ul>
                     <ul class="navbar-nav navbar-right">
@@ -110,14 +98,12 @@
                     <div class="content-title">Map Policy</div>
                     <div class="content-subtitle">Last updated on the 22nd of February, 2017</div>
                 </div>
-            <!-- Start page content -->
-<div class="content-body">
-    The maps which have been uploaded to our, MCResourcePile, GitHub repositories and website have been obtained either by direct consent from <b>one</b> or more of the documented authors or have been acquired from public downloads from the <a href="https://oc.tc/forums" target="_blank">Overcast Network</a> or <a href="https://avicus.net" target="_blank">Avicus Network</a> forums with working downloads for that specific map. Maps that have been retrieved from public forum threads have been updated to their latest version to ensure their stability and functionality on PGM running servers. These maps, unless explicitly specified on the public download, are not associated with any type of license or terms of use and we, MCResourcePile, will never apply these to those maps without direct consent and approval from <b>one</b> or more of the documented authors.<br><br>
-    By downloading any map from our service, being the <a href="https://mcresourcepile.github.io/" target="_blank">MCResourcePile website</a>, or downloading any of our GitHub map repositories, it is assumed you have read the <a href="terms" target="_blank">terms of use</a> and the associated license you agreed to before downloading the map and that you follow these guidelines when using the maps. By not following these terms you are compromising the system in which this service is based upon and the relationship between map authors and users.<br><br>
-    While you are not required to inform map authors of your purpose with the map as long as the associated license permits it, it would be considered morally respectful to inform or ask for further permissions from authors about your intention with the map especially in situations where you would be making profit from using or hosting the map on a public server environment.<br><br>
-    If you are one of the documented authors of any of the maps which are in our map repositories you are free to request its removal at any time by creating in issue in the respective maps repository or by contacting us directly through discord or <a href="https://mcresourcepile.github.io/admin/forms/contact" target="_blank">here</a>. We will remove the related files as quickly as possible, but we are unable to prevent anyone who has already obtained a copy of your map from using it as long as they are using it by the license attached to the download and our <a href="terms" target="_blank">terms of use</a>.
-</div>
-            <!-- End page content -->
+                <div class="content-body">
+                    The maps which have been uploaded to our, MCResourcePile, GitHub repositories and website have been obtained either by direct consent from <b>one</b> or more of the documented authors or have been acquired from public downloads from the <a href="https://oc.tc/forums" target="_blank">Overcast Network</a> or <a href="https://avicus.net" target="_blank">Avicus Network</a> forums with working downloads for that specific map. Maps that have been retrieved from public forum threads have been updated to their latest version to ensure their stability and functionality on PGM running servers. These maps, unless explicitly specified on the public download, are not associated with any type of license or terms of use and we, MCResourcePile, will never apply these to those maps without direct consent and approval from <b>one</b> or more of the documented authors.<br><br>
+                    By downloading any map from our service, being the <a href="https://mcresourcepile.github.io/" target="_blank">MCResourcePile website</a>, or downloading any of our GitHub map repositories, it is assumed you have read the <a href="terms" target="_blank">terms of use</a> and the associated license you agreed to before downloading the map and that you follow these guidelines when using the maps. By not following these terms you are compromising the system in which this service is based upon and the relationship between map authors and users.<br><br>
+                    While you are not required to inform map authors of your purpose with the map as long as the associated license permits it, it would be considered morally respectful to inform or ask for further permissions from authors about your intention with the map especially in situations where you would be making profit from using or hosting the map on a public server environment.<br><br>
+                    If you are one of the documented authors of any of the maps which are in our map repositories you are free to request its removal at any time by creating in issue in the respective maps repository or by contacting us directly through discord or <a href="https://mcresourcepile.github.io/admin/forms/contact" target="_blank">here</a>. We will remove the related files as quickly as possible, but we are unable to prevent anyone who has already obtained a copy of your map from using it as long as they are using it by the license attached to the download and our <a href="terms" target="_blank">terms of use</a>.
+                </div>
             </div>
         </div>
         <div class="footer">
@@ -139,7 +125,6 @@
                         <div class="footer-section-head">Administration</div>
                         <a class="footer-item" href="/policies/terms">Terms of Use</a>
                         <a class="footer-item" href="/policies/maps">Map Policy</a>
-                        <a class="footer-item" href="/admin/references">References</a>
                     </div>
                     <div class="footer-section col-md-3">
                         <div class="footer-section-head">Site</div>

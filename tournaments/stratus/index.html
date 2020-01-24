@@ -1,0 +1,368 @@
+<html>
+    <head>
+        <title>Stratus Network Tournament Records - ResourcePile</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta property="og:title" content="{{title}} - ResourcePile"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://mcresourcepile.github.io/"/>
+        <meta property="og:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
+        <meta property="og:description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta property="og:site_name" content="ResourcePile"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:title" content="{{title}} - ResourcePile"/>
+        <meta name="tiwtter:description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta name="tiwtter:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
+        <meta name="theme-color">
+        <link rel="shortcut icon" href="/assets/favicon.ico">        <!-- Page stylesheets -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/main.css">
+        <!-- Page script files -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="/assets/js/user.js"></script>
+        <script src="/assets/js/preferences.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+        <script src="/assets/js/tournaments-banners.js"></script>
+        <script src="/assets/js/search.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <span class="fas fa-folder-open" style="padding-right: 5px;" aria-hidden="true"></span> ResourcePile
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-cubes"></i> Maps</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/maps/overcast">Overcast Collection</a>
+                                <a class="dropdown-item" href="/maps/pgm">PGM Collection</a>
+                                <a class="dropdown-item" href="/maps/stratus">Stratus Collection</a>
+                                <a class="dropdown-item" href="/maps/avicus">Avicus Collection</a>
+                                <a class="dropdown-item" href="/maps/rfw">RFW Collection</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-medal"></i> Contests</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/contests/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/contests/stratus">Stratus Network</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/tournaments/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/tournaments/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/tournaments/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/tournaments/avicus">Avicus Network</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-chart-bar"></i> Statistics</a>
+                            <div class="dropdown-menu">
+                                <p class="navbar-menu-title">Overcast</p>
+                                <a class="dropdown-item" href="/stats/overcast/bow">Bow Records</a>
+                                <a class="dropdown-item" href="/stats/overcast/miscellaneous">Miscellaneous</a>
+                                <a class="dropdown-item" href="/stats/overcast/objective">Objective Leaderboards</a>
+                                <p class="navbar-menu-title">Stratus</p>
+                                <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
+                                <p class="navbar-menu-title">Avicus</p>
+                                <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="content-background">
+            <div class="container">
+                <div class="content-alert">
+                    <noscript>
+                        <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
+                    </noscript>
+                </div>
+                <div class="content-header">
+                    <div class="content-title">Stratus Network Tournament Records</div>
+                    <div class="content-subtitle">Records for tournaments hosted by Stratus Network</div>
+                </div>
+                <p>Click on a tournament for more information.</p>
+                <div id="searchable-collection" class="row">
+                    <div class="col-lg-3 order-lg-2 order-1">
+                        <div class="img-thumbnail map-search">
+                            <div class="center">
+                                <span id="searchable-count"></span>
+                            </div>
+                            <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search tournaments">
+                            <div class="filters">
+                                <b>Filters</b>
+                                <small>Use filters to narrow your query when searching for specific tournaments.</small>
+                                <div class="group">
+                                    <b>Types</b>
+                                    <span class="filter">Tournament</span>
+                                    <span class="filter">Mini Event</span>
+                                </div>
+                                <div class="group">
+                                    <b>Games</b>
+                                    <span class="filter">Capture Points</span>
+                                    <span class="filter">Capture the Wool</span>
+                                    <span class="filter">Capture the Flag</span>
+                                    <span class="filter">Destroy the Core</span>
+                                    <span class="filter">Destroy the Monument</span>
+                                    <span class="filter">King of the Flag</span>
+                                    <span class="filter">King of the Hill</span>
+                                    <span class="filter">Team Deathmatch</span>
+                                </div>
+                                <div class="group">
+                                    <b>Addons</b>
+                                    <span class="filter">Attack/Defend</span>
+                                    <span class="filter">Blitz</span>
+                                </div>
+                                <div class="group search-options">
+                                    <b>Filter Options</b>
+                                    <small>Use filter options to alter how tournaments are filtered.</small>
+                                    <span class="filter-option-toggle">
+                                        <span class="filter filter-option active" data-option="match" data-toggle="all">Match All Filters</span>
+                                        <span class="filter filter-option" data-option="match" data-toggle="any">Match Any Filter</span>
+                                    </span>
+                                    <span class="filter filter-option" data-option="invert">Invert Filters</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 order-lg-1 order-2">
+                        <div class="tm-banner-options img-thumbnail">
+                            Display: 
+                            <span class="active" id="display-text">
+                                <i class="fas fa-font"></i> Text</a></li>
+                            </span>
+                            <span class="active" id="display-banners">
+                                <i class="fas fa-images"></i> Banners</a>
+                            </span> |
+                            <a href="/admin/preferences#preference-tm-banners-display" target="_blank">
+                                <span>
+                                    <i class="fas fa-cog"></i> Set a Default
+                                </span>
+                            </a>
+                        </div>
+                        <div class="list">
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#7</strong></span>
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 31, 2019 to September 1, 2019"><i class="far fa-calendar"></i> 2019</span>
+                                    <span class="tm-label click-search" data-query="ZUU"><i class="fas fa-trophy"></i> ZUU</span>
+                                </div>
+                                <a href="/tournaments/stratus/conquest_reloaded">
+                                    <div class="tm-name">Conquest Reloaded</div>
+                                    <div class="tm-tags">
+                                        <span class="tm-tag">Capture Points</span>,
+                                        <span class="tm-tag">Capture the Flag</span>,
+                                        <span class="tm-tag">King of the Flag</span>,
+                                        <span class="tm-tag">King of the Hill</span>,
+                                        <span class="tm-tag">Team Deathmatch</span>
+                                        <div class="tags hidden">ZUU,Tournament,Capture Points,Capture the Flag,King of the Flag,King of the Hill,Team Deathmatch</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/tournament/banners/stratus/conquest_reloaded.png">
+                                </a>
+                            </div>
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#6</strong></span>
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="June 15-16, 2019 to June 29-30, 2019"><i class="far fa-calendar"></i> 2019</span>
+                                    <span class="tm-label click-search" data-query="Adventure Club"><i class="fas fa-trophy"></i> Adventure Club</span>
+                                </div>
+                                <a href="/tournaments/stratus/wool_e">
+                                    <div class="tm-name">WOOL-E</div>
+                                    <div class="tm-tags">
+                                        <span class="tm-tag">Capture the Wool</span>
+                                        <div class="tags hidden">Adventure Club,Tournament,Capture the Wool</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/tournament/banners/stratus/wool_e.png">
+                                </a>
+                            </div>
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#5</strong></span>
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="March 9-10, 2019 to March 16-17, 2019"><i class="far fa-calendar"></i> 2019</span>
+                                    <span class="tm-label click-search" data-query="Aura"><i class="fas fa-trophy"></i> Aura</span>
+                                </div>
+                                <a href="/tournaments/stratus/stratus_into_the_gamemodes">
+                                    <div class="tm-name">Stratus: Into the Gamemodes</div>
+                                    <div class="tm-tags">
+                                        <span class="tm-tag">Capture Points</span>,
+                                        <span class="tm-tag">Capture the Wool</span>,
+                                        <span class="tm-tag">Destroy the Core and Monument</span>,
+                                        <span class="tm-tag">King of the Flag</span>,
+                                        <span class="tm-tag">King of the Hill</span>
+                                        <div class="tags hidden">Aura,Tournament,Capture Points,Capture the Wool,Destroy the Core and Monument,King of the Flag,King of the Hill</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/tournament/banners/stratus/stratus_into_the_gamemodes.png">
+                                </a>
+                            </div>
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#4</strong></span>
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 10-11, 2018 to August 17-18, 2018"><i class="far fa-calendar"></i> 2018</span>
+                                    <span class="tm-label click-search" data-query="men"><i class="fas fa-trophy"></i> men</span>
+                                </div>
+                                <a href="/tournaments/stratus/fullmetal_conquest">
+                                    <div class="tm-name">Fullmetal Conquest</div>
+                                    <div class="tm-tags">
+                                        <span class="tm-tag">Capture Points</span>,
+                                        <span class="tm-tag">Capture the Flag</span>,
+                                        <span class="tm-tag">King of the Flag</span>,
+                                        <span class="tm-tag">King of the Hill</span>,
+                                        <span class="tm-tag">Team Deathmatch</span>
+                                        <div class="tags hidden">men,Tournament,Capture Points,Capture the Flag,King of the Flag,King of the Hill,Team Deathmatch</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/tournament/banners/stratus/fullmetal_conquest.png">
+                                </a>
+                            </div>
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#3</strong></span>
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="August 11-12, 2018 to August 18-19, 2018"><i class="far fa-calendar"></i> 2018</span>
+                                    <span class="tm-label click-search" data-query="Night Doobers"><i class="fas fa-trophy"></i> Night Doobers</span>
+                                </div>
+                                <a href="/tournaments/stratus/incrediwools">
+                                    <div class="tm-name">Incrediwools</div>
+                                    <div class="tm-tags">
+                                        <span class="tm-tag">Capture the Wool</span>
+                                        <div class="tags hidden">Night Doobers,Tournament,Capture the Wool</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/tournament/banners/stratus/incrediwools.png">
+                                </a>
+                            </div>
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label click-search" data-query="Mini Event">Mini Event <strong>#3</strong></span>
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="July 7, 2018"><i class="far fa-calendar"></i> 2018</span>
+                                    <span class="tm-label click-search" data-query="YACK"><i class="fas fa-trophy"></i> YACK</span>
+                                </div>
+                                <a href="/tournaments/stratus/attack_on_point">
+                                    <div class="tm-name">Attack on Point</div>
+                                    <div class="tm-tags">
+                                        <span class="tm-tag">Capture Points</span>
+                                        <div class="tags hidden">YACK,Mini Event,Capture Points</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/tournament/banners/stratus/attack_on_point.png">
+                                </a>
+                            </div>
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#2</strong></span>
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="March 10, 2018 to March 24-25, 2018"><i class="far fa-calendar"></i> 2018</span>
+                                    <span class="tm-label click-search" data-query="Praetorians"><i class="fas fa-trophy"></i> Praetorians</span>
+                                </div>
+                                <a href="/tournaments/stratus/stranger_cores">
+                                    <div class="tm-name">Stratus: Stranger Cores</div>
+                                    <div class="tm-tags">
+                                        <span class="tm-tag">Destroy the Core and Monument</span>
+                                        <div class="tags hidden">Praetorians,Tournament,Destroy the Core and Monument</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/tournament/banners/stratus/stranger_cores.png">
+                                </a>
+                            </div>
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label click-search" data-query="Mini Event">Mini Event <strong>#2</strong></span>
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="December 16, 2017"><i class="far fa-calendar"></i> 2017</span>
+                                    <span class="tm-label click-search" data-query="Pochinki"><i class="fas fa-trophy"></i> Pochinki</span>
+                                </div>
+                                <a href="/tournaments/stratus/the_quad_before_christmas">
+                                    <div class="tm-name">The Quad Before Christmas</div>
+                                    <div class="tm-tags">
+                                        <span class="tm-tag">Blitz</span>
+                                        <div class="tags hidden">Pochinki,Mini Event,Blitz</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/tournament/banners/stratus/the_quad_before_christmas.png">
+                                </a>
+                            </div>
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label click-search" data-query="Mini Event">Mini Event <strong>#1</strong></span>
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="October 14, 2017"><i class="far fa-calendar"></i> 2017</span>
+                                    <span class="tm-label click-search" data-query="Pochinki"><i class="fas fa-trophy"></i> Pochinki</span>
+                                </div>
+                                <a href="/tournaments/stratus/just_deserts">
+                                    <div class="tm-name">Just Deserts</div>
+                                    <div class="tm-tags">
+                                        <span class="tm-tag">King of the Flag</span>
+                                        <div class="tags hidden">Pochinki,Mini Event,King of the Flag</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/tournament/banners/stratus/just_deserts.png">
+                                </a>
+                            </div>
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label click-search" data-query="Tournament">Tournament <strong>#1</strong></span>
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="June 24-25, 2017 to July 2, 2017"><i class="far fa-calendar"></i> 2017</span>
+                                    <span class="tm-label click-search" data-query="DARN"><i class="fas fa-trophy"></i> DARN</span>
+                                </div>
+                                <a href="/tournaments/stratus/stratus_return_of_the_gamemodes">
+                                    <div class="tm-name">Stratus: Return of the Gamemodes</div>
+                                    <div class="tm-tags">
+                                        <span class="tm-tag">Capture Points</span>,
+                                        <span class="tm-tag">Capture the Flag</span>,
+                                        <span class="tm-tag">Capture the Wool</span>,
+                                        <span class="tm-tag">Destroy the Core</span>,
+                                        <span class="tm-tag">Destroy the Monument</span>,
+                                        <span class="tm-tag">King of the Hill</span>,
+                                        <span class="tm-tag">Team Deathmatch</span>
+                                        <div class="tags hidden">DARN,Tournament,Capture Points,Capture the Flag,Capture the Wool,Destroy the Core,Destroy the Monument,King of the Hill,Team Deathmatch</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/tournament/banners/stratus/stratus_return_of_the_gamemodes.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row center" style="width: 70%">
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">About</div>
+                        <a class="footer-item" href="/staff">Staff</a>
+                        <a class="footer-item" href="/updates">Updates</a>
+                        <a class="footer-item" href="https://discord.gg/ygNgxKj">Discord</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Development</div>
+                        <a class="footer-item" href="/revisions/website">Revisions</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile" target="_blank">GitHub</a>
+                        <a class="footer-item" href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Report an Issue</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Administration</div>
+                        <a class="footer-item" href="/policies/terms">Terms of Use</a>
+                        <a class="footer-item" href="/policies/maps">Map Policy</a>
+                    </div>
+                    <div class="footer-section col-md-3">
+                        <div class="footer-section-head">Site</div>
+                        <a class="footer-item" href="/tools">Tools</a>
+                        <a class="footer-item" href="/admin/preferences">Preferences</a>
+                        <a class="footer-item" href="/addon-project/wiki">Addon Project</a>
+                    </div>
+                </div>
+                <div class="footer-bottom center">© 2020 ResourcePile</div>
+            </div>
+        </div>
+        <script src="/assets/js/global.js"></script>
+    </body>
+</html>

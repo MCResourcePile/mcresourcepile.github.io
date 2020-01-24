@@ -1,27 +1,25 @@
 <html>
     <head>
         <title>Overcast Miscellaneous Stats - ResourcePile</title>
-        <!-- Page meta data -->
-        <meta charset=" UTF-8">
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="A collection of various website stats from Overcast Network" name="description">
-        <meta content="Overcast Miscellaneous Stats - ResourcePile" property="og:title">
-        <meta content="A collection of various website stats from Overcast Network" name="og:description">
-        <meta content="website" property="og:type">
-        <meta content="ResourcePile" property="og:site_name">
-        <meta content="https://mcresourcepile.github.io/" property="og:url">
-        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
-        <meta content="summary" name="twitter:card">
-        <meta content="Overcast Miscellaneous Stats - ResourcePile" name="twitter:title">
-        <meta content="A collection of various website stats from Overcast Network" name="twitter:description">
-        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <meta name="description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta property="og:title" content="{{title}} - ResourcePile"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://mcresourcepile.github.io/"/>
+        <meta property="og:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
+        <meta property="og:description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta property="og:site_name" content="ResourcePile"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:title" content="{{title}} - ResourcePile"/>
+        <meta name="tiwtter:description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta name="tiwtter:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
         <meta name="theme-color">
-        <!-- Page stylesheets -->
-        <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/assets/css/main.css" rel="stylesheet">
+        <link rel="shortcut icon" href="/assets/favicon.ico">        <!-- Page stylesheets -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/main.css">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -29,18 +27,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-91801520-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
     </head>
-    <body >
+    <body>
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/">
@@ -71,10 +59,10 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/leagues/overcast">Overcast Network</a>
-                                <a class="dropdown-item" href="/leagues/pgm">PGM Community</a>
-                                <a class="dropdown-item" href="/leagues/stratus">Stratus Network</a>
-                                <a class="dropdown-item" href="/leagues/avicus">Avicus Network</a>
+                                <a class="dropdown-item" href="/tournaments/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/tournaments/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/tournaments/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/tournaments/avicus">Avicus Network</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown active">
@@ -88,7 +76,7 @@
                                 <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
                                 <p class="navbar-menu-title">Avicus</p>
                                 <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
-                           </div>
+                            </div>
                         </li>
                     </ul>
                     <ul class="navbar-nav navbar-right">
@@ -111,428 +99,425 @@
                     <div class="content-subtitle">A collection of various website stats from Overcast Network</div>
                 </div>
                 <p>None of the information on this page is official. Usernames may not be current.</p>
-            <!-- Start page content -->
-<div class="row">
-    <div class="col-md-4">
-        <div class="card border-danger">
-            <h5 class="card-header text-danger border-danger">
-                <i class="fas fa-edit" style="font-size: 28px; margin-right: 5px;"></i> Topics Started
-            </h5>
-            <div class="card-body">
-                <ol>
-                    <li>
-                        <img src="https://crafatar.com/avatars/36dc036a-dfbc-4627-b66a-501223f08075?size=16&default=MHF_Steve&overlay">
-                        <strong>bend</strong> - 431
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/2b87115a-c79f-4bec-a1ce-647922253ca7?size=16&default=MHF_Steve&overlay">
-                        <strong>HollyJollySam</strong> - 388
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/cbdc7b1d-7a07-465b-bebb-4f20bfb8ebd8?size=16&default=MHF_Steve&overlay">
-                        <strong>Cratain</strong> - 380
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/48924ea3-3aad-4e16-838c-368d8d9e0a25?size=16&default=MHF_Steve&overlay">
-                        <strong>Matic0B</strong> - 372
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/7e4183dd-3eeb-4156-9d05-02d3f0e71d79?size=16&default=MHF_Steve&overlay">
-                        <strong>Quannix</strong> - 257
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/2553e6f2-3a2c-440b-a6a3-39e3df7fe3ff?size=16&default=MHF_Steve&overlay">
-                        <strong>khazhyk</strong> - 241
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/b2b2e914-e7c0-402e-8441-143cdc6a871b?size=16&default=MHF_Steve&overlay">
-                        <strong>Scorpioon</strong> - 229
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06?size=16&default=MHF_Steve&overlay">
-                        <strong>Strangey</strong> - 218
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/fe3608b7-d105-4029-8800-34b3147065b6?size=16&default=MHF_Steve&overlay">
-                        <strong>rockymine</strong> - 205
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/3c7db14d-ac4b-4e35-b2c6-3b2237f382be?size=16&default=MHF_Steve&overlay">
-                        <strong>Apple</strong> - 204
-                    </li>
-                </ol>
-            </div> 
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card border-danger">
-            <h5 class="card-header text-danger border-danger">
-                <i class="far fa-comment-dots" style="font-size: 28px; margin-right: 5px;"></i> Forum Posts
-            </h5>
-            <div class="card-body">
-                <ol>
-                    <li>
-                        <img src="https://crafatar.com/avatars/7e4183dd-3eeb-4156-9d05-02d3f0e71d79?size=16&default=MHF_Steve&overlay">
-                        <strong>Quannix</strong> - 12,768
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/48924ea3-3aad-4e16-838c-368d8d9e0a25?size=16&default=MHF_Steve&overlay">
-                        <strong>Matic0B</strong> - 9,929
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/36dc036a-dfbc-4627-b66a-501223f08075?size=16&default=MHF_Steve&overlay">
-                        <strong>bend</strong> - 9,477
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/6968cbde-c2b7-479c-a8da-f33f109f013b?size=16&default=MHF_Steve&overlay">
-                        <strong>Brottweiler</strong> - 9,049
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/6f21f5e3-544b-48a9-9670-63aec36038c4?size=16&default=MHF_Steve&overlay">
-                        <strong>hive_raven</strong> - 8,651
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/2b87115a-c79f-4bec-a1ce-647922253ca7?size=16&default=MHF_Steve&overlay">
-                        <strong>HollyJollySam</strong> - 8,505
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/f6e01a72-98ca-450b-99b0-4cb5fd8f6747?size=16&default=MHF_Steve&overlay">
-                        <strong>diamond22</strong> - 7,861
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/cbdc7b1d-7a07-465b-bebb-4f20bfb8ebd8?size=16&default=MHF_Steve&overlay">
-                        <strong>Cratain</strong> - 7,135
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/1f28822d-1fd1-4424-b61e-50aee4b513b0?size=16&default=MHF_Steve&overlay">
-                        <strong>Biixerv</strong> - 6,581
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/e3fdaea1-8a19-4378-8ad7-41cf63f5d141?size=16&default=MHF_Steve&overlay">
-                        <strong>Avaleer</strong> - 6,069
-                    </li>
-                </ol>
-            </div> 
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card border-success">
-            <h5 class="card-header text-success border-success">
-                <i class="fas fa-user-friends" style="font-size: 28px; margin-right: 5px;"></i> Friends Added
-            </h5>
-            <div class="card-body">
-                <ol>
-                    <li>
-                        <img src="https://crafatar.com/avatars/f6e01a72-98ca-450b-99b0-4cb5fd8f6747?size=16&default=MHF_Steve&overlay">
-                        <strong>diamond22</strong> - 2,563
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/e280f925-0334-4bb2-9fd0-9ff5697bf936?size=16&default=MHF_Steve&overlay">
-                        <strong>pmheys</strong> - 2,027
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/e3fdaea1-8a19-4378-8ad7-41cf63f5d141?size=16&default=MHF_Steve&overlay">
-                        <strong>Avaleer</strong> - 1,912
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/0e9f58df-ae96-43fa-ab20-903734cf0a20?size=16&default=MHF_Steve&overlay">
-                        <strong>drewb6490</strong> - 1,163
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/facb6996-f160-4c35-8121-3e47da1dab34?size=16&default=MHF_Steve&overlay">
-                        <strong>__gavin</strong> - 1,015
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/105f6a09-f533-412b-93cb-501601763c11?size=16&default=MHF_Steve&overlay">
-                        <strong>JTr</strong> - 976
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/36dc036a-dfbc-4627-b66a-501223f08075?size=16&default=MHF_Steve&overlay">
-                        <strong>bend</strong> - 839
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/e4711469-1e41-4b89-a572-ff857f2ecdc9?size=16&default=MHF_Steve&overlay">
-                        <strong>lmpressive</strong> - 715
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/e584a2a7-73c4-4545-819d-dcc2c2739542?size=16&default=MHF_Steve&overlay">
-                        <strong>Sporadicamente</strong> - 709
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/7dcf2998-3466-46d7-b4ec-27f14b636abf?size=16&default=MHF_Steve&overlay">
-                        <strong>FunnyQuinn</strong> - 684
-                    </li>
-                </ol>
-            </div> 
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card border-warning">
-            <h5 class="card-header text-warning border-warning">
-                <i class="fas fa-cubes" style="font-size: 28px; margin-right: 5px;"></i> Maps Created
-            </h5>
-            <div class="card-body">
-                <ol>
-                    <li>
-                        <img src="https://crafatar.com/avatars/2ca8072f-74be-4798-85b8-bbce03aa91af?size=16&default=MHF_Steve&overlay">
-                        <strong>Tywnis</strong> - 107
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/ef4ea031-998f-4ec9-b7b6-1bdd428bcef8?size=16&default=MHF_Steve&overlay">
-                        <strong>Plastix</strong> - 61
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/dad8b95c-cf6a-44df-982e-8c8dd70201e0?size=16&default=MHF_Steve&overlay">
-                        <strong>ElectroidFilms</strong> - 55
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/2a289d2a-d970-49c5-9a6c-01fc0264e317?size=16&default=MHF_Steve&overlay">
-                        <strong>StealthMedia</strong> - 48
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/459fd919-0d58-401a-9601-6cab1eb721ab?size=16&default=MHF_Steve&overlay">
-                        <strong>Reshif</strong> - 44
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/fe3608b7-d105-4029-8800-34b3147065b6?size=16&default=MHF_Steve&overlay">
-                        <strong>rockymine</strong> - 42
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/e37f18f1-117b-47db-8806-6d3a0854b518?size=16&default=MHF_Steve&overlay">
-                        <strong>Chicky</strong> - 41
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06?size=16&default=MHF_Steve&overlay">
-                        <strong>Strangey</strong> - 36
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/e79fbdc9-627e-4dac-97a6-81a3046220d7?size=16&default=MHF_Steve&overlay">
-                        <strong>AtlasGames</strong> - 32
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/38ab65dd-95f9-406f-917c-6accc995421f?size=16&default=MHF_Steve&overlay">
-                        <strong>GoldenOre</strong> - 30
-                    </li>
-                </ol>
-            </div> 
-            <div class="card-footer">
-            <a href="mapauthors.txt" target="_blank">View the full list of map creators</a><button class="btn btn-success float-right" style="font-weight: bold;" type="button" data-toggle="popover" data-placement="bottom" title="Information" data-content="The data was gathered by downloading map.xml files from maps.oc.tc and checking how many times a persons UUID was mentioned in the authors tag. There may be duplicates!"><i class="fa fa-question"></i>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card border-warning">
-            <h5 class="card-header text-warning border-warning">
-                <i class="fas fa-star" style="font-size: 28px; margin-right: 5px;"></i> Top Rated Maps
-            </h5>
-            <div class="card-body">
-                <ol>
-                    <li>
-                        <strong>Sugar Cane Valley</strong> - 4.21
-                    </li>
-                    <li>
-                        <strong>A Journey Through History</strong> - 4.2
-                    </li>
-                    <li>
-                        <strong>Viridun: Elytra</strong> - 4.19
-                    </li>
-                    <li>
-                        <strong>The Grand Dueling Tournament II</strong> - 4.18
-                    </li>
-                    <li>
-                        <strong>Rainbow Road</strong> - 4.16
-                    </li>
-                    <li>
-                        <strong>Ozone: Elytra</strong> - 4.07
-                    </li>
-                    <li>
-                        <strong>Foundry</strong> - 4.06
-                    </li>
-                    <li>
-                        <strong>Wooly Woods RAGE</strong> - 4.05
-                    </li>
-                    <li>
-                        <strong>BVC</strong> - 4.04
-                    </li>
-                    <li>
-                        <strong>Pixel Run</strong> - 4.03
-                    </li>
-                </ol>
-            </div> 
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card border-primary">
-            <h5 class="card-header text-primary border-primary">
-                <i class="fas fa-trophy" style="font-size: 28px; margin-right: 5px;"></i> Trophies Collected
-            </h5>
-            <div class="card-body">
-                <ol>
-                    <li>
-                        <img src="https://crafatar.com/avatars/33ed7d84-f149-4ef3-9d26-a9b45eb3b6ad?size=16&default=MHF_Steve&overlay">
-                        <strong>Giovanni</strong> - 14
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/91295196-9cd2-4963-b7ec-afd1a110edbe?size=16&default=MHF_Steve&overlay">
-                        <strong>pbat</strong> - 14
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/3f519454-4f58-4484-8249-93104beff5d4?size=16&default=MHF_Steve&overlay">
-                        <strong>nicomoshi</strong> - 13
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/67ceac94-32d8-49e0-84c7-0d5bbfd859ea?size=16&default=MHF_Steve&overlay">
-                        <strong>Parkway</strong> - 13
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/a53ab2da-36ed-4886-ac2a-49696de4622f?size=16&default=MHF_Steve&overlay">
-                        <strong>SailorMojo</strong> - 13
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/a9f11454-beac-4cc3-a138-1780802c8794?size=16&default=MHF_Steve&overlay">
-                        <strong>Crazy_</strong> - 12
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06?size=16&default=MHF_Steve&overlay">
-                        <strong>Strangey</strong> - 11
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/c80f6292-4840-4dc1-b15b-c41a9c0df468?size=16&default=MHF_Steve&overlay">
-                        <strong>cscotz</strong> - 11
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/6e347123-c684-4d7e-996c-44d4924ff172?size=16&default=MHF_Steve&overlay">
-                        <strong>SheriffSoco</strong> - 11
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/cf094b7c-bdfe-4299-84a9-8d8b05259e33?size=16&default=MHF_Steve&overlay">
-                        <strong>ginie1</strong> - 10
-                    </li>
-                </ol>
-            </div> 
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card border-primary">
-            <h5 class="card-header text-primary border-primary">
-                <i class="fas fa-tint" style="font-size: 28px; margin-right: 5px;"></i> Raindrops
-            </h5>
-            <div class="card-body">
-                <ol>
-                    <li>
-                        <img src="https://crafatar.com/avatars/ff0baff7-b957-490a-bd7b-83d72bc3ffa9?size=16&default=MHF_Steve&overlay">
-                        <strong>7777Alex7777</strong> - 1,146,485
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/a476fac6-7651-4340-ac4b-3e3a0168b43e?size=16&default=MHF_Steve&overlay">
-                        <strong>Daiinty</strong> - 845,499
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/408267c4-c749-4312-8e28-8a29113c1329?size=16&default=MHF_Steve&overlay">
-                        <strong>2000thehecf1</strong> - 802,687
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/45d218ee-7f0b-4a33-99ca-26b4ab461c4d?size=16&default=MHF_Steve&overlay">
-                        <strong>_oxyoshi_</strong> - 783,172
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/c62a6655-2165-4d6b-a68e-ac20fe52a038?size=16&default=MHF_Steve&overlay">
-                        <strong>AdamChen</strong> - 743,383
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/b843e63b-4d8c-4606-b6da-08b3ed8534d1?size=16&default=MHF_Steve&overlay">
-                        <strong>snatter</strong> - 650,073
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/62f3cd20-c78d-4810-8a00-c5ecb0636783?size=16&default=MHF_Steve&overlay">
-                        <strong>Tapetepato</strong> - 593,545
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/dbe909c6-2b15-4528-b12a-c77ed4031496?size=16&default=MHF_Steve&overlay">
-                        <strong>teheggy</strong> - 584,404
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/9d903e52-8b1b-4bc5-8c18-905a71a25af0?size=16&default=MHF_Steve&overlay">
-                        <strong>weaboo511</strong> - 567,584
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/9ee0a4b4-7727-45d0-9aee-1a794e23b641?size=16&default=MHF_Steve&overlay">
-                        <strong>gloomp</strong> - 549,879
-                    </li>
-                </ol>
-            </div> 
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card border-primary">
-            <h5 class="card-header text-primary border-primary">
-                <i class="fas fa-users" style="font-size: 28px; margin-right: 5px;"></i> Teams Joined
-            </h5>
-            <div class="card-body">
-                <ol>
-                    <li>
-                        <img src="https://crafatar.com/avatars/d65930b6-5cab-4886-82a4-3a1c56ecfc1b?size=16&default=MHF_Steve&overlay">
-                        <strong>Vynious</strong> - 108,862
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/c969ab2f-19a4-4be8-a740-f4b08bfbbd89?size=16&default=MHF_Steve&overlay">
-                        <strong>mikmikeme</strong> - 108,359
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/e4b99cb2-9d7a-49a5-9743-f5b107d21053?size=16&default=MHF_Steve&overlay">
-                        <strong>Eggyyyy</strong> - 104,438
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/6ec44886-9def-4278-8e68-12a685483932?size=16&default=MHF_Steve&overlay">
-                        <strong>jimbot12345</strong> - 102,138
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/ab8a0c0e-f609-417c-9b07-ceacf2320cbe?size=16&default=MHF_Steve&overlay">
-                        <strong>pulbos2</strong> - 98,010
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/557a98be-4ec0-4ac1-a2c4-73eee6c21a5e?size=16&default=MHF_Steve&overlay">
-                        <strong>Linehodres</strong> - 88,754
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/0679ba39-56b0-409b-babe-111a2c634fc7?size=16&default=MHF_Steve&overlay">
-                        <strong>amiralblendic</strong> - 84,824
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/0490f83b-f0ad-4751-aba5-7f9ea596b5e0?size=16&default=MHF_Steve&overlay">
-                        <strong>JaysonTru</strong> - 79,294
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/a43135a4-d7b9-49ab-ac8d-a16bb2513c8d?size=16&default=MHF_Steve&overlay">
-                        <strong>Ny_</strong> - 73,850
-                    </li>
-                    <li>
-                        <img src="https://crafatar.com/avatars/5cf1457a-6f0b-43c9-b693-060501414e8a?size=16&default=MHF_Steve&overlay">
-                        <strong>Vexilarry</strong> - 82,870
-                    </li>
-                </ol>
-            </div> 
-        </div>
-    </div>
-    <div class="col-md-12">
-        <div class="card border-info">
-            <h5 class="card-header text-info border-info">
-                <i class="fas fa-bookmark" style="font-size: 28px; margin-right: 5px;"></i> Interesting Facts
-            </h5>
-            <div class="card-body">
-                <ul>
-                    <li><img src="https://crafatar.com/avatars/621b2aa84e5f4ed8bd360ae2f8952a06?size=16"> <strong>Strangey</strong> and <img src="https://crafatar.com/avatars/715769c58c4c4489bdf8f9cee2b2ae8a?size=16"> <strong>amactus</strong> had the most badges on the website (6)!</li>
-                    <li><img src="https://crafatar.com/avatars/7835398afbdc48edaa11de8a14a7ac8a?size=16"> <strong>Salsori</strong> won a 1v40 match on Cannon Duel!</li>
-                    <li><img src="https://crafatar.com/avatars/171b4297a99c444bbc248eb78ec184e1?size=16"> <strong>duyo</strong> purchased the last Decanus premium package before it was removed from the shop!</li>
-                    <li><img src="https://crafatar.com/avatars/48924ea33aad4e16838c368d8d9e0a25?size=16"> <strong>Matic0B</strong> was promoted to 4 different staff ranks in just 40 days!</li>
-                    <li>The Overcast Network has been joined by 1.7 MILLION players during its existance.</li>
-                </ul>
-            </div> 
-        </div>
-    </div>
-</div>
-            <!-- End page content -->
-            </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card border-danger">
+                            <h5 class="card-header text-danger border-danger">
+                                <i class="fas fa-edit" style="font-size: 28px; margin-right: 5px;"></i> Topics Started
+                            </h5>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/36dc036a-dfbc-4627-b66a-501223f08075?size=16&default=MHF_Steve&overlay">
+                                        <strong>bend</strong> - 431
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/2b87115a-c79f-4bec-a1ce-647922253ca7?size=16&default=MHF_Steve&overlay">
+                                        <strong>HollyJollySam</strong> - 388
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/cbdc7b1d-7a07-465b-bebb-4f20bfb8ebd8?size=16&default=MHF_Steve&overlay">
+                                        <strong>Cratain</strong> - 380
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/48924ea3-3aad-4e16-838c-368d8d9e0a25?size=16&default=MHF_Steve&overlay">
+                                        <strong>Matic0B</strong> - 372
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/7e4183dd-3eeb-4156-9d05-02d3f0e71d79?size=16&default=MHF_Steve&overlay">
+                                        <strong>Quannix</strong> - 257
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/2553e6f2-3a2c-440b-a6a3-39e3df7fe3ff?size=16&default=MHF_Steve&overlay">
+                                        <strong>khazhyk</strong> - 241
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/b2b2e914-e7c0-402e-8441-143cdc6a871b?size=16&default=MHF_Steve&overlay">
+                                        <strong>Scorpioon</strong> - 229
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06?size=16&default=MHF_Steve&overlay">
+                                        <strong>Strangey</strong> - 218
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/fe3608b7-d105-4029-8800-34b3147065b6?size=16&default=MHF_Steve&overlay">
+                                        <strong>rockymine</strong> - 205
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/3c7db14d-ac4b-4e35-b2c6-3b2237f382be?size=16&default=MHF_Steve&overlay">
+                                        <strong>Apple</strong> - 204
+                                    </li>
+                                </ol>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-danger">
+                            <h5 class="card-header text-danger border-danger">
+                                <i class="far fa-comment-dots" style="font-size: 28px; margin-right: 5px;"></i> Forum Posts
+                            </h5>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/7e4183dd-3eeb-4156-9d05-02d3f0e71d79?size=16&default=MHF_Steve&overlay">
+                                        <strong>Quannix</strong> - 12,768
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/48924ea3-3aad-4e16-838c-368d8d9e0a25?size=16&default=MHF_Steve&overlay">
+                                        <strong>Matic0B</strong> - 9,929
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/36dc036a-dfbc-4627-b66a-501223f08075?size=16&default=MHF_Steve&overlay">
+                                        <strong>bend</strong> - 9,477
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/6968cbde-c2b7-479c-a8da-f33f109f013b?size=16&default=MHF_Steve&overlay">
+                                        <strong>Brottweiler</strong> - 9,049
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/6f21f5e3-544b-48a9-9670-63aec36038c4?size=16&default=MHF_Steve&overlay">
+                                        <strong>hive_raven</strong> - 8,651
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/2b87115a-c79f-4bec-a1ce-647922253ca7?size=16&default=MHF_Steve&overlay">
+                                        <strong>HollyJollySam</strong> - 8,505
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/f6e01a72-98ca-450b-99b0-4cb5fd8f6747?size=16&default=MHF_Steve&overlay">
+                                        <strong>diamond22</strong> - 7,861
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/cbdc7b1d-7a07-465b-bebb-4f20bfb8ebd8?size=16&default=MHF_Steve&overlay">
+                                        <strong>Cratain</strong> - 7,135
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/1f28822d-1fd1-4424-b61e-50aee4b513b0?size=16&default=MHF_Steve&overlay">
+                                        <strong>Biixerv</strong> - 6,581
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/e3fdaea1-8a19-4378-8ad7-41cf63f5d141?size=16&default=MHF_Steve&overlay">
+                                        <strong>Avaleer</strong> - 6,069
+                                    </li>
+                                </ol>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-success">
+                            <h5 class="card-header text-success border-success">
+                                <i class="fas fa-user-friends" style="font-size: 28px; margin-right: 5px;"></i> Friends Added
+                            </h5>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/f6e01a72-98ca-450b-99b0-4cb5fd8f6747?size=16&default=MHF_Steve&overlay">
+                                        <strong>diamond22</strong> - 2,563
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/e280f925-0334-4bb2-9fd0-9ff5697bf936?size=16&default=MHF_Steve&overlay">
+                                        <strong>pmheys</strong> - 2,027
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/e3fdaea1-8a19-4378-8ad7-41cf63f5d141?size=16&default=MHF_Steve&overlay">
+                                        <strong>Avaleer</strong> - 1,912
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/0e9f58df-ae96-43fa-ab20-903734cf0a20?size=16&default=MHF_Steve&overlay">
+                                        <strong>drewb6490</strong> - 1,163
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/facb6996-f160-4c35-8121-3e47da1dab34?size=16&default=MHF_Steve&overlay">
+                                        <strong>__gavin</strong> - 1,015
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/105f6a09-f533-412b-93cb-501601763c11?size=16&default=MHF_Steve&overlay">
+                                        <strong>JTr</strong> - 976
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/36dc036a-dfbc-4627-b66a-501223f08075?size=16&default=MHF_Steve&overlay">
+                                        <strong>bend</strong> - 839
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/e4711469-1e41-4b89-a572-ff857f2ecdc9?size=16&default=MHF_Steve&overlay">
+                                        <strong>lmpressive</strong> - 715
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/e584a2a7-73c4-4545-819d-dcc2c2739542?size=16&default=MHF_Steve&overlay">
+                                        <strong>Sporadicamente</strong> - 709
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/7dcf2998-3466-46d7-b4ec-27f14b636abf?size=16&default=MHF_Steve&overlay">
+                                        <strong>FunnyQuinn</strong> - 684
+                                    </li>
+                                </ol>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-warning">
+                            <h5 class="card-header text-warning border-warning">
+                                <i class="fas fa-cubes" style="font-size: 28px; margin-right: 5px;"></i> Maps Created
+                            </h5>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/2ca8072f-74be-4798-85b8-bbce03aa91af?size=16&default=MHF_Steve&overlay">
+                                        <strong>Tywnis</strong> - 107
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/ef4ea031-998f-4ec9-b7b6-1bdd428bcef8?size=16&default=MHF_Steve&overlay">
+                                        <strong>Plastix</strong> - 61
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/dad8b95c-cf6a-44df-982e-8c8dd70201e0?size=16&default=MHF_Steve&overlay">
+                                        <strong>ElectroidFilms</strong> - 55
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/2a289d2a-d970-49c5-9a6c-01fc0264e317?size=16&default=MHF_Steve&overlay">
+                                        <strong>StealthMedia</strong> - 48
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/459fd919-0d58-401a-9601-6cab1eb721ab?size=16&default=MHF_Steve&overlay">
+                                        <strong>Reshif</strong> - 44
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/fe3608b7-d105-4029-8800-34b3147065b6?size=16&default=MHF_Steve&overlay">
+                                        <strong>rockymine</strong> - 42
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/e37f18f1-117b-47db-8806-6d3a0854b518?size=16&default=MHF_Steve&overlay">
+                                        <strong>Chicky</strong> - 41
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06?size=16&default=MHF_Steve&overlay">
+                                        <strong>Strangey</strong> - 36
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/e79fbdc9-627e-4dac-97a6-81a3046220d7?size=16&default=MHF_Steve&overlay">
+                                        <strong>AtlasGames</strong> - 32
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/38ab65dd-95f9-406f-917c-6accc995421f?size=16&default=MHF_Steve&overlay">
+                                        <strong>GoldenOre</strong> - 30
+                                    </li>
+                                </ol>
+                            </div> 
+                            <div class="card-footer">
+                            <a href="mapauthors.txt" target="_blank">View the full list of map creators</a><button class="btn btn-success float-right" style="font-weight: bold;" type="button" data-toggle="popover" data-placement="bottom" title="Information" data-content="The data was gathered by downloading map.xml files from maps.oc.tc and checking how many times a persons UUID was mentioned in the authors tag. There may be duplicates!"><i class="fa fa-question"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-warning">
+                            <h5 class="card-header text-warning border-warning">
+                                <i class="fas fa-star" style="font-size: 28px; margin-right: 5px;"></i> Top Rated Maps
+                            </h5>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <strong>Sugar Cane Valley</strong> - 4.21
+                                    </li>
+                                    <li>
+                                        <strong>A Journey Through History</strong> - 4.2
+                                    </li>
+                                    <li>
+                                        <strong>Viridun: Elytra</strong> - 4.19
+                                    </li>
+                                    <li>
+                                        <strong>The Grand Dueling Tournament II</strong> - 4.18
+                                    </li>
+                                    <li>
+                                        <strong>Rainbow Road</strong> - 4.16
+                                    </li>
+                                    <li>
+                                        <strong>Ozone: Elytra</strong> - 4.07
+                                    </li>
+                                    <li>
+                                        <strong>Foundry</strong> - 4.06
+                                    </li>
+                                    <li>
+                                        <strong>Wooly Woods RAGE</strong> - 4.05
+                                    </li>
+                                    <li>
+                                        <strong>BVC</strong> - 4.04
+                                    </li>
+                                    <li>
+                                        <strong>Pixel Run</strong> - 4.03
+                                    </li>
+                                </ol>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-primary">
+                            <h5 class="card-header text-primary border-primary">
+                                <i class="fas fa-trophy" style="font-size: 28px; margin-right: 5px;"></i> Trophies Collected
+                            </h5>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/33ed7d84-f149-4ef3-9d26-a9b45eb3b6ad?size=16&default=MHF_Steve&overlay">
+                                        <strong>Giovanni</strong> - 14
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/91295196-9cd2-4963-b7ec-afd1a110edbe?size=16&default=MHF_Steve&overlay">
+                                        <strong>pbat</strong> - 14
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/3f519454-4f58-4484-8249-93104beff5d4?size=16&default=MHF_Steve&overlay">
+                                        <strong>nicomoshi</strong> - 13
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/67ceac94-32d8-49e0-84c7-0d5bbfd859ea?size=16&default=MHF_Steve&overlay">
+                                        <strong>Parkway</strong> - 13
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/a53ab2da-36ed-4886-ac2a-49696de4622f?size=16&default=MHF_Steve&overlay">
+                                        <strong>SailorMojo</strong> - 13
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/a9f11454-beac-4cc3-a138-1780802c8794?size=16&default=MHF_Steve&overlay">
+                                        <strong>Crazy_</strong> - 12
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06?size=16&default=MHF_Steve&overlay">
+                                        <strong>Strangey</strong> - 11
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/c80f6292-4840-4dc1-b15b-c41a9c0df468?size=16&default=MHF_Steve&overlay">
+                                        <strong>cscotz</strong> - 11
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/6e347123-c684-4d7e-996c-44d4924ff172?size=16&default=MHF_Steve&overlay">
+                                        <strong>SheriffSoco</strong> - 11
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/cf094b7c-bdfe-4299-84a9-8d8b05259e33?size=16&default=MHF_Steve&overlay">
+                                        <strong>ginie1</strong> - 10
+                                    </li>
+                                </ol>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-primary">
+                            <h5 class="card-header text-primary border-primary">
+                                <i class="fas fa-tint" style="font-size: 28px; margin-right: 5px;"></i> Raindrops
+                            </h5>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/ff0baff7-b957-490a-bd7b-83d72bc3ffa9?size=16&default=MHF_Steve&overlay">
+                                        <strong>7777Alex7777</strong> - 1,146,485
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/a476fac6-7651-4340-ac4b-3e3a0168b43e?size=16&default=MHF_Steve&overlay">
+                                        <strong>Daiinty</strong> - 845,499
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/408267c4-c749-4312-8e28-8a29113c1329?size=16&default=MHF_Steve&overlay">
+                                        <strong>2000thehecf1</strong> - 802,687
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/45d218ee-7f0b-4a33-99ca-26b4ab461c4d?size=16&default=MHF_Steve&overlay">
+                                        <strong>_oxyoshi_</strong> - 783,172
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/c62a6655-2165-4d6b-a68e-ac20fe52a038?size=16&default=MHF_Steve&overlay">
+                                        <strong>AdamChen</strong> - 743,383
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/b843e63b-4d8c-4606-b6da-08b3ed8534d1?size=16&default=MHF_Steve&overlay">
+                                        <strong>snatter</strong> - 650,073
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/62f3cd20-c78d-4810-8a00-c5ecb0636783?size=16&default=MHF_Steve&overlay">
+                                        <strong>Tapetepato</strong> - 593,545
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/dbe909c6-2b15-4528-b12a-c77ed4031496?size=16&default=MHF_Steve&overlay">
+                                        <strong>teheggy</strong> - 584,404
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/9d903e52-8b1b-4bc5-8c18-905a71a25af0?size=16&default=MHF_Steve&overlay">
+                                        <strong>weaboo511</strong> - 567,584
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/9ee0a4b4-7727-45d0-9aee-1a794e23b641?size=16&default=MHF_Steve&overlay">
+                                        <strong>gloomp</strong> - 549,879
+                                    </li>
+                                </ol>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-primary">
+                            <h5 class="card-header text-primary border-primary">
+                                <i class="fas fa-users" style="font-size: 28px; margin-right: 5px;"></i> Teams Joined
+                            </h5>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/d65930b6-5cab-4886-82a4-3a1c56ecfc1b?size=16&default=MHF_Steve&overlay">
+                                        <strong>Vynious</strong> - 108,862
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/c969ab2f-19a4-4be8-a740-f4b08bfbbd89?size=16&default=MHF_Steve&overlay">
+                                        <strong>mikmikeme</strong> - 108,359
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/e4b99cb2-9d7a-49a5-9743-f5b107d21053?size=16&default=MHF_Steve&overlay">
+                                        <strong>Eggyyyy</strong> - 104,438
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/6ec44886-9def-4278-8e68-12a685483932?size=16&default=MHF_Steve&overlay">
+                                        <strong>jimbot12345</strong> - 102,138
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/ab8a0c0e-f609-417c-9b07-ceacf2320cbe?size=16&default=MHF_Steve&overlay">
+                                        <strong>pulbos2</strong> - 98,010
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/557a98be-4ec0-4ac1-a2c4-73eee6c21a5e?size=16&default=MHF_Steve&overlay">
+                                        <strong>Linehodres</strong> - 88,754
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/0679ba39-56b0-409b-babe-111a2c634fc7?size=16&default=MHF_Steve&overlay">
+                                        <strong>amiralblendic</strong> - 84,824
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/0490f83b-f0ad-4751-aba5-7f9ea596b5e0?size=16&default=MHF_Steve&overlay">
+                                        <strong>JaysonTru</strong> - 79,294
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/a43135a4-d7b9-49ab-ac8d-a16bb2513c8d?size=16&default=MHF_Steve&overlay">
+                                        <strong>Ny_</strong> - 73,850
+                                    </li>
+                                    <li>
+                                        <img src="https://crafatar.com/avatars/5cf1457a-6f0b-43c9-b693-060501414e8a?size=16&default=MHF_Steve&overlay">
+                                        <strong>Vexilarry</strong> - 82,870
+                                    </li>
+                                </ol>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card border-info">
+                            <h5 class="card-header text-info border-info">
+                                <i class="fas fa-bookmark" style="font-size: 28px; margin-right: 5px;"></i> Interesting Facts
+                            </h5>
+                            <div class="card-body">
+                                <ul>
+                                    <li><img src="https://crafatar.com/avatars/621b2aa84e5f4ed8bd360ae2f8952a06?size=16"> <strong>Strangey</strong> and <img src="https://crafatar.com/avatars/715769c58c4c4489bdf8f9cee2b2ae8a?size=16"> <strong>amactus</strong> had the most badges on the website (6)!</li>
+                                    <li><img src="https://crafatar.com/avatars/7835398afbdc48edaa11de8a14a7ac8a?size=16"> <strong>Salsori</strong> won a 1v40 match on Cannon Duel!</li>
+                                    <li><img src="https://crafatar.com/avatars/171b4297a99c444bbc248eb78ec184e1?size=16"> <strong>duyo</strong> purchased the last Decanus premium package before it was removed from the shop!</li>
+                                    <li><img src="https://crafatar.com/avatars/48924ea33aad4e16838c368d8d9e0a25?size=16"> <strong>Matic0B</strong> was promoted to 4 different staff ranks in just 40 days!</li>
+                                    <li>The Overcast Network has been joined by 1.7 MILLION players during its existance.</li>
+                                </ul>
+                            </div> 
+                        </div>
+                    </div>
+                </div>            </div>
         </div>
         <div class="footer">
             <div class="container">
@@ -553,7 +538,6 @@
                         <div class="footer-section-head">Administration</div>
                         <a class="footer-item" href="/policies/terms">Terms of Use</a>
                         <a class="footer-item" href="/policies/maps">Map Policy</a>
-                        <a class="footer-item" href="/admin/references">References</a>
                     </div>
                     <div class="footer-section col-md-3">
                         <div class="footer-section-head">Site</div>

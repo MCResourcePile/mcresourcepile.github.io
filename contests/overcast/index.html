@@ -1,27 +1,25 @@
 <html>
     <head>
         <title>Overcast Network Contest Records - ResourcePile</title>
-        <!-- Page meta data -->
-        <meta charset=" UTF-8">
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Records for map making contest hosted by Overcast Network" name="description">
-        <meta content="Overcast Network Contest Records - ResourcePile" property="og:title">
-        <meta content="Records for map making contest hosted by Overcast Network" name="og:description">
-        <meta content="website" property="og:type">
-        <meta content="ResourcePile" property="og:site_name">
-        <meta content="https://mcresourcepile.github.io/" property="og:url">
-        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" property="og:image">
-        <meta content="summary" name="twitter:card">
-        <meta content="Overcast Network Contest Records - ResourcePile" name="twitter:title">
-        <meta content="Records for map making contest hosted by Overcast Network" name="twitter:description">
-        <meta content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg" name="twitter:image">
+        <meta name="description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta property="og:title" content="{{title}} - ResourcePile"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://mcresourcepile.github.io/"/>
+        <meta property="og:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
+        <meta property="og:description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta property="og:site_name" content="ResourcePile"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:title" content="{{title}} - ResourcePile"/>
+        <meta name="tiwtter:description" content="{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}"/>
+        <meta name="tiwtter:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
         <meta name="theme-color">
-        <!-- Page stylesheets -->
-        <link href="/assets/favicon.ico" rel="shortcut icon">
-        <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/assets/css/main.css" rel="stylesheet">
+        <link rel="shortcut icon" href="/assets/favicon.ico">        <!-- Page stylesheets -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/main.css">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -29,18 +27,11 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-91801520-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K9MLTDB');</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+        <script src="/assets/js/tournaments-banners.js"></script>
+        <script src="/assets/js/search.js"></script>
     </head>
-    <body >
+    <body>
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/">
@@ -71,10 +62,10 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/leagues/overcast">Overcast Network</a>
-                                <a class="dropdown-item" href="/leagues/pgm">PGM Community</a>
-                                <a class="dropdown-item" href="/leagues/stratus">Stratus Network</a>
-                                <a class="dropdown-item" href="/leagues/avicus">Avicus Network</a>
+                                <a class="dropdown-item" href="/tournaments/overcast">Overcast Network</a>
+                                <a class="dropdown-item" href="/tournaments/pgm">PGM Community</a>
+                                <a class="dropdown-item" href="/tournaments/stratus">Stratus Network</a>
+                                <a class="dropdown-item" href="/tournaments/avicus">Avicus Network</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -88,7 +79,7 @@
                                 <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
                                 <p class="navbar-menu-title">Avicus</p>
                                 <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
-                           </div>
+                            </div>
                         </li>
                     </ul>
                     <ul class="navbar-nav navbar-right">
@@ -111,24 +102,86 @@
                     <div class="content-subtitle">Records for map making contest hosted by Overcast Network</div>
                 </div>
                 <p>Click on a contest for more information.</p>
-            <!-- Start page content -->
-<div class="tm-banner-row">
-    <a href="/contests/overcast/skywars_solstice">
-        <img class="image-banner-custom" src="../../assets/img/contest/skywars_solstice/banner.png">
-    </a>
-</div>
-<div class="tm-banner-row">
-    <a href="/contests/overcast/pumpkin_spice_latte">
-        <img class="image-banner-custom" src="../../assets/img/contest/pumpkin_spice_latte/banner.png">
-    </a>
-</div>
-<div class="tm-banner-row">
-    <a href="/contests/overcast/june_map_making_competition">
-        <img class="image-banner-custom" src="../../assets/img/contest/june_map_making_competition/banner.png">
-    </a>
-</div>
-            <!-- End page content -->
-            </div>
+                <div id="searchable-collection" class="row">
+                    <div class="col-lg-3 order-lg-2 order-1">
+                        <div class="img-thumbnail map-search">
+                            <div class="center">
+                                <span id="searchable-count"></span>
+                            </div>
+                            <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search contests">
+                            <div class="filters">
+                                <b>Filters</b>
+                                <small>Use filters to narrow your query when searching for specific contests.</small>
+                                <div class="group search-options">
+                                    <b>Filter Options</b>
+                                    <small>Use filter options to alter how contests are filtered.</small>
+                                    <span class="filter-option-toggle">
+                                        <span class="filter filter-option active" data-option="match" data-toggle="all">Match All Filters</span>
+                                        <span class="filter filter-option" data-option="match" data-toggle="any">Match Any Filter</span>
+                                    </span>
+                                    <span class="filter filter-option" data-option="invert">Invert Filters</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 order-lg-1 order-2">
+                        <div class="tm-banner-options img-thumbnail">
+                            Display: 
+                            <span class="active" id="display-text">
+                                <i class="fas fa-font"></i> Text</a></li>
+                            </span>
+                            <span class="active" id="display-banners">
+                                <i class="fas fa-images"></i> Banners</a>
+                            </span> |
+                            <a href="/admin/preferences#preference-tm-banners-display" target="_blank">
+                                <span>
+                                    <i class="fas fa-cog"></i> Set a Default
+                                </span>
+                            </a>
+                        </div>
+                        <div class="list">
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="November 23, 2016 to January 1, 2017"><i class="far fa-calendar"></i> 2016</span>
+                                    <span class="tm-label click-search" data-query="Prevagen"><i class="fas fa-trophy"></i> Prevagen</span>
+                                </div>
+                                <a href="/contests/overcast/skywars_solstice_contest">
+                                    <div class="tm-name">Skywars Solstice Contest</div>
+                                    <div class="tm-tags">
+                                        <div class="tags hidden">Prevagen,,</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/contest/skywars_solstice/banner.png">
+                                </a>
+                            </div>
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="Octover 1, 2015 to October 31, 2015"><i class="far fa-calendar"></i> 2015</span>
+                                    <span class="tm-label click-search" data-query="L&#x27;automne"><i class="fas fa-trophy"></i> L&#x27;automne</span>
+                                </div>
+                                <a href="/contests/overcast/pumpkin_spice_latte_contest">
+                                    <div class="tm-name">Pumpkin Spice Latte Contest</div>
+                                    <div class="tm-tags">
+                                        <div class="tags hidden">L&#x27;automne,,</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/contest/pumpkin_spice_latte/banner.png">
+                                </a>
+                            </div>
+                            <div class="tm-banner-row">
+                                <div class="tm-labels">
+                                    <span class="tm-label" data-toggle="tooltip" data-placement="top" title="June 13, 2015 to July 1, 2015"><i class="far fa-calendar"></i> 2015</span>
+                                    <span class="tm-label click-search" data-query="Breakfast Man&#x27;s Day Off"><i class="fas fa-trophy"></i> Breakfast Man&#x27;s Day Off</span>
+                                </div>
+                                <a href="/contests/overcast/june_mapmaking_competition">
+                                    <div class="tm-name">June Mapmaking Competition</div>
+                                    <div class="tm-tags">
+                                        <div class="tags hidden">Breakfast Man&#x27;s Day Off,,</div>
+                                    </div>
+                                    <img class="image-banner-custom lazy" data-src="/assets/img/contest/june_map_making_competition/banner.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>            </div>
         </div>
         <div class="footer">
             <div class="container">
@@ -149,7 +202,6 @@
                         <div class="footer-section-head">Administration</div>
                         <a class="footer-item" href="/policies/terms">Terms of Use</a>
                         <a class="footer-item" href="/policies/maps">Map Policy</a>
-                        <a class="footer-item" href="/admin/references">References</a>
                     </div>
                     <div class="footer-section col-md-3">
                         <div class="footer-section-head">Site</div>
