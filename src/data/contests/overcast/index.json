@@ -4,13 +4,53 @@
     "page-category": ["maps", "tournaments", "contest", "overcast"],
     "body": "Click on a contest for more information.",
     "settings": {
+        "include": {
+            "scripts": [
+                "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js",
+                "/assets/js/tournaments-banners.js",
+                "/assets/js/search.js"
+            ]
+        },
+        "tournaments": {
+            "host": "overcast",
+            "img_src": "/assets/img/contest/",
+            "type": "contests"
+        },
         "maps": {
-            "group": "overcast"
+            "advanced_menu": {
+                "placeholder": "contests",
+                "groups": [],
+                "dynamic": false
+            }
         }
     },
-    "contests": [
-        {"name": "Skywars Solstice"},
-        {"name": "Pumpkin Spice latte"},
-        {"name": "June Map Making Competition"}
+    "tournaments": [
+        {
+            "name": "June Mapmaking Competition",
+            "banner_path": "june_map_making_competition/banner.png",
+            "information": {
+                "year": 2015,
+                "dates": "June 13, 2015 to July 1, 2015",
+                "winner": "Breakfast Man's Day Off"
+            }
+        },
+        {
+            "name": "Pumpkin Spice Latte Contest",
+            "banner_path": "pumpkin_spice_latte/banner.png",
+            "information": {
+                "year": 2015,
+                "dates": "Octover 1, 2015 to October 31, 2015",
+                "winner": "L'automne"
+            }
+        },
+        {
+            "name": "Skywars Solstice Contest",
+            "banner_path": "skywars_solstice/banner.png",
+            "information": {
+                "year": 2016,
+                "dates": "November 23, 2016 to January 1, 2017",
+                "winner": "Prevagen"
+            }
+        }
     ]
 }

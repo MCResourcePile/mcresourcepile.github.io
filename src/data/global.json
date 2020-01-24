@@ -32,6 +32,15 @@
                 ]
             }
         },
+        "meta": {
+            "name": "ResourcePile",
+            "title": "{{title}} - ResourcePile",
+            "url": "https://mcresourcepile.github.io/",
+            "image": "https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg",
+            "description": "{{#if description}}{{description}}{{else}}{{#if subtitle}}{{subtitle}}{{else}}{{tagline}}{{/if}}{{/if}}",
+            "type": "website",
+            "twitter_card": "summary"
+        },
         "maps": {
             "tags": {
                 "ad":         {"display": "Attack/Defend",        "keywords": "ad a/d"},
@@ -63,7 +72,7 @@
             "environments": {
                 "pgm": {
                     "label": "PGM",
-                    "message": "This map has been designed and tested to be used with <a href=\"https://github.com/OvercastNetwork/ProjectAres\" target=\"_blank\">Overcast's open source plugins</a> and we recommend using those to have the best experience with this map. This map may also include one of Overcast's standard XML files, which all can be found <a href=\"/maps/includes\">here to download</a>."
+                    "message": "This map has been designed and tested to be used with <a href=\"https://github.com/OvercastNetwork/ProjectAres\" target=\"_blank\">Overcast's open source plugins (Project Ares)</a> and we recommend using those to have the best experience with this map. This map may also include one of Overcast's standard XML files, which all can be found <a href=\"/maps/includes\">here to download</a>.<br/><br/><strong>Important:</strong> If you prefer to use the (maintained) 1.8 fork of Project Ares, you can find that <a href=\"https://github.com/Electroid/PGM\" target=\"_blank\">here</a> instead. Maps using the <a href=\"http://docs.oc.tc/modules/proto\">XML protocol</a> <code>1.4.1</code> and above may not work and will have to be manually downgraded to at least protocol <code>1.4.0</code>. Additionally, the Minecraft world will have to be converted to Minecraft version <code>1.8</code>. This can be easily done using this <a href=\"https://github.com/mitchts/nbt-converter\" target=\"_blank\">NBT converter tool</a>."
                 },
                 "pgm_stratus": {
                     "label": "PGM (Stratus Fork)",

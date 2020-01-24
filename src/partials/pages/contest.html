@@ -1,0 +1,255 @@
+<div class="center">
+    {{#if @root.settings.maps.header}}
+    <div class="image-banner-default" style="background: url('../../assets/img/contest/{{snakecase (lowercase title)}}/banner.png'); background-position: center; background-size: cover;">{{title}}</div>
+    {{else}}
+    <img class="image-banner-custom" src="../../assets/img/contest/{{snakecase (lowercase title)}}/banner.png">
+    {{/if}}
+</div>
+<div class="center">
+    {{#if submissions}}
+    {{#submissions}}
+        {{#is position '1'}}
+        {{> map_thumbnail_contest}}
+        {{/is}}
+    {{/submissions}}
+    <div class="row">
+        <div class="col-md-6">
+            {{#submissions}}
+                {{#is position '2'}}
+                {{> map_thumbnail_contest}}
+                {{/is}}
+            {{/submissions}}
+        </div>
+        <div class="col-md-6">
+            {{#submissions}}
+                {{#is position '3'}}
+                {{> map_thumbnail_contest}}
+                {{/is}}
+            {{/submissions}}
+        </div>
+    </div>
+    <a class="contest-scores-link" href="#scores">View Score Breakdown</a>
+    {{else}}
+    <div class="league-position league-position-first">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h3>This contest has not concluded!</h3>
+        <h5>Information on this page may not be final.</h5>
+    </div>
+    {{/if}}
+</div>
+<div class="info-section-heading">Contest Information</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card border-success">
+            <h5 class="card-header text-success border-success">Dates</h5>
+            <div class="card-body">
+                <table class="info-table">
+                    <tbody>
+                        {{#stages}}
+                        <tr>
+                            <td>{{stage}}</td>
+                            <td>{{date}}</td>
+                        </tr>
+                        {{/stages}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card border-success">
+            <h5 class="card-header text-success border-success">Scoring <small>(Total scores are {{#is score_method 'percent'}}a percentage out of 100%{{else}}the sum of each criteria{{/is}})</small></h5>
+            <div class="card-body">
+                <table class="info-table">
+                    <tbody>
+                        {{#each criteria}}
+                        {{#if max}}
+                        <tr>
+                            <td style="font-weight:400"><strong>{{this.label}}</strong> out of <code>{{this.max}}</code> {{#if this.weight}}(weighted {{this.weight}}%){{/if}}</td>
+                        </tr>
+                        {{/if}}
+                        {{#if amount}}
+                        <tr>
+                            <td style="font-weight:400"><strong>Additional {{this.label}}</strong> of <code>{{#is this.operation 'subtract'}}-{{/is}}{{this.amount}}{{#is this.operation 'percent'}}%{{else}}{{#is this.operation 'subtract'}} points{{else}}{{#is this.operation 'add'}} points{{else}}{{#is this.operation 'multiply'}}x{{/is}}{{/is}}{{/is}}{{/is}}</code> for {{this.reason}}</td>
+                        </tr>
+                        {{/if}}
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{#if panels}}
+    {{#panels}}
+    <div class="col-md-{{#is size 'full'}}12{{else}}6{{/is}}">
+        <div class="card border-primary">
+            <h5 class="card-header text-primary border-primary">{{#if label}}{{label}}{{else}}Misc Information{{/if}}</h5>
+            <div class="card-body">
+                <table class="info-table">
+                    <tbody>
+                        {{#if rows}}
+                        {{#rows}}
+                        <tr>
+                            {{#if label}}
+                            <td>{{label}}</td>
+                            <td>{{{content}}}</td>
+                            {{else}}
+                            <td colspan="2" style="font-weight:400">{{{content}}}</td>
+                            {{/if}}
+                        </tr>
+                        {{/rows}}
+                        {{else}}
+                        <tr>
+                            <td>This panel has no information.</td>
+                        </tr>
+                        {{/if}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{/panels}}
+    {{/if}}
+</div>
+{{#if submissions}}
+<div class="info-section-heading large">Submissions <small>{{length submissions}}</small></div>
+<div class="dynamic">
+    {{#withSort submissions "name"}}
+    {{> map_thumbnail}}
+    {{/withSort}}
+</div>
+<div class="info-section-heading large id-anchor" id="scores">Score Breakdown</div>
+{{#if results_info}}
+{{{results_info}}}
+{{/if}}
+<div class="table-responsive">
+    <table id="scores-breakdown" class="contest-info-table table table-striped table-bordered">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Map</td>
+                {{#each criteria}}
+                <td{{#if reason}} data-toggle="tooltip" data-placement="top" title="For {{reason}}"{{/if}}>{{this.label}} <small style="font-size: 12px;">{{#if max}}/ {{this.max}}{{else}}{{#is this.operation 'add'}}+{{else}}{{#is this.operation 'multiply'}}x{{else}}{{#is this.operation 'subtract'}}-{{/is}}{{/is}}{{/is}}{{this.amount}}{{#is this.operation 'percent'}}%{{/is}}{{/if}}{{#if weight}} ({{weight}}% weight){{/if}}</small></td>
+                {{/each}}
+                <td data-toggle="tooltip" data-placement="top" title="{{#is @root.score_method 'percent'}}Weighted&nbsp;score{{else}}Summed&nbsp;score{{/is}}">Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{#submissions}}
+            <tr class="map-score-breakdown {{#unless position}}contest-table-none{{/unless}}{{#is position '1'}}contest-table-first{{else}}{{#is position '2'}}contest-table-second{{else}}{{#is position '3'}}contest-table-third{{/is}}{{/is}}{{/is}}">
+                {{#if position}}
+                <td data-order="{{position}}">{{ordinalize position}}</td>
+                {{else}}
+                <td data-order="1000">-</td>
+                {{/if}}
+                <td name="{{slug}}">{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</td>
+                {{#scores}}
+                {{#if (properties @root.criteria this.criteria 'max')}}
+                <td class="map-score" max="{{properties @root.criteria this.criteria 'max'}}"{{#is @root.score_method 'percent'}} weight="{{#if (properties @root.criteria this.criteria 'weight')}}{{properties @root.criteria this.criteria 'weight'}}{{else}}0{{/if}}"{{/is}}>{{score}}</td>
+                {{else}}
+                <td class="map-bonus" operation="{{#if (properties @root.criteria this.criteria 'operation')}}{{properties @root.criteria this.criteria 'operation'}}{{else}}add{{/if}}" amount="{{#if (properties @root.criteria this.criteria 'amount')}}{{properties @root.criteria this.criteria 'amount'}}{{else}}1{{/if}}" bonus="{{#if eligible}}yes{{else}}no{{/if}}" data-order="{{#if eligible}}1{{else}}2{{/if}}">
+                    {{#if eligible}}
+                    <i class="fas fa-check"></i>
+                    {{else}}
+                    <i class="fas fa-times"></i>
+                    {{/if}}
+                </td>
+                {{/if}}
+                {{/scores}}
+                <td class="map-score-total">0</td>
+            </tr>
+            {{/submissions}}
+        </tbody>
+    </table>
+</div>
+{{/if}}
+
+<script>
+    $('.progress-bar').each(function(i, obj) {
+        var points_current = $(this).attr('aria-valuenow');
+        var points_max = $(this).attr('aria-valuemax');
+        var points_percentage = Math.floor((points_current / points_max) * 100);
+        $(this).css({
+            'width': points_percentage + '%',
+            // 'background-color': 'rgba(21, 57, 177, ' + points_percentage / 100 + ')'
+        });
+    });
+    $('.map-score-breakdown').each(function(i, obj) {
+        var map = $(this).find(':first-child').attr('name');
+        var points_given = [];
+        var points_total = 0;
+        var points_bonus = false;
+        var points_method = "{{#is score_method 'percent'}}percent{{else}}sum{{/is}}"
+        // calculate total score for map
+        $(this).find('.map-score').each(function(){
+            var points = $(this).text();
+            var max = $(this).attr('max');
+            var points_percentage = points / max
+            var weight = $(this).attr('weight');
+            if ( points_method == 'percent' ) {
+                points = points_percentage * weight
+            }
+            points_given.push(points);
+        });
+        $.each(points_given, function() { points_total += parseFloat(this) || 0;});
+        $(this).find('.map-bonus').each(function(){
+            var bonus = $(this).attr('bonus');
+            if (bonus == 'yes') {
+                points_bonus = true;
+            } else {
+                points_bonus = false;
+            }
+            var operation = $(this).attr('operation');
+            var amount = parseFloat($(this).attr('amount'));
+            if (points_bonus) {
+                switch (operation.toLowerCase()) {
+                    case 'percent':
+                        points_total += ((amount / 100) * points_total);
+                        break;
+                    case 'multiply':
+                        points_total *= amount;
+                        break;
+                    case 'subtract':
+                        points_total -= amount;
+                        break;
+                    case 'add':
+                        points_total += amount;
+                    default:
+                        points_total += amount;
+                }
+            }
+        });
+        $(this).find('.map-score-total').text(points_total.toFixed(2));
+    }).promise().done( function() {
+        $('#scores-breakdown').DataTable( {
+            paging: false,
+            scrollY: false,
+            order: [0, 'asc'],
+            responsive: {
+                details: {
+                    renderer: function ( api, rowIdx, columns ) {
+                        var data = $.map( columns, function ( col, i ) {
+                            return col.hidden ?
+                                '<tr data-dt-row="' + col.rowIndex + '" data-dt-column="' + col.columnIndex + '">' +
+                                    '<td class="title">' + col.title + '</td> '+
+                                    '<td class="data">' + col.data + '</td>'+
+                                '</tr>' :
+                                '';
+                        } ).join('');
+
+                        return data ?
+                            $('<table/>').append(data) :
+                            false;
+                    }
+                }
+            },
+            columnDefs: [
+                {responsivePriority: 1, targets: 0},
+                {responsivePriority: 1, targets: 1},
+                {responsivePriority: 1, targets: -1}
+            ],
+            dom: "<'row'<'col-sm-6'i><'col-sm-6'f>>" +
+                 "<'row'<'col-sm-12'tr>>"
+        });
+    });
+</script>

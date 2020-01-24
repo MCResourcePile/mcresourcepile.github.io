@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <span class="fas fa-folder-open" style="padding-right: 5px;" aria-hidden="true"></span> ResourcePile
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown{{#inArray page-category 'collections'}} active{{/inArray}}">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-cubes"></i> Maps</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/maps/overcast">Overcast Collection</a>
+                        <a class="dropdown-item" href="/maps/pgm">PGM Collection</a>
+                        <a class="dropdown-item" href="/maps/stratus">Stratus Collection</a>
+                        <a class="dropdown-item" href="/maps/avicus">Avicus Collection</a>
+                        <a class="dropdown-item" href="/maps/rfw">RFW Collection</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown{{#inArray page-category 'contest'}} active{{/inArray}}">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-medal"></i> Contests</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/contests/overcast">Overcast Network</a>
+                        <a class="dropdown-item" href="/contests/stratus">Stratus Network</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown{{#inArray page-category 'league'}} active{{/inArray}}">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-trophy"></i> Tournaments</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/tournaments/overcast">Overcast Network</a>
+                        <a class="dropdown-item" href="/tournaments/pgm">PGM Community</a>
+                        <a class="dropdown-item" href="/tournaments/stratus">Stratus Network</a>
+                        <a class="dropdown-item" href="/tournaments/avicus">Avicus Network</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown{{#inArray page-category 'stats'}} active{{/inArray}}">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-chart-bar"></i> Statistics</a>
+                    <div class="dropdown-menu">
+                        <p class="navbar-menu-title">Overcast</p>
+                        <a class="dropdown-item" href="/stats/overcast/bow">Bow Records</a>
+                        <a class="dropdown-item" href="/stats/overcast/miscellaneous">Miscellaneous</a>
+                        <a class="dropdown-item" href="/stats/overcast/objective">Objective Leaderboards</a>
+                        <p class="navbar-menu-title">Stratus</p>
+                        <a class="dropdown-item" href="/stats/stratus/bow">Bow Records</a>
+                        <p class="navbar-menu-title">Avicus</p>
+                        <a class="dropdown-item" href="/stats/avicus/miscellaneous">Miscellaneous</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-item{{#inArray page-category 'preferences'}} active{{/inArray}}">
+                    <a class="nav-link" href="/admin/preferences"><img src="" class="user-avatar"> <span class="user-username"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

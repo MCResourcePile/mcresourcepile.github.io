@@ -1,0 +1,21 @@
+<html>
+    <head>
+        {{> meta}}
+        {{> includes}}
+    </head>
+    <body>
+        {{> navbar}}
+        <div class="content-background">
+            <div class="container">
+                {{> alerts}}
+                {{> header}}
+                {{#if body}}
+                <p>{{{body}}}</p>
+                {{/if}}
+                {{> @partial-block}}
+            </div>
+        </div>
+        {{> footer}}
+        <script src="/assets/js/global.js"></script>
+    </body>
+</html>
