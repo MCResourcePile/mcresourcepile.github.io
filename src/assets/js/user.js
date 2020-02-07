@@ -96,22 +96,24 @@ class User {
      */
     verifyToken(token, success, fail) {
         if (token.length > 40) {
-            token = token.split('&')[0].replace('access_token=','').replace(/\s/g,'');
+            token = token.replace('access_token=','').replace(/\s/g,'');
             $('.access_token').val(token);
         } else if (token.length < 40) {
             console.warn('Invalid access token');
             return false;
         }
-        var api = "https://api.github.com/user?access_token=" + token;
-        $.getJSON(api)
-        .done(function() {
-            console.log('Valid access token');
-            success();
-        })
-        .fail(function() {
-            console.log('Invalid access token');
-            fail();
-        });
+        var params = {}
+        params["access_token"] = token;
+        var url = "https://api.github.com/user";
+        $.ajax( { url: url, data: params } )
+            .done(function() {
+                console.log('Valid access token');
+                success();
+            })
+            .fail(function() {
+                console.log('Invalid access token');
+                fail();
+            });
     }
 
     /** 
@@ -155,16 +157,18 @@ class User {
     fetchUserInfo(success, fail) {
         if (this._token) {
             var self = this;
-            var api = "https://api.github.com/user?access_token=" + this._token;
-            $.getJSON(api)
-            .done(function(data) {
-                console.log('Successfully retrieved User identity data');
-                success(data);
-            })
-            .fail(function() {
-                console.warn('Failed to retrieve User identity data');
-                fail();
-            });
+            var params = {}
+            params["access_token"] = this._token;
+            var url = "https://api.github.com/user";
+            $.ajax( { url: url, data: params } )
+                .done(function(data) {
+                    console.log('Successfully retrieved User identity data');
+                    success(data);
+                })
+                .fail(function() {
+                    console.warn('Failed to retrieve User identity data');
+                    fail();
+                });
         }
     }
 
@@ -198,19 +202,42 @@ class User {
      * @param {function} fail    Function to run if API call fails
      */
     fetchRates(success, fail) {
-        var api = "https://api.github.com/rate_limit";
-        if (this._token) {
-            api += "?access_token=" + this._token;
-        }
-        $.getJSON(api)
-        .done(function(data) {
-            console.log('Successfully retrieved User rate limit data');
-            success(data);
-        })
-        .fail(function() {
-            console.warn('Failed to retrieve User rate limit data');
-            fail();
-        });
+        var params = {}
+        if (this._token) params["access_token"] = this._token;
+        var url = "https://api.github.com/rate_limit";
+        $.ajax( { url: url, data: params } )
+            .done(function(data) {
+                console.log('Successfully retrieved User rate limit data');
+                success(data);
+            })
+            .fail(function() {
+                console.warn('Failed to retrieve User rate limit data');
+                fail();
+            });
+    }
+
+    /** 
+     * Quickly resets a user cookie. Useful for debugging.
+     *
+     * @return {boolean} Success or fail response
+     */
+    reset() {
+        this._token = "";
+        this._username = "Guest";
+        this._avatar = "https://avatars0.githubusercontent.com/u/24795789?v=4";
+        this._rate = {
+            limit: 0,
+            remaining: 0,
+            reset: 0
+        };
+        this._preferences = {
+            theme: "automatic",
+            show_map_stats: true,
+            show_map_images: true,
+            show_map_suggestions: true,
+            tm_banners_display: "all"
+        };
+        return this.save();
     }
 
     /** 
