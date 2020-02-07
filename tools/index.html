@@ -94,6 +94,11 @@
                     <noscript>
                         <div class="alert alert-danger alert-global" role="alert">Please enable JavaScript in your browser. Many features of this site rely on JavaScript and will not work without it.</div>
                     </noscript>
+                    <div id="alert-important-no" class="alert alert-danger alert-global" role="alert">
+                        <strong>Important notice for visitors using GitHub access tokens.</strong> Due to changes to GitHub's API, all access tokens generated and saved before the <strong>6th of February, 2020</strong> are no longer valid. If you wish to continue using an access token to authenticate your map downloads, please generate and save a new token in your <a href="/admin/preferences">site preferences</a>.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
+                        <script>$("#alert-important-no").on("closed.bs.alert",function(){Cookies.set("alert-important-no-hidden",!0,{expires:365})}),Cookies.get("alert-important-no-hidden")&&$("#alert-important-no").alert("close");</script>
+                    </div>
                 </div>
                 <div class="content-header">
                     <div class="content-title">ResourcePile Tools</div>
