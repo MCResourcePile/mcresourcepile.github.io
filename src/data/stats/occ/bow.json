@@ -1,0 +1,45 @@
+{
+    "title": "OCC Bow Records",
+    "subtitle": "Tracking the longest bow kill distances recorded on the Overcast Community Network",
+    "body": "Submit screenshots of your records via discord in order to have your records included on this page.",
+    "page-category": ["stats"],
+    "settings": {
+        "include": {
+            "stylesheets": [
+                "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.3/css/bootstrap-slider.min.css"
+            ],
+            "scripts": [
+                "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.3/bootstrap-slider.min.js",
+                "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js",
+                "/assets/js/stats.js",
+                "/assets/js/search.js"
+            ]
+        },
+        "maps": {
+            "group": "overcast",
+            "advanced_menu": {
+                "placeholder": "records",
+                "groups": [
+                    {"title": "Games",    "tags": ["arcade", "cp", "ctw", "ctf", "dtc", "dtm", "ffa", "gs", "kotf", "koth", "tdm"]},
+                    {"title": "Addons",   "tags": ["ad", "blitz", "micro", "rage", "tnt"]},
+                    {"title": "Editions", "tags": ["christmas", "halloween"]},
+                    {"title": "Distance", "slider": {"for": "distance", "min": 0, "max": 350, "range": true, "step": 1}}
+                ],
+                "dynamic": true
+            },
+            "images": {
+                "repo": "overcast-bow-images",
+                "branch": "master"
+            }
+        }
+    },
+    "maps": [
+        {
+            "name": "Aaeros",
+            "tags": ["cp"],
+            "records": [
+                {"username": "Lucaslyoko", "uuid": "8b2d7971-7348-4438-9efe-6d6ecf2be972", "distance": 76, "void": false, "screenshot": "https://i.gyazo.com/92e8c4f5e9e8e850d03d0b0a2273a6aa.jpg"}
+            ]
+        }
+    ]
+}
