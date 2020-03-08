@@ -1,25 +1,26 @@
 <html>
     <head>
-        <title>ResourcePile - ResourcePile</title>
+        <title>OCC Bow Records - ResourcePile</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="A collection of resources for various competitive Minecraft networks"/>
-        <meta property="og:title" content="ResourcePile - ResourcePile"/>
+        <meta name="description" content="Tracking the longest bow kill distances recorded on the Overcast Community Network"/>
+        <meta property="og:title" content="OCC Bow Records - ResourcePile"/>
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://mcresourcepile.github.io/"/>
         <meta property="og:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
-        <meta property="og:description" content="A collection of resources for various competitive Minecraft networks"/>
+        <meta property="og:description" content="Tracking the longest bow kill distances recorded on the Overcast Community Network"/>
         <meta property="og:site_name" content="ResourcePile"/>
         <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:title" content="ResourcePile - ResourcePile"/>
-        <meta name="tiwtter:description" content="A collection of resources for various competitive Minecraft networks"/>
+        <meta name="twitter:title" content="OCC Bow Records - ResourcePile"/>
+        <meta name="tiwtter:description" content="Tracking the longest bow kill distances recorded on the Overcast Community Network"/>
         <meta name="tiwtter:image" content="https://mcresourcepile.github.io/assets/img/logo-whitebg.jpg"/>
         <meta name="theme-color">
         <link rel="shortcut icon" href="/assets/favicon.ico">        <!-- Page stylesheets -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="/assets/css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.3/css/bootstrap-slider.min.css">
         <!-- Page script files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -27,6 +28,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="/assets/js/user.js"></script>
         <script src="/assets/js/preferences.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.3/bootstrap-slider.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+        <script src="/assets/js/stats.js"></script>
+        <script src="/assets/js/search.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
@@ -65,7 +70,7 @@
                                 <a class="dropdown-item" href="/tournaments/avicus">Avicus Network</a>
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-chart-bar"></i> Statistics</a>
                             <div class="dropdown-menu">
                                 <p class="navbar-menu-title">Overcast</p>
@@ -100,21 +105,60 @@
                     </div>
                 </div>
                 <div class="content-header">
-                    <div class="content-title">ResourcePile</div>
+                    <div class="content-title">OCC Bow Records</div>
+                    <div class="content-subtitle">Tracking the longest bow kill distances recorded on the Overcast Community Network</div>
                 </div>
+                <p>Submit screenshots of your records via discord in order to have your records included on this page.</p>
                 <div id="searchable-collection" class="bow-output row">
                     <div class="col-lg-3 order-lg-2 order-1">
-                        <div class="img-thumbnail map-search">
+                        <div class="img-thumbnail map-search map-search-dynamic">
                             <div class="center">
                                 <span id="searchable-count"></span>
                             </div>
-                            <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search ">
+                            <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search records">
                             <div class="filters">
                                 <b>Filters</b>
-                                <small>Use filters to narrow your query when searching for specific .</small>
+                                <small>Use filters to narrow your query when searching for specific records.</small>
+                                <div class="group">
+                                    <b>Games</b>
+                                    <span class="filter">Arcade</span>
+                                    <span class="filter">Capture Points</span>
+                                    <span class="filter">Capture the Wool</span>
+                                    <span class="filter">Capture the Flag</span>
+                                    <span class="filter">Destroy the Core</span>
+                                    <span class="filter">Destroy the Monument</span>
+                                    <span class="filter">Free-for-all</span>
+                                    <span class="filter">Ghost Squadron</span>
+                                    <span class="filter">King of the Flag</span>
+                                    <span class="filter">King of the Hill</span>
+                                    <span class="filter">Race for Wool</span>
+                                    <span class="filter">Team Deathmatch</span>
+                                    <span class="filter">Skywars</span>
+                                </div>
+                                <div class="group">
+                                    <b>Addons</b>
+                                    <span class="filter">Attack/Defend</span>
+                                    <span class="filter">Blitz</span>
+                                    <span class="filter">Micro</span>
+                                    <span class="filter">Rage</span>
+                                    <span class="filter">TNT</span>
+                                </div>
+                                <div class="group">
+                                    <b>Editions</b>
+                                    <span class="filter">Christmas</span>
+                                    <span class="filter">Halloween</span>
+                                    <span class="filter">Ranked</span>
+                                    <span class="filter">Tournament</span>
+                                </div>
+                                <div class="group">
+                                    <b>Distance</b>
+                                    0
+                                    <input id="slider" type="text" value="" data-slider-min="0" data-slider-max="350" data-slider-step="1" data-slider-value="[0,350]">
+                                    350
+                                </div>
                                 <div class="group search-options">
                                     <b>Filter Options</b>
-                                    <small>Use filter options to alter how  are filtered.</small>
+                                    <small>Use filter options to alter how records are filtered.</small>
                                     <span class="filter-option-toggle">
                                         <span class="filter filter-option active" data-option="match" data-toggle="all">Match All Filters</span>
                                         <span class="filter filter-option" data-option="match" data-toggle="any">Match Any Filter</span>
@@ -125,6 +169,44 @@
                         </div>
                     </div>
                     <div class="col-lg-9 order-lg-1 order-2 dynamic list">
+                        <div class="bow-record img-thumbnail row">
+                            <div class="bow-record-header col-md-5">
+                                <img class="lazy" data-src="https://github.com/MCResourcePile/stratus-maps/blob/images/maps/warlock.png?raw=true">
+                                <div class="bow-titles">
+                                    <div class="bow-map">Warlock</div>
+                                    <div class="bow-tags">
+                                        <span class="map-tag">Destroy the Monument</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bow-record-content col-md-7">
+                                <div class="bow-user-record" data-user-uuid="8b2d7971734844389efe6d6ecf2be972">
+                                    <i class="fas fa-trophy"></i>
+                                    <img class="bow-player-avatar" src="https://crafatar.com/avatars/8b2d7971-7348-4438-9efe-6d6ecf2be972?size=30&default=MHF_Steve&overlay">
+                                    <span class="bow-player click-search" data-query="8b2d7971734844389efe6d6ecf2be972">Lucaslyoko</span>
+                                    with a distance of <b>33<span title="Out-of-world kill" data-toggle="tooltip" data-placement="top">*</span></b> blocks
+                                    <a class="bow-reference" href="https://i.gyazo.com/d9ce9fe1beb006110125cfbedc934cb8.jpg" target="_blank" data-toggle="tooltip" data-placement="top" title="Verified"><i class="fas fa-check-circle"></i></a>
+                                </div>
+                                <div class="bow-user-record" data-user-uuid="746e780a3f7f4225aa8737203ef210fb">
+                                    2.
+                                    <img class="bow-player-avatar" src="https://crafatar.com/avatars/746e780a-3f7f-4225-aa87-37203ef210fb?size=30&default=MHF_Steve&overlay">
+                                    <span class="bow-player click-search" data-query="746e780a3f7f4225aa8737203ef210fb">awesomemangoes</span>
+                                    with a distance of <b>26</b> blocks
+                                </div>
+                                <div class="bow-user-record" data-user-uuid="c3c6747657044505a8302e754686cd56">
+                                    3.
+                                    <img class="bow-player-avatar" src="https://crafatar.com/avatars/c3c67476-5704-4505-a830-2e754686cd56?size=30&default=MHF_Steve&overlay">
+                                    <span class="bow-player click-search" data-query="c3c6747657044505a8302e754686cd56">BiscordDitro</span>
+                                    with a distance of <b>25</b> blocks
+                                </div>
+                            </div>
+                            <div class="hidden">
+                                <div class="tags">warlock,Destroy the Monument</div>
+                                <div class="users">Lucaslyoko,awesomemangoes,HappY_Tchimon</div>
+                                <div class="uuids">8b2d7971734844389efe6d6ecf2be972,746e780a3f7f4225aa8737203ef210fb,c3c6747657044505a8302e754686cd56</div>
+                                <div class="distances">33,26,25</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
