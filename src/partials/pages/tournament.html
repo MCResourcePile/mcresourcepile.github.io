@@ -4,7 +4,7 @@
     <div class="row tm-pager">
         <div class="col-lg-4 col-md-6 tm-pager-last">
             {{#if last}}
-            <a class="btn btn-outline-primary" href="/leagues/{{@root.settings.tournaments.host}}/{{snakecase (lowercase last)}}" role="button">
+            <a class="btn btn-outline-primary" href="/tournaments/{{@root.settings.tournaments.host}}/{{snakecase (lowercase last)}}" role="button">
                 <i class="fas fa-long-arrow-alt-left"></i> Last: {{@root.order.last}}
             </a>
             {{else}}
@@ -18,7 +18,7 @@
         </div>
         <div class="col-lg-4 col-md-6 tm-pager-next">
             {{#if next}}
-            <a class="btn btn-outline-primary" href="/leagues/{{@root.settings.tournaments.host}}/{{snakecase (lowercase next)}}" role="button">
+            <a class="btn btn-outline-primary" href="/tournaments/{{@root.settings.tournaments.host}}/{{snakecase (lowercase next)}}" role="button">
                 Next: {{@root.order.next}} <i class="fas fa-long-arrow-alt-right"></i>
             </a>
             {{else}}
