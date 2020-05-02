@@ -133,6 +133,38 @@
                         <h5>Information on this page may not be final.</h5>
                     </div>
                 </div>
+                <div class="tm-results">
+                    <span class="tournament-expand-results collapsed" data-expanded="false" data-toggle="collapse" data-target="#section-results">Show Full Results +</span>
+                    <div class="collapse" id="section-results">
+                        <div class="tm-results-well">
+                            <div class="row" id="results-panels">
+                                <div class="col-md-12">
+                                    <div class="card border-primary">
+                                        <h5 class="card-header text-primary border-primary">Qualifier Results</h5>
+                                        <div class="card-body">
+                                            <table class="info-table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td colspan="2" style="font-weight: 400;"><div class='center'><img src='https://cdn.discordapp.com/attachments/323660154807779328/704100237014204666/unknown.png'></div></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="challonge-brackets">
+                                <div class="challonge-bracket">
+                                    <span>Invitational</span>
+                                    <a href="https://stratus.challonge.com/ww" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <iframe src="https://stratus.challonge.com/ww/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="collapse-section">
                     <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-info"><i class="fas fa-angle-down"></i> Tournament Information</div>
                     <div class="collapse show" id="section-info">
@@ -150,13 +182,19 @@
                                                 <tr>
                                                     <td>Format</td>
                                                     <td>
-                                                        Qualifier<i class="fas fa-long-arrow-alt-right" style="vertical-align: middle; padding-left: 7px; padding-right: 6px;"></i>Invitational
+                                                        Qualifier (Double Round Robin)<i class="fas fa-long-arrow-alt-right" style="vertical-align: middle; padding-left: 7px; padding-right: 6px;"></i>Invitational (Double Elimination)
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Gamemodes</td>
                                                     <td>
                                                         Capture the Wool
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Teams</td>
+                                                    <td>
+                                                        <a href="#teams">20 teams <i class="fas fa-chevron-down"></i></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -179,8 +217,12 @@
                                                     <td>April 25-26, 2020</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Invitational</td>
+                                                    <td>Invitational Week 1</td>
                                                     <td>May 2-3, 2020</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Invitational Week 2</td>
+                                                    <td>May 9-10, 2020</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -217,13 +259,12 @@
                             <div class="col img-thumbnail map-thumbnail center">
                                 <div class="map-thumbnail-selector">
                                     <div class="map-thumbnail-header">
-                                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/dead_heat.png">
-                                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Dead Heat">
+                                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/no_return.png">
+                                        <div class="banner" data-toggle="tooltip" data-placement="top" title="No Return">
                                             <div class="title">
-                                                <a class="s-title">Dead Heat</a>
+                                                <a class="s-title">No Return</a>
                                             </div>
                                             <div class="sub-title">
-                                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span>,</li>
                                                 <li class="game-tag map-tag s-tag">Blitz</li>
                                             </div>
                                             <div class="icon-alerts">
@@ -239,14 +280,13 @@
                             <div class="col img-thumbnail map-thumbnail center">
                                 <div class="map-thumbnail-selector">
                                     <div class="map-thumbnail-header">
-                                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/matrix.png">
-                                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Matrix">
+                                        <img class="image lazy" data-src="../../assets/img/tournament/shared/maps/tiebreakinator.png">
+                                        <div class="banner" data-toggle="tooltip" data-placement="top" title="Tiebreakinator">
                                             <div class="title">
-                                                <a class="s-title">Matrix</a>
+                                                <a class="s-title">Tiebreakinator</a>
                                             </div>
                                             <div class="sub-title">
-                                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span>,</li>
-                                                <li class="game-tag map-tag s-tag">Blitz</li>
+                                                <li class="game-tag map-tag s-tag">Capture the Wool<span class="hidden">ctw</span></li>
                                             </div>
                                             <div class="icon-alerts">
                                             </div>
@@ -363,6 +403,154 @@
                                 </div>
                             </div>
                             
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse-section id-anchor" id="teams">
+                    <div class="info-section-heading collapse-section-heading" data-expanded="true" data-toggle="collapse" data-target="#section-teams"><i class="fas fa-angle-down"></i> Teams <small>20 teams</small></div>
+                    <div class="collapse show" id="section-teams">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#qualifier" role="tab" data-toggle="tab">Qualifier</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#invitational" role="tab" data-toggle="tab">Invitational</a>
+                            </li>
+                        </ul>
+                        <div class="custom-control custom-switch tm-teams-fade-toggle">
+                            <input type="checkbox" class="custom-control-input" id="team-fade-toggle" checked>
+                            <label class="custom-control-label" for="team-fade-toggle">Fade Teams that did not Advance</label>
+                        </div>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active tm-group-advances" id="qualifier">
+                                <div class="row">
+                                    <div class="col-sm-6 col-lg-4 col-xl-3">
+                                        <div class="team-group-name">Group A</div>
+                                        <div class="team-group-name team-group-count">5 teams</div>
+                                        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">Adventure Club</div>
+                                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                                            <div class="name no-seed">Midnight Magic</div>
+                                        </div>        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">Moscu</div>
+                                        </div>        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">Night Vision</div>
+                                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                                            <div class="name no-seed">Praedifficilis</div>
+                                        </div>    </div>
+                                    <div class="col-sm-6 col-lg-4 col-xl-3">
+                                        <div class="team-group-name">Group B</div>
+                                        <div class="team-group-name team-group-count">5 teams</div>
+                                        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">BATB</div>
+                                        </div>        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">LFAM</div>
+                                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                                            <div class="name no-seed">PlanZero</div>
+                                        </div>        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">Rocky Rejects</div>
+                                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                                            <div class="name no-seed">Team Rocket</div>
+                                        </div>    </div>
+                                    <div class="col-sm-6 col-lg-4 col-xl-3">
+                                        <div class="team-group-name">Group C</div>
+                                        <div class="team-group-name team-group-count">5 teams</div>
+                                        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">Aura</div>
+                                        </div>        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">Blitz</div>
+                                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                                            <div class="name no-seed">Golden Nuggets</div>
+                                        </div>        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">LPM</div>
+                                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                                            <div class="name no-seed">WeAreDinamita_YEAH</div>
+                                        </div>    </div>
+                                    <div class="col-sm-6 col-lg-4 col-xl-3">
+                                        <div class="team-group-name">Group D</div>
+                                        <div class="team-group-name team-group-count">5 teams</div>
+                                        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">Cley&#x27;s Citchen</div>
+                                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                                            <div class="name no-seed">Dominican Members</div>
+                                        </div>        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">G59</div>
+                                        </div>        <div class="tm-team" data-advances="true">
+                                            <div class="name no-seed">Squadcat</div>
+                                        </div>        <div class="tm-team tm-team-fade" data-advances="false">
+                                            <div class="name no-seed">UberSolDrat</div>
+                                        </div>    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="invitational">
+                                <div class="tm-team-group">
+                                    <div class="team-group-name">Invitational</div>
+                                    <div class="team-group-name team-group-count">12 teams</div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="1 Seed">1</div>
+                                                <div class="name">Adventure Club</div>
+                                            </div>        </div>
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="2 Seed">2</div>
+                                                <div class="name">LFAM</div>
+                                            </div>        </div>
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="3 Seed">3</div>
+                                                <div class="name">Aura</div>
+                                            </div>        </div>
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="4 Seed">4</div>
+                                                <div class="name">Cley&#x27;s Citchen</div>
+                                            </div>        </div>
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="5 Seed">5</div>
+                                                <div class="name">BATB</div>
+                                            </div>        </div>
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="6 Seed">6</div>
+                                                <div class="name">Night Vision</div>
+                                            </div>        </div>
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="7 Seed">7</div>
+                                                <div class="name">LPM</div>
+                                            </div>        </div>
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="8 Seed">8</div>
+                                                <div class="name">G59</div>
+                                            </div>        </div>
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="9 Seed">9</div>
+                                                <div class="name">Moscu</div>
+                                            </div>        </div>
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="10 Seed">10</div>
+                                                <div class="name">Blitz</div>
+                                            </div>        </div>
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="11 Seed">11</div>
+                                                <div class="name">Rocky&#x27;s Rejects</div>
+                                            </div>        </div>
+                                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                                            <div class="tm-team tm-team-fade" data-advances="false">
+                                                <div class="seed" data-toggle="tooltip" data-placement="bottom" title="12 Seed">12</div>
+                                                <div class="name">Squadcat</div>
+                                            </div>        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
