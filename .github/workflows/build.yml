@@ -1,0 +1,39 @@
+name: build
+on:
+  push:
+    branches: source
+  pull_request:
+    branches: source
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 8
+    - name: Setup Ruby
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6.x'
+    - name: Install Dependencies 
+      run: |
+        npm install
+        gem install sass
+    - name: Build
+      run: grunt
+    - name: Deploy
+      if: github.event_name != 'pull_request'
+      uses: JamesIves/github-pages-deploy-action@3.5.3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BASE_BRANCH: source
+        BRANCH: master
+        FOLDER: out
+        CLEAN: true
+        GIT_CONFIG_EMAIL: MCResourcePile@gmail.com
+        COMMIT_MESSAGE: Deploy to GitHub Pages - ${{ github.sha }}
