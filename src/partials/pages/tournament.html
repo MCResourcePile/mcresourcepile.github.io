@@ -46,6 +46,7 @@
         <div class="league-team">{{first_place}}</div>
         <div class="league-team-position">1<sup>st</sup> place</div>
     </div>
+    {{#or second_place third_place}}
     <div class="row">
         <div class="league-position col-sm-6">
             <i class="fas fa-medal"></i>
@@ -58,6 +59,7 @@
             <div class="league-team-position">3<sup>rd</sup> place</div>
         </div>
     </div>
+    {{/or}}
     {{else}}
     <div class="league-position league-position-first">
         <i class="fas fa-exclamation-triangle"></i>
