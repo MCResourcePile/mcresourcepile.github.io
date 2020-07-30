@@ -2,7 +2,7 @@
  * Preferences
  */
 
-$(document).ready(function() {
+$(function() {
     // setup preferences page
     if (current_path == '/admin/preferences') {
         loadUserPreferenceOptions();
