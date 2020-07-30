@@ -1,11 +1,12 @@
 .background-splash {
     background-size: cover !important;
+    overflow-x: hidden;
 }
 
 .background-splash-wash {
-    background-color: rgba(11, 33, 56, 0.25);
-    width: 100%;
-    height: 60%;
+    background-color: rgba(23, 23, 23, 0.35);
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -15,19 +16,20 @@
   src: url('../fonts/mosk-regular.ttf');
 }
 
-.splash-header-body {
-    font-family: 'Mosk', sans-serif;
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/montserrat-black.ttf');
 }
 
 .splash-header {
-    font-size: 3.2em;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6vw;
+    line-height: 6vw;
     color: #fff;
     border-bottom: 2px solid #fff;
-    margin-bottom: 16px;
     display: inline-block;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 414px) {
@@ -37,8 +39,55 @@
 }
 
 .splash-subheader {
-    font-size: 1.6em;
+    font-size: 1.8rem;
     color: #fff;
+    
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+.splash-subheader a {
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+	}
+
+	70% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.95);
+	}
+}
+
+.background-map-detail {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    font-size: 1rem;
+}
+
+.detail-prefix {
+    color: #d8d8d8;
+}
+
+.detail-map {
+    font-weight: bold;
+}
+
+.detail-map[href] {
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+}
+
+a[href]:hover {
+    text-decoration: none;
+    color: #76bc4a;
 }
 
 .index-alerts {
@@ -107,6 +156,11 @@
         height: 75%;
     }
 
+    .splash-header {
+        font-size: 8vw;
+        line-height: 8vw;
+    }
+
     .index-content {
         height: auto;
         display: block;
@@ -133,6 +187,11 @@
 @media screen and (max-height: 812px) {
     .background-splash-wash {
         height: 100%;
+    }
+
+    .splash-header {
+        font-size: 10vw;
+        line-height: 10vw;
     }
 
     .index-content {
