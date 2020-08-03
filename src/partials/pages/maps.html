@@ -1,7 +1,12 @@
 {{> featured_maps}}
 <div id="searchable-collection" class="maps-output row center">
     <div class="col-lg-3 order-lg-2 order-1">
-        {{> search_sidebar}}
+        <div class="dynamic-sidebar">
+            <div class="scrollable">
+                {{> search_sidebar}}
+                {{> repo_list}}
+            </div>
+        </div>
     </div>
     <div class="col-lg-9 order-lg-1 order-2 dynamic list">
         {{#each (sortBy data.maps "name")}}

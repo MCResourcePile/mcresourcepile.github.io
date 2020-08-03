@@ -1,0 +1,19 @@
+{{#if settings.maps.repos}}
+<div class="img-thumbnail map-repos">
+    <b>Listed Repositories</b>
+    <small>Information and links related to the repositories that contain the maps in this collection.</small>
+    {{#each settings.maps.repos}}
+    <div class="map-repo">
+        <a class="map-repo-name" href="https://github.com/MCResourcePile/{{this}}">{{this}}</a>
+        <div class="map-repo-sheilds">
+            <a class="sheild" href="https://github.com/MCResourcePile/{{this}}/archive/master.zip"><i class="fas fa-file-archive"></i> download zip archive</a>
+            <img src="https://img.shields.io/github/repo-size/MCResourcePile/{{this}}?style=flat-square">
+            <img src="https://img.shields.io/github/commit-activity/y/MCResourcePile/{{this}}?style=flat-square">
+            <img src="https://img.shields.io/github/forks/MCResourcePile/{{this}}?style=flat-square">
+            <img src="https://img.shields.io/github/stars/MCResourcePile/{{this}}?style=flat-square">
+            <img src="https://img.shields.io/github/watchers/MCResourcePile/{{this}}?style=flat-square">
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
