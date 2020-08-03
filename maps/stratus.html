@@ -113,59 +113,78 @@
                 </div>
                 <div id="searchable-collection" class="maps-output row center">
                     <div class="col-lg-3 order-lg-2 order-1">
-                        <div class="img-thumbnail map-search map-search-dynamic">
-                            <div class="center">
-                                <span id="searchable-count"></span>
-                            </div>
-                            <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search maps">
-                            <div class="filters">
-                                <b>Filters</b>
-                                <small>Use filters to narrow your query when searching for specific maps.</small>
-                                <div class="group">
-                                    <span class="filter">New</span>
-                                    <span class="filter">Popular</span>
-                                    <span class="filter">Commercial</span>
-                                    <span class="filter">Noncommercial</span>
+                        <div class="dynamic-sidebar">
+                            <div class="scrollable">
+                                <div class="img-thumbnail map-search">
+                                    <div class="center">
+                                        <span id="searchable-count"></span>
+                                    </div>
+                                    <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search maps">
+                                    <div class="filters">
+                                        <b>Filters</b>
+                                        <small>Use filters to narrow your query when searching for specific maps.</small>
+                                        <div class="group">
+                                            <span class="filter">New</span>
+                                            <span class="filter">Popular</span>
+                                            <span class="filter">Commercial</span>
+                                            <span class="filter">Noncommercial</span>
+                                        </div>
+                                        <div class="group">
+                                            <b>Games</b>
+                                            <span class="filter">Arcade</span>
+                                            <span class="filter">Capture Points</span>
+                                            <span class="filter">Capture the Wool</span>
+                                            <span class="filter">Capture the Flag</span>
+                                            <span class="filter">Destroy the Core</span>
+                                            <span class="filter">Destroy the Monument</span>
+                                            <span class="filter">Free-for-all</span>
+                                            <span class="filter">Ghost Squadron</span>
+                                            <span class="filter">King of the Flag</span>
+                                            <span class="filter">King of the Hill</span>
+                                            <span class="filter">Payload</span>
+                                            <span class="filter">Race for Wool</span>
+                                            <span class="filter">Team Deathmatch</span>
+                                        </div>
+                                        <div class="group">
+                                            <b>Addons</b>
+                                            <span class="filter">Attack/Defend</span>
+                                            <span class="filter">Blitz</span>
+                                            <span class="filter">Micro</span>
+                                            <span class="filter">Rage</span>
+                                            <span class="filter">TNT</span>
+                                        </div>
+                                        <div class="group">
+                                            <b>Editions</b>
+                                            <span class="filter">Christmas</span>
+                                            <span class="filter">Halloween</span>
+                                            <span class="filter">Ranked</span>
+                                            <span class="filter">Tournament</span>
+                                        </div>
+                                        <div class="group search-options">
+                                            <b>Filter Options</b>
+                                            <small>Use filter options to alter how maps are filtered.</small>
+                                            <span class="filter-option-toggle">
+                                                <span class="filter filter-option active" data-option="match" data-toggle="all">Match All Filters</span>
+                                                <span class="filter filter-option" data-option="match" data-toggle="any">Match Any Filter</span>
+                                            </span>
+                                            <span class="filter filter-option" data-option="invert">Invert Filters</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="group">
-                                    <b>Games</b>
-                                    <span class="filter">Arcade</span>
-                                    <span class="filter">Capture Points</span>
-                                    <span class="filter">Capture the Wool</span>
-                                    <span class="filter">Capture the Flag</span>
-                                    <span class="filter">Destroy the Core</span>
-                                    <span class="filter">Destroy the Monument</span>
-                                    <span class="filter">Free-for-all</span>
-                                    <span class="filter">Ghost Squadron</span>
-                                    <span class="filter">King of the Flag</span>
-                                    <span class="filter">King of the Hill</span>
-                                    <span class="filter">Payload</span>
-                                    <span class="filter">Race for Wool</span>
-                                    <span class="filter">Team Deathmatch</span>
-                                </div>
-                                <div class="group">
-                                    <b>Addons</b>
-                                    <span class="filter">Attack/Defend</span>
-                                    <span class="filter">Blitz</span>
-                                    <span class="filter">Micro</span>
-                                    <span class="filter">Rage</span>
-                                    <span class="filter">TNT</span>
-                                </div>
-                                <div class="group">
-                                    <b>Editions</b>
-                                    <span class="filter">Christmas</span>
-                                    <span class="filter">Halloween</span>
-                                    <span class="filter">Ranked</span>
-                                    <span class="filter">Tournament</span>
-                                </div>
-                                <div class="group search-options">
-                                    <b>Filter Options</b>
-                                    <small>Use filter options to alter how maps are filtered.</small>
-                                    <span class="filter-option-toggle">
-                                        <span class="filter filter-option active" data-option="match" data-toggle="all">Match All Filters</span>
-                                        <span class="filter filter-option" data-option="match" data-toggle="any">Match Any Filter</span>
-                                    </span>
-                                    <span class="filter filter-option" data-option="invert">Invert Filters</span>
+                                <div class="img-thumbnail map-repos">
+                                    <b>Listed Repositories</b>
+                                    <small>Information and links related to the repositories that contain the maps in this collection.</small>
+                                    <div class="map-repo">
+                                        <a class="map-repo-name" href="https://github.com/MCResourcePile/stratus-maps">stratus-maps</a>
+                                        <div class="map-repo-sheilds">
+                                            <a class="sheild" href="https://github.com/MCResourcePile/stratus-maps/archive/master.zip"><i class="fas fa-file-archive"></i> download zip archive</a>
+                                            <img src="https://img.shields.io/github/repo-size/MCResourcePile/stratus-maps?style=flat-square">
+                                            <img src="https://img.shields.io/github/commit-activity/y/MCResourcePile/stratus-maps?style=flat-square">
+                                            <img src="https://img.shields.io/github/forks/MCResourcePile/stratus-maps?style=flat-square">
+                                            <img src="https://img.shields.io/github/stars/MCResourcePile/stratus-maps?style=flat-square">
+                                            <img src="https://img.shields.io/github/watchers/MCResourcePile/stratus-maps?style=flat-square">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

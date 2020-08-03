@@ -1,0 +1,74 @@
+.map-repos {
+    margin-top: 8px;
+    padding: 8px 12px 12px 12px;
+    max-width: initial;
+    text-align: left;
+    
+    > b {
+        font-size: 15px;
+    }
+    
+    > small {
+        display: block;
+        font-size: 10px;
+        margin-top: -2px;
+        line-height: 12px;
+    }
+    
+    .map-repo {
+        margin-top: 6px;
+        
+        .map-repo-name {
+            font-weight: bold;
+            font-size: 12px;
+            border-bottom: 1px dotted #666;
+            color: #666;
+            
+            &:hover {
+                text-decoration: none;
+                color: #666;
+            }
+        }
+        
+        .map-repo-sheilds {
+            a.sheild {
+                font-family: system-ui;
+                background-color: #555;
+                color: #fff;
+                font-size: 11px;
+                padding: 0 6px;
+                display: inline-block;
+                vertical-align: -1;
+                
+                i {
+                    margin-right: 2px;
+                }
+                
+                &:hover {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .map-repos {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .map-repos {
+        width: 215px;
+        z-index: 1;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .map-repos {
+        width: 270px;
+        z-index: 1;
+    }
+}

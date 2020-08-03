@@ -13,23 +13,23 @@ $(function() {
         var wrapper_top = $('#searchable-collection').position().top;
         var wrapper_height = $('#searchable-collection').height() + 98;
         var scroll_position = $(document).scrollTop();
-        var panel_bottom = $('.map-search').height() + scroll_position;
+        var panel_bottom = $('.dynamic-sidebar').height() + scroll_position;
         var window_width = $(window).width();
         if (window_width >= 992) {
             if (scroll_position + nav > wrapper_top) {
-                $('.map-search').css('position', 'fixed');
+                $('.dynamic-sidebar').css('position', 'fixed');
                 if (panel_bottom < wrapper_height) {
-                    $('.map-search').css('top', nav + 15);
+                    $('.dynamic-sidebar').css('top', nav + 15);
                 } else {
-                    $('.map-search').css('top', nav - (panel_bottom - wrapper_height));
+                    $('.dynamic-sidebar').css('top', nav - (panel_bottom - wrapper_height));
                 }
             } else {
-                $('.map-search').css('position', 'relative');
-                $('.map-search').css('top', 0);
+                $('.dynamic-sidebar').css('position', 'relative');
+                $('.dynamic-sidebar').css('top', 0);
             }
         } else {
-            $('.map-search').css('position', 'relative');
-            $('.map-search').css('top', 0);
+            $('.dynamic-sidebar').css('position', 'relative');
+            $('.dynamic-sidebar').css('top', 0);
         }
     });
 
