@@ -71,7 +71,7 @@ $(function() {
         "&lt;objective&gt Get the longest kill distance with a bow! &lt;/objective&gt",
         "Loading Avicus Network maps repository... 52% complete",
         "Now with 100% more Rift!",
-        "Check out the <a href='https://discord.gg/OCC'>Overcast Community</a> Discord server!",
+        "Check out the <a href='https://discord.gg/CvJGbrV'>Overcast Community</a> Discord server!",
         "Check out the <a href='https://discord.gg/Vxmq7Xp'>Stratus Network</a> Discord server!",
         "Check out our <a href='https://discord.gg/ygNgxKj'>Discord server</a>!"
     ]
