@@ -61,19 +61,19 @@ $(function() {
     // used for map suggestions when enabled
     var source = $('#maps-data').data('source');
     if (user._preferences.show_map_suggestions) {
-        $.getJSON("https://cdn.jsdelivr.net/gh/MCResourcePile/mcresourcepile.github.io@source/src/data/maps/" + source + ".json", function(r) {
+        $.getJSON("/data/maps/" + source + ".json", function(r) {
             maps_json = r.data.maps;
         });
     }
     
     // fetch json version gloabl map config
     // (tag short hands and environments)
-    $.getJSON("https://cdn.jsdelivr.net/gh/MCResourcePile/mcresourcepile.github.io@source/src/data/global.json", function(r) {
+    $.getJSON("/data/global.json", function(r) {
         maps_commons = r.settings.maps;
     });
     
     // fetch author names
-    $.getJSON("https://cdn.jsdelivr.net/gh/MCResourcePile/mcresourcepile.github.io@source/src/data/uuids.json", function(r) {
+    $.getJSON("/data/uuids.json", function(r) {
         uuids = r.uuids;
     });
     

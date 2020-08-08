@@ -1,0 +1,95 @@
+{
+    "title": "ResourcePile",
+    "tagline": "A collection of resources for various competitive Minecraft networks",
+    "page-category": ["undefined"],
+    "settings": {
+        "header": true,
+        "full": false,
+        "alerts": {
+            "enabled": false,
+            "messages": [
+                {
+                    "class": "danger",
+                    "message": "<strong>Important notice for visitors using GitHub access tokens.</strong> Due to changes to GitHub's API, all access tokens generated and saved before the <strong>6th of February, 2020</strong> are no longer valid. If you wish to continue using an access token to authenticate your map downloads, please generate and save a new token in your <a href=\"/admin/preferences\">site preferences</a>.",
+                    "dismissible": true
+                }
+            ]
+        },
+        "include": {
+            "important": {
+                "stylesheets": [
+                    "https://use.fontawesome.com/releases/v5.9.0/css/all.css",
+                    "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
+                    "/assets/css/main.css"
+                ],
+                "scripts": [
+                    "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js",
+                    "/assets/js/user.js",
+                    "/assets/js/preferences.js",
+                    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+                    "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js",
+                    "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                ]
+            }
+        },
+        "maps": {
+            "tags": {
+                "ad":         {"display": "Attack/Defend",        "keywords": "ad a/d"},
+                "cp":         {"display": "Capture Points",       "keywords": "cp"},
+                "ctf":        {"display": "Capture the Flag",     "keywords": "ctf"},
+                "ctw":        {"display": "Capture the Wool",     "keywords": "ctw"},
+                "dtc":        {"display": "Destroy the Core",     "keywords": "dtc"},
+                "dtcm":       {"display": "Destroy the Core and Monument", "keywords": "dtcm dtmc dtc dtm Destroy the Monument"},
+                "dtm":        {"display": "Destroy the Monument", "keywords": "dtm"},
+                "dtmc":       {"display": "Destroy the Core and Monument", "keywords": "dtcm dtmc dtc dtm Destroy the Monument"},
+                "ffa":        {"display": "Free-for-all",         "keywords": "ffa Free for All"},
+                "gs":         {"display": "Ghost Squadron",       "keywords": "gs"},
+                "king":       {"display": "King of the Hill",     "keywords": "koth"},
+                "kotf":       {"display": "King of the Flag",     "keywords": "kotf"},
+                "koth":       {"display": "King of the Hill",     "keywords": "koth"},
+                "mm":         {"display": "Monster Mash",         "keywords": "mm"},
+                "rfw":        {"display": "Race for Wool",        "keywords": "rfw"},
+                "sg":         {"display": "Survival Games",       "keywords": "sg"},
+                "tdm":        {"display": "Team Deathmatch",      "keywords": "tdm"},
+                "te":         {"display": "Tournament",           "keywords": "!te !tm"},
+                "tm":         {"display": "Tournament",           "keywords": "!te !tm"},
+                "tnt":        {"display": "TNT",                  "keywords": "tnt cannon"},
+                "tournament": {"display": "Tournament",           "keywords": "!te !tm"},
+
+                "new":        {"display": "New",                  "keywords": ""},
+                "popular":    {"display": "Popular",              "keywords": ""},
+                "by-nc-sa":   {"display": "Noncommercial",        "keywords": ""},
+                "by-sa":      {"display": "Commercial",           "keywords": ""}
+            },
+            "environments": {
+                "pgm_legacy": {
+                    "label": "PGM (Legacy)",
+                    "message": "This map has been designed and tested to be used with <a href=\"https://github.com/OvercastNetwork/ProjectAres\" target=\"_blank\">Overcast's open source plugins (Project Ares)</a> and we recommend using those to have the best experience with this map. This map may also include one of Overcast's standard XML files, which all can be found <a href=\"/maps/includes\">here to download</a>.<br/><br/><strong>Important:</strong> If you prefer to use the (maintained) 1.8 fork of Project Ares, you can find that <a href=\"https://github.com/Electroid/PGM\" target=\"_blank\">here</a> instead. Maps using the <a href=\"http://docs.oc.tc/modules/proto\">XML protocol</a> <code>1.4.1</code> and above may not work and will have to be manually downgraded to at least protocol <code>1.4.0</code>. Additionally, the Minecraft world will have to be converted to Minecraft version <code>1.8</code>. This can be easily done using this <a href=\"https://github.com/mitchts/nbt-converter\" target=\"_blank\">NBT converter tool</a>.",
+                    "prompt": "This map was designed for a legacy version of PGM"
+                },
+                "pgm_stratus": {
+                    "label": "PGM (Stratus Fork)",
+                    "message": "This map has been designed and tested to be used with <a href=\"https://github.com/StratusNetwork/ProjectAres\" target=\"_blank\">Stratus' fork</a> of Overcast's open source plugins and we recommend using those to have the best experience with this map. This map may also include one of Overcast's standard XML files, which all can be found <a href=\"/maps/includes\">here to download</a>."
+                },
+                "atlas": {
+                    "label": "Atlas",
+                    "message": "This map has been designed and tested to be used with <a href=\"https://github.com/Avicus/AvicusNetwork\" target=\"_blank\">Avcius' open source plugins</a> and we recommend using those to have the best experience with this map."
+                },
+                "atlas_depreciated": {
+                    "label": "Atlas (Depreciated)",
+                    "message": "This map was designed for an older version of Atlas and will not work with the open source version. The map's XML will need to be upgraded in order to be functional.",
+                    "prompt": "This map uses a depreciated version of Atlas"
+                },
+                "rfw": {
+                    "label": "RFW",
+                    "message": "This map has been designed and tested to be used with <a href=\"https://github.com/OvercastNetwork/ProjectAres\" target=\"_blank\">Overcast's open source plugins</a> and we recommend using those to have the best experience with this map. This map may also include one of Overcast's standard XML files, which all can be found <a href=\"/maps/includes\">here to download</a>."
+                },
+                "rfw_no_xml": {
+                    "label": "RFW (No XML)",
+                    "message": "This map has no XML file, and will need one created before it can be used with <a href=\"https://github.com/OvercastNetwork/ProjectAres\" target=\"_blank\">PGM</a>.",
+                    "prompt": "This map lacks a needed XML file for PGM"
+                }
+            }
+        }
+    }
+}
