@@ -1,5 +1,8 @@
 // store maps in JSON format for suggestions
 var maps_json;
+var maps_stats = [];
+var maps_commons;
+var uuids;
 
 $(function() {
     var searchable = new List('searchable-collection', {
@@ -8,11 +11,26 @@ $(function() {
     var searchable_type = "maps";
     setupSearch(searchable, searchable_type);
     
+    $('[data-toggle="download-modal"]').click(function() {
+        var slug = $(this).data('slug');
+        var repo = $(this).data('repo');
+        var env = $(this).data('environment');
+        var downloads = {
+            external: $(this).data('external-download'),
+            source: $(this).data('source'),
+            discussion: $(this).data('discussion')
+        }
+        populateDownloadModal(maps_json.filter(function(val, index, array) {
+            return val.slug === slug;
+        })[0], repo, env, downloads);
+        $('#map-download-display').modal('show');
+    });
+    
     // handle map download requests then send them to GitZip
     $('.click-download:not(.disabled)').click(function() {
         $(this).prop('disabled', true).text('Downloading...');
-        $(this).parent().find('.map-download-pending').hide();
-        $(this).parent().find('.map-download-started').show();
+        $('.map-download-pending').hide();
+        $('.map-download-started').show();
         var name = $(this).attr('id');
         var slug = $(this).attr('slug');
         var path = $(this).attr('path');
@@ -26,25 +44,9 @@ $(function() {
         if (user._preferences.show_map_suggestions) {
             suggestMaps(slug);
         }
-        $('#download-' + slug).modal('hide');
+        $('#map-download-display').modal('hide');
         $('#download-opened').modal('show');
     });
-
-    // handle direct downloads
-    if (typeof getUrlParam('dl') != 'undefined') {
-        var requested_map = getUrlParam('dl');
-        if ($('#download-' + requested_map).length) {
-            $('#download-' + requested_map).modal('show');
-            var avatars = $('#download-' + requested_map).children().find('.map-author-avatar');
-            for (i = 0; i < avatars.length; i++) {
-                var source = $(avatars[i]).data('src');
-                $(avatars[i]).attr('src', source);
-            }
-        } else {
-            msg = "The requested map does not exist in this collection.\nProvided map slug: " + requested_map
-            onError(msg);
-        }
-    }
 
     // handle map image requests
     $('.click-image').click(function() {
@@ -64,13 +66,15 @@ $(function() {
         });
     }
     
-    // load author avatars when download modal is first opened
-    $('.modal.download').on('show.bs.modal', function (e) {
-        var avatars = $(this).children().find('.map-author-avatar');
-        for (i = 0; i < avatars.length; i++) {
-            var source = $(avatars[i]).data('src');
-            $(avatars[i]).attr('src', source);
-        }
+    // fetch json version gloabl map config
+    // (tag short hands and environments)
+    $.getJSON("https://cdn.jsdelivr.net/gh/MCResourcePile/mcresourcepile.github.io@source/src/data/global.json", function(r) {
+        maps_commons = r.settings.maps;
+    });
+    
+    // fetch author names
+    $.getJSON("https://cdn.jsdelivr.net/gh/MCResourcePile/mcresourcepile.github.io@source/src/data/uuids.json", function(r) {
+        uuids = r.uuids;
     });
     
     // show stats panel and insert download stats
@@ -102,11 +106,126 @@ var licenses = {
         file: 'LICENSE.txt',
         contents: 'This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.\n\nDownloaded from MCResourcePile (https://mcresourcepile.github.io/).'
     },
-    none: {
+    unlicensed: {
         file: 'NOTICE.txt',
         contents: 'This work has no associated license attached to it. We recommend getting in contact with authors, which are listed on our site at https://mcresourcepile.github.io/, before using this work for purposes other than private use. Please be considerate when using this map and please respect the wishes of the authors.\n'
     }
 };
+
+function populateDownloadModal(map, repo, env, downloads) {
+    // populate map name
+    $('[data-entry="map-name"]').text(map.name);
+    
+    // populate map authors
+    $('[data-entry="map-authors"]').empty().append([
+        $('<span/>').text('Created by')
+    ]);
+    map.authors.forEach(function(author, index) {
+        var normalised = author.uuid.replace(/-/g, "");
+        if (normalised in uuids) {
+            author.username = uuids[normalised];
+        }
+        $('[data-entry="map-authors"]').append([
+            $('<span/>', {'class': 'author-name-avatar'}).append([
+                $('<img>', {
+                    'class': 'map-author-avatar',
+                    'src': 'https://crafatar.com/avatars/' + author.uuid + '?size=16&default=MHF_Steve&overlay'
+                }),
+                $('<span/>', {
+                    'class': 'click-search',
+                    'data-query': author.uuid
+                }).text(author.username)
+            ])
+        ]);
+    });
+    
+    // display correct license
+    $('[data-license]').hide();
+    var license;
+    if (map.sourced || map.unlicensed) {
+        $('[data-license="unlicensed"]').show();
+        license = "unlicensed";
+    } else if (map.commercial) {
+        $('[data-license="by-sa"]').show();
+        license = "noncommercial";
+    } else {
+        $('[data-license="by-nc-sa"]').show();
+        license = "commercial";
+    }
+    
+    // populate disclaimer
+    if (env in maps_commons.environments) {
+        $('[data-body="disclaimer"]').show();
+        $('[data-entry="disclaimer"]').html(maps_commons.environments[env].message);
+    } else {
+        $('[data-body="disclaimer"]').hide();
+    }
+    
+    // populate map tags
+    $('[data-entry="map-tags"]').empty();
+    map.tags.forEach(function(tag, index) {
+        if (tag in maps_commons.tags) {
+            tag = maps_commons.tags[tag].display;
+        }
+        $('[data-entry="map-tags"]').append([
+            $('<span/>', {'class': 'badge badge-info'}).text(tag.charAt(0).toUpperCase() + tag.slice(1))
+        ]);
+    });
+    $('[data-entry="map-tags"]').append([
+        $('<span/>', {'class': 'badge badge-primary'}).text(maps_commons.environments[env].label),
+        (map.commercial) ? $('<span/>', {'class': 'badge badge-success'}).text("Commercial") : null,
+        (!map.commercial && (!map.sourced || !map.unlicensed)) ? $('<span/>', {'class': 'badge badge-warning'}).text("Noncommercial") : null,
+        $('<span/>', {'class': 'badge badge-secondary'}).text(map.slug)
+    ]);
+    
+    // populate map preview image
+    var src = 'https://raw.githubusercontent.com/' + repo + '/master/maps/' + map.slug + '/map.png';
+    var preview = new Image();
+    preview.src = src;
+    preview.onload = function() {
+        $('[data-entry="map-image"]').attr('src', src);
+    }
+    preview.onerror = function() {
+        $('[data-entry="map-image"]').attr('src', '/assets/img/404.png');
+    }
+    
+    // add links to download buttons
+    $('[data-download-type]').hide();
+    if (downloads.external) {
+        $('[data-download-type="external"]').show().attr('href', downloads.external);
+    }
+    if (downloads.source) {
+        $('[data-download-type="source"]').show().attr('href', downloads.source);
+    }
+    if (downloads.discussion) {
+        $('[data-download-type="discussion"]').show().attr('href', downloads.discussion);
+    }
+    $('[data-entry="download"]').attr({
+        'id': map.name,
+        'slug': map.slug,
+        'license': license,
+        'path': 'https://github.com/' + repo + '/tree/master/maps/' + map.slug
+    });
+    
+    // populate map download stats
+    if (user._preferences.show_map_stats) {
+        for (var i = 0; i < maps_stats.total.length; i++) {
+            if (map.name == (maps_stats.total[i])[0]) {
+                $('[data-entry="map-stats-total"]').text((maps_stats.total[i])[1])
+            }
+        }
+        for (var i = 0; i < maps_stats.unique.length; i++) {
+            if (map.name == (maps_stats.unique[i])[0]) {
+                $('[data-entry="map-stats-unique"]').text((maps_stats.unique[i])[1])
+            }
+        }
+        for (var i = 0; i < maps_stats.recent.length; i++) {
+            if (map.name == (maps_stats.recent[i])[0]) {
+                $('[data-entry="map-stats-recent"]').text((maps_stats.recent[i])[1])
+            }
+        }
+    }
+}
 
 function startDownload(name, slug, path, license) {
     var license_data;
@@ -141,7 +260,7 @@ function startDownload(name, slug, path, license) {
 
 // handle errors from maps
 function onError(message) {
-    $('.modal.in').modal('hide');
+    $('.modal.show').modal('hide');
     $('#download-error-message').modal('show');
     $('#download-error-output').text(message);
 }
@@ -252,7 +371,7 @@ function suggestMaps(slug) {
                     if (j != similar[i].tags.length - 1) tags += ", ";
                 }
                 $('.map-suggestions').append(
-                    "<div class='col-sm-4 img-thumbnail map-thumbnail small collapse-immune'>\
+                    "<div class='col-lg-4 img-thumbnail map-thumbnail small collapse-immune'>\
                         <div class='map-thumbnail-header'>\
                             <img class='image' src='https://raw.githubusercontent.com/MCResourcePile/" + repo + "/master/maps/" + similar[i].slug + "/map.png'>\
                             <div class='banner'>\
@@ -277,10 +396,7 @@ function suggestMaps(slug) {
 function fetchGlobalDownloads() {
     var total = $.getJSON('https://project-id-0482060302718727966.appspot.com/query?id=aiBzfnByb2plY3QtaWQtMDQ4MjA2MDMwMjcxODcyNzk2NnIVCxIIQXBpUXVlcnkYgICAgICAgAoM&format=jsonp', function(data){return data});
     total.done(function() {
-        var stats = total.responseJSON.rows;
-        for (var i = 0; i < stats.length; i++) {
-            $('.stat-downloads-total[data-map="' + (stats[i])[0].replace(/\'/g, '-') + '"]').text((stats[i])[1]);
-        }
+        maps_stats.total = total.responseJSON.rows;
     });
     total.fail(function() {
         console.warn('Failed to retrieve "Global lifetime downloads" query from Google Analytics superProxy application.');
@@ -291,10 +407,7 @@ function fetchGlobalDownloads() {
 function fetchUniqueDownloads() {
     var unique = $.getJSON('https://project-id-0482060302718727966.appspot.com/query?id=aiBzfnByb2plY3QtaWQtMDQ4MjA2MDMwMjcxODcyNzk2NnIVCxIIQXBpUXVlcnkYgICAgNrjhgoM&format=jsonp', function(data){return data});
     unique.done(function() {
-        var stats = unique.responseJSON.rows;
-        for (var i = 0; i < stats.length; i++) {
-            $('.stat-downloads-unique[data-map="' + (stats[i])[0].replace(/\'/g, '-') + '"]').text((stats[i])[1]);
-        }
+        maps_stats.unique = unique.responseJSON.rows;
     });
     unique.fail(function() {
         console.warn('Failed to retrieve "Global unique downloads" query from Google Analytics superProxy application.');
@@ -305,10 +418,7 @@ function fetchUniqueDownloads() {
 function fetchRecentDownloads() {
     var recent = $.getJSON('https://project-id-0482060302718727966.appspot.com/query?id=aiBzfnByb2plY3QtaWQtMDQ4MjA2MDMwMjcxODcyNzk2NnIVCxIIQXBpUXVlcnkYgICAgPjChAoM&format=jsonp', function(data){return data});
     recent.done(function() {
-        var stats = recent.responseJSON.rows;
-        for (var i = 0; i < stats.length; i++) {
-            $('.stat-downloads-recent[data-map="' + (stats[i])[0].replace(/\'/g, '-') + '"]').text((stats[i])[1]);
-        }
+        maps_stats.recent = recent.responseJSON.rows;
     });
     recent.fail(function() {
         console.warn('Failed to retrieve "Global downloads (30 days)" query from Google Analytics superProxy application.');
