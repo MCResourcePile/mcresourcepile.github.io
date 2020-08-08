@@ -58,6 +58,12 @@ module.exports = function(grunt) {
                 src: '**',
                 dest: 'out/assets'
             },
+            data: {
+                expand: true,
+                cwd: 'src/data',
+                src: '**',
+                dest: 'out/data'
+            },
             mapauthors: {
                 src: "src/stats/overcast/mapauthors.txt",
                 dest: "out/stats/overcast/mapauthors.txt"
