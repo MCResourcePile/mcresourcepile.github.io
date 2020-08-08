@@ -73,6 +73,13 @@
                 {{/unless}}
                 {{/if}}
                 {{/inArray}}
+                {{#if sponsor}}
+                {{#if (lookup @root.settings.maps.sponsors sponsor)}}
+                {{#with (lookup @root.settings.maps.sponsors sponsor)}}
+                <span class="badge badge-info" data-toggle="tooltip" data-placement="top" title="Map provided by {{this.name}}">{{this.name}}</span>
+                {{/with}}
+                {{/if}}
+                {{/if}}
                 {{#inArray @root.page-category 'contest'}}
                 <span class="badge {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}badge-secondary{{/is}}{{/is}}{{/is}}">{{#if position}}{{ordinalize position}}{{else}}-{{/if}} place</span>
                 {{/inArray}}

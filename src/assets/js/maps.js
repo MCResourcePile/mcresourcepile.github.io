@@ -20,9 +20,10 @@ $(function() {
             source: $(this).data('source'),
             discussion: $(this).data('discussion')
         }
+        var sponsor = $(this).data('sponsor');
         populateDownloadModal(maps_json.filter(function(val, index, array) {
             return val.slug === slug;
-        })[0], repo, env, downloads);
+        })[0], repo, env, downloads, sponsor);
         $('#map-download-display').modal('show');
     });
     
@@ -112,7 +113,7 @@ var licenses = {
     }
 };
 
-function populateDownloadModal(map, repo, env, downloads) {
+function populateDownloadModal(map, repo, env, downloads, sponsor) {
     // populate map name
     $('[data-entry="map-name"]').text(map.name);
     
@@ -224,6 +225,16 @@ function populateDownloadModal(map, repo, env, downloads) {
                 $('[data-entry="map-stats-recent"]').text((maps_stats.recent[i])[1])
             }
         }
+    }
+    
+    // populate sponsor
+    if (sponsor && sponsor in maps_commons.sponsors) {
+        $('[data-entry="sponsor-name"]').text(maps_commons.sponsors[sponsor].name);
+        $('[data-entry="sponsor-description"]').html(maps_commons.sponsors[sponsor].description);
+        $('[data-entry="sponsor-image"]').attr('src', maps_commons.sponsors[sponsor].logo);
+        $('[data-body="sponsor"]').show();
+    } else {
+        $('[data-body="sponsor"]').hide();
     }
 }
 
