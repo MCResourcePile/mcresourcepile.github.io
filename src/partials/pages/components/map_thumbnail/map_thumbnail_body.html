@@ -1,10 +1,10 @@
 <div class="map-thumbnail-body">
     <div class="authors">
-        by
+        by&nbsp; 
         {{#if authors}}
         {{#each authors}}
         {{#lt @index 3}}
-        <li class="game-tag">{{#or username uuid}}<span class="click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}" {{#inArray @root.page-category 'contest'}}href="/maps/{{@root.settings.maps.group}}?s={{formatUUID uuid 'strip'}}"{{/inArray}}>{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</span>{{else}}Ghost{{/or}}</li>{{#unless @last}},{{/unless}}
+        <li class="game-tag">{{#or username uuid}}<span class="click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}" {{#inArray @root.page-category 'contest'}}href="/maps/{{@root.settings.maps.group}}?s={{formatUUID uuid 'strip'}}"{{/inArray}}> {{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}{{#unless @last}},{{/unless}}</span>{{else}}Ghost{{#unless @last}},{{/unless}}{{/or}}</li>
         {{/lt}}
         {{/each}}
         {{#gt (length authors) 3}}
@@ -26,5 +26,4 @@
     {{/inArray}}
 </div>
 {{#inArray @root.page-category 'collections'}}
-{{> map_download_modal}}
 {{/inArray}}

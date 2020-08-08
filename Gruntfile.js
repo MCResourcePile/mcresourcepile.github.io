@@ -39,6 +39,18 @@ module.exports = function(grunt) {
                 globals: ['src/data/global.json', 'src/data/uuids.json']
             }
         },
+        minifyHtml: {
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'out/',
+                        src: ['**/*.html'],
+                        dest: 'out/'
+                    }
+                ]
+            }
+        },
         copy: {
             assets: {
                 expand: true,
@@ -64,6 +76,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-minify-html');
 
-    grunt.registerTask('default', ['jsonlint', 'sass', 'compile-handlebars', 'copy']);
+    grunt.registerTask('default', ['jsonlint', 'sass', 'compile-handlebars', 'minifyHtml', 'copy']);
 }
