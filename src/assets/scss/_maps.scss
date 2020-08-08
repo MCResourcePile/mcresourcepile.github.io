@@ -96,3 +96,14 @@
     background-color: #547afa;
     color: #fff;
 }
+
+.author-name-avatar {
+    .map-author-avatar {
+        margin: 0 4px;
+        vertical-align: -3px;
+    }
+    
+    &:not(:last-child)::after {
+        content: ",";
+    }
+}

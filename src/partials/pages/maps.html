@@ -4,7 +4,6 @@
         <div class="dynamic-sidebar">
             <div class="scrollable">
                 {{> search_sidebar}}
-                {{> repo_list}}
             </div>
         </div>
     </div>
@@ -15,117 +14,9 @@
     </div>
 </div>
 <div id="maps-data" data-source="{{settings.maps.group}}"></div>
-<div class="modal fade" id="download-complete-message" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header center">
-                <h4 class="modal-title">Your download has started</h4>
-            </div>
-            <div class="modal-body">
-                Thank you for downloading this map from ResourcePile. Please respect the included license and wishes of the authors when using this map in both public and private environments. Without them ResourcePile would not be able to host such a wonderful collection of maps to our community.
-                <br>
-                If you find any issues with the map, please report them over at our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">GitHub issues tracker</a>.
-                <div class="card bg-light border-secondary" style="margin-top: 12px; margin-bottom: 12px;">
-                    <div class="card-body">
-                        You currently have <span class="user-rate-remaining"></span> out of <span class="user-rate-limit"></span> requests left to the GitHub API.<br>
-                        This means that you can download approximately <span class="user-rate-approx"></span> more maps before you must wait until <span class="user-rate-reset"></span> for the limit to reset.
-                    </div>
-                </div>
-                <div class="map-suggestions-wrapper" style="display:hidden">
-                    <div class="modal-section-head">Suggested Maps</div>
-                    <div class="modal-section-body">
-                        <div class="map-suggestions row"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="download-opened" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Your download has been opened in a new window</h4>
-            </div>
-            <div class="modal-body">
-                You have been directed to an external download location for this map. Please note that ResourcePile does not control these downloads and takes no responsibility if the download is broken, not as advertised, or missing.
-                <div class="card bg-light border-secondary" style="margin-top: 12px; margin-bottom: 12px;">
-                    <div class="card-body">
-                        You currently have <span class="user-rate-remaining"></span> out of <span class="user-rate-limit"></span> requests left to the GitHub API.<br>
-                        This means that you can download approximately <span class="user-rate-approx"></span> more maps before you must wait until <span class="user-rate-reset"></span> for the limit to reset.
-                    </div>
-                </div>
-                <div class="map-suggestions-wrapper" style="display:hidden">
-                    <div class="modal-section-head">Suggested Maps</div>
-                    <div class="modal-section-body">
-                        <div class="map-suggestions row"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="download-error-message" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">An error has occurred</h4>
-            </div>
-            <div class="modal-body">
-                Something went wrong. The error that occurred has been described below. Please try again, but if the issue persists please report an issue on our <a href="https://github.com/MCResourcePile/MCResourcePile.github.io/issues/new" target="_blank">Issues Tracker</a>.
-                <br><br>
-                Error output:
-                <pre id="download-error-output"></pre>
-                <div class="card bg-light border-secondary" style="margin-top: 12px; margin-bottom: 12px;">
-                    <div class="card-body">
-                        You currently have <span class="user-rate-remaining"></span> out of <span class="user-rate-limit"></span> requests left to the GitHub API.<br>
-                        This means that you can download approximately <span class="user-rate-approx"></span> more maps before you must wait until <span class="user-rate-reset"></span> for the limit to reset.
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="download-rate-limit-message" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">You've hit the rate limit</h4>
-            </div>
-            <div class="modal-body">
-                Looks like you've hit GitHub's rate limit. <a href="/admin/auth">Authenticate your download with GitHub</a> if you would like to download more maps now. Alternatively you can wait an hour for your rate to reset.
-                <div class="card bg-light border-secondary" style="margin-top: 12px; margin-bottom: 12px;">
-                    <div class="card-body">
-                        You currently have <span class="user-rate-remaining"></span> out of <span class="user-rate-limit"></span> requests left to the GitHub API.<br>
-                        This means that you can download approximately <span class="user-rate-approx"></span> more maps before you must wait until <span class="user-rate-reset"></span> for the limit to reset.
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade center" id="map-image-display" tabindex="-1" role="dialog">
-    <div class="modal-dialog img-thumbnail map-thumbnail collapse-image-thumbnail collapse-immune">
-        <div class="map-thumbnail-header">
-            <img class="image map-image" src="/assets/img/404.png">
-            <div class="banner">
-                <div class="title map-title">Unknown map image</div>
-            </div>
-        </div>
-        <div class="map-thumbnail-body">
-            <button class="btn btn-danger map-button-span" type="button" data-dismiss="modal" style="margin-top:3px;">Close</button>
-        </div>
-    </div>
-</div>
+{{> map_modal_compact_image}}
+{{> map_modal_download}}
+{{> map_modal_error}}
+{{> map_modal_external_opened}}
+{{> map_modal_rate_limit}}
+{{> map_modal_started_download}}

@@ -1,0 +1,21 @@
+<div class="modal fade" id="download-rate-limit-message" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">You've hit the rate limit</h4>
+            </div>
+            <div class="modal-body">
+                Looks like you've hit GitHub's rate limit. <a href="/admin/auth">Authenticate your download with GitHub</a> if you would like to download more maps now. Alternatively you can wait an hour for your rate to reset.
+                <div class="card bg-light border-secondary" style="margin-top: 12px; margin-bottom: 12px;">
+                    <div class="card-body">
+                        You currently have <span class="user-rate-remaining"></span> out of <span class="user-rate-limit"></span> requests left to the GitHub API.<br>
+                        This means that you can download approximately <span class="user-rate-approx"></span> more maps before you must wait until <span class="user-rate-reset"></span> for the limit to reset.
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
