@@ -257,6 +257,7 @@ function startDownload(name, slug, path, license) {
             GitZip.setProductionState(false);
         }
         GitZip.zipRepo(path);
+        updateUserRates();
         if (user._preferences.show_map_suggestions) {
             suggestMaps(slug);
         }
