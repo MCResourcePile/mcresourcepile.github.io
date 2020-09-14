@@ -59,13 +59,10 @@ $(function() {
     });
 
     // fetch json version of loaded maps
-    // used for map suggestions when enabled
     var source = $('#maps-data').data('source');
-    if (user._preferences.show_map_suggestions) {
-        $.getJSON("/data/maps/" + source + ".json", function(r) {
-            maps_json = r.data.maps;
-        });
-    }
+    $.getJSON("/data/maps/" + source + ".json", function(r) {
+        maps_json = r.data.maps;
+    });
     
     // fetch json version gloabl map config
     // (tag short hands and environments)
