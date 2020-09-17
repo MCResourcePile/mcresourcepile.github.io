@@ -15,8 +15,14 @@
         },
         "maps": {
             "group": "stratus",
-            "default_environment": "pgm_stratus",
-            "default_repo": "MCResourcePile/stratus-maps",
+            "defaults": {
+                "environment": "pgm_stratus",
+                "source": {
+                    "repository": "MCResourcePile/stratus-maps",
+                    "branch": "master",
+                    "path": "/maps/"
+                }
+            },
             "downloads": true,
             "advanced_menu": {
                 "placeholder": "maps",

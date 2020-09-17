@@ -1,7 +1,7 @@
 <div class="col img-thumbnail map-thumbnail center{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}{{#inArray @root.page-category 'contest'}}{{#is position '1'}} map-glow-contest-first{{/is}}{{#is position '2'}} map-glow-contest-second{{/is}}{{#is position '3'}} map-glow-contest-third{{/is}}{{/inArray}}">
     <div class="map-thumbnail-selector">
         <div class="map-thumbnail-header">
-            <img class="image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{snakecase (lowercase @root.title)}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/{{#if repo}}{{repo}}{{else}}{{@root.settings.maps.default_repo}}{{/if}}/{{#unless @root.settings.maps.downloads}}images/maps/{{slug}}.png{{else}}master/maps/{{slug}}/map.png{{/unless}}{{/inArray}}">
+            <img class="image lazy" data-src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{snakecase (lowercase @root.title)}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/{{#if source.repository}}{{source.repository}}{{else}}{{@root.settings.maps.defaults.source.repository}}{{/if}}/{{#if source.branch}}{{source.branch}}{{else}}{{@root.settings.maps.defaults.source.branch}}{{/if}}{{#if source.path}}{{source.path}}{{else}}{{@root.settings.maps.defaults.source.path}}{{/if}}/{{slug}}/map.png{{/inArray}}">
             <div class="banner" data-toggle="tooltip" data-placement="top" title="{{name}}">
                 <div class="title">
                     <a{{#inArray @root.page-category 'maps'}} data-query="{{slug}}" class="s-title click-search"{{else}} class="s-title"{{/inArray}}>{{#if name}}{{name}}{{else}}{{slug}}{{/if}}</a>
@@ -30,8 +30,8 @@
                     {{/if}}
                     {{/with}}
                     {{else}}
-                    {{#if (lookup @root.settings.maps.environments @root.settings.maps.default_environment)}}
-                    {{#with (lookup @root.settings.maps.environments @root.settings.maps.default_environment)}}
+                    {{#if (lookup @root.settings.maps.environments @root.settings.maps.defaults.environment)}}
+                    {{#with (lookup @root.settings.maps.environments @root.settings.maps.defaults.environment)}}
                     {{#if this.prompt}}
                     <a class="pull-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{this.prompt}}"><i class="fa fa-exclamation-circle"></i></a>
                     {{/if}}
