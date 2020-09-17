@@ -15,8 +15,14 @@
         },
         "maps": {
             "group": "avicus",
-            "default_environment": "atlas",
-            "default_repo": "MCResourcePile/avicus-maps",
+            "defaults": {
+                "environment": "atlas",
+                "source": {
+                    "repository": "MCResourcePile/avicus-maps",
+                    "branch": "master",
+                    "path": "/maps/"
+                }
+            },
             "downloads": true,
             "advanced_menu": {
                 "placeholder": "maps",
@@ -26,10 +32,7 @@
                     {"title": "Addons",   "tags": ["frenzy", "tnt"]},
                     {"title": "Editions", "tags": ["christmas", "halloween", "tournament"]}
                 ]
-            },
-            "repos": [
-                "avicus-maps"
-            ]
+            }
         }
     },
     "data": {

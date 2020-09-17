@@ -14,6 +14,8 @@ $(function() {
     $('[data-toggle="download-modal"]').click(function() {
         var slug = $(this).data('slug');
         var repo = $(this).data('repo');
+        var branch = $(this).data('branch');
+        var path = $(this).data('path');
         var env = $(this).data('environment');
         var downloads = {
             external: $(this).data('external-download'),
@@ -23,7 +25,7 @@ $(function() {
         var sponsor = $(this).data('sponsor');
         populateDownloadModal(maps_json.filter(function(val, index, array) {
             return val.slug === slug;
-        })[0], repo, env, downloads, sponsor);
+        })[0], repo, branch, path, env, downloads, sponsor);
         $('#map-download-display').modal('show');
     });
     
@@ -110,7 +112,7 @@ var licenses = {
     }
 };
 
-function populateDownloadModal(map, repo, env, downloads, sponsor) {
+function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor) {
     // populate map name
     $('[data-entry="map-name"]').text(map.name);
     
@@ -177,7 +179,7 @@ function populateDownloadModal(map, repo, env, downloads, sponsor) {
     ]);
     
     // populate map preview image
-    var src = 'https://raw.githubusercontent.com/' + repo + '/master/maps/' + map.slug + '/map.png';
+    var src = 'https://raw.githubusercontent.com/' + repo + '/' + branch + path + map.slug + '/map.png';
     var preview = new Image();
     preview.src = src;
     preview.onload = function() {
@@ -202,7 +204,7 @@ function populateDownloadModal(map, repo, env, downloads, sponsor) {
         'id': map.name,
         'slug': map.slug,
         'license': license,
-        'path': 'https://github.com/' + repo + '/tree/master/maps/' + map.slug
+        'path': 'https://github.com/' + repo + '/tree/' + branch + path + map.slug
     });
     
     // populate map download stats

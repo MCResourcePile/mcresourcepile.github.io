@@ -15,8 +15,14 @@
         },
         "maps": {
             "group": "rfw",
-            "default_environment": "rfw",
-            "default_repo": "MCResourcePile/rfw-maps",
+            "defaults": {
+                "environment": "rfw",
+                "source": {
+                    "repository": "MCResourcePile/rfw-maps",
+                    "branch": "master",
+                    "path": "/maps/"
+                }
+            },
             "downloads": true,
             "advanced_menu": {
                 "placeholder": "maps",
@@ -25,10 +31,7 @@
                     {"title": "Games",    "tags": ["ctw", "rfw"]},
                     {"title": "Editions", "tags": ["christmas", "halloween", "ranked", "tournament"]}
                 ]
-            },
-            "repos": [
-                "rfw-maps"
-            ]
+            }
         }
     },
     "data": {

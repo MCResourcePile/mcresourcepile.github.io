@@ -15,8 +15,14 @@
         },
         "maps": {
             "group": "overcast",
-            "default_environment": "pgm_legacy",
-            "default_repo": "MCResourcePile/overcast-maps",
+            "defaults": {
+                "environment": "pgm_legacy",
+                "source": {
+                    "repository": "MCResourcePile/overcast-maps",
+                    "branch": "master",
+                    "path": "/maps/"
+                }
+            },
             "downloads": true,
             "advanced_menu": {
                 "placeholder": "maps",
