@@ -19,7 +19,7 @@
                     {{/if}}
                     {{/if}}
                     {{#inArray @root.page-category 'collections'}}
-                    <div class="hidden tags">{{slug}},{{#inArray @root.data.new slug}}New,{{/inArray}}{{#inArray @root.data.popular slug}}Popular,{{/inArray}}{{#unless sourced}}{{#if commercial}}Commercial,{{else}}Noncommercial,{{/if}}{{/unless}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
+                    <div class="hidden tags">{{slug}},{{#if sponsor}}{{lookup (lookup @root.settings.maps.sponsors sponsor) 'name'}},{{/if}}{{#inArray @root.data.new slug}}New,{{/inArray}}{{#inArray @root.data.popular slug}}Popular,{{/inArray}}{{#unless sourced}}{{#if commercial}}Commercial,{{else}}Noncommercial,{{/if}}{{/unless}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
                     {{/inArray}}
                 </div>
                 <div class="icon-alerts">
