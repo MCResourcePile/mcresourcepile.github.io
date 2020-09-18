@@ -206,6 +206,7 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
         'license': license,
         'path': 'https://github.com/' + repo + '/tree/' + branch + path + map.slug
     });
+    $('[data-entry="github-page"]').attr('href', 'https://github.com/' + repo + '/tree/' + branch + path + map.slug);
     
     // populate map download stats
     if (user._preferences.show_map_stats) {
