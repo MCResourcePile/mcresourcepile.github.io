@@ -206,24 +206,34 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
         'license': license,
         'path': 'https://github.com/' + repo + '/tree/' + branch + path + map.slug
     });
+    $('[data-entry="github-page"]').attr('href', 'https://github.com/' + repo + '/tree/' + branch + path + map.slug);
     
     // populate map download stats
     if (user._preferences.show_map_stats) {
+        var matched_total = false
+        var matched_unique = false
+        var matched_recent = false
         for (var i = 0; i < maps_stats.total.length; i++) {
             if (map.name == (maps_stats.total[i])[0]) {
                 $('[data-entry="map-stats-total"]').text((maps_stats.total[i])[1])
+                matched_total = true
             }
         }
         for (var i = 0; i < maps_stats.unique.length; i++) {
             if (map.name == (maps_stats.unique[i])[0]) {
                 $('[data-entry="map-stats-unique"]').text((maps_stats.unique[i])[1])
+                matched_unique = true
             }
         }
         for (var i = 0; i < maps_stats.recent.length; i++) {
             if (map.name == (maps_stats.recent[i])[0]) {
                 $('[data-entry="map-stats-recent"]').text((maps_stats.recent[i])[1])
+                matched_recent = true
             }
         }
+        if (!matched_total) $('[data-entry="map-stats-total"]').text("0")
+        if (!matched_unique) $('[data-entry="map-stats-unique"]').text("0")
+        if (!matched_recent) $('[data-entry="map-stats-recent"]').text("0")
     }
     
     // populate sponsor
