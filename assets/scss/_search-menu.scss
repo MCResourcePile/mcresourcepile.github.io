@@ -57,14 +57,14 @@
         display: inline-block;
         font-size: 10px;
         background-color: #f0f0f0;
-        padding: 1px 6px;
-        margin: 2px -0px;
-        border-radius: 16px;
+        padding: 1px 8px;
+        margin: 2px 0px;
+        border-radius: 4px;
         white-space: nowrap;
     }
 
-    .filter:hover,
-    .filter:focus {
+    .filter:not(.disabled):hover,
+    .filter:not(.disabled):focus {
         background-color: #b6c0ff;
         transition: 0.2s;
         cursor: pointer;
@@ -73,6 +73,13 @@
     .filter.active {
         background-color: #5f6fc7 !important;
         color: #fff;
+    }
+    
+    .filter.disabled {
+    }
+    
+    &.search-authors .filter {
+        margin-right: 3px;
     }
 }
 
