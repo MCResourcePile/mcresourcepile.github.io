@@ -63,19 +63,27 @@ $(function() {
         $('#map-image-display .map-image').attr('src', thumbnail);
         $('#map-image-display').modal('show');
     });
-
-    // fetch json version of loaded maps
-    var source = $('#maps-data').data('source');
-    $.getJSON("/data/maps/" + source + ".json", function(r) {
-        maps_json = r.data.maps;
-    });
     
     // fetch json version gloabl map config
     // (tag short hands and environments)
     $.getJSON("/data/global.json", function(r) {
         maps_commons = r.settings.maps;
     });
-    
+
+    // fetch json version of loaded maps
+    var source = $('#maps-data').data('source');
+    $.getJSON("/data/maps/" + source + ".json", function(r) {
+        maps_json = r.data.maps;
+        
+        var downloadBySlug = getUrlParam('dl');
+        console.log(downloadBySlug)
+        if (downloadBySlug) {
+            console.log("aaa")
+            var b = $('.map-download-trigger[data-slug="' + downloadBySlug + '"]').trigger('click');
+            console.log(b)
+        }
+    });
+  
     // show stats panel and insert download stats
     if (user._preferences.show_map_stats) {
         $('.map-download-stats').show();
@@ -212,27 +220,38 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
         var matched_total = false
         var matched_unique = false
         var matched_recent = false
-        for (var i = 0; i < maps_stats.total.length; i++) {
-            if (map.name == (maps_stats.total[i])[0]) {
-                $('[data-entry="map-stats-total"]').text((maps_stats.total[i])[1])
-                matched_total = true
+        if (maps_stats.total != undefined) {
+            $('.map-download-stats').show()
+            if (maps_stats.total != undefined) {
+                for (var i = 0; i < maps_stats.total.length; i++) {
+                    if (map.name == (maps_stats.total[i])[0]) {
+                        $('[data-entry="map-stats-total"]').text((maps_stats.total[i])[1])
+                        matched_total = true
+                    }
+                }
             }
-        }
-        for (var i = 0; i < maps_stats.unique.length; i++) {
-            if (map.name == (maps_stats.unique[i])[0]) {
-                $('[data-entry="map-stats-unique"]').text((maps_stats.unique[i])[1])
-                matched_unique = true
+            if (maps_stats.unique != undefined) {
+                for (var i = 0; i < maps_stats.unique.length; i++) {
+                    if (map.name == (maps_stats.unique[i])[0]) {
+                        $('[data-entry="map-stats-unique"]').text((maps_stats.unique[i])[1])
+                        matched_unique = true
+                    }
+                }
             }
-        }
-        for (var i = 0; i < maps_stats.recent.length; i++) {
-            if (map.name == (maps_stats.recent[i])[0]) {
-                $('[data-entry="map-stats-recent"]').text((maps_stats.recent[i])[1])
-                matched_recent = true
+            if (maps_stats.recent != undefined) {
+                for (var i = 0; i < maps_stats.recent.length; i++) {
+                    if (map.name == (maps_stats.recent[i])[0]) {
+                        $('[data-entry="map-stats-recent"]').text((maps_stats.recent[i])[1])
+                        matched_recent = true
+                    }
+                }
             }
+            if (!matched_total) $('[data-entry="map-stats-total"]').text("0")
+            if (!matched_unique) $('[data-entry="map-stats-unique"]').text("0")
+            if (!matched_recent) $('[data-entry="map-stats-recent"]').text("0")
+        } else {
+            $('.map-download-stats').hide()
         }
-        if (!matched_total) $('[data-entry="map-stats-total"]').text("0")
-        if (!matched_unique) $('[data-entry="map-stats-unique"]').text("0")
-        if (!matched_recent) $('[data-entry="map-stats-recent"]').text("0")
     }
     
     // populate sponsor

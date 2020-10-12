@@ -3,7 +3,7 @@ $(function() {
         {
             map: "Deepwind Jungle",
             file: "deepwind_jungle.png",
-            link: "/maps/overcast?dl=deepwind_jungle"
+            link: "/maps/pgm?dl=deepwind_jungle"
         },
         {
             map: "Battle of Tenjin",
@@ -21,12 +21,12 @@ $(function() {
         {
             map: "Avalon Funland",
             file: "avalon_funland.png",
-            link: "/maps/overcast?dl=avalon_funland"
+            link: "/maps/pgm?dl=avalon_funland"
         },
         {
             map: "Full Salvo",
             file: "full_salvo.png",
-            link: "/maps/overcast?dl=full_salvo"
+            link: "/maps/pgm?dl=full_salvo"
         },
         {
             map: "Palace CTF",
@@ -46,12 +46,12 @@ $(function() {
         {
             map: "NextGen",
             file: "nextgen.png",
-            link: "/maps/overcast?dl=nextgen"
+            link: "/maps/pgm?dl=nextgen"
         },
         {
             map: "Long Shot",
             file: "long_shot.png",
-            link: "/maps/overcast?dl=long_shot"
+            link: "/maps/pgm?dl=long_shot"
         }
     ]
     var splash_map = maps[Math.floor(Math.random()*maps.length)]
