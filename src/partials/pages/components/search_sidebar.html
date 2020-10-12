@@ -25,6 +25,13 @@
             {{/if}}
         </div>
         {{/each}}
+        {{#if settings.maps.advanced_menu.player_filter}}
+        <div class="group search-authors">
+            <b>Filter Players</b>
+            <small>Click on player usernames to filter {{@root.settings.maps.advanced_menu.placeholder}} by that player's involvement.</small>
+            <span class="filter disabled">All</span>
+        </div>
+        {{/if}}
         <div class="group search-options">
             <b>Filter Options</b>
             <small>Use filter options to alter how {{@root.settings.maps.advanced_menu.placeholder}} are filtered.</small>

@@ -5,19 +5,15 @@ var maps_commons;
 var uuids;
 
 $(function() {
+    // fetch author names
+    uuids = JSON.parse($('#loaded_uuids_json').text())
+    console.log(uuids)
+    
     var searchable = new List('searchable-collection', {
         valueNames: ['tags', 's-title', 'users', 'uuids']
     });
     var searchable_type = "maps";
     setupSearch(searchable, searchable_type);
-    
-    // show stats panel and insert download stats
-    if (user._preferences.show_map_stats) {
-        $('.map-download-stats').show();
-        fetchGlobalDownloads();
-        fetchUniqueDownloads();
-        fetchRecentDownloads();
-    }
     
     $('[data-toggle="download-modal"]').click(function() {
         var slug = $(this).data('slug');
@@ -73,11 +69,6 @@ $(function() {
     $.getJSON("/data/global.json", function(r) {
         maps_commons = r.settings.maps;
     });
-    
-    // fetch author names
-    $.getJSON("/data/uuids.json", function(r) {
-        uuids = r.uuids;
-    });
 
     // fetch json version of loaded maps
     var source = $('#maps-data').data('source');
@@ -92,6 +83,14 @@ $(function() {
             console.log(b)
         }
     });
+  
+    // show stats panel and insert download stats
+    if (user._preferences.show_map_stats) {
+        $('.map-download-stats').show();
+        fetchGlobalDownloads();
+        fetchUniqueDownloads();
+        fetchRecentDownloads();
+    }
     
     // show map image buttons
     if (user._preferences.show_map_images == false) {
@@ -140,7 +139,7 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
                     'src': 'https://crafatar.com/avatars/' + author.uuid + '?size=16&default=MHF_Steve&overlay'
                 }),
                 $('<span/>', {
-                    'class': 'click-search',
+                    'class': 'author-filter-trigger',
                     'data-query': author.uuid
                 }).text(author.username)
             ])
