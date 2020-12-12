@@ -275,7 +275,7 @@ function startDownload(name, slug, path, license) {
             license_data = licenses.noncommercial;
             break
         default:
-            license_data = licenses.none;
+            license_data = licenses.unlicensed;
             break;
     }
     if (path) {
