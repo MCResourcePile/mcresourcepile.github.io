@@ -253,13 +253,13 @@
                     {{else}}
                     {{#is service 'twitch'}}
                         {{#is type 'collection'}}
-                        <iframe src="https://player.twitch.tv/?autoplay=false&collection={{id}}" allowfullscreen="true" scrolling="no"></iframe>
+                        <iframe src="https://player.twitch.tv/?autoplay=false&collection={{id}}&parent=mcresourcepile.github.io" allowfullscreen="true" scrolling="no"></iframe>
                         {{else}}
                         {{#is type 'clip'}}
-                        <iframe src="https://clips.twitch.tv/embed?autoplay=false&clip={{id}}" allowfullscreen="true" scrolling="no"></iframe>
+                        <iframe src="https://clips.twitch.tv/embed?autoplay=false&clip={{id}}&parent=mcresourcepile.github.io" allowfullscreen="true" scrolling="no"></iframe>
                         {{else}}
                         {{#is type 'video'}}
-                        <iframe src="https://player.twitch.tv/?autoplay=false&video={{id}}"  allowfullscren="true" scrolling="no"></iframe>
+                        <iframe src="https://player.twitch.tv/?autoplay=false&video={{id}}&parent=mcresourcepile.github.io"  allowfullscren="true" scrolling="no"></iframe>
                         {{/is}}
                         {{/is}}
                         {{/is}}
