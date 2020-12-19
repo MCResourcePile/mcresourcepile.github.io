@@ -28,7 +28,7 @@ jobs:
       run: grunt
     - name: Deploy
       if: github.event_name != 'pull_request'
-      uses: JamesIves/github-pages-deploy-action@3.5.3
+      uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BASE_BRANCH: source
