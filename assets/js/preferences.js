@@ -82,6 +82,7 @@ function loadUserPreferenceOptions() {
         $("#user-reset-access-token").hide();
     }
     displayRates();
+    displayUserInfo();
     // site preferences
     var preferences = user._preferences;
     $('.preference').each(function() {

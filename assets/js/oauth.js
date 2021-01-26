@@ -14,7 +14,7 @@ $(function() {
                 user.fetchRates(function(data) {
                     user.setRates(data)
                     user.save()
-                    window.location.replace("http://https://mcresourcepile.github.io/preferences.html")
+                    window.location.replace("https://mcresourcepile.github.io/preferences")
                 }, function () {
                    $(".splash-subheader").text("Bad Request: Unable to fetch user rate limits")
                 })               
