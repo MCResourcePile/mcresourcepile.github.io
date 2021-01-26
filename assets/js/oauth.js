@@ -24,6 +24,7 @@ $(function() {
                 }, function () {
                    $(".splash-subheader").text("Bad Request: Unable to fetch user info.")
                 })  
+            })
             .fail(function(data) {
                 $(".splash-subheader").text(data.error + ": " + data.message)
             })
