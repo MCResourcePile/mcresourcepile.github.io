@@ -11,14 +11,19 @@ $(function() {
         var call = $.getJSON(url + "/" + client_id + "/" + user_code)
             .done(function(data) {
                 user.setToken(data.access_token)
-                user.fetchRates(function(data) {
-                    user.setRates(data)
+                user.fetchUserInfo(function(info) {
+                    user.setRates(info)
                     user.save()
-                    window.location.replace("https://mcresourcepile.github.io/preferences")
+                    user.fetchRates(function(rates) {
+                        user.setRates(rates)
+                        user.save()
+                        window.location.replace("https://mcresourcepile.github.io/preferences")
+                    }, function () {
+                       $(".splash-subheader").text("Bad Request: Unable to fetch user rate limits.")
+                    })
                 }, function () {
-                   $(".splash-subheader").text("Bad Request: Unable to fetch user rate limits")
-                })               
-            })
+                   $(".splash-subheader").text("Bad Request: Unable to fetch user info.")
+                })  
             .fail(function(data) {
                 $(".splash-subheader").text(data.error + ": " + data.message)
             })
