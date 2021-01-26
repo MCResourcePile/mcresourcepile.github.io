@@ -259,10 +259,9 @@ function updateUrl() {
 }
 
 function parseUrl() {
-    console.log('aaaa')
-    $('#search').val(getUrlParam('query'))
-    var searchInput = getUrlParam('query')
-    var urlFilters = getUrlParam('filters')
+    var searchInput = getUrlParam('query') ? getUrlParam('query') : getUrlParam('s')
+    $('#search').val(searchInput)
+    var urlFilters = getUrlParam('filters') ? getUrlParam('filters') : getUrlParam('f')
     var urlAuthorFilters = getUrlParam('players')
     var match = getUrlParam('match')
     var invert = (getUrlParam('invert') == 'true')
