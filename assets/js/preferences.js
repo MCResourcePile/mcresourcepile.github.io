@@ -4,11 +4,11 @@
 
 $(function() {
     // setup preferences page
-    if (current_path == '/admin/preferences') {
+    if (current_path == '/preferences') {
         loadUserPreferenceOptions();
         $('#user-save-preferences').click(saveUserPreferences);  
         $('#user-reset-preferences').click(resetUserPreferences);  
-        $('#user-save-access-token').click(saveUserToken);  
+        $('#user-generate-access-token').click(generateUserToken);  
         $('#user-reset-access-token').click(resetUserToken);  
     }
 });
@@ -70,6 +70,18 @@ function applyUserPreferences() {
 function loadUserPreferenceOptions() {
     // api token
     $('#user-access-token').val(user._token);
+    if (user._token) {
+        $(".border-danger").addClass("border-success").removeClass("border-danger");
+        $(".text-danger").addClass("text-success").removeClass("text-danger");
+        $("#user-generate-access-token").hide();
+        $("#user-reset-access-token").show();
+    } else {
+        $(".border-success").addClass("border-danger").removeClass("border-success");
+        $(".text-success").addClass("text-danger").removeClass("text-success");
+        $("#user-generate-access-token").show();
+        $("#user-reset-access-token").hide();
+    }
+    displayRates();
     // site preferences
     var preferences = user._preferences;
     $('.preference').each(function() {
@@ -130,27 +142,8 @@ function resetUserPreferences() {
     }
 }
 
-function saveUserToken() {
-    var token = $('#user-access-token').val();
-    sendAlert('Verifing access token. Please wait.', 'alert-info');
-    // clean up token
-    token = token.replace('access_token=', '');
-    token = token.substr(0, token.indexOf('&')); 
-    if (user.verifyToken(token, function() {
-        if(user.setToken(token)) {
-            sendAlert('Successfully added your token. You can now download more maps at once.', 'alert-success');
-            $('#user-access-token').val(token);
-            saveUser();
-            updateUserInfo();
-            updateUserRates();
-        } else {
-            sendAlert('Unable to save token. Please view the console for more details.', 'alert-danger');
-        }
-    }, function () {
-        sendAlert('The token you provided is not valid. Please try again.', 'alert-danger');
-    })) {
-        sendAlert('The token you provided is not valid. Please try again.', 'alert-danger');
-    }
+function generateUserToken() {
+    window.location.replace("https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216")
 }
 
 function resetUserToken() {
@@ -160,6 +153,10 @@ function resetUserToken() {
             saveUser();
             updateUserRates();
             loadUserPreferenceOptions();
+            $(".border-success").addClass("border-danger").removeClass("border-success");
+            $(".text-success").addClass("text-danger").removeClass("text-success");
+            $("#user-generate-access-token").show();
+            $("#user-reset-access-token").hide();
         } else {
             sendAlert('Unable to remove your access token. Please try again.', 'alert-danger');
         }
