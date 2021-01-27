@@ -12,18 +12,18 @@ $(function() {
             .done(function(data) {
                 user.setToken(data.access_token)
                 user.fetchUserInfo(function(info) {
-                    user.setRates(info)
+                    user.setUserInfo(info)
                     user.save()
                     user.fetchRates(function(rates) {
                         user.setRates(rates)
                         user.save()
                         window.location.replace("https://mcresourcepile.github.io/preferences")
                     }, function () {
-                       $(".splash-subheader").text("Bad Request: Unable to fetch user rate limits.")
+                        $(".splash-subheader").text("Bad Request: Unable to fetch user rate limits.")
                     })
                 }, function () {
-                   $(".splash-subheader").text("Bad Request: Unable to fetch user info.")
-                })  
+                    $(".splash-subheader").text("Bad Request: Unable to fetch user info.")
+                })
             })
             .fail(function(data) {
                 $(".splash-subheader").text(data.error + ": " + data.message)
