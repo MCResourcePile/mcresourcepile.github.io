@@ -154,10 +154,10 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
         license = "unlicensed";
     } else if (map.commercial) {
         $('[data-license="by-sa"]').show();
-        license = "noncommercial";
+        license = "commercial";
     } else {
         $('[data-license="by-nc-sa"]').show();
-        license = "commercial";
+        license = "noncommercial";
     }
     
     // populate disclaimer
