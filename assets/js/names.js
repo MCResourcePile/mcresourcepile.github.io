@@ -13,8 +13,6 @@ var names = {
     "99250": "collaborator",
     "Proddyy": "collaborator",
     "Lucaslyoko": "collaborator",
-    "Epicness": "associate",
-    "amactus": "associate"
 }
 
 var alternate = {
@@ -27,8 +25,6 @@ var alternate = {
     "Starkman123": "AranoixStark",
     "Numberz99": "99250",
     "Prodigy4532": "Proddyy",
-    "EpicnessGithub": "Epicness",
-    "Christian": "Epicness",
 }
 
 // uuids for updates page
