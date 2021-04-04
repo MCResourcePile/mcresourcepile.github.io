@@ -52,6 +52,11 @@ $(function() {
             map: "Long Shot",
             file: "long_shot.png",
             link: "/maps/pgm?dl=long_shot"
+        },
+        {
+            map: "Rallypoint Delta",
+            file: "rallypoint_delta.png",
+            link: "/maps/pgm?dl=rallypoint_delta"
         }
     ]
     var splash_map = maps[Math.floor(Math.random()*maps.length)]
