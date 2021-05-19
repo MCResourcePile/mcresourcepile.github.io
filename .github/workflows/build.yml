@@ -33,6 +33,7 @@ jobs:
           cp ./scripts/uuid-resolver/output.json ./src/data/uuids.json
           
       - name: commit changes
+        if: github.event_name != "pull_request"
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update global UUID data file
