@@ -17,7 +17,7 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.7.7"
+          python-version: '3.7.7'
           
       - name: install python packages
         run: |
@@ -33,7 +33,7 @@ jobs:
           cp ./scripts/uuid-resolver/output.json ./src/data/uuids.json
           
       - name: commit changes
-        if: github.event_name != "pull_request"
+        if: github.event_name != 'pull_request'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update global UUID data file
@@ -51,7 +51,7 @@ jobs:
       - name: setup ruby
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: "2.6.x"
+          ruby-version: '2.6.x'
           
       - name: install ruby dependencies 
         run: |
@@ -62,7 +62,7 @@ jobs:
         run: grunt
         
       - name: deploy to github pages
-        if: github.event_name != "pull_request"
+        if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
