@@ -46,7 +46,7 @@ def main(directory, data, options):
             if username:
                 output["uuids"].update({uuid: username})
 
-    with open("output.json", "w") as out:
+    with open(data, "w") as out:
         json.dump(output, out, indent=4)
     
 if __name__ == "__main__":

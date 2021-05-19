@@ -28,10 +28,6 @@ jobs:
         run: |
           python ./scripts/uuid-resolver/run.py ./src/data/maps ./src/data/uuids.json
           
-      - name: copy output to src
-        run: |
-          cp ./scripts/uuid-resolver/output.json ./src/data/uuids.json
-          
       - name: commit changes
         if: github.event_name != 'pull_request'
         uses: stefanzweifel/git-auto-commit-action@v4
