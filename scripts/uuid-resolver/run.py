@@ -61,7 +61,7 @@ if __name__ == "__main__":
     directory = sys.argv[1]
     directory = os.path.normpath(directory)
     uuids_file = sys.argv[2]
-    uuids_file = os.path.normpath(data)
+    uuids_file = os.path.normpath(uuids_file)
     if not os.path.exists(directory):
         parser.error("No such directory as " + directory)
     if not os.path.exists(uuids_file):
