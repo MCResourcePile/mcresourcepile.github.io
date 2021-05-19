@@ -7,10 +7,10 @@ def get_username(uuid):
     if "username" in r.json():
         return r.json()["username"]
 
-def main(directory, options):    
+def main(directory, data, options):    
     output = {"uuids": {}}
     
-    previous_output = os.path.relpath(directory)
+    previous_output = data
     if os.path.exists(previous_output):
         with open(previous_output, "r") as f:
             json_data = f.read()
@@ -60,8 +60,12 @@ if __name__ == "__main__":
         
     directory = sys.argv[1]
     directory = os.path.normpath(directory)
+    data = sys.argv[2]
+    data = os.path.normpath(data)
     if not os.path.exists(directory):
         parser.error("No such directory as " + directory)
+    if not os.path.exists(data):
+        parser.error("No such file as " + data)
         
     main(directory, options)
     
