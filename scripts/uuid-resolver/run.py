@@ -7,10 +7,10 @@ def get_username(uuid):
     if "username" in r.json():
         return r.json()["username"]
 
-def main(directory, data, options):    
+def main(directory, uuids_file, options):    
     output = {"uuids": {}}
     
-    previous_output = data
+    previous_output = uuids_file
     if os.path.exists(previous_output):
         with open(previous_output, "r") as f:
             json_data = f.read()
@@ -46,11 +46,11 @@ def main(directory, data, options):
             if username:
                 output["uuids"].update({uuid: username})
 
-    with open(data, "w") as out:
+    with open(uuids_file, "w") as out:
         json.dump(output, out, indent=4)
     
 if __name__ == "__main__":
-    usage = "usage: %prog <dir>"
+    usage = "usage: %prog <dir> <uuids file>"
     parser = OptionParser(usage = usage)
     parser.add_option("-f", "--force", dest="force", help="force a refresh of all uuids even if they are known", default=False, action="store_true")
     (options, args) = parser.parse_args()
@@ -60,13 +60,13 @@ if __name__ == "__main__":
         
     directory = sys.argv[1]
     directory = os.path.normpath(directory)
-    data = sys.argv[2]
-    data = os.path.normpath(data)
+    uuids_file = sys.argv[2]
+    uuids_file = os.path.normpath(data)
     if not os.path.exists(directory):
         parser.error("No such directory as " + directory)
-    if not os.path.exists(data):
-        parser.error("No such file as " + data)
+    if not os.path.exists(uuids_file):
+        parser.error("No such file as " + uuids_file)
         
-    main(directory, data, options)
+    main(directory, uuids_file, options)
     
     sys.exit(0)
