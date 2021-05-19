@@ -26,7 +26,7 @@ jobs:
           
       - name: execute py script
         run: |
-          python run.py ./src/data
+          python ./scripts/uuid-resolver/run.py ./src/data
           
       - name: copy output to src
         run: |
