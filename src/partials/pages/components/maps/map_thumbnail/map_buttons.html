@@ -17,7 +17,8 @@
           data-external-download="{{#if (isString download)}}{{download}}{{/if}}" 
           data-source="{{#if (isString sourced)}}{{sourced}}{{/if}}" 
           data-discussion="{{#if discussion}}{{discussion}}{{/if}}" 
-          data-sponsor="{{sponsor}}"><i class="fa fa-download"></i></span>
+          data-sponsor="{{sponsor}}"
+          title="Download"><i class="fa fa-download"></i></span>
     {{#is xml false}}
     <span class="btn map-link-disabled map-button"><i class="fa fa-code"></i></span>
     {{else}}
@@ -29,13 +30,22 @@
        {{#if (lookup @root.settings.maps.environments environment)}}{{#with (lookup @root.settings.maps.environments environment)}}{{#if this.prompt}}
        data-toggle="tooltip" 
        data-placement="top" 
-       title="{{this.prompt}}"
+       title="View XML"
        {{/if}}{{/with}}{{/if}}><i id="{{name}}" class="fa fa-code click-xml"></i></a>
     {{/is}}
     {{/if}}
+    {{#unless source}}
+    <a id="{{name}}" 
+       href="https://mcresourcepile.github.io/{{replace @root.settings.maps.defaults.source.repository 'MCResourcePile/' ''}}/{{slug}}" 
+       target="_blank"
+       class="btn map-link map-button" 
+       role="button"
+       title="View Overview"><i id="{{name}}" class="fa fa-map-marked-alt"></i></a>
+    {{/unless}}
     <a id="{{name}}" 
        thumbnail="https://raw.githubusercontent.com/{{#if source.repository}}{{source.repository}}{{else}}{{@root.settings.maps.defaults.source.repository}}{{/if}}/{{#if source.branch}}{{source.branch}}{{else}}{{@root.settings.maps.defaults.source.branch}}{{/if}}{{#if source.path}}{{source.path}}{{else}}{{@root.settings.maps.defaults.source.path}}{{/if}}/{{slug}}/map.png" 
        class="btn map-link map-button map-button-sm click-image" 
        role="button" 
+       title="View Thumbnail"
        style="display:none"><i id="{{name}}" class="fa fa-file-image"></i></a>
 </div>
