@@ -78,11 +78,7 @@
     text-align: center;
     margin-left: -10px;
     margin-right: 5px;
-}
-
-.map-thumbnail-body .buttons {
-    margin-top: 2px;
-    margin-left: -12px;
+    padding: 4px 0;
 }
 
 .contest-winners .map-thumbnail {
@@ -163,16 +159,18 @@
     background-color: #8F1515;
 }
 
-.map-button {
-    padding-left: 57px;
-    padding-right: 57px;
+.map-thumbnail-body .buttons {
+  display: flex;
+  margin-left: -12px;
+  margin-right: 2px;
+  padding-bottom: 2px;
+  
+  .map-button {
+    margin: 0 2px;
     font-size: 12px;
     box-shadow: none !important;
-}
-
-.map-button-sm {
-    padding-left: 35.3px !important;
-    padding-right: 35.3px !important;
+    flex: 1 1 auto;
+  }
 }
 
 .map-button-span {
