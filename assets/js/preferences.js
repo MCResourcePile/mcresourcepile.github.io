@@ -144,7 +144,7 @@ function resetUserPreferences() {
 }
 
 function generateUserToken() {
-    window.location.replace("https://github.com/login/oauth/authorize?client_id=da313f2b7ca18563b216")
+    window.location.replace("https://github.com/login/oauth/authorize?client_id=dc98a5a9f587a1586798")
 }
 
 function resetUserToken() {
