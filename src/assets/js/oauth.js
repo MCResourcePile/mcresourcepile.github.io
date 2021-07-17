@@ -4,7 +4,7 @@
 
 $(function() {
     var url = "https://mcresourcepile-auth.herokuapp.com"
-    var client_id = "da313f2b7ca18563b216"
+    var client_id = "dc98a5a9f587a1586798"
     var user_code = getUrlParam("code")
 
     if (user_code) {
