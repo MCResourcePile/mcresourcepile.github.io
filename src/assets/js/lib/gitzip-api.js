@@ -64,23 +64,25 @@ SOFTWARE.
     var progressCallback = function(status, message, percent){};
 
     var _getContentOfGitUrl = function(url, params){
-        params = params || {};
-        if(token) params["access_token"] = token;
         return Promise.resolve(
-            $.ajax({
+            $.ajax({ 
                 url: url,
-                data: params
+                data: params,
+                headers: {
+                    "access_token": token
+                }
             })
         ).then(function(results){ return results.content; });
     };
 
     var _getTreeOfGitUrl = function(url, params){
-        params = params || {};
-        if(token) params["access_token"] = token;
         return Promise.resolve(
-            $.ajax({
+            $.ajax({ 
                 url: url,
-                data: params
+                data: params,
+                headers: {
+                    "access_token": token
+                }
             })
         ).then(function(results){
             var nextReturn = [];
@@ -169,7 +171,7 @@ SOFTWARE.
             document.body.appendChild(down);
             down.click();
             down.parentNode.removeChild(down);
-        },100);
+        }, 100);
     }
 
     /**
@@ -179,37 +181,41 @@ SOFTWARE.
      */
     function downloadZip(url, callbackScope){
         callbackScope = callbackScope || scope;
-        if(url){
+        if (url) {
             progressCallback.call(callbackScope, 'processing', 'Fetching target url: ' + url);
-            var params = {};
-            if(token) params["access_token"] = token;
-            $.ajax( { url: url, data: params } )
-                .fail(function(jqXHR, textStatus, errorThrown){
-                  console.error('downloadZip > $.get fail:', textStatus);
-                  if (errorThrown) throw errorThrown;
-                })
+            $.ajax({ 
+                url: url,
+                data: params,
+                headers: {
+                    "access_token": token
+                }
+            })
+            .fail(function(jqXHR, textStatus, errorThrown){
+                console.error('downloadZip > $.get fail:', textStatus);
+                if (errorThrown) throw errorThrown;
+            })
 
-                .done(function(data, textStatus, jqXHR){
-                    var blob = new Blob([data], {
-                        type: jqXHR.getResponseHeader('Content-Type') ||
-                            'application/octet-stream'
-                    });
+            .done(function(data, textStatus, jqXHR){
+                var blob = new Blob([data], {
+                    type: jqXHR.getResponseHeader('Content-Type') ||
+                        'application/octet-stream'
+                });
 
-                    var down = document.createElement('a');
-                    down.download = url.substring(url.lastIndexOf('/') + 1);
-                    down.href = URL.createObjectURL(blob);
+                var down = document.createElement('a');
+                down.download = url.substring(url.lastIndexOf('/') + 1);
+                down.href = URL.createObjectURL(blob);
 
-                    down.addEventListener('click', function(e){
-                        progressCallback.call(callbackScope, 'done', 'Saving File.');
-                    });
+                down.addEventListener('click', function(e){
+                    progressCallback.call(callbackScope, 'done', 'Saving File.');
+                });
 
-                    setTimeout(function(){
-                        // link has to be in the page DOM for it to work with Firefox
-                        document.body.appendChild(down);
-                        down.click();
-                        down.parentNode.removeChild(down);
-                    }, 100);
-              });
+                setTimeout(function(){
+                    // link has to be in the page DOM for it to work with Firefox
+                    document.body.appendChild(down);
+                    down.click();
+                    down.parentNode.removeChild(down);
+                }, 100);
+            });
         }
     }
 
@@ -224,11 +230,13 @@ SOFTWARE.
         if(url && githubProvidedUrl.test(url)){
             progressCallback.call(callbackScope, 'prepare', 'Fetching list of Dir contains files.');
             var params = {};
-            if(token) params["access_token"] = token;
             params["recursive"] = 1;
             $.ajax({
                 url: url,
                 data: params,
+                headers: {
+                    "access_token": token
+                }
                 success: function(results){
                     var promises = [];
                     var fileContents = [];
@@ -300,14 +308,16 @@ SOFTWARE.
 
             progressCallback.call(callbackScope, 'prepare', 'Finding file/dir content path from resolved URL');
             var params = {};
-            if(resolved.branch) params["ref"] = resolved.branch;
-            if(token) params["access_token"] = token;            
+            if(resolved.branch) params["ref"] = resolved.branch;   
 
             Promise.resolve(
                 $.ajax({
                     url: "https://api.github.com/repos/"+ resolved.author +
                         "/" + resolved.project + "/contents/" + resolved.path,
-                    data: params
+                    data: params,
+                    headers: {
+                        "access_token": token
+                    }
                 })
             ).then(function(results){
                 var templateText = '';

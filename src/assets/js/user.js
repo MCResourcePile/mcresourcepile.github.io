@@ -102,18 +102,21 @@ class User {
             console.warn('Invalid access token');
             return false;
         }
-        var params = {}
-        params["access_token"] = token;
         var url = "https://api.github.com/user";
-        $.ajax( { url: url, data: params } )
-            .done(function() {
-                console.log('Valid access token');
-                success();
-            })
-            .fail(function() {
-                console.log('Invalid access token');
-                fail();
-            });
+        $.ajax({ 
+            url: url,
+            headers: {
+                "access_token": token
+            }
+        })
+        .done(function() {
+            console.log('Valid access token');
+            success();
+        })
+        .fail(function() {
+            console.log('Invalid access token');
+            fail();
+        });
     }
 
     /** 
@@ -157,18 +160,21 @@ class User {
     fetchUserInfo(success, fail) {
         if (this._token) {
             var self = this;
-            var params = {}
-            params["access_token"] = this._token;
             var url = "https://api.github.com/user";
-            $.ajax( { url: url, data: params } )
-                .done(function(data) {
-                    console.log('Successfully retrieved User identity data');
-                    success(data);
-                })
-                .fail(function() {
-                    console.warn('Failed to retrieve User identity data');
-                    fail();
-                });
+            $.ajax({ 
+                url: url,
+                headers: {
+                    "access_token": this._token
+                }
+            })
+            .done(function(data) {
+                console.log('Successfully retrieved User identity data');
+                success(data);
+            })
+            .fail(function() {
+                console.warn('Failed to retrieve User identity data');
+                fail();
+            });
         }
     }
 
@@ -202,18 +208,21 @@ class User {
      * @param {function} fail    Function to run if API call fails
      */
     fetchRates(success, fail) {
-        var params = {}
-        if (this._token) params["access_token"] = this._token;
-        var url = "https://api.github.com/rate_limit";
-        $.ajax( { url: url, data: params } )
-            .done(function(data) {
-                console.log('Successfully retrieved User rate limit data');
-                success(data);
-            })
-            .fail(function() {
-                console.warn('Failed to retrieve User rate limit data');
-                fail();
-            });
+        var url = "https://api.github.com/user";
+        $.ajax({ 
+            url: url,
+            headers: {
+                "access_token": this._token
+            }
+        })
+        .done(function(data) {
+            console.log('Successfully retrieved User rate limit data');
+            success(data);
+        })
+        .fail(function() {
+            console.warn('Failed to retrieve User rate limit data');
+            fail();
+        });
     }
 
     /** 
