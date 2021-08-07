@@ -106,7 +106,7 @@ class User {
         $.ajax({ 
             url: url,
             headers: {
-                "access_token": token
+                "Authorization": "token " + token
             }
         })
         .done(function() {
@@ -164,7 +164,7 @@ class User {
             $.ajax({ 
                 url: url,
                 headers: {
-                    "access_token": this._token
+                    "Authorization": "token " + this._token
                 }
             })
             .done(function(data) {
@@ -212,7 +212,7 @@ class User {
         $.ajax({ 
             url: url,
             headers: {
-                "access_token": this._token
+                "Authorization": "token " + this._token
             }
         })
         .done(function(data) {
