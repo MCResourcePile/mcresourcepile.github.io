@@ -69,7 +69,7 @@ SOFTWARE.
                 url: url,
                 data: params,
                 headers: {
-                    "access_token": token
+                    "Authorization": "token " + token
                 }
             })
         ).then(function(results){ return results.content; });
@@ -81,7 +81,7 @@ SOFTWARE.
                 url: url,
                 data: params,
                 headers: {
-                    "access_token": token
+                    "Authorization": "token " + token
                 }
             })
         ).then(function(results){
@@ -187,7 +187,7 @@ SOFTWARE.
                 url: url,
                 data: params,
                 headers: {
-                    "access_token": token
+                    "Authorization": "token " + token
                 }
             })
             .fail(function(jqXHR, textStatus, errorThrown){
@@ -235,7 +235,7 @@ SOFTWARE.
                 url: url,
                 data: params,
                 headers: {
-                    "access_token": token
+                    "Authorization": "token " + token
                 }
                 success: function(results){
                     var promises = [];
@@ -316,7 +316,7 @@ SOFTWARE.
                         "/" + resolved.project + "/contents/" + resolved.path,
                     data: params,
                     headers: {
-                        "access_token": token
+                        "Authorization": "token " + token
                     }
                 })
             ).then(function(results){
