@@ -236,7 +236,7 @@ SOFTWARE.
                 data: params,
                 headers: {
                     "Authorization": "token " + token
-                }
+                },
                 success: function(results){
                     var promises = [];
                     var fileContents = [];
