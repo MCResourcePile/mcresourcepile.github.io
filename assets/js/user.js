@@ -88,38 +88,6 @@ class User {
     }
 
     /** 
-     * Takes a GitHub access token and checks that it is valid.
-     *
-     * @param  {string}  token   The GitHub access token to validate
-     * @param {function} success Function to run if API call completes
-     * @param {function} fail    Function to run if API call fails
-     */
-    verifyToken(token, success, fail) {
-        if (token.length > 40) {
-            token = token.replace('access_token=','').replace(/\s/g,'');
-            $('.access_token').val(token);
-        } else if (token.length < 40) {
-            console.warn('Invalid access token');
-            return false;
-        }
-        var url = "https://api.github.com/user";
-        $.ajax({ 
-            url: url,
-            headers: {
-                "Authorization": "token " + token
-            }
-        })
-        .done(function() {
-            console.log('Valid access token');
-            success();
-        })
-        .fail(function() {
-            console.log('Invalid access token');
-            fail();
-        });
-    }
-
-    /** 
      * Resets the User access token to nothing.
      *
      * @return {boolean} Success or fail response
@@ -128,7 +96,12 @@ class User {
         this._token = "";
         this._username = "Guest";
         this._avatar = "https://avatars0.githubusercontent.com/u/24795789?v=4";
-        this.fetchRates();
+        this.fetchRates(function(rates) {
+            this.setRates(rates)
+            this.save()
+        }, function () {
+            // do nothing
+        });
         console.log('Successfully reset User access token');
         return true;
     }
@@ -162,10 +135,7 @@ class User {
             var self = this;
             var url = "https://api.github.com/user";
             $.ajax({ 
-                url: url,
-                headers: {
-                    "Authorization": "token " + this._token
-                }
+                url: url
             })
             .done(function(data) {
                 console.log('Successfully retrieved User identity data');
@@ -208,12 +178,9 @@ class User {
      * @param {function} fail    Function to run if API call fails
      */
     fetchRates(success, fail) {
-        var url = "https://api.github.com/user";
+        var url = "https://api.github.com/rate_limit";
         $.ajax({ 
-            url: url,
-            headers: {
-                "Authorization": "token " + this._token
-            }
+            url: url
         })
         .done(function(data) {
             console.log('Successfully retrieved User rate limit data');
