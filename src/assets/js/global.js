@@ -4,6 +4,15 @@
 
 // setup user
 var user = new User();
+
+$.ajaxSetup({
+    beforeSend: function(jqXHR, settings) {
+        if (user._token) {
+            jqXHR.setRequestHeader("Authorization", "token " + user._token)
+        }
+    }
+});
+
 displayUserInfo();
 displayRates();
 applyUserPreferences();
@@ -115,5 +124,7 @@ function displayRates() {
 function updateAndDisplayRates() {
     user.fetchRates(function() {
         displayRates();
+    }, function() {
+        // do nothing
     });
 }

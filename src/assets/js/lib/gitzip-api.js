@@ -67,10 +67,7 @@ SOFTWARE.
         return Promise.resolve(
             $.ajax({ 
                 url: url,
-                data: params,
-                headers: {
-                    "Authorization": "token " + token
-                }
+                data: params
             })
         ).then(function(results){ return results.content; });
     };
@@ -79,10 +76,7 @@ SOFTWARE.
         return Promise.resolve(
             $.ajax({ 
                 url: url,
-                data: params,
-                headers: {
-                    "Authorization": "token " + token
-                }
+                data: params
             })
         ).then(function(results){
             var nextReturn = [];
@@ -185,10 +179,7 @@ SOFTWARE.
             progressCallback.call(callbackScope, 'processing', 'Fetching target url: ' + url);
             $.ajax({ 
                 url: url,
-                data: params,
-                headers: {
-                    "Authorization": "token " + token
-                }
+                data: params
             })
             .fail(function(jqXHR, textStatus, errorThrown){
                 console.error('downloadZip > $.get fail:', textStatus);
@@ -234,9 +225,6 @@ SOFTWARE.
             $.ajax({
                 url: url,
                 data: params,
-                headers: {
-                    "Authorization": "token " + token
-                },
                 success: function(results){
                     var promises = [];
                     var fileContents = [];
@@ -314,10 +302,7 @@ SOFTWARE.
                 $.ajax({
                     url: "https://api.github.com/repos/"+ resolved.author +
                         "/" + resolved.project + "/contents/" + resolved.path,
-                    data: params,
-                    headers: {
-                        "Authorization": "token " + token
-                    }
+                    data: params
                 })
             ).then(function(results){
                 var templateText = '';
