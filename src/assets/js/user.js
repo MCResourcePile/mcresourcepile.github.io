@@ -208,7 +208,7 @@ class User {
      * @param {function} fail    Function to run if API call fails
      */
     fetchRates(success, fail) {
-        var url = "https://api.github.com/user";
+        var url = "https://api.github.com/rate_limit";
         $.ajax({ 
             url: url,
             headers: {
