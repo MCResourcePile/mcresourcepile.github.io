@@ -16,6 +16,7 @@ $.ajaxSetup({
 displayUserInfo();
 displayRates();
 applyUserPreferences();
+hideAlerts();
     
 // check is the page is being loaded in development directory
 var is_development = /\/(out|src)\//i.test(window.location.href);
@@ -128,3 +129,39 @@ function updateAndDisplayRates() {
         // do nothing
     });
 }
+
+/**
+ * Hides any alerts the user has dismissed.
+ */
+function hideAlerts() {
+    var activeAlerts = [];
+    $('.alert-global').each(function() {
+        var alertId = $(this).attr('id');
+        activeAlerts.push(alertId);
+        if (user.isAlertHidden(alertId)) {
+            $(this).hide();
+        }
+    });
+    
+    console.log(activeAlerts)
+    
+    // we want to filter out any alerts that no longer exist
+    // so that we aren't storing trash data forever
+    var inactiveAlerts = user._hidden_alerts.filter(x => activeAlerts.indexOf(x) === -1);
+    if (inactiveAlerts.length > 0) {
+        for (i = 0; i < inactiveAlerts.length; i++) {
+            user.unhideAlert(inactiveAlerts[i]);
+        }
+        user.save();
+    }
+}
+
+/**
+ * Saves the ID of any dismissed alert to hide after
+ * navigating away from the page.
+ */
+$('.alert-global-close').click(function() {
+    var alertId = $(this).data('closes');
+    user.hideAlert(alertId);
+    user.save();
+})
