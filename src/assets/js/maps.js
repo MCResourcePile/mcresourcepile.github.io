@@ -180,8 +180,9 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
     });
     $('[data-entry="map-tags"]').append([
         $('<span/>', {'class': 'badge badge-primary'}).text(maps_commons.environments[env].label),
-        (map.commercial) ? $('<span/>', {'class': 'badge badge-success'}).text("Commercial") : null,
-        (!map.commercial && (!map.sourced || !map.unlicensed)) ? $('<span/>', {'class': 'badge badge-warning'}).text("Noncommercial") : null,
+        (map.commercial && !(map.sourced || map.unlicensed)) ? $('<span/>', {'class': 'badge badge-success'}).text("Commercial") : null,
+        (!map.commercial && !(map.sourced || map.unlicensed)) ? $('<span/>', {'class': 'badge badge-warning'}).text("Noncommercial") : null,
+        (map.sourced || map.unlicensed) ? $('<span/>', {'class': 'badge badge-secondary'}).text("Unlicensed") : null,
         $('<span/>', {'class': 'badge badge-secondary'}).text(map.slug)
     ]);
     
