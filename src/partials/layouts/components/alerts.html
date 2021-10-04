@@ -4,11 +4,10 @@
     </noscript>
     {{#if settings.alerts.enabled}}
     {{#each settings.alerts.messages}}
-    <div id="alert-{{hyphenate (lowercase (truncate message 12))}}" class="alert alert-{{#if class}}{{class}}{{else}}info{{/if}} alert-global" role="alert">
+    <div id="alert-{{hash message}}" class="alert alert-{{#if class}}{{class}}{{else}}info{{/if}} {{#if dismissible}}alert-dismissable fade show{{/if}} alert-global" role="alert">
         {{{message}}}
         {{#if dismissible}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
-        <script>$("#alert-{{hyphenate (lowercase (truncate message 12))}}").on("closed.bs.alert",function(){Cookies.set("alert-{{hyphenate (lowercase (truncate message 12))}}-hidden",!0,{expires:365})}),Cookies.get("alert-{{hyphenate (lowercase (truncate message 12))}}-hidden")&&$("#alert-{{hyphenate (lowercase (truncate message 12))}}").alert("close");</script>
+        <button type="button" class="close alert-global-close" data-closes="alert-{{hash message}}" data-dismiss="alert" aria-label="Close" style="font-size:18px;"><span aria-hidden="true">&times;</span></button>
         {{/if}}
     </div>
     {{/each}}

@@ -21,6 +21,7 @@ class User {
             show_map_suggestions: true,
             tm_banners_display: "all"
         };
+        this._hidden_alerts = [];
         // check if pre-existing User data exists
         if (this.saveExists()) {
             this.loadSave();
@@ -193,6 +194,32 @@ class User {
     }
 
     /** 
+     * Add an alert ID to keep hidden from the user.
+     */
+    hideAlert(id) {
+        this._hidden_alerts.push(id)
+    }
+
+    /** 
+     * Remove an alert ID to keep hidden from the user.
+     * This might be performed automatically after the
+     * alert no longer exists, for example.
+     */
+    unhideAlert(id) {
+        var index = this._hidden_alerts.indexOf(id)
+        if (index > -1) {
+            this._hidden_alerts.splice(index, 1)
+        }
+    }
+
+    /** 
+     * Boolean response based on if the alert has been hidden.
+     */
+    isAlertHidden(id) {
+        return (this._hidden_alerts.indexOf(id) > -1) ? true : false
+    }
+
+    /** 
      * Quickly resets a user cookie. Useful for debugging.
      *
      * @return {boolean} Success or fail response
@@ -253,16 +280,24 @@ class User {
             var b64 = getCookie('user');
             var str = atob(b64);
             var json = JSON.parse(str);
-            this._token = json._token;
-            this._username = json._username;
-            this._avatar = json._avatar;
-            this._rate = json._rate;
-            this._preferences = json._preferences;
+            this.safeLoad("_token", json);
+            this.safeLoad("_username", json);
+            this.safeLoad("_avatar", json);
+            this.safeLoad("_rate", json);
+            this.safeLoad("_preferences", json);
+            this.safeLoad("_hidden_alerts", json);
             console.log('Successfully loaded saved User data');
             return true;
         } catch (e) {
             console.warn('Failed to load save User data');
             return false;
+        }
+    }
+    
+    safeLoad(attribute, json) {
+        var value = json[attribute];
+        if (value) {
+            this[attribute] = value;
         }
     }
 }
