@@ -143,8 +143,6 @@ function hideAlerts() {
         }
     });
     
-    console.log(activeAlerts)
-    
     // we want to filter out any alerts that no longer exist
     // so that we aren't storing trash data forever
     var inactiveAlerts = user._hidden_alerts.filter(x => activeAlerts.indexOf(x) === -1);
