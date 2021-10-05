@@ -41,7 +41,7 @@ $(function() {
     })
     
     // handle user filters
-    $('.filter:not(.filter-option, .disabled)').click(function() {
+    $('.filter:not(.filter-option, .disabled, .filter-input-action)').click(function() {
         filter = $(this).text()
         active = $(this).hasClass('active')
 
@@ -113,16 +113,7 @@ $(function() {
     
     $('.author-filter-trigger').click(function() {
         var uuid = $(this).data('query')
-        if (filtered_authors.includes(uuid) == 0) {
-            filtered_authors.push(uuid)
-            var username = uuids[uuid]
-            $('.search-authors').append([
-                $('<span/>', {'class': 'filter active author-filter'}).data('uuid', uuid).text(username)
-            ])
-            $('.search-authors .filter.disabled').hide()
-            filterMaps()
-            updateUrl()
-        }
+        addAuthorFilter(uuid)
     })
     
     $('.search-authors').on('click', '.author-filter', function() {
@@ -137,6 +128,59 @@ $(function() {
             updateUrl()
         }
     });
+
+    /* Opens the "+" icon into a search bar
+     * Currently disabled as I'm not sure it's really needed
+    $(".filter-input-action").click(function() {
+        var action = $(this).data("action-for");
+        var parent = $("[data-filter-input-for='" + action + "']");
+        var input = $("input#" + action);
+        parent.addClass("active");
+        input.focus();
+    });
+
+    $(".filter-input input").focusout(function() {
+        var action = $(this).attr("id");
+        var parent = $(this).closest("[data-filter-input-for='" + action + "']");
+        parent.removeClass("active");
+    });*/
+    
+    $(".filter-input input").each(function() {
+        var element = $(this)
+        var data = $(this).data("src").split(",").sort();
+        var options = {
+            placeholder: "Search usernames",
+            data: data,
+            list: {
+                match: {
+                    enabled: true
+                },
+                showAnimation: {
+                    type: "fade",
+                    time: 400
+                },
+                hideAnimation: {
+                    type: "slide",
+                    time: 400
+                },
+                onClickEvent: function() {
+                    var username = element.val();
+                    var uuid = Object.keys(uuids).find(key => uuids[key] === username);
+                    if (uuid) {
+                        addAuthorFilter(uuid);
+                    };
+                    element.val("");
+                }
+            }
+        };
+        
+        var theme = $('html').attr('data-theme');
+        if (theme == "dark") {
+            options["theme"] = "dark"
+        };
+        
+        $(this).easyAutocomplete(options);
+    })
 })
 
 function setupSearch(config, type) {
@@ -147,6 +191,19 @@ function setupSearch(config, type) {
     }
     countMatching()
     parseUrl()
+}
+
+function addAuthorFilter(uuid) {
+    if (filtered_authors.includes(uuid) == 0) {
+        filtered_authors.push(uuid)
+        var username = uuids[uuid]
+        $('.search-authors-dynamic').prepend([
+            $('<span/>', {'class': 'filter active author-filter'}).data('uuid', uuid).text(username)
+        ])
+        $('.search-authors .filter.disabled').hide()
+        filterMaps()
+        updateUrl()
+    }
 }
 
 function filterMaps() {
@@ -181,9 +238,9 @@ function filterMaps() {
                 }
             }
             if ((options.match == "all" && options.invert == false && matchAll(filter_count, uuid_count)) || // match all selected filters
-                (options.match == "all" && options.invert == true && !matchAll(filter_count, uuid_count)) ||    // match not all selected filters
-                (options.match == "any" && options.invert == false && matchAny(filter_count, uuid_count)) ||                                      // match any selected filters
-                (options.match == "any" && options.invert == true && !matchAny(filter_count, uuid_count))) {                                                                                // or if no filters are selected
+                (options.match == "all" && options.invert == true && !matchAll(filter_count, uuid_count)) || // match not all selected filters
+                (options.match == "any" && options.invert == false && matchAny(filter_count, uuid_count)) || // match any selected filters
+                (options.match == "any" && options.invert == true && !matchAny(filter_count, uuid_count))) { // or if no filters are selected
 
                 if (range) {
                     distances = item.values().distances
@@ -281,10 +338,8 @@ function parseUrl() {
                 var uuid = urlAuthorFilters[i]
                 if (filtered_authors.includes(uuid) == 0) {
                     filtered_authors.push(uuid)
-                    console.log(uuid)
-                    console.log(uuids)
                     var username = uuids[uuid]
-                    $('.search-authors').append([
+                    $('.search-authors-dynamic').prepend([
                         $('<span/>', {'class': 'filter active author-filter'}).data('uuid', uuid).text(username)
                     ])
                     $('.search-authors .filter.disabled').hide()

@@ -7,7 +7,6 @@ var uuids;
 $(function() {
     // fetch author names
     uuids = JSON.parse($('#loaded_uuids_json').text())
-    console.log(uuids)
     
     var searchable = new List('searchable-collection', {
         valueNames: ['tags', 's-title', 'users', 'uuids']
@@ -76,11 +75,8 @@ $(function() {
         maps_json = r.data.maps;
         
         var downloadBySlug = getUrlParam('dl');
-        console.log(downloadBySlug)
         if (downloadBySlug) {
-            console.log("aaa")
             var b = $('.map-download-trigger[data-slug="' + downloadBySlug + '"]').trigger('click');
-            console.log(b)
         }
     });
   

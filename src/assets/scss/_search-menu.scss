@@ -52,6 +52,10 @@
         display: block;
         font-size: 12px;
     }
+    
+    > small {
+        margin-bottom: 6px;
+    }
 
     .filter {
         display: inline-block;
@@ -81,9 +85,58 @@
     &.search-authors .filter {
         margin-right: 3px;
     }
+    
+    .filter-input {
+        display: inline-block;
+        position: relative;
+        width: auto;
+        
+        .filter-input-action {
+            margin-right: 0;
+        }
+        
+        input {
+            position: absolute;
+            top: 0;
+            transition: all 0s ease-in;
+            display: block;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            font-size: 10px;
+            padding: 1px 8px;
+            margin: 4px 0px;
+            border-radius: 4px;
+            border-color: rgba(255, 255, 255, 0);
+            width: 100%;
+            pointer-events: none;
+        }
+        
+        &.active {
+            width: 100%;
+            
+            .filter.filter-input-action {
+                display: none;
+                pointer-events: none;
+            }
+            
+            input {
+                position: relative;
+                transition: all 0.5s ease-out;
+                opacity: 100;
+                width: 100%;
+                height: auto;
+                pointer-events: all;
+            }
+        }
+    }
 }
 
 .slider.slider-horizontal {
     width: 170px !important;
     margin: 0px 10px;
+}
+
+.easy-autocomplete {
+    width: 100% !important;
 }
