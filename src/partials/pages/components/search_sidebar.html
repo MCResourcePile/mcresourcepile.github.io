@@ -30,6 +30,11 @@
             <b>Filter Players</b>
             <small>Click on player usernames to filter {{@root.settings.maps.advanced_menu.placeholder}} by that player's involvement.</small>
             <span class="filter disabled">All</span>
+            <span class="search-authors-dynamic"></span>
+            <span class="filter-input active" data-filter-input-for="player-search">
+                <span class="filter filter-input-action" data-action-for="player-search">+</span>
+                <input type="text" name="player-search" id="player-search" placeholder="Search" data-src="{{objValues @root.uuids}}"/>
+            </span>
         </div>
         {{/if}}
         <div class="group search-options">
