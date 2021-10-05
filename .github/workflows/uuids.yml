@@ -37,17 +37,4 @@ jobs:
           file_pattern: src/data/*.json
           commit_user_name: MCResourcePile
           commit_user_email: MCResourcePile@gmail.com
-          commit_author: MCResourcePile <MCResourcePile@gmail.com>
-          
-      - name: deploy to github pages
-        if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_BRANCH: source
-          BRANCH: master
-          FOLDER: out
-          CLEAN: true
-          GIT_CONFIG_EMAIL: MCResourcePile@gmail.com
-          COMMIT_MESSAGE: Deploy to GitHub Pages - ${{ github.sha }}
-          
+          commit_author: MCResourcePile <MCResourcePile@gmail.com>       
