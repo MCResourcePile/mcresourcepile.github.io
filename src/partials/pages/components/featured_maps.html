@@ -19,84 +19,45 @@
         <div class="collection-maps">
             {{#withSort data.maps 'name'}}
             {{#contains @root.data.featured.maps slug}}
-            <div class="col-sm-6 col-lg-3 img-thumbnail map-thumbnail center collapse-immune{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}" style="margin: 5px 5px 26px; width: 270px; outline: none;">
+            <div class="col-sm-6 col-lg-3 img-thumbnail map-thumbnail center collapse-immune{{#inArray @root.page-category 'collections'}}{{#inArray @root.data.new slug}} map-glow-new{{/inArray}}{{#inArray @root.data.popular slug}} map-glow-popular{{/inArray}}{{/inArray}}" style="margin: 8px 8px 18px 6px; width: 270px; outline: none;">
                 <div class="map-thumbnail-selector">
                     <div class="map-thumbnail-header">
-                        <img class="image lazy" src="https://raw.githubusercontent.com/{{#if source.repository}}{{source.repository}}{{else}}{{@root.settings.maps.defaults.source.repository}}{{/if}}/{{#if source.branch}}{{source.branch}}{{else}}{{@root.settings.maps.defaults.source.branch}}{{/if}}{{#if source.path}}{{source.path}}{{else}}{{@root.settings.maps.defaults.source.path}}{{/if}}/{{slug}}/map.png">
+                        <img class="image" src="{{#inArray @root.page-category 'tournaments'}}../../assets/img/{{#inArray @root.page-category 'contest'}}contest/{{snakecase (lowercase @root.title)}}/maps{{else}}tournament/shared/maps{{/inArray}}/{{slug}}.png{{else}}https://raw.githubusercontent.com/{{#if source.repository}}{{source.repository}}{{else}}{{@root.settings.maps.defaults.source.repository}}{{/if}}/{{#if source.branch}}{{source.branch}}{{else}}{{@root.settings.maps.defaults.source.branch}}{{/if}}{{#if source.path}}{{source.path}}{{else}}{{@root.settings.maps.defaults.source.path}}{{/if}}/{{slug}}/map.png{{/inArray}}">
                         <div class="banner" data-toggle="tooltip" data-placement="top" title="{{name}}">
-                            <div class="title"><a href="?s={{slug}}">{{#if name}}{{name}}{{else}}Untitled Map{{/if}}</a></div>
+                            <div class="title">
+                                <a{{#inArray @root.page-category 'maps'}} data-query="{{slug}}" class="s-title click-search"{{else}} class="s-title"{{/inArray}}>{{#if name}}{{name}}{{else}}{{slug}}{{/if}}</a>
+                            </div>
                             <div class="sub-title">
                                 {{#if tags}}
                                 {{#each tags}}
                                 <li class="game-tag map-tag s-tag">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}<span class="hidden">{{lookup (lookup @root.settings.maps.tags this) 'keywords'}}</span>{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}</li>
                                 {{/each}}
-                                {{else}}
-                                {{#if gamemode}}
-                                <li class="game-tag map-tag">{{gamemode}}</li>
-                                {{else}}
-                                <li class="game-tag map-tag">Unknown tags</li>
-                                {{/if}}
-                                {{/if}}
-                            </div>
-                            <div class="icon-alerts">
-                                {{#if (lookup @root.settings.maps.environments environment)}}
-                                {{#with (lookup @root.settings.maps.environments environment)}}
-                                {{#if this.prompt}}
-                                <a class="float-right external-thread-size" data-toggle="tooltip" data-placement="top" title="{{this.prompt}}"><i class="fa fa-exclamation-circle"></i></a>
-                                {{/if}}
-                                {{/with}}
-                                {{/if}}
-                                {{#if contest}}
-                                <a href="/contests/{{#is @root.settings.maps.group 'pgm'}}overcast{{else}}{{@root.settings.maps.group}}{{/is}}/{{contest}}#{{slug}}" data-toggle="tooltip" data-placement="top" title="{{#is @root.settings.maps.group 'pgm'}}Overcast{{else}}{{sentence @root.settings.maps.group}}{{/is}} contest submission"><i class="fa fa-map"></i></a>
-                                {{/if}}
-                                {{#if discussion}}
-                                <a href="{{discussion}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Discussion"><i class="fa fa-comments-o"></i></a>
-                                {{/if}}
-                                {{#if cardinal}}
-                                <a data-toggle="tooltip" data-placement="top" title="Tested&nbsp;with&nbsp;Cardinal"><i class="fa fa-certificate"></i></a>
                                 {{/if}}
                             </div>
                         </div>
                         <div class="labels">
-                            {{#inArray @root.page-category 'collections'}}
                             {{#inArray @root.data.new slug}}
-                            <a href="?s=new" class="badge badge-primary">New</a>
+                            <a href="?f=New" class="badge badge-primary">New</a>
                             {{/inArray}}
-                            {{#inArray @root.data.popular slug}}
-                            <a href="?s=popular" class="badge badge-danger">Popular</a>
-                            {{/inArray}}
-                            {{#if sourced}}
-                            <span class="badge badge-default">Unlicensed</span>
-                            {{else}}
+                            {{#if @root.settings.maps.downloads}}
+                            {{#unless sourced}}
                             {{#if commercial}}
-                            <a href="?s=by-sa" class="badge badge-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</a>
+                            <span class="badge badge-success" data-toggle="tooltip" data-placement="top" title="This map allows commercial use">Commercial</span>
                             {{else}}
-                            <a href="?s=by-nc-sa" class="badge badge-warning" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</a>
+                            <span class="badge badge-warning" data-toggle="tooltip" data-placement="top" title="This map does not allow commercial use">Noncommercial</span>
+                            {{/if}}
+                            {{/unless}}
+                            {{/if}}
+                            {{#if sponsor}}
+                            {{#if (lookup @root.settings.maps.sponsors sponsor)}}
+                            {{#with (lookup @root.settings.maps.sponsors sponsor)}}
+                            <span class="badge badge-info" data-toggle="tooltip" data-placement="top" title="Map provided by {{this.name}}">{{this.name}}</span>
+                            {{/with}}
                             {{/if}}
                             {{/if}}
-                            {{/inArray}}
                         </div>
                     </div>
-                    <div class="map-thumbnail-body">
-                        <div class="authors">
-                            by
-                            {{#if authors}}
-                            {{#each authors}}
-                            {{#lt @index 3}}
-                            <li class="game-tag">{{#or username uuid}}<span class="click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}" {{#inArray @root.page-category 'contest'}}href="/maps/{{@root.settings.maps.group}}?s={{formatUUID uuid 'strip'}}"{{/inArray}}>{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</span>{{else}}Ghost{{/or}}</li>{{#unless @last}},{{/unless}}
-                            {{/lt}}
-                            {{/each}}
-                            {{#gt (length authors) 3}}
-                            and {{subtract (length authors) 3}} more
-                            {{/gt}}
-                            {{else}}
-                            Ghost
-                            {{/if}}
-                        </div>
-                        <div class="buttons">
-                            <span class="btn map-link map-button map-button-span" role="button" data-toggle="modal" data-target="#download-{{slug}}"><i class="fa fa-download" title="View map details"></i></span>
-                        </div>
-                    </div>
+                    {{> map_thumbnail_body}}
                 </div>
             </div>
             {{/contains}}
