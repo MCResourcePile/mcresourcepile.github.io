@@ -15,7 +15,7 @@ $(function() {
     setupSearch(searchable, searchable_type);
     
     $('[data-toggle="download-modal"]').click(function() {
-        var slug = $(this).data('slug');
+        var slug = $(this).data('slug').toString();
         var repo = $(this).data('repo');
         var branch = $(this).data('branch');
         var path = $(this).data('path');
@@ -37,8 +37,8 @@ $(function() {
         $(this).prop('disabled', true).text('Downloading...');
         $('.map-download-pending').hide();
         $('.map-download-started').show();
-        var name = $(this).attr('id');
-        var slug = $(this).attr('slug');
+        var name = $(this).attr('id').toString();
+        var slug = $(this).attr('slug').toString();
         var path = $(this).attr('path');
         var license = $(this).attr('license');
         startDownload(name, slug, path, license);
@@ -46,7 +46,7 @@ $(function() {
 
     // open external download modal when original download button clicked
     $('.click-download-external:not(.disabled)').click(function() {
-        var slug = $(this).attr('slug');
+        var slug = $(this).attr('slug').toString();
         if (user._preferences.show_map_suggestions) {
             suggestMaps(slug);
         }
@@ -56,7 +56,7 @@ $(function() {
 
     // handle map image requests
     $('.click-image').click(function() {
-        var name = $(this).attr('id');
+        var name = $(this).attr('id').toString();
         var thumbnail = $(this).attr('thumbnail');
         $('#map-image-display .map-title').text(name);
         $('#map-image-display .map-image').attr('src', thumbnail);
