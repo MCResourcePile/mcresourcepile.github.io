@@ -34,6 +34,7 @@
        {{/if}}{{/with}}{{/if}}><i id="{{name}}" class="fa fa-code click-xml"></i></a>
     {{/is}}
     {{/if}}
+    {{#if @root.settings.maps.overviewer}}
     {{#unless source}}
     <a id="{{name}}" 
        href="https://mcresourcepile.github.io/{{replace @root.settings.maps.defaults.source.repository 'MCResourcePile/' ''}}/{{slug}}" 
@@ -42,6 +43,7 @@
        role="button"
        title="View Overview"><i id="{{name}}" class="fa fa-map-marked-alt"></i></a>
     {{/unless}}
+    {{/if}}
     <a id="{{name}}" 
        thumbnail="https://raw.githubusercontent.com/{{#if source.repository}}{{source.repository}}{{else}}{{@root.settings.maps.defaults.source.repository}}{{/if}}/{{#if source.branch}}{{source.branch}}{{else}}{{@root.settings.maps.defaults.source.branch}}{{/if}}{{#if source.path}}{{source.path}}{{else}}{{@root.settings.maps.defaults.source.path}}{{/if}}/{{slug}}/map.png" 
        class="btn map-link map-button map-button-sm click-image" 
