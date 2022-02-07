@@ -78,7 +78,8 @@ $(function() {
         "Now with 100% more Rift!",
         "Check out the <a href='https://discord.gg/CvJGbrV'>Overcast Community</a> Discord server!",
         "Check out the <a href='https://discord.gg/Vxmq7Xp'>Stratus Network</a> Discord server!",
-        "Check out our <a href='https://discord.gg/ygNgxKj'>Discord server</a>!"
+        "Check out our <a href='https://discord.gg/ygNgxKj'>Discord server</a>!",
+        "Check out our <a href='/maps/pgm'>PGM map collection</a>!",
     ]
     $(".splash-subheader").html(quotes[Math.floor(Math.random()*quotes.length)])
 });
