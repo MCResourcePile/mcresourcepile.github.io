@@ -322,7 +322,7 @@ function parseUrl() {
     var urlAuthorFilters = getUrlParam('players')
     var match = getUrlParam('match')
     var invert = (getUrlParam('invert') == 'true')
-    if (urlFilters || searchInput || match || invert) {
+    if (urlFilters || searchInput || urlAuthorFilters || match || invert) {
         if (urlFilters) {
             urlFilters = urlFilters.split(',')
             for (i = 0; i < urlFilters.length; i++) {
