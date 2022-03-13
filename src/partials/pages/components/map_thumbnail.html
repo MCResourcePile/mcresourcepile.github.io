@@ -19,7 +19,7 @@
                     {{/if}}
                     {{/if}}
                     {{#inArray @root.page-category 'collections'}}
-                    <div class="hidden tags">{{slug}},{{#if sponsor}}{{lookup (lookup @root.settings.maps.sponsors sponsor) 'name'}},{{/if}}{{#inArray @root.data.new slug}}New,{{/inArray}}{{#inArray @root.data.popular slug}}Popular,{{/inArray}}{{#unless sourced}}{{#if commercial}}Commercial,{{else}}Noncommercial,{{/if}}{{/unless}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}}</div>
+                    <div class="hidden tags">{{slug}},{{#if sponsor}}{{lookup (lookup @root.settings.maps.sponsors sponsor) 'name'}},{{/if}}{{#inArray @root.data.new slug}}New,{{/inArray}}{{#inArray @root.data.popular slug}}Popular,{{/inArray}}{{#unless sourced}}{{#if commercial}}Commercial,{{else}}Noncommercial,{{/if}}{{/unless}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}},{{#if proto}}{{proto}}{{/if}}</div>
                     {{/inArray}}
                 </div>
                 <div class="icon-alerts">
@@ -79,6 +79,12 @@
                 <span class="badge badge-info" data-toggle="tooltip" data-placement="top" title="Map provided by {{this.name}}">{{this.name}}</span>
                 {{/with}}
                 {{/if}}
+                {{/if}}
+                {{#if version}}
+                <span class="badge" style="background-color:#454851;color:white"  data-toggle="tooltip" data-placement="top" title="Map version {{version}}">v{{version}}</span>
+                {{/if}}
+                {{#if proto}}
+                <span class="badge" style="background-color:#A657AE;color:white" data-toggle="tooltip" data-placement="top" title="XML protocol version {{proto}}">{{proto}}</span>
                 {{/if}}
                 {{#inArray @root.page-category 'contest'}}
                 <span class="badge {{#is position '1'}}map-label-contest-first{{else}}{{#is position '2'}}map-label-contest-second{{else}}{{#is position '3'}}map-label-contest-third{{else}}badge-secondary{{/is}}{{/is}}{{/is}}">{{#if position}}{{ordinalize position}}{{else}}-{{/if}} place</span>
