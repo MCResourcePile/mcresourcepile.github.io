@@ -69,5 +69,28 @@
     </div>
 </div>
 {{/if}}
+{{#if retired}}
+<div class="contact-position-section">
+    <div class="contact-position-title position-retired">Contributors <small>{{length retired}}</small></div>
+    <div class="row">
+        {{#each retired}}
+        <div class="col-md-2 col-sm-4 col-6">
+            <div class="center">
+                <span class="contact-user-thumbnail">
+                    <img class="contact-user-avatar" src="https://crafatar.com/avatars/{{properties ../this this.username 'uuid'}}?overlay">
+                </span>
+                <div class="contact-user-details">
+                    <div class="contact-user-name position-retired">{{username}}</div>
+                    <div class="contact-user-description">{{#if role}}{{role}}{{else}}Contributor{{/if}}</div>
+                    {{#if (properties ../this this.username 'github')}}<a class="contact-user-outlet" href="https://github.com/{{properties ../this this.username 'github'}}"><i class="fab fa-github"></i></a>{{/if}}
+                    {{#if (properties ../this this.username 'twitter')}}<a class="contact-user-outlet" href="https://twitter.com/{{properties ../this this.username 'twitter'}}"><i class="fab fa-twitter"></i></a>{{/if}}
+                    {{#if (properties ../this this.username 'discord')}}<a class="contact-user-outlet" data-content="{{properties ../this this.username 'discord'}}" data-toggle="popover" data-placement="bottom"><i class="fab fa-discord"></i></a>{{/if}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/if}}
 {{/staff}}
 {{/default}}
