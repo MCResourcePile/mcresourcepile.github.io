@@ -377,19 +377,7 @@ function suggestMaps(slug) {
             $('.map-suggestions').text('');
             // display suggested maps in download success menu
             for (var i = 1; i < 4; i++) {
-                var repo = $('#maps-data').data('source');
-                if (repo == "overcast") {
-                    var snip = similar[i].slug.substring(0, 1);
-                    if (snip < "g") {
-                        repo = "overcast-maps-a-to-f"
-                    } else if (snip < "o") {
-                        repo = "overcast-maps-g-to-n"
-                    } else {
-                        repo = "overcast-maps-o-to-z"
-                    }
-                } else {
-                    repo = repo + "-maps";
-                }
+                var repo = $('#maps-data').data('source') + "-maps";
                 var authors = "by ";
                 for (var j = 0; j < similar[i].authors.length; j++) {
                     authors += similar[i].authors[j].username;
