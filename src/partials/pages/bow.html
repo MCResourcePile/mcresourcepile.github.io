@@ -1,8 +1,8 @@
 <div id="searchable-collection" class="bow-output row">
-    <div class="col-lg-3 order-lg-2 order-1">
+    <div class="col-xl-3 order-xl-2 order-1 map-search-wrapper">
         {{> search_sidebar}}
     </div>
-    <div class="col-lg-9 order-lg-1 order-2 dynamic list">
+    <div class="col-xl-9 order-xl-1 order-2 dynamic list">
         {{#each (sortBy maps "name")}}
         {{#gte (length records) 1}}
         <div class="bow-record img-thumbnail row">

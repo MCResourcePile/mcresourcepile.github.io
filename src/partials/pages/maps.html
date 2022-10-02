@@ -1,16 +1,14 @@
 {{> featured_maps}}
 <div id="searchable-collection" class="maps-output row center">
-    <div class="col-lg-3 order-lg-2 order-1">
-        <div class="dynamic-sidebar">
-            <div class="scrollable">
-                {{> search_sidebar}}
-            </div>
-        </div>
+    <div class="col-xl-3 order-xl-2 order-1 map-search-wrapper">
+        {{> search_sidebar}}
     </div>
-    <div class="col-lg-9 order-lg-1 order-2 dynamic list">
-        {{#each (sortBy data.maps "name")}}
-        {{> map_thumbnail}}
-        {{/each}}
+    <div class="col-xl-9 order-xl-1 order-2">
+        <div class="row row-cols-3 dynamic list">
+          {{#each (sortBy data.maps "name")}}
+          {{> map_thumbnail}}
+          {{/each}}
+        </div>
     </div>
 </div>
 <div id="maps-data" data-source="{{settings.maps.group}}"></div>
