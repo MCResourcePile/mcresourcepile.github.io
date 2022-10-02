@@ -8,38 +8,12 @@ var options = {
 }
 
 $(function() {
-    //handle top position of search controls
-    $(document).scroll(function() {
-        var nav = $('.navbar').height()
-        var wrapper_top = $('#searchable-collection').position().top
-        var wrapper_height = $('#searchable-collection').height() + 98
-        var scroll_position = $(document).scrollTop()
-        var panel_bottom = $('.dynamic-sidebar').height() + scroll_position
-        var window_width = $(window).width()
-        if (window_width >= 992) {
-            if (scroll_position + nav > wrapper_top) {
-                $('.dynamic-sidebar').css('position', 'fixed')
-                if (panel_bottom < wrapper_height) {
-                    $('.dynamic-sidebar').css('top', nav + 15)
-                } else {
-                    $('.dynamic-sidebar').css('top', nav - (panel_bottom - wrapper_height))
-                }
-            } else {
-                $('.dynamic-sidebar').css('position', 'relative')
-                $('.dynamic-sidebar').css('top', 0)
-            }
-        } else {
-            $('.dynamic-sidebar').css('position', 'relative')
-            $('.dynamic-sidebar').css('top', 0)
-        }
-    })
-
     // update search when user types
     $('#search').on('input', function(e){
         searchable.search($('#search').val())
         updateUrl()
     })
-    
+
     // handle user filters
     $('.filter:not(.filter-option, .disabled, .filter-input-action)').click(function() {
         filter = $(this).text()
@@ -58,7 +32,7 @@ $(function() {
         filterMaps()
         updateUrl()
     })
-  
+
     // handle user filter options
     $('.filter-option').click(function() {
         option = $(this).data('option')
@@ -90,32 +64,32 @@ $(function() {
         filterMaps()
         updateUrl()
     })
-    
+
     // handle slider
     if ($('#slider').length) {
         $('#slider').slider().change(function() {
             filterMaps()
         })
     }
-    
+
     // update stats counter
     searchable.on('updated', function() {
         countMatching()
         scrollToTop()
     })
-    
+
     // search on clickable item
     $('.click-search').click(function() {
         query = $(this).data('query')
         $('#search').val(query)
         updateSearch()
     })
-    
+
     $('.author-filter-trigger').click(function() {
         var uuid = $(this).data('query')
         addAuthorFilter(uuid)
     })
-    
+
     $('.search-authors').on('click', '.author-filter', function() {
         var uuid = $(this).data('uuid')
         if (filtered_authors.includes(uuid)) {
@@ -144,7 +118,7 @@ $(function() {
         var parent = $(this).closest("[data-filter-input-for='" + action + "']");
         parent.removeClass("active");
     });*/
-    
+
     $(".filter-input input").each(function() {
         var element = $(this)
         var data = $(this).data("src").split(",").sort();
@@ -173,12 +147,12 @@ $(function() {
                 }
             }
         };
-        
+
         var theme = $('html').attr('data-theme');
         if (theme == "dark") {
             options["theme"] = "dark"
         };
-        
+
         $(this).easyAutocomplete(options);
     })
 })

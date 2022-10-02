@@ -1,142 +1,131 @@
-.map-search {
-    padding: 12px;
-    max-width: initial;
-}
+.map-search-wrapper {
+    min-height: 100%;
 
-@media only screen and (max-width: 992px) {
     .map-search {
-        margin-bottom: 10px;
-    }
-}
+        position: sticky;
+        position: -webkit-sticky;
+        top: 79px;
+        padding: 12px;
+        max-width: initial;
+        max-height: 90vh;
+        overflow-y: auto;
+        overflow-x: hidden;
 
-@media only screen and (min-width: 992px) {
-    .map-search {
-        width: 215px;
-        z-index: 1;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    .map-search {
-        width: 270px;
-        z-index: 1;
-    }
-}
-
-
-.record-search-box {
-    font-size: 15px;
-    max-height: 28px;
-}
-
-.filters {
-    text-align: left;
-    padding-top: 8px;
-
-    > b {
-        font-size: 15px;
-    }
-
-    small {
-        display: block;
-        font-size: 10px;
-        margin-top: -2px;
-        line-height: 12px
-    }
-}
-
-.group {
-    margin-top: 6px;
-
-    > b {
-        display: block;
-        font-size: 12px;
-    }
-    
-    > small {
-        margin-bottom: 6px;
-    }
-
-    .filter {
-        display: inline-block;
-        font-size: 10px;
-        background-color: #f0f0f0;
-        padding: 1px 8px;
-        margin: 2px 0px;
-        border-radius: 4px;
-        white-space: nowrap;
-    }
-
-    .filter:not(.disabled):hover,
-    .filter:not(.disabled):focus {
-        background-color: #b6c0ff;
-        transition: 0.2s;
-        cursor: pointer;
-    }
-
-    .filter.active {
-        background-color: #5f6fc7 !important;
-        color: #fff;
-    }
-    
-    .filter.disabled {
-    }
-    
-    &.search-authors .filter {
-        margin-right: 3px;
-    }
-    
-    .filter-input {
-        display: inline-block;
-        position: relative;
-        width: auto;
-        
-        .filter-input-action {
-            margin-right: 0;
+        .record-search-box {
+            font-size: 15px;
+            max-height: 28px;
         }
-        
-        input {
-            position: absolute;
-            top: 0;
-            transition: all 0s ease-in;
-            display: block;
-            opacity: 0;
-            width: 0;
-            height: 0;
-            font-size: 10px;
-            padding: 1px 8px;
-            margin: 4px 0px;
-            border-radius: 4px;
-            border-color: rgba(255, 255, 255, 0);
-            width: 100%;
-            pointer-events: none;
-        }
-        
-        &.active {
-            width: 100%;
-            
-            .filter.filter-input-action {
-                display: none;
-                pointer-events: none;
+
+        .filters {
+            text-align: left;
+            padding-top: 8px;
+
+            > b {
+                font-size: 15px;
             }
-            
-            input {
-                position: relative;
-                transition: all 0.5s ease-out;
-                opacity: 100;
-                width: 100%;
-                height: auto;
-                pointer-events: all;
+
+            small {
+                display: block;
+                font-size: 10px;
+                margin-top: -2px;
+                line-height: 12px
+            }
+
+            .group {
+                margin-top: 6px;
+
+                > b {
+                    display: block;
+                    font-size: 12px;
+                }
+
+                > small {
+                    margin-bottom: 6px;
+                }
+
+                .filter {
+                    display: inline-block;
+                    font-size: 10px;
+                    background-color: #f0f0f0;
+                    padding: 1px 8px;
+                    margin: 2px 0px;
+                    border-radius: 4px;
+                    white-space: nowrap;
+                }
+
+                .filter:not(.disabled):hover,
+                .filter:not(.disabled):focus {
+                    background-color: #b6c0ff;
+                    transition: 0.2s;
+                    cursor: pointer;
+                }
+
+                .filter.active {
+                    background-color: #5f6fc7 !important;
+                    color: #fff;
+                }
+
+                .filter.disabled {
+                }
+
+                &.search-authors .filter {
+                    margin-right: 3px;
+                }
+
+                .filter-input {
+                    display: inline-block;
+                    position: relative;
+                    width: auto;
+
+                    .filter-input-action {
+                        margin-right: 0;
+                    }
+
+                    input {
+                        position: absolute;
+                        top: 0;
+                        transition: all 0s ease-in;
+                        display: block;
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                        font-size: 10px;
+                        padding: 1px 8px;
+                        margin: 4px 0px;
+                        border-radius: 4px;
+                        border-color: rgba(255, 255, 255, 0);
+                        width: 100%;
+                        pointer-events: none;
+                    }
+
+                    &.active {
+                        width: 100%;
+
+                        .filter.filter-input-action {
+                            display: none;
+                            pointer-events: none;
+                        }
+
+                        input {
+                            position: relative;
+                            transition: all 0.5s ease-out;
+                            opacity: 100;
+                            width: 100%;
+                            height: auto;
+                            pointer-events: all;
+                        }
+                    }
+                }
+            }
+
+            .slider.slider-horizontal {
+                width: 170px !important;
+                margin: 0px 10px;
+            }
+
+            .easy-autocomplete {
+                width: 100% !important;
             }
         }
     }
-}
-
-.slider.slider-horizontal {
-    width: 170px !important;
-    margin: 0px 10px;
-}
-
-.easy-autocomplete {
-    width: 100% !important;
 }
