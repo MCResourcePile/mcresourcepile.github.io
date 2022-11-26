@@ -5,29 +5,29 @@ on:
     branches: source
   pull_request:
     branches: source
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    
+
       - name: checkout
         uses: actions/checkout@v2
-        
+
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.7.7'
-          
+          python-version: '3.10.8'
+
       - name: install python packages
         run: |
           python -m pip install --upgrade pip
           pip install -r ./scripts/uuid-resolver/requirements.txt
-          
+
       - name: execute py script
         run: |
           python ./scripts/uuid-resolver/run.py ./src/data/maps ./src/data/uuids.json
-          
+
       - name: commit changes
         if: github.event_name != 'pull_request'
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -38,25 +38,25 @@ jobs:
           commit_user_name: MCResourcePile
           commit_user_email: MCResourcePile@gmail.com
           commit_author: MCResourcePile <MCResourcePile@gmail.com>
-      
+
       - name: setup node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 8
-          
+          node-version: 16
+
       - name: setup ruby
         uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.6.x'
-          
-      - name: install ruby dependencies 
+
+      - name: install ruby dependencies
         run: |
           npm install
           gem install sass
-          
+
       - name: build static pages
         run: grunt
-        
+
       - name: deploy to github pages
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@3.7.1
