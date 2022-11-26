@@ -45,9 +45,9 @@ jobs:
           node-version: 16
 
       - name: setup ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.6.x'
+          ruby-version: '2.6'
 
       - name: install ruby dependencies
         run: |
