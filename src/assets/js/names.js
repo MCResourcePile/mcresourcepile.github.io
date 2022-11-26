@@ -2,7 +2,7 @@ var names = {
     "mitchiii_": "manager",
     "Crazy_": "manager",
     "Matic0B": "manager",
-    "BTKing": "manager",
+    "BTKing": "collaborator",
     "freundTech": "developer",
     "triplezko": "developer",
     "ViceTechnicolor": "developer",
