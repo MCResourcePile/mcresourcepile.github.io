@@ -1,0 +1,57 @@
+{
+    "title": "PGM Map Collection",
+    "subtitle": "A collection of publicly downloadable Minecraft maps made for PGM",
+    "body": "This collection of maps have been specifically designed and tested to be used with the maintained <a href=\"https://github.com/PGMDev/PGM\" target=\"_blank\">PGMDev</a> version of PGM (Pvp Game Manager). ResourcePile recommends that you use the most up-to-date version of this PGM in order to have the best experience with this map. To setup your own PGM server, please follow <a href=\"https://github.com/PGMDev/PGM/blob/dev/docs/RUNNING.md\" target=\"_blank\">this guide</a>. Further PGM support can be found in the <a href=\"https://discord.gg/pEEcwTk\" target=\"_blank\">PGM Discord</a>.",
+    "page-category": ["collections", "maps"],
+    "settings": {
+        "include": {
+            "scripts": [
+                "/assets/js/lib/gitzip-api.js",
+                "/assets/js/lib/FileSaver.js",
+                "/assets/js/lib/jszip.js",
+                "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js",
+                "https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/jquery.easy-autocomplete.min.js",
+                "/assets/js/maps.js",
+                "/assets/js/search.js"
+            ],
+            "stylesheets": [
+                "https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/easy-autocomplete.min.css"
+            ]
+        },
+        "maps": {
+            "group": "pgm",
+            "defaults": {
+                "environment": "pgm",
+                "source": {
+                    "repository": "MCResourcePile/pgm-maps",
+                    "branch": "master",
+                    "path": "/maps/"
+                }
+            },
+            "downloads": true,
+            "overviewer": false,
+            "advanced_menu": {
+                "placeholder": "maps",
+                "groups": [
+                    {"title": "",            "tags": ["new", "popular", "by-sa", "by-nc-sa"]},
+                    {"title": "Games",       "tags": ["arcade", "cp", "ctw", "ctf", "dtc", "dtm", "ff", "ffa", "kotf", "koth", "tdm"]},
+                    {"title": "Addons",      "tags": ["ad", "blitz", "micro", "rage", "tnt"]},
+                    {"title": "Editions",    "tags": ["christmas", "halloween", "tournament"]},
+                    {"title": "Maintainers", "tags": ["MCResourcePile", "Overcast Community", "Stratus Network", "Warzone"]}
+                ],
+                "player_filter": true
+            }
+        }
+    },
+    "data": {
+        "new": [],
+        "popular": [],
+        "featured": {
+            "enabled": false,
+            "title": "Spooky Season",
+            "description": "Maps for Halloween",
+            "maps": []
+        },
+        "maps": []
+    }
+}
