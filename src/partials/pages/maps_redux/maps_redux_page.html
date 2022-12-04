@@ -1,10 +1,10 @@
 {{> featured_maps}}
-<div id="searchable-collection" class="maps-output row center">
-    <div class="col-xl-3 order-xl-2 order-1 map-search-wrapper">
+<div id="searchable-collection" class="maps-output row">
+    <div class="col-xl-3 order-xl-2 px-xl-2 order-1 map-search-wrapper">
         {{> search_sidebar}}
     </div>
-    <div class="col-xl-9 order-xl-1 order-2">
-        <div class="row row-cols-3 dynamic list">
+    <div class="col-xl-9 order-xl-1 px-xl-2 order-2">
+        <div class="mr-grid dynamic list">
           {{#each (sortBy data.maps "name")}}
           {{> maps_redux_thumbnail}}
           {{/each}}

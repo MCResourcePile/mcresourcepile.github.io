@@ -1,23 +1,58 @@
-<div class="col">
-  <div class="mr-thumbnail">
-    <div class="mr-header">
-      <img class="mr-header-image lazy" src="{{source.image_url}}"/>
-      <div class="mr-header-banner">
-        <div class="mr-header-title">{{name}}</div>
-
-      </div>
+<div class="mr-thumbnail">
+  <div class="mr-header" style="background-image: url({{source.image_url}})">
+    <div class="mr-header-banner">
+      <div class="mr-header-title">{{name}}</div>
+      {{#if version}}
+        <div class="mr-header-subtitle">Version {{version}}</div>
+      {{/if}}
+      <a href="{{source.github_url}}" target="_blank">
+        <img src="https://github.com/{{source.maintainer}}.png?size=24" class="mr-header-maintainer-logo" data-toggle="tooltip" title="Maintained by {{properName source.maintainer}}"/>
+      </a>
     </div>
-    <div class="mr-body">
-      <div class="mr-authors">
+    <div class="mr-tags tags">
+      {{#if (property @root.settings.maps.licenses source.license)}}<span class="mr-tag">{{source.license}}</span>{{/if}}
+      {{#if tags}}
+        {{#each tags}}
+          <span class="mr-tag">{{this}}</span>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="mr-body">
+    {{#if authors}}
+    <div class="mr-authors">
+      <span>by </span>
+      {{#each authors}}
+        {{#lt @index 2}}
+          <div class="mr-author">
+            <img src="https://mc-heads.net/avatar/{{#if uuid}}{{uuid}}{{else}}606e2ff0ed7748429d6ce1d3321c7838{{/if}}"/>
+            <span>
+              {{#if uuid}}
+                {{#if (property @root.uuids (formatUUID uuid 'strip'))}}
+                  {{property @root.uuids (formatUUID uuid 'strip')}}
+                {{/if}}
+              {{else}}
+                {{#if username}}
+                  {{username}}
+                {{/if}}
+              {{/if}}
+            </span>
+          </div>
+        {{/lt}}
+      {{/each}}
+    </div>
+    {{/if}}
+    <div class="mr-buttons">
+      <a class="btn btn-primary" role="button" data-toggle="download-modal">
+        <i class="fa fa-download"/>
+      </a>
+      <a href="{{source.github_url}}/map.xml" target="_blank" class="btn btn-primary" role="button" data-toggle="download-modal">
+        <i class="fa fa-code"/>
+      </a>
+    </div>
+    <div class="hidden">
+      <div class="tags">
 
-      </div>
-      <div class="mr-buttons">
-        <a class="btn btn-primary" role="button" data-toggle="download-modal">
-          <i class="fa fa-download"/>
-        </a>
-        <a href="{{source.github_url}}/map.xml" target="_blank" class="btn btn-primary" role="button" data-toggle="download-modal">
-          <i class="fa fa-code"/>
-        </a>
       </div>
     </div>
   </div>
