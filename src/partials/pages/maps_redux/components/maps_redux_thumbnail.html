@@ -1,16 +1,26 @@
 <div class="mr-thumbnail">
-  <div class="mr-header" style="background-image: url({{source.image_url}})">
+  <div class="mr-header">
+    <img data-src="{{source.image_url}}" class="mr-header-image lazy"/>
     <div class="mr-header-banner">
-      <div class="mr-header-title">{{name}}</div>
-      {{#if version}}
-        <div class="mr-header-subtitle">Version {{version}}</div>
-      {{/if}}
-      <a href="{{source.github_url}}" target="_blank">
+      <div class="mr-header-title">
+        {{name}}
+        <span class="mr-header-title-suffix">{{#if version}}v{{version}}{{/if}}</span>
+      </div>
+      <div class="mr-header-subtitle">
+        <a href="{{source.github_url}}" target="_blank">{{source.maintainer}}/{{source.repository}}</a>
+      </div>
+      <a href="https://github.com/{{source.maintainer}}" target="_blank">
         <img src="https://github.com/{{source.maintainer}}.png?size=24" class="mr-header-maintainer-logo" data-toggle="tooltip" title="Maintained by {{properName source.maintainer}}"/>
       </a>
     </div>
     <div class="mr-tags tags">
-      {{#if (property @root.settings.maps.licenses source.license)}}<span class="mr-tag">{{source.license}}</span>{{/if}}
+      {{#if (property @root.settings.maps.licenses source.license)}}
+        {{#with (property @root.settings.maps.licenses source.license)}}
+          {{#if label}}
+            <span class="mr-tag" style="background-color:{{label.background}}; color:{{label.color}}" title="{{name}}" data-toggle="tooltip"><i class="fas fa-balance-scale"></i> {{label.text}}</span>
+          {{/if}}
+        {{/with}}
+      {{/if}}
       {{#if tags}}
         {{#each tags}}
           <span class="mr-tag">{{this}}</span>
@@ -43,7 +53,7 @@
     </div>
     {{/if}}
     <div class="mr-buttons">
-      <a class="btn btn-primary" role="button" data-toggle="download-modal">
+      <a class="btn btn-primary" role="button" data-action="open-download" data-id="{{id}}">
         <i class="fa fa-download"/>
       </a>
       <a href="{{source.github_url}}/map.xml" target="_blank" class="btn btn-primary" role="button" data-toggle="download-modal">
