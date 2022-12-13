@@ -7,35 +7,39 @@
         <b>Filters</b>
         <small>Use filters to narrow your query when searching for specific {{@root.settings.maps.advanced_menu.placeholder}}.</small>
         {{#each settings.maps.advanced_menu.groups}}
-        <div class="group">
-            {{#if title}}
-            <b>{{title}}</b>
-            {{/if}}
-            {{#if tags}}
-            {{#each tags}}
-            <span class="filter">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>
-            {{/each}}
-            {{/if}}
-            {{#if slider}}
-            {{#slider}}
-            {{min}}
-            <input id="slider" type="text" value="" data-slider-min="{{min}}" data-slider-max="{{max}}" data-slider-step="{{step}}" data-slider-value="{{#if range}}[{{min}},{{max}}]{{else}}{{max}}{{/if}}">
-            {{max}}
-            {{/slider}}
-            {{/if}}
-        </div>
+            <div class="group">
+                {{#if title}}
+                    <b>{{title}}</b>
+                {{/if}}
+                {{#if tags}}
+                    {{#each tags}}
+                        {{#if @root.settings.maps.advanced_menu.legacy_tags}}
+                            <span class="filter">{{#if (lookup @root.settings.maps.tags_legacy this)}}{{lookup (lookup @root.settings.maps.tags_legacy this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>
+                        {{else}}
+                            <span class="filter">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>
+                        {{/if}}
+                    {{/each}}
+                {{/if}}
+                {{#if slider}}
+                    {{#slider}}
+                        {{min}}
+                        <input id="slider" type="text" value="" data-slider-min="{{min}}" data-slider-max="{{max}}" data-slider-step="{{step}}" data-slider-value="{{#if range}}[{{min}},{{max}}]{{else}}{{max}}{{/if}}">
+                        {{max}}
+                    {{/slider}}
+                {{/if}}
+            </div>
         {{/each}}
         {{#if settings.maps.advanced_menu.player_filter}}
-        <div class="group search-authors">
-            <b>Filter Players</b>
-            <small>Click on player usernames to filter {{@root.settings.maps.advanced_menu.placeholder}} by that player's involvement.</small>
-            <span class="filter disabled">All</span>
-            <span class="search-authors-dynamic"></span>
-            <span class="filter-input active" data-filter-input-for="player-search">
-                <span class="filter filter-input-action" data-action-for="player-search">+</span>
-                <input type="text" name="player-search" id="player-search" placeholder="Search" data-src="{{objValues @root.uuids}}"/>
-            </span>
-        </div>
+          <div class="group search-authors">
+              <b>Filter Players</b>
+              <small>Click on player usernames to filter {{@root.settings.maps.advanced_menu.placeholder}} by that player's involvement.</small>
+              <span class="filter disabled">All</span>
+              <span class="search-authors-dynamic"></span>
+              <span class="filter-input active" data-filter-input-for="player-search">
+                  <span class="filter filter-input-action" data-action-for="player-search">+</span>
+                  <input type="text" name="player-search" id="player-search" placeholder="Search" data-src="{{objValues @root.uuids}}"/>
+              </span>
+          </div>
         {{/if}}
         <div class="group search-options">
             <b>Filter Options</b>
