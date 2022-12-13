@@ -16,7 +16,7 @@
                         {{#if @root.settings.maps.advanced_menu.legacy_tags}}
                             <span class="filter">{{#if (lookup @root.settings.maps.tags_legacy this)}}{{lookup (lookup @root.settings.maps.tags_legacy this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>
                         {{else}}
-                            <span class="filter">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}</span>
+                            <span class="filter">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{this}}{{/if}}</span>
                         {{/if}}
                     {{/each}}
                 {{/if}}
