@@ -36,7 +36,7 @@ function populateDownloadModal(id) {
     avatarEl.setAttribute('src', "https://crafatar.com/avatars/" + (hasUuid ? author.uuid : "606e2ff0ed7748429d6ce1d3321c7838"));
 
     var usernameEl = document.createElement('span');
-    usernameEl.innerHTML = username;
+    usernameEl.innerHTML = username ? username : "";
 
     var authorEl = document.createElement('div');
     authorEl.setAttribute('class', 'mr-author');
