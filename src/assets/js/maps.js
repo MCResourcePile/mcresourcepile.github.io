@@ -7,13 +7,13 @@ var uuids;
 $(function() {
     // fetch author names
     uuids = JSON.parse($('#loaded_uuids_json').text())
-    
+
     var searchable = new List('searchable-collection', {
         valueNames: ['tags', 's-title', 'users', 'uuids']
     });
     var searchable_type = "maps";
     setupSearch(searchable, searchable_type);
-    
+
     $('[data-toggle="download-modal"]').click(function() {
         var slug = $(this).data('slug').toString();
         var repo = $(this).data('repo');
@@ -31,7 +31,7 @@ $(function() {
         })[0], repo, branch, path, env, downloads, sponsor);
         $('#map-download-display').modal('show');
     });
-    
+
     // handle map download requests then send them to GitZip
     $('.click-download:not(.disabled)').click(function() {
         $(this).prop('disabled', true).text('Downloading...');
@@ -62,7 +62,7 @@ $(function() {
         $('#map-image-display .map-image').attr('src', thumbnail);
         $('#map-image-display').modal('show');
     });
-    
+
     // fetch json version gloabl map config
     // (tag short hands and environments)
     $.getJSON("/data/global.json", function(r) {
@@ -73,13 +73,13 @@ $(function() {
     var source = $('#maps-data').data('source');
     $.getJSON("/data/maps/" + source + ".json", function(r) {
         maps_json = r.data.maps;
-        
+
         var downloadBySlug = getUrlParam('dl');
         if (downloadBySlug) {
             var b = $('.map-download-trigger[data-slug="' + downloadBySlug + '"]').trigger('click');
         }
     });
-  
+
     // show stats panel and insert download stats
     if (user._preferences.show_map_stats) {
         $('.map-download-stats').show();
@@ -87,13 +87,13 @@ $(function() {
         fetchUniqueDownloads();
         fetchRecentDownloads();
     }
-    
+
     // show map image buttons
     if (user._preferences.show_map_images == false) {
         $('.map-thumbnail:not(.collapse-immune) .map-button').addClass('map-button-sm');
         $('.map-thumbnail:not(.collapse-immune) .click-image').show();
     }
-    
+
     // hide authentication warning if theres a token
     if (user._token) {
         $('.auth-disabled').hide();
@@ -118,7 +118,7 @@ var licenses = {
 function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor) {
     // populate map name
     $('[data-entry="map-name"]').text(map.name);
-    
+
     // populate map authors
     $('[data-entry="map-authors"]').empty().append([
         $('<span/>').text('Created by')
@@ -141,7 +141,7 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
             ])
         ]);
     });
-    
+
     // display correct license
     $('[data-license]').hide();
     var license;
@@ -155,7 +155,7 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
         $('[data-license="by-nc-sa"]').show();
         license = "noncommercial";
     }
-    
+
     // populate disclaimer
     if (env in maps_commons.environments) {
         $('[data-body="disclaimer"]').show();
@@ -163,7 +163,7 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
     } else {
         $('[data-body="disclaimer"]').hide();
     }
-    
+
     // populate map tags
     $('[data-entry="map-tags"]').empty();
     map.tags.forEach(function(tag, index) {
@@ -181,7 +181,7 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
         (map.sourced || map.unlicensed) ? $('<span/>', {'class': 'badge badge-secondary'}).text("Unlicensed") : null,
         $('<span/>', {'class': 'badge badge-secondary'}).text(map.slug)
     ]);
-    
+
     // populate map preview image
     var src = 'https://raw.githubusercontent.com/' + repo + '/' + branch + path + map.slug + '/map.png';
     var preview = new Image();
@@ -192,7 +192,7 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
     preview.onerror = function() {
         $('[data-entry="map-image"]').attr('src', '/assets/img/404.png');
     }
-    
+
     // add links to download buttons
     $('[data-download-type]').hide();
     if (downloads.external) {
@@ -211,7 +211,7 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
         'path': 'https://github.com/' + repo + '/tree/' + branch + path + map.slug
     });
     $('[data-entry="github-page"]').attr('href', 'https://github.com/' + repo + '/tree/' + branch + path + map.slug);
-    
+
     // populate map download stats
     if (user._preferences.show_map_stats) {
         var matched_total = false
@@ -250,7 +250,7 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
             $('.map-download-stats').hide()
         }
     }
-    
+
     // populate sponsor
     if (sponsor && sponsor in maps_commons.sponsors) {
         $('[data-entry="sponsor-name"]').text(maps_commons.sponsors[sponsor].name);

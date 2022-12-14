@@ -2,8 +2,10 @@ var MAP_DATA;
 var MAP_SETTINGS;
 var USER_UUIDS;
 
-document.addEventListener('DOMContentLoaded', () => {
-  fetchData();
+document.addEventListener('DOMContentLoaded', async () => {
+  MAP_DATA = JSON.parse(await getFile('/data/maps/pgm.json')).data.maps;
+  MAP_SETTINGS = JSON.parse(await getFile('/data/global.json')).settings.maps;
+  USER_UUIDS = JSON.parse(await getFile('/data/uuids.json')).uuids;
 
   document.querySelectorAll('[data-action="open-download"]').forEach(btn => {
     btn.addEventListener('click', e => {
@@ -13,7 +15,36 @@ document.addEventListener('DOMContentLoaded', () => {
       $('#map-download-display').modal('show');
     });
   });
+
+  document.querySelectorAll('[data-action="start-download"]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      var id = btn.dataset.id;
+
+      if (!id) return;
+
+      startDownload(id);
+      $('#map-download-display').modal('hide');
+    });
+  });
 });
+
+async function startDownload(id) {
+  const map = MAP_DATA.find(x => x.id === id);
+  const license = MAP_SETTINGS.licenses[map.source.license];
+
+  // if (is_development) GitZip.setProductionState(false);
+  if (user._token) GitZip.setAccessToken(user._token);
+
+  // remove if set from previous download
+  GitZip.removeTextFile("LICENSE.txt");
+
+  if (map.source.license_scope === "repository") {
+    var licenseText = await getFile(`/assets/licenses/${map.source.license}.txt`);
+    if (licenseText) GitZip.addTextFile("LICENSE.txt", licenseText);
+  }
+
+  GitZip.zipRepo(map.source.github_url);
+}
 
 function populateDownloadModal(id) {
   const modal = document.getElementById('map-download-display');
@@ -130,56 +161,33 @@ function populateDownloadModal(id) {
   populateElementAttribute("maintainer_url", "href", `https://github.com/${map.source.maintainer}/${map.source.repository}`);
   populateElementAttribute("maintainer-image", "src", `https://github.com/${map.source.maintainer}.png`);
   populateElementContent("maintainer-description", (maintainer ? maintainer.description : ""));
-
-
   populateElementAttribute("github-url", "href", map.source.github_url);
   populateElementAttribute("xml-url", "href", map.source.github_url + "/map.xml");
   populateElementAttribute("image-url", "src", map.source.image_url);
+  populateElementAttribute("map-id", "data-id", map.id);
 
   $('#map-download-display [data-toggle="tooltip"]').tooltip('enable');
 }
 
 function populateElementContent(target, content) {
-  document.getElementById('map-download-display').querySelectorAll(`[data-populate="${target}"]`).forEach(node => {
+  document.querySelectorAll(`[data-populate="${target}"]`).forEach(node => {
     node.innerHTML = content;
   });
 };
 
 function populateElementAttribute(target, attr, content) {
-  document.getElementById('map-download-display').querySelectorAll(`[data-populate="${target}"]`).forEach(node => {
+  document.querySelectorAll(`[data-populate="${target}"]`).forEach(node => {
     node.setAttribute(attr, content);
   });
 };
 
-function fetchData() {
-  getJSON('/data/maps/pgm.json', (err, data) => {
-    if (!err) {
-      MAP_DATA = data.data.maps;
-    };
-  });
-  getJSON('/data/global.json', (err, data) => {
-    if (!err) {
-      MAP_SETTINGS = data.settings.maps;
-    };
-  });
-  getJSON('/data/uuids.json', (err, data) => {
-    if (!err) {
-      USER_UUIDS = data.uuids;
-    };
-  });
-};
+async function getFile(url, options = {}) {
+  const res = await fetch(url, options);
 
-function getJSON(url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  xhr.responseType = 'json';
-  xhr.onload = function() {
-    var status = xhr.status;
-    if (status === 200) {
-      callback(null, xhr.response);
-    } else {
-      callback(status, xhr.response);
-    };
+  if (!res.ok) {
+    console.log(res.statusText);
+    return false;
   };
-  xhr.send();
+
+  return res.text();
 };
