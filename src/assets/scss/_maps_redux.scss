@@ -167,6 +167,7 @@
     --team-color: #000;
     color: var(--team-color);
     font-size: 1rem;
+    font-weight: bold;
 
     .mr-team-size {
       display: inline;
@@ -174,6 +175,7 @@
       opacity: 0.75;
       font-size: 0.8em;
       vertical-align: 1;
+      font-weight: normal;
     }
 
     &::before {
@@ -185,6 +187,7 @@
       margin-bottom: -3px;
       border-radius: .25rem;
       background-color: var(--team-color);
+      font-weight: normal;
     }
 
     &:not(:last-child)::after {
@@ -201,11 +204,11 @@
     }
 
     &[data-color="dark_green"] {
-      --team-color: #00aa00;
+      --team-color: #068506;
     }
 
     &[data-color="dark_aqua"] {
-      --team-color: #00aaaa;
+      --team-color: #039393;
     }
 
     &[data-color="dark_red"] {
@@ -233,11 +236,11 @@
     }
 
     &[data-color="green"] {
-      --team-color: #55ff55;
+      --team-color: #25e125;
     }
 
     &[data-color="aqua"] {
-      --team-color: #55ffff;
+      --team-color: #7dd3d3;
     }
 
     &[data-color="red"] {
@@ -249,11 +252,11 @@
     }
 
     &[data-color="yellow"] {
-      --team-color: #ffff55;
+      --team-color: #e3e337;
     }
 
     &[data-color="white"] {
-      --team-color: #fff;
+      --team-color: #ffdfdf;
     }
   }
 }
@@ -390,11 +393,66 @@
         }
       }
     }
+  }
 
-    .mr-tags {
-      .mr-tag {
-        background-color: rgba(82, 82, 82, 0.85);
-        color: #fff;
+  .mr-tags {
+    .mr-tag {
+      background-color: rgba(82, 82, 82, 0.85);
+      color: #fff;
+    }
+  }
+
+  .mr-teams {
+    .mr-team {
+      color: var(--team-color);
+
+      .mr-team-size {
+        color: #d9d9d9;
+      }
+
+      &::before {
+        background-color: var(--team-color);
+      }
+
+      &:not(:last-child)::after {
+        color: #d9d9d9;
+      }
+
+      &[data-color="dark_blue"] {
+        --team-color: #2121d5;
+      }
+
+      &[data-color="dark_red"] {
+        --team-color: #e32727;
+      }
+
+      &[data-color="white"] {
+        --team-color: #fff;
+      }
+    }
+  }
+
+  .mr-modal {
+    .mr-modal-thumbnail-image {
+      background-color: #23272a;
+    }
+  }
+
+  .mr-license {
+    background-color: #23272a;
+    border-color: rgba(104, 104, 104, 0.175);
+
+    .mr-license-regulations {
+      &[data-regulation="permissions"] {
+        .mr-license-regulation::before {
+          color: #3bd18b;
+        }
+      }
+
+      &[data-regulation="restrictions"] {
+        .mr-license-regulation::before {
+          color: #6ba7ff;
+        }
       }
     }
   }
