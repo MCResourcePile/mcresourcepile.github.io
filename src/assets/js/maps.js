@@ -167,8 +167,8 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
     // populate map tags
     $('[data-entry="map-tags"]').empty();
     map.tags.forEach(function(tag, index) {
-        if (tag in maps_commons.tags) {
-            tag = maps_commons.tags[tag].display;
+        if (tag in maps_commons.tags_legacy) {
+            tag = maps_commons.tags_legacy[tag].display;
         }
         $('[data-entry="map-tags"]').append([
             $('<span/>', {'class': 'badge badge-info'}).text(tag.charAt(0).toUpperCase() + tag.slice(1))
