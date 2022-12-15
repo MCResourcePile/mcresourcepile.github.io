@@ -9,7 +9,7 @@
                 <div class="sub-title">
                     {{#if tags}}
                     {{#each tags}}
-                    <li class="game-tag map-tag s-tag">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}<span class="hidden">{{lookup (lookup @root.settings.maps.tags this) 'keywords'}}</span>{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}</li>
+                    <li class="game-tag map-tag s-tag">{{#if (lookup @root.settings.maps.tags_legacy this)}}{{lookup (lookup @root.settings.maps.tags_legacy this) 'display'}}<span class="hidden">{{lookup (lookup @root.settings.maps.tags_legacy this) 'keywords'}}</span>{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}</li>
                     {{/each}}
                     {{else}}
                     {{#if gamemode}}
@@ -19,7 +19,7 @@
                     {{/if}}
                     {{/if}}
                     {{#inArray @root.page-category 'collections'}}
-                    <div class="hidden tags">{{slug}},{{#if sponsor}}{{lookup (lookup @root.settings.maps.sponsors sponsor) 'name'}},{{/if}}{{#inArray @root.data.new slug}}New,{{/inArray}}{{#inArray @root.data.popular slug}}Popular,{{/inArray}}{{#unless sourced}}{{#if commercial}}Commercial,{{else}}Noncommercial,{{/if}}{{/unless}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}},{{#if proto}}{{proto}}{{/if}}</div>
+                    <div class="hidden tags">{{slug}},{{#if sponsor}}{{lookup (lookup @root.settings.maps.sponsors sponsor) 'name'}},{{/if}}{{#inArray @root.data.new slug}}New,{{/inArray}}{{#inArray @root.data.popular slug}}Popular,{{/inArray}}{{#unless sourced}}{{#if commercial}}Commercial,{{else}}Noncommercial,{{/if}}{{/unless}}{{#each (sort tags)}}{{#if (lookup @root.settings.maps.tags_legacy this)}}{{lookup (lookup @root.settings.maps.tags_legacy this) 'display'}}{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}{{/each}},{{#if proto}}{{proto}}{{/if}}</div>
                     {{/inArray}}
                 </div>
                 <div class="icon-alerts">
