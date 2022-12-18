@@ -49,6 +49,9 @@
                 <span class="filter filter-option" data-option="match" data-toggle="any">Match Any Filter</span>
             </span>
             <span class="filter filter-option" data-option="invert">Invert Filters</span>
+            {{#if settings.maps.advanced_menu.highest_version_filter}}
+            <span class="filter filter-option" data-option="highest_version">Only Highest Version</span>
+            {{/if}}
         </div>
     </div>
 </div>

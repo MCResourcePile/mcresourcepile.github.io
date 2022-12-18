@@ -4,7 +4,8 @@ var filters = []
 var filtered_authors = []
 var options = {
     match: "all",
-    invert: false
+    invert: false,
+    highest_version: false
 }
 
 $(function() {
@@ -185,7 +186,7 @@ function filterMaps() {
     if ($('#slider').length != 0) {
         range = $('#slider').slider('getValue')
     }
-    if (filters.length > 0 || range || filtered_authors.length > 0) {
+    if (filters.length > 0 || range || filtered_authors.length > 0 || options.highest_version) {
         searchable.filter(function(item) {
             tags = item.values().tags
             tags = tags.split(',')
@@ -228,7 +229,23 @@ function filterMaps() {
                     }
                     if (matched != true) return false
                 } else {
-                    return true
+                    if (options.highest_version) {
+                        var similar = searchable.matchingItems.filter(x => x.values().slug === item.values().slug);
+                        if (similar.length > 1) {
+                            similar.sort((a, b) => {
+                                var res = compareVersion(b.values().version, a.values().version)
+                                if (res === 0) {
+                                    res = a.values().id > b.values().id
+                                }
+                                return res
+                            })
+                            return (similar[0].values().id === item.values().id) ? true : false
+                        } else {
+                          return true
+                        }
+                    } else {
+                        return true
+                    }
                 }
             } else {
                 return false
@@ -251,6 +268,21 @@ function matchAny(filter_count, uuid_count) {
     var matched_filters = filters.length > 0 ? filter_count > 0 : false
     var matched_uuids = filtered_authors.length > 0 ? uuid_count > 0 : false
     return matched_filters + matched_uuids
+}
+
+function compareVersion(v1, v2) {
+    if (typeof v1 !== 'string') return false;
+    if (typeof v2 !== 'string') return false;
+    v1 = v1.split('.');
+    v2 = v2.split('.');
+    const k = Math.min(v1.length, v2.length);
+    for (let i = 0; i < k; ++ i) {
+        v1[i] = parseInt(v1[i], 10);
+        v2[i] = parseInt(v2[i], 10);
+        if (v1[i] > v2[i]) return 1;
+        if (v1[i] < v2[i]) return -1;
+    }
+    return v1.length == v2.length ? 0: (v1.length < v2.length ? -1 : 1);
 }
 
 function countMatching() {
@@ -286,6 +318,7 @@ function updateUrl() {
         }
         string += "&match=" + options.match
         string += "&invert=" + options.invert
+        string += "&highest_version=" + options.highest_version
     }
     window.history.replaceState( {} , document.title, string)
 }
@@ -297,7 +330,8 @@ function parseUrl() {
     var urlAuthorFilters = getUrlParam('players')
     var match = getUrlParam('match')
     var invert = (getUrlParam('invert') == 'true')
-    if (urlFilters || searchInput || urlAuthorFilters || match || invert) {
+    var highest_version = (getUrlParam('highest_version') == 'true')
+    if (urlFilters || searchInput || urlAuthorFilters || match || invert || highest_version) {
         if (urlFilters) {
             urlFilters = urlFilters.split(',')
             for (i = 0; i < urlFilters.length; i++) {
@@ -329,6 +363,10 @@ function parseUrl() {
         if (invert) {
             options.invert = invert
             $(".filter-option[data-option='invert']").addClass('active')
+        }
+        if (highest_version) {
+          options.highest_version = highest_version;
+          $(".filter-option[data-option='highest_version']").addClass('active')
         }
         filterMaps()
         updateSearch()
