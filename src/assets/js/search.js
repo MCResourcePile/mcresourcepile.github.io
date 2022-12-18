@@ -238,6 +238,7 @@ function filterMaps() {
         searchable.filter()
         searchable.update()
     }
+    countMatching()
 }
 
 function matchAll(filter_count, uuid_count) {
@@ -257,7 +258,7 @@ function countMatching() {
     var match = searchable.matchingItems.length
     var output
     if (match > 0) {
-        output = "Showing " + match + " matching " + searchable_type + " out of " + total
+        output = "Showing " + match + " " + searchable_type + " out of " + total
     } else if (match == 0) {
         output = "No " + searchable_type + " match your query or filter"
     } else {

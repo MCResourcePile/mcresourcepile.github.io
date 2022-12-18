@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   MAP_SETTINGS = JSON.parse(await getFile('/data/global.json')).settings.maps;
   USER_UUIDS = JSON.parse(await getFile('/data/uuids.json')).uuids;
 
+  var searchList = new List('searchable-collection', {
+    valueNames: ['tags', 's-title', 'users', 'uuids']
+  });
+  var searchPlaceholder = 'maps';
+  setupSearch(searchList, searchPlaceholder);
+
   document.querySelectorAll('[data-action="open-download"]').forEach(btn => {
     btn.addEventListener('click', e => {
       var id = btn.dataset.id;

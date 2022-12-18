@@ -13,7 +13,7 @@
         <img src="https://github.com/{{source.maintainer}}.png?size=24" class="mr-header-maintainer-logo" data-toggle="tooltip" title="Maintained by {{properName source.maintainer}}"/>
       </a>
     </div>
-    <div class="mr-tags tags">
+    <div class="mr-tags">
       {{#if (property @root.settings.maps.licenses source.license)}}
         {{#with (property @root.settings.maps.licenses source.license)}}
           {{#if label}}
@@ -61,9 +61,11 @@
       </a>
     </div>
     <div class="hidden">
-      <div class="tags">
-
-      </div>
+      <div class="tags">{{#if tags}}{{#each tags}}{{this}},{{/each}}{{/if}},proto-{{proto}},{{source.maintainer}},{{source.repository}},{{source.license}}</div>
+      <div class="users">{{#if authors}}{{#each authors}}{{#if uuid}}{{#if (property @root.uuids (formatUUID uuid 'strip'))}}{{property @root.uuids (formatUUID uuid 'strip')}}{{/if}}{{else}}{{#if username}}{{username}}{{/if}}{{/if}},{{/each}}{{/if}}</div>
+      <div class="uuids">{{#if authors}}{{#each authors}}{{#if uuid}}{{uuid}},{{/if}}{{/each}}{{/if}}</div>
+      <div class="s-title">{{name}}</div>
+      <div class="version">{{version}}</div>
     </div>
   </div>
 </div>
