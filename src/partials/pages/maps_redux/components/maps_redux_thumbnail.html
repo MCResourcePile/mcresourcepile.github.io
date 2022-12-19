@@ -1,6 +1,6 @@
 <div class="mr-thumbnail">
   <div class="mr-header">
-    <img data-src="{{source.image_url}}" class="mr-header-image lazy"/>
+    <img {{#unless disableLazy}}data-{{/unless}}src="{{source.image_url}}" class="mr-header-image lazy" {{#if disableLazy}}onerror="this.src='/assets/img/404.png'"{{/if}}/>
     <div class="mr-header-banner">
       <div class="mr-header-title">
         {{name}}
