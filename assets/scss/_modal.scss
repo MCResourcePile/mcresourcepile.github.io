@@ -3,19 +3,19 @@
         .modal-content {
             .modal-header {
                 .modal-title {
-                    
+
                 }
-                
+
                 .map-authors {
-                    
+
                 }
             }
-            
+
             .modal-body {
                 .modal-alert {
-                    
+
                 }
-                
+
                 .modal-section {
                     .modal-section-header {
                         font-size: 1rem;
@@ -23,22 +23,38 @@
                         border-bottom: 1px solid #e0e0e0;
                         margin-bottom: 8px;
                     }
-                    
+
                     .modal-section-body {
                         .map-download-preview {
                             width: 200px;
                         }
-                        
+
                         .badge {
                             margin-right: 4px;
                         }
                     }
                 }
             }
-            
+
             .modal-footer {
                 align-items: flex-start;
             }
         }
     }
+}
+
+.modal-inner-card {
+  background-color: #f8f9fa;
+  border-width: 2px;
+  border-style: dashed;
+  border-color: rgba(0, 0, 0, 0.175);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+[data-theme="dark"] {
+  .modal-inner-card {
+    background-color: #23272a;
+    border-color: rgba(104, 104, 104, 0.175);
+  }
 }
