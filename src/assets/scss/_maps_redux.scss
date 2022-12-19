@@ -283,6 +283,10 @@
   p {
     font-size: 1rem;
     margin: 0;
+
+    &.card-text {
+      margin-bottom: 1rem;
+    }
   }
 
   .mr-modal-thumbnail-image {
@@ -317,14 +321,9 @@
   }
 }
 
-.mr-license {
-  background-color: #f8f9fa;
-  border-width: 2px;
-  border-style: dashed;
-  border-color: rgba(0, 0, 0, 0.175);
-  border-radius: 0.5rem;
-  padding: 1rem;
 
+
+.mr-license {
   .mr-license-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
@@ -337,6 +336,7 @@
   .mr-license-disclaimer {
     font-size: 12px;
     margin-top: .5rem;
+    margin-bottom: 0;
   }
 
   .mr-license-regulations {
@@ -439,9 +439,6 @@
   }
 
   .mr-license {
-    background-color: #23272a;
-    border-color: rgba(104, 104, 104, 0.175);
-
     .mr-license-regulations {
       &[data-regulation="permissions"] {
         .mr-license-regulation::before {

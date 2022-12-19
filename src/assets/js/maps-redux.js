@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       populateDownloadModal(id);
       $('#map-download-display').modal('show');
+      $('#mr-download-progress').hide();
+      $('#mr-download-controls').show();
     });
   });
 
@@ -29,7 +31,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (!id) return;
 
       startDownload(id);
-      $('#map-download-display').modal('hide');
+      $('#mr-download-progress').show();
+      $('#mr-download-controls').hide();
     });
   });
 });
@@ -38,7 +41,7 @@ async function startDownload(id) {
   const map = MAP_DATA.find(x => x.id === id);
   const license = MAP_SETTINGS.licenses[map.source.license];
 
-  // if (is_development) GitZip.setProductionState(false);
+  if (is_development) GitZip.setProductionState(false);
   if (user._token) GitZip.setAccessToken(user._token);
 
   // remove if set from previous download
@@ -62,7 +65,7 @@ function populateDownloadModal(id) {
   populateElementContent("version", "v" + map.version);
   populateElementContent("objective", map.objective);
 
-  modal.querySelectorAll('[data-populate="authors"]').forEach(node => {
+  document.querySelectorAll('[data-populate="authors"]').forEach(node => {
     node.innerHTML = "Created by ";
   });
   map.authors.forEach(author => {
@@ -81,12 +84,12 @@ function populateDownloadModal(id) {
     authorEl.append(avatarEl);
     authorEl.append(usernameEl);
 
-    modal.querySelectorAll('[data-populate="authors"]').forEach(node => {
-      node.append(authorEl);
+    document.querySelectorAll('[data-populate="authors"]').forEach(node => {
+      node.appendChild(authorEl.cloneNode(true));
     });
   });
 
-  modal.querySelectorAll('[data-populate="teams"]').forEach(node => {
+  document.querySelectorAll('[data-populate="teams"]').forEach(node => {
     node.innerHTML = "";
   });
   map.teams.forEach(team => {
@@ -100,12 +103,12 @@ function populateDownloadModal(id) {
     teamEl.innerHTML = team.name;
 
     teamEl.append(teamSizeEl);
-    modal.querySelectorAll('[data-populate="teams"]').forEach(node => {
-      node.append(teamEl);
+    document.querySelectorAll('[data-populate="teams"]').forEach(node => {
+      node.appendChild(teamEl.cloneNode(true));
     });
   });
 
-  modal.querySelectorAll('[data-populate="tags"]').forEach(node => {
+  document.querySelectorAll('[data-populate="tags"]').forEach(node => {
     node.innerHTML = "";
   });
   map.tags.forEach(tag => {
@@ -113,15 +116,15 @@ function populateDownloadModal(id) {
     tagEl.setAttribute('class', 'mr-tag');
     tagEl.innerHTML = tag;
 
-    modal.querySelectorAll('[data-populate="tags"]').forEach(node => {
-      node.append(tagEl);
+    document.querySelectorAll('[data-populate="tags"]').forEach(node => {
+      node.appendChild(tagEl.cloneNode(true));
     });
   });
 
   populateElementContent("license-name", license.name);
   populateElementContent("license-description", license.description);
 
-  modal.querySelectorAll('[data-populate="license-permissions"]').forEach(node => {
+  document.querySelectorAll('[data-populate="license-permissions"]').forEach(node => {
     node.innerHTML = "";
   });
   license.permissions.forEach(attr => {
@@ -131,14 +134,12 @@ function populateDownloadModal(id) {
     attrEl.setAttribute('data-toggle', 'tooltip');
     attrEl.innerHTML = attr.label;
 
-    modal.querySelectorAll('[data-populate="license-permissions"]').forEach(node => {
-      node.append(attrEl);
-      node.classList.remove('d-none');
-      node.classList.add('d-block');
+    document.querySelectorAll('[data-populate="license-permissions"]').forEach(node => {
+      node.appendChild(attrEl.cloneNode(true));
     });
   });
 
-  modal.querySelectorAll('[data-populate="license-restrictions"]').forEach(node => {
+  document.querySelectorAll('[data-populate="license-restrictions"]').forEach(node => {
     node.innerHTML = "";
   });
   license.restrictions.forEach(attr => {
@@ -148,12 +149,12 @@ function populateDownloadModal(id) {
     attrEl.setAttribute('data-toggle', 'tooltip');
     attrEl.innerHTML = attr.label;
 
-    modal.querySelectorAll('[data-populate="license-restrictions"]').forEach(node => {
-      node.append(attrEl);
+    document.querySelectorAll('[data-populate="license-restrictions"]').forEach(node => {
+      node.appendChild(attrEl.cloneNode(true));
     });
   });
 
-  modal.querySelectorAll('[data-regulation]').forEach(node => {
+  document.querySelectorAll('[data-regulation]').forEach(node => {
     if (node.getElementsByTagName('div')[0].children.length <= 0) {
       node.classList.add('d-none');
       node.classList.remove('d-block');
@@ -197,3 +198,34 @@ async function getFile(url, options = {}) {
 
   return res.text();
 };
+
+// handle errors from maps
+function onError(message) {
+    $('.modal.show').modal('hide');
+    $('#download-error-message').modal('show');
+    $('#download-error-output').text(message);
+}
+
+// modal control for download progress and error messages
+GitZip.registerCallback(function(status, message, percent) {
+    var progress = percent;
+    if (status === 'done') {
+        $('.modal').modal('hide');
+        $('#map-download-started').modal('show');
+        progress = 0;
+        updateAndDisplayRates();
+    } else if (status === 'error') {
+        $('.modal').modal('hide');
+        if (message.indexOf('API rate limit exceeded for') === -1) {
+            onError('An error occurred while retrieving your download. Check the console for more details.');
+        } else {
+            $('#download-rate-limit-message').modal('show');
+        }
+        progress = 0;
+        updateAndDisplayRates();
+    }
+    $('.progress-bar').css({
+        'width': (progress * 2) + '%',
+        'background-color': 'rgb(71, 198, 99)'
+    });
+});
