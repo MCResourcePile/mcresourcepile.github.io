@@ -1,0 +1,45 @@
+<div id="map-download-started" class="mr-modal modal fade" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <h1 class="mr-modal-title mb-1">You download has started</h1>
+          <p class="card-text">Thank you for downloading <span data-populate="title" class="font-weight-bold"></span> <span data-populate="version"></span> from ResourcePile.</p>
+          <div class="mr-authors justify-content-start" data-populate="authors" class="margin-bottom:1rem;font-size:1rem;"></div>
+          <p class="card-text">If you find any issues with the map or associated files, please let us know through our <a href="https://discord.gg/ygNgxKj" target="_blank" class="font-weight-bold">Discord</a> or contact the map maintainer, <a href="#" data-populate="maintainer_url" target="_blank"  class="font-weight-bold"><span data-populate="maintainer"></span></a>, directly.</p>
+          <p class="card-text">Please remember to adhere to the permissions and restrictions of the license of this map as outlined below. If you wish to use <span data-populate="title" class="font-weight-bold"></span> for purposes not permitted with the license please reach out to the authors to request permission. Without PGM map authors publicly sharing their creations, ResourcePile would not be able to host such a wonderful collection of maps for the PGM community.</p>
+          <div class="modal-inner-card mr-license row">
+            <div class="col-12 col-lg-6 px-0 pr-lg-3">
+              <h5 class="mr-license-title" data-populate="license-name"></h5>
+              <p class="mr-license-description" data-populate="license-description"></p>
+              <p class="mr-license-disclaimer">
+                This is not legal advice.
+                <a href="/policies/maps" target="_blank">Learn more about map licenses and usage agreements.</a>
+              </p>
+            </div>
+            <div class="col-12 col-lg-3 pl-0 pl-lg-3">
+              <div class="mr-license-regulations" data-regulation="permissions">
+                <h6>Permissions</h6>
+                <div data-populate="license-permissions"></div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3 pl-0 pl-lg-3">
+              <div class="mr-license-regulations" data-regulation="restrictions">
+                <h6>Restrictions</h6>
+                <div data-populate="license-restrictions"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="d-flex flex-row justify-content-between w-100">
+          <div></div>
+          <div>
+            <button class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

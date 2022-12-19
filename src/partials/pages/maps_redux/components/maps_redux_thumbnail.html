@@ -1,0 +1,73 @@
+<div class="mr-thumbnail">
+  <div class="mr-header">
+    <img {{#unless disableLazy}}data-{{/unless}}src="{{source.image_url}}" class="mr-header-image lazy" {{#if disableLazy}}onerror="this.src='/assets/img/404.png'"{{/if}}/>
+    <div class="mr-header-banner">
+      <div class="mr-header-title">
+        {{name}}
+        <span class="mr-header-title-suffix">{{#if version}}v{{version}}{{/if}}</span>
+      </div>
+      <div class="mr-header-subtitle">
+        <a href="{{source.github_url}}" target="_blank">{{source.maintainer}}/{{source.repository}}</a>
+      </div>
+      <a href="https://github.com/{{source.maintainer}}" target="_blank">
+        <img src="https://github.com/{{source.maintainer}}.png?size=24" class="mr-header-maintainer-logo" data-toggle="tooltip" title="Maintained by {{properName source.maintainer}}"/>
+      </a>
+    </div>
+    <div class="mr-tags">
+      {{#if (property @root.settings.maps.licenses source.license)}}
+        {{#with (property @root.settings.maps.licenses source.license)}}
+          {{#if label}}
+            <span class="mr-tag" style="background-color:{{label.background}}; color:{{label.color}}" title="{{name}}" data-toggle="tooltip"><i class="fas fa-balance-scale"></i> {{label.text}}</span>
+          {{/if}}
+        {{/with}}
+      {{/if}}
+      {{#if tags}}
+        {{#each tags}}
+          <span class="mr-tag">{{this}}</span>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="mr-body">
+    {{#if authors}}
+    <div class="mr-authors">
+      <span>by </span>
+      {{#each authors}}
+        {{#lt @index 2}}
+          <div class="mr-author">
+            <img src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}606e2ff0ed7748429d6ce1d3321c7838{{/if}}"/>
+            <span>
+              {{#if uuid}}
+                {{#if (property @root.uuids (formatUUID uuid 'strip'))}}
+                  {{property @root.uuids (formatUUID uuid 'strip')}}
+                {{/if}}
+              {{else}}
+                {{#if username}}
+                  {{username}}
+                {{/if}}
+              {{/if}}
+            </span>
+          </div>
+        {{/lt}}
+      {{/each}}
+    </div>
+    {{/if}}
+    <div class="mr-buttons">
+      <a class="btn btn-primary" role="button" data-action="open-download" data-id="{{id}}">
+        <i class="fa fa-download"/>
+      </a>
+      <a href="{{source.github_url}}/map.xml" target="_blank" class="btn btn-primary" role="button" data-toggle="download-modal">
+        <i class="fa fa-code"/>
+      </a>
+    </div>
+    <div class="hidden">
+      <div class="tags">{{#if tags}}{{#each tags}}{{this}},{{/each}}{{/if}},proto-{{proto}},{{source.maintainer}},{{source.repository}},{{source.license}}</div>
+      <div class="users">{{#if authors}}{{#each authors}}{{#if uuid}}{{#if (property @root.uuids (formatUUID uuid 'strip'))}}{{property @root.uuids (formatUUID uuid 'strip')}}{{/if}}{{else}}{{#if username}}{{username}}{{/if}}{{/if}},{{/each}}{{/if}}</div>
+      <div class="uuids">{{#if authors}}{{#each authors}}{{#if uuid}}{{uuid}},{{/if}}{{/each}}{{/if}}</div>
+      <div class="s-title">{{name}}</div>
+      <div class="slug">{{slug}}</div>
+      <div class="id">{{id}}</div>
+      <div class="version">{{version}}</div>
+    </div>
+  </div>
+</div>

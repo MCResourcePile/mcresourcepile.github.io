@@ -1,8 +1,44 @@
 {{#> default}}
-<div class="content-body">
-    The maps which have been uploaded to our, MCResourcePile, GitHub repositories and website have been obtained either by direct consent from <b>one</b> or more of the documented authors or have been acquired from public downloads from the <a href="https://oc.tc/forums" target="_blank">Overcast Network</a> and <a href="https://avicus.net" target="_blank">Avicus Network</a> forums, or Github repositories from the <a href="https://github.com/OvercastCommunity" target="_blank">Overcast Community</a> with working downloads for that specific map. Maps that have been retrieved from public forum threads have been updated to their latest version to ensure their stability and functionality on PGM running servers. These maps, unless explicitly specified on the public download, are not associated with any type of license or terms of use and we, MCResourcePile, will never apply these to those maps without direct consent and approval from <b>one</b> or more of the documented authors.<br><br>
-    By downloading any map from our service, being the <a href="https://mcresourcepile.github.io/" target="_blank">MCResourcePile website</a>, or downloading any of our GitHub map repositories, it is assumed you have read the <a href="terms" target="_blank">terms of use</a> and the associated license you agreed to before downloading the map and that you follow these guidelines when using the maps. By not following these terms you are compromising the system in which this service is based upon and the relationship between map authors and users.<br><br>
-    While you are not required to inform map authors of your purpose with the map as long as the associated license permits it, it would be considered morally respectful to inform or ask for further permissions from authors about your intention with the map especially in situations where you would be making profit from using or hosting the map on a public server environment.<br><br>
-    If you are one of the documented authors of any of the maps which are in our map repositories you are free to request its removal at any time by creating in issue in the respective maps repository or by contacting us directly through <a href="https://discord.gg/ygNgxKj" target="_blank">discord</a>. We will remove the related files as quickly as possible, but we are unable to prevent anyone who has already obtained a copy of your map from using it as long as they are using it by the license attached to the download and our <a href="terms" target="_blank">terms of use</a>.
+<div class="policy">
+  {{#markdown}}
+  ### 1. Rights and Ownership
+  Authors credited in the `map.xml` file retain full rights to any maps submitted and stored in GitHub repositories maintained by MCResourcePile.
+
+  ### 2. Map Acquisition and Distribution
+  MCResourcePile map collections include a mix of self-maintained GitHub map repositories and repositories maintained by third-parties not affiliated with MCResourcePile. Depending on the source there may be different permissions associated with the map files. MCResourcePile only has control over the licensing and maintenance of maps uploaded to repositories maintained by MCResourcePile.
+
+  #### 2.1. Repositories Maintained by MCResourcePile
+  MCResourcePile has obtained an explicit approval from at least **one** of the documented authors of any single map before uploading the map to one of the GitHub repositories maintained by MCResourcePile. This approval permits MCResourcePile to:
+  - Upload the Minecraft map level files and `map.xml` file to one of MCResourcePile's GitHub repositories
+  - List the map on our webpage and map collections for download
+  - License the map materials under a license agreed upon by the contacted author and MCResourcePile
+
+  Where a download to a map has been publicly posted by any one of the documented authors, MCResourcePile may upload the version of the map as-is from the public download or obtain an updated version of the map to host and distribute under no license, unless explicitly licensed in the original public download.
+
+  Repositories maintained by MCResourcePile can be found on [GitHub here](https://github.com/orgs/MCResourcePile/repositories).
+
+  #### 2.2. Repositories Maintained by Third-Parties
+  MCResourcePile includes maps from GitHub repositories not maintained by MCResourcePile in map collections.
+
+  Licensing is determined by either:
+  - A global license applied to the entire repository as set by the third-party maintainer, or
+  - The inclusion of a `LICENSE.txt` document in the map folder which defines the license and terms for an individual map.
+
+  If no license could be found a message encouraging the user to contact the map authors will be presented.
+
+  If a license is found but it could not be identified as [one of the supported licenses](https://github.com/MCResourcePile/map-fetcher/blob/main/src/index.js#L178) a message informing the user to refer to the included `LICENSE.txt` file in the download will be presented.
+
+  Updates, attribution, licensing, and content removal must be referred to the repository maintainer. MCResourcePile cannot make updates or changes to the Minecraft map level or site data for maps maintained by third-parties.
+
+  ### 3. Attribution
+  Authors will be attributed for their work as long as they are included as an [author in the map's XML](https://pgm.dev/docs/modules/general/main#authors--contributors). If an author is not included in the XML they are unable to be attributed in the map collections.
+
+  Personalised Minecraft avatars will not be present where no UUID is included in the XML. Usernames may be missing if the UUID has not been resolved to the current Minecraft username. This generally updates after each site update and on the first day of every month.
+
+  ### 4. Content Removal
+  Map authors are free to have their maps removed from MCResourcePile if they no longer wish to have their map published. Please reach out to our Managers on [Discord](https://discord.gg/ygNgxKj) citing which maps you want removed. Removal of maps sourced from GitHub repositories that are not maintained by MCResourcePile will require you to contact the maintainer of that specific repository.
+
+  We are unable to prevent anyone from using the content where an individual or party has obtained a licensed copy of your map prior to the content being removed from MCResourcePile.
+  {{/markdown}}
 </div>
 {{/default}}

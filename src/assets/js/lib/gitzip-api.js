@@ -30,7 +30,7 @@ SOFTWARE.
     var repoExp = new RegExp("^https://github.com/([^/]+)/([^/]+)(/(tree|blob)/([^/]+)(/(.*))?)?");
     var githubProvidedUrl = new RegExp("^https://api.github.com/.*");
     var isBusy = false;
-    var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0 && 
+    var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0 &&
         /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
 
     var token;
@@ -65,7 +65,7 @@ SOFTWARE.
 
     var _getContentOfGitUrl = function(url, params){
         return Promise.resolve(
-            $.ajax({ 
+            $.ajax({
                 url: url,
                 data: params
             })
@@ -74,7 +74,7 @@ SOFTWARE.
 
     var _getTreeOfGitUrl = function(url, params){
         return Promise.resolve(
-            $.ajax({ 
+            $.ajax({
                 url: url,
                 data: params
             })
@@ -93,11 +93,11 @@ SOFTWARE.
             return nextReturn;
         });
     };
-    
+
     var _zipContents = function(filename, contents, callbackScope){
         var zip = new JSZip();
         var zipContent = zip.folder(filename);
-        
+
         contents.forEach(function(item){
             progressCallback.call(callbackScope, 'processing', 'Compressing ' + item.path,
                 ++progressCallback._idx / (progressCallback._len * 2) * 100);
@@ -177,7 +177,7 @@ SOFTWARE.
         callbackScope = callbackScope || scope;
         if (url) {
             progressCallback.call(callbackScope, 'processing', 'Fetching target url: ' + url);
-            $.ajax({ 
+            $.ajax({
                 url: url,
                 data: params
             })
@@ -296,7 +296,7 @@ SOFTWARE.
 
             progressCallback.call(callbackScope, 'prepare', 'Finding file/dir content path from resolved URL');
             var params = {};
-            if(resolved.branch) params["ref"] = resolved.branch;   
+            if(resolved.branch) params["ref"] = resolved.branch;
 
             Promise.resolve(
                 $.ajax({
@@ -386,17 +386,21 @@ SOFTWARE.
             };
         }
     }
-    
+
     function setAccessToken(strToken){
         token = strToken;
     }
-    
+
     function setProductionState(state){
         production = state;
     }
-    
+
     function addTextFile(file, contents){
         additionalFiles[file] = contents;
+    }
+
+    function removeTextFile(file) {
+        delete additionalFiles[file];
     }
 
 
@@ -407,6 +411,7 @@ SOFTWARE.
     fn.setAccessToken = setAccessToken;
     fn.setProductionState = setProductionState;
     fn.addTextFile = addTextFile;
+    fn.removeTextFile = removeTextFile;
 
     scope.GitZip = fn;
 

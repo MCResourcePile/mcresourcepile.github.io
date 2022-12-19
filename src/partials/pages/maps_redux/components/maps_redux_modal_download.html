@@ -1,0 +1,89 @@
+<div id="map-download-display" class="mr-modal modal fade" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1 class="mr-modal-title mb-1">
+          <span data-populate="title"></span>
+          <span class="mr-modal-title-suffix" data-populate="version"></span>
+        </h1>
+        <div class="mr-authors mb-3 justify-content-start" data-populate="authors"></div>
+        <div class="container-fluid">
+          <div class="row mb-3">
+            <div class="col-12 col-lg-6 px-0 pr-lg-3">
+              <h6>Objective</h6>
+              <p data-populate="objective"></p>
+            </div>
+            <div class="col-6 col-lg-3 pl-0 pl-lg-3">
+              <h6>Teams</h6>
+              <div class="mr-teams" data-populate="teams"></div>
+            </div>
+            <div class="col-6 col-lg-3 pr-0">
+              <h6>Tags</h6>
+              <div class="mr-tags mr-tags-top" data-populate="tags"></div>
+            </div>
+          </div>
+          <div class="modal-inner-card mr-license row mb-3">
+            <div class="col-12 col-lg-6 px-0 pr-lg-3">
+              <h5 class="mr-license-title" data-populate="license-name"></h5>
+              <p class="mr-license-description" data-populate="license-description"></p>
+              <p class="mr-license-disclaimer">
+                This is not legal advice.
+                <a href="/policies/maps" target="_blank">Learn more about map licenses and usage agreements.</a>
+              </p>
+            </div>
+            <div class="col-12 col-lg-3 pl-0 pl-lg-3">
+              <div class="mr-license-regulations" data-regulation="permissions">
+                <h6>Permissions</h6>
+                <div data-populate="license-permissions"></div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3 pl-0 pl-lg-3">
+              <div class="mr-license-regulations" data-regulation="restrictions">
+                <h6>Restrictions</h6>
+                <div data-populate="license-restrictions"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-9 px-0 pr-lg-3">
+              <h5 style="font-weight:normal">
+                This map is maintained by
+                <span class="mr-modal-map-maintainer" data-populate="maintainer"></span>
+                <a href="#" data-populate="maintainer_url" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+              </h5>
+              <div class="mr-modal-map-maintainer-details">
+                <img class="mr-modal-map-maintainer-image" src="" data-populate="maintainer-image"/>
+                <p class="mr-modal-map-maintainer-description" data-populate="maintainer-description">
+
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3 px-0 pl-lg-3">
+              <img class="mr-modal-thumbnail-image mt-3 mt-lg-0" data-populate="image-url" src="" onerror="this.src='/assets/img/404.png'"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div id="mr-download-progress" class="w-100" style="display:none;">
+            <b>Your download will begin shortly...</b>
+            <div class="progress" style="margin-top:8px;margin-bottom:16px;">
+                <div id="compile-progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+        <div id="mr-download-controls" class="w-100">
+          <div class="d-flex flex-row justify-content-between w-100">
+            <div>
+              <a class="btn btn-light" href="#" target="_blank" data-populate="github-url"><i class="fab fa-github-alt fa-fw"></i> View on GitHub</a>
+              <a class="btn btn-light" href="#" target="_blank" data-populate="xml-url"><i class="fas fa-code fa-fw"></i> View XML</a>
+            </div>
+            <div>
+              <button class="btn btn-light" data-dismiss="modal">Cancel</button>
+              <button class="btn btn-primary" data-action="start-download" data-populate="map-id" data-id="">Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

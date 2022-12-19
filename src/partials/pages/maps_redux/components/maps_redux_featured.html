@@ -1,0 +1,66 @@
+{{#if @root.data.featured.enabled}}
+{{#isEmpty @root.data.featured.maps}}
+{{else}}
+<div class="mr-featured">
+  <div class="mr-featured-header">
+    <div class="row">
+      <div class="col-12 col-sm-8">
+        <h3 class="mr-featured-title">{{#if data.featured.title}}{{data.featured.title}}{{else}}Featured Maps{{/if}}</h3>
+        {{#if data.featured.description}}
+          <div class="mr-featured-subtitle">{{{data.featured.description}}}</div>
+        {{/if}}
+      </div>
+      <div class="col-12 col-sm-4">
+        <span id="mr-featured-buttons" class="center float-right"></span>
+      </div>
+    </div>
+  </div>
+  <div class="mr-featured-body">
+    <div class="mr-featured-maps">
+      {{#each data.maps}}
+      {{#contains @root.data.featured.maps id}}
+      {{> maps_redux_thumbnail disableLazy='false'}}
+      {{/contains}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('.mr-featured-maps').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      variableWidth: true,
+      appendArrows: '#mr-featured-buttons',
+      responsive: [
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 990,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+  });
+});
+</script>
+{{/isEmpty}}
+{{/if}}

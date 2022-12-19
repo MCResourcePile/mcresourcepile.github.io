@@ -1,0 +1,19 @@
+{{> maps_redux_featured}}
+<div id="searchable-collection" class="maps-output row">
+  <div class="col-xl-3 order-xl-2 px-xl-2 order-1 map-search-wrapper">
+    {{> search_sidebar}}
+  </div>
+  <div class="col-xl-9 order-xl-1 px-xl-2 order-2">
+    <div class="mr-grid dynamic list">
+      {{#each (sortBy data.maps "name")}}
+      {{> maps_redux_thumbnail}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+<div id="maps-data" data-source="{{settings.maps.group}}"></div>
+{{> maps_redux_modal_download}}
+{{> maps_redux_modal_download_started}}
+{{> maps_redux_modal_error}}
+{{> map_modal_rate_limit}}
+{{> load_uuids}}
