@@ -7,15 +7,15 @@ def get_username(uuid):
     if "username" in r.json():
         return r.json()["username"]
 
-def main(directory, uuids_file, options):    
+def main(directory, uuids_file, options):
     output = {"uuids": {}}
-    
+
     previous_output = uuids_file
     if os.path.exists(previous_output):
         with open(previous_output, "r") as f:
             json_data = f.read()
         output = json.loads(json_data)
-        
+
     uuids = []
 
     for root, dirs, files in os.walk(directory):
@@ -31,11 +31,11 @@ def main(directory, uuids_file, options):
                     maps = data["data"]["maps"]
                     for map in maps:
                         for author in map["authors"]:
-                            if author["uuid"].replace("-", "") not in uuids:
+                            if "uuid" in author and author["uuid"].replace("-", "") not in uuids:
                                 uuids.append(author["uuid"].replace("-", ""))
     count = str(len(uuids))
     print(count + " UUIDS found\n", flush=True)
-                                
+
     names = dict()
     #uuids = uuids[0:8]
 
@@ -48,16 +48,16 @@ def main(directory, uuids_file, options):
 
     with open(uuids_file, "w") as out:
         json.dump(output, out, indent=4)
-    
+
 if __name__ == "__main__":
     usage = "usage: %prog <dir> <uuids file>"
     parser = OptionParser(usage = usage)
     parser.add_option("-f", "--force", dest="force", help="force a refresh of all uuids even if they are known", default=False, action="store_true")
     (options, args) = parser.parse_args()
-    
+
     if len(sys.argv) == 1:
         parser.error("No directory specified")
-        
+
     directory = sys.argv[1]
     directory = os.path.normpath(directory)
     uuids_file = sys.argv[2]
@@ -66,7 +66,7 @@ if __name__ == "__main__":
         parser.error("No such directory as " + directory)
     if not os.path.exists(uuids_file):
         parser.error("No such file as " + uuids_file)
-        
+
     main(directory, uuids_file, options)
-    
+
     sys.exit(0)
