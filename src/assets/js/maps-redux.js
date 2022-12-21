@@ -121,7 +121,16 @@ function populateDownloadModal(id) {
     });
   });
 
-  populateElementContent("license-name", license.name);
+  document.querySelectorAll('[data-populate="license-name"]').forEach(node => {
+    node.innerHTML = license.name;
+
+    if (license.human_readable_url) {
+      var linkEl = document.createElement('a');
+      linkEl.setAttribute('href', license.human_readable_url);
+      linkEl.setAttribute('target', '_blank');
+      node.appendChild(linkEl.cloneNode(true));
+    };
+  });
   populateElementContent("license-description", license.description);
 
   document.querySelectorAll('[data-populate="license-permissions"]').forEach(node => {
