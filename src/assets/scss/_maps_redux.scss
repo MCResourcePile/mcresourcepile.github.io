@@ -269,6 +269,30 @@
   }
 }
 
+.mr-includes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  .mr-include {
+    font-size: 12px;
+    background-color: rgba(240, 240, 240, 1);
+    padding: 1px 8px;
+    border-radius: .25rem;
+    white-space: nowrap;
+    color: #1c1c1c;
+    font-family: monospace;
+
+    &::before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f1c9";
+      font-weight: 900;
+      margin-right: .5rem;
+    }
+  }
+}
+
 .mr-modal {
   .mr-modal-title {
     font-family: 'Montserrat', sans-serif;
@@ -328,8 +352,6 @@
     }
   }
 }
-
-
 
 .mr-license {
   .mr-license-title {
@@ -512,6 +534,13 @@
       &[data-color="white"] {
         --team-color: #fff;
       }
+    }
+  }
+
+  .mr-includes {
+    .mr-include {
+      background-color: rgba(82, 82, 82, 0.85);
+      color: #fff;
     }
   }
 

@@ -9,7 +9,7 @@
         <div class="mr-authors mb-3 justify-content-start" data-populate="authors"></div>
         <div class="container-fluid">
           <div class="row mb-3">
-            <div class="col-12 col-lg-6 px-0 pr-lg-3">
+            <div class="col-12 col-lg-6 px-0 pr-lg-3 mb-1 mb-lg-0">
               <h6>Objective</h6>
               <p data-populate="objective"></p>
             </div>
@@ -20,6 +20,11 @@
             <div class="col-6 col-lg-3 pr-0">
               <h6>Tags</h6>
               <div class="mr-tags mr-tags-top" data-populate="tags"></div>
+            </div>
+            <div class="col-12 col-lg-6 px-0 pr-lg-3 mt-1" id="mr-map-includes">
+              <h6>XML Includes</h6>
+              <p>This map has external XML dependencies that must be included on your PGM server in order to be loaded.</p>
+              <div data-populate="includes" class="mr-includes"></div>
             </div>
           </div>
           <div class="modal-inner-card mr-license row mb-3">
@@ -66,10 +71,10 @@
       </div>
       <div class="modal-footer">
         <div id="mr-download-progress" class="w-100" style="display:none;">
-            <b>Your download will begin shortly...</b>
-            <div class="progress" style="margin-top:8px;margin-bottom:16px;">
-                <div id="compile-progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
+          <b>Your download will begin shortly...</b>
+          <div class="progress" style="margin-top:8px;margin-bottom:16px;">
+            <div id="compile-progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
         </div>
         <div id="mr-download-controls" class="w-100">
           <div class="d-flex flex-row justify-content-between w-100">
