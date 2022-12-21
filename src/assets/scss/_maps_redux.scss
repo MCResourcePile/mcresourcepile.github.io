@@ -290,7 +290,7 @@
 
   p {
     font-size: 1rem;
-    margin: 0;
+    line-height: normal;
 
     &.card-text {
       margin-bottom: 1rem;
@@ -335,6 +335,12 @@
   .mr-license-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+
+    a::after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f35d";
+      margin-left: .5rem;
+    }
   }
 
   .mr-license-description {
@@ -344,6 +350,10 @@
   .mr-license-disclaimer {
     font-size: 12px;
     margin-top: .5rem;
+    margin-bottom: 0;
+  }
+
+  p {
     margin-bottom: 0;
   }
 
