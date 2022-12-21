@@ -3,8 +3,7 @@
  */
 
 $(function() {
-    var url = "https://mcresourcepile-auth.herokuapp.com"
-    var client_id = $("meta[name=client-id]").attr("content")
+    var url = "http://mcrp-auth-mcresourcepile.vercel.app"
     var user_code = getUrlParam("code")
 
     if (user_code) {
