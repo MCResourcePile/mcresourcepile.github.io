@@ -3,7 +3,7 @@
  */
 
 $(function() {
-    var url = "http://mcrp-auth-mcresourcepile.vercel.app"
+    var url = "https://mcrp-auth-mcresourcepile.vercel.app"
     var user_code = getUrlParam("code")
 
     if (user_code) {
