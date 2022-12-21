@@ -7,7 +7,7 @@ $(function() {
     var user_code = getUrlParam("code")
 
     if (user_code) {
-        var call = $.getJSON(url + "/" + client_id + "/" + user_code)
+        var call = $.getJSON(`${url}/auth/${user_code}`)
             .done(function(data) {
                 user.setToken(data.access_token)
                 user.fetchUserInfo(function(info) {
