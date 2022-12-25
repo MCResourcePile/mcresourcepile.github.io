@@ -269,6 +269,30 @@
   }
 }
 
+.mr-includes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  .mr-include {
+    font-size: 12px;
+    background-color: rgba(240, 240, 240, 1);
+    padding: 1px 8px;
+    border-radius: .25rem;
+    white-space: nowrap;
+    color: #1c1c1c;
+    font-family: monospace;
+
+    &::before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f1c9";
+      font-weight: 900;
+      margin-right: .5rem;
+    }
+  }
+}
+
 .mr-modal {
   .mr-modal-title {
     font-family: 'Montserrat', sans-serif;
@@ -290,7 +314,7 @@
 
   p {
     font-size: 1rem;
-    margin: 0;
+    line-height: normal;
 
     &.card-text {
       margin-bottom: 1rem;
@@ -329,12 +353,16 @@
   }
 }
 
-
-
 .mr-license {
   .mr-license-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+
+    a::after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f35d";
+      margin-left: .5rem;
+    }
   }
 
   .mr-license-description {
@@ -344,6 +372,10 @@
   .mr-license-disclaimer {
     font-size: 12px;
     margin-top: .5rem;
+    margin-bottom: 0;
+  }
+
+  p {
     margin-bottom: 0;
   }
 
@@ -502,6 +534,13 @@
       &[data-color="white"] {
         --team-color: #fff;
       }
+    }
+  }
+
+  .mr-includes {
+    .mr-include {
+      background-color: rgba(82, 82, 82, 0.85);
+      color: #fff;
     }
   }
 
