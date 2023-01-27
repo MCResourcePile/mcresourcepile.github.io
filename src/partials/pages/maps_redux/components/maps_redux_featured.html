@@ -1,27 +1,33 @@
 {{#if @root.data.featured.enabled}}
 {{#isEmpty @root.data.featured.maps}}
 {{else}}
-<div class="mr-featured">
-  <div class="mr-featured-header">
-    <div class="row">
-      <div class="col-12 col-sm-8">
-        <h3 class="mr-featured-title">{{#if data.featured.title}}{{data.featured.title}}{{else}}Featured Maps{{/if}}</h3>
-        {{#if data.featured.description}}
-          <div class="mr-featured-subtitle">{{{data.featured.description}}}</div>
-        {{/if}}
+<div class="row">
+  <div class="col-12">
+    <div class="mr-featured">
+      <div class="mr-featured-container">
+        <div class="mr-featured-header">
+          <div class="row">
+            <div class="col-12 col-sm-8">
+              <h3 class="mr-featured-title">{{#if data.featured.title}}{{data.featured.title}}{{else}}Featured Maps{{/if}}</h3>
+              {{#if data.featured.description}}
+                <div class="mr-featured-subtitle">{{{data.featured.description}}}</div>
+              {{/if}}
+            </div>
+            <div class="col-12 col-sm-4">
+              <span id="mr-featured-buttons" class="center float-right"></span>
+            </div>
+          </div>
+        </div>
+        <div class="mr-featured-body">
+          <div class="mr-featured-maps">
+            {{#each data.maps}}
+            {{#contains @root.data.featured.maps id}}
+            {{> maps_redux_thumbnail disableLazy='false'}}
+            {{/contains}}
+            {{/each}}
+          </div>
+        </div>
       </div>
-      <div class="col-12 col-sm-4">
-        <span id="mr-featured-buttons" class="center float-right"></span>
-      </div>
-    </div>
-  </div>
-  <div class="mr-featured-body">
-    <div class="mr-featured-maps">
-      {{#each data.maps}}
-      {{#contains @root.data.featured.maps id}}
-      {{> maps_redux_thumbnail disableLazy='false'}}
-      {{/contains}}
-      {{/each}}
     </div>
   </div>
 </div>

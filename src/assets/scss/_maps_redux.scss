@@ -415,57 +415,61 @@
 
 .mr-featured {
   position: relative;
-  padding: 1rem;
-  margin-left: -15px;
-  margin-right: -15px;
+  padding: 0.25rem;
   margin-bottom: 1rem;
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    border-width: 4px;
-    border-style: solid;
-    border-image: linear-gradient(45deg, gold, deeppink) 1;
-    clip-path: inset(0px round 8px);
+    background: linear-gradient(45deg, gold, deeppink);
     animation: huerotate 6s infinite linear;
     filter: hue-rotate(360deg);
     pointer-events: none;
+    border-radius: .25rem;
   }
 
-  .mr-featured-header {
-    .mr-featured-title {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: bold;
-    }
+  .mr-featured-container {
+    position: relative;
+    background-color: #fff;
+    border-radius: .25rem;
+    padding: .75rem;
+    filter: none;
 
-    .mr-featured-subtitle {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  .mr-featured-body {
-    .mr-featured-maps {
-      display: none;
-      margin-right: -15px;
-
-      &.slick-initialized {
-        display: block !important;
+    .mr-featured-header {
+      .mr-featured-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
       }
 
-      .mr-thumbnail {
-        width: 260px;
-        margin-right: 16px;
+      .mr-featured-subtitle {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
       }
     }
-  }
 
-  #mr-featured-buttons {
+    .mr-featured-body {
+      .mr-featured-maps {
+        display: none;
+        margin-right: -15px;
 
+        &.slick-initialized {
+          display: block !important;
+        }
+
+        .mr-thumbnail {
+          width: 260px;
+          margin-right: 16px;
+        }
+      }
+    }
+
+    #mr-featured-buttons {
+
+    }
   }
 }
 
@@ -547,6 +551,7 @@
   .mr-modal {
     .mr-modal-thumbnail-image {
       background-color: #23272a;
+      aspect-ratio: 145 / 123;
     }
   }
 
@@ -567,27 +572,29 @@
   }
 
   .mr-featured {
-    background-color: #23272a;
-    border-color: rgba(104, 104, 104, 0.175);
+    .mr-featured-container {
+      background-color: #23272a;
+      border-color: rgba(104, 104, 104, 0.175);
 
-    .mr-featured-header {
-      .mr-featured-title {
-      }
+      .mr-featured-header {
+        .mr-featured-title {
+        }
 
-      .mr-featured-subtitle {
+        .mr-featured-subtitle {
 
-      }
-    }
-
-    .mr-featured-body {
-      .mr-featured-maps {
-        .mr-thumbnail {
         }
       }
-    }
 
-    #mr-featured-buttons {
+      .mr-featured-body {
+        .mr-featured-maps {
+          .mr-thumbnail {
+          }
+        }
+      }
 
+      #mr-featured-buttons {
+
+      }
     }
   }
 }
