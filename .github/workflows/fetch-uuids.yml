@@ -4,12 +4,6 @@ on:
   schedule:
     - cron: "0 0 1 * *"
 
-  workflow_call:
-    inputs:
-      FORCE_REFRESH:
-        type: string
-        default: false
-
   workflow_dispatch:
 
 jobs:
@@ -19,11 +13,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
-      - name: checkout name fetcher 
-        uses: actions/checkout@v3
-        with:
-          repository: MCResourcePile/name-fetcher
-          path: scripts/name-fetcher
+      # - name: checkout name fetcher 
+      #   uses: actions/checkout@v3
+      #   with:
+      #     repository: MCResourcePile/name-fetcher
+      #     path: scripts/name-fetcher
       
       - name: setup python
         uses: actions/setup-python@v2
@@ -33,28 +27,17 @@ jobs:
       - name: install python packages
         run: |
           python -m pip install --upgrade pip
-          pip install -r ./scripts/name-fetcher/requirements.txt
+          pip install -r ./scripts/uuid-resolver/requirements.txt
       
       - name: execute py script
-        if: inputs.FORCE_REFRESH != 'true'
         run: |
-          python ./scripts/name-fetcher/run.py ./src/data/maps ./src/data/uuids.json
-      
-      - name: execute py script (forced refresh)
-        if: inputs.FORCE_REFRESH == 'true'
-        run: |
-          python ./scripts/name-fetcher/run.py ./src/data/maps ./src/data/uuids.json --force
+          python ./scripts/uuid-resolver/run.py ./src/data ./src/data/uuids.json --force
 
       - name: commit changes
         if: github.event_name != 'pull_request'
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: EndBug/add-and-commit@v9
         with:
-          commit_message: Update global UUID data file
-          branch: source
-          file_pattern: src/data/uuids.json
-          commit_user_name: MCResourcePile
-          commit_user_email: MCResourcePile@gmail.com
-          commit_author: MCResourcePile <MCResourcePile@gmail.com> 
+          message: Update global UUID data file
 
       - uses: actions/upload-artifact@v3
         with:

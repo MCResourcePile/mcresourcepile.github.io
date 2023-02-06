@@ -1,4 +1,4 @@
-import os, sys, json, requests
+import os, sys, json, re, requests
 from optparse import OptionParser
 
 def get_username(uuid):
@@ -17,6 +17,7 @@ def main(directory, uuids_file, options):
         output = json.loads(json_data)
 
     uuids = []
+    pattern = '\"[0-9a-fA-F]{8}-?[0-9a-fA-F]{4}-?[0-9a-fA-F]{4}-?[0-9a-fA-F]{4}-?[0-9a-fA-F]{12}\"'
 
     for root, dirs, files in os.walk(directory):
         for f in files:
@@ -24,19 +25,18 @@ def main(directory, uuids_file, options):
                 filename = f
                 f = os.path.join(root, f)
                 with open(f, "r") as f:
-                    json_data = f.read()
-                data = json.loads(json_data)
-                if "data" in data:
-                    print("Searching for UUIDs in " + filename, flush=True)
-                    maps = data["data"]["maps"]
-                    for map in maps:
-                        for author in map["authors"]:
-                            if "uuid" in author and author["uuid"].replace("-", "") not in uuids:
-                                uuids.append(author["uuid"].replace("-", ""))
+                    data = f.read()
+                
+                print("Searching for UUIDs in " + filename, flush=True)
+                matches = re.findall(pattern, data)
+                for uuid in matches:
+                    uuid = uuid.replace("-", "").replace("\"", "")
+                    if uuid not in uuids:
+                        uuids.append(uuid)
+
     count = str(len(uuids))
     print(count + " UUIDS found\n", flush=True)
 
-    names = dict()
     #uuids = uuids[0:8]
 
     for i, uuid in enumerate(uuids):
