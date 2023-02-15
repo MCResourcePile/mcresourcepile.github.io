@@ -1,0 +1,55 @@
+name: fetch-pgm-maps
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+
+  workflow_dispatch:
+
+jobs:
+  fetch-pgm-maps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: checkout map fetcher
+        uses: actions/checkout@v3
+        with:
+          repository: MCResourcePile/map-fetcher
+          path: "./map-fetcher"
+
+      - name: install dependencies
+        run: |
+          cd ./map-fetcher
+          npm install
+
+      - name: execute script
+        run: |
+          cd ./map-fetcher
+          node src/index.js --output="../src/data/maps/pgm.json"
+
+      - name: remove map fetcher
+        run: |
+          rm -r ./map-fetcher
+
+      - name: commit changes
+        if: github.event_name != 'pull_request'
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: Update PGM maps data file
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: pgm.json
+          path: ./src/data/maps/pgm.json
+
+      - name: trigger page rebuild
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: run_build

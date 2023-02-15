@@ -5,6 +5,9 @@ on:
     branches: source
   pull_request:
     branches: source
+  repository_dispatch:
+    types:
+      - run_build
 
 jobs:
   build:
