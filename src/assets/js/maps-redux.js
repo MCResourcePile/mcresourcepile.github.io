@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   USER_UUIDS = JSON.parse(await getFile('/data/uuids.json')).uuids;
 
   var searchList = new List('searchable-collection', {
-    valueNames: ['tags', 's-title', 'users', 'uuids', 'version', 'slug', 'id']
+    valueNames: ['tags', 's-title', 'users', 'uuids', 'version', 'slug', 'id'],
+    page: 120,
+    pagination: true
   });
   var searchPlaceholder = 'maps';
   setupSearch(searchList, searchPlaceholder);
