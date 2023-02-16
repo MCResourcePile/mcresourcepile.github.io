@@ -18,12 +18,12 @@
         }
     },
     "stages": [
-        {"stage": "Submissions open",  "date": "January 31, 2019"},
-        {"stage": "Submissions close", "date": "March 4, 2019"},
-        {"stage": "Public testing",    "date": "March 8, 2019"},
-        {"stage": "Results announced", "date": "April 9, 2019"}
+        {"stage": "Submissions open",  "date_on": "January 31, 2019"},
+        {"stage": "Submissions close", "date_on": "March 4, 2019"},
+        {"stage": "Public testing",    "date_on": "March 8, 2019"},
+        {"stage": "Results announced", "date_on": "April 9, 2019"}
     ],
-    "panels": [ 
+    "panels": [
         {
             "label": "Details and Guidelines",
             "size": "half",
@@ -35,7 +35,7 @@
                 {"content": "Authors were allowed to be author on up to 3 maps, but only their top scored map was counted."},
                 {"content": "Maps previously submitted to Stratus Network could not be entered into this contest."}
             ]
-        }, 
+        },
         {
             "label": "Prizes",
             "size": "half",
@@ -57,7 +57,7 @@
         "bonus-2":    {"label": "Bonus", "operation": "percent", "amount": "2", "reason": "map gamemodes in medium demand"},
         "penalty":    {"label": "Penalty", "operation": "subtract", "amount": "5", "reason": "author not following the guidelines"}
     },
-    "submissions": [ 
+    "submissions": [
         {
             "name": "Outcrop",
             "slug": "outcrop",
@@ -298,7 +298,7 @@
                 {"criteria": "bonus-xml",  "eligible": true},
                 {"criteria": "bonus-3",    "eligible": false},
                 {"criteria": "bonus-2",    "eligible": true},
-                {"criteria": "penalty",    "eligible": false}          
+                {"criteria": "penalty",    "eligible": false}
             ]
         }, {
             "name": "Settlement",
