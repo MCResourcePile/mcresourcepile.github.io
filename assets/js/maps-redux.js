@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   var searchList = new List('searchable-collection', {
     valueNames: ['tags', 's-title', 'users', 'uuids', 'version', 'slug', 'id'],
-    page: 120,
-    pagination: true
+    // page: 120,
+    // pagination: false
   });
   var searchPlaceholder = 'maps';
   setupSearch(searchList, searchPlaceholder);
