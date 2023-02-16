@@ -290,7 +290,7 @@ function countMatching() {
     var match = searchable.matchingItems.length
     var output
     if (match > 0) {
-        output = "Showing " + match + " " + searchable_type + " out of " + total
+        output = "Found " + match + " out of " + total + " " + searchable_type
     } else if (match == 0) {
         output = "No " + searchable_type + " match your query or filter"
     } else {

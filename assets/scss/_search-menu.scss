@@ -130,3 +130,69 @@
         }
     }
 }
+
+ul.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  li {
+    display: inline-block;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    padding: 1px 12px;
+    margin: 2px;
+    border-radius: 4px;
+    white-space: nowrap;
+
+    a.page {
+      color: #666666;
+    }
+
+    &:not(.disabled):hover {
+      background-color: #b6c0ff;
+      transition: 0.2s;
+      cursor: pointer;
+
+      a.page {
+        text-decoration: none;
+      }
+    }
+
+    &.active {
+      background-color: #5f6fc7 !important;
+
+      a.page {
+        color: #fff;
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+      cursor: not-allowed;
+      background-color: #f8f8f8;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  li {
+    background-color: #484747 !important;
+
+    a.page {
+      color: #ededed !important;
+    }
+
+    &:not(.disabled):hover {
+      background-color: #4b637c;
+    }
+
+    &.active {
+      background-color: #5f6fc7;
+    }
+
+    &.disabled {
+      background-color: #343232 !important;
+    }
+  }
+}
