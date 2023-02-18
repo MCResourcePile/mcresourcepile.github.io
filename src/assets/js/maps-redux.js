@@ -9,12 +9,33 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   var searchList = new List('searchable-collection', {
     valueNames: ['tags', 's-title', 'users', 'uuids', 'version', 'slug', 'id'],
-    // page: 120,
-    // pagination: false
+    page: 120,
+    pagination: [
+      {
+        paginationClass: 'pagination-upper'
+      },
+      {
+        paginationClass: 'pagination-lower'
+      }
+    ]
   });
+
   var searchPlaceholder = 'maps';
   setupSearch(searchList, searchPlaceholder);
+  initDownloadEventListeners();
 
+  document.querySelectorAll('.pagination').forEach(pag => {
+    pag.addEventListener('click', e => {
+      initDownloadEventListeners();
+    });
+  });
+
+  searchList.on('updated', e => {
+    initDownloadEventListeners();
+  });
+});
+
+function initDownloadEventListeners() {
   document.querySelectorAll('[data-action="open-download"]').forEach(btn => {
     btn.addEventListener('click', e => {
       var id = btn.dataset.id;
@@ -37,7 +58,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       $('#mr-download-controls').hide();
     });
   });
-});
+};
 
 async function startDownload(id) {
   const map = MAP_DATA.find(x => x.id === id);
@@ -52,10 +73,10 @@ async function startDownload(id) {
   if (map.source.license_scope === "repository") {
     var licenseText = await getFile(`/assets/licenses/${map.source.license}.txt`);
     if (licenseText) GitZip.addTextFile("LICENSE.txt", licenseText);
-  }
+  };
 
   GitZip.zipRepo(map.source.github_url);
-}
+};
 
 function populateDownloadModal(id) {
   const modal = document.getElementById('map-download-display');

@@ -4,12 +4,13 @@
     {{> search_sidebar}}
   </div>
   <div class="col-xl-9 order-xl-1 px-xl-2 order-2">
+    <ul class="pagination pagination-upper mt-3"></ul>
     <div class="mr-grid dynamic list">
       {{#each (sortBy data.maps "name")}}
       {{> maps_redux_thumbnail}}
       {{/each}}
     </div>
-    <ul class="pagination mt-3"></ul>
+    <ul class="pagination pagination-lower mt-3"></ul>
   </div>
 </div>
 <div id="maps-data" data-source="{{settings.maps.group}}"></div>
