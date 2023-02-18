@@ -3,66 +3,106 @@ $(function() {
         {
             map: "Deepwind Jungle",
             file: "deepwind_jungle.png",
-            link: "/maps/pgm?dl=deepwind_jungle"
+            link: "/maps/pgm?query=deepwind_jungle"
         },
         {
             map: "Battle of Tenjin",
-            file: "battle_of_tenjin.png"
+            file: "battle_of_tenjin.png",
+            link: "/maps/pgm?query=battle_of_tenjin"
         },
         {
             map: "Paradise Isle",
             file: "paradise_isle.png"
         },
         {
-            map: "Anathema CTF",
+            map: "Anathema",
             file: "anathema_ctf.png",
-            link: "/maps/overcast?dl=anathema_ctf"
+            link: "/maps/pgm?query=anathema"
         },
         {
             map: "Avalon Funland",
             file: "avalon_funland.png",
-            link: "/maps/pgm?dl=avalon_funland"
+            link: "/maps/pgm?query=avalon_funland"
         },
         {
             map: "Full Salvo",
             file: "full_salvo.png",
-            link: "/maps/pgm?dl=full_salvo"
+            link: "/maps/pgm?query=full_salvo"
         },
         {
             map: "Palace CTF",
             file: "palace_ctf.png",
-            link: "/maps/overcast?dl=palace_ctf"
+            link: "/maps/pgm?query=palace_ctf"
         },
         {
             map: "The Complex",
             file: "the_complex.png",
-            link: "/maps/overcast?dl=the_complex"
+            link: "/maps/pgm?query=the_complex"
         },
         {
             map: "Twilight Zone",
             file: "twilight_zone.png",
-            link: "/maps/overcast?dl=twilight_zone"
+            link: "/maps/pgm?query=twilight_zone"
         },
         {
             map: "NextGen",
             file: "nextgen.png",
-            link: "/maps/pgm?dl=nextgen"
+            link: "/maps/pgm?query=nextgen"
         },
         {
             map: "Long Shot",
             file: "long_shot.png",
-            link: "/maps/pgm?dl=long_shot"
+            link: "/maps/pgm?query=long_shot"
         },
         {
             map: "Rallypoint Delta",
             file: "rallypoint_delta.png",
-            link: "/maps/pgm?dl=rallypoint_delta"
+            link: "/maps/pgm?query=rallypoint_delta"
+        },
+        {
+            map: "Rangi-Nui",
+            file: "rangi-nui.png",
+            link: "/maps/pgm?query=rangi-nui"
+        },
+        {
+            map: "Ubos CTF",
+            file: "ubos_ctf.png"
+        },
+        {
+            map: "Sanctum Wasser",
+            file: "sanctum_wasser.png",
+            link: "/maps/pgm?query=sanctum_wasser"
+        },
+        {
+            map: "Rice",
+            file: "rice.png",
+            link: "/maps/pgm?query=rice"
+        },
+        {
+            map: "Space Corp",
+            file: "space_corp.png",
+            link: "/maps/pgm?query=space_corp"
+        },
+        {
+            map: "Royal Ascend",
+            file: "royal_ascend.png",
+            link: "/maps/pgm?query=royal_ascend"
+        },
+        {
+            map: "Embargo",
+            file: "embargo.png",
+            link: "/maps/pgm?query=embargo"
+        },
+        {
+            map: "Boar Beach",
+            file: "boar_beach.png",
+            link: "/maps/pgm?query=boar_beach"
         }
     ]
     var splash_map = maps[Math.floor(Math.random()*maps.length)]
     $(".background-splash").css({"background": "url(assets/img/splash/" + splash_map.file + ") no-repeat center fixed"})
     $(".detail-map").text(splash_map.map).attr("href", splash_map.link)
-    
+
     var quotes = [
         "The best collection of resources for the former Overcast Network",
         "The best collection of resources for Stratus Network",
@@ -74,7 +114,6 @@ $(function() {
         "New Overcast Network maps? Soon™",
         "&lt;objective&gt; Download all of the maps! &lt;/objective&gt",
         "&lt;objective&gt Get the longest kill distance with a bow! &lt;/objective&gt",
-        "Loading Avicus Network maps repository... 52% complete",
         "Now with 100% more Rift!",
         "Check out the <a href='https://discord.gg/CvJGbrV'>Overcast Community</a> Discord server!",
         "Check out the <a href='https://discord.gg/Vxmq7Xp'>Stratus Network</a> Discord server!",
