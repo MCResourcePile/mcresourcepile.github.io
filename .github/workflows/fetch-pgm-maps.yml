@@ -64,7 +64,7 @@ jobs:
             value=$(jq -r ".data.maps[$k]" pgm.json | tr -d '\r');
             mapid=$(jq -r '.id' <<< "$value");
             version=$(jq -r '.version' <<< "$value");
-            outputpath="objects/${mapid}_${version}"
+            outputpath="objects/maps/${mapid}_${version}"
 
             echo $mapid
 
