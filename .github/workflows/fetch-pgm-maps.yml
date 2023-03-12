@@ -60,24 +60,28 @@ jobs:
       - name: execute jmc2obj
         run: |
           cd ./map-fetcher
-          for k in $(jq '.data.maps | keys | .[]' ../src/data/maps/pgm.json); do
-            value=$(jq -r ".data.maps[$k]" ../src/data/maps/pgm.json);
+          for k in $(jq '.data.maps | keys | .[]' pgm.json | tr -d '\r'); do
+            value=$(jq -r ".data.maps[$k]" pgm.json | tr -d '\r');
             mapid=$(jq -r '.id' <<< "$value");
             version=$(jq -r '.version' <<< "$value");
-            minx=$(jq -r '.regions.x.min' <<< "$value");
-            maxx=$(jq -r '.regions.x.max' <<< "$value");
-            minz=$(jq -r '.regions.z.min' <<< "$value");
-            maxz=$(jq -r '.regions.z.max' <<< "$value");
-            sourcemaintainer=$(jq -r '.source.maintainer' <<< "$value");
-            sourcerepository=$(jq -r '.source.repository' <<< "$value");
-            sourcepath=$(jq -r '.source.path' <<< "$value");
-            targetpath="tmp/${sourcemaintainer}/${sourcerepository}/${sourcepath}"
             outputpath="objects/${mapid}_${version}"
+
+            echo $mapid
 
             if [ ! -d "${outputpath}" ]
             then
+              minx=$(jq -r '.regions.x.min' <<< "$value");
+              maxx=$(jq -r '.regions.x.max' <<< "$value");
+              minz=$(jq -r '.regions.z.min' <<< "$value");
+              maxz=$(jq -r '.regions.z.max' <<< "$value");
+              sourcemaintainer=$(jq -r '.source.maintainer' <<< "$value");
+              sourcerepository=$(jq -r '.source.repository' <<< "$value");
+              sourcepath=$(jq -r '.source.path' <<< "$value");
+              targetpath="${sourcemaintainer}/${sourcerepository}/${sourcepath}"
+
               mkdir -p "${outputpath}"
-              java -jar jmc2obj.jar -c="${minx},${minz},${maxx},${maxz}" -s --render-entities --tex-export="base" --texturescale="10" -o="${outputpath}" "${targetpath}"
+              java -jar jmc2obj.jar -c="${minx},${minz},${maxx},${maxz}" -s -o="${outputpath}" "${targetpath}"
+              sed -r -i 's/map_d [a-z/_.]+/d 0.99/g' "${targetpath}/minecraft.mtl"
             fi
           done
 
