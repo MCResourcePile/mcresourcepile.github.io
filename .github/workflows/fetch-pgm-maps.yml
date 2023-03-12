@@ -18,6 +18,12 @@ jobs:
         with:
           node-version: '18'
 
+      - name: setup java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '8'
+
       - name: checkout map fetcher
         uses: actions/checkout@v3
         with:
@@ -34,7 +40,47 @@ jobs:
           cd ./map-fetcher
           node src/index.js --output="../src/data/maps/pgm.json"
 
-      - name: remove map fetcher
+      - name: download minecraft textures
+        run: |
+          VERSION=1.16.1
+          mkdir -p ~/.minecraft/versions/${VERSION}/
+          wget https://overviewer.org/textures/${VERSION} -O ~/.minecraft/versions/${VERSION}/${VERSION}.jar
+
+      - name: download jmc2obj
+        run: |
+          wget https://github.com/jmc2obj/j-mc-2-obj/releases/download/120/jMc2Obj-120.jar -O ./map-fetcher/jmc2obj.jar
+
+      - name: execute jmc2obj
+        run: |
+          cd ./map-fetcher
+          for k in $(jq '.data.maps | keys | .[]' ../src/data/maps/pgm.json); do
+            value=$(jq -r ".data.maps[$k]" ../src/data/maps/pgm.json);
+            mapid=$(jq -r '.id' <<< "$value");
+            minx=$(jq -r '.regions.x.min' <<< "$value");
+            maxx=$(jq -r '.regions.x.max' <<< "$value");
+            minz=$(jq -r '.regions.z.min' <<< "$value");
+            maxz=$(jq -r '.regions.z.max' <<< "$value");
+            sourcemaintainer=$(jq -r '.source.maintainer' <<< "$value");
+            sourcerepository=$(jq -r '.source.repository' <<< "$value");
+            sourcepath=$(jq -r '.source.path' <<< "$value");
+            targetpath="tmp/${sourcemaintainer}/${sourcerepository}/${sourcepath}"
+
+            mkdir -p "objects/${mapid}"
+            java -jar jmc2obj.jar -c="${minx},${minz},${maxx},${maxz}" -s --render-entities --tex-export="base" --texturescale="10" -o="objects/${mapid}" "${targetpath}"
+          done
+
+      - name: commit map objects
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_BRANCH: source
+          BRANCH: "3d-objects"
+          FOLDER: "map-fetcher/objects"
+          CLEAN: true
+          GIT_CONFIG_EMAIL: MCResourcePile@gmail.com
+          COMMIT_MESSAGE: Upload PGM map 3D objects
+
+      - name: remove temp files
         run: |
           rm -r ./map-fetcher
 
