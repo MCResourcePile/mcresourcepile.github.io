@@ -50,12 +50,20 @@ jobs:
         run: |
           wget https://github.com/jmc2obj/j-mc-2-obj/releases/download/120/jMc2Obj-120.jar -O ./map-fetcher/jmc2obj.jar
 
+      - name: checkout 3d map objects
+        uses: actions/checkout@v3
+        with:
+          repository: MCResourcePile/mcresourcepile.github.io
+          ref: "3d-objects"
+          path: "./map-fetcher/objects"
+
       - name: execute jmc2obj
         run: |
           cd ./map-fetcher
           for k in $(jq '.data.maps | keys | .[]' ../src/data/maps/pgm.json); do
             value=$(jq -r ".data.maps[$k]" ../src/data/maps/pgm.json);
             mapid=$(jq -r '.id' <<< "$value");
+            version=$(jq -r '.version' <<< "$value");
             minx=$(jq -r '.regions.x.min' <<< "$value");
             maxx=$(jq -r '.regions.x.max' <<< "$value");
             minz=$(jq -r '.regions.z.min' <<< "$value");
@@ -64,9 +72,13 @@ jobs:
             sourcerepository=$(jq -r '.source.repository' <<< "$value");
             sourcepath=$(jq -r '.source.path' <<< "$value");
             targetpath="tmp/${sourcemaintainer}/${sourcerepository}/${sourcepath}"
+            outputpath="objects/${mapid}_${version}"
 
-            mkdir -p "objects/${mapid}"
-            java -jar jmc2obj.jar -c="${minx},${minz},${maxx},${maxz}" -s --render-entities --tex-export="base" --texturescale="10" -o="objects/${mapid}" "${targetpath}"
+            if [ ! -d "${outputpath}" ]
+            then
+              mkdir -p "${outputpath}"
+              java -jar jmc2obj.jar -c="${minx},${minz},${maxx},${maxz}" -s --render-entities --tex-export="base" --texturescale="10" -o="${outputpath}" "${targetpath}"
+            fi
           done
 
       - name: commit map objects
