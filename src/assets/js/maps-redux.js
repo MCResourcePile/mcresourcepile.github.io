@@ -152,7 +152,7 @@ function populateDownloadModal(id) {
     document.getElementById('mr-map-includes').classList.remove('d-none');
     map.source.includes.files.forEach(file => {
       var includeEl = document.createElement('a');
-      includeEl.setAttribute('href', `${map.source.includes.root}/${file}`);
+      includeEl.setAttribute('href', `${map.source.includes.root}/${file}.xml`);
       includeEl.setAttribute('class', 'mr-include');
       includeEl.setAttribute('target', '_blank');
       includeEl.innerHTML = file;
