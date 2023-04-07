@@ -12,6 +12,7 @@ $(function() {
     // update search when user types
     $('#search').on('input', function(e){
         searchable.search($('#search').val())
+        countMatching()
         updateUrl()
     })
 
