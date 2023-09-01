@@ -4,7 +4,7 @@
     <div class="mr-header-banner">
       <div class="mr-header-title">
         {{#if variants}}
-        <i class="fa fa-layer-group mr-header-variants text-warning" data-toggle="tooltip" title="This map includes {{length variants}} variants"></i>
+        <i class="fa fa-layer-group mr-header-variants text-warning" data-toggle="tooltip" title="This map includes {{length variants}} variant{{#gt (length variants) 1}}s{{/gt}}"></i>
         {{/if}}
         {{name}}
         <span class="mr-header-title-suffix">{{#if version}}v{{version}}{{/if}}</span>

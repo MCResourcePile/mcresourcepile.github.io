@@ -177,6 +177,10 @@ function populateDownloadModal(id) {
         node.appendChild(variantEl.cloneNode(true));
       });
     });
+
+    const variantInfo = `The following variant of ${map.name} is bundled with this map:`;
+    const variantInfoPlural = `The following variants of ${map.name} are bundled with this map:`;
+    populateElementContent("variant-info", map.variants.length > 1 ? variantInfoPlural : variantInfo);
   };
 
   document.querySelectorAll('[data-populate="license-name"]').forEach(node => {
