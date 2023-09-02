@@ -171,7 +171,7 @@ function populateDownloadModal(id) {
     document.getElementById('mr-map-variants').classList.remove('d-none');
     map.variants.forEach(variant => {
       var variantEl = document.createElement('li');
-      variantEl.innerHTML = variant.override_name ? variant.name : map.name + ": " + variant.name;
+      variantEl.innerHTML = variant.name;
 
       document.querySelectorAll('[data-populate="variants"]').forEach(node => {
         node.appendChild(variantEl.cloneNode(true));
