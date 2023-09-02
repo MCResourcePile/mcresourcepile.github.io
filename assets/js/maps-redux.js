@@ -161,7 +161,27 @@ function populateDownloadModal(id) {
         node.appendChild(includeEl.cloneNode(true));
       });
     });
-  }
+  };
+
+  document.querySelectorAll('[data-populate="variants"]').forEach(node => {
+    node.innerHTML = "";
+    document.getElementById('mr-map-variants').classList.add('d-none');
+  });
+  if (map.variants) {
+    document.getElementById('mr-map-variants').classList.remove('d-none');
+    map.variants.forEach(variant => {
+      var variantEl = document.createElement('li');
+      variantEl.innerHTML = variant.override_name ? variant.name : map.name + ": " + variant.name;
+
+      document.querySelectorAll('[data-populate="variants"]').forEach(node => {
+        node.appendChild(variantEl.cloneNode(true));
+      });
+    });
+
+    const variantInfo = `The following variant of ${map.name} is bundled with this map:`;
+    const variantInfoPlural = `The following variants of ${map.name} are bundled with this map:`;
+    populateElementContent("variant-info", map.variants.length > 1 ? variantInfoPlural : variantInfo);
+  };
 
   document.querySelectorAll('[data-populate="license-name"]').forEach(node => {
     node.innerHTML = license.name;
