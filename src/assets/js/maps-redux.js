@@ -58,6 +58,18 @@ function initDownloadEventListeners() {
       $('#mr-download-controls').hide();
     });
   });
+
+
+  document.querySelectorAll('[data-populate="variants"]').forEach(node => {
+    node.addEventListener("click", function(e) {
+      const target = e.target.closest('a');
+
+      if (target) {
+        var id = target.dataset.target;
+        populateDownloadModal(id);
+      }
+    });
+  });
 };
 
 async function startDownload(id) {
@@ -68,11 +80,11 @@ async function startDownload(id) {
   if (user._token) GitZip.setAccessToken(user._token);
 
   // remove if set from previous download
-  GitZip.removeTextFile("LICENSE.txt");
+  GitZip.removeTextFile('LICENSE.txt');
 
-  if (map.source.license_scope === "repository") {
+  if (map.source.license_scope === 'repository') {
     var licenseText = await getFile(`/assets/licenses/${map.source.license}.txt`);
-    if (licenseText) GitZip.addTextFile("LICENSE.txt", licenseText);
+    if (licenseText) GitZip.addTextFile('LICENSE.txt', licenseText);
   };
 
   GitZip.zipRepo(map.source.github_url);
@@ -84,22 +96,22 @@ function populateDownloadModal(id) {
   const license = MAP_SETTINGS.licenses[map.source.license];
   const maintainer = MAP_SETTINGS.maintainers[map.source.maintainer];
 
-  populateElementContent("title", map.name);
-  populateElementContent("version", "v" + map.version);
-  populateElementContent("objective", map.objective);
+  populateElementContent('title', map.name);
+  populateElementContent('version', 'v' + map.version);
+  populateElementContent('objective', map.objective);
 
   document.querySelectorAll('[data-populate="authors"]').forEach(node => {
-    node.innerHTML = "Created by ";
+    node.innerHTML = 'Created by ';
   });
   map.authors.forEach(author => {
     var hasUuid = author.hasOwnProperty('uuid');
     var username = hasUuid ? USER_UUIDS[author.uuid.replaceAll('-', '')] : author.username;
 
     var avatarEl = document.createElement('img');
-    avatarEl.setAttribute('src', "https://crafatar.com/avatars/" + (hasUuid ? author.uuid : "606e2ff0ed7748429d6ce1d3321c7838"));
+    avatarEl.setAttribute('src', 'https://crafatar.com/avatars/' + (hasUuid ? author.uuid : '606e2ff0ed7748429d6ce1d3321c7838'));
 
     var usernameEl = document.createElement('span');
-    usernameEl.innerHTML = username ? username : "";
+    usernameEl.innerHTML = username ? username : '';
 
     var authorEl = document.createElement('div');
     authorEl.setAttribute('class', 'mr-author');
@@ -113,7 +125,7 @@ function populateDownloadModal(id) {
   });
 
   document.querySelectorAll('[data-populate="teams"]').forEach(node => {
-    node.innerHTML = "";
+    node.innerHTML = '';
   });
   map.teams.forEach(team => {
     var teamSizeEl = document.createElement('div');
@@ -132,7 +144,7 @@ function populateDownloadModal(id) {
   });
 
   document.querySelectorAll('[data-populate="tags"]').forEach(node => {
-    node.innerHTML = "";
+    node.innerHTML = '';
   });
   map.tags.forEach(tag => {
     var tagEl = document.createElement('div');
@@ -145,7 +157,7 @@ function populateDownloadModal(id) {
   });
 
   document.querySelectorAll('[data-populate="includes"]').forEach(node => {
-    node.innerHTML = "";
+    node.innerHTML = '';
     document.getElementById('mr-map-includes').classList.add('d-none');
   });
   if (map.source.includes) {
@@ -164,14 +176,18 @@ function populateDownloadModal(id) {
   };
 
   document.querySelectorAll('[data-populate="variants"]').forEach(node => {
-    node.innerHTML = "";
+    node.innerHTML = '';
     document.getElementById('mr-map-variants').classList.add('d-none');
   });
   if (map.variants) {
     document.getElementById('mr-map-variants').classList.remove('d-none');
     map.variants.forEach(variant => {
       var variantEl = document.createElement('li');
-      variantEl.innerHTML = variant.name;
+      var variantElLink = document.createElement('a');
+      variantElLink.innerHTML = variant.name;
+      variantElLink.setAttribute('data-target', variant.internal_id);
+      variantElLink.href = 'javascript:void(0)';
+      variantEl.appendChild(variantElLink);
 
       document.querySelectorAll('[data-populate="variants"]').forEach(node => {
         node.appendChild(variantEl.cloneNode(true));
@@ -180,7 +196,7 @@ function populateDownloadModal(id) {
 
     const variantInfo = `The following variant of ${map.name} is bundled with this map:`;
     const variantInfoPlural = `The following variants of ${map.name} are bundled with this map:`;
-    populateElementContent("variant-info", map.variants.length > 1 ? variantInfoPlural : variantInfo);
+    populateElementContent('variant-info', map.variants.length > 1 ? variantInfoPlural : variantInfo);
   };
 
   document.querySelectorAll('[data-populate="license-name"]').forEach(node => {
@@ -193,10 +209,10 @@ function populateDownloadModal(id) {
       node.appendChild(linkEl.cloneNode(true));
     };
   });
-  populateElementContent("license-description", license.description);
+  populateElementContent('license-description', license.description);
 
   document.querySelectorAll('[data-populate="license-permissions"]').forEach(node => {
-    node.innerHTML = "";
+    node.innerHTML = '';
   });
   license.permissions.forEach(attr => {
     var attrEl = document.createElement('div');
@@ -211,7 +227,7 @@ function populateDownloadModal(id) {
   });
 
   document.querySelectorAll('[data-populate="license-restrictions"]').forEach(node => {
-    node.innerHTML = "";
+    node.innerHTML = '';
   });
   license.restrictions.forEach(attr => {
     var attrEl = document.createElement('div');
@@ -235,14 +251,14 @@ function populateDownloadModal(id) {
     };
   });
 
-  populateElementContent("maintainer", (maintainer ? maintainer.name : map.source.maintainer));
-  populateElementAttribute("maintainer_url", "href", `https://github.com/${map.source.maintainer}/${map.source.repository}`);
-  populateElementAttribute("maintainer-image", "src", `https://github.com/${map.source.maintainer}.png`);
-  populateElementContent("maintainer-description", (maintainer ? maintainer.description : ""));
-  populateElementAttribute("github-url", "href", map.source.github_url);
-  populateElementAttribute("xml-url", "href", map.source.github_url + "/map.xml");
-  populateElementAttribute("image-url", "src", map.source.image_url);
-  populateElementAttribute("map-id", "data-id", map.id);
+  populateElementContent('maintainer', (maintainer ? maintainer.name : map.source.maintainer));
+  populateElementAttribute('maintainer_url', 'href', `https://github.com/${map.source.maintainer}/${map.source.repository}`);
+  populateElementAttribute('maintainer-image', 'src', `https://github.com/${map.source.maintainer}.png`);
+  populateElementContent('maintainer-description', (maintainer ? maintainer.description : ''));
+  populateElementAttribute('github-url', 'href', map.source.github_url);
+  populateElementAttribute('xml-url', 'href', map.source.github_url + '/map.xml');
+  populateElementAttribute('image-url', 'src', map.source.image_url);
+  populateElementAttribute('map-id', 'data-id', map.id);
 
   $('#map-download-display [data-toggle="tooltip"]').tooltip('enable');
 }
