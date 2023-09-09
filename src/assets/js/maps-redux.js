@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.querySelectorAll('.pagination').forEach(pag => {
     pag.addEventListener('click', e => {
       initDownloadEventListeners();
+      document.getElementById('searchable-collection').scrollIntoView();
     });
   });
 
