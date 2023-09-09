@@ -12,10 +12,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     page: 120,
     pagination: [
       {
-        paginationClass: 'pagination-upper'
+        paginationClass: 'pagination-upper',
+        left: 1,
+        right: 1
       },
       {
-        paginationClass: 'pagination-lower'
+        paginationClass: 'pagination-lower',
+        left: 1,
+        right: 1
       }
     ]
   });
