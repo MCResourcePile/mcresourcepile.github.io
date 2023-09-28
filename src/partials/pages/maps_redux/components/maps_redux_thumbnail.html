@@ -24,6 +24,11 @@
           {{/if}}
         {{/with}}
       {{/if}}
+      {{#if source.pools}}
+        {{#each source.pools}}
+          <a class="mr-tag" href="https://oc.tc/play/" target="_blank" style="background-color:#a2d0ec; color:#1c1c1c;" title="Play this map in Overcast Community's {{lowercase this}} pool" data-toggle="tooltip"><i class="fas fa-shield-alt"></i> {{lowercase this}}</a>
+        {{/each}}
+      {{/if}}
       {{#if tags}}
         {{#each tags}}
           <span class="mr-tag">{{this}}</span>
@@ -64,7 +69,7 @@
       </a>
     </div>
     <div class="hidden">
-      <div class="tags">{{#if tags}}{{#each tags}}{{this}},{{/each}}{{/if}},proto-{{proto}},{{source.maintainer}},{{source.repository}},{{source.license}}</div>
+      <div class="tags">{{#if tags}}{{#each tags}}{{this}},{{/each}}{{/if}},proto-{{proto}},{{source.maintainer}},{{source.repository}},{{source.license}}{{#if source.pools}}{{#each source.pools}},${{lowercase this}}{{/each}}{{/if}}</div>
       <div class="users">{{#if authors}}{{#each authors}}{{#if uuid}}{{#if (property @root.uuids (formatUUID uuid 'strip'))}}{{property @root.uuids (formatUUID uuid 'strip')}}{{/if}}{{else}}{{#if username}}{{username}}{{/if}}{{/if}},{{/each}}{{/if}}</div>
       <div class="uuids">{{#if authors}}{{#each authors}}{{#if uuid}}{{uuid}},{{/if}}{{/each}}{{/if}}</div>
       <div class="s-title">{{name}}</div>
