@@ -113,7 +113,7 @@ function populateDownloadModal(id) {
     var username = hasUuid ? USER_UUIDS[author.uuid.replaceAll('-', '')] : author.username;
 
     var avatarEl = document.createElement('img');
-    avatarEl.setAttribute('src', 'https://crafatar.com/avatars/' + (hasUuid ? author.uuid : '606e2ff0ed7748429d6ce1d3321c7838'));
+    avatarEl.setAttribute('src', 'https://mc-heads.net/avatar/' + (hasUuid ? author.uuid : '606e2ff0ed7748429d6ce1d3321c7838'));
 
     var usernameEl = document.createElement('span');
     usernameEl.innerHTML = username ? username : '';
