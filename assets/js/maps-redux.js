@@ -106,7 +106,7 @@ function populateDownloadModal(id) {
   populateElementContent('objective', map.objective);
 
   document.querySelectorAll('[data-populate="authors"]').forEach(node => {
-    node.innerHTML = 'Created by ';
+    node.innerHTML = map.hasOwnProperty('created') ? `Created ${new Date(map.created).toLocaleString('default', {month: 'long', year: 'numeric'})} by ` : 'Created by ';
   });
   map.authors.forEach(author => {
     var hasUuid = author.hasOwnProperty('uuid');

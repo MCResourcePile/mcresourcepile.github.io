@@ -159,6 +159,22 @@ $(function() {
     })
 })
 
+// will eventually replace all this other jQuery
+document.addEventListener('DOMContentLoaded', async () => {
+  document.querySelectorAll('[data-action="filter-custom"]').forEach(el => {
+    el.addEventListener('click', e => {
+      console.log(el.getAttribute('filters'))
+      filters = el.getAttribute('filters') ? el.getAttribute('filters').split(',') || [] : [];
+      options.match = el.getAttribute('match') || 'all';
+      options.invert = el.getAttribute('invert') == 'true' || false;
+      options.highest_version = el.getAttribute('highest-version') == 'true' || true;
+
+      updateUrl();
+      parseUrl();
+    });
+  });
+});
+
 function setupSearch(config, type) {
     searchable = config
     searchable_type = type
@@ -303,6 +319,7 @@ function countMatching() {
 function updateUrl() {
     var string = "?"
     var search = $('#search').val()
+    filters = [...new Set(filters)]
     var filterArr = encodeURIComponent(filters)
     var authorFilterArr = encodeURIComponent(filtered_authors)
     if (search || filters.length > 0 || filtered_authors.length > 0) {
@@ -334,6 +351,7 @@ function parseUrl() {
     var highest_version = (getUrlParam('highest_version') == 'true')
     if (urlFilters || searchInput || urlAuthorFilters || match || invert || highest_version) {
         if (urlFilters) {
+            $('.filter.active').removeClass('active')
             urlFilters = urlFilters.split(',')
             for (i = 0; i < urlFilters.length; i++) {
                 $('.filter:contains("' + urlFilters[i] + '")').filter(function() {
