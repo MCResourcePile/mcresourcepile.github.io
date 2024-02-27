@@ -25,7 +25,7 @@
                     {{else}}
                     {{add @index 1}}.
                     {{/eq}}
-                    <img class="bow-player-avatar" src="https://mc-heads.net/avatar/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=30&default=MHF_Steve&overlay">
+                    <img class="bow-player-avatar" src="https://mc-heads.net/avatar/{{#if uuid}}{{uuid}}{{else}}{{username}}{{/if}}?size=30&default=MHF_Steve">
                     <span class="bow-player click-search" data-query="{{#if uuid}}{{formatUUID uuid 'strip'}}{{else}}{{username}}{{/if}}">{{#if (property @root.uuids uuid)}}{{property @root.uuids uuid}}{{else}}{{username}}{{/if}}</span>
                     with a distance of <b>{{distance}}{{#if void}}<span title="Indirect kill" data-toggle="tooltip" data-placement="top">*</span>{{/if}}</b> blocks
                     {{#if screenshot}}
