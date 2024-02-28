@@ -132,7 +132,7 @@ function populateDownloadModal(map, repo, branch, path, env, downloads, sponsor)
             $('<span/>', {'class': 'author-name-avatar'}).append([
                 $('<img>', {
                     'class': 'map-author-avatar',
-                    'src': 'https://mc-heads.net/avatar/' + author.uuid + '?size=16&default=MHF_Steve'
+                    'src': 'https://mc-heads.net/avatar/' + author.uuid
                 }),
                 $('<span/>', {
                     'class': 'author-filter-trigger',
