@@ -5,7 +5,7 @@
     {{#unless hidden}}
     <post class="post-thumbnail{{#if important}} post-thumbnail-important{{/if}}">
         <div class="post-header id-anchor" id="{{id}}" >{{#if important}}<i class="fa fa-bookmark" aria-hidden="true"></i> {{/if}}<a href="#{{id}}" class="post-header">{{#if heading}}{{heading}}{{else}}Untitiled announcement{{/if}}</a></div>
-        <div class="post-details">Posted by <img class="post-author-avatar" src="https://mc-heads.net/avatar/{{#if author}}{{author}}{{else}}d3c47f6f-ae3a-45c1-ad7c-e2c762b03ae6{{/if}}?size=12&overlay"> {{#if author}}<a href="https://mcresourcepile.github.io/staff" id="author-name">{{author}}</a>{{else}}<span class="position-manager">ResourcePile</span>{{/if}} {{#if posted_on}}on {{posted_on}}{{/if}}</div>
+        <div class="post-details">Posted by <img class="post-author-avatar" src="https://mc-heads.net/avatar/{{#if author}}{{author}}{{else}}d3c47f6f-ae3a-45c1-ad7c-e2c762b03ae6{{/if}}" width="12px"> {{#if author}}<a href="https://mcresourcepile.github.io/staff" id="author-name">{{author}}</a>{{else}}<span class="position-manager">ResourcePile</span>{{/if}} {{#if posted_on}}on {{posted_on}}{{/if}}</div>
         <div class="post-body">{{#markdown}}{{> ( lookup . 'id')}}{{/markdown}}</div>
         {{#if buttons}}
         <div class="post-links">
