@@ -14,16 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: checkout name fetcher
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: MCResourcePile/name-fetcher
           path: "./scripts/name-fetcher"
 
       - name: setup python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11.1'
 
@@ -52,9 +52,9 @@ jobs:
           commit_author: MCResourcePile <MCResourcePile@gmail.com>
 
       - name: setup node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - name: setup ruby
         uses: ruby/setup-ruby@v1
@@ -71,12 +71,11 @@ jobs:
 
       - name: deploy to github pages
         if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_BRANCH: source
-          BRANCH: master
-          FOLDER: out
-          CLEAN: true
-          GIT_CONFIG_EMAIL: MCResourcePile@gmail.com
-          COMMIT_MESSAGE: Deploy to GitHub Pages - ${{ github.sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          folder: out
+          clean: true
+          git-config-email: MCResourcePile@gmail.com
+          commit-message: Deploy to GitHub Pages - ${{ github.sha }}

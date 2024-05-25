@@ -20,7 +20,7 @@ jobs:
           path: "./scripts/name-fetcher"
 
       - name: setup python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11.1'
 
@@ -42,8 +42,3 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           message: Update global UUID data file
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: uuids.json
-          path: ./src/data/uuids.json
