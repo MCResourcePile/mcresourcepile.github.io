@@ -71,7 +71,7 @@ jobs:
 
       - name: deploy to github pages
         if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@4
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
