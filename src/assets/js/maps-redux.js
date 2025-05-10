@@ -204,6 +204,28 @@ function populateDownloadModal(id) {
     populateElementContent('variant-info', map.variants.length > 1 ? variantInfoPlural : variantInfo);
   };
 
+  document.getElementById('mr-version-card').classList.add('d-none');
+  document.querySelectorAll('[data-populate="version-description"]').forEach(node => {
+    node.innerHTML = '';
+  });
+  if (map.server_version) {
+    document.getElementById('mr-version-card').classList.remove('d-none');
+    var versionDesc = '';
+    if (map.server_version.min && !map.server_version.max) {
+      versionDesc = `This map is designed for Minecraft ${map.server_version.min} and newer and will not be available on older server versions`;
+    }
+    if (!map.server_version.min && map.server_version.max) {
+      versionDesc = `This map is designed for Minecraft ${map.server_version.max} and older and will not be available on newer server versions`;
+    }
+    if (map.server_version.min && map.server_version.max) {
+      versionDesc = `This map is designed for Minecraft ${map.server_version.min} to ${map.server_version.max} and will not be available on other server versions`;
+    }
+
+    document.querySelectorAll('[data-populate="version-description"]').forEach(node => {
+      node.innerHTML = versionDesc;
+    });
+  }
+
   document.querySelectorAll('[data-populate="license-name"]').forEach(node => {
     node.innerHTML = license.name;
 

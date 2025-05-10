@@ -27,6 +27,12 @@
       {{#and created (isNewMap created)}}
         <a class="mr-tag" style="background-color:#ebff91; color:#1c1c1c;" ><i class="fas fa-star-of-life"></i> new</a>
       {{/and}}
+      {{#and server_version server_version.min}}
+        <a class="mr-tag" style="background-color:#eab59b; color:#1c1c1c;" title="Minimum supported Minecraft version" data-toggle="tooltip">{{server_version.min}}+</a>
+      {{/and}}
+      {{#and server_version server_version.max}}
+        <a class="mr-tag" style="background-color:#d28383; color:#1c1c1c;" title="Maximum supported Minecraft version" data-toggle="tooltip">&gt;={{server_version.max}}</a>
+      {{/and}}
       {{#if source.pools}}
         {{#each source.pools}}
           <a class="mr-tag" href="https://oc.tc/play/" target="_blank" style="background-color:#a2d0ec; color:#1c1c1c;" title="Play this map in Overcast Community's {{lowercase this}} pool" data-toggle="tooltip"><i class="fas fa-shield-alt"></i> {{lowercase this}}</a>
