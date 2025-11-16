@@ -2,7 +2,7 @@
     <div class="center">
         <span id="searchable-count"></span>
     </div>
-    <input type="text" id="search" class="fuzzy-search form-control record-search-box" placeholder="Search {{@root.settings.maps.advanced_menu.placeholder}}">
+    <input type="text" id="search" class="{{#if @root.settings.maps.advanced_menu.fuzzy_search}}fuzzy-search {{/if}}form-control record-search-box" placeholder="Search {{@root.settings.maps.advanced_menu.placeholder}}">
     <div class="filters">
         <b>Filters</b>
         <small>Use filters to narrow your query when searching for specific {{@root.settings.maps.advanced_menu.placeholder}}.</small>

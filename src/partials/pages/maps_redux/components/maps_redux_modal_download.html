@@ -21,10 +21,22 @@
               <h6>Tags</h6>
               <div class="mr-tags mr-tags-top" data-populate="tags"></div>
             </div>
+            <div class="col-12 col-lg-6 px-0 pr-lg-3 mt-1" id="mr-map-variants">
+              <h6>Map Variants</h6>
+              <p data-populate="variant-info"></p>
+              <ul data-populate="variants" class="mr-variants" style="font-size:1rem"></ul>
+            </div>
             <div class="col-12 col-lg-6 px-0 pr-lg-3 mt-1" id="mr-map-includes">
               <h6>XML Includes</h6>
               <p>This map has external XML dependencies that must be included on your PGM server in order to be loaded.</p>
               <div data-populate="includes" class="mr-includes"></div>
+            </div>
+          </div>
+          <div class="modal-inner-card mr-version row mb-3 text-center" id="mr-version-card">
+            <div class="col-12">
+              <i class="fas fa-triangle-exclamation"></i>
+              <span class="mr-license-description" data-populate="version-description"></span>
+              <i class="fas fa-triangle-exclamation"></i>
             </div>
           </div>
           <div class="modal-inner-card mr-license row mb-3">

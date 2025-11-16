@@ -17,9 +17,9 @@ displayUserInfo();
 displayRates();
 applyUserPreferences();
 hideAlerts();
-    
+
 // check is the page is being loaded in development directory
-var is_development = /\/(out|src)\//i.test(window.location.href);
+var is_development = !window.location.href.includes("mcresourcepile.github.io");
 
 // the current page directory
 var current_path = window.location.pathname.replace('.html', '');
@@ -55,7 +55,7 @@ function getUrlParam(param) {
     return param;
 }
 
-/** 
+/**
  * Create a new or update an existing cookie.
  *
  * @param {string} cname  The cookie name
@@ -68,12 +68,12 @@ function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-/** 
+/**
  * Get the value of a saved cookie. Returns an empty string if the cookie
  * could not be found.
  *
  * @param  {string} cname The cookie name
- * @return {string}       The value of the cookie 
+ * @return {string}       The value of the cookie
  */
 function getCookie(cname) {
     var name = cname + "=";
@@ -91,7 +91,7 @@ function getCookie(cname) {
     return "";
 }
 
-/** 
+/**
  * Displays current User information on the page.
  * Username is inserted in elements with the '.user-username' class.
  * Avatar is placed in images with the '.user-avatar' class.
@@ -101,7 +101,7 @@ function displayUserInfo() {
     $('img.user-avatar').attr('src', user._avatar);
 }
 
-/** 
+/**
  * Displays current User API rate limits on the page.
  * Limit is inserted in elements with the '.user-rate-limit' class.
  * Remaining is inserted in elements with the '.user-rate-remaining' class.
@@ -142,7 +142,7 @@ function hideAlerts() {
             $(this).hide();
         }
     });
-    
+
     // we want to filter out any alerts that no longer exist
     // so that we aren't storing trash data forever
     var inactiveAlerts = user._hidden_alerts.filter(x => activeAlerts.indexOf(x) === -1);

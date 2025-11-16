@@ -2,7 +2,7 @@ name: fetch-pgm-maps
 
 on:
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "0 6 * * 1"
 
   workflow_dispatch:
 
@@ -11,15 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: checkout map fetcher
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: MCResourcePile/map-fetcher
           path: "./map-fetcher"
@@ -32,9 +32,9 @@ jobs:
       - name: execute script
         run: |
           cd ./map-fetcher
-          node src/index.js --output="../src/data/maps/pgm.json"
+          node src/index.js --source="../src/data/maps/pgm.json"
 
-      - name: remove map fetcher
+      - name: remove temp files
         run: |
           rm -r ./map-fetcher
 
@@ -44,12 +44,7 @@ jobs:
         with:
           message: Update PGM maps data file
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: pgm.json
-          path: ./src/data/maps/pgm.json
-
       - name: trigger page rebuild
-        uses: peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v3
         with:
           event-type: run_build

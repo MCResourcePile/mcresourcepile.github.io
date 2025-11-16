@@ -30,7 +30,7 @@
                             <div class="sub-title">
                                 {{#if tags}}
                                 {{#each tags}}
-                                <li class="game-tag map-tag s-tag">{{#if (lookup @root.settings.maps.tags this)}}{{lookup (lookup @root.settings.maps.tags this) 'display'}}<span class="hidden">{{lookup (lookup @root.settings.maps.tags this) 'keywords'}}</span>{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}</li>
+                                <li class="game-tag map-tag s-tag">{{#if (lookup @root.settings.maps.tags_legacy this)}}{{lookup (lookup @root.settings.maps.tags_legacy this) 'display'}}<span class="hidden">{{lookup (lookup @root.settings.maps.tags_legacy this) 'keywords'}}</span>{{else}}{{capitalize this}}{{/if}}{{#unless @last}},{{/unless}}</li>
                                 {{/each}}
                                 {{/if}}
                             </div>
@@ -73,7 +73,7 @@ $(document).ready(function(){
       slidesToShow: 4,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 3000,
       variableWidth: true,
       appendArrows: '#collection-buttons',
       responsive: [

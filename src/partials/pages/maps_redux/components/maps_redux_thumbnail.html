@@ -1,8 +1,11 @@
-<div class="mr-thumbnail">
+<div class="mr-thumbnail" data-map-id="{{id}}" {{#and created (isNewMap created)}}style="box-shadow: 0 0 4px 1px #ebff91;"{{/and}}>
   <div class="mr-header">
     <img {{#unless disableLazy}}data-{{/unless}}src="{{source.image_url}}" class="mr-header-image lazy" {{#if disableLazy}}onerror="this.src='/assets/img/404.png'"{{/if}}/>
     <div class="mr-header-banner">
       <div class="mr-header-title">
+        {{#if variants}}
+        <i class="fa fa-layer-group mr-header-variants text-warning" data-toggle="tooltip" title="This map includes {{length variants}} variant{{#gt (length variants) 1}}s{{/gt}}"></i>
+        {{/if}}
         {{name}}
         <span class="mr-header-title-suffix">{{#if version}}v{{version}}{{/if}}</span>
       </div>
@@ -21,6 +24,20 @@
           {{/if}}
         {{/with}}
       {{/if}}
+      {{#and created (isNewMap created)}}
+        <a class="mr-tag" style="background-color:#ebff91; color:#1c1c1c;" ><i class="fas fa-star-of-life"></i> new</a>
+      {{/and}}
+      {{#and server_version server_version.min}}
+        <a class="mr-tag" style="background-color:#eab59b; color:#1c1c1c;" title="Minimum supported Minecraft version" data-toggle="tooltip">{{server_version.min}}+</a>
+      {{/and}}
+      {{#and server_version server_version.max}}
+        <a class="mr-tag" style="background-color:#d28383; color:#1c1c1c;" title="Maximum supported Minecraft version" data-toggle="tooltip">&gt;={{server_version.max}}</a>
+      {{/and}}
+      {{#if source.pools}}
+        {{#each source.pools}}
+          <a class="mr-tag" href="https://oc.tc/play/" target="_blank" style="background-color:#a2d0ec; color:#1c1c1c;" title="Play this map in Overcast Community's {{lowercase this}} pool" data-toggle="tooltip"><i class="fas fa-shield-alt"></i> {{lowercase this}}</a>
+        {{/each}}
+      {{/if}}
       {{#if tags}}
         {{#each tags}}
           <span class="mr-tag">{{this}}</span>
@@ -35,7 +52,7 @@
       {{#each authors}}
         {{#lt @index 2}}
           <div class="mr-author">
-            <img src="https://crafatar.com/avatars/{{#if uuid}}{{uuid}}{{else}}606e2ff0ed7748429d6ce1d3321c7838{{/if}}"/>
+            <img src="https://mc-heads.net/avatar/{{#if uuid}}{{uuid}}{{else}}606e2ff0ed7748429d6ce1d3321c7838{{/if}}"/>
             <span>
               {{#if uuid}}
                 {{#if (property @root.uuids (formatUUID uuid 'strip'))}}
@@ -61,7 +78,7 @@
       </a>
     </div>
     <div class="hidden">
-      <div class="tags">{{#if tags}}{{#each tags}}{{this}},{{/each}}{{/if}},proto-{{proto}},{{source.maintainer}},{{source.repository}},{{source.license}}</div>
+      <div class="tags">{{#if tags}}{{#each tags}}{{this}},{{/each}}{{/if}},proto-{{proto}},{{source.maintainer}},{{source.repository}},{{source.license}}{{#and created (isNewMap created)}},new{{/and}}{{#if source.pools}}{{#each source.pools}},${{lowercase this}}{{/each}}{{/if}}</div>
       <div class="users">{{#if authors}}{{#each authors}}{{#if uuid}}{{#if (property @root.uuids (formatUUID uuid 'strip'))}}{{property @root.uuids (formatUUID uuid 'strip')}}{{/if}}{{else}}{{#if username}}{{username}}{{/if}}{{/if}},{{/each}}{{/if}}</div>
       <div class="uuids">{{#if authors}}{{#each authors}}{{#if uuid}}{{uuid}},{{/if}}{{/each}}{{/if}}</div>
       <div class="s-title">{{name}}</div>

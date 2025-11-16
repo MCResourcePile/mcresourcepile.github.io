@@ -307,7 +307,6 @@
 
   h6 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
     font-size: 0.75rem;
     margin: 0;
   }
@@ -325,8 +324,6 @@
     position: relative;
     border-radius: 0.25rem;
     width: 100%;
-    height: 100%;
-    aspect-ratio: 145 / 123;
     background-color: #ededed;
   }
 
@@ -410,6 +407,19 @@
         color: #0d6efd;
       }
     }
+  }
+}
+
+.mr-version {
+  background-color: #fff3cd !important;
+  border-color: rgba(208, 163, 131, 0.175) !important;
+  font-size: 1rem !important;
+}
+
+[data-theme="dark"] {
+  .mr-version {
+    background-color: #332701 !important;
+    border-color: rgba(208, 163, 131, 0.175) !important;
   }
 }
 
@@ -587,6 +597,8 @@
 
       .mr-featured-body {
         .mr-featured-maps {
+          padding-right: 3px;
+
           .mr-thumbnail {
           }
         }
