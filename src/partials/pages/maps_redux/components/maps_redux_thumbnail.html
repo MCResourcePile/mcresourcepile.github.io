@@ -28,6 +28,9 @@
         <a class="mr-tag" style="background-color:#ebff91; color:#1c1c1c;" ><i class="fas fa-star-of-life"></i> new</a>
       {{/and}}
       {{#and server_version server_version.min}}
+        {{#if (isModern server_version)}}
+          <a class="mr-tag" style="background-color:#e6c6b6; color:#1c1c1c;" title="Designed for modern Minecraft versions"><i class="fas fa-crown"></i> modern</a>
+        {{/if}}
         <a class="mr-tag" style="background-color:#eab59b; color:#1c1c1c;" title="Minimum supported Minecraft version" data-toggle="tooltip">{{server_version.min}}+</a>
       {{/and}}
       {{#and server_version server_version.max}}
@@ -76,9 +79,12 @@
       <a href="{{source.github_url}}/map.xml" target="_blank" class="btn btn-primary" role="button" data-toggle="download-modal">
         <i class="fa fa-code"/>
       </a>
+      <a href="/maps/viewer?name={{encodeURI name}}&store={{source.maintainer}}%2F{{source.repository}}%2F{{encodeURI source.path}}{{#eq source.world_path ''}}%2Fdefault{{else}}{{replace source.world_path '/' '%2F'}}{{/eq}}" target="_blank" class="btn btn-primary" role="button">
+        <i class="fa fa-mountain-sun"/>
+      </a>
     </div>
     <div class="hidden">
-      <div class="tags">{{#if tags}}{{#each tags}}{{this}},{{/each}}{{/if}},proto-{{proto}},{{source.maintainer}},{{source.repository}},{{source.license}}{{#and created (isNewMap created)}},new{{/and}}{{#if source.pools}}{{#each source.pools}},${{lowercase this}}{{/each}}{{/if}}</div>
+      <div class="tags">{{#if tags}}{{#each tags}}{{this}},{{/each}}{{/if}},proto-{{proto}},{{source.maintainer}},{{source.repository}},{{source.license}}{{#and created (isNewMap created)}},new{{/and}}{{#if source.pools}}{{#each source.pools}},${{lowercase this}}{{/each}}{{/if}}{{#and server_version server_version.min}}{{#if (isModern server_version)}},modern{{/if}}{{/and}}</div>
       <div class="users">{{#if authors}}{{#each authors}}{{#if uuid}}{{#if (property @root.uuids (formatUUID uuid 'strip'))}}{{property @root.uuids (formatUUID uuid 'strip')}}{{/if}}{{else}}{{#if username}}{{username}}{{/if}}{{/if}},{{/each}}{{/if}}</div>
       <div class="uuids">{{#if authors}}{{#each authors}}{{#if uuid}}{{uuid}},{{/if}}{{/each}}{{/if}}</div>
       <div class="s-title">{{name}}</div>

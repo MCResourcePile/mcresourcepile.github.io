@@ -81,7 +81,7 @@
                                 <option value="true">Enabled</option>
                                 <option value="false">Disabled</option>
                             </select>
-                            <small id="preference-show-map-stats-help" class="form-text">Display additional map download statistics for collection maps.</small>
+                            <small id="preference-show-map-stats-help" class="form-text">Display additional map download statistics for collection maps. Only applies to legacy map collections.</small>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -101,7 +101,7 @@
                                 <option value="true">Enabled</option>
                                 <option value="false">Disabled</option>
                             </select>
-                            <small id="preference-show-map-suggestions-help" class="form-text">Suggest similar maps to the ones just downloaded.</small>
+                            <small id="preference-show-map-suggestions-help" class="form-text">Suggest similar maps to the ones just downloaded. Only applies to legacy map collections.</small>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -113,6 +113,16 @@
                                 <option value="only-banners">Only Banners</option>
                             </select>
                             <small id="preference-tm-banners-display-help" class="form-text">Choose what should be displayed for tournament banners.</small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="preference-model-textures" class="col-lg-3 control-label">Map Overview Textures</label>
+                        <div class="col-lg-9">
+                            <select id="preference-model-textures" name="model_textures" class="custom-select  preference" aria-describedby="preference-model-textures-help">
+                                <option value="true">Enabled</option>
+                                <option value="false">Disabled</option>
+                            </select>
+                            <small id="preference-model-textures-help" class="form-text">Download textures when viewing map overview models.</small>
                         </div>
                     </div>
                 </form>
