@@ -13,9 +13,7 @@ window.addEventListener('load', async () => {
   let modelAssets = [];
   let textureCount = 0;
   
-  console.log(user._preferences.model_textures);
-  
-  if (user._preferences.model_textures === true) {
+  if (!user._preferences.hasOwnProperty("model_textures") || user._preferences.model_textures === true) {
     const getTextureList = async () => {
       try {
         let encodedPath = mapPath.replaceAll(' ', '%20');
