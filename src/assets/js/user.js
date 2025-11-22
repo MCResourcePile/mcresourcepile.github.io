@@ -19,7 +19,8 @@ class User {
             show_map_stats: true,
             show_map_images: true,
             show_map_suggestions: true,
-            tm_banners_display: "all"
+            tm_banners_display: "all",
+            model_textures: true
         };
         this._hidden_alerts = [];
         // check if pre-existing User data exists
@@ -36,7 +37,7 @@ class User {
      * @return {boolean} Success or fail response
      */
     setPreferences(p) {
-        const properties = ["theme", "show_map_stats", "show_map_images", "show_map_suggestions", "tm_banners_display"]
+        const properties = ["theme", "show_map_stats", "show_map_images", "show_map_suggestions", "tm_banners_display", "model_textures"]
         try {
             for (var key in p) {
                 if (properties.includes(key)) {
@@ -64,7 +65,8 @@ class User {
             show_map_stats: true,
             show_map_images: true,
             show_map_suggestions: true,
-            tm_banners_display: "all"
+            tm_banners_display: "all",
+            model_textures: true
         };
         console.log('Successfully reset User site preferences');
         return true;
@@ -225,22 +227,8 @@ class User {
      * @return {boolean} Success or fail response
      */
     reset() {
-        this._token = "";
-        this._username = "Guest";
-        this._avatar = "https://avatars0.githubusercontent.com/u/24795789?v=4";
-        this._rate = {
-            limit: 0,
-            remaining: 0,
-            reset: 0
-        };
-        this._preferences = {
-            theme: "automatic",
-            show_map_stats: true,
-            show_map_images: true,
-            show_map_suggestions: true,
-            tm_banners_display: "all"
-        };
-        return this.save();
+        this.resetToken();
+        this.resetPreferences();
     }
 
     /** 

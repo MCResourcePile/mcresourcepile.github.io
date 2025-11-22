@@ -1,3 +1,11 @@
 {{#> full_width}}
-<div id="viewer" style="width: 100wv; height: 100vh;"></div>
+<div id="viewer">
+    <div id="viewer-progress">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            <div id="viewer-progress-bar" class="progress-bar bg-success" style="width: 0%"></div>
+            <div id="viewer-progress-title" class="progress-bar-title"></div>
+        </div>
+    </div>
+    <div class="viewer-map-name" data-populate="name"></div>
+</div>
 {{/full_width}}
