@@ -102,8 +102,76 @@
         margin: 0 4px;
         vertical-align: -3px;
     }
-    
+
     &:not(:last-child)::after {
         content: ",";
     }
+}
+
+#viewer {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(122, 168, 255);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & > div {
+    color: #36454F;
+    font-size: 1.2rem;
+
+    &:not([class]) {
+        width: 100%;
+    }
+  }
+
+  .viewer-map-name {
+    position: absolute;
+    bottom: 10px;
+    padding: 0 12px;
+    border-radius: 4px;
+    background-color: rgba(122, 168, 255, 0.8);
+    color: #1b1c1d;
+    font-weight: bold;
+    z-index: 1;
+  }
+
+
+  #viewer-progress {
+    width: 100%;
+    padding: 0 20vw;
+
+    .progress {
+      position: relative;
+      height: 20px;
+      background-color: #fff;
+      z-index: 1;
+
+      .progress-bar-title {
+          position: absolute;
+          text-align: center;
+          line-height: 20px;
+          overflow: hidden;
+          color: #1b1c1d;
+          right: 0;
+          left: 0;
+          top: 0;
+      }
+    }
+  }
+
+  canvas {
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+
+    &.grabbing {
+      cursor: grabbing;
+      cursor: -moz-grabbing;
+      cursor: -webkit-grabbing;
+    }
+  }
 }
