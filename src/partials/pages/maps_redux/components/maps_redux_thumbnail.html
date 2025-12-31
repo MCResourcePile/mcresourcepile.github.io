@@ -13,7 +13,7 @@
         <a href="{{source.github_url}}" target="_blank">{{source.maintainer}}/{{source.repository}}</a>
       </div>
       <a href="https://github.com/{{source.maintainer}}" target="_blank">
-        <img src="https://github.com/{{source.maintainer}}.png?size=24" class="mr-header-maintainer-logo" data-toggle="tooltip" title="Maintained by {{properName source.maintainer}}"/>
+        <img data-src="https://github.com/{{source.maintainer}}.png?size=24" class="mr-header-maintainer-logo lazy" data-toggle="tooltip" title="Maintained by {{properName source.maintainer}}"/>
       </a>
     </div>
     <div class="mr-tags">
@@ -55,7 +55,7 @@
       {{#each authors}}
         {{#lt @index 2}}
           <div class="mr-author">
-            <img src="https://mc-heads.net/avatar/{{#if uuid}}{{uuid}}{{else}}606e2ff0ed7748429d6ce1d3321c7838{{/if}}"/>
+            <img data-src="https://mc-heads.net/avatar/{{#if uuid}}{{uuid}}{{else}}606e2ff0ed7748429d6ce1d3321c7838{{/if}}" class="lazy"/>
             <span>
               {{#if uuid}}
                 {{#if (property @root.uuids (formatUUID uuid 'strip'))}}
