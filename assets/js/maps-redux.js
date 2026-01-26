@@ -283,7 +283,8 @@ function populateDownloadModal(id) {
   populateElementAttribute('maintainer-image', 'src', `https://github.com/${map.source.maintainer}.png`);
   populateElementContent('maintainer-description', (maintainer ? maintainer.description : ''));
   populateElementAttribute('github-url', 'href', map.source.github_url);
-  populateElementAttribute('xml-url', 'href', map.source.github_url + '/map.xml');
+  populateElementAttribute('xml-url', 'href', `${map.source.github_url}/map.xml`);
+  populateElementAttribute('overview-url', 'href', `/maps/viewer?name=${map.name}&store=${map.source.maintainer}/${map.source.repository}/${map.source.path}${map.source.world_path === "" ? '/default' : map.source.world_path}`);
   populateElementAttribute('image-url', 'src', map.source.image_url);
   populateElementAttribute('map-id', 'data-id', map.id);
 
