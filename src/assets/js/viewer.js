@@ -20,9 +20,9 @@ window.addEventListener('load', async () => {
         let call = await fetch(`${baseUrl}${encodedPath}/minecraft.mtl`);
         if (!call.ok) throw new Error(`Response status: ${call.status}`);
         let res = await call.text();
-        let textures = res.match(/map_Kd\s+(.*)/g);
+        let textures = res.match(/map_(?:Kd|d)\s+(.*)/g);
         textures = textures.map((t) => {
-          return t.replace("map_Kd tex", "https://raw.githubusercontent.com/MCResourcePile/map-objects/refs/heads/main/textures");
+          return t.replace(/map_(?:Kd|d) tex/g, "https://raw.githubusercontent.com/MCResourcePile/map-objects/refs/heads/main/textures");
         });
         return textures;
       } catch (e) {
