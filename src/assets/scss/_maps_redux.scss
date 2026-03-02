@@ -83,6 +83,9 @@
 
   .mr-body {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 
     .mr-buttons {
       display: flex;
@@ -137,19 +140,20 @@
   gap: 4px;
   justify-content: center;
   margin-bottom: 4px;
+  height: 100%;
 
   .mr-author {
     position: relative;
     display: flex;
     flex-direction: row;
-    align-items: center;
 
     img {
       width: 18px;
       height: 18px;
       margin-right: .25rem;
-      image-rendering: pixelated;
+      margin-top: .25rem;
       border-radius: .25rem;
+      image-rendering: pixelated;
     }
 
     span {
