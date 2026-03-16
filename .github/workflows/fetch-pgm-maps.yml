@@ -11,15 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: setup node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: checkout map fetcher
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: MCResourcePile/map-fetcher
           path: "./map-fetcher"
@@ -45,6 +45,6 @@ jobs:
           message: Update PGM maps data file
 
       - name: trigger page rebuild
-        uses: peter-evans/repository-dispatch@v3
+        uses: peter-evans/repository-dispatch@v4
         with:
           event-type: run_build
