@@ -382,6 +382,66 @@
                 }
             },
             {
+                "name": "Alligator Charge",
+                "slug": "alligator_charge",
+                "id": "overcastcommunity_communitymaps_alligator_charge",
+                "proto": "1.5.1",
+                "version": "1.0.2",
+                "objective": "Swimmers must avoid being tagged by the Alligators",
+                "created": "2026-09-02",
+                "phase": "development",
+                "edition": "standard",
+                "variant": "default",
+                "authors": [
+                    {
+                        "uuid": "c25a6f7b-4c42-40da-8cd6-add53f0c84eb"
+                    }
+                ],
+                "contributors": [
+                    {
+                        "contribution": "Logo Inspiration",
+                        "username": "Grok Imagine"
+                    },
+                    {
+                        "contribution": "Swimming Speed Matrix",
+                        "username": "Gemini"
+                    },
+                    {
+                        "contribution": "XML",
+                        "username": "GrokBuild"
+                    }
+                ],
+                "teams": [
+                    {
+                        "name": "Alligators",
+                        "color": "dark_aqua",
+                        "size": "0"
+                    },
+                    {
+                        "name": "Swimmers",
+                        "color": "red",
+                        "size": "100"
+                    }
+                ],
+                "player_capacity": 100,
+                "tags": [
+                    "2teams",
+                    "blitz",
+                    "timelimit",
+                    "arcade"
+                ],
+                "source": {
+                    "maintainer": "OvercastCommunity",
+                    "repository": "CommunityMaps",
+                    "path": "arcade/infection/alligator_charge",
+                    "world_path": "",
+                    "license": "cc-by-sa",
+                    "license_scope": "repository",
+                    "github_url": "https://github.com/OvercastCommunity/CommunityMaps/tree/master/arcade/infection/alligator_charge",
+                    "image_url": "https://raw.githubusercontent.com/OvercastCommunity/CommunityMaps/master/arcade/infection/alligator_charge/map.png"
+                }
+            },
+            {
                 "name": "Infection: Amusement Park",
                 "slug": "infection_amusement_park",
                 "id": "overcastcommunity_communitymaps_infection_amusement_park",
@@ -1586,7 +1646,7 @@
                 "slug": "kings_conquest_dry_outpost",
                 "id": "overcastcommunity_communitymaps_kings_conquest_dry_outpost",
                 "proto": "1.5.0",
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "objective": "Kill the enemy team's King to win!",
                 "created": "2023-08-15",
                 "phase": "production",
@@ -24891,9 +24951,10 @@
                 "name": "Drastic Change II",
                 "slug": "drastic_change_ii",
                 "id": "overcastcommunity_communitymaps_drastic_change_ii",
-                "proto": "1.5.0",
-                "version": "1.0.0",
-                "objective": "Capture the enemies' wools!",
+                "proto": "1.5.1",
+                "version": "1.0.1",
+                "objective": "Capture the two enemy's wools!",
+                "created": "2026-06-24",
                 "phase": "development",
                 "edition": "standard",
                 "variant": "default",
@@ -24902,10 +24963,16 @@
                         "uuid": "fe3608b7-d105-4029-8800-34b3147065b6"
                     }
                 ],
+                "contributors": [
+                    {
+                        "uuid": "84d0f14a-1aae-447f-838c-8ac742667d67",
+                        "contribution": "Remastered XML"
+                    }
+                ],
                 "teams": [
                     {
                         "name": "Red",
-                        "color": "red",
+                        "color": "dark_red",
                         "size": "16"
                     },
                     {
@@ -39807,7 +39874,7 @@
                 "slug": "fire_on_the_mountain",
                 "id": "overcastcommunity_communitymaps_fire_on_the_mountain",
                 "proto": "1.5.1",
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "objective": "Destroy the enemy monument.",
                 "created": "2026-08-23",
                 "phase": "development",
@@ -60106,7 +60173,7 @@
                 "slug": "blue_lock",
                 "id": "overcastcommunity_communitymaps_blue_lock",
                 "proto": "1.5.1",
-                "version": "1.0.6",
+                "version": "1.0.7",
                 "objective": "Capture the flag at the end zone on the enemies' side!",
                 "created": "2026-02-15",
                 "phase": "production",
@@ -60137,7 +60204,8 @@
                     "2teams",
                     "flag",
                     "timelimit",
-                    "touchdown"
+                    "touchdown",
+                    "variants"
                 ],
                 "source": {
                     "maintainer": "OvercastCommunity",
@@ -60160,7 +60228,84 @@
                     "pools": [
                         "touchdown"
                     ]
-                }
+                },
+                "variants": [
+                    {
+                        "id": "fumble",
+                        "name": "Blue Lock: Fumble",
+                        "override_name": false,
+                        "world": false,
+                        "internal_id": "overcastcommunity_communitymaps_blue_lock_fumble"
+                    }
+                ]
+            },
+            {
+                "name": "Blue Lock: Fumble",
+                "slug": "blue_lock_fumble",
+                "id": "overcastcommunity_communitymaps_blue_lock_fumble",
+                "proto": "1.5.1",
+                "version": "1.0.7",
+                "objective": "Capture the flag at the end zone on the enemies' side!",
+                "created": "2026-02-15",
+                "phase": "development",
+                "edition": "standard",
+                "variant": "fumble",
+                "authors": [
+                    {
+                        "uuid": "38ef938a-7020-4c04-9d12-4875ed0598ca"
+                    },
+                    {
+                        "uuid": "f6f5dce8-a158-461d-b26d-dc8acfaeedd7"
+                    }
+                ],
+                "teams": [
+                    {
+                        "name": "Blue Lock",
+                        "color": "blue",
+                        "size": "11"
+                    },
+                    {
+                        "name": "U-20 Japan",
+                        "color": "red",
+                        "size": "11"
+                    }
+                ],
+                "player_capacity": 22,
+                "tags": [
+                    "2teams",
+                    "flag",
+                    "timelimit",
+                    "touchdown",
+                    "variants"
+                ],
+                "source": {
+                    "maintainer": "OvercastCommunity",
+                    "repository": "CommunityMaps",
+                    "path": "touchdown/blue_lock",
+                    "world_path": "",
+                    "license": "cc-by-sa",
+                    "license_scope": "repository",
+                    "github_url": "https://github.com/OvercastCommunity/CommunityMaps/tree/master/touchdown/blue_lock",
+                    "image_url": "https://raw.githubusercontent.com/OvercastCommunity/CommunityMaps/master/touchdown/blue_lock/map.png",
+                    "includes": {
+                        "root": "https://github.com/OvercastCommunity/PublicMaps/tree/main/includes",
+                        "files": [
+                            "touchdown",
+                            "void-death",
+                            "gapple-kill-reward",
+                            "sound-keys"
+                        ]
+                    }
+                },
+                "variants": [
+                    {
+                        "id": "default",
+                        "name": "Blue Lock",
+                        "override_name": true,
+                        "world": false,
+                        "internal_id": "overcastcommunity_communitymaps_blue_lock"
+                    }
+                ]
             },
             {
                 "name": "Chess Cathedral",
@@ -60255,7 +60400,7 @@
                 "slug": "colorado_alpines",
                 "id": "overcastcommunity_communitymaps_colorado_alpines",
                 "proto": "1.5.1",
-                "version": "1.2.4",
+                "version": "1.2.5",
                 "objective": "Capture the flag at the end zone on the enemies' side!",
                 "created": "2025-07-06",
                 "phase": "production",
@@ -60346,6 +60491,13 @@
                         "override_name": false,
                         "world": false,
                         "internal_id": "overcastcommunity_communitymaps_colorado_alpines_te"
+                    },
+                    {
+                        "id": "fumble",
+                        "name": "Colorado Alpines: Fumble",
+                        "override_name": false,
+                        "world": false,
+                        "internal_id": "overcastcommunity_communitymaps_colorado_alpines_fumble"
                     }
                 ]
             },
@@ -60354,7 +60506,7 @@
                 "slug": "colorado_alpines_te",
                 "id": "overcastcommunity_communitymaps_colorado_alpines_te",
                 "proto": "1.5.1",
-                "version": "1.2.4",
+                "version": "1.2.5",
                 "objective": "Capture the flag at the end zone on the enemies' side!",
                 "created": "2025-07-06",
                 "phase": "production",
@@ -60441,6 +60593,115 @@
                         "override_name": true,
                         "world": false,
                         "internal_id": "overcastcommunity_communitymaps_colorado_alpines"
+                    },
+                    {
+                        "id": "fumble",
+                        "name": "Colorado Alpines: Fumble",
+                        "override_name": false,
+                        "world": false,
+                        "internal_id": "overcastcommunity_communitymaps_colorado_alpines_fumble"
+                    }
+                ]
+            },
+            {
+                "name": "Colorado Alpines: Fumble",
+                "slug": "colorado_alpines_fumble",
+                "id": "overcastcommunity_communitymaps_colorado_alpines_fumble",
+                "proto": "1.5.1",
+                "version": "1.2.5",
+                "objective": "Capture the flag at the end zone on the enemies' side!",
+                "created": "2025-07-06",
+                "phase": "development",
+                "edition": "standard",
+                "variant": "fumble",
+                "authors": [
+                    {
+                        "uuid": "f610e558-a3c8-44fb-8622-68cc49dbc18f"
+                    }
+                ],
+                "contributors": [
+                    {
+                        "uuid": "c31e94b2-7678-4551-847e-989c1423323a",
+                        "contribution": "Original Map"
+                    },
+                    {
+                        "uuid": "b390b87a-47e8-40d8-968a-9e7e2582a88b",
+                        "contribution": "XML"
+                    },
+                    {
+                        "uuid": "2fd57dff-4cff-4b60-96a4-d26e37759c03",
+                        "contribution": "XML"
+                    },
+                    {
+                        "uuid": "9d4779a8-d35f-45d2-b51c-95de7a77e128",
+                        "contribution": "Bridge Snippets"
+                    },
+                    {
+                        "uuid": "c25a6f7b-4c42-40da-8cd6-add53f0c84eb",
+                        "contribution": "XML"
+                    },
+                    {
+                        "uuid": "e419983c-bb20-438d-b900-717f131a272f",
+                        "contribution": "XML"
+                    },
+                    {
+                        "uuid": "aa6a6b35-db22-4cff-bfce-3093cf4cf2e6",
+                        "contribution": "XML"
+                    }
+                ],
+                "teams": [
+                    {
+                        "name": "Blue",
+                        "color": "blue",
+                        "size": "11"
+                    },
+                    {
+                        "name": "Red",
+                        "color": "red",
+                        "size": "11"
+                    }
+                ],
+                "player_capacity": 22,
+                "tags": [
+                    "2teams",
+                    "flag",
+                    "timelimit",
+                    "touchdown",
+                    "variants"
+                ],
+                "source": {
+                    "maintainer": "OvercastCommunity",
+                    "repository": "CommunityMaps",
+                    "path": "touchdown/colorado_alpines",
+                    "world_path": "",
+                    "license": "cc-by-sa",
+                    "license_scope": "repository",
+                    "github_url": "https://github.com/OvercastCommunity/CommunityMaps/tree/master/touchdown/colorado_alpines",
+                    "image_url": "https://raw.githubusercontent.com/OvercastCommunity/CommunityMaps/master/touchdown/colorado_alpines/map.png",
+                    "includes": {
+                        "root": "https://github.com/OvercastCommunity/PublicMaps/tree/main/includes",
+                        "files": [
+                            "touchdown",
+                            "void-death",
+                            "gapple-kill-reward",
+                            "sound-keys"
+                        ]
+                    }
+                },
+                "variants": [
+                    {
+                        "id": "default",
+                        "name": "Colorado Alpines",
+                        "override_name": true,
+                        "world": false,
+                        "internal_id": "overcastcommunity_communitymaps_colorado_alpines"
+                    },
+                    {
+                        "id": "comp",
+                        "name": "Colorado Alpines: TE",
+                        "override_name": false,
+                        "world": false,
+                        "internal_id": "overcastcommunity_communitymaps_colorado_alpines_te"
                     }
                 ]
             },
@@ -60513,7 +60774,7 @@
                 "slug": "fireballs_bowl",
                 "id": "overcastcommunity_communitymaps_fireballs_bowl",
                 "proto": "1.5.1",
-                "version": "1.1.4",
+                "version": "1.1.5",
                 "objective": "Capture the flag at the end zone on the enemies' side!",
                 "created": "2025-12-26",
                 "phase": "production",
@@ -60578,6 +60839,13 @@
                         "override_name": false,
                         "world": "mini",
                         "internal_id": "overcastcommunity_communitymaps_fireballs_bowl_mini"
+                    },
+                    {
+                        "id": "fumble",
+                        "name": "Fireballs Bowl: Fumble",
+                        "override_name": false,
+                        "world": false,
+                        "internal_id": "overcastcommunity_communitymaps_fireballs_bowl_fumble"
                     }
                 ]
             },
@@ -60586,7 +60854,7 @@
                 "slug": "fireballs_bowl_mini",
                 "id": "overcastcommunity_communitymaps_fireballs_bowl_mini",
                 "proto": "1.5.1",
-                "version": "1.1.4",
+                "version": "1.1.5",
                 "objective": "Capture the flag at the end zone on the enemies' side!",
                 "created": "2025-12-26",
                 "phase": "production",
@@ -60652,6 +60920,90 @@
                         "override_name": true,
                         "world": false,
                         "internal_id": "overcastcommunity_communitymaps_fireballs_bowl"
+                    },
+                    {
+                        "id": "fumble",
+                        "name": "Fireballs Bowl: Fumble",
+                        "override_name": false,
+                        "world": false,
+                        "internal_id": "overcastcommunity_communitymaps_fireballs_bowl_fumble"
+                    }
+                ]
+            },
+            {
+                "name": "Fireballs Bowl: Fumble",
+                "slug": "fireballs_bowl_fumble",
+                "id": "overcastcommunity_communitymaps_fireballs_bowl_fumble",
+                "proto": "1.5.1",
+                "version": "1.1.5",
+                "objective": "Capture the flag at the end zone on the enemies' side!",
+                "created": "2025-12-26",
+                "phase": "development",
+                "edition": "standard",
+                "variant": "fumble",
+                "authors": [
+                    {
+                        "uuid": "f610e558-a3c8-44fb-8622-68cc49dbc18f"
+                    }
+                ],
+                "contributors": [
+                    {
+                        "uuid": "430ec559-364a-4363-ac7a-2529050440ac"
+                    }
+                ],
+                "teams": [
+                    {
+                        "name": "Blue",
+                        "color": "blue",
+                        "size": "20"
+                    },
+                    {
+                        "name": "Red",
+                        "color": "red",
+                        "size": "20"
+                    }
+                ],
+                "player_capacity": 40,
+                "tags": [
+                    "2teams",
+                    "flag",
+                    "timelimit",
+                    "touchdown",
+                    "variants"
+                ],
+                "source": {
+                    "maintainer": "OvercastCommunity",
+                    "repository": "CommunityMaps",
+                    "path": "touchdown/fireballs_bowl",
+                    "world_path": "",
+                    "license": "cc-by-sa",
+                    "license_scope": "repository",
+                    "github_url": "https://github.com/OvercastCommunity/CommunityMaps/tree/master/touchdown/fireballs_bowl",
+                    "image_url": "https://raw.githubusercontent.com/OvercastCommunity/CommunityMaps/master/touchdown/fireballs_bowl/map.png",
+                    "includes": {
+                        "root": "https://github.com/OvercastCommunity/PublicMaps/tree/main/includes",
+                        "files": [
+                            "touchdown",
+                            "void-death",
+                            "gapple-kill-reward",
+                            "sound-keys"
+                        ]
+                    }
+                },
+                "variants": [
+                    {
+                        "id": "default",
+                        "name": "Fireballs Bowl",
+                        "override_name": true,
+                        "world": false,
+                        "internal_id": "overcastcommunity_communitymaps_fireballs_bowl"
+                    },
+                    {
+                        "id": "mini",
+                        "name": "Fireballs Bowl: Mini",
+                        "override_name": false,
+                        "world": "mini",
+                        "internal_id": "overcastcommunity_communitymaps_fireballs_bowl_mini"
                     }
                 ]
             },
@@ -76818,8 +77170,8 @@
                 "name": "Nutrient",
                 "slug": "nutrient",
                 "id": "overcastcommunity_publicmaps_nutrient",
-                "proto": "1.5.0",
-                "version": "1.2.3",
+                "proto": "1.5.1",
+                "version": "1.2.4",
                 "objective": "Capture the enemy team's two wools and place them on your victory monument!",
                 "created": "2016-10-26",
                 "phase": "production",
@@ -103050,7 +103402,7 @@
                 "slug": "new_discoveries",
                 "id": "overcastcommunity_publicmaps_new_discoveries",
                 "proto": "1.5.0",
-                "version": "1.0",
+                "version": "1.0.1",
                 "objective": "Score against the enemy team via parkour completion times!",
                 "created": "2025-12-20",
                 "phase": "development",
