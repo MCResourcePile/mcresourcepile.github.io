@@ -6530,7 +6530,7 @@
                 "slug": "infinity_race",
                 "id": "overcastcommunity_communitymaps_infinity_race",
                 "proto": "1.5.1",
-                "version": "3.2",
+                "version": "3.2.1",
                 "objective": "Get as far as you can in the parkour!",
                 "created": "2026-08-29",
                 "phase": "staging",
@@ -6640,8 +6640,8 @@
                 "slug": "nether_run",
                 "id": "overcastcommunity_communitymaps_nether_run",
                 "proto": "1.5.1",
-                "version": "1.0.1",
-                "objective": "Parkour the pillars over the river of lava.",
+                "version": "1.0.2",
+                "objective": "Pillar parkour race over the river of lava.",
                 "phase": "development",
                 "edition": "standard",
                 "variant": "default",
@@ -11702,7 +11702,7 @@
                 "slug": "the_funky_queen",
                 "id": "overcastcommunity_communitymaps_the_funky_queen",
                 "proto": "1.5.0",
-                "version": "1.1.9",
+                "version": "1.1.10",
                 "objective": "Be the best funky player, and become the Queen of Funky!",
                 "created": "2025-09-29",
                 "phase": "production",
@@ -11820,10 +11820,10 @@
                     {
                         "name": "Players",
                         "color": "yellow",
-                        "size": "80"
+                        "size": "50"
                     }
                 ],
-                "player_capacity": 80,
+                "player_capacity": 50,
                 "tags": [
                     "ffa",
                     "hill",
@@ -13488,7 +13488,7 @@
                 "slug": "up_down_fly",
                 "id": "overcastcommunity_communitymaps_up_down_fly",
                 "proto": "1.5.1",
-                "version": "1.0.2",
+                "version": "1.0.3",
                 "objective": "Be the first to finish the parkour!",
                 "created": "2026-07-31",
                 "phase": "production",
@@ -13509,10 +13509,10 @@
                     {
                         "name": "Players",
                         "color": "yellow",
-                        "size": "100"
+                        "size": "50"
                     }
                 ],
-                "player_capacity": 100,
+                "player_capacity": 50,
                 "tags": [
                     "ffa",
                     "scorebox",
@@ -15714,7 +15714,7 @@
                 "slug": "procedural_cliff_maze",
                 "id": "overcastcommunity_communitymaps_procedural_cliff_maze",
                 "proto": "1.5.0",
-                "version": "3.0.0",
+                "version": "3.0.1",
                 "objective": "Kill all player's on the enemy team to win!",
                 "created": "2023-09-05",
                 "phase": "production",
@@ -20868,8 +20868,8 @@
                 "name": "Shifty Sands",
                 "slug": "shifty_sands",
                 "id": "overcastcommunity_communitymaps_shifty_sands",
-                "proto": "1.5.0",
-                "version": "1.0.3",
+                "proto": "1.5.1",
+                "version": "1.1.0",
                 "objective": "Capture the most flags!",
                 "created": "2025-10-14",
                 "phase": "production",
@@ -20896,17 +20896,18 @@
                 "tags": [
                     "2teams",
                     "flag",
-                    "timelimit"
+                    "timelimit",
+                    "variants"
                 ],
                 "source": {
                     "maintainer": "OvercastCommunity",
                     "repository": "CommunityMaps",
                     "path": "ctf/shifty_sands",
-                    "world_path": "",
+                    "world_path": "/default",
                     "license": "cc-by-sa",
                     "license_scope": "repository",
                     "github_url": "https://github.com/OvercastCommunity/CommunityMaps/tree/master/ctf/shifty_sands",
-                    "image_url": "https://raw.githubusercontent.com/OvercastCommunity/CommunityMaps/master/ctf/shifty_sands/map.png",
+                    "image_url": "https://raw.githubusercontent.com/OvercastCommunity/CommunityMaps/master/ctf/shifty_sands/default/map.png",
                     "includes": {
                         "root": "https://github.com/OvercastCommunity/PublicMaps/tree/main/includes",
                         "files": [
@@ -20917,7 +20918,79 @@
                     "pools": [
                         "default"
                     ]
-                }
+                },
+                "variants": [
+                    {
+                        "id": "halloween",
+                        "name": "Tricky Sands",
+                        "override_name": true,
+                        "world": "halloween",
+                        "internal_id": "overcastcommunity_communitymaps_tricky_sands"
+                    }
+                ]
+            },
+            {
+                "name": "Tricky Sands",
+                "slug": "tricky_sands",
+                "id": "overcastcommunity_communitymaps_tricky_sands",
+                "proto": "1.5.1",
+                "version": "1.1.0",
+                "objective": "Capture the most flags!",
+                "created": "2025-10-14",
+                "phase": "production",
+                "edition": "standard",
+                "variant": "halloween",
+                "authors": [
+                    {
+                        "uuid": "f690a591-348b-482e-a18d-7779d0c0a28c"
+                    }
+                ],
+                "teams": [
+                    {
+                        "name": "Blue",
+                        "color": "blue",
+                        "size": "6"
+                    },
+                    {
+                        "name": "Red",
+                        "color": "dark_red",
+                        "size": "6"
+                    }
+                ],
+                "player_capacity": 12,
+                "tags": [
+                    "2teams",
+                    "flag",
+                    "timelimit",
+                    "halloween",
+                    "variants"
+                ],
+                "source": {
+                    "maintainer": "OvercastCommunity",
+                    "repository": "CommunityMaps",
+                    "path": "ctf/shifty_sands",
+                    "world_path": "/halloween",
+                    "license": "cc-by-sa",
+                    "license_scope": "repository",
+                    "github_url": "https://github.com/OvercastCommunity/CommunityMaps/tree/master/ctf/shifty_sands",
+                    "image_url": "https://raw.githubusercontent.com/OvercastCommunity/CommunityMaps/master/ctf/shifty_sands/halloween/map.png",
+                    "includes": {
+                        "root": "https://github.com/OvercastCommunity/PublicMaps/tree/main/includes",
+                        "files": [
+                            "gapple-kill-reward",
+                            "sound-keys"
+                        ]
+                    }
+                },
+                "variants": [
+                    {
+                        "id": "default",
+                        "name": "Shifty Sands",
+                        "override_name": true,
+                        "world": false,
+                        "internal_id": "overcastcommunity_communitymaps_shifty_sands"
+                    }
+                ]
             },
             {
                 "name": "Stairs to Nowhere",
@@ -58725,7 +58798,7 @@
                 "slug": "procedural_shroom_towers",
                 "id": "overcastcommunity_communitymaps_procedural_shroom_towers",
                 "proto": "1.5.0",
-                "version": "2.0.0",
+                "version": "2.0.1",
                 "objective": "Runners have 12 minutes to score 300 points. Towers must hold them back.",
                 "created": "2023-09-06",
                 "phase": "production",
