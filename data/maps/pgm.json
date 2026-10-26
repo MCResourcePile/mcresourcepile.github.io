@@ -21664,10 +21664,9 @@
                 "name": "803",
                 "slug": "803",
                 "id": "overcastcommunity_communitymaps_803",
-                "proto": "1.5.0",
-                "version": "1.0.1",
+                "proto": "1.5.1",
+                "version": "2.0.2",
                 "objective": "Capture the wool!",
-                "created": "2024-06-29",
                 "phase": "development",
                 "edition": "standard",
                 "variant": "default",
@@ -21678,19 +21677,23 @@
                 ],
                 "contributors": [
                     {
+                        "uuid": "fe3608b7-d105-4029-8800-34b3147065b6",
+                        "contribution": "clicking some buttons (XML)"
+                    },
+                    {
                         "uuid": "e2d2c2c6-cea9-4510-9ab2-a091b5605b30",
                         "contribution": "XML"
                     }
                 ],
                 "teams": [
                     {
-                        "name": "Blue",
-                        "color": "blue",
+                        "name": "Red",
+                        "color": "red",
                         "size": "16"
                     },
                     {
-                        "name": "Red",
-                        "color": "red",
+                        "name": "Blue",
+                        "color": "blue",
                         "size": "16"
                     }
                 ],
@@ -21711,8 +21714,7 @@
                     "includes": {
                         "root": "https://github.com/OvercastCommunity/PublicMaps/tree/main/includes",
                         "files": [
-                            "gapple-kill-reward",
-                            "iron-bulkcrafting"
+                            "gapple-kill-reward"
                         ]
                     }
                 }
@@ -23191,7 +23193,7 @@
                 "slug": "bricked_n_clayed",
                 "id": "overcastcommunity_communitymaps_bricked_n_clayed",
                 "proto": "1.5.1",
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "objective": "You have to capture the wool on the enemy side and place it in your victory monument!",
                 "created": "2026-09-20",
                 "phase": "production",
@@ -27614,7 +27616,10 @@
                         "files": [
                             "gapple-kill-reward"
                         ]
-                    }
+                    },
+                    "pools": [
+                        "default"
+                    ]
                 },
                 "variants": [
                     {
@@ -32022,10 +32027,7 @@
                         "files": [
                             "gapple-kill-reward"
                         ]
-                    },
-                    "pools": [
-                        "default"
-                    ]
+                    }
                 }
             },
             {
@@ -39410,6 +39412,62 @@
                 }
             },
             {
+                "name": "Cheesy Cheese",
+                "slug": "cheesy_cheese",
+                "id": "overcastcommunity_communitymaps_cheesy_cheese",
+                "proto": "1.5.1",
+                "version": "1.0.0",
+                "objective": "Destroy the enemy team's two obsidian monuments!",
+                "created": "2026-10-20",
+                "phase": "staging",
+                "edition": "standard",
+                "variant": "default",
+                "authors": [
+                    {
+                        "uuid": "644521d7-9437-47c1-b1d2-698eb757df3d"
+                    }
+                ],
+                "contributors": [
+                    {
+                        "uuid": "63ddf58a-ba2c-4d39-8481-6358bb46c63a",
+                        "contribution": "xml"
+                    }
+                ],
+                "teams": [
+                    {
+                        "name": "Pink",
+                        "color": "light_purple",
+                        "size": "22"
+                    },
+                    {
+                        "name": "Blue",
+                        "color": "blue",
+                        "size": "22"
+                    }
+                ],
+                "player_capacity": 44,
+                "tags": [
+                    "2teams",
+                    "monument"
+                ],
+                "source": {
+                    "maintainer": "OvercastCommunity",
+                    "repository": "CommunityMaps",
+                    "path": "dtcm/cheesy_cheese",
+                    "world_path": "",
+                    "license": "cc-by-sa",
+                    "license_scope": "repository",
+                    "github_url": "https://github.com/OvercastCommunity/CommunityMaps/tree/master/dtcm/cheesy_cheese",
+                    "image_url": "https://raw.githubusercontent.com/OvercastCommunity/CommunityMaps/master/dtcm/cheesy_cheese/map.png",
+                    "includes": {
+                        "root": "https://github.com/OvercastCommunity/PublicMaps/tree/main/includes",
+                        "files": [
+                            "gapple-kill-reward"
+                        ]
+                    }
+                }
+            },
+            {
                 "name": "City of Colors DTM",
                 "slug": "city_of_colors_dtm",
                 "id": "overcastcommunity_communitymaps_city_of_colors_dtm",
@@ -44321,6 +44379,60 @@
                 }
             },
             {
+                "name": "Sanctum Veil",
+                "slug": "sanctum_veil",
+                "id": "overcastcommunity_communitymaps_sanctum_veil",
+                "proto": "1.5.1",
+                "version": "1.0.0",
+                "objective": "Destroy the enemy Narthex Reliquary to unseal their Sanctum, then destroy the Sanctum Reliquary.",
+                "created": "2026-10-16",
+                "phase": "development",
+                "edition": "standard",
+                "variant": "default",
+                "authors": [
+                    {
+                        "uuid": "c25a6f7b-4c42-40da-8cd6-add53f0c84eb"
+                    },
+                    {
+                        "username": "GrokBot"
+                    }
+                ],
+                "teams": [
+                    {
+                        "name": "Red",
+                        "color": "dark_red",
+                        "size": "20"
+                    },
+                    {
+                        "name": "Blue",
+                        "color": "blue",
+                        "size": "20"
+                    }
+                ],
+                "player_capacity": 40,
+                "tags": [
+                    "2teams",
+                    "monument"
+                ],
+                "source": {
+                    "maintainer": "OvercastCommunity",
+                    "repository": "CommunityMaps",
+                    "path": "dtcm/sanctum_veil",
+                    "world_path": "",
+                    "license": "cc-by-sa",
+                    "license_scope": "repository",
+                    "github_url": "https://github.com/OvercastCommunity/CommunityMaps/tree/master/dtcm/sanctum_veil",
+                    "image_url": "https://raw.githubusercontent.com/OvercastCommunity/CommunityMaps/master/dtcm/sanctum_veil/map.png",
+                    "includes": {
+                        "root": "https://github.com/OvercastCommunity/PublicMaps/tree/main/includes",
+                        "files": [
+                            "gapple-kill-reward",
+                            "void-death"
+                        ]
+                    }
+                }
+            },
+            {
                 "name": "Sawgrass 17",
                 "slug": "sawgrass_17",
                 "id": "overcastcommunity_communitymaps_sawgrass_17",
@@ -47208,7 +47320,10 @@
                         "files": [
                             "gapple-kill-reward"
                         ]
-                    }
+                    },
+                    "pools": [
+                        "default"
+                    ]
                 },
                 "variants": [
                     {
@@ -51232,7 +51347,10 @@
                             "velocity-no-fall-damage",
                             "gapple-kill-reward"
                         ]
-                    }
+                    },
+                    "pools": [
+                        "default"
+                    ]
                 }
             },
             {
@@ -70002,8 +70120,8 @@
                 "name": "A New Day II",
                 "slug": "a_new_day_ii",
                 "id": "overcastcommunity_publicmaps_a_new_day_ii",
-                "proto": "1.5.0",
-                "version": "1.0.10",
+                "proto": "1.5.1",
+                "version": "1.0.12",
                 "objective": "Capture the enemy's wools!",
                 "created": "2017-11-14",
                 "phase": "production",
@@ -71718,6 +71836,7 @@
                         ]
                     },
                     "pools": [
+                        "default",
                         "classic"
                     ]
                 },
@@ -72459,10 +72578,7 @@
                         "files": [
                             "gapple-kill-reward"
                         ]
-                    },
-                    "pools": [
-                        "default"
-                    ]
+                    }
                 }
             },
             {
@@ -72819,7 +72935,6 @@
                         ]
                     },
                     "pools": [
-                        "default",
                         "classic"
                     ]
                 },
@@ -73807,6 +73922,7 @@
                         ]
                     },
                     "pools": [
+                        "default",
                         "classic"
                     ]
                 },
@@ -75377,7 +75493,10 @@
                             "gapple-kill-reward",
                             "iron-bulkcrafting"
                         ]
-                    }
+                    },
+                    "pools": [
+                        "default"
+                    ]
                 },
                 "variants": [
                     {
@@ -78263,10 +78382,7 @@
                         "files": [
                             "gapple-kill-reward"
                         ]
-                    },
-                    "pools": [
-                        "default"
-                    ]
+                    }
                 }
             },
             {
@@ -84054,9 +84170,9 @@
                 "name": "Azmar",
                 "slug": "azmar",
                 "id": "overcastcommunity_publicmaps_azmar",
-                "proto": "1.5",
-                "version": "1.0.4",
-                "objective": "Destroy the other teams monuments",
+                "proto": "1.5.1",
+                "version": "1.0.5",
+                "objective": "Destroy the other teams monument!",
                 "created": "2017-01-16",
                 "phase": "production",
                 "edition": "standard",
