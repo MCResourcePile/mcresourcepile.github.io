@@ -34,7 +34,7 @@
         <a class="mr-tag" style="background-color:#eab59b; color:#1c1c1c;" title="Minimum supported Minecraft version" data-toggle="tooltip">{{server_version.min}}+</a>
       {{/and}}
       {{#and server_version server_version.max}}
-        <a class="mr-tag" style="background-color:#d28383; color:#1c1c1c;" title="Maximum supported Minecraft version" data-toggle="tooltip">&gt;={{server_version.max}}</a>
+        <a class="mr-tag" style="background-color:#d28383; color:#1c1c1c;" title="Maximum supported Minecraft version" data-toggle="tooltip">&lt;={{server_version.max}}</a>
       {{/and}}
       {{#if source.pools}}
         {{#each source.pools}}
